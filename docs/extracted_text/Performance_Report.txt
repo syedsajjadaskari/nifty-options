@@ -1,0 +1,159 @@
+[P1] System Trading Strategy Performance
+[P2] This report presents a trade-by-trade quantitative review of the NIFTY intraday execution strategy, traded on the 5-minute chart, for the 12-month period from September 2025 to August 2026. All 189 logged trades in this window are included. Every trade is executed with 6 lots (390 quantity at 65 per lot): 3 lots are exited at Target 1, fixed at 27 points, and the remaining 3 lots at Target 2 (60 or 70 points, as recorded). Profit and loss is measured in NIFTY spot-chart points and evaluated against an assumed capital base of ₹1,00,000.
+[P3] Capital Efficiency
+[P4] Against the assumed capital base of ₹1,00,000, the strategy generated a net trading profit of ₹7,69,860 across 189 trades on 180 trading days — a return of 769.86%, or 7.70× the base capital. All 12 months closed positive. All figures are before brokerage, statutory charges and slippage; their effect is quantified in the Transaction Cost Sensitivity section.
+[P5] Core Quantitative Highlights
+[P6] Strategy Framework
+[P7] Every position is split into two equal legs of 3 lots (195 quantity each). Leg 1 is booked at Target 1, fixed at 27 points. Leg 2 is held for Target 2; once Target 1 is booked, the stop on Leg 2 moves to the entry price. Each trade therefore resolves into one of three outcomes:
+[P9] Calculation Basis
+[P10] • Scope: all 189 trades dated 1 September 2025 to 31 August 2026.
+[P11] • P&L: point distance on the NIFTY spot chart × quantity. Target = 27 pts × 195 + Target 2 pts × 195; BE = 27 pts × 195; SL = stop distance × 390.
+[P12] • Sequencing: trades are ordered by date and entry time for the equity curve, drawdown and streak calculations.
+[P13] • Definitions: profit factor = gross profit (Target + BE) ÷ gross loss (SL); win rate (excl. BE) = Target ÷ (Target + SL); drawdown is measured on cumulative P&L after each trade.
+[P14] • Costs & capital: results exclude brokerage, taxes and slippage (see Transaction Cost Sensitivity); the ₹1,00,000 capital base is an assumption used for return ratios.
+[P15] Performance Overview
+[P16] Core Quantitative Highlights
+[P17] Outcome Distribution
+[P18] Win rate methodology: Excluding breakeven trades, the win rate is 55.17% (80 Target / 145 decisive trades). Counting BE trades, each of which books Target 1, as positive outcomes, 65.61% of all trades (124 / 189) closed in profit.
+[P19] Contribution of Target 1: The fixed 27-point partial exit converts every BE trade into a ₹5,265 gain. Across 44 BE trades this added ₹2,31,660, equal to 30.09% of total net P&L.
+[P21] Equity Curve & Drawdown Analysis
+[P22] Cumulative P&L is tracked after every trade. The curve’s lowest point was –₹15,990 on 15 Sep 2025 (trade 9); it turned positive on the next trade and did not fall below zero again. Each of the five deepest drawdowns was recovered to a new equity high within 17 trades of its prior peak.
+[P24] Figure 1. Cumulative net P&L (top) and drawdown from the running equity high (bottom). Reproduced from the supplied photograph; individual trade-level values were not provided.
+[P25] Maximum Drawdown Profile
+[P27] Anatomy of the June 2026 Drawdown
+[P28] The drawdown comprised 9 consecutive trades without a Target: 6 SL (–₹83,850) and 3 BE (₹15,795), a net decline of ₹68,055. The sequence reflects a cluster of stop-losses rather than any single outsized loss.
+[P29] Five Deepest Drawdowns
+[P30] Monthly Performance
+[P31] All 12 months between September 2025 and August 2026 closed with a profit. The average month returned ₹64,155 (median ₹58,890); the strongest was July 2026 at ₹1,38,060 and the weakest February 2026 at ₹2,535.
+[P33] Figure 2. Net P&L by month, recreated from the monthly figures in the report.
+[P35] Monthly Performance — Detailed Results
+[P36] Average ₹64,155  ·  Median ₹58,890  ·  Standard deviation ₹39,714  ·  Best Jul 2026  ·  Weakest Feb 2026
+[P37] Strategy-wise Performance
+[P38] Each strategy is evaluated independently. IRF was the largest contributor to net P&L and ORB the most frequently traded; together they generated 74.75% of total profit.
+[P40] Figure 3. Net P&L by strategy, recreated from the reported strategy totals.
+[P41] PDR and PDS recorded no stop-losses during the period, so a profit factor cannot be calculated.
+[P43] Sample Size & Reliability
+[P44] ORB (88 trades) and IRF (72 trades) form 84.7% of the sample and provide the most reliable statistics; IRF was profitable in 10 of 12 months and ORB in 9 of 12. RF (17 trades) is a moderate sample with a profit factor of 1.14. PDR (9) and PDS (3) recorded no stop-losses, but their samples are too small to treat a 100% win rate as representative. For the strategy as a whole, the 95% confidence interval on the win rate (excl. BE) is approximately 47.1%–63.3% (n = 145); its lower bound remains above the 42.75% breakeven requirement.
+[P45] Net P&L by Strategy and Month
+[P46] “—” indicates no trades in that strategy during the month. In 6 of 12 months, at least one strategy closed negative, but gains in the other strategies kept every month positive.
+[P47] Transaction Cost Sensitivity
+[P48] The results above are stated before brokerage, statutory charges and slippage. The table applies an illustrative all-in cost per trade (entry and both exits on all 6 lots) to show how much of the edge is retained after realistic friction.
+[P49] Conclusion
+[P50] Over September 2025 – August 2026, the NIFTY 6-lot execution model generated ₹7,69,860 across 189 trades, with a profit factor of 1.93, a win rate of 55.17% excluding BE trades, and a profit in every month. Drawdowns were contained and recovered quickly, the deepest being ₹68,055 in June 2026. IRF and ORB carry the strategy, PDR and PDS add high-quality but infrequent trades, and RF is the main candidate for refinement. The edge remains intact under every cost scenario tested, with a profit factor of 1.52 even at ₹1,500 per trade.
+
+--- TABLES ---
+
+=== TABLE 1 ===
+12-MONTH NET P&L ₹7,69,860 Before transaction costs | RETURN ON CAPITAL BASE 769.86% On assumed ₹1,00,000 base | PROFIT FACTOR 1.93 Gross profit ÷ gross loss
+MAXIMUM DRAWDOWN ₹68,055 3 Jun – 17 Jun 2026 | WIN RATE (EXCL. BE) 55.17% 80 targets / 145 decisive trades | MONTHLY CONSISTENCY 12 / 12 Months Profitable months
+
+=== TABLE 2 ===
+PERFORMANCE | VALUE | INTERPRETATION
+Total trades | 189 trades (180 days) | Complete log for Sep 2025 – Aug 2026
+Gross profit vs. gross loss | ₹16,00,560 / –₹8,30,700 | Profit factor of 1.93
+Average target vs. average SL | ₹17,111 / –₹12,780 | Payoff ratio of 1.34 : 1
+Expectancy per trade | ₹4,073 (10.44 pts) | Average net result on 390 quantity
+Breakeven win rate required | 42.75% | Versus achieved 55.17% (excl. BE)
+
+=== TABLE 3 ===
+OUTCOME | LEG 1: 3 LOTS | LEG 2: 3 LOTS | RESULT FOR THE TRADE
+Target | Booked at Target 1 (+27 pts) | Booked at Target 2 | Full profit on both legs
+Breakeven (BE) | Booked at Target 1 (+27 pts) | Exited at entry price | Profit of ₹5,265 from Leg 1
+Stop-loss (SL) | Stopped out | Stopped out | Loss on the full 390 quantity
+
+=== TABLE 4 ===
+MEASURE | VALUE | INTERPRETATION
+Total trades | 189 | 180 trading days; 80 Target · 65 SL · 44 BE
+Gross profit | ₹16,00,560 | Target and BE trades combined
+Gross loss | –₹8,30,700 | SL trades
+Net P&L | ₹7,69,860 | 769.86% of assumed capital base
+Profit factor | 1.93 | Gross profit earned per ₹1 of gross loss
+Average Target / average SL | ₹17,111 / –₹12,780 | Payoff ratio of 1.34 : 1
+Expectancy per trade | ₹4,073 | Equivalent to 10.44 NIFTY points on 390 quantity
+Breakeven win rate required | 42.75% | Achieved: 55.17% (excl. BE)
+
+=== TABLE 5 ===
+OUTCOME | TRADES | % OF TRADES | AVERAGE P&L | TOTAL P&L
+Target | 80 | 42.33% | ₹17,111 | ₹13,68,900
+Breakeven (BE) | 44 | 23.28% | ₹5,265 | ₹2,31,660
+Stop-loss (SL) | 65 | 34.39% | –₹12,780 | –₹8,30,700
+Total | 189 | 100.00% | ₹4,073 | ₹7,69,860
+
+=== TABLE 6 ===
+RISK PARAMETER | RECORDED METRIC | EVALUATION
+Maximum drawdown | ₹68,055 | Largest fall in cumulative P&L from a prior high
+Peak equity | ₹5,85,000 · 3 Jun 2026 | Trade 134: start of the drawdown
+Trough equity | ₹5,16,945 · 17 Jun 2026 | Trade 143: lowest point before recovery
+New equity high | 30 Jun 2026 | 17 trades / 27 calendar days after the peak
+Recovery factor | 11.31× | Net P&L ÷ maximum drawdown
+Drawdown vs. capital | 68.06% of ₹1,00,000 | 9.94% of the peak account value (₹6,85,000)
+
+=== TABLE 7 ===
+TRADE | DATE | STRATEGY | OUTCOME | P&L | CUMULATIVE P&L
+135 | 04 Jun 2026 | IRF | SL | –₹15,600 | ₹5,69,400
+136 | 05 Jun 2026 | PDR | BE | ₹5,265 | ₹5,74,665
+137 | 08 Jun 2026 | IRF | SL | –₹15,600 | ₹5,59,065
+138 | 10 Jun 2026 | ORB | BE | ₹5,265 | ₹5,64,330
+139 | 11 Jun 2026 | IRF | SL | –₹15,600 | ₹5,48,730
+140 | 12 Jun 2026 | ORB | SL | –₹11,700 | ₹5,37,030
+141 | 12 Jun 2026 | PDR | BE | ₹5,265 | ₹5,42,295
+142 | 16 Jun 2026 | ORB | SL | –₹11,700 | ₹5,30,595
+143 | 17 Jun 2026 | IRF | SL | –₹13,650 | ₹5,16,945
+ | Net |  | 6 SL · 3 BE | –₹68,055 | 
+
+=== TABLE 8 ===
+RANK | PEAK | TROUGH | DEPTH | NEW HIGH | TRADES TO RECOVER
+1 | 3 Jun 2026 | 17 Jun 2026 | –₹68,055 | 30 Jun 2026 | 17
+2 | 30 Jan 2026 | 11 Feb 2026 | –₹57,135 | 25 Feb 2026 | 14
+3 | 6 Apr 2026 | 20 Apr 2026 | –₹53,820 | 28 Apr 2026 | 11
+4 | 25 Nov 2025 | 5 Dec 2025 | –₹50,700 | 23 Dec 2025 | 14
+5 | 2 Sep 2025 | 15 Sep 2025 | –₹40,170 | 24 Sep 2025 | 11
+
+=== TABLE 9 ===
+MONTH | TRADES | TARGET | SL | BE | WIN RATE (EXCL. BE) | NET P&L | CUMULATIVE P&L
+Sep 2025 | 16 | 5 | 6 | 5 | 45.45% | ₹37,050 | ₹37,050
+Oct 2025 | 16 | 8 | 5 | 3 | 61.54% | ₹94,965 | ₹132,015
+Nov 2025 | 13 | 6 | 3 | 4 | 66.67% | ₹85,800 | ₹217,815
+Dec 2025 | 17 | 6 | 5 | 6 | 54.55% | ₹74,880 | ₹292,695
+Jan 2026 | 12 | 6 | 1 | 5 | 85.71% | ₹116,415 | ₹409,110
+Feb 2026 | 16 | 5 | 7 | 4 | 41.67% | ₹2,535 | ₹411,645
+Mar 2026 | 13 | 7 | 6 | 0 | 53.85% | ₹44,655 | ₹456,300
+Apr 2026 | 14 | 5 | 6 | 3 | 45.45% | ₹24,570 | ₹480,870
+May 2026 | 13 | 6 | 4 | 3 | 60.00% | ₹66,885 | ₹547,755
+Jun 2026 | 21 | 8 | 8 | 5 | 50.00% | ₹50,895 | ₹598,650
+Jul 2026 | 20 | 12 | 6 | 2 | 66.67% | ₹138,060 | ₹736,710
+Aug 2026 | 18 | 6 | 8 | 4 | 42.86% | ₹33,150 | ₹769,860
+Total | 189 | 80 | 65 | 44 | 55.17% | ₹7,69,860 | ₹7,69,860
+
+=== TABLE 10 ===
+STRATEGY | TRADES | TARGET | SL | BE | WIN RATE (EXCL. BE) | PROFIT FACTOR | AVG / TRADE | NET P&L | SHARE
+IRF | 72 | 30 | 21 | 21 | 58.82% | 2.02 | ₹4,352 | ₹3,13,365 | 40.70%
+ORB | 88 | 35 | 36 | 17 | 49.30% | 1.62 | ₹2,978 | ₹2,62,080 | 34.04%
+PDR | 9 | 6 | 0 | 3 | 100.00% | — | ₹14,148 | ₹1,27,335 | 16.54%
+PDS | 3 | 3 | 0 | 0 | 100.00% | — | ₹17,615 | ₹52,845 | 6.86%
+RF | 17 | 6 | 8 | 3 | 42.86% | 1.14 | ₹837 | ₹14,235 | 1.85%
+Total | 189 | 80 | 65 | 44 | 55.17% | 1.93 | ₹4,073 | ₹7,69,860 | 100.00%
+
+=== TABLE 11 ===
+MONTH | IRF | ORB | PDR | PDS | RF | TOTAL
+Sep 2025 | ₹47,775 | –₹7,605 | ₹18,915 | — | –₹22,035 | ₹37,050
+Oct 2025 | ₹25,545 | ₹14,625 | ₹37,830 | — | ₹16,965 | ₹94,965
+Nov 2025 | ₹28,860 | ₹15,795 | ₹18,915 | — | ₹22,230 | ₹85,800
+Dec 2025 | ₹195 | ₹19,890 | ₹18,915 | ₹18,915 | ₹16,965 | ₹74,880
+Jan 2026 | ₹66,690 | ₹44,460 | — | — | ₹5,265 | ₹116,415
+Feb 2026 | –₹17,355 | ₹61,425 | ₹16,965 | — | –₹58,500 | ₹2,535
+Mar 2026 | ₹69,225 | –₹24,570 | — | — | — | ₹44,655
+Apr 2026 | ₹15,210 | –₹7,605 | — | — | ₹16,965 | ₹24,570
+May 2026 | ₹57,525 | ₹4,095 | ₹5,265 | — | — | ₹66,885
+Jun 2026 | –₹31,590 | ₹54,990 | ₹10,530 | ₹16,965 | — | ₹50,895
+Jul 2026 | ₹15,210 | ₹71,955 | — | ₹16,965 | ₹33,930 | ₹138,060
+Aug 2026 | ₹36,075 | ₹14,625 | — | — | –₹17,550 | ₹33,150
+Profitable months | 10 / 12 | 9 / 12 | 7 / 7 | 3 / 3 | 6 / 9 | 12 / 12
+Total | ₹3,13,365 | ₹2,62,080 | ₹1,27,335 | ₹52,845 | ₹14,235 | ₹7,69,860
+
+=== TABLE 12 ===
+COST PER TRADE | TOTAL COST (189 TRADES) | NET P&L | PROFIT FACTOR | AVG / TRADE | RETURN ON BASE
+₹0 (as reported) | ₹0 | ₹7,69,860 | 1.93 | ₹4,073 | 769.86%
+₹500 | ₹94,500 | ₹6,75,360 | 1.78 | ₹3,573 | 675.36%
+₹1,000 | ₹1,89,000 | ₹5,80,860 | 1.65 | ₹3,073 | 580.86%
+₹1,500 | ₹2,83,500 | ₹4,86,360 | 1.52 | ₹2,573 | 486.36%

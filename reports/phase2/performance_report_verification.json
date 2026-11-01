@@ -1,0 +1,462 @@
+{
+  "statements_found_in_report_text": {
+    "six_lots_390_at_65": true,
+    "target1_27_points_3_lots": true,
+    "target2_60_or_70_as_recorded": true,
+    "breakeven_stop_moves_to_entry": true,
+    "pnl_basis_points_x_quantity": true,
+    "costs_excluded": true,
+    "drawdown_on_cumulative_pnl_after_each_trade": true,
+    "window_sep2025_aug2026_189_trades_180_days": true
+  },
+  "checks": [
+    {
+      "check": "trade count = Target+BE+SL",
+      "documented": 189,
+      "computed": 189,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "BE trade pnl = 27 x 195",
+      "documented": 5265,
+      "computed": 5265,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "BE total = 44 x 5265",
+      "documented": 231660,
+      "computed": 231660,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "net pnl",
+      "documented": 769860,
+      "computed": 769860,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "gross profit",
+      "documented": 1600560,
+      "computed": 1600560,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "profit factor",
+      "documented": 1.93,
+      "computed": 1.9268,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "win rate excl BE",
+      "documented": 55.17,
+      "computed": 55.1724,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "win rate incl BE",
+      "documented": 65.61,
+      "computed": 65.6085,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "expectancy per trade (Rs)",
+      "documented": 4073,
+      "computed": 4073.3333,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "expectancy in points on 390 qty",
+      "documented": 10.44,
+      "computed": 10.4444,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "avg target pnl",
+      "documented": 17111,
+      "computed": 17111.25,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "avg SL pnl",
+      "documented": 12780,
+      "computed": 12780.0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "payoff ratio",
+      "documented": 1.34,
+      "computed": 1.3389,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "breakeven win rate",
+      "documented": 42.75,
+      "computed": 42.755,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "BE contribution share of net",
+      "documented": 30.09,
+      "computed": 30.0912,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "T2 mix integer solution exists",
+      "documented": 6,
+      "computed": 6.0,
+      "pass": true,
+      "note": "DERIVED: number of Target trades that used T2=70"
+    },
+    {
+      "check": "IRF: trades = T+SL+BE",
+      "documented": 72,
+      "computed": 72,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "ORB: trades = T+SL+BE",
+      "documented": 88,
+      "computed": 88,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "PDR: trades = T+SL+BE",
+      "documented": 9,
+      "computed": 9,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "PDS: trades = T+SL+BE",
+      "documented": 3,
+      "computed": 3,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "RF: trades = T+SL+BE",
+      "documented": 17,
+      "computed": 17,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "strategy trades sum",
+      "documented": 189,
+      "computed": 189,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "strategy net sum",
+      "documented": 769860,
+      "computed": 769860,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "IRF+ORB share of profit %",
+      "documented": 74.75,
+      "computed": 74.7467,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "IRF: monthly cells sum to strategy net",
+      "documented": 313365,
+      "computed": 313365,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "ORB: monthly cells sum to strategy net",
+      "documented": 262080,
+      "computed": 262080,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "PDR: monthly cells sum to strategy net",
+      "documented": 127335,
+      "computed": 127335,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "PDS: monthly cells sum to strategy net",
+      "documented": 52845,
+      "computed": 52845,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "RF: monthly cells sum to strategy net",
+      "documented": 14235,
+      "computed": 14235,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "PDR: derived T count equals reported Target count",
+      "documented": 6,
+      "computed": 6,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "PDR: derived BE count equals reported BE count",
+      "documented": 3,
+      "computed": 3,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "PDS: derived T count equals reported Target count",
+      "documented": 3,
+      "computed": 3,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "PDS: derived BE count equals reported BE count",
+      "documented": 0,
+      "computed": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "all inferred T2=70 trades are PDR/PDS",
+      "documented": 6,
+      "computed": 6,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "monthly trades sum",
+      "documented": 189,
+      "computed": 189,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "monthly net sum",
+      "documented": 769860,
+      "computed": 769860,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "monthly cumulative column consistent",
+      "documented": 1,
+      "computed": 1,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "June-2026 drawdown net",
+      "documented": -68055,
+      "computed": -68055,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "max drawdown = peak - trough",
+      "documented": 68055,
+      "computed": 68055,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "drawdown % of peak account value",
+      "documented": 9.94,
+      "computed": 9.935,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "recovery factor",
+      "documented": 11.31,
+      "computed": 11.3123,
+      "pass": true,
+      "note": ""
+    }
+  ],
+  "derived_not_source_rules": {
+    "overall_target_trades_with_T2_70": 6.0,
+    "overall_target_trades_with_T2_60": 74.0,
+    "PDR_PDS_winner_mix": {
+      "PDR": {
+        "mix": {
+          "T60": 1,
+          "T70": 5,
+          "BE": 3
+        },
+        "unique_decomposition_every_cell": true
+      },
+      "PDS": {
+        "mix": {
+          "T60": 2,
+          "T70": 1,
+          "BE": 0
+        },
+        "unique_decomposition_every_cell": true
+      }
+    },
+    "stop_distance_inference": {
+      "IRF": {
+        "implied_total_sl_loss": 306150,
+        "n_sl": 21,
+        "avg_stop_points": 37.381,
+        "solutions_over_{30,35,40}": [
+          {
+            "SL30": 0,
+            "SL35": 11,
+            "SL40": 10
+          },
+          {
+            "SL30": 1,
+            "SL35": 9,
+            "SL40": 11
+          },
+          {
+            "SL30": 2,
+            "SL35": 7,
+            "SL40": 12
+          },
+          {
+            "SL30": 3,
+            "SL35": 5,
+            "SL40": 13
+          },
+          {
+            "SL30": 4,
+            "SL35": 3,
+            "SL40": 14
+          },
+          {
+            "SL30": 5,
+            "SL35": 1,
+            "SL40": 15
+          }
+        ]
+      },
+      "ORB": {
+        "implied_total_sl_loss": 421200,
+        "n_sl": 36,
+        "avg_stop_points": 30.0,
+        "solutions_over_{30,35,40}": [
+          {
+            "SL30": 36,
+            "SL35": 0,
+            "SL40": 0
+          }
+        ]
+      },
+      "RF": {
+        "implied_total_sl_loss": 103350,
+        "n_sl": 8,
+        "avg_stop_points": 33.125,
+        "solutions_over_{30,35,40}": [
+          {
+            "SL30": 3,
+            "SL35": 5,
+            "SL40": 0
+          },
+          {
+            "SL30": 4,
+            "SL35": 3,
+            "SL40": 1
+          },
+          {
+            "SL30": 5,
+            "SL35": 1,
+            "SL40": 2
+          }
+        ]
+      }
+    }
+  },
+  "journal_crosscheck": {
+    "rows": 190,
+    "summary_sheet_total": 189,
+    "by_strategy": {
+      "IRF": 73,
+      "PDR": 8,
+      "ORB": 89,
+      "RF": 17,
+      "PDS": 3
+    },
+    "by_outcome": {
+      "BE": 44,
+      "Target": 81,
+      "SL": 65
+    },
+    "report_by_strategy": {
+      "IRF": 72,
+      "ORB": 88,
+      "PDR": 9,
+      "PDS": 3,
+      "RF": 17
+    },
+    "months_where_journal_count_differs_from_report": {
+      "2026-08": {
+        "journal": 19,
+        "report": 18
+      }
+    },
+    "weekend_dated_rows": [
+      [
+        23,
+        "2025-10-11",
+        "ORB",
+        "SL"
+      ],
+      [
+        82,
+        "2026-02-14",
+        "IRF",
+        "BE"
+      ],
+      [
+        181,
+        "2026-08-15",
+        "ORB",
+        "Target"
+      ],
+      [
+        185,
+        "2026-08-22",
+        "ORB",
+        "SL"
+      ],
+      [
+        189,
+        "2026-08-29",
+        "ORB",
+        "Target"
+      ]
+    ],
+    "unique_trade_dates": 185,
+    "report_trading_days": 180,
+    "dates_out_of_order": 1,
+    "conclusion": "The journal (190 rows) disagrees with its own Summary sheet and with the report (189 trades): strategy attribution differs for IRF/ORB/PDR, August 2026 has one extra row, and 5 rows are dated on Saturdays that have no market data. It is therefore NOT a reliable trade list; it records no direction, price, method, stop distance or Target-2 distance either."
+  },
+  "all_checks_pass": true
+}

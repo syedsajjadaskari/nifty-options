@@ -1,0 +1,158 @@
+--- PAGE 1 ---
+ 
+ 
+TRADING STRATEGY GUIDE 
+PDS 
+Previous Day Support 
+A rule-based short-selling playbook for the gap-down session 
+Instrument: NIFTY 50 Index   |   Timeframe: 5-minute chart   |   Style: Intraday 
+SHORT 
+Direction 
+70 pts 
+Fixed target 
+35 / 40 
+Stop-loss 
+ 
+. 
+  
+
+--- PAGE 2 ---
+ 
+ 
+01   Strategy at a Glance 
+Parameter Rule 
+Strategy PDS: Previous Day Support 
+Reference level Previous trading day’s low, where price took support 
+Zone Rectangle covering the relevant candle body and lower wick 
+Next-day condition Market opens gap down 
+Setup Price rises from below and the old support zone acts as resistance 
+Entry confirmation Good red candle, OR red HPR pin bar, OR break of a small support (fallback) 
+Target Fixed at 70 points 
+Stop-loss 35 or 40 points, based on the recent green candle’s distance 
+02   Strategy Overview 
+PDS stands for Previous Day Support. A support zone is identified from the previous trading day. The 
+strategy then looks for a short-selling opportunity when that same zone acts as resistance on the 
+following day. 
+The key idea is a change of role: a level that held as support yesterday can act as resistance when the 
+market opens gap down and price rises back to revisit it. PDS is not a breakdown strategy. The trader 
+does not sell the moment price falls below yesterday’s support. The trader waits for price to climb back 
+to the zone and for a confirmation to appear. 
+ 
+Figure 1. The PDS setup from the previous day’s low to the short entry. 
+Sequence: Previous day’s support, mark the zone, next-day gap-down open, price rises from below, 
+support acts as resistance, entry confirmation (good red candle, red HPR pin bar, or small-support break), 
+short trade. 
+
+
+--- PAGE 3 ---
+ 
+ 
+03   Marking the Previous Day’s Support Zone 
+Look at the previous day’s chart and find the low where price reached a level, found support, and moved 
+upward. This is the area to mark and monitor in the next session. 
+1 Identify the relevant low Find the low from the previous trading day where price took support. 
+ 
+2 Locate the candle Identify the candle associated with that support area. 
+ 
+3 Identify body and lower wick Both the relevant candle body and the lower wick belong to the zone. 
+ 
+4 Draw a rectangle Draw a small rectangular zone covering the body and wick. Do not use a single horizontal line. 
+ 
+5 Extend it forward Extend the rectangle horizontally so it stays visible on the next trading day. 
+ 
+04   The Next-Day Gap-Down Condition 
+The market must open gap down. After the open, price is trading below the previous day’s support zone. 
+Do not enter just because the market opened gap down, or because price is trading below the previous 
+support. The setup needs price to return upward and test the marked zone first. 
+05   Previous Support Acting as Resistance 
+This is the most important concept in PDS. On the previous day the zone acted as support: price reached 
+it and moved up. On the next day the market opens below the zone. When price rises back to the same 
+area, the zone is watched to see whether it now acts as resistance. 
+
+--- PAGE 4 ---
+ 
+ 
+ 
+Figure 2. The same zone changes role between the two sessions. 
+06   Price Reaching the Resistance Zone 
+After the gap-down open, price must move back up toward the marked zone. The interaction must be 
+close enough to count as a test of the zone, but it does not have to occur at one exact price. 
+Valid interaction Meaning 
+Wick touches the zone The candle’s wick reaches the marked area 
+Body touches the zone The candle’s body reaches the marked area 
+Price enters the zone Price moves inside the rectangle 
+Price comes very close Close enough to qualify as a test of the zone 
+07   Entry Conditions 
+Once price has risen from below and tested the zone as resistance, a short is taken only when the 
+rejection is of good quality. Methods 1 and 2 apply to the first red candle at the zone. If that red candle is 
+not satisfying, use Method 3. All three methods target 70 points. 
+ 
+Figure 3. The three entry methods at the resistance zone. 
+
+
+--- PAGE 5 ---
+ 
+ 
+1 
+Method 1: Good red candle 
+The candle at the zone is a red candle with a good body: a clear, decisive rejection. Take the short on 
+this first red candle only if it is a good candle. 
+ 
+2 
+Method 2: Red pin bar with higher price rejection (HPR) 
+A pin bar showing higher price rejection: a long upper wick pushes into or above the zone and price is 
+rejected. The candle must form red for the short to be activated. 
+ 
+3 
+Method 3: Break of a small support 
+Use this when the first red candle is not satisfying (for example a weak or small-bodied candle). Wait 
+for price to build a small support near the zone, then take the short when that support breaks. 
+ 
+Quality rule: do not take a weak red candle. The first red candle must be a good candle (good body, or a 
+red pin bar with higher price rejection). If it is not, wait for a small support to form and break (Method 3). 
+Target and Stop-Loss 
+The target is fixed at 70 points whichever entry condition occurs. The stop-loss is 35 or 40 points, chosen 
+by the distance of the recent opposite candle. For this short setup, the opposite candle is the recent 
+green candle. 
+ 
+Items to Define and Notes 
+Performance note. This guide describes the rules only and makes no claim about win rate. Log every 
+qualifying setup, winners and losers, over a large sample to measure real performance before relying on 
+the strategy. 
+ 
+Open item Why it matters 
+What counts as a good red candle Body size and close are not numerically defined. Judge consistently or set a minimum. 
+HPR pin bar definition Wick-to-body ratio is not specified. 
+Size of the small support How small it is, and how many candles form it, is not defined. 
+Support break: close or touch? Not specified whether a candle close below the level is required. 
+
+
+--- PAGE 6 ---
+ 
+ 
+Open item Why it matters 
+Method 3 trigger Not specified whether it is used only after a weak red candle or can also stand alone at the zone. 
+Distance of exactly 35 The stop-loss rule covers less than 35 and more than 35 only. 
+How the green candle’s distance is 
+measured Needed so the 35 or 40 choice is consistent each time. 
+Entry timing Not specified whether entry is during the candle or after it closes. 
+Final Summary 
+PDS is a short-selling strategy built on the previous day’s support. The low is marked as a rectangle 
+covering the candle body and lower wick. On the next day the market must open gap down. Price then 
+rises from below and returns to the zone, where the old support acts as resistance. The short is taken on 
+a good red candle (Method 1) or a red pin bar showing higher price rejection (Method 2). If the red 
+candle is not satisfying, wait for a small support to form and break (Method 3). The target is fixed at 70 
+points, and the stop-loss is 35 or 40 points depending on the recent green candle’s distance. 
+
+--- PAGE 7 ---
+ 
+ 
+Ref. Images 
+ 
+ 
+ 
+ 
+ 
+ 
+
+

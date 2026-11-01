@@ -151,6 +151,8 @@ activemq-data/
 
 # Environments
 .env
+.env.*
+!.env.example
 .envrc
 .venv
 env/
@@ -158,6 +160,19 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Project Data & Tokens & Logs
+data/processed/
+data/raw/
+data/metadata/*.csv
+*.parquet
+*.parquet.tmp
+*.token
+.session_token*
+tokens/
+logs/
+*.log
+
 
 # Spyder project settings
 .spyderproject

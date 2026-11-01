@@ -1,0 +1,152 @@
+{
+  "generated_at_utc": "2026-11-01T11:57:15.864097",
+  "instrument": "NIFTY50",
+  "timeframe": "1m",
+  "first_timestamp": "2025-09-01T09:15:00+05:30",
+  "last_timestamp": "2026-08-31T15:30:00+05:30",
+  "total_candle_count": 92981,
+  "trading_dates_count": 248,
+  "expected_trading_days_count": 247,
+  "missing_trading_days_count": 4,
+  "duplicate_timestamps_count": 0,
+  "null_or_invalid_ohlc_count": 0,
+  "price_inconsistency_count": 0,
+  "timestamp_order_strictly_monotonic": true,
+  "session_boundary_violations_count": 49,
+  "incomplete_days_count": 1,
+  "missing_minute_bars_count": 1,
+  "total_storage_size_bytes": 1846004,
+  "total_storage_size_mb": 1.76,
+  "duckdb_read_success": true,
+  "duckdb_sample_row_count": 92981,
+  "monthly_coverage": [
+    {
+      "month": "2025-09",
+      "expected_trading_days": 22,
+      "actual_trading_days": 22,
+      "candle_count": 8272,
+      "coverage_pct": 100.0
+    },
+    {
+      "month": "2025-10",
+      "expected_trading_days": 21,
+      "actual_trading_days": 21,
+      "candle_count": 7581,
+      "coverage_pct": 100.0
+    },
+    {
+      "month": "2025-11",
+      "expected_trading_days": 19,
+      "actual_trading_days": 19,
+      "candle_count": 7143,
+      "coverage_pct": 100.0
+    },
+    {
+      "month": "2025-12",
+      "expected_trading_days": 22,
+      "actual_trading_days": 22,
+      "candle_count": 8272,
+      "coverage_pct": 100.0
+    },
+    {
+      "month": "2026-01",
+      "expected_trading_days": 21,
+      "actual_trading_days": 20,
+      "candle_count": 7520,
+      "coverage_pct": 95.2
+    },
+    {
+      "month": "2026-02",
+      "expected_trading_days": 19,
+      "actual_trading_days": 21,
+      "candle_count": 7896,
+      "coverage_pct": 110.5
+    },
+    {
+      "month": "2026-03",
+      "expected_trading_days": 19,
+      "actual_trading_days": 19,
+      "candle_count": 7173,
+      "coverage_pct": 100.0
+    },
+    {
+      "month": "2026-04",
+      "expected_trading_days": 20,
+      "actual_trading_days": 20,
+      "candle_count": 7520,
+      "coverage_pct": 100.0
+    },
+    {
+      "month": "2026-05",
+      "expected_trading_days": 19,
+      "actual_trading_days": 19,
+      "candle_count": 7144,
+      "coverage_pct": 100.0
+    },
+    {
+      "month": "2026-06",
+      "expected_trading_days": 21,
+      "actual_trading_days": 21,
+      "candle_count": 7896,
+      "coverage_pct": 100.0
+    },
+    {
+      "month": "2026-07",
+      "expected_trading_days": 23,
+      "actual_trading_days": 23,
+      "candle_count": 8648,
+      "coverage_pct": 100.0
+    },
+    {
+      "month": "2026-08",
+      "expected_trading_days": 21,
+      "actual_trading_days": 21,
+      "candle_count": 7916,
+      "coverage_pct": 100.0
+    }
+  ],
+  "data_classification_summary": {
+    "Expected market closure (Weekends & Holidays)": 118,
+    "Trading Days Verified": 248,
+    "API data unavailable (Missing trading days)": 4,
+    "Missing historical bars (Intraday gap)": 1,
+    "Download failures": 0,
+    "Unverified": 0
+  },
+  "missing_days_breakdown": [
+    {
+      "date": "2026-01-15",
+      "day_name": "Thursday",
+      "classification": "API data unavailable",
+      "notes": "Expected trading day with 0 candles in 5paisa historical dataset"
+    },
+    {
+      "date": "2026-03-26",
+      "day_name": "Thursday",
+      "classification": "API data unavailable",
+      "notes": "Expected trading day with 0 candles in 5paisa historical dataset"
+    },
+    {
+      "date": "2026-03-31",
+      "day_name": "Tuesday",
+      "classification": "API data unavailable",
+      "notes": "Expected trading day with 0 candles in 5paisa historical dataset"
+    },
+    {
+      "date": "2026-05-28",
+      "day_name": "Thursday",
+      "classification": "API data unavailable",
+      "notes": "Expected trading day with 0 candles in 5paisa historical dataset"
+    }
+  ],
+  "incomplete_days_breakdown": [
+    {
+      "date": "2025-11-25",
+      "day_name": "Tuesday",
+      "actual_candles": 375,
+      "expected_candles": 376,
+      "missing_candles": 1,
+      "classification": "Missing historical bars"
+    }
+  ]
+}

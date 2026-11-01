@@ -1,0 +1,462 @@
+--- PAGE 1 ---
+ 
+IRF Strategy 
+Initial Range Failure / Inverse Retest Failure 
+Summary 
+The Initial Range Failure (IRF) strategy is a rules-based, price-action framework for intraday short trades. 
+It uses the first five-minute candle of the NSE session (9:15–9:20 AM) to define an initial range, then waits 
+for a specific kind of failure: price pushes above the initial range high but cannot sustain the move. When 
+that failure is confirmed by one of three defined entry methods, a short position is taken with a fixed ₹60 
+target and a ₹35 or ₹40 stop-loss. 
+IRF does not try to predict reversals. It waits for price to prove that an upward move has failed — and 
+each of the three methods defines exactly what that proof looks like. This makes the strategy objective, 
+repeatable and measurable. 
+The Three Entry Methods 
+Method 1 — Breakout and Failure Method 2 — Extension and Reversal Method 3 — Liquidity Sweep 
+Price closes above the initial range 
+high, but the very next candle 
+closes back inside the range. 
+Entry: at the close of that candle. 
+No further confirmation needed. 
+Price closes above the initial range 
+high, extends further, forms a red 
+candle, and then breaks a relevant 
+recent level. 
+Entry: on a close below recent 
+support, or a red candle closing 
+back below recent resistance. 
+Small candles form inside the 
+range; a red candle sweeps above 
+the high with a long upper wick and 
+closes below recent support. 
+Entry: on the support break, which 
+is compulsory. 
+ 
+
+
+--- PAGE 2 ---
+ 
+ 
+Strategy Specification 
+The table below defines every fixed parameter of the strategy. These parameters do not change from day 
+to day or from method to method. 
+Parameter Specification 
+Market National Stock Exchange of India (NSE) 
+Instrument NIFTY 50 — intraday 
+Session open 9:15 AM 
+Initial range candle The first five-minute candle of the session, 9:15–9:20 AM 
+Chart timeframe 5-minute 
+Trading direction Short trades only 
+Initial range The high and low of the first five-minute candle, including wicks 
+Entry methods Three IRF setups — Method 1, Method 2 and Method 3 
+Target ₹60 from entry — identical for all three methods 
+Stop-loss ₹35 or ₹40, selected according to the most recent opposite (green) candle 
+Sequence Mark the range → identify the method → confirm the trigger → enter → place stop-loss and target 
+ 
+H O W  T H E  ₹  V A L U E S  A R E  M E A S U R E D 
+The ₹60 target and the ₹35 / ₹40 stop-loss are price distances from the entry price, measured on the 
+instrument being traded. Apply them the same way on every trade so that results remain comparable. 
+ 
+Key Terms and Definitions 
+The following terms are used throughout this guide. Precise definitions matter: most execution errors 
+come from applying a term loosely. 
+Term Definition 
+Initial Range (IR) The full price range of the first five-minute candle of the session (9:15–9:20 AM), from its highest to its lowest traded price. 
+Initial Range High (IRH) The highest price of the first candle, including its upper wick. The primary reference level for all three methods. 
+Initial Range Low (IRL) The lowest price of the first candle, including its lower wick. 
+
+--- PAGE 3 ---
+ 
+ 
+Term Definition 
+Close above IRH A five-minute candle whose closing price is above IRH. A wick above IRH with a close below it is not a close above IRH. 
+Close back inside the range A candle whose closing price is back below IRH, within the initial range. 
+Red candle A bearish candle: the close is below the open. 
+Green candle A bullish candle: the close is above the open. 
+Upper wick The part of a candle between the top of its body and its high. 
+Recent support A price level formed by recent candles where price has held or turned upward. 
+Recent resistance A recent high where price has stalled or turned downward — for example, the top of the first push after the breakout. 
+Liquidity sweep A brief push above an obvious level — here, IRH — that triggers orders resting there and is then rejected, leaving a long upper wick. 
+Opposite candle For a short trade, the most recent green candle. It is the reference used to select the stop-loss. 
+Entry trigger The exact event that permits entry for a given method. 
+ 
+Marking the Initial Range 
+Every IRF trade begins with the initial range. Mark it carefully and in the same way every day — all three 
+methods are measured against it. 
+Step-by-Step Procedure 
+1. Open the five-minute chart at the start of the session. 
+2. Identify the first candle — the candle covering 9:15 AM to 9:20 AM. 
+3. Wait for it to close. The range is final only once this candle has closed at 9:20 AM. 
+4. Mark the high. Draw a horizontal line at the highest price of the candle, including its upper wick. 
+This is the Initial Range High (IRH). 
+5. Mark the low. Draw a horizontal line at the lowest price of the candle, including its lower wick. This 
+is the Initial Range Low (IRL). 
+6. Monitor price around IRH. All three methods focus on price moving above IRH and then showing 
+signs of failure or reversal. 
+
+--- PAGE 4 ---
+ 
+ 
+ 
+Figure 1 — Marking the initial range from the 9:15–9:20 AM candle, wicks included 
+Marking Info. 
+• Use the candle's full high and low — including the wicks — never its open and close. 
+• Use the 9:15–9:20 AM candle only. Do not substitute a later candle or a wider time window. 
+• Keep both lines on the chart for the rest of the session. They are the reference for every method. 
+
+
+--- PAGE 5 ---
+ 
+ 
+ 
+Method 1 — Initial Range Breakout and Failure 
+Concept 
+Price breaks above the initial range high and the breakout candle closes above it. The very next candle, 
+however, fails to sustain the breakout and closes back inside the initial range. That failure is the short-
+entry signal. 
+ 
+Figure 2 — Method 1 — breakout candle closes above IRH; the next candle closes back inside the range 
+Entry Rules 
+Step Condition Requirement 
+1 Initial range marked IRH and IRL drawn from the 9:15–9:20 AM candle, wicks included 
+2 Breakout Price breaks above IRH 
+3 Breakout close The breakout candle closes above IRH 
+4 Failure The next candle closes back inside the initial range 
+5 Entry Short immediately at the close of that candle 
+ 
+E N T R Y  T R I G G E R 
+Enter short at the close of the candle that closes back inside the range — the candle immediately after 
+the breakout candle. No support or resistance break is required. 
+ 
+
+
+--- PAGE 6 ---
+ 
+ 
+What Does Not Qualify 
+• A wick above IRH without a close above it. There is no breakout candle, so Method 1 has not 
+started. 
+• A next candle that dips inside the range but closes above IRH. A wick back into the range does not 
+confirm the failure — the close must be inside. 
+• Entering before the next candle closes. The trigger is the close, not the move. 
+• Waiting for a support or resistance break. Method 1 does not require one. Waiting moves the 
+entry away from the defined trigger. 
+Worked Example 
+Suppose the initial range high is 100. 
+Candle Action 
+Candle 1 Breaks above 100 and closes at 103 — a valid breakout close above IRH. 
+Candle 2 Closes at 99 — back inside the initial range. 
+Result The short-entry signal activates at the close of Candle 2, at 99. 
+Prices are illustrative only. Every trade follows the defined entry and risk-management rules. 
+ 
+K E Y  R U L E 
+The second candle must close back inside the initial range. A wick moving back into the range without the 
+required close does not satisfy the entry condition. 
+ 
+
+--- PAGE 7 ---
+ 
+ 
+ 
+Method 2 — Extended Upward Move and Reversal 
+Concept 
+Method 2 looks for an upward extension beyond the initial range, followed by a reversal signal. Unlike 
+Method 1, price does not break out and immediately close back inside the range. Instead, price closes 
+above the initial range high, continues upward, forms a red candle, and then breaks a relevant recent 
+level. 
+That level can be recent support or recent resistance — both are valid confirmations, and both are 
+explained in full below. 
+Entry Rules 
+Step Condition Requirement 
+1 Initial range marked IRH and IRL drawn from the 9:15–9:20 AM candle 
+2 Breakout close Price breaks above IRH and closes above it 
+3 Extension Price extends further upward beyond the initial range 
+4 Red candle A red candle forms during the upward extension 
+5 Reference level The relevant recent level is identified — recent support or recent resistance 
+6 Level break Support: a candle closes below it. Resistance: a red candle closes back below it. The short is taken on this break. 
+ 
+E N T R Y  T R I G G E R 
+Take the short when the relevant recent level breaks — either a candle closes below recent support, or a 
+red candle closes back below recent resistance after price has traded above it. 
+ 
+
+--- PAGE 8 ---
+ 
+ 
+Two Valid Confirmations: Support Break or Resistance Break 
+Method 2 can be confirmed in either of two ways. Both are equally valid; use whichever level is the 
+relevant one on the chart. The level does not have to be support specifically. 
+Confirmation Reference level Entry trigger 
+Support break 
+Recent support — a low formed by recent 
+candles during the extension, such as a 
+pullback low. 
+A candle closes below that support. 
+Resistance break 
+Recent resistance — a recent high that 
+capped price during the extension, such 
+as the top of the first push after the 
+breakout. 
+Price trades back above the resistance, a 
+red candle forms, and a red candle then 
+closes back below the resistance. 
+Confirmation A — Support Break 
+Price extends above the initial range and leaves a recent support level behind it. Once a red candle 
+appears, the short is confirmed when a candle closes below that support. 
+1. A candle closes above IRH. 
+2. Price extends further upward; a pullback low forms recent support. 
+3. A red candle forms. 
+4. A candle closes below recent support — enter short at that close. 
+ 
+Figure 3 — Method 2, support break — close above IRH, extension, red candle, then a close below recent support 
+
+
+--- PAGE 9 ---
+ 
+ 
+Confirmation B — Resistance Break 
+Here the extension stalls at a recent high, which becomes resistance. Price later trades back above that 
+level but cannot hold there. When a red candle closes back below the resistance, the attempt to extend 
+has failed — buyers who bought above that level are now trapped. 
+1. A candle closes above IRH. 
+2. The first push tops out — that high is the recent resistance. 
+3. Price pulls back, then pushes back above the resistance. 
+4. A red candle forms. 
+5. A red candle closes back below the resistance — enter short at that close. 
+ 
+Figure 4 — Method 2, resistance break — price pushes back above recent resistance, then a red candle closes back below it 
+R E C O M M E N D E D  P R A C T I C E 
+Confirm either break on a candle close, not an intra-candle wick: a close below support, or a close back 
+below resistance. This keeps Method 2 objective and consistent with the close-based triggers of Methods 
+1 and 3. 
+ 
+What Does Not Qualify 
+• A red candle with no level break. A red candle by itself is not sufficient confirmation. 
+• Price still holding above resistance. Until a red candle closes back below the resistance, the push 
+above it has not failed. 
+• No close above IRH. If price only wicked above the range, Method 2 has not started. 
+• An immediate close back inside the range. If the candle after the breakout closes back inside, the 
+setup is Method 1, not Method 2. 
+• Insisting on a support break only. Method 2 accepts a relevant support break or a relevant 
+resistance break. The compulsory support-break rule belongs to Method 3. 
+
+
+--- PAGE 10 ---
+ 
+ 
+Worked Examples 
+Support Break 
+Suppose the initial range high is 100. Price closes above 100, continues upward to 105, and then forms a 
+red candle. When a candle closes below the relevant recent support, the short setup becomes valid 
+according to Method 2. 
+Resistance Break — NIFTY 50, 5-Minute Chart 
+Stage What happened 
+Initial range IRH 24,081.75 · IRL 24,039.95 
+Breakout close The candle after the opening candle closes above 24,081.75. 
+Recent resistance The first push tops out at 24,128.75. 
+Push above resistance Price pulls back, then trades back above 24,128.75, and a red candle forms. 
+Entry A red candle closes back below the resistance at 24,123.50 — short entry. 
+Stop-loss The most recent green candle is within ₹35 of entry, so the ₹35 stop applies: 24,158.50. 
+Target ₹60 below entry: 24,063.50. 
+Levels are taken from a NIFTY 50 five-minute session to illustrate the sequence. The exact level is always identified from the 
+chart. 
+ 
+K E Y  R U L E 
+Method 2 accepts either confirmation: a close below recent support, or a red candle closing back below 
+recent resistance. Do not impose the compulsory support-break requirement of Method 3 on this 
+method. 
+ 
+
+--- PAGE 11 ---
+ 
+ 
+ 
+Method 3 — Advanced IRF / Liquidity Sweep 
+Concept 
+Method 3 is the advanced IRF setup, built around a liquidity sweep above the initial range high. Price first 
+forms small candles inside the initial range. A subsequent red candle then develops a significant upper 
+wick that extends beyond IRH. The critical confirmation is a break of recent support. 
+The recent support break is compulsory. A wick extending above the initial range high is not, on its own, 
+enough to qualify as this setup. 
+ 
+Figure 5 — Method 3 — small candles inside the range, a red candle sweeps above IRH and closes below recent support 
+Entry Rules 
+Step Condition Requirement 
+1 Initial range marked IRH and IRL drawn from the 9:15–9:20 AM candle 
+2 Compression Small candles form inside the initial range 
+3 Sweep candle A red candle forms with a significant upper wick extending beyond IRH 
+4 Wick criterion Approximately 60–70% of the upper wick is outside (above) IRH 
+5 Reference level The recent support formed by the preceding candles is identified 
+6 Support break The red candle closes below that recent support — compulsory 
+ 
+
+
+--- PAGE 12 ---
+ 
+ 
+E N T R Y  T R I G G E R 
+The setup is valid only when the red sweep candle closes below recent support. That support break is the 
+entry confirmation. 
+ 
+The Wick Condition 
+The upper wick should extend significantly above the initial range high. The guide is that approximately 
+60–70% of the upper wick lies outside the range. It is measured as follows: 
+Measure Calculation 
+Upper wick Candle high − top of the body (the open, for a red candle) 
+Portion above IRH Candle high − IRH 
+Share outside the range Portion above IRH ÷ upper wick 
+ 
+Illustration. IRH is 100. A red candle opens at 92, reaches a high of 115 and closes at 82. The upper wick is 
+115 − 92 = 23. The portion above IRH is 115 − 100 = 15. The share outside the range is 15 ÷ 23 ≈ 65% — 
+within the 60–70% guide. Recent support is at 85, and the candle closes at 82, below it: the support break 
+is confirmed. 
+The percentage is an approximate qualifying feature. It is never a substitute for the support-break confirmation. 
+The Most Important Rule: The Support Break 
+K E Y  R U L E  —  T H E  S U P P O R T  B R E A K  I S  C O M P U L S O R Y 
+• Recent support must be identified. 
+• Price must close below that support. 
+• If the wick sweeps above the initial range but recent support does not break, the Method 3 
+confirmation is absent — there is no trade. 
+Method 3 is not confirmed by the liquidity sweep alone. The recent support break is the essential 
+condition. 
+ 
+What Does Not Qualify 
+• A sweep candle that closes above recent support. The rejection is visible, but sellers have not 
+followed through. 
+• A wick that barely clears IRH. If only a small part of the wick is above the range, the significant 
+sweep the method describes has not occurred. 
+• A large, trending advance instead of small candles inside the range. Method 3 begins with 
+compression inside the range. 
+
+--- PAGE 13 ---
+ 
+ 
+ 
+Comparing the Three Methods 
+All three methods belong to the same strategy, but their confirmations differ. The matrix below sets 
+them side by side. Apply only the rules of the method that is forming. 
+Condition Method 1 Method 2 Method 3 
+Starting behaviour Breakout above IRH Breakout above IRH, then extension Small candles inside the range 
+Close above IRH Required (breakout candle) Required 
+The setup involves a sweep 
+(wick) above IRH, not a 
+close above it 
+Further upward 
+movement Not required Required A wick extends significantly above IRH 
+Red candle Not specified Required Required (the sweep candle) 
+Upper wick ≈60–70% 
+outside the range Not applicable Not specified as compulsory Required (approximate guide) 
+Level break Not required Relevant recent support or resistance Recent support — compulsory 
+Entry trigger Next candle closes back inside the range Close below recent support, or red candle closes back below recent resistance Red candle closes below recent support 
+Target / Stop-loss ₹60 / ₹35 or ₹40 ₹60 / ₹35 or ₹40 ₹60 / ₹35 or ₹40 
+Telling the Methods Apart in Real Time 
+• A candle has closed above IRH. Watch the very next candle. If it closes back inside the range, the 
+setup is Method 1 — enter at that close. 
+• Price holds above IRH and keeps rising. The setup can only become Method 2. Wait for a red 
+candle, then a close below recent support or a red candle closing back below recent resistance. 
+• Price stays inside the range with small candles, then a red candle spikes above IRH. Assess 
+Method 3 — and act only if that candle closes below recent support. 
+M E T H O D  2  V S  M E T H O D  3  —  T H E  C R I T I C A L  D I F F E R E N C E 
+Method 2 accepts a relevant support or resistance break and needs a close above IRH first; Method 3 
+involves a sweep (wick) above IRH, uses the ≈60–70% wick criterion, and requires a support break. 
+Applying one method's confirmation to the other is one of the most common causes of poor execution. 
+ 
+ 
+
+--- PAGE 14 ---
+ 
+ 
+Quick Reference Card 
+Range Timeframe Target Stop-loss 
+9:15–9:20 AM candle, 
+wicks included 5-minute · Short only ₹60 — all methods 
+₹35 (distance below ₹35) 
+· ₹40 (distance above 
+₹35) 
+ 
+Method 1 — Breakout and 
+Failure 
+L O O K  F O R  
+A candle that closes above IRH. 
+T R I G G E R 
+The next candle or following candle  
+closes back inside the range. Enter 
+at that close. 
+R E M E M B E R 
+No support or resistance break is 
+needed. A wick back inside is not 
+enough. 
+Method 2 — Extension and 
+Reversal 
+L O O K  F O R  
+A close above IRH, further upward 
+extension, then a red candle. 
+T R I G G E R 
+A close below recent support, or a 
+red candle closing back below 
+recent resistance. 
+R E M E M B E R 
+A red candle alone is not 
+confirmation. Support or resistance 
+are both valid. 
+Method 3 — Liquidity Sweep 
+L O O K  F O R  
+Small candles inside the range, then 
+a red candle whose upper wick 
+sweeps above IRH (≈60–70% 
+outside), Or an Higher price 
+rejection candle also works. 
+T R I G G E R 
+That red candle closes below recent 
+support. 
+R E M E M B E R 
+The support break is compulsory. 
+The sweep alone is never enough. 
+ 
+G O L D E N  R U L E S 
+• Mark IRH and IRL first — wicks included. 
+• Closes confirm; wicks do not. 
+• Apply one method's rules at a time. 
+• Place the stop-loss and ₹60 target immediately, and never widen the stop. 
+• Record every trade by method and review each method separately. 
+ 
+ 
+Reference Charts 
+Annotated chart examples of the IRF methods. Each chart marks the initial range (IRH and IRL), the entry 
+candle, the stop-loss and the target. 
+
+--- PAGE 15 ---
+ 
+ 
+Reference Chart 1 — Marking the Initial Range 
+ 
+Notes: 
+Reference Chart 2 — Method 1: Initial Range Breakout and Failure 
+ 
+Notes: 
+
+
+--- PAGE 16 ---
+ 
+ 
+ 
+Reference Chart 3 — Method 2: Extended Upward Move and Reversal 
+ 
+Notes: 
+Reference Chart 4 — Method 3: Advanced IRF / Liquidity Sweep 
+ 
+Notes: 
+
+
+--- PAGE 17 ---
+ 
+ 
+ 
+Reference Chart 5 — Additional Example 
+ 
+Notes: 
+Reference Chart 6 — Additional Example 
+ 
+Notes: 
+
+

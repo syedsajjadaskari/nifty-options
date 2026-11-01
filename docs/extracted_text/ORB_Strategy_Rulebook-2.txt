@@ -1,0 +1,265 @@
+--- PAGE 1 ---
+ 
+ 
+ 
+Complete Rulebook — Setups, Candle Filters, Trade Parameters & Pre-Trade Checklist 
+A professional reference for the intraday ORB method. The decision is made at 9:20 AM, once the first 5-minute 
+candle has closed, and the same rules apply in both directions: follow bullish breakouts in an uptrend and 
+bearish breakdowns in a downtrend. 
+ 
+9:20 
+Decision time (AM) 
+30 
+Stop-loss 
+60 
+Target 
+1 : 2 
+Risk-reward 
+ 
+1. Strategy Overview 
+The Opening Range Breakout (ORB) is an intraday method that uses the opening price action to identify a 
+potential breakout (or breakdown). A trade is considered only when the trend, the level, and the quality of the 
+first 5-minute candle all agree. 
+Setup Level that must break Trend requirement Gap 
+Method 1 Previous day's resistance (long) / support (short) Established trend in trade direction Not mandatory 
+Method 2 Inner resistance / support inside the previous day’s range, with a trendline Established trend in trade direction Not mandatory 
+Gap + 200 DMA 200 DMA Not mandatory if conditions qualify Required (up for long, down for short) 
+ 
+Long and short at a glance 
+Condition LONG trade SHORT trade 
+Market trend Established uptrend Established downtrend 
+Opening gap Gap up, where applicable Gap down, where applicable 
+
+
+--- PAGE 2 ---
+ 
+ 
+Condition LONG trade SHORT trade 
+Breakout Previous-day or inner resistance breaks upward Previous-day or inner support breaks downward 
+Trendline setup Bullish trendline / inner resistance breakout Bearish trendline / inner support breakdown 
+Candle confirmation Strong bullish candle; limited upper-wick rejection Strong bearish candle; limited lower-wick rejection 
+Stop-loss / Target 30 / 60 30 / 60 
+Risk-reward 1 : 2 1 : 2 
+ 
+Core principle 
+The ORB strategy is about identifying a confirmed breakout at the open — not buying or selling simply because 
+price is moving. The correct level, the first candle's closing price, the 200 DMA filter (where applicable) and the 
+absence of strong rejection wicks decide whether a setup qualifies. 
+2. The First 5-Minute Candle 
+The Indian market opens at 9:15 AM, so the first 5-minute candle covers 9:15 to 9:20 AM. Its close is not known 
+until 9:20 — evaluate it only after it has completed. 
+ 
+▶ Animation · The candle forms from 9:15 to 9:20; the checks are run at the close 
+At 9:20 AM: 
+1. Identify the previous day's resistance / support. 
+2. Check the overall trend and the position of the 200 DMA / EMA on your chart. 
+3. Evaluate the candle's body, upper wick and lower wick. 
+
+
+--- PAGE 3 ---
+ 
+ 
+4. Confirm whether price has broken (and closed beyond) the relevant level. 
+5. If the setup qualifies, take the trade by the rules below. 
+ 
+Important 
+The candle’s final shape and closing price are unknown before 9:20 AM. Never pre-empt the close. 
+4. Method 1 — Previous-Day Level Breakout 
+The primary ORB setup. It is used when the market is already trending and the first 5-minute candle breaks the 
+previous day's key level in the direction of the trend. 
+Long: previous-day resistance breakout 
+ 
+▶ Animation · Uptrend, resistance breakout at 9:20, target hit 
+1. Confirm the uptrend. Price above the 200 EMA is a basic confirmation, supported by bullish price 
+structure. 
+2. Mark previous-day resistance with a horizontal line. 
+3. Check the 9:20 candle. It must break above and close above the level, with a strong green body and a 
+small upper wick. 
+4. Enter long at 9:20 AM if trend, breakout and candle quality are all satisfied. 
+5. Apply fixed parameters: stop-loss 30, target 60 (1 : 2). 
+
+
+--- PAGE 4 ---
+ 
+ 
+Short: previous-day support breakdown 
+ 
+▶ Animation · Downtrend, support breakdown at 9:20, target hit 
+1. Confirm the downtrend. Price below the 200 EMA, supported by bearish price structure. 
+2. Mark previous-day support with a horizontal line. 
+3. Check the 9:20 candle. It must break below and close below the level, with a strong red body and a small 
+lower wick. 
+4. Enter short at 9:20 AM if all conditions are satisfied. 
+5. Apply fixed parameters: stop-loss 30, target 60 (1 : 2). 
+5. Method 2 — Trendline & Inner Resistance / Support Breakout 
+Method 2 is used when the market is trending but price has not broken the major previous-day level. That major 
+resistance sits outside — at the top of the previous day’s range. Inside the previous day’s range there is usually a 
+smaller resistance (a minor swing high or consolidation top). The break of that inner resistance — in an uptrend, 
+near the rising trendline — is a valid ORB entry at 9:20 AM, even before the major resistance is broken. 
+ Major level (outside) Inner level (inside) 
+Where it sits Top of the previous day’s range (resistance) / bottom (support) A smaller level within the previous day’s range 
+Used in Method 1 Method 2 
+Needs the trendline? No Yes — trendline supports the trend 
+At entry Broken by the 9:20 candle Broken by the 9:20 candle; the major level may still be unbroken 
+
+
+--- PAGE 5 ---
+ 
+ 
+ 
+Long: inner resistance breakout 
+ 
+▶ Animation · Major resistance outside · inner resistance inside the previous day's range · trendline support 
+1. Confirm the uptrend — price above the 200 EMA with bullish structure. 
+2. Draw the rising trendline through the relevant swing lows. 
+3. Mark the major previous-day resistance (outside) for context. 
+4. Mark the inner resistance — the smaller level inside the previous day’s range. 
+5. At 9:20 AM, check that the first candle breaks and closes above the inner resistance. 
+6. Check candle strength — convincing green body, limited upper wick. 
+7. Apply the 200 EMA filter — if the breakout is near the EMA, wait for a convincing close above it. 
+8. Enter long with stop-loss 30 and target 60. 
+
+
+--- PAGE 6 ---
+ 
+ 
+Short: inner support breakdown 
+ 
+▶ Animation · Major support outside · inner support inside the previous day's range · falling trendline 
+Apply the same steps in reverse: a falling trendline through swing highs, a smaller inner support inside the 
+previous day’s range, and a first candle that breaks and closes below it with a strong red body and limited lower 
+wick. 
+Reference chart 
+In your chart, the purple zone is the major resistance and it is not yet broken when the 9:20 candle closes. Just 
+above the rising trendline, price had built a small inner resistance. The opening candle breaks above that inner 
+
+
+--- PAGE 7 ---
+ 
+ 
+level while the market is in an uptrend and close to the trendline, so the long is taken at 9:20 AM — before the 
+major resistance is broken. The entry sits below the purple zone, with the stop-loss and target boxes shown. 
+ 
+Reference chart (annotated) · inner resistance near the trendline breaks at 9:20; major resistance still unbroken (inner level drawn approximately) 
+Condition LONG trade SHORT trade 
+Trend Established uptrend, price above 200 EMA Established downtrend, price below 200 EMA 
+Trendline Connect swing lows (rising) Connect swing highs (falling) 
+Level to break Inner resistance inside the previous day’s range Inner support inside the previous day’s range 
+9:20 candle Strong green body, strong close above level Strong red body, strong close below level 
+200 EMA filter Near the EMA? Wait for a convincing close above it Near the EMA? Wait for a convincing close below it 
+Parameters SL 30 · Target 60 SL 30 · Target 60 
+ 
+Reminder 
+A trendline by itself is not an entry signal. The inner-level breakout and the candle confirmation are still required. 
+Verify the exact levels and first-candle close on your original chart. 
+6. Special Setup — Gap Above / Below the 200 DMA 
+A separate qualifying setup. Unlike Methods 1 and 2, it can be considered even when the market was previously 
+trending the other way — provided the gap pushes price through the 200 DMA and the first 5-minute candle 
+closes beyond it. 
+
+
+--- PAGE 8 ---
+ 
+ 
+Long: gap up above the 200 DMA 
+ 
+▶ Animation · Gap up through the 200 DMA; candle closes above it 
+1. Identify the gap up — the market opens above the previous close. 
+2. Check the 200 DMA — price may have been below it; the gap must bring price above. 
+3. Wait for the 9:20 close — a candle that only crosses the line but closes below it does not qualify. 
+4. Confirm candle quality — a strong green body, or a suitable bullish pin-bar-type candle. 
+5. Enter long with SL 30 and target 60. 
+
+
+--- PAGE 9 ---
+ 
+ 
+Short: gap down below the 200 DMA 
+ 
+▶ Animation · Gap down through the 200 DMA; candle closes below it 
+Apply the rules in reverse: the market gaps down below the previous close, the gap takes price below the 200 
+DMA, and the first 5-minute candle closes below it with a strong red body (or a bearish pin-bar-type candle 
+showing rejection of higher prices). Reject candles with a very large lower wick. 
+Not every gap is valid 
+This setup is an exception to the established-trend requirement — it does not mean every gap through the 200 
+DMA qualifies. If the opening move is excessively extended, or the candle shows strong rejection wicks, reject 
+the setup. 
+7. Candle-Quality Rules 
+Candle quality is an important filter across all three setups. 
+
+
+--- PAGE 10 ---
+ 
+ 
+ 
+▶ Animation · Preferred, conditional and rejected candle shapes (long view) 
+Condition LONG trade SHORT trade 
+Preferred Large green body, close near the high, small upper wick, clear break of level / DMA Large red body, close near the low, small lower wick, clear break of level / DMA 
+Conditional 
+Bullish pin bar — rejection of lower prices; 
+its position and close must support the 
+breakout 
+Bearish pin bar — rejection of higher prices; 
+its position and close must support the 
+breakdown 
+Reject Strong upper-wick rejection (price rose, then sellers pushed it back) Strong lower-wick rejection (price fell, then buyers pushed it back) 
+ 
+A pin bar’s shape alone is never sufficient — it must be in the right position and close in a way that supports the breakout. 
+
+
+--- PAGE 11 ---
+ 
+ 
+8. Trade Parameters & Risk-Reward 
+ 
+▶ Animation · Stop-loss 30, target 60 — the same distances for long and short 
+Parameter Long Short 
+Entry 9:20 AM, after the first-candle close 9:20 AM, after the first-candle close 
+Stop-loss Entry − 30 Entry + 30 
+Target Entry + 60 Entry − 60 
+Risk-reward 1 : 2 1 : 2 
+ 
+Illustration only: if the “30” and “60” are price units and the position is 50 shares/units, risk is 30 × 50 = ₹1,500 
+and reward is 60 × 50 = ₹3,000. With a different quantity or lot size, the rupee figures change although the 1 : 2 
+ratio does not. 
+Standardize your units 
+Decide and write down whether 30 and 60 mean index points, instrument price units, or rupee P&L. Price-
+distance and actual rupee risk are not the same thing. (Your reference chart’s long-position tool, for example, 
+showed target 60.80, stop 30.90 and risk-reward 1.97 — about 1 : 2.) 
+9. Consolidated Rule Matrix 
+Rule Method 1 Method 2 Gap / 200 DMA 
+Entry decision 9:20 AM 9:20 AM 9:20 AM 
+
+
+--- PAGE 12 ---
+ 
+ 
+Rule Method 1 Method 2 Gap / 200 DMA 
+Established trend Required Required Not mandatory if conditions qualify 
+Long breakout level Previous-day resistance Inner resistance (inside previous day’s range) 200 DMA (gap up) 
+Short breakout level Previous-day support Inner support (inside previous day’s range) 200 DMA (gap down) 
+Gap Not mandatory Not mandatory Required 
+First-candle 
+confirmation Strong close beyond level Strong close beyond inner level Close beyond 200 DMA 
+Wick rule Avoid rejection wick against the trade Avoid rejection wick against the trade Avoid rejection wick against the trade 
+Stop-loss / Target 30 / 60 30 / 60 30  60 
+10.REF IMAGES 
+ 
+ 
+ 
+  
+
+
+--- PAGE 13 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+

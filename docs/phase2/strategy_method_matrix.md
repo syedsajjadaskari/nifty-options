@@ -1,0 +1,23 @@
+# Strategy × method matrix
+
+Classes: **VE** verified explicit · **VQ** qualitative (needs a number) · **MS** missing · **CF** conflicting · **PR** proposed. Pages are PDF pages.
+"Depends on proposals" lists the `PROPOSED_FOR_REVIEW` parameters (`params.py`) the signal needs. Nothing here is a performance statement.
+
+| Strategy | Method | Dir. | Trigger (exact) | Trigger timing | Needs prev. day | Trend / MA | Gap | Stop (source) | Target (source) | Depends on proposals | Verification status of emitted signals | Rule IDs |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| IRF | **Method 1** | S | `Close[b]>IRH` then `IRL ≤ Close[b+1] < IRH` [VE] p.5–6 | close of candle b+1 | no | none | none | 35/40 by green-candle distance [VQ] p.2,10,14 | 60 [VE] | m1 boundary & window (defaults literal) | PROPOSAL_DEPENDENT — the pattern is explicit, but `IRF-GLOBAL-004` (trades/day, time window, re-arming) is unresolved, so no IRF signal is `VERIFIED` | IRF-M1-001/002/004, M1-003, **M1-C001 (CF)**, GLOBAL-004/005 |
+| IRF | **Method 2A** | S | extension, red candle, then a candle closes `< recent support` [VE close; VQ support] p.7–9 | close of break candle | no | none | none | as above | 60 | support def, extension def, red-candle order, expiry | PROPOSAL_DEPENDENT | IRF-M2-001…006, M2A-001/002 |
+| IRF | **Method 2B** | S | red candle closes back `< recent resistance` after trading above it [VE close; VQ resistance] p.8–10 | close of that red candle | no | none | none | as above | 60 | resistance def, expiry | PROPOSAL_DEPENDENT | IRF-M2B-001/002/003 |
+| IRF | **Method 3** | S | compression, red sweep candle (60–70 % wick above IRH) closing `< recent support` — compulsory [VE support break; VQ rest] p.11–12 | close of sweep candle | no | none | none | as above | 60 | compression, wick band, support def | PROPOSAL_DEPENDENT; **0 confirmed in the dataset** | IRF-M3-001…006, **M3-C001 (MS)** |
+| ORB | **Method 1** | L/S | 09:15 candle breaks **and closes** beyond previous-day level [VE] p.3–4 + strong body **or conditional pin bar** [VQ] + trend [VQ] | 09:20 | yes | EMA/DMA **CF** | not required | 30 [VE] | 60 [VE] | trend mode, MA type, candle thresholds, level def | PROPOSAL_DEPENDENT (`ORB-MA-001` unresolved) | ORB-M1-*, TREND-001/002, MA-001 |
+| ORB | **Method 2** | L/S | break+close beyond **inner** level, trendline supportive [MS] p.4–7 | 09:20 | yes | EMA/DMA **CF** | not required | 30 | 60 | everything (no source construction) | **RESEARCH_VARIANT only** | ORB-M2-*-001 (MS) |
+| ORB | **Gap/200 DMA** | L/S | gap crosses the MA, 09:15 candle closes beyond it, strong body or suitable pin bar [VE close; VQ shape] p.7–9 | 09:20 | yes | MA only; trend **not** required | **required** | 30 | 60 | MA type, candle thresholds, gap size; **"excessively extended" filter undefined (mandatory)** | **RESEARCH_VARIANT** (unresolved mandatory rule) | ORB-GAP-*, MA-001 |
+| PDR | PDR | L | gap-up; zone test; then green candle [VE gap; VQ zone/test] p.1–3 | candle close (timing MS) | yes | none | up | **35 or 40 — no selection rule [MS]** ⇒ UNRESOLVED | 70 [VE] (**CF** with report) | zone boundary, proximity, reversal filter, open-clear-of-zone, same-candle rule | PROPOSAL_DEPENDENT | PDR-001…012 |
+| PDS | **Method 1** | S | first red candle at the zone is a good red candle [VQ] p.4–5 | candle close (MS) | yes | none | down | 35/40 by green-candle distance [VQ] | 70 [VE] (**CF** with report) | strong-candle thresholds, proximity, open-clear-of-zone | PROPOSAL_DEPENDENT | PDS-001…006, M-001, M1-001 |
+| PDS | **Method 2** | S | first red candle is a red pin bar rejecting higher prices [VQ] p.5 | candle close | yes | none | down | as above | 70 | pin thresholds | PROPOSAL_DEPENDENT; 0 in dataset | PDS-M2-001 |
+| PDS | **Method 3** | S | after a weak first red candle, a small support near the zone breaks [VQ/MS] p.4–6 | candle close (close vs touch MS) | yes | none | down | as above | 70 | small-support def, close/touch, stand-alone | PROPOSAL_DEPENDENT | PDS-M3-001 |
+| RF | RF | L (implied **PR**) | gap-up within yesterday's range; close `< RF Low`; return inside [VE sequence; VQ return] p.2–8 | close of the return-inside candle (entry price MS) | yes | established uptrend [VQ] | up, within range | 35–40, **no rule [MS]** ⇒ UNRESOLVED | **OPEN ⇒ `RF_TARGET_STATUS = UNRESOLVED`** | trend mode, return-inside def, direction | PROPOSAL_DEPENDENT | RF-001…014 |
+
+**No signal from any engine is `VERIFIED`.** Frozen-feed data (Aug 2026) and unverifiable previous sessions make PDR/PDS/RF/ORB `NOT_EVALUATED` on 27 sessions (`DATA-QUAL-001`).
+
+Methods are never merged: two methods that fire on the same candle are emitted as separate records and cross-flagged in `concurrent_methods`.

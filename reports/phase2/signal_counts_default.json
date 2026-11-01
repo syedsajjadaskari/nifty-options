@@ -1,0 +1,657 @@
+{
+  "sessions_evaluated": 247,
+  "default_counts": {
+    "IRF": {
+      "Method 1/2|INCOMPLETE_AT_EOD": 130,
+      "Method 1|CONFIRMED": 349,
+      "Method 2A|CONFIRMED": 215,
+      "Method 2B|CONFIRMED": 310,
+      "Method 3|INVALIDATED": 37
+    },
+    "ORB": {
+      "ALL|NOT_EVALUATED": 27,
+      "Gap/200DMA|CONFIRMED": 7,
+      "Gap/200DMA|INVALIDATED": 35,
+      "Gap/200DMA|NOT_EVALUATED": 2,
+      "Method 1|CONFIRMED": 23,
+      "Method 1|INVALIDATED": 75,
+      "Method 1|NOT_EVALUATED": 1,
+      "Method 2|CONFIRMED": 15,
+      "Method 2|INVALIDATED": 156,
+      "Method 2|NOT_EVALUATED": 2
+    },
+    "PDR": {
+      "ALL|NOT_EVALUATED": 27,
+      "PDR|CONFIRMED": 35,
+      "PDR|INVALIDATED": 67
+    },
+    "PDS": {
+      "ALL|NOT_EVALUATED": 27,
+      "Method 1/2/3|INCOMPLETE_AT_EOD": 5,
+      "Method 1/2/3|INVALIDATED": 55,
+      "Method 1|CONFIRMED": 8,
+      "Method 3|CONFIRMED": 14
+    },
+    "RF": {
+      "ALL|NOT_EVALUATED": 27,
+      "RF|CONFIRMED": 11,
+      "RF|INCOMPLETE_AT_EOD": 34,
+      "RF|INVALIDATED": 109,
+      "RF|NOT_EVALUATED": 1
+    }
+  },
+  "default_confirmed_by_verification_status": {
+    "IRF": {
+      "Method 1|PROPOSAL_DEPENDENT": 349,
+      "Method 2A|PROPOSAL_DEPENDENT": 215,
+      "Method 2B|PROPOSAL_DEPENDENT": 310
+    },
+    "ORB": {
+      "Gap/200DMA|RESEARCH_VARIANT": 7,
+      "Method 1|PROPOSAL_DEPENDENT": 23,
+      "Method 2|RESEARCH_VARIANT": 15
+    },
+    "PDR": {
+      "PDR|PROPOSAL_DEPENDENT": 35
+    },
+    "PDS": {
+      "Method 1|PROPOSAL_DEPENDENT": 8,
+      "Method 3|PROPOSAL_DEPENDENT": 14
+    },
+    "RF": {
+      "RF|PROPOSAL_DEPENDENT": 11
+    }
+  },
+  "single_parameter_sensitivity_counts_only": [
+    {
+      "variant": "IRF m1_max_candles_after_breakout=2 (p.14 'or following candle')",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 1/2|INCOMPLETE_AT_EOD": [
+          130,
+          135
+        ],
+        "Method 1|CONFIRMED": [
+          349,
+          352
+        ],
+        "Method 2A|CONFIRMED": [
+          215,
+          197
+        ],
+        "Method 2B|CONFIRMED": [
+          310,
+          306
+        ]
+      }
+    },
+    {
+      "variant": "IRF m1_close_below_irl_counts_as_inside=True",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 1/2|INCOMPLETE_AT_EOD": [
+          130,
+          129
+        ],
+        "Method 1|CONFIRMED": [
+          349,
+          356
+        ],
+        "Method 2A|CONFIRMED": [
+          215,
+          214
+        ],
+        "Method 2B|CONFIRMED": [
+          310,
+          313
+        ]
+      }
+    },
+    {
+      "variant": "IRF m2_extension_definition=E2",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 1/2|INCOMPLETE_AT_EOD": [
+          130,
+          103
+        ],
+        "Method 2A|CONFIRMED": [
+          215,
+          334
+        ],
+        "Method 2B|CONFIRMED": [
+          310,
+          321
+        ]
+      }
+    },
+    {
+      "variant": "IRF m2a_break_may_be_red_candle=True",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 2A|CONFIRMED": [
+          215,
+          218
+        ],
+        "Method 2B|CONFIRMED": [
+          310,
+          314
+        ]
+      }
+    },
+    {
+      "variant": "IRF m2_red_may_be_extension_candle=True",
+      "strategy": "IRF",
+      "delta_vs_default": {}
+    },
+    {
+      "variant": "IRF irf_support_def=SWING_K2",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 1/2|INCOMPLETE_AT_EOD": [
+          130,
+          132
+        ],
+        "Method 2A|CONFIRMED": [
+          215,
+          154
+        ],
+        "Method 2B|CONFIRMED": [
+          310,
+          296
+        ]
+      }
+    },
+    {
+      "variant": "IRF irf_support_def=LAST_N3",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 1/2|INCOMPLETE_AT_EOD": [
+          130,
+          131
+        ],
+        "Method 2A|CONFIRMED": [
+          215,
+          309
+        ],
+        "Method 2B|CONFIRMED": [
+          310,
+          308
+        ]
+      }
+    },
+    {
+      "variant": "IRF irf_resistance_def=LATEST_SWING_HIGH",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 1/2|INCOMPLETE_AT_EOD": [
+          130,
+          108
+        ],
+        "Method 2A|CONFIRMED": [
+          215,
+          190
+        ],
+        "Method 2B|CONFIRMED": [
+          310,
+          408
+        ]
+      }
+    },
+    {
+      "variant": "IRF m2_expiry_candles=6 (30 min)",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 1/2|INCOMPLETE_AT_EOD": [
+          130,
+          98
+        ],
+        "Method 1/2|INVALIDATED": [
+          0,
+          705
+        ],
+        "Method 2A|CONFIRMED": [
+          215,
+          84
+        ],
+        "Method 2B|CONFIRMED": [
+          310,
+          211
+        ]
+      }
+    },
+    {
+      "variant": "IRF m3_wick_share_band=MIN_60",
+      "strategy": "IRF",
+      "delta_vs_default": {}
+    },
+    {
+      "variant": "IRF m3_wick_share_band=BAND_55_75",
+      "strategy": "IRF",
+      "delta_vs_default": {}
+    },
+    {
+      "variant": "IRF m3_compression_n=3",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 3|INVALIDATED": [
+          37,
+          27
+        ]
+      }
+    },
+    {
+      "variant": "IRF m3_compression_def=C2",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 3|INVALIDATED": [
+          37,
+          33
+        ]
+      }
+    },
+    {
+      "variant": "ORB strong_candle=STRICT",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Gap/200DMA|CONFIRMED": [
+          7,
+          4
+        ],
+        "Gap/200DMA|INVALIDATED": [
+          35,
+          38
+        ],
+        "Method 1|CONFIRMED": [
+          23,
+          15
+        ],
+        "Method 1|INVALIDATED": [
+          75,
+          83
+        ],
+        "Method 2|CONFIRMED": [
+          15,
+          12
+        ],
+        "Method 2|INVALIDATED": [
+          156,
+          159
+        ]
+      }
+    },
+    {
+      "variant": "ORB strong_candle=LOOSE",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Method 1|CONFIRMED": [
+          23,
+          29
+        ],
+        "Method 1|INVALIDATED": [
+          75,
+          69
+        ],
+        "Method 2|CONFIRMED": [
+          15,
+          20
+        ],
+        "Method 2|INVALIDATED": [
+          156,
+          151
+        ]
+      }
+    },
+    {
+      "variant": "ORB trend_mode=EMA5M_BASIC",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Method 1|CONFIRMED": [
+          23,
+          28
+        ],
+        "Method 1|INVALIDATED": [
+          75,
+          70
+        ],
+        "Method 2|CONFIRMED": [
+          15,
+          16
+        ],
+        "Method 2|INVALIDATED": [
+          156,
+          155
+        ]
+      }
+    },
+    {
+      "variant": "ORB trend_mode=EMA5M_PREV_3_SESSIONS",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Method 1|CONFIRMED": [
+          23,
+          8
+        ],
+        "Method 1|INVALIDATED": [
+          75,
+          89
+        ],
+        "Method 1|NOT_EVALUATED": [
+          1,
+          2
+        ],
+        "Method 2|CONFIRMED": [
+          15,
+          7
+        ],
+        "Method 2|INVALIDATED": [
+          156,
+          162
+        ],
+        "Method 2|NOT_EVALUATED": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "variant": "ORB trend_mode=SMA200_DAILY (47 evaluable sessions)",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Method 1|CONFIRMED": [
+          23,
+          1
+        ],
+        "Method 1|INVALIDATED": [
+          75,
+          15
+        ],
+        "Method 1|NOT_EVALUATED": [
+          1,
+          83
+        ],
+        "Method 2|CONFIRMED": [
+          15,
+          0
+        ],
+        "Method 2|INVALIDATED": [
+          156,
+          22
+        ],
+        "Method 2|NOT_EVALUATED": [
+          2,
+          151
+        ]
+      }
+    },
+    {
+      "variant": "ORB ma_mode=SMA200_DAILY for the gap setup",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Gap/200DMA|CONFIRMED": [
+          7,
+          0
+        ],
+        "Gap/200DMA|INVALIDATED": [
+          35,
+          0
+        ],
+        "Gap/200DMA|NOT_EVALUATED": [
+          2,
+          193
+        ]
+      }
+    },
+    {
+      "variant": "ORB gap_max_points=150",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Gap/200DMA|CONFIRMED": [
+          7,
+          6
+        ],
+        "Gap/200DMA|INVALIDATED": [
+          35,
+          36
+        ]
+      }
+    },
+    {
+      "variant": "PDR zone_lower_boundary=ZONE_WICK",
+      "strategy": "PDR",
+      "delta_vs_default": {}
+    },
+    {
+      "variant": "PDR zone_proximity_points=0",
+      "strategy": "PDR",
+      "delta_vs_default": {
+        "PDR|CONFIRMED": [
+          35,
+          33
+        ]
+      }
+    },
+    {
+      "variant": "PDR zone_proximity_points=10",
+      "strategy": "PDR",
+      "delta_vs_default": {
+        "PDR|CONFIRMED": [
+          35,
+          37
+        ]
+      }
+    },
+    {
+      "variant": "PDR pdr_green_may_be_interaction_candle=True",
+      "strategy": "PDR",
+      "delta_vs_default": {}
+    },
+    {
+      "variant": "PDR require_open_clear_of_zone=False",
+      "strategy": "PDR",
+      "delta_vs_default": {
+        "PDR|CONFIRMED": [
+          35,
+          102
+        ],
+        "PDR|INVALIDATED": [
+          67,
+          0
+        ]
+      }
+    },
+    {
+      "variant": "PDR pdr_reversal_filter=DEPTH_25PCT",
+      "strategy": "PDR",
+      "delta_vs_default": {
+        "PDR|CONFIRMED": [
+          35,
+          18
+        ],
+        "PDR|INVALIDATED": [
+          67,
+          91
+        ]
+      }
+    },
+    {
+      "variant": "PDS strong_candle=STRICT",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1/2/3|INCOMPLETE_AT_EOD": [
+          5,
+          6
+        ],
+        "Method 1|CONFIRMED": [
+          8,
+          2
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          19
+        ]
+      }
+    },
+    {
+      "variant": "PDS strong_candle=LOOSE",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1|CONFIRMED": [
+          8,
+          10
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          12
+        ]
+      }
+    },
+    {
+      "variant": "PDS zone_proximity_points=0",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1/2/3|INCOMPLETE_AT_EOD": [
+          5,
+          4
+        ],
+        "Method 1|CONFIRMED": [
+          8,
+          7
+        ]
+      }
+    },
+    {
+      "variant": "PDS zone_proximity_points=10",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1|CONFIRMED": [
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "variant": "PDS pds_m3_break_basis=TOUCH",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1/2/3|INCOMPLETE_AT_EOD": [
+          5,
+          4
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          15
+        ]
+      }
+    },
+    {
+      "variant": "PDS pds_m3_standalone=True",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1/2/3|INCOMPLETE_AT_EOD": [
+          5,
+          4
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          15
+        ]
+      }
+    },
+    {
+      "variant": "PDS require_open_clear_of_zone=False",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1/2/3|INCOMPLETE_AT_EOD": [
+          5,
+          19
+        ],
+        "Method 1/2/3|INVALIDATED": [
+          55,
+          0
+        ],
+        "Method 1|CONFIRMED": [
+          8,
+          29
+        ],
+        "Method 2|CONFIRMED": [
+          0,
+          2
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          32
+        ]
+      }
+    },
+    {
+      "variant": "RF rf_return_inside_def=R2",
+      "strategy": "RF",
+      "delta_vs_default": {
+        "RF|CONFIRMED": [
+          11,
+          13
+        ],
+        "RF|INCOMPLETE_AT_EOD": [
+          34,
+          19
+        ],
+        "RF|INVALIDATED": [
+          109,
+          122
+        ]
+      }
+    },
+    {
+      "variant": "RF rf_return_inside_def=R3",
+      "strategy": "RF",
+      "delta_vs_default": {
+        "RF|CONFIRMED": [
+          11,
+          7
+        ],
+        "RF|INCOMPLETE_AT_EOD": [
+          34,
+          0
+        ],
+        "RF|INVALIDATED": [
+          109,
+          147
+        ]
+      }
+    },
+    {
+      "variant": "RF trend_mode=EMA5M_BASIC",
+      "strategy": "RF",
+      "delta_vs_default": {
+        "RF|CONFIRMED": [
+          11,
+          16
+        ],
+        "RF|INVALIDATED": [
+          109,
+          104
+        ]
+      }
+    },
+    {
+      "variant": "RF trend_mode=EMA5M_PREV_3_SESSIONS",
+      "strategy": "RF",
+      "delta_vs_default": {
+        "RF|CONFIRMED": [
+          11,
+          6
+        ],
+        "RF|INVALIDATED": [
+          109,
+          112
+        ],
+        "RF|NOT_EVALUATED": [
+          1,
+          3
+        ]
+      }
+    }
+  ],
+  "warning": "Counts only. Never used to select an interpretation and never compared to the 189-trade report."
+}
