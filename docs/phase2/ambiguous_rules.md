@@ -1,3 +1,5 @@
+> **SUPERSEDED (Phase 2.1).** Every entry here has since been re-examined against the PDFs and given a decision record (`strategy_rule_resolution.md`, 51 records) and, where it needs you, a plain-language question (`author_decisions_required.md`). Two entries are corrected there: AMB-DATA-05 (not corrupt data) and AMB-PDR-05 (re-examined: PDR Example 3 does not contradict the text, because the zone drawn there differs from the engine's zone - see `PDR-D02` and `PDR-D09`); counts quoted below predate Phase 2.1. See `docs/phase2/data_repair_report.md`. The text below is kept unchanged as the historical Phase 2 record.
+
 # Ambiguous, missing and conflicting rules
 
 Each entry: the rule, the source wording (or an accurate page-grounded paraphrase), why it cannot be programmed exactly, the candidate interpretations
@@ -77,7 +79,7 @@ Legend: **CF** conflicting · **MS** missing · **VQ** verified-qualitative (nee
 | AMB-RF-03 `RF-001/008` **VQ** | "Established uptrend", not just above the EMA | pp.2, 4–6 | structure undefined | as AMB-ORB-02 (**PREV_SESSION**) | BASIC 16 · **11** · PREV_3 6 | Define "established". |
 | AMB-RF-04 `RF-004` **VQ** | Gap "within yesterday's range" | pp.2, 4, 6–7 | Only the upper bound (open ≤ yesterday's high) is stated as the reject; a lower bound is implied by "range". | **PrevLow ≤ open ≤ PrevHigh** | — | Confirm. |
 | AMB-RF-05 `RF-010` **MS** | Exact entry price | p.8 "OPEN" | not specified | reference = close of the return-inside candle | — | Entry rule. |
-| AMB-RF-06 `RF-009` **MS** | Stop 35–40, "fixed vs candle-extreme not stated" | pp.2, 8 | no selection rule. **Derived from the report's own totals:** RF's 8 stop-losses cost ₹103,350 = **33.1 points on average — impossible if every RF stop were 35 or 40** (needs ≥ 3 stops of 30). | none implemented → `RF_STOP_SELECTION = UNRESOLVED` | exits not evaluable | Stop rule; explain stops < 35. |
+| AMB-RF-06 `RF-009` **MS** | Stop 35–40, "fixed vs candle-extreme not stated" | pp.2, 8 | no selection rule. **Derived from the report's own totals:** 11 of 12 RF monthly cells reproduce with stops of 35/40; the August-2026 cell (₹17,550 = 45 points for 2 stops) does not, and alone pulls the overall average to 33.1 points. | none implemented → `RF_STOP_SELECTION = UNRESOLVED` | exits not evaluable | Stop rule; explain stops < 35. |
 | AMB-RF-07 `RF-011` **MS** | **Target** | p.8 "OPEN" | **`RF_TARGET_STATUS = UNRESOLVED`**. Evidence only: p.9 chart box 60.80; the report's arithmetic shows all 6 RF winners booked Target 2 = 60 (DERIVED). Neither is a stated rule, so 60 is **not** assigned. | none | does not affect detection | State the RF target. |
 
 ## F. Data / execution

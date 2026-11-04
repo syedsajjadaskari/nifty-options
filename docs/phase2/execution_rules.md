@@ -1,3 +1,5 @@
+> **SUPERSEDED IN PART (Phase 2.3):** the rule "after Target 1 the Leg-2 stop moves to the entry price (breakeven)" below is the performance report's original convention. The strategy owner replaced it with a stop **6 index points against the entry** (LONG entry - 6, SHORT entry + 6; `POST-T1-STOP-006`, outcome `T1_THEN_BUFFER_STOP`). See `phase23_exit_policy.md`. The old rule is kept only as the legacy mode `ENTRY_BREAKEVEN`.
+
 # Execution rules (Task 3 verification + Task 9 specification)
 
 Source: `NIFTY_System_Trading_Strategy_Performance.docx`. Every printed number was re-derived by `scripts/phase2_verify_report.py` (41 arithmetic checks, **all pass**; output in
@@ -26,7 +28,7 @@ All P&L is in NIFTY spot **points** × quantity; NIFTY 50 is an index, so every 
 * **Target-2 mix:** the Target total ₹13,68,900 over 80 winners solves uniquely to **74 trades at T2 = 60 and 6 at T2 = 70**. Decomposing the PDR/PDS monthly cells (every cell has a unique decomposition) puts all six 70s in **PDR (5 of 6 winners) and PDS (1 of 3)**; the other **74 winners (IRF 30, ORB 35, RF 6, PDR 1, PDS 2) used 60**.
   *Consequence:* the PDR/PDS guides' "70 fixed" was not what the report records on three winners.
 * **Stop distances implied by totals:** ORB 36 stops = ₹4,21,200 ⇒ exactly 30 each ✔ (matches ORB p.1). IRF 21 stops = ₹3,06,150 ⇒ 11×35 + 10×40 if only 35/40 are used ✔ (matches IRF p.2).
-  **RF 8 stops = ₹1,03,350 ⇒ average 33.1 points; impossible with only 35/40** (needs ≥ 3 stops of 30). The RF guide says 35–40.
+  **RF: 11 of 12 monthly cells reproduce with stops of 35/40; the August-2026 cell (₹17,550 = 45 points for its 2 stops) does not.** The overall average of 33.1 points/stop comes solely from that cell. The RF guide says 35–40.
 * The journal cannot supply per-trade stop or Target-2 distances; see `source_document_inventory.md` for why it is not reliable.
 
 ## 3. Exit-policy model (implemented in `src/nifty_trading/core/exit_policy.py`, unit-tested in `tests/test_phase2_exit_policy.py`)
@@ -70,3 +72,6 @@ Bars start at the 1-minute row labelled with the signal candle's `bar_end` (the 
 ## 5. What would be needed to validate historical execution
 A per-trade record of: date; **entry timestamp (candle label convention stated)**; strategy **and method**; direction; entry price; stop distance; Target-2 distance used; exit timestamps and prices for each leg (or at least which of T1/T2/BE/SL was hit and when). The current journal has only date, entry time, strategy and outcome — and contradicts the report on counts and dates.
 The aggregate report **cannot** validate or reproduce the signals, and no reproduction is claimed.
+
+## 6. Known limitation (independent review, Phase 2.1): closing-auction bars are not fillable
+From 2026-08-03 the 15:15-15:28 index values are frozen and non-tradable; the step to the official close is only known after the auction. `evaluate_exit` treats every 1-minute bar as fillable, so a stop or target could be "hit" in the catch-up bar at a level that was not executable. **Phase 3 must exclude 15:15 onward from fills on auction-regime days** (or model the auction explicitly). Entries are unaffected: no strategy signals before its own signal candle closes, and all documented entry windows are earlier in the day.

@@ -32,6 +32,8 @@ from nifty_trading.strategies.definitions import (
     ma_value,
     pivot_highs,
     pivot_lows,
+    prev_candles,
+    prev_high_low,
     strong_bearish,
     strong_bullish,
     to_candles,
@@ -46,6 +48,7 @@ _G = ["ORB-GLOBAL-001", "ORB-GLOBAL-002"]
 class ORBStrategy(SignalEngine):
     STRATEGY = "ORB"
     METHODS = ("Method 1", "Method 2", "Gap/200DMA")
+    TREND_METHODS = ("Method 1", "Method 2")
     REQUIRES_PREVIOUS_SESSION = True
 
     def _default_direction(self) -> str:
@@ -64,8 +67,9 @@ class ORBStrategy(SignalEngine):
     # ------------------------------------------------------------------ helpers
     def _base_levels(self, ctx: SessionContext, c: Candle) -> dict:
         prev = ctx.previous
+        ph, pl = prev_high_low(prev, self.p)
         return {"entry_reference_price": c.c, "first_candle_high": c.h, "first_candle_low": c.l,
-                "prev_day_high": prev.high, "prev_day_low": prev.low, "prev_close": prev.close_official}
+                "prev_day_high": ph, "prev_day_low": pl, "prev_close": prev.close_official}
 
     def _quality(self, c: Candle, d: Direction) -> bool:
         """Strong body, or (ORB pp.9-10 'across all three setups') the conditional pin bar. The pin bar's
@@ -74,9 +78,16 @@ class ORBStrategy(SignalEngine):
             return strong_bullish(c, self.p) or (self.p.orb_pin_bar_in_methods_1_2 and bullish_pin(c, self.p))
         return strong_bearish(c, self.p) or (self.p.orb_pin_bar_in_methods_1_2 and bearish_pin(c, self.p))
 
+    def _near_ma_value(self, ctx: SessionContext, t) -> float:
+        """The moving average for the Method-2 'near the MA' test. The structure trend reports the PREVIOUS session's EMA in
+        ``t.ma_value``; 'near the MA' concerns the EMA at the opening candle, so that mode uses today's first-candle EMA."""
+        if self.p.trend_mode in ("STRUCTURE_EMA_SWING2", "EMA_PREV_SESSION_CLOSE"):
+            return float(ctx.candles["ema200_5m"].iloc[0])
+        return t.ma_value
+
     def _trend_gate(self, ctx, c, d, method, levels, sat, fsm, props):
         """Returns (record_or_None_to_stop, trend_result)."""
-        t = trend_check(ctx, 0, d.value, self.p.trend_mode)
+        t = trend_check(ctx, 0, d.value, self.p.trend_mode, self.p)
         props["trend_mode"] = self.p.trend_mode
         if t.ok is None:
             fsm.to(State.SETUP_INVALIDATED, c.end, f"trend not evaluable: {t.reason}")
@@ -94,7 +105,8 @@ class ORBStrategy(SignalEngine):
     def _method1(self, ctx: SessionContext, c: Candle, d: Direction) -> SignalRecord | None:
         long = d is Direction.LONG
         pre = "ORB-M1-LONG" if long else "ORB-M1-SHORT"
-        level = ctx.previous.high if long else ctx.previous.low
+        ph, pl = prev_high_low(ctx.previous, self.p)
+        level = ph if long else pl
         broke = (c.h > level and c.c > level) if long else (c.l < level and c.c < level)
         if not broke:
             return None
@@ -126,14 +138,15 @@ class ORBStrategy(SignalEngine):
         long = d is Direction.LONG
         pre = "ORB-M2-LONG" if long else "ORB-M2-SHORT"
         prev = ctx.previous
-        pcs = to_candles(prev.candles)
+        pcs = to_candles(prev_candles(prev, self.p))
         n = len(pcs)
+        ph, pl = prev_high_low(prev, self.p)
         if long:
-            piv = [j for j in pivot_highs(pcs, 0, n, 2) if pcs[j].h < prev.high]
+            piv = [j for j in pivot_highs(pcs, 0, n, 2) if pcs[j].h < ph]
             lvl = pcs[piv[-1]].h if piv else None
             tl_idx = pivot_lows(pcs, 0, n, 2)
         else:
-            piv = [j for j in pivot_lows(pcs, 0, n, 2) if pcs[j].l > prev.low]
+            piv = [j for j in pivot_lows(pcs, 0, n, 2) if pcs[j].l > pl]
             lvl = pcs[piv[-1]].l if piv else None
             tl_idx = pivot_highs(pcs, 0, n, 2)
         if lvl is None:
@@ -171,7 +184,7 @@ class ORBStrategy(SignalEngine):
             fsm.to(State.SETUP_INVALIDATED, c.end, "candle quality not strong")
             return self._rec(ctx, c, "Method 2", d, levels, sat, [f"{pre}-003"], unresolved, SignalStatus.INVALIDATED,
                              "CANDLE_QUALITY", fsm.trace, props)
-        ema = t.ma_value
+        ema = self._near_ma_value(ctx, t)
         if not math.isnan(ema) and abs(c.c - ema) <= self.p.ma_near_band_points:
             beyond = (c.c - ema) if long else (ema - c.c)
             if beyond < self.p.ma_close_margin_points:
@@ -219,7 +232,7 @@ class ORBStrategy(SignalEngine):
                              SignalStatus.INVALIDATED, "CLOSE_NOT_BEYOND_MA", fsm.trace, props)
         if long:
             shape_ok = strong_bullish(c, self.p) or bullish_pin(c, self.p)
-            rejected = upper_rejection(c, self.p)  # a bullish pin's upper wick is always below the rejection threshold
+            rejected = upper_rejection(c, self.p)  # with the default MODERATE rejection (33%) an owner-style pin's upper wick (<= 30%) never trips it; STRICT (25%) could
         else:
             shape_ok = strong_bearish(c, self.p) or bearish_pin(c, self.p)
             rejected = lower_rejection(c, self.p)

@@ -22,6 +22,9 @@ PDR_PREV = {"cands": [(23960, 23970, 23950, 23965), (23980, 24000, 23970, 23975)
 
 
 def pdr(cands, prev=PDR_PREV, **prop):
+    prop.setdefault("pdr_zone_method", "A_HIGHEST_HIGH")  # fixtures use the highest-high candle, a DIAGNOSTIC reference since Phase 2.3
+    prop.setdefault("zone_lower_boundary", "ZONE_FULL")  # fixtures written for the full-body candidate; the Phase 2.2 default (ZONE_WICK) is tested in test_phase22_rules
+    prop.setdefault("zone_proximity_points", 5.0)  # these fixtures exercise the near-touch variant; the strict default is tested in test_phase22_rules
     return PDRStrategy(proposals=ProposalConfig(**prop)).evaluate_session(ctx(cands, prev=prev))
 
 
@@ -46,7 +49,7 @@ def test_pdr_gap_down_or_flat_open_is_never_evaluated():
 
 @pytest.mark.rules("PDR-011", "PDR-004")
 def test_pdr_gap_up_that_does_not_clear_the_zone_is_invalidated():
-    [r] = pdr([(23990, 24010, 23985, 24005), (24005, 24020, 24000, 24015)])  # gap up (23990>23950) but open inside the zone
+    [r] = pdr([(23990, 24010, 23985, 24005), (24005, 24020, 24000, 24015)], pdr_open_vs_zone="ABOVE_ZONE")  # gap up but open inside the zone
     assert r.signal_status == "INVALIDATED" and r.invalidation_reason == "GAP_UP_OPEN_NOT_ABOVE_ZONE"
 
 
@@ -161,7 +164,7 @@ def test_pds_only_the_first_red_candle_counts_for_methods_1_and_2():
 def test_pds_gap_down_that_does_not_clear_the_zone_is_invalidated():
     [r] = pds([(24010, 24015, 24000, 24005), (24005, 24010, 23990, 23995)])  # gap down vs 24,100 close, but the open (24,010) is inside the zone
     assert r.signal_status == "INVALIDATED" and r.invalidation_reason == "GAP_DOWN_OPEN_NOT_BELOW_ZONE"
-    assert pds([(24010, 24015, 24000, 24005)], require_open_clear_of_zone=False) != []  # the proposal can be switched off
+    assert pds([(24010, 24015, 24000, 24005)], pds_open_vs_zone="ANY") != []  # the proposal can be switched off
 
 
 @pytest.mark.rules("PDS-007")
@@ -187,6 +190,7 @@ RF_PREV = {"cands": [(24000, 24100, 23900, 24000)], "close": 24000.0, "ema_last"
 
 
 def rf(cands, prev=RF_PREV, ema=23950.0, prior=(True,), **prop):
+    prop.setdefault("trend_mode", "EMA5M_PREV_SESSION")  # these fixtures test other logic with the Phase 2.1 trend proposal; the structure mode is tested in test_phase22_rules
     return RFStrategy(proposals=ProposalConfig(**prop)).evaluate_session(ctx(cands, prev=prev, ema=ema, prior_above=prior))
 
 
@@ -202,9 +206,9 @@ def test_rf_full_sequence_close_below_then_return_inside():
 
 
 @pytest.mark.rules("RF-011", "RF-009", "RF-010")
-def test_rf_target_stays_unresolved_and_does_not_block_signal_detection():
+def test_rf_target_stays_a_proposal_and_does_not_block_signal_detection():
     [s] = conf(rf(RF_OK))
-    assert RF_TARGET_STATUS == "UNRESOLVED" and s.reference_levels["RF_TARGET_STATUS"] == "UNRESOLVED"
+    assert RF_TARGET_STATUS == "PROPOSED_FOR_REVIEW" and s.reference_levels["RF_TARGET_STATUS"] == "PROPOSED_FOR_REVIEW"
     assert {"RF-009", "RF-011"} <= set(s.rule_ids_unresolved)
     assert "target_points" not in s.reference_levels  # no silent 60 / 70
 
@@ -261,3 +265,17 @@ def test_rf_return_inside_candidates_are_distinct():
 def test_rf_incomplete_sequence_at_end_of_day_is_reported():
     [r] = rf([(24020, 24040, 24000, 24030), (24030, 24032, 23985, 23990), (23990, 23995, 23980, 23985)])
     assert r.signal_status == "INCOMPLETE_AT_EOD"
+
+
+@pytest.mark.rules("PDS-006")
+def test_pds_any_mode_does_not_block_and_the_default_does_block_an_open_inside_the_zone():
+    inside = [(24010, 24015, 24000, 24005), (24005, 24010, 23990, 23995)]  # gap down vs 24,100 but open inside [24000, 24020]
+    assert [r.invalidation_reason for r in pds(inside)] == ["GAP_DOWN_OPEN_NOT_BELOW_ZONE"]
+    assert all(r.invalidation_reason is None or not r.invalidation_reason.startswith("GAP_DOWN_OPEN") for r in pds(inside, pds_open_vs_zone="ANY"))
+
+
+@pytest.mark.rules("PDR-011")
+def test_pdr_records_pdr_011_as_satisfied_only_when_an_open_condition_is_active():
+    cands = [(24050, 24060, 24040, 24055), (24055, 24058, 24001, 24003), (24003, 24030, 24002, 24025)]
+    assert "PDR-011" in conf(pdr(cands))[0].rule_ids_satisfied  # default ABOVE_ZONE
+    assert "PDR-011" not in conf(pdr(cands, pdr_open_vs_zone="ANY"))[0].rule_ids_satisfied

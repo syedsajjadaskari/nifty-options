@@ -143,3 +143,16 @@ def test_green_refs_include_the_signal_candle_and_respect_the_setup_start():
     r1 = green_refs(cs, 1)  # the signal candle is red: the most recent green is candle 0
     assert r1["recent_green_high"] == 11
     assert green_refs(cs, 2, setup_start=1)["setup_green_high"] == 15 and green_refs(cs, 1, setup_start=1)["setup_green_high"] is None
+
+
+@pytest.mark.rules("DATA-OFFICIAL-CLOSE-001", "ORB-GAP-LONG-001")
+def test_gap_uses_the_official_close_by_default_and_the_1530_print_only_by_proposal():
+    prev = {"cands": [(100, 101, 99, 100)], "close": 100.0}  # official close 100.0
+    c = ctx([(103, 104, 102, 103)], prev=prev)
+    c.previous.close_1530_print = 104.0  # the last minute print was above today's open: a different gap direction
+    official = gap_info(c, P)
+    printed = gap_info(c, ProposalConfig(prev_close_source="LAST_PRINT_1530"))
+    assert official.direction == "UP" and official.points == 3
+    assert printed.direction == "DOWN" and printed.points == -1  # 103 - 104
+    with pytest.raises(ConfigError):
+        ProposalConfig(prev_close_source="NOPE")

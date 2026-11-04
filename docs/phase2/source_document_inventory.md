@@ -58,6 +58,5 @@ A previous pass in this repository had already created `src/nifty_trading/strate
 (its `resample_1m_to_5m` used right-closed bins and mis-binned start-labelled bars; it defaulted `rf_target_status="RESOLVED"` and labelled proposals as verified).
 Those files were **not trusted**: they were backed up outside the repository and replaced by this implementation. Phase 1 files were not modified.
 
-## Dataset caveat that affects every document's rules
-The Phase 1 NIFTY 1-minute data contains a **frozen-feed tail on 21 sessions (2026-08-03 … 2026-08-31)** that Phase 1's audit did not catch and the first pass of this phase also missed; the independent review found it.
-Details, handling and the required re-download are in `reports/phase2/dataset_verification.md` (`feed_quality`) and `agent_review_report.md` (C-1). Phase 1's calendar also lists four dates as holidays that have full sessions (2026-02-17, 03-20, 03-27, 05-27) and its instrument metadata contains a leaked `MagicMock` string; Phase 1 files were **not** modified.
+## Dataset findings (corrected in Phase 2.1)
+The August-2026 "frozen-feed tail" noted in Phase 2 is NSE's Closing Auction Session (real market structure), not a data defect; see `data_repair_report.md`. Real findings: Phase 1's calendar lists four dates as holidays that have full sessions (2026-02-17, 03-20, 03-27, 05-27) and omits four closures (2026-01-15, 03-26, 03-31, 05-28); the official close differs from the 15:30 minute print before the auction regime; Phase 1's instrument metadata contains a leaked `MagicMock` string. Phase 1 files were **not** modified.

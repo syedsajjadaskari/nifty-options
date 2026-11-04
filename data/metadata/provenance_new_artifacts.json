@@ -1,0 +1,93 @@
+{
+  "built_utc": "2026-11-01T11:35:47.448900+00:00",
+  "artifacts": [
+    {
+      "artifact": "data/processed/nifty50_daily/candles.parquet",
+      "rows": 496,
+      "first": "2024-09-02",
+      "last": "2026-08-31",
+      "sha256": "0a4717c7f60974e3a071b9f24b6c4bca9acf86d8fb4ad43fc747652db757f01d",
+      "sources": [
+        {
+          "label": "daily_2024_09_to_2025_08",
+          "file": "data/raw/redownload_20261101T112735Z/daily_2024_09_to_2025_08.parquet",
+          "sha256": "6afde550af3798209c3782a576a61ddfd9a155bcee45bc3f4645f5ed2f348cfc",
+          "request": {
+            "exch": "N",
+            "exchange_segment": "C",
+            "scrip_code": 999920000,
+            "timeframe": "1d",
+            "from_date": "2024-09-01",
+            "to_date": "2025-08-31"
+          },
+          "rows": 248
+        },
+        {
+          "label": "daily_2025_09_to_2026_08",
+          "file": "data/raw/redownload_20261101T112735Z/daily_2025_09_to_2026_08.parquet",
+          "sha256": "13cafd98a713d0b7576f8371d4cbc84c346fe59b8443776c7c6b703d26378a8b",
+          "request": {
+            "exch": "N",
+            "exchange_segment": "C",
+            "scrip_code": 999920000,
+            "timeframe": "1d",
+            "from_date": "2025-09-01",
+            "to_date": "2026-08-31"
+          },
+          "rows": 248
+        }
+      ],
+      "use": "official closes; daily 200-DMA history (>=200 bars before 2025-09-01)"
+    },
+    {
+      "artifact": "data/processed/nifty50_warmup/year=2025/month=07/candles.parquet",
+      "rows": 8645,
+      "rejected_rows": 0,
+      "first": "2025-07-01T09:15:00+05:30",
+      "last": "2025-07-31T15:30:00+05:30",
+      "sha256": "cf53992e29cf4f92100671d47b8486a4b80f9253d83427fb32ff0031f7cf2bc9",
+      "sources": [
+        {
+          "label": "warm_2025_07_1m",
+          "file": "data/raw/redownload_20261101T113202Z/warm_2025_07_1m.parquet",
+          "sha256": "e7acd08b2d698ef22f9035f8d17ff9cc50eec53c08676a594d50453707e4cc39",
+          "request": {
+            "exch": "N",
+            "exchange_segment": "C",
+            "scrip_code": 999920000,
+            "timeframe": "1m",
+            "from_date": "2025-07-01",
+            "to_date": "2025-07-31"
+          },
+          "rows": 8645
+        }
+      ],
+      "use": "WARM-UP ONLY: seeds the 5-minute EMA and supplies the previous session of 2025-09-01; never evaluated"
+    },
+    {
+      "artifact": "data/processed/nifty50_warmup/year=2025/month=08/candles.parquet",
+      "rows": 7144,
+      "rejected_rows": 0,
+      "first": "2025-08-01T09:15:00+05:30",
+      "last": "2025-08-29T15:30:00+05:30",
+      "sha256": "0eea0bfa8fd9bbdab2a9cf93d67e714fbb27029da19c212b78c565f3c9985e49",
+      "sources": [
+        {
+          "label": "warm_2025_08_1m",
+          "file": "data/raw/redownload_20261101T113202Z/warm_2025_08_1m.parquet",
+          "sha256": "679072b86bace33f02f4d076d75cfc930ae9d984187df5e6f0c7450abe77ea5e",
+          "request": {
+            "exch": "N",
+            "exchange_segment": "C",
+            "scrip_code": 999920000,
+            "timeframe": "1m",
+            "from_date": "2025-08-01",
+            "to_date": "2025-08-31"
+          },
+          "rows": 7144
+        }
+      ],
+      "use": "WARM-UP ONLY: seeds the 5-minute EMA and supplies the previous session of 2025-09-01; never evaluated"
+    }
+  ]
+}

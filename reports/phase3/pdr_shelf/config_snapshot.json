@@ -1,0 +1,143 @@
+{
+  "scenario": "pdr_shelf",
+  "title": "C. PDR repeated-resistance shelf candidate; everything else as A",
+  "proposals": {
+    "label": "PROPOSED_FOR_REVIEW",
+    "strong_candle": "MODERATE",
+    "pin_bar": "OWNER_2X_CLOSE30",
+    "rejection_wick": "MODERATE",
+    "trend_mode": "EMA_PREV_SESSION_CLOSE",
+    "ma_mode": "EMA200_5M",
+    "swing_k": 2,
+    "small_candle_body_ratio_max": 0.3,
+    "irf_support_def": "SWING_K1",
+    "irf_resistance_def": "FIRST_PUSH_TOP",
+    "m1_max_candles_after_breakout": 1,
+    "m1_close_below_irl_counts_as_inside": false,
+    "m2_extension_definition": "E1",
+    "m2_red_may_be_extension_candle": false,
+    "m2b_push_must_precede_red_candle": false,
+    "m2a_break_may_be_red_candle": false,
+    "m2_expiry_candles": null,
+    "m3_compression_def": "C1",
+    "m3_compression_n": 2,
+    "m3_compression_size_frac": 0.5,
+    "m3_wick_share_band": "BAND_60_70",
+    "stop_distance_measure": "GREEN_HIGH",
+    "stop_boundary_inclusive_35": true,
+    "gap_min_points": 0.0,
+    "gap_max_points": null,
+    "zone_lower_boundary": "ZONE_WICK",
+    "prev_day_level_window": "ALL_CANDLES",
+    "pdr_zone_method": "C_REPEATED_TOUCHES",
+    "pds_zone_method": "A_LOWEST_LOW",
+    "pds_zone_upper_boundary": "ZONE_FULL",
+    "zone_cluster_tolerance_points": 5.0,
+    "zone_cluster_min_touches": 2,
+    "zone_tie_break": "FIRST",
+    "zone_proximity_points": 0.0,
+    "pdr_green_may_be_interaction_candle": false,
+    "pdr_reversal_filter": "OFF",
+    "pds_small_support_def": "SWING_K1_NEAR_ZONE",
+    "pds_m3_break_basis": "CLOSE",
+    "pds_m3_standalone": false,
+    "rf_return_inside_def": "R1",
+    "rf_direction": "LONG",
+    "ma_near_band_points": 15.0,
+    "ma_close_margin_points": 5.0,
+    "entry_reference_price": "SIGNAL_CANDLE_CLOSE",
+    "orb_pin_bar_in_methods_1_2": true,
+    "pdr_open_vs_zone": "ABOVE_ZONE",
+    "pds_open_vs_zone": "BELOW_ZONE",
+    "prev_close_source": "OFFICIAL_DAILY",
+    "max_signals_per_session": 99,
+    "allow_unverified_prev_session": false,
+    "signal_window_end": null
+  },
+  "trade": {
+    "stop_variant": "BASELINE",
+    "t1_points": 27.0,
+    "rf_t2_points": 60.0,
+    "total_lots": 6,
+    "leg1_lots": 3,
+    "lot_size": 65,
+    "post_t1_stop_mode": "BUFFER",
+    "post_t1_buffer_points": 6.0,
+    "forced_exit_time": "15:14:00"
+  },
+  "per_strategy_levels": {
+    "IRF": {
+      "initial_stop_points": 35.0,
+      "target1_points": 27.0,
+      "target2_points": 60.0,
+      "target2_status": "VERIFIED_EXPLICIT",
+      "post_t1_stop": "LONG: entry - 6; SHORT: entry + 6"
+    },
+    "ORB": {
+      "initial_stop_points": 30.0,
+      "target1_points": 27.0,
+      "target2_points": 60.0,
+      "target2_status": "VERIFIED_EXPLICIT",
+      "post_t1_stop": "LONG: entry - 6; SHORT: entry + 6"
+    },
+    "PDR": {
+      "initial_stop_points": 35.0,
+      "target1_points": 27.0,
+      "target2_points": 70.0,
+      "target2_status": "CONFLICTING",
+      "post_t1_stop": "LONG: entry - 6; SHORT: entry + 6"
+    },
+    "PDS": {
+      "initial_stop_points": 35.0,
+      "target1_points": 27.0,
+      "target2_points": 70.0,
+      "target2_status": "CONFLICTING",
+      "post_t1_stop": "LONG: entry - 6; SHORT: entry + 6"
+    },
+    "RF": {
+      "initial_stop_points": 35.0,
+      "target1_points": 27.0,
+      "target2_points": 60.0,
+      "target2_status": "PROPOSED_FOR_REVIEW",
+      "post_t1_stop": "LONG: entry - 6; SHORT: entry + 6"
+    }
+  },
+  "lots": {
+    "total": 6,
+    "leg1": 3,
+    "lot_size": 65
+  },
+  "previous_day_level_window": "ALL_CANDLES",
+  "day_rules": {
+    "entry_cutoff": "13:00 IST",
+    "max_entries": 2,
+    "second_trade_strategies": [
+      "PDR",
+      "PDS"
+    ],
+    "tie_break": null
+  },
+  "period": [
+    "2025-09-01",
+    "2026-08-31"
+  ],
+  "forced_exit": "15:14 IST at the bar OPEN (assumption FORCED-EXIT-002)",
+  "cost_headline": {
+    "cost_per_trade_rs": 500.0,
+    "slippage_points_per_fill": 0.5
+  },
+  "cost_grid": {
+    "cost_per_trade_rs": [
+      0.0,
+      500.0,
+      1000.0,
+      1500.0
+    ],
+    "slippage_points_per_fill": [
+      0.0,
+      0.5,
+      1.0,
+      2.0
+    ]
+  }
+}

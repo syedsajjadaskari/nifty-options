@@ -28,6 +28,7 @@ from nifty_trading.strategies.definitions import (
     strong_bullish,
     trend_check,
 )
+from nifty_trading.strategies.params import TradeConfig
 
 IR = (95, 100, 90, 98)  # IRH 100 / IRL 90
 M2A = [IR, (98, 104, 97, 103), (103, 106, 102, 105), (105, 106.5, 101, 102), (102, 105, 101.5, 104), (104, 104.2, 100.5, 100.8)]
@@ -160,6 +161,7 @@ RFP = {"cands": [(24000, 24100, 23900, 24000)], "close": 24000.0, "ema_last": 23
 
 
 def rf(c, prev=RFP, **p):
+    p.setdefault("trend_mode", "EMA5M_PREV_SESSION")  # these fixtures test other logic with the Phase 2.1 trend posal; the structure mode is tested in test_phase22_rules
     return RFStrategy(proposals=ProposalConfig(**p)).evaluate_session(ctx(c, prev=prev, ema=23950.0))
 
 
@@ -199,10 +201,14 @@ PDSP = {"cands": [(24040, 24050, 24030, 24045), (24020, 24030, 24000, 24010), (2
 
 
 def pdr(c, prev=PDRP, **p):
+    p.setdefault("pdr_zone_method", "A_HIGHEST_HIGH")  # fixtures use the highest-high candle, a DIAGNOSTIC reference since Phase 2.3
+    p.setdefault("zone_lower_boundary", "ZONE_FULL")  # fixtures written for the full-body candidate
+    p.setdefault("zone_proximity_points", 5.0)  # near-touch variant; the strict default is tested in test_phase22_rules
     return PDRStrategy(proposals=ProposalConfig(**p)).evaluate_session(ctx(c, prev=prev))
 
 
 def pds(c, prev=PDSP, **p):
+    p.setdefault("zone_proximity_points", 5.0)  # near-touch variant; the strict default is tested in test_phase22_rules
     return PDSStrategy(proposals=ProposalConfig(**p)).evaluate_session(ctx(c, prev=prev))
 
 
@@ -217,8 +223,10 @@ def test_pdr_touch_is_inclusive_and_candle_zero_can_be_the_interaction_candle():
 
 @pytest.mark.rules("PDR-011", "PDS-006")
 def test_open_exactly_at_the_zone_edge_does_not_clear_the_zone():
-    [r] = pdr([(24000, 24010, 23995, 24005), (24005, 24020, 24000, 24015)])
+    [r] = pdr([(24000, 24010, 23995, 24005), (24005, 24020, 24000, 24015)], pdr_open_vs_zone="ABOVE_ZONE")
     assert r.signal_status == "INVALIDATED" and r.invalidation_reason == "GAP_UP_OPEN_NOT_ABOVE_ZONE"  # open == zone_high 24000
+    assert not conf(pdr([(24000, 24010, 23995, 24005), (24005, 24020, 24000, 24015)]))  # default = the text: an open at the zone edge is not above it
+    assert conf(pdr([(24000, 24010, 23995, 24005), (24005, 24020, 24000, 24015)], pdr_open_vs_zone="ANY"))
     [s] = pds([(24000, 24015, 23990, 23995), (23995, 24000, 23980, 23985)])
     assert s.signal_status == "INVALIDATED" and s.invalidation_reason == "GAP_DOWN_OPEN_NOT_BELOW_ZONE"  # open == zone_low 24000
 
@@ -249,6 +257,7 @@ GAP_PREV = {"cands": [(23900, 24200, 23800, 23900)], "close": 23900.0, "ema_last
 
 
 def orb(c0, prev=ORBP, ema=23950.0, **p):
+    p.setdefault("trend_mode", "EMA5M_PREV_SESSION")  # these fixtures test other logic with the Phase 2.1 trend posal; the structure mode is tested in test_phase22_rules
     return ORBStrategy(proposals=ProposalConfig(**p)).evaluate_session(ctx([c0, (c0[3], c0[3] + 1, c0[3] - 1, c0[3])], prev=prev, ema=ema))
 
 
@@ -303,11 +312,12 @@ CFG = policy_for("ORB")
 @pytest.mark.rules("EXE-BE-001", "EXE-MISSING-001")
 def test_breakeven_stop_gapped_through_fills_at_the_open_not_at_entry():
     t1_bar = Bar("m0", E, E + 28, E + 5, E + 20)
-    r = evaluate_exit("LONG", E, [t1_bar, Bar("m1", E - 20, E - 10, E - 25, E - 12)], CFG)  # opens 20 below entry
-    assert r.outcome is TradeOutcome.BREAKEVEN and r.leg2_exit == E - 20
-    assert r.pnl_rupees == 27 * 195 - 20 * 195 == 1365
+    r = evaluate_exit("LONG", E, [t1_bar, Bar("m1", E - 20, E - 10, E - 25, E - 12)], CFG)  # opens 20 below entry, 14 beyond the E - 6 stop
+    assert r.outcome is TradeOutcome.T1_THEN_BUFFER_STOP and r.leg2_exit == E - 20
+    assert r.pnl_rupees == 27 * 195 - 20 * 195 == 1365  # the gap fills at the OPEN (worse than the stop level)
+    assert r.adverse_slippage_points == 14  # logged: the fill is 14 points worse than the E - 6 stop
     s = evaluate_exit("SHORT", E, [Bar("m0", E, E - 5, E - 28, E - 20), Bar("m1", E + 20, E + 25, E + 10, E + 12)], CFG)
-    assert s.leg2_exit == E + 20 and s.pnl_rupees == 1365
+    assert s.leg2_exit == E + 20 and s.pnl_rupees == 1365 and s.adverse_slippage_points == 14
 
 
 @pytest.mark.rules("EXE-MISSING-001")
@@ -321,7 +331,8 @@ def test_an_exact_touch_of_a_stop_or_target_counts_as_hit():
 @pytest.mark.rules("IRF-SL-001")
 def test_stop_distance_uses_the_absolute_distance_documented_as_a_proposal():
     assert select_stop_distance(E, E - 20) == 35.0 and select_stop_distance(E, E - 50) == 40.0  # sign ignored (AMB-IRF-12)
-    assert policy_for("IRF", reference_price=E + 36, entry=E).stop_points == 40.0
+    assert policy_for("IRF", reference_price=E + 36, entry=E, trade=TradeConfig(stop_variant="SOURCE_35_40_BY_DISTANCE")).stop_points == 40.0
+    assert policy_for("IRF", reference_price=E + 36, entry=E).stop_points == 35.0  # baseline ignores the measurement
     assert ExitPolicyConfig(t2_points=60, stop_points=30).missing == ()
 
 
@@ -404,18 +415,37 @@ def test_pds_small_support_must_be_near_the_zone_not_far_above_it():
 @pytest.mark.rules("EXE-BE-001", "EXE-MISSING-001")
 def test_same_bar_target1_and_breakeven_fills_the_leg2_stop_at_the_worse_of_entry_and_open():
     # one bar opens 5 BELOW entry, then reaches Target 1: the order is unknowable, the adverse reading is a breakeven exit at the open
-    r = evaluate_exit("LONG", E, [Bar("m0", E - 5, E + 28, E - 6, E + 20)], CFG)
-    assert r.outcome is TradeOutcome.BREAKEVEN and r.leg2_exit == E - 5 and r.ambiguities
-    assert r.pnl_rupees == 27 * 195 - 5 * 195 == 4290  # not 5,265
-    s = evaluate_exit("SHORT", E, [Bar("m0", E + 5, E + 6, E - 28, E - 20)], CFG)
-    assert s.leg2_exit == E + 5 and s.pnl_rupees == 4290
+    # the bar opens 8 below entry (2 beyond the E - 6 level), but the post-T1 stop only exists once Target 1 is booked later in that bar: the open
+    # predates it, so it is NOT a gap through an active stop - the adverse reading fills Leg 2 at the stop LEVEL with no slippage
+    r = evaluate_exit("LONG", E, [Bar("m0", E - 8, E + 28, E - 9, E + 20)], CFG)
+    assert r.outcome is TradeOutcome.T1_THEN_BUFFER_STOP and r.leg2_exit == E - 6 and r.ambiguities
+    assert r.pnl_rupees == 27 * 195 - 6 * 195 == 4095 and r.adverse_slippage_points == 0
+    s = evaluate_exit("SHORT", E, [Bar("m0", E + 8, E + 9, E - 28, E - 20)], CFG)
+    assert s.leg2_exit == E + 6 and s.pnl_rupees == 4095 and s.adverse_slippage_points == 0
 
 
 @pytest.mark.rules("RF-001")
 def test_rf_trend_is_judged_at_the_opening_candle_not_at_the_return_inside_candle():
     cands = [(24020, 24040, 24000, 24030), (24030, 24032, 23985, 23990), (23990, 24020, 23988, 24015)]
     ema = [23950.0, 23950.0, 24100.0]  # price is above the EMA when RF is armed (candle 0) but below it when it returns inside
-    recs = RFStrategy().evaluate_session(ctx(cands, prev=RFP, ema=ema))
+    recs = RFStrategy(proposals=ProposalConfig(trend_mode="EMA5M_PREV_SESSION")).evaluate_session(ctx(cands, prev=RFP, ema=ema))
     assert [r.signal_status for r in recs] == ["CONFIRMED"]
-    below_at_open = RFStrategy().evaluate_session(ctx(cands, prev=RFP, ema=[24100.0, 23950.0, 23950.0]))
+    below_at_open = RFStrategy(proposals=ProposalConfig(trend_mode="EMA5M_PREV_SESSION")).evaluate_session(ctx(cands, prev=RFP, ema=[24100.0, 23950.0, 23950.0]))
     assert [r.signal_status for r in below_at_open] == ["INVALIDATED"] and below_at_open[0].invalidation_reason.startswith("TREND:")
+
+
+@pytest.mark.rules("PDR-011")
+def test_pdr_not_below_zone_allows_an_open_exactly_at_the_zone_low():
+    ok = [(23975, 23980, 23974, 23976), (23976, 23990, 23975, 23988)]  # zone [23975, 24000]; open == zone low
+    assert conf(pdr(ok, pdr_open_vs_zone="NOT_BELOW_ZONE"))
+    below = [(23974.95, 23980, 23974, 23976), (23976, 23990, 23975, 23988)]
+    [r] = pdr(below, pdr_open_vs_zone="NOT_BELOW_ZONE")
+    assert r.signal_status == "INVALIDATED" and r.invalidation_reason == "GAP_UP_OPEN_BELOW_ZONE"
+
+
+@pytest.mark.rules("PDS-006")
+def test_pds_not_above_zone_allows_an_open_exactly_at_the_zone_high():
+    at = [(24020, 24021, 24010, 24012), (24012, 24014, 24000, 24005)]  # zone [24000, 24020]; open == zone high
+    assert all(r.invalidation_reason != "GAP_DOWN_OPEN_ABOVE_ZONE" for r in pds(at, pds_open_vs_zone="NOT_ABOVE_ZONE"))
+    above = [(24020.05, 24021, 24010, 24012), (24012, 24014, 24000, 24005)]
+    assert [r.invalidation_reason for r in pds(above, pds_open_vs_zone="NOT_ABOVE_ZONE")] == ["GAP_DOWN_OPEN_ABOVE_ZONE"]

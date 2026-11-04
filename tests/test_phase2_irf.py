@@ -69,6 +69,22 @@ def test_m1_conflict_next_candle_vs_following_candle_is_resolved_by_default_and_
     assert any("research variant of p.14" in f for f in m1.flags)
 
 
+@pytest.mark.rules("IRF-M2-002", "IRF-M2-003", "IRF-M1-C001")
+@pytest.mark.parametrize("window", [1, 2, 3])
+def test_regression_d_irf_1_the_method_1_window_variant_must_not_blind_method_2_to_the_extension(window):
+    """Phase 3.1 defect D-IRF-1: ``m1_max_candles_after_breakout`` (the p.14 Method 1 research variant) was also used as the
+    start offset of the Method 2 state machine, so with a window >= 2 the extension and the red candle that form during
+    the first window-1 candles after the breakout were never recorded and a valid Method 2A was lost although no
+    Method 1 had occurred. Method 2 (IRF p.7: extension, red candle, support break) is independent of that window."""
+    cands = [IR, (98, 104, 97, 103), (103, 106, 102, 105), (105, 105.5, 101, 102), (102, 103, 101.5, 102.5),
+             (102.5, 103, 101.2, 102.8), (102.8, 103, 100, 100.5)]
+    recs = run(cands, m1_max_candles_after_breakout=window)
+    assert not conf(recs, "Method 1")
+    [a] = conf(recs, "Method 2A")
+    assert a.signal_candle_close == 100.5 and a.signal_timestamp.strftime("%H:%M") == "09:50"
+    assert a.signal_candle_start.strftime("%H:%M") == "09:45"
+
+
 # --------------------------------------------------------------------------- Method 2
 M2A = [IR, (98, 104, 97, 103), (103, 106, 102, 105), (105, 106.5, 101, 102), (102, 105, 101.5, 104), (104, 104.2, 100.5, 100.8)]
 
@@ -242,7 +258,7 @@ def test_data_gap_invalidates_an_open_setup_and_never_bridges_it():
 @pytest.mark.rules("IRF-GLOBAL-001")
 def test_unusable_session_is_reported_not_silently_skipped():
     [r] = IRFStrategy().evaluate_session(ctx([IR, (98, 104, 97, 103)], usable=False))
-    assert r.signal_status == "NOT_EVALUATED" and r.verification_status == "NOT_READY" and "SESSION_NOT_USABLE" in r.invalidation_reason
+    assert r.signal_status == "NOT_EVALUATED" and r.verification_status == "NOT_READY" and "SESSION_NOT_EVALUABLE" in r.invalidation_reason
 
 
 def test_state_machine_enforces_order_and_chronology():

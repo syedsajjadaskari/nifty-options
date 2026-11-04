@@ -24,8 +24,9 @@ def _day_rows(day, n_candles=75, base=100.0, stub=True, extra_after=0):
     df = minute_rows(cands, day)
     if stub:
         t = datetime(day.year, day.month, day.day, 15, 30, tzinfo=IST)
-        df = pd.concat([df, pd.DataFrame([{"timestamp": t, "open": 1.0 * df.close.iloc[-1], "high": df.close.iloc[-1],
-                                           "low": df.close.iloc[-1], "close": df.close.iloc[-1] + 0.5, "volume": 0}])])
+        last = df.close.iloc[-1]
+        df = pd.concat([df, pd.DataFrame([{"timestamp": t, "open": last, "high": last + 0.5, "low": last,
+                                           "close": last + 0.5, "volume": 0}])])
     for k in range(extra_after):
         t = datetime(day.year, day.month, day.day, 15, 31, tzinfo=IST) + timedelta(minutes=k)
         df = pd.concat([df, pd.DataFrame([{"timestamp": t, "open": 1.0, "high": 1.0, "low": 1.0, "close": 1.0, "volume": 0}])])
@@ -79,7 +80,7 @@ def test_special_muhurat_style_session_is_excluded():
 def test_records_after_1530_are_clipped_and_flagged():
     info, c = classify_session(_day_rows(DAY, extra_after=10))
     assert len(c) == 75 and c.bar_end.max().strftime("%H:%M") == "15:30"
-    assert any(f.startswith("EXTENDED_RECORDS_AFTER_1530_CLIPPED:10") for f in info.flags)
+    assert any(f.startswith("POST_CLOSE_RECORDS_CLIPPED:10") for f in info.flags)
 
 
 def test_missing_close_stub_is_flagged_and_falls_back_to_last_bar():
@@ -137,8 +138,28 @@ def test_context_prefix_keeps_earlier_ema_values_unchanged():
     assert np.allclose(c.prefix(30).candles["ema200_5m"], c.candles["ema200_5m"].iloc[:30])
 
 
-def test_saturday_and_sunday_sessions_are_both_flagged_as_weekend_special_sessions():
-    for d in (date(2026, 1, 10), date(2026, 2, 1)):  # a Saturday and the 2026 Budget-day Sunday
-        info, c = classify_session(_day_rows(d))
-        assert info.usable and "WEEKEND_SPECIAL_SESSION" in info.flags and len(c) == 75
+def test_weekend_sessions_must_be_known_special_sessions():
+    from nifty_trading.data.market_calendar import load_market_calendar
+    cal = load_market_calendar()
+    info, c = classify_session(_day_rows(date(2026, 2, 1)), cal)  # Union Budget Sunday: in the calendar, normal hours
+    assert info.usable and info.quality.value == "VALID_SPECIAL_SESSION" and "WEEKEND_SPECIAL_SESSION" in info.flags and len(c) == 75
+    sat, c2 = classify_session(_day_rows(date(2026, 1, 10)), cal)  # an unknown Saturday session is never silently evaluated
+    assert not sat.usable and sat.quality.value == "UNVERIFIED" and "WEEKEND_SESSION_NOT_IN_CALENDAR" in sat.reasons and c2.empty
+    sun, _ = classify_session(_day_rows(date(2026, 2, 1)))  # no calendar supplied: same conservative answer
+    assert not sun.usable
     assert "WEEKEND_SPECIAL_SESSION" not in classify_session(_day_rows(DAY))[0].flags  # DAY is a Monday
+
+
+def test_quality_statuses_cover_the_defined_vocabulary():
+    from nifty_trading.data.sessions import SessionQuality
+    assert {q.value for q in SessionQuality} == {"VALID", "VALID_SPECIAL_SESSION", "PARTIAL", "CORRUPT", "MISSING", "UNVERIFIED"}
+    info, _ = classify_session(_day_rows(DAY))
+    assert info.quality is SessionQuality.VALID and info.reasons == ()
+    partial, _ = classify_session(_day_rows(DAY)[lambda x: x.timestamp.dt.strftime("%H:%M") != "10:02"])
+    assert partial.quality is SessionQuality.PARTIAL and partial.usable  # one candle dropped, the rest evaluable and flagged
+    bad = _day_rows(DAY)
+    bad.loc[10, "high"] = bad.loc[10, "low"] - 1  # high below low
+    corrupt, _ = classify_session(bad)
+    assert corrupt.quality is SessionQuality.CORRUPT and not corrupt.usable and corrupt.reasons[0].startswith("OHLC_INCONSISTENT")
+    dup = pd.concat([_day_rows(DAY), _day_rows(DAY).iloc[[5]]], ignore_index=True)
+    assert classify_session(dup)[0].reasons == ("DUPLICATE_TIMESTAMPS",)

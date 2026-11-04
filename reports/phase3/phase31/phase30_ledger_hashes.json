@@ -1,0 +1,9 @@
+{
+  "note": "SHA-256 of the Phase 3.0 trade ledgers at the start of Phase 3.1 (the auditor re-simulated all 839 trades of exactly these files); a test fails if they change",
+  "hashes": {
+    "reports/phase3/baseline/trades.csv": "6bf4b9eccdc60f7031a5e0fb8aa45584651efada8ae481caeb09b5e8bc13bdfb",
+    "reports/phase3/ema_structure/trades.csv": "29b8e9a588d9962381fc0d643d179e2c287946bec38e43abcc3f467e984e7cc2",
+    "reports/phase3/pdr_shelf/trades.csv": "4a74d6507d240ede96e973a1a372a63ddf8fdbd6a6d0764701ace76998550639",
+    "reports/phase3/sl40/trades.csv": "80531aa5da95313946c77384c1d1f39833daaa238d99fb9f561cc241f5bb18c7"
+  }
+}

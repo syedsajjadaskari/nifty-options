@@ -1,0 +1,141 @@
+{
+  "manual_rows": 190,
+  "automated_trades_baseline": 213,
+  "exact": 67,
+  "time_shifted": 17,
+  "classification_baseline": {
+    "TIME_SHIFTED_MATCH": 17,
+    "EXACT_MATCH": 67,
+    "SIGNAL_REJECTED_BY_ENTRY_RULE": 50,
+    "SIGNAL_REJECTED_BY_PORTFOLIO_CONTROLLER": 23,
+    "MISSING_AUTOMATED_SIGNAL": 28,
+    "MANUAL_JOURNAL_CONFLICT": 5
+  },
+  "classification_ema_structure": {
+    "TIME_SHIFTED_MATCH": 16,
+    "EXACT_MATCH": 48,
+    "SIGNAL_REJECTED_BY_ENTRY_RULE": 73,
+    "MISSING_AUTOMATED_SIGNAL": 28,
+    "MANUAL_JOURNAL_CONFLICT": 5,
+    "SIGNAL_REJECTED_BY_PORTFOLIO_CONTROLLER": 20
+  },
+  "classification_pdr_shelf": {
+    "TIME_SHIFTED_MATCH": 18,
+    "MISSING_AUTOMATED_SIGNAL": 30,
+    "EXACT_MATCH": 69,
+    "SIGNAL_REJECTED_BY_ENTRY_RULE": 50,
+    "MANUAL_JOURNAL_CONFLICT": 5,
+    "SIGNAL_REJECTED_BY_PORTFOLIO_CONTROLLER": 18
+  },
+  "matched_via_alternate_label": 1,
+  "extra_automated": 129,
+  "extra_by_strategy": {
+    "PDR": 49,
+    "RF": 2,
+    "IRF": 62,
+    "PDS": 10,
+    "ORB": 6
+  },
+  "manual_by_strategy": {
+    "IRF": 73,
+    "PDR": 8,
+    "ORB": 89,
+    "RF": 17,
+    "PDS": 3
+  },
+  "matched_by_strategy": {
+    "IRF": 40,
+    "PDR": 5,
+    "ORB": 35,
+    "RF": 3,
+    "PDS": 1
+  },
+  "missing_by_strategy_and_class": {
+    "IRF|MANUAL_JOURNAL_CONFLICT": 1,
+    "IRF|MISSING_AUTOMATED_SIGNAL": 13,
+    "IRF|SIGNAL_REJECTED_BY_PORTFOLIO_CONTROLLER": 19,
+    "ORB|MANUAL_JOURNAL_CONFLICT": 4,
+    "ORB|MISSING_AUTOMATED_SIGNAL": 11,
+    "ORB|SIGNAL_REJECTED_BY_ENTRY_RULE": 38,
+    "PDR|MISSING_AUTOMATED_SIGNAL": 2,
+    "PDR|SIGNAL_REJECTED_BY_ENTRY_RULE": 2,
+    "PDS|MISSING_AUTOMATED_SIGNAL": 2,
+    "RF|SIGNAL_REJECTED_BY_ENTRY_RULE": 10,
+    "RF|SIGNAL_REJECTED_BY_PORTFOLIO_CONTROLLER": 4
+  },
+  "root_cause_missing": {
+    "SOURCE_AMBIGUITY": 29,
+    "PORTFOLIO_COMPETITION": 23,
+    "UNKNOWN": 12,
+    "TIME_ALIGNMENT": 3,
+    "ZONE_SELECTION": 4,
+    "JOURNAL_INCONSISTENCY": 5,
+    "PROPOSED_NUMERICAL_THRESHOLD": 18,
+    "TREND_FILTER": 12
+  },
+  "root_cause_missing_by_strategy": {
+    "IRF|JOURNAL_INCONSISTENCY": 1,
+    "IRF|PORTFOLIO_COMPETITION": 19,
+    "IRF|TIME_ALIGNMENT": 3,
+    "IRF|UNKNOWN": 10,
+    "ORB|JOURNAL_INCONSISTENCY": 4,
+    "ORB|PROPOSED_NUMERICAL_THRESHOLD": 18,
+    "ORB|SOURCE_AMBIGUITY": 21,
+    "ORB|TREND_FILTER": 10,
+    "PDR|ZONE_SELECTION": 4,
+    "PDS|UNKNOWN": 2,
+    "RF|PORTFOLIO_COMPETITION": 4,
+    "RF|SOURCE_AMBIGUITY": 8,
+    "RF|TREND_FILTER": 2
+  },
+  "root_cause_extra": {
+    "ZONE_SELECTION": 49,
+    "TREND_FILTER": 7,
+    "SOURCE_AMBIGUITY": 36,
+    "PROPOSED_NUMERICAL_THRESHOLD": 37
+  },
+  "nonconforming_manual_rows": [
+    [
+      26,
+      "2025-10-11",
+      "ORB",
+      "DATE_HAS_NO_VENDOR_SESSION"
+    ],
+    [
+      89,
+      "2026-02-14",
+      "IRF",
+      "DATE_HAS_NO_VENDOR_SESSION"
+    ],
+    [
+      134,
+      "2026-05-19",
+      "PDR",
+      "SECOND_TRADE_NOT_ALLOWED(first_trade_outcome=BE)"
+    ],
+    [
+      194,
+      "2026-08-15",
+      "ORB",
+      "DATE_HAS_NO_VENDOR_SESSION"
+    ],
+    [
+      198,
+      "2026-08-22",
+      "ORB",
+      "DATE_HAS_NO_VENDOR_SESSION"
+    ],
+    [
+      202,
+      "2026-08-29",
+      "ORB",
+      "DATE_HAS_NO_VENDOR_SESSION"
+    ]
+  ],
+  "outcome_agreement_among_matches": {
+    "agree": 76,
+    "differ": 8
+  },
+  "collision_days": 4,
+  "collision_extra_entries_if_continue": 5
+}

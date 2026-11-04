@@ -47,13 +47,16 @@ class PDSStrategy(SignalEngine):
         zone = pds_zone(ctx.previous, p)
         prox = p.zone_proximity_points
         levels = {"zone_low": zone.low, "zone_high": zone.high, "zone_candle_start": zone.candle_start,
+                  "zone_method": zone.method, "zone_method_fell_back_to_A": zone.fallback, "zone_member_count": len(zone.members),
                   "gap_points": g.points, "prev_close": ctx.previous.close_official}
-        props = {"strong_candle": p.strong_candle, "pin_bar": p.pin_bar, "zone_proximity_points": prox,
+        props = {"pds_zone_method": p.pds_zone_method, "pds_zone_upper_boundary": p.pds_zone_upper_boundary, "strong_candle": p.strong_candle, "pin_bar": p.pin_bar, "zone_proximity_points": prox,
                  "pds_small_support_def": p.pds_small_support_def, "pds_m3_break_basis": p.pds_m3_break_basis,
-                 "pds_m3_standalone": p.pds_m3_standalone, "require_open_clear_of_zone": p.require_open_clear_of_zone}
-        if p.require_open_clear_of_zone and not ctx.open_price < zone.low:
+                 "pds_m3_standalone": p.pds_m3_standalone, "pds_open_vs_zone": p.pds_open_vs_zone}
+        bad = {"BELOW_ZONE": not ctx.open_price < zone.low, "NOT_ABOVE_ZONE": ctx.open_price > zone.high, "ANY": False}[p.pds_open_vs_zone]
+        if bad:
+            why = "GAP_DOWN_OPEN_NOT_BELOW_ZONE" if p.pds_open_vs_zone == "BELOW_ZONE" else "GAP_DOWN_OPEN_ABOVE_ZONE"
             return [self._rec(ctx, cs[0], "Method 1/2/3", Direction.SHORT, levels, ["PDS-001", "PDS-002", "PDS-003"], ["PDS-006"], [],
-                              SignalStatus.INVALIDATED, "GAP_DOWN_OPEN_NOT_BELOW_ZONE", [], props)]
+                              SignalStatus.INVALIDATED, why, [], props)]
 
         def at_zone(c: Candle) -> bool:
             return c.h >= zone.low - prox and c.l <= zone.high + prox
@@ -70,11 +73,11 @@ class PDSStrategy(SignalEngine):
                                      SignalStatus.INVALIDATED, "DATA_GAP", fsm.trace, props))
                 fsm, j0, weak_r, m3_active = None, None, None, False
             if j0 is None:
-                if not c.h >= zone.low - prox:  # PDS-005: has price come up to the zone yet?
+                if not at_zone(c):  # PDS-005: has price come up to (intersected) the zone yet?
                     continue
                 j0 = i
                 fsm = SetupFSM(f"PDS zone test@{c.end:%H:%M}")
-                fsm.to(State.SETUP_DETECTED, c.end, f"high {c.h} >= zone_low {zone.low} - {prox}")
+                fsm.to(State.SETUP_DETECTED, c.end, f"range [{c.l}, {c.h}] intersects zone [{zone.low}, {zone.high}] (+/- {prox})")
                 fsm.to(State.WAITING_FOR_CONFIRMATION, c.end, "waiting for the first red candle at the zone")
                 m3_active = p.pds_m3_standalone
             # ---- Methods 1 & 2: the FIRST red candle at the zone (PDS-M-001)

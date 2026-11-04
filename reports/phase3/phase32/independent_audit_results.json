@@ -1,0 +1,179 @@
+{
+  "checks": {
+    "entry price equals the raw 1-minute bar open at the fill minute (all trades)": {
+      "pass": true,
+      "n": 213,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "candle OHLC equals an independent 5-minute aggregation of the raw 1-minute rows": {
+      "pass": true,
+      "n": 824,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "body %, wick %, direction, strong/pin/small flags equal an independent calculation": {
+      "pass": true,
+      "n": 824,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "EMA(200) of 5-minute closes equals an independent causal recomputation (warm-up + data)": {
+      "pass": true,
+      "n": 824,
+      "detail": "tolerance 1e-3",
+      "failures": [],
+      "n_failures": 0
+    },
+    "each candle is available at its own end time": {
+      "pass": true,
+      "n": 824,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no explanation candle is later than the signal confirmation": {
+      "pass": true,
+      "n": 824,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "independent exit walk reproduces every trade's outcome, both exit times and prices, and the source-bar OHLC": {
+      "pass": true,
+      "n": 213,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "leg P&L = (exit - entry) x direction x 195 per leg and the legs sum to the trade's gross P&L": {
+      "pass": true,
+      "n": 213,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "total gross P&L equals the frozen Phase 3.0 baseline ledger": {
+      "pass": true,
+      "n": 213,
+      "detail": "independent 172,146.00 vs frozen 172,146.00",
+      "failures": [],
+      "n_failures": 0
+    },
+    "initial stop, Target 1, Target 2 and the post-T1 stop follow the approved distances": {
+      "pass": true,
+      "n": 213,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "IRF IRH/IRL and RF High/Low equal the raw first 5-minute candle": {
+      "pass": true,
+      "n": 107,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDR/PDS/RF/ORB-gap opening gap equals raw first open minus the official previous close": {
+      "pass": true,
+      "n": 80,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "ORB Method 1 level equals the raw previous-session high/low and the first candle broke and closed beyond it": {
+      "pass": true,
+      "n": 27,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDR/PDS zone equals an independent swing-high (k=2, red follower) / lowest-low construction": {
+      "pass": true,
+      "n": 65,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every evaluable session has a journal; every executed trade is in its journal with a chart; no review status was auto-filled": {
+      "pass": true,
+      "n": 247,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every trade has a selection check (SEL-FIRST-001 or DAY-SL-001)": {
+      "pass": true,
+      "n": 213,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every second trade is a PDR/PDS signal confirmed after the first trade's original full stop": {
+      "pass": true,
+      "n": 16,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no executed trade has a failed entry condition or a recomputation mismatch": {
+      "pass": true,
+      "n": 213,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every trade has a setup explanation, a selection explanation and an exit narrative": {
+      "pass": true,
+      "n": 213,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "workbook equals the CSV files cell by cell (all sheets, all rows)": {
+      "pass": true,
+      "n": 212012,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "manual comparison: every match is same date, <=15 minutes, unique; 84 + 129 = 213; 190 journal rows all present": {
+      "pass": true,
+      "n": 190,
+      "detail": "matched 84, extras 129, workbook rows 190",
+      "failures": [],
+      "n_failures": 0
+    },
+    "Phase 3.0 ledger files are byte-identical to the hashes frozen at the start of Phase 3.1": {
+      "pass": true,
+      "n": 4,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    }
+  },
+  "non_standard_sessions_excluded_from_the_independent_ema": [
+    "2025-10-21"
+  ],
+  "strategy_outcome_coverage": {
+    "IRF|INITIAL_FULL_STOP": 47,
+    "IRF|T1_THEN_BUFFER_STOP": 27,
+    "IRF|TARGET": 28,
+    "ORB|INITIAL_FULL_STOP": 14,
+    "ORB|T1_THEN_BUFFER_STOP": 12,
+    "ORB|TARGET": 15,
+    "PDR|INITIAL_FULL_STOP": 20,
+    "PDR|T1_THEN_BUFFER_STOP": 23,
+    "PDR|TARGET": 11,
+    "PDS|INITIAL_FULL_STOP": 3,
+    "PDS|T1_THEN_BUFFER_STOP": 2,
+    "PDS|TARGET": 6,
+    "RF|INITIAL_FULL_STOP": 3,
+    "RF|T1_THEN_BUFFER_STOP": 1,
+    "RF|TARGET": 1
+  },
+  "all_pass": true
+}

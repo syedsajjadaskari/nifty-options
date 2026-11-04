@@ -8,7 +8,7 @@ import pytest
 from nifty_trading.instruments.resolver import InstrumentResolver
 
 
-def test_resolve_nifty50_index_success():
+def test_resolve_nifty50_index_success(tmp_path):
     """Verify correct extraction of NIFTY 50 spot index from scrip master."""
     mock_master_manager = MagicMock()
     mock_df = pd.DataFrame([
@@ -38,6 +38,7 @@ def test_resolve_nifty50_index_success():
     mock_master_manager.load_master_dataframe.return_value = mock_df
 
     resolver = InstrumentResolver(master_manager=mock_master_manager)
+    resolver.metadata_dir = tmp_path  # never write the real data/metadata/nifty50_instrument.json from a test
     meta = resolver.resolve_nifty50_index(force_refresh=True)
 
     assert meta.symbol == "NIFTY"
@@ -48,7 +49,7 @@ def test_resolve_nifty50_index_success():
     assert "ETF" not in meta.full_name
 
 
-def test_resolve_nifty50_index_not_found():
+def test_resolve_nifty50_index_not_found(tmp_path):
     """Verify that LookupError is raised if NIFTY spot index is missing."""
     mock_master_manager = MagicMock()
     mock_df = pd.DataFrame([
@@ -57,5 +58,6 @@ def test_resolve_nifty50_index_not_found():
     mock_master_manager.load_master_dataframe.return_value = mock_df
 
     resolver = InstrumentResolver(master_manager=mock_master_manager)
+    resolver.metadata_dir = tmp_path  # never write the real data/metadata/nifty50_instrument.json from a test
     with pytest.raises(LookupError, match="NIFTY 50 spot index could not be located"):
         resolver.resolve_nifty50_index(force_refresh=True)

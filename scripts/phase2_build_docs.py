@@ -67,11 +67,12 @@ def main() -> None:
             "VERIFIED_EXPLICIT": "directly stated and objectively testable",
             "VERIFIED_QUALITATIVE": "directly stated but needs a mathematical interpretation",
             "CONFLICTING": "different sections give incompatible instructions",
-            "MISSING": "necessary information not provided",
-            "PROPOSED": "engineering interpretation, NOT an original rule",
+            "UNRESOLVED": "necessary information not provided (was MISSING)",
+            "PROPOSED_FOR_REVIEW": "engineering interpretation, NOT an original rule (was PROPOSED)",
+            "USER_APPROVED": "authorised by the strategy owner (Phase 2.2: stop-loss research baseline only)",
         },
-        "unresolved_flags": {"RF_TARGET_STATUS": RF_TARGET_STATUS, "RF_STOP_SELECTION": "UNRESOLVED", "PDR_STOP_SELECTION": "UNRESOLVED",
-                             "TARGET2_ASSIGNMENT_PER_STRATEGY": "UNRESOLVED (guide vs report conflict for PDR/PDS)"},
+        "unresolved_flags": {"RF_TARGET_STATUS": RF_TARGET_STATUS, "RF_STOP_SELECTION": "SOURCE UNRESOLVED; research baseline 35 USER_APPROVED (EXE-STOP-001)", "PDR_STOP_SELECTION": "SOURCE UNRESOLVED; research baseline 35 USER_APPROVED (EXE-STOP-001)",
+                             "TARGET2_ASSIGNMENT_PER_STRATEGY": "guide values configured (IRF 60, ORB 60, PDR 70, PDS 70); RF 60 PROPOSED_FOR_REVIEW; PDR/PDS guide-vs-report conflict recorded"},
         "source_constants_stated_in_documents": {k: v for k, v in SOURCE.__dict__.items()},
         "proposal_candidates": CANDIDATE_NOTES,
         "proposal_label": "PROPOSED_FOR_REVIEW",
@@ -88,8 +89,8 @@ def main() -> None:
 
     # ------------------------------------------------------------------ readable registry
     md = ["# Rule registry (readable)\n", "Generated from `rule_registry.yaml`. Classification: `VE` VERIFIED_EXPLICIT, `VQ` VERIFIED_QUALITATIVE, "
-          "`CF` CONFLICTING, `MS` MISSING, `PR` PROPOSED. Page numbers are PDF pages (DOCX has no pagination: `n/a`).\n"]
-    ab = {"VERIFIED_EXPLICIT": "VE", "VERIFIED_QUALITATIVE": "VQ", "CONFLICTING": "CF", "MISSING": "MS", "PROPOSED": "PR"}
+          "`CF` CONFLICTING, `MS` UNRESOLVED, `PR` PROPOSED_FOR_REVIEW. Page numbers are PDF pages (DOCX has no pagination: `n/a`).\n"]
+    ab = {"VERIFIED_EXPLICIT": "VE", "VERIFIED_QUALITATIVE": "VQ", "CONFLICTING": "CF", "UNRESOLVED": "MS", "PROPOSED_FOR_REVIEW": "PR", "USER_APPROVED": "UA"}
     by = collections.defaultdict(list)
     for r in rules:
         by[r["strategy"]].append(r)

@@ -16,7 +16,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from nifty_trading.data.sessions import build_session_contexts, load_one_minute  # noqa: E402
+from nifty_trading.data.sessions import (  # noqa: E402
+    build_session_contexts,
+    load_daily_official,
+    load_one_minute,
+    load_warmup_one_minute,
+)
 from nifty_trading.strategies import (  # noqa: E402
     DEFAULT_PROPOSALS,
     IRFStrategy,
@@ -26,7 +31,7 @@ from nifty_trading.strategies import (  # noqa: E402
     RFStrategy,
 )
 
-OUT = ROOT / "reports" / "phase2"
+OUT = ROOT / "reports" / "phase21"
 
 # (label, strategy class, field overrides) -- every row changes ONE interpretation, everything else default
 VARIANTS = [
@@ -44,18 +49,21 @@ VARIANTS = [
     ("IRF m3_wick_share_band=BAND_55_75", IRFStrategy, {"m3_wick_share_band": "BAND_55_75"}),
     ("IRF m3_compression_n=3", IRFStrategy, {"m3_compression_n": 3}),
     ("IRF m3_compression_def=C2", IRFStrategy, {"m3_compression_def": "C2"}),
+    ("ORB orb_pin_bar_in_methods_1_2=False", ORBStrategy, {"orb_pin_bar_in_methods_1_2": False}),
     ("ORB strong_candle=STRICT", ORBStrategy, {"strong_candle": "STRICT"}),
     ("ORB strong_candle=LOOSE", ORBStrategy, {"strong_candle": "LOOSE"}),
     ("ORB trend_mode=EMA5M_BASIC", ORBStrategy, {"trend_mode": "EMA5M_BASIC"}),
     ("ORB trend_mode=EMA5M_PREV_3_SESSIONS", ORBStrategy, {"trend_mode": "EMA5M_PREV_3_SESSIONS"}),
-    ("ORB trend_mode=SMA200_DAILY (47 evaluable sessions)", ORBStrategy, {"trend_mode": "SMA200_DAILY"}),
+    ("ORB trend_mode=SMA200_DAILY (now evaluable on all 247 sessions)", ORBStrategy, {"trend_mode": "SMA200_DAILY"}),
     ("ORB ma_mode=SMA200_DAILY for the gap setup", ORBStrategy, {"ma_mode": "SMA200_DAILY"}),
     ("ORB gap_max_points=150", ORBStrategy, {"gap_max_points": 150.0}),
     ("PDR zone_lower_boundary=ZONE_WICK", PDRStrategy, {"zone_lower_boundary": "ZONE_WICK"}),
     ("PDR zone_proximity_points=0", PDRStrategy, {"zone_proximity_points": 0.0}),
     ("PDR zone_proximity_points=10", PDRStrategy, {"zone_proximity_points": 10.0}),
     ("PDR pdr_green_may_be_interaction_candle=True", PDRStrategy, {"pdr_green_may_be_interaction_candle": True}),
-    ("PDR require_open_clear_of_zone=False", PDRStrategy, {"require_open_clear_of_zone": False}),
+    ("PDR pdr_open_vs_zone=ABOVE_ZONE (the text)", PDRStrategy, {"pdr_open_vs_zone": "ABOVE_ZONE"}),
+    ("PDR pdr_open_vs_zone=NOT_BELOW_ZONE", PDRStrategy, {"pdr_open_vs_zone": "NOT_BELOW_ZONE"}),
+    ("PDR pdr_open_vs_zone=ANY", PDRStrategy, {"pdr_open_vs_zone": "ANY"}),
     ("PDR pdr_reversal_filter=DEPTH_25PCT", PDRStrategy, {"pdr_reversal_filter": "DEPTH_25PCT"}),
     ("PDS strong_candle=STRICT", PDSStrategy, {"strong_candle": "STRICT"}),
     ("PDS strong_candle=LOOSE", PDSStrategy, {"strong_candle": "LOOSE"}),
@@ -63,7 +71,16 @@ VARIANTS = [
     ("PDS zone_proximity_points=10", PDSStrategy, {"zone_proximity_points": 10.0}),
     ("PDS pds_m3_break_basis=TOUCH", PDSStrategy, {"pds_m3_break_basis": "TOUCH"}),
     ("PDS pds_m3_standalone=True", PDSStrategy, {"pds_m3_standalone": True}),
-    ("PDS require_open_clear_of_zone=False", PDSStrategy, {"require_open_clear_of_zone": False}),
+    ("PDS pds_open_vs_zone=NOT_ABOVE_ZONE", PDSStrategy, {"pds_open_vs_zone": "NOT_ABOVE_ZONE"}),
+    ("PDS pds_open_vs_zone=ANY", PDSStrategy, {"pds_open_vs_zone": "ANY"}),
+    ("PDR prev_day_level_window=CONTINUOUS_ONLY", PDRStrategy, {"prev_day_level_window": "CONTINUOUS_ONLY"}),
+    ("PDS prev_day_level_window=CONTINUOUS_ONLY", PDSStrategy, {"prev_day_level_window": "CONTINUOUS_ONLY"}),
+    ("ORB prev_day_level_window=CONTINUOUS_ONLY", ORBStrategy, {"prev_day_level_window": "CONTINUOUS_ONLY"}),
+    ("RF prev_day_level_window=CONTINUOUS_ONLY", RFStrategy, {"prev_day_level_window": "CONTINUOUS_ONLY"}),
+    ("ORB prev_close_source=LAST_PRINT_1530", ORBStrategy, {"prev_close_source": "LAST_PRINT_1530"}),
+    ("PDR prev_close_source=LAST_PRINT_1530", PDRStrategy, {"prev_close_source": "LAST_PRINT_1530"}),
+    ("PDS prev_close_source=LAST_PRINT_1530", PDSStrategy, {"prev_close_source": "LAST_PRINT_1530"}),
+    ("RF prev_close_source=LAST_PRINT_1530", RFStrategy, {"prev_close_source": "LAST_PRINT_1530"}),
     ("RF rf_return_inside_def=R2", RFStrategy, {"rf_return_inside_def": "R2"}),
     ("RF rf_return_inside_def=R3", RFStrategy, {"rf_return_inside_def": "R3"}),
     ("RF trend_mode=EMA5M_BASIC", RFStrategy, {"trend_mode": "EMA5M_BASIC"}),
@@ -82,7 +99,7 @@ def count(cls, props, ctxs):
 
 
 def main() -> None:
-    ctxs, infos = build_session_contexts(load_one_minute())
+    ctxs, infos = build_session_contexts(load_one_minute(), daily_df=load_daily_official(), warmup_1m=load_warmup_one_minute())
     default = {s: count(c, DEFAULT_PROPOSALS, ctxs) for s, c in CLASSES.items()}
     ver: dict = {}
     for s, cls in CLASSES.items():

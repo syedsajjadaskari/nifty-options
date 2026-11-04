@@ -1,0 +1,15 @@
+{
+  "trading_days": 247,
+  "trades": 213,
+  "daily_journals": 247,
+  "charts": 213,
+  "checks": 4769,
+  "legs": 426,
+  "candle_rows": 824,
+  "confirmed_signals": 1379,
+  "ignored": 875,
+  "rejected_or_incomplete": 1041,
+  "manual_rows": 190,
+  "extras": 129,
+  "issues": 293
+}

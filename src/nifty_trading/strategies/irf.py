@@ -71,8 +71,10 @@ class IRFStrategy(SignalEngine):
                 out.append(m1[0])
                 if att is not None and att.b == m1[1]:
                     att = None  # IRF p.9: immediate close back inside makes it Method 1, not Method 2
-            if att is not None and i - att.b >= win:
-                att, recs = self._m2_step(ctx, cs, att, i, irh, irl)
+            if att is not None:
+                # the extension / red-candle bookkeeping runs from the first candle after the breakout; only the
+                # confirmation is held back while Method 1 may still fire (window; D-IRF-1)
+                att, recs = self._m2_step(ctx, cs, att, i, irh, irl, may_confirm=i - att.b >= win)
                 out.extend(recs)
             if att is None and c.c > irh and not gap_before[i]:
                 fsm = SetupFSM(f"IRF breakout@{c.end:%H:%M}")
@@ -116,9 +118,9 @@ class IRFStrategy(SignalEngine):
 
     # ------------------------------------------------------------------ Method 2 (A and B)
     @implements("IRF-M2-001", "IRF-M2-002", "IRF-M2-003", "IRF-M2-005", "IRF-M2A-002", "IRF-M2B-002", "IRF-M2B-003")
-    def _m2_step(self, ctx, cs, att: _Attempt, i: int, irh: float, irl: float):
+    def _m2_step(self, ctx, cs, att: _Attempt, i: int, irh: float, irl: float, may_confirm: bool = True):
         c, b = cs[i], att.b
-        if att.fsm.state is State.SETUP_DETECTED:
+        if may_confirm and att.fsm.state is State.SETUP_DETECTED:
             att.fsm.to(State.WAITING_FOR_CONFIRMATION, c.end, "Method 1 window passed; Method 2 path (IRF-M2-004)")
         if self.p.m2_expiry_candles is not None and i - b > self.p.m2_expiry_candles:
             att.fsm.to(State.SETUP_INVALIDATED, c.end, "M2_EXPIRED(proposal)")
@@ -132,6 +134,8 @@ class IRFStrategy(SignalEngine):
             first_ok = att.e if self.p.m2_red_may_be_extension_candle else att.e + 1
             if i >= first_ok and is_red(c):
                 att.r = i
+        if not may_confirm:
+            return att, []
         recs: list[SignalRecord] = []
         proposals = {"irf_support_def": self.p.irf_support_def, "irf_resistance_def": self.p.irf_resistance_def,
                      "m2_extension_definition": self.p.m2_extension_definition}

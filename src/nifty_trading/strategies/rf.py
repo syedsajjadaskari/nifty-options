@@ -4,7 +4,7 @@ Activation, strictly in order: established uptrend -> gap-up open within yesterd
 a candle CLOSES below the first candle's low (RF Low) -> price returns inside the first candle's range.
 
 Entry price, stop selection and TARGET are not defined in the document (RF-009/010/011):
-``RF_TARGET_STATUS = UNRESOLVED``. Signal detection does not depend on them.
+``RF_TARGET_STATUS = PROPOSED_FOR_REVIEW`` (a configurable research value of 60; the guide says OPEN). Signal detection does not depend on them.
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from nifty_trading.strategies.base import (
     SignalStatus,
     State,
 )
-from nifty_trading.strategies.definitions import Candle, gap_info, trend_check
+from nifty_trading.strategies.definitions import Candle, gap_info, prev_high_low, trend_check
 from nifty_trading.strategies.params import RF_TARGET_STATUS
 from nifty_trading.strategies.rules import implements
 
@@ -26,6 +26,7 @@ from nifty_trading.strategies.rules import implements
 class RFStrategy(SignalEngine):
     STRATEGY = "RF"
     METHODS = ("RF",)
+    TREND_METHODS = ("*",)
     REQUIRES_PREVIOUS_SESSION = True
 
     def _default_direction(self) -> str:
@@ -82,9 +83,10 @@ class RFStrategy(SignalEngine):
 
     def _levels(self, ctx: SessionContext, rf_h: float, rf_l: float) -> dict:
         prev = ctx.previous
-        return {"RF_High": rf_h, "RF_Low": rf_l, "prev_day_high": prev.high, "prev_day_low": prev.low,
+        ph, pl = prev_high_low(prev, self.p)
+        return {"RF_High": rf_h, "RF_Low": rf_l, "prev_day_high": ph, "prev_day_low": pl,
                 "prev_close": prev.close_official, "open_price": ctx.open_price,
-                "RF_TARGET_STATUS": RF_TARGET_STATUS, "stop_selection": "UNRESOLVED(RF-009)", "entry_price_rule": "OPEN(RF-010)"}
+                "RF_TARGET_STATUS": RF_TARGET_STATUS, "stop_selection": "source rule unresolved (RF-009); USER_APPROVED research baseline in execution_config", "entry_price_rule": "OPEN(RF-010)"}
 
     def _gated(self, ctx, cs, i, fsm, status, why, sat, failed):
         return self._rec(ctx, cs[i], "RF", Direction.LONG, self._levels(ctx, cs[0].h, cs[0].l), ["RF-002", "RF-005"] + sat, failed,
@@ -94,7 +96,7 @@ class RFStrategy(SignalEngine):
         """Sequence complete at candle i. Apply the preconditions in document order (RF-007): trend, gap, range."""
         c = cs[i]
         sat = ["RF-002", "RF-005", "RF-006", "RF-007", "RF-013"]
-        t = trend_check(ctx, 0, "LONG", self.p.trend_mode)
+        t = trend_check(ctx, 0, "LONG", self.p.trend_mode, self.p)
         if t.ok is None:
             fsm.to(State.SETUP_INVALIDATED, c.end, f"trend not evaluable: {t.reason}")
             return self._gated(ctx, cs, i, fsm, SignalStatus.NOT_EVALUATED, t.reason, sat, [])
@@ -106,7 +108,8 @@ class RFStrategy(SignalEngine):
         if g.direction != "UP":
             fsm.to(State.SETUP_INVALIDATED, c.end, f"gap direction {g.direction}")
             return self._gated(ctx, cs, i, fsm, SignalStatus.INVALIDATED, f"GAP_NOT_UP({g.direction})", sat, ["RF-003"])
-        if not (prev.low <= ctx.open_price <= prev.high):
+        ph, pl = prev_high_low(prev, self.p)
+        if not (pl <= ctx.open_price <= ph):
             fsm.to(State.SETUP_INVALIDATED, c.end, "gap-up open outside yesterday's range")
             return self._gated(ctx, cs, i, fsm, SignalStatus.INVALIDATED, "GAP_UP_OUTSIDE_YESTERDAYS_RANGE", sat + ["RF-003"], ["RF-004"])
         fsm.to(State.SIGNAL_CONFIRMED, c.end, f"close {c.c} back inside [{rf_l},{rf_h}] after close below at {cs[cb].end:%H:%M}")

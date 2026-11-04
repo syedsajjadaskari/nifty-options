@@ -1,15 +1,16 @@
 """Value-level tests of build_session_contexts, frozen-feed handling and previous-session reliability."""
 
 import math
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, time, timedelta
 
 import numpy as np
 import pandas as pd
 import pytest
 from synthetic import IST, minute_rows
 
+from nifty_trading.data.market_calendar import ClosingAuction, MarketCalendar
 from nifty_trading.data.sessions import build_session_contexts, stale_row_mask
-from nifty_trading.strategies import IRFStrategy, PDRStrategy
+from nifty_trading.strategies import PDRStrategy
 
 
 def _stub(day, close):
@@ -85,16 +86,32 @@ def _frozen_day(day, base=24500.0, run=14):
     return pd.concat([df, _stub(day, frozen + 201)], ignore_index=True)
 
 
-@pytest.mark.rules("DATA-QUAL-001")
-def test_frozen_feed_rows_are_excluded_and_their_candles_dropped_not_repaired():
+CAS = MarketCalendar(closing_auction=ClosingAuction(date(2026, 8, 3), time(15, 15), time(15, 29)))
+
+
+@pytest.mark.rules("DATA-QUAL-001", "DATA-CAS-001")
+def test_frozen_tail_inside_the_closing_auction_window_is_real_market_structure_and_is_kept():
     d = date(2026, 8, 3)
-    ctxs, infos = build_session_contexts(_frozen_day(d), verified_holidays=set())
+    ctxs, infos = build_session_contexts(_frozen_day(d), verified_holidays=set(), calendar=CAS)
     c = ctxs[d].candles
-    starts = set(c.bar_start.dt.strftime("%H:%M"))
-    assert len(c) == 72 and {"15:15", "15:20", "15:25"}.isdisjoint(starts)
-    assert c.bar_start.iloc[-1].strftime("%H:%M") == "15:10"
-    assert c.high.max() < 24500 + 100  # the 201-point catch-up bar is in none of the candles
-    assert any(f.startswith("STALE_FEED_ROWS_EXCLUDED:14") for f in infos[d].flags)
+    assert len(c) == 75 and {"15:15", "15:20", "15:25"} <= set(c.bar_start.dt.strftime("%H:%M"))  # nothing dropped
+    assert infos[d].quality.value == "VALID" and infos[d].cas_regime and infos[d].usable
+    assert any(f.startswith("CAS_FROZEN_WINDOW_KEPT:14") for f in infos[d].flags)
+    assert c.high.max() == 24500 + 73.35 + 201  # the step to the official close is a real (auction) print, kept as in a chart
+
+
+@pytest.mark.rules("DATA-QUAL-001", "DATA-CAS-001")
+def test_the_same_frozen_pattern_is_still_an_anomaly_before_the_regime_date_or_outside_the_window():
+    before = date(2026, 7, 31)  # one trading day before the auction regime
+    _, infos = build_session_contexts(_frozen_day(before), verified_holidays=set(), calendar=CAS)
+    assert infos[before].quality.value == "CORRUPT" and not infos[before].usable
+    assert infos[before].reasons[0].startswith("FROZEN_FEED_OUTSIDE_AUCTION_WINDOW")
+    d = date(2026, 8, 5)  # on a regime date, a frozen run at 11:00-11:10 is NOT the auction
+    df = minute_rows([(24500 + k % 3, 24506 + k % 3, 24496 + k % 3, 24501 + k % 3) for k in range(75)], d)
+    idx = df.index[(df.timestamp >= datetime(2026, 8, 5, 11, 0, tzinfo=IST)) & (df.timestamp <= datetime(2026, 8, 5, 11, 9, tzinfo=IST))]
+    df.loc[idx, ["open", "high", "low", "close"]] = 24500.0
+    _, infos2 = build_session_contexts(pd.concat([df, _stub(d, 24501.0)], ignore_index=True), verified_holidays=set(), calendar=CAS)
+    assert infos2[d].quality.value == "CORRUPT" and not infos2[d].usable
 
 
 @pytest.mark.rules("DATA-QUAL-001")
@@ -111,41 +128,143 @@ def test_stale_mask_needs_a_run_of_identical_consecutive_flat_rows():
     assert not stale_row_mask(rows([5] * 6, step=2)).any()  # not consecutive minutes
 
 
-@pytest.mark.rules("DATA-QUAL-001", "PDR-002")
-def test_session_after_a_frozen_tail_is_not_evaluated_for_previous_day_strategies():
+@pytest.mark.rules("DATA-QUAL-001", "PDR-002", "DATA-OFFICIAL-CLOSE-001", "DATA-CAS-001")
+def test_session_after_an_auction_day_is_evaluable_and_uses_the_official_daily_close():
     d1, d2 = date(2026, 8, 3), date(2026, 8, 4)
     nxt = session(d2, [(24800, 24810, 24790, 24805), (24805, 24830, 24800, 24825)], 24825.0)
-    ctxs, _ = build_session_contexts(pd.concat([_frozen_day(d1), nxt]), verified_holidays=set())
+    daily = pd.DataFrame({"date": [d1, d2], "open": [1.0, 1.0], "high": [1.0, 1.0], "low": [1.0, 1.0], "close": [24774.30, 24825.0]})
+    ctxs, _ = build_session_contexts(pd.concat([_frozen_day(d1), nxt]), verified_holidays=set(), calendar=CAS, daily_df=daily)
     c = ctxs[d2]
-    assert c.previous.gap_to_this_session_unverified and any(f.startswith("PREV_CLOSE_UNRELIABLE") for f in c.data_flags)
-    [r] = PDRStrategy().evaluate_session(c)
-    assert r.signal_status == "NOT_EVALUATED" and "PREV_SESSION_UNVERIFIED" in r.invalidation_reason
-    assert IRFStrategy().evaluate_session(c) is not None  # IRF needs no previous day and still runs on the real candles
+    assert not c.previous.gap_to_this_session_unverified and c.previous.close_official == 24774.30
+    assert c.previous.close_source == "DAILY_VENDOR" and not any(f.startswith("PREV_") for f in c.data_flags)
+    # the previous-day candles include the auction step by default; the proposal 'CONTINUOUS_ONLY' excludes the 15:15+ candles
+    assert c.previous.candles.bar_start.iloc[-1].strftime("%H:%M") == "15:25"
+    assert c.previous.continuous_candles.bar_start.iloc[-1].strftime("%H:%M") == "15:10"
+    assert c.previous.high == 24500 + 73.35 + 201 and c.previous.high_continuous < 24600
+    recs = PDRStrategy().evaluate_session(c)
+    assert all(r.signal_status != "NOT_EVALUATED" for r in recs)  # no longer blocked
+
+
+@pytest.mark.rules("PDR-002", "ORB-M1-LONG-001", "DATA-CAS-001")
+def test_prev_day_level_window_proposal_changes_only_the_levels_it_names():
+    from nifty_trading.strategies import ORBStrategy, ProposalConfig
+    from nifty_trading.strategies.definitions import prev_high_low
+    d1, d2 = date(2026, 8, 3), date(2026, 8, 4)
+    daily = pd.DataFrame({"date": [d1, d2], "open": [1.0, 1.0], "high": [1.0, 1.0], "low": [1.0, 1.0], "close": [24774.30, 24825.0]})
+    ctxs, _ = build_session_contexts(pd.concat([_frozen_day(d1), session(d2, [(24800, 24810, 24790, 24805)] * 2, 24825.0)]),
+                                     verified_holidays=set(), calendar=CAS, daily_df=daily)
+    prev = ctxs[d2].previous
+    assert prev_high_low(prev, ProposalConfig())[0] == prev.high
+    assert prev_high_low(prev, ProposalConfig(prev_day_level_window="CONTINUOUS_ONLY"))[0] == prev.high_continuous < prev.high
+    levels = ORBStrategy(proposals=ProposalConfig(prev_day_level_window="CONTINUOUS_ONLY"))
+    assert levels.p.prev_day_level_window == "CONTINUOUS_ONLY"
 
 
 @pytest.mark.rules("DATA-QUAL-001")
-def test_special_session_between_and_post_close_prints_make_the_previous_close_unverified():
+def test_special_session_between_makes_the_previous_close_day_unverified_and_post_close_prints_matter_only_without_a_daily_close():
     d1, d2 = date(2025, 10, 20), date(2025, 10, 23)
     t0 = datetime(2025, 10, 21, 13, 45, tzinfo=IST)
     muhurat = pd.DataFrame([{"timestamp": t0 + timedelta(minutes=k), "open": 1.0, "high": 1.0, "low": 1.0, "close": 1.0, "volume": 0}
                             for k in range(61)])
     a = session(d1, [(100, 101, 99, 100)] * 3, 100.0)
     b = session(d2, [(100, 101, 99, 100)] * 3, 100.0)
-    ctxs, _ = build_session_contexts(pd.concat([a, muhurat, b]), verified_holidays={date(2025, 10, 22)})
+    ctxs, _ = build_session_contexts(pd.concat([a, muhurat, b]), verified_holidays={date(2025, 10, 22)}, calendar=MarketCalendar())
     assert date(2025, 10, 21) not in ctxs
     assert any(f.startswith("PREV_SESSION_SKIPS_EXCLUDED_SESSION") for f in ctxs[d2].data_flags)
     assert ctxs[d2].previous.gap_to_this_session_unverified
-    e1, e2 = date(2026, 3, 10), date(2026, 3, 11)  # a previous session with records after 15:30 has an ambiguous close
+    # with the official daily series the previous CLOSE day (the Muhurat date) differs from the previous full session: still unverified
+    daily = pd.DataFrame({"date": [d1, date(2025, 10, 21), d2], "open": 1.0, "high": 1.0, "low": 1.0, "close": [100.0, 101.0, 100.0]})
+    c3, _ = build_session_contexts(pd.concat([a, muhurat, b]), verified_holidays={date(2025, 10, 22)}, calendar=MarketCalendar(), daily_df=daily)
+    assert any(f.startswith("PREV_CLOSE_DAY_DIFFERS_FROM_PREV_SESSION") for f in c3[d2].data_flags)
+    # post-close prints: ambiguous only when no official daily close exists
+    e1, e2 = date(2026, 3, 10), date(2026, 3, 11)
     late = pd.DataFrame([{"timestamp": datetime(2026, 3, 10, 15, 31 + k, tzinfo=IST), "open": 90.0, "high": 90.0, "low": 90.0,
                           "close": 90.0, "volume": 0} for k in range(3)])
-    c2, _ = build_session_contexts(pd.concat([session(e1, [(100, 101, 99, 100)] * 3, 100.0), late,
-                                              session(e2, [(95, 96, 94, 95)] * 3, 95.0)]), verified_holidays=set())
-    assert c2[e2].previous.gap_to_this_session_unverified and any("EXTENDED_RECORDS" in f for f in c2[e2].data_flags)
+    frames = pd.concat([session(e1, [(100, 101, 99, 100)] * 3, 100.0), late, session(e2, [(95, 96, 94, 95)] * 3, 95.0)])
+    c4, _ = build_session_contexts(frames, verified_holidays=set(), calendar=MarketCalendar())
+    assert c4[e2].previous.gap_to_this_session_unverified and any("POST_CLOSE_RECORDS" in f for f in c4[e2].data_flags)
+    daily2 = pd.DataFrame({"date": [e1, e2], "open": 1.0, "high": 1.0, "low": 1.0, "close": [90.0, 95.0]})
+    c5, _ = build_session_contexts(frames, verified_holidays=set(), calendar=MarketCalendar(), daily_df=daily2)
+    assert not c5[e2].previous.gap_to_this_session_unverified and c5[e2].previous.close_official == 90.0  # the official close settles it
 
 
-@pytest.mark.rules("DATA-TIME-001")
-def test_official_close_is_the_close_of_the_1530_print_not_its_open():
-    day = date(2026, 1, 5)
-    stub = pd.DataFrame([{"timestamp": datetime(2026, 1, 5, 15, 30, tzinfo=IST), "open": 100.0, "high": 103.0, "low": 99.0, "close": 101.5, "volume": 0}])
-    _, infos = build_session_contexts(pd.concat([minute_rows([(100, 101, 99, 100)] * 3, day), stub], ignore_index=True), verified_holidays=set())
-    assert infos[day].official_close == 101.5 and infos[day].close_source == "STUB_1530"
+@pytest.mark.rules("DATA-WARM-001")
+def test_warmup_data_seeds_the_ema_and_the_previous_session_but_is_never_evaluated():
+    warm_days = list(pd.bdate_range("2026-01-01", periods=4).date)
+    main_day = date(2026, 1, 7)
+    warm = pd.concat([session(d, [(100 + i, 101 + i, 99 + i, 100 + i)] * 75, 100.0 + i) for i, d in enumerate(warm_days)], ignore_index=True)
+    main = session(main_day, [(110, 111, 109, 110)] * 75, 110.0)
+    without, _ = build_session_contexts(main, verified_holidays={date(2026, 1, 1)}, calendar=MarketCalendar())
+    with_w, infos = build_session_contexts(main, verified_holidays={date(2026, 1, 1)}, calendar=MarketCalendar(), warmup_1m=warm)
+    assert without[main_day].candles["ema200_5m"].isna().all() and with_w[main_day].candles["ema200_5m"].notna().all()
+    assert set(with_w) == {main_day} and set(infos) == {main_day}  # no context and no info for warm-up sessions
+    assert with_w[main_day].previous.date == warm_days[-1]  # the first evaluated session now has a previous session
+
+
+@pytest.mark.rules("DATA-CAS-001", "DATA-QUAL-001")
+def test_a_frozen_run_that_ends_exactly_at_1529_is_still_inside_the_auction_window():
+    d = date(2026, 8, 3)
+    df = _frozen_day(d)
+    row = df.index[df.timestamp == datetime(2026, 8, 3, 15, 29, tzinfo=IST)][0]
+    df.loc[row, ["open", "high", "low", "close"]] = 24573.35  # freeze the 15:29 minute too: the run is 15:15..15:29 inclusive
+    ctxs, infos = build_session_contexts(df, verified_holidays=set(), calendar=CAS)
+    assert infos[d].quality.value == "VALID" and any(f.startswith("CAS_FROZEN_WINDOW_KEPT:15") for f in infos[d].flags)
+    assert ctxs[d].info.usable
+
+
+@pytest.mark.rules("DATA-WARM-001", "ORB-MA-001")
+def test_daily_ma_with_a_supplied_daily_series_never_includes_the_sessions_own_close():
+    days = list(pd.bdate_range("2025-01-01", periods=206).date)
+    hol = set(pd.bdate_range("2025-01-01", periods=300).date)
+    frames = [session(d, [(1000.0 + i, 1001.0 + i, 999.0 + i, 1000.0 + i)] * 2, 5000.0 + i) for i, d in enumerate(days)]
+    official = np.array([5000.0 + i for i in range(206)])
+    daily = pd.DataFrame({"date": days, "open": official, "high": official, "low": official, "close": official})
+    ctxs, _ = build_session_contexts(pd.concat(frames), verified_holidays=hol, calendar=MarketCalendar(), daily_df=daily)
+    for k in (200, 205):
+        assert ctxs[days[k]].daily_history_count == k
+        assert ctxs[days[k]].daily_sma200_prev == pytest.approx(official[k - 200:k].mean())  # not official[k-199:k+1]
+    assert math.isnan(ctxs[days[199]].daily_sma200_prev)
+
+
+@pytest.mark.rules("DATA-OFFICIAL-CLOSE-001")
+def test_official_close_difference_from_the_1530_print_is_flagged_with_a_tolerance_and_the_print_is_wired_into_the_previous_session():
+    day, nxt = date(2026, 1, 5), date(2026, 1, 6)
+    s1 = session(day, [(100, 101, 99, 100)] * 3, 100.0)  # 15:30 print 100.0
+    s2 = session(nxt, [(100, 101, 99, 100)] * 3, 100.0)
+    near = pd.DataFrame({"date": [day, nxt], "open": 1.0, "high": 1.0, "low": 1.0, "close": [100.04, 100.0]})  # within the 0.05 tolerance
+    far = pd.DataFrame({"date": [day, nxt], "open": 1.0, "high": 1.0, "low": 1.0, "close": [95.0, 100.0]})
+    _, i_near = build_session_contexts(pd.concat([s1, s2]), verified_holidays=set(), calendar=MarketCalendar(), daily_df=near)
+    c_far, i_far = build_session_contexts(pd.concat([s1, s2]), verified_holidays=set(), calendar=MarketCalendar(), daily_df=far)
+    assert not any(f.startswith("OFFICIAL_CLOSE_DIFFERS") for f in i_near[day].flags)
+    assert any(f == "OFFICIAL_CLOSE_DIFFERS_FROM_1530_PRINT:-5.00" for f in i_far[day].flags)
+    prev = c_far[nxt].previous
+    assert prev.close_official == 95.0 and prev.close_1530_print == 100.0  # the print is the 15:30 row, not the official close
+
+
+@pytest.mark.rules("DATA-QUAL-001", "DATA-OFFICIAL-CLOSE-001")
+def test_a_missing_daily_row_makes_the_next_sessions_previous_close_unverified_instead_of_silently_using_the_print():
+    day, nxt = date(2026, 1, 5), date(2026, 1, 6)
+    s1, s2 = session(day, [(100, 101, 99, 100)] * 3, 100.0), session(nxt, [(100, 101, 99, 100)] * 3, 100.0)
+    daily = pd.DataFrame({"date": [nxt], "open": 1.0, "high": 1.0, "low": 1.0, "close": [100.0]})  # no row for `day`
+    ctxs, _ = build_session_contexts(pd.concat([s1, s2]), verified_holidays=set(), calendar=MarketCalendar(), daily_df=daily)
+    assert ctxs[nxt].previous.gap_to_this_session_unverified
+    assert any(f.startswith("PREV_CLOSE_FALLBACK_TO_1530_PRINT") for f in ctxs[nxt].data_flags)
+
+
+@pytest.mark.rules("DATA-CAS-001", "DATA-QUAL-001")
+def test_a_frozen_run_inside_the_window_that_starts_late_is_not_the_auction_freeze():
+    d = date(2026, 8, 5)
+    df = minute_rows([(24500 + k % 3, 24506 + k % 3, 24496 + k % 3, 24501 + k % 3) for k in range(75)], d)
+    idx = df.index[(df.timestamp >= datetime(2026, 8, 5, 15, 20, tzinfo=IST)) & (df.timestamp <= datetime(2026, 8, 5, 15, 27, tzinfo=IST))]
+    df.loc[idx, ["open", "high", "low", "close"]] = 24500.0  # frozen 15:20..15:27: inside the window, but it did not start at 15:15/15:16
+    _, infos = build_session_contexts(pd.concat([df, _stub(d, 24501.0)], ignore_index=True), verified_holidays=set(), calendar=CAS)
+    assert infos[d].quality.value == "UNVERIFIED" and not infos[d].usable
+    assert infos[d].reasons == ("FROZEN_RUN_INSIDE_AUCTION_WINDOW_STARTS_AFTER_1516",)
+
+
+@pytest.mark.rules("RF-001", "RF-008")
+def test_a_session_closing_exactly_at_its_ema_is_not_counted_as_above_it():
+    days = list(pd.bdate_range("2026-01-05", periods=5).date)
+    frames = [session(d, [(100, 101, 99, 100)] * 75, 100.0) for d in days]  # every close == the constant EMA(100)
+    ctxs, _ = build_session_contexts(pd.concat(frames), verified_holidays=set(), calendar=MarketCalendar())
+    assert ctxs[days[4]].prior_session_ema_above[0] is False  # close == EMA -> not above (strict)

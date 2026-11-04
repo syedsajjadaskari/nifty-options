@@ -1,0 +1,2439 @@
+{
+ "structure": {
+  "journal_rows": 190,
+  "summary_sheet_total_trades": 189,
+  "blank_sheet_rows": [
+   19,
+   36,
+   50,
+   68,
+   81,
+   98,
+   112,
+   127,
+   141,
+   163,
+   184
+  ],
+  "blank_rows_note": "one per month break (and one inside July/August): layout, not a defect",
+  "rows_out_of_order": [
+   129
+  ],
+  "mixed_time_cell_types": {
+   "str": 171,
+   "time": 19
+  },
+  "unique_dates": 185,
+  "report_trading_days": 180,
+  "weekend_dated_rows": [
+   [
+    26,
+    "2025-10-11",
+    "ORB",
+    "SL"
+   ],
+   [
+    89,
+    "2026-02-14",
+    "IRF",
+    "BE"
+   ],
+   [
+    194,
+    "2026-08-15",
+    "ORB",
+    "Target"
+   ],
+   [
+    198,
+    "2026-08-22",
+    "ORB",
+    "SL"
+   ],
+   [
+    202,
+    "2026-08-29",
+    "ORB",
+    "Target"
+   ]
+  ]
+ },
+ "cells_compared": 60,
+ "cells_the_journal_cannot_produce": [
+  {
+   "strategy": "IRF",
+   "month": "2026-06",
+   "journal_T_BE_SL": [
+    4,
+    1,
+    6
+   ],
+   "report_net_units": -162,
+   "producible": false
+  },
+  {
+   "strategy": "ORB",
+   "month": "2026-02",
+   "journal_T_BE_SL": [
+    4,
+    2,
+    0
+   ],
+   "report_net_units": 315,
+   "producible": false
+  },
+  {
+   "strategy": "ORB",
+   "month": "2026-06",
+   "journal_T_BE_SL": [
+    3,
+    2,
+    2
+   ],
+   "report_net_units": 282,
+   "producible": false
+  },
+  {
+   "strategy": "ORB",
+   "month": "2026-08",
+   "journal_T_BE_SL": [
+    5,
+    1,
+    5
+   ],
+   "report_net_units": 75,
+   "producible": false
+  },
+  {
+   "strategy": "PDR",
+   "month": "2026-02",
+   "journal_T_BE_SL": [
+    0,
+    0,
+    0
+   ],
+   "report_net_units": 87,
+   "producible": false
+  },
+  {
+   "strategy": "RF",
+   "month": "2026-08",
+   "journal_T_BE_SL": [
+    0,
+    0,
+    2
+   ],
+   "report_net_units": -90,
+   "producible": false
+  }
+ ],
+ "attribution_hypotheses": {
+  "feb_2026": {
+   "claim": "a journal ORB Target is the report's PDR Target (report: ORB 3T/2BE, PDR 1T; journal: ORB 4T/2BE, PDR none)",
+   "journal_orb": [
+    4,
+    2,
+    0
+   ],
+   "journal_pdr": [
+    0,
+    0,
+    0
+   ],
+   "candidate_rows": [
+    {
+     "sheet_row": "93",
+     "date": "2026-02-23",
+     "time": "09:15"
+    },
+    {
+     "sheet_row": "94",
+     "date": "2026-02-24",
+     "time": "09:15"
+    },
+    {
+     "sheet_row": "95",
+     "date": "2026-02-25",
+     "time": "09:15"
+    },
+    {
+     "sheet_row": "97",
+     "date": "2026-02-27",
+     "time": "09:15"
+    }
+   ]
+  },
+  "jun_2026": {
+   "claim": "a journal IRF Target is the report's ORB Target (report: IRF 3T/1BE/6SL, ORB 4T/2BE/2SL; journal: IRF 4T, ORB 3T)",
+   "journal_irf": [
+    4,
+    1,
+    6
+   ],
+   "journal_orb": [
+    3,
+    2,
+    2
+   ],
+   "candidate_rows": [
+    {
+     "sheet_row": "155",
+     "date": "2026-06-18",
+     "time": "09:55"
+    },
+    {
+     "sheet_row": "156",
+     "date": "2026-06-19",
+     "time": "10:15"
+    },
+    {
+     "sheet_row": "159",
+     "date": "2026-06-24",
+     "time": "09:40"
+    },
+    {
+     "sheet_row": "161",
+     "date": "2026-06-29",
+     "time": "10:45"
+    }
+   ]
+  },
+  "aug_2026": {
+   "claim": "the journal has one ORB Target the report does not count at all (journal ORB 5T/1BE/5SL = 162 units; report 75 units = 4T/1BE/5SL)",
+   "journal_orb": [
+    5,
+    1,
+    5
+   ],
+   "candidate_rows": [
+    {
+     "sheet_row": "190",
+     "date": "2026-08-11",
+     "time": "09:15"
+    },
+    {
+     "sheet_row": "194",
+     "date": "2026-08-15",
+     "time": "09:15"
+    },
+    {
+     "sheet_row": "196",
+     "date": "2026-08-19",
+     "time": "09:15"
+    },
+    {
+     "sheet_row": "202",
+     "date": "2026-08-29",
+     "time": "09:15"
+    },
+    {
+     "sheet_row": "203",
+     "date": "2026-08-31",
+     "time": "09:15"
+    }
+   ]
+  },
+  "count_check": {
+   "journal": {
+    "ORB": 89,
+    "IRF": 73,
+    "RF": 17,
+    "PDR": 8,
+    "PDS": 3
+   },
+   "after_the_three_adjustments": {
+    "ORB": 88,
+    "IRF": 72,
+    "RF": 17,
+    "PDR": 9,
+    "PDS": 3
+   },
+   "report": {
+    "IRF": 72,
+    "ORB": 88,
+    "PDR": 9,
+    "PDS": 3,
+    "RF": 17
+   },
+   "reproduces_report_counts": true
+  }
+ },
+ "rf_august": {
+  "journal": [
+   0,
+   0,
+   2
+  ],
+  "report_net_rs": -17550,
+  "points_if_one_stop": 45.0,
+  "points_each_if_two_stops": 22.5,
+  "meaning": "the report's August RF stop-loss loss of -Rs 17,550 is 45 points in total (22.5 is only the mean); two stop-losses of at least 30 points cannot sum to 45, so the cell is irreproducible with any stop in the RF guide's 35-40 range (or even 30)",
+  "candidate_rows": [
+   {
+    "sheet_row": "186",
+    "date": "2026-08-05",
+    "time": "09:35"
+   },
+   {
+    "sheet_row": "197",
+    "date": "2026-08-21",
+    "time": "09:40"
+   }
+  ]
+ },
+ "row_status_counts": {
+  "VALID": 172,
+  "UNRESOLVED": 13,
+  "INVALID": 5
+ },
+ "target2_evidence": {
+  "method": "each strategy-month cell of PDR/PDS has no stops, so its value is a sum of 87u (T60), 97u (T70) and 27u (BE); all cells decompose uniquely",
+  "PDR_winners": {
+   "T70": 5,
+   "T60": 1,
+   "BE": 3
+  },
+  "PDS_winners": {
+   "T70": 1,
+   "T60": 2
+  },
+  "PDR_T60_trade": "the Feb-2026 PDR cell (87u); the journal has NO PDR row in Feb-2026 and an extra ORB Target there (ORB targets are 60 by rule)",
+  "PDS_T60_trades": "Jun-2026 and Jul-2026 cells; journal PDS counts equal the report's (3), so attribution does not explain them",
+  "classification": {
+   "PDR (1 of 6 winners at 60)": "most likely an ATTRIBUTION inconsistency between the two sources (the arithmetic is exact); UNRESOLVED without trade records",
+   "PDS (2 of 3 winners at 60)": "genuine conflict with the guide's 70: either a discretionary/undocumented target change or mislabelled strategies; UNRESOLVED (author)",
+   "inference error from aggregates": "excluded for the cell values themselves: each decomposition is unique and reproduces the printed cell exactly"
+  }
+ },
+ "rows": [
+  {
+   "sheet_row": 3,
+   "sl": 1,
+   "date": "2025-09-01",
+   "time": "10:00",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 4,
+   "sl": 2,
+   "date": "2025-09-02",
+   "time": "09:25",
+   "time_cell_type": "str",
+   "strategy": "PDR",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 5,
+   "sl": 3,
+   "date": "2025-09-03",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 6,
+   "sl": 4,
+   "date": "2025-09-05",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 7,
+   "sl": 5,
+   "date": "2025-09-08",
+   "time": "09:25",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 8,
+   "sl": 6,
+   "date": "2025-09-09",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 9,
+   "sl": 7,
+   "date": "2025-09-10",
+   "time": "10:35",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 10,
+   "sl": 8,
+   "date": "2025-09-11",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 11,
+   "sl": 9,
+   "date": "2025-09-15",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 12,
+   "sl": 10,
+   "date": "2025-09-16",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 13,
+   "sl": 11,
+   "date": "2025-09-17",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 14,
+   "sl": 12,
+   "date": "2025-09-23",
+   "time": "10:10",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 15,
+   "sl": 13,
+   "date": "2025-09-24",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 16,
+   "sl": 14,
+   "date": "2025-09-25",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 17,
+   "sl": 15,
+   "date": "2025-09-26",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 18,
+   "sl": 16,
+   "date": "2025-09-29",
+   "time": "10:05",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 20,
+   "sl": 17,
+   "date": "2025-10-01",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 21,
+   "sl": 18,
+   "date": "2025-10-06",
+   "time": "09:30",
+   "time_cell_type": "str",
+   "strategy": "PDR",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 22,
+   "sl": 19,
+   "date": "2025-10-07",
+   "time": "09:20",
+   "time_cell_type": "str",
+   "strategy": "PDR",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 23,
+   "sl": 20,
+   "date": "2025-10-08",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 24,
+   "sl": 21,
+   "date": "2025-10-09",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 25,
+   "sl": 22,
+   "date": "2025-10-10",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 26,
+   "sl": 23,
+   "date": "2025-10-11",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "INVALID",
+   "reasons": [
+    "DATE_IS_NOT_A_TRADING_SESSION:WEEKEND"
+   ]
+  },
+  {
+   "sheet_row": 27,
+   "sl": 24,
+   "date": "2025-10-15",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 28,
+   "sl": 25,
+   "date": "2025-10-16",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 29,
+   "sl": 26,
+   "date": "2025-10-20",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 30,
+   "sl": 27,
+   "date": "2025-10-23",
+   "time": "09:50",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 31,
+   "sl": 28,
+   "date": "2025-10-24",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 32,
+   "sl": 29,
+   "date": "2025-10-27",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 33,
+   "sl": 30,
+   "date": "2025-10-28",
+   "time": "09:30",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 34,
+   "sl": 31,
+   "date": "2025-10-29",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 35,
+   "sl": 32,
+   "date": "2025-10-31",
+   "time": "10:15",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 37,
+   "sl": 33,
+   "date": "2025-11-03",
+   "time": "10:00",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 38,
+   "sl": 34,
+   "date": "2025-11-07",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 39,
+   "sl": 35,
+   "date": "2025-11-11",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 40,
+   "sl": 36,
+   "date": "2025-11-14",
+   "time": "09:50",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 41,
+   "sl": 37,
+   "date": "2025-11-17",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 42,
+   "sl": 38,
+   "date": "2025-11-18",
+   "time": "11:00",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 43,
+   "sl": 39,
+   "date": "2025-11-19",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 44,
+   "sl": 40,
+   "date": "2025-11-20",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "PDR",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 45,
+   "sl": 41,
+   "date": "2025-11-21",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 46,
+   "sl": 42,
+   "date": "2025-11-24",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 47,
+   "sl": 43,
+   "date": "2025-11-25",
+   "time": "10:30",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 48,
+   "sl": 44,
+   "date": "2025-11-27",
+   "time": "09:35",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 49,
+   "sl": 45,
+   "date": "2025-11-28",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 51,
+   "sl": 46,
+   "date": "2025-12-04",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 52,
+   "sl": 47,
+   "date": "2025-12-05",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 53,
+   "sl": 48,
+   "date": "2025-12-09",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 54,
+   "sl": 49,
+   "date": "2025-12-10",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 55,
+   "sl": 50,
+   "date": "2025-12-11",
+   "time": "10:55",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 56,
+   "sl": 51,
+   "date": "2025-12-12",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 57,
+   "sl": 52,
+   "date": "2025-12-15",
+   "time": "12:10",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 58,
+   "sl": 53,
+   "date": "2025-12-17",
+   "time": "09:25",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 59,
+   "sl": 54,
+   "date": "2025-12-18",
+   "time": "11:00",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 60,
+   "sl": 55,
+   "date": "2025-12-19",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 61,
+   "sl": 56,
+   "date": "2025-12-22",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 62,
+   "sl": 57,
+   "date": "2025-12-23",
+   "time": "09:50",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 63,
+   "sl": 58,
+   "date": "2025-12-24",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 64,
+   "sl": 59,
+   "date": "2025-12-26",
+   "time": "09:30",
+   "time_cell_type": "str",
+   "strategy": "PDS",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 65,
+   "sl": 60,
+   "date": "2025-12-30",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 66,
+   "sl": 61,
+   "date": "2025-12-31",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 67,
+   "sl": 62,
+   "date": "2025-12-31",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "PDR",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 69,
+   "sl": 63,
+   "date": "2026-01-02",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 70,
+   "sl": 64,
+   "date": "2026-01-05",
+   "time": "09:55",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 71,
+   "sl": 65,
+   "date": "2026-01-06",
+   "time": "09:55",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 72,
+   "sl": 66,
+   "date": "2026-01-07",
+   "time": "10:15",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 73,
+   "sl": 67,
+   "date": "2026-01-12",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 74,
+   "sl": 68,
+   "date": "2026-01-14",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 75,
+   "sl": 69,
+   "date": "2026-01-16",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 76,
+   "sl": 70,
+   "date": "2026-01-21",
+   "time": "09:35",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 77,
+   "sl": 71,
+   "date": "2026-01-22",
+   "time": "09:50",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 78,
+   "sl": 72,
+   "date": "2026-01-27",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 79,
+   "sl": 73,
+   "date": "2026-01-28",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 80,
+   "sl": 74,
+   "date": "2026-01-30",
+   "time": "10:05",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 82,
+   "sl": 75,
+   "date": "2026-02-02",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 83,
+   "sl": 76,
+   "date": "2026-02-03",
+   "time": "09:35",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 84,
+   "sl": 77,
+   "date": "2026-02-05",
+   "time": "10:20",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 85,
+   "sl": 78,
+   "date": "2026-02-06",
+   "time": "12:05",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 86,
+   "sl": 79,
+   "date": "2026-02-10",
+   "time": "09:50",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 87,
+   "sl": 80,
+   "date": "2026-02-11",
+   "time": "09:50",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 88,
+   "sl": 81,
+   "date": "2026-02-12",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 89,
+   "sl": 82,
+   "date": "2026-02-14",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "INVALID",
+   "reasons": [
+    "DATE_IS_NOT_A_TRADING_SESSION:WEEKEND"
+   ]
+  },
+  {
+   "sheet_row": 90,
+   "sl": 83,
+   "date": "2026-02-17",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 91,
+   "sl": 84,
+   "date": "2026-02-18",
+   "time": "09:25",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 92,
+   "sl": 85,
+   "date": "2026-02-20",
+   "time": "10:50",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 93,
+   "sl": 86,
+   "date": "2026-02-23",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 94,
+   "sl": 87,
+   "date": "2026-02-24",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 95,
+   "sl": 88,
+   "date": "2026-02-25",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 96,
+   "sl": 89,
+   "date": "2026-02-26",
+   "time": "09:35",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 97,
+   "sl": 90,
+   "date": "2026-02-27",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 99,
+   "sl": 91,
+   "date": "2026-03-02",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 100,
+   "sl": 92,
+   "date": "2026-03-05",
+   "time": "11:00",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 101,
+   "sl": 93,
+   "date": "2026-03-06",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 102,
+   "sl": 94,
+   "date": "2026-03-09",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 103,
+   "sl": 95,
+   "date": "2026-03-12",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 104,
+   "sl": 96,
+   "date": "2026-03-16",
+   "time": "09:50",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 105,
+   "sl": 97,
+   "date": "2026-03-17",
+   "time": "10:30",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 106,
+   "sl": 98,
+   "date": "2026-03-18",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 107,
+   "sl": 99,
+   "date": "2026-03-20",
+   "time": "09:35",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 108,
+   "sl": 100,
+   "date": "2026-03-23",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 109,
+   "sl": 101,
+   "date": "2026-03-25",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 110,
+   "sl": 102,
+   "date": "2026-03-27",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 111,
+   "sl": 103,
+   "date": "2026-03-30",
+   "time": "10:05",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 113,
+   "sl": 104,
+   "date": "2026-04-02",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 114,
+   "sl": 105,
+   "date": "2026-04-06",
+   "time": "10:05",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 115,
+   "sl": 106,
+   "date": "2026-04-07",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 116,
+   "sl": 107,
+   "date": "2026-04-08",
+   "time": "09:50",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 117,
+   "sl": 108,
+   "date": "2026-04-10",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 118,
+   "sl": 109,
+   "date": "2026-04-13",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 119,
+   "sl": 110,
+   "date": "2026-04-16",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 120,
+   "sl": 111,
+   "date": "2026-04-17",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 121,
+   "sl": 112,
+   "date": "2026-04-20",
+   "time": "11:05",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 122,
+   "sl": 113,
+   "date": "2026-04-21",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 123,
+   "sl": 114,
+   "date": "2026-04-23",
+   "time": "10:20",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 124,
+   "sl": 115,
+   "date": "2026-04-27",
+   "time": "10:10",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 125,
+   "sl": 116,
+   "date": "2026-04-28",
+   "time": "11:25",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 126,
+   "sl": 117,
+   "date": "2026-04-30",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 128,
+   "sl": 118,
+   "date": "2026-05-11",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 129,
+   "sl": 119,
+   "date": "2026-05-04",
+   "time": "09:50",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": [
+    "ROW_OUT_OF_CHRONOLOGICAL_ORDER"
+   ]
+  },
+  {
+   "sheet_row": 130,
+   "sl": 120,
+   "date": "2026-05-13",
+   "time": "12:20",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 131,
+   "sl": 121,
+   "date": "2026-05-15",
+   "time": "09:30",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 132,
+   "sl": 122,
+   "date": "2026-05-18",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 133,
+   "sl": 123,
+   "date": "2026-05-19",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 134,
+   "sl": 124,
+   "date": "2026-05-19",
+   "time": "09:35",
+   "time_cell_type": "str",
+   "strategy": "PDR",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 135,
+   "sl": 125,
+   "date": "2026-05-20",
+   "time": "10:00",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 136,
+   "sl": 126,
+   "date": "2026-05-22",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 137,
+   "sl": 127,
+   "date": "2026-05-25",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 138,
+   "sl": 128,
+   "date": "2026-05-26",
+   "time": "12:05",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 139,
+   "sl": 129,
+   "date": "2026-05-27",
+   "time": "12:00",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 140,
+   "sl": 130,
+   "date": "2026-05-29",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 142,
+   "sl": 131,
+   "date": "2026-06-01",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 143,
+   "sl": 132,
+   "date": "2026-06-02",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 144,
+   "sl": 133,
+   "date": "2026-06-02",
+   "time": "10:30",
+   "time_cell_type": "str",
+   "strategy": "PDS",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 145,
+   "sl": 134,
+   "date": "2026-06-03",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 146,
+   "sl": 135,
+   "date": "2026-06-04",
+   "time": "10:30",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 147,
+   "sl": 136,
+   "date": "2026-06-05",
+   "time": "09:25",
+   "time_cell_type": "str",
+   "strategy": "PDR",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 148,
+   "sl": 137,
+   "date": "2026-06-08",
+   "time": "09:45",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 149,
+   "sl": 138,
+   "date": "2026-06-10",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 150,
+   "sl": 139,
+   "date": "2026-06-11",
+   "time": "09:55",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 151,
+   "sl": 140,
+   "date": "2026-06-12",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 152,
+   "sl": 141,
+   "date": "2026-06-12",
+   "time": "10:20",
+   "time_cell_type": "str",
+   "strategy": "PDR",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 153,
+   "sl": 142,
+   "date": "2026-06-16",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 154,
+   "sl": 143,
+   "date": "2026-06-17",
+   "time": "10:00",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 155,
+   "sl": 144,
+   "date": "2026-06-18",
+   "time": "09:55",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 156,
+   "sl": 145,
+   "date": "2026-06-19",
+   "time": "10:15",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 157,
+   "sl": 146,
+   "date": "2026-06-22",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 158,
+   "sl": 147,
+   "date": "2026-06-23",
+   "time": "10:10",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 159,
+   "sl": 148,
+   "date": "2026-06-24",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 160,
+   "sl": 149,
+   "date": "2026-06-25",
+   "time": "09:25",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 161,
+   "sl": 150,
+   "date": "2026-06-29",
+   "time": "10:45",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 162,
+   "sl": 151,
+   "date": "2026-06-30",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 164,
+   "sl": 152,
+   "date": "2026-07-01",
+   "time": "10:40",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 165,
+   "sl": 153,
+   "date": "2026-07-02",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 166,
+   "sl": 154,
+   "date": "2026-07-06",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 167,
+   "sl": 155,
+   "date": "2026-07-07",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 168,
+   "sl": 156,
+   "date": "2026-07-08",
+   "time": "11:00",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 169,
+   "sl": 157,
+   "date": "2026-07-09",
+   "time": "10:45",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 170,
+   "sl": 158,
+   "date": "2026-07-10",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 171,
+   "sl": 159,
+   "date": "2026-07-14",
+   "time": "09:35",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 172,
+   "sl": 160,
+   "date": "2026-07-15",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 173,
+   "sl": 161,
+   "date": "2026-07-16",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 174,
+   "sl": 162,
+   "date": "2026-07-17",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 175,
+   "sl": 163,
+   "date": "2026-07-21",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 176,
+   "sl": 164,
+   "date": "2026-07-22",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 177,
+   "sl": 165,
+   "date": "2026-07-23",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 178,
+   "sl": 166,
+   "date": "2026-07-23",
+   "time": "10:10",
+   "time_cell_type": "str",
+   "strategy": "PDS",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 179,
+   "sl": 167,
+   "date": "2026-07-24",
+   "time": "11:00",
+   "time_cell_type": "str",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 180,
+   "sl": 168,
+   "date": "2026-07-28",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 181,
+   "sl": 169,
+   "date": "2026-07-29",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 182,
+   "sl": 170,
+   "date": "2026-07-30",
+   "time": "09:15",
+   "time_cell_type": "str",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 183,
+   "sl": 171,
+   "date": "2026-07-31",
+   "time": "09:40",
+   "time_cell_type": "str",
+   "strategy": "RF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 185,
+   "sl": 172,
+   "date": "2026-08-03",
+   "time": "10:30",
+   "time_cell_type": "time",
+   "strategy": "IRF",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 186,
+   "sl": 173,
+   "date": "2026-08-05",
+   "time": "09:35",
+   "time_cell_type": "time",
+   "strategy": "RF",
+   "outcome": "SL",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 187,
+   "sl": 174,
+   "date": "2026-08-06",
+   "time": "09:55",
+   "time_cell_type": "time",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 188,
+   "sl": 175,
+   "date": "2026-08-07",
+   "time": "10:15",
+   "time_cell_type": "time",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 189,
+   "sl": 176,
+   "date": "2026-08-10",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 190,
+   "sl": 177,
+   "date": "2026-08-11",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 191,
+   "sl": 178,
+   "date": "2026-08-12",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 192,
+   "sl": 179,
+   "date": "2026-08-13",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 193,
+   "sl": 180,
+   "date": "2026-08-14",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 194,
+   "sl": 181,
+   "date": "2026-08-15",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "INVALID",
+   "reasons": [
+    "DATE_IS_NOT_A_TRADING_SESSION:WEEKEND"
+   ]
+  },
+  {
+   "sheet_row": 195,
+   "sl": 182,
+   "date": "2026-08-18",
+   "time": "09:40",
+   "time_cell_type": "time",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 196,
+   "sl": 183,
+   "date": "2026-08-19",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 197,
+   "sl": 184,
+   "date": "2026-08-21",
+   "time": "09:40",
+   "time_cell_type": "time",
+   "strategy": "RF",
+   "outcome": "SL",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  },
+  {
+   "sheet_row": 198,
+   "sl": 185,
+   "date": "2026-08-22",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "INVALID",
+   "reasons": [
+    "DATE_IS_NOT_A_TRADING_SESSION:WEEKEND"
+   ]
+  },
+  {
+   "sheet_row": 199,
+   "sl": 186,
+   "date": "2026-08-25",
+   "time": "09:35",
+   "time_cell_type": "time",
+   "strategy": "IRF",
+   "outcome": "BE",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 200,
+   "sl": 187,
+   "date": "2026-08-26",
+   "time": "10:05",
+   "time_cell_type": "time",
+   "strategy": "IRF",
+   "outcome": "Target",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 201,
+   "sl": 188,
+   "date": "2026-08-28",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "SL",
+   "status": "VALID",
+   "reasons": []
+  },
+  {
+   "sheet_row": 202,
+   "sl": 189,
+   "date": "2026-08-29",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "INVALID",
+   "reasons": [
+    "DATE_IS_NOT_A_TRADING_SESSION:WEEKEND"
+   ]
+  },
+  {
+   "sheet_row": 203,
+   "sl": 190,
+   "date": "2026-08-31",
+   "time": "09:15",
+   "time_cell_type": "time",
+   "strategy": "ORB",
+   "outcome": "Target",
+   "status": "UNRESOLVED",
+   "reasons": [
+    "IN_A_STRATEGY_MONTH_CELL_THE_REPORT_CANNOT_REPRODUCE"
+   ]
+  }
+ ],
+ "conclusion": "The journal is NOT reliable ground truth (5 weekend-dated rows, 6 of 60 strategy-month cells irreproducible, 190 rows vs a Summary of 189), but its disagreement with the report is small and structured: three attribution differences reproduce every STRATEGY-COUNT difference (they do not explain the August RF cell, which stays irreproducible, and which source is wrong is not determinable from the arithmetic). The cell test is necessary, not sufficient: a cell that passes is merely not contradicted. No row was used to choose any rule or parameter."
+}

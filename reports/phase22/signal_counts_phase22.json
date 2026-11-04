@@ -1,0 +1,455 @@
+{
+  "sessions_evaluated": 247,
+  "default_counts": {
+    "IRF": {
+      "Method 1/2|INCOMPLETE_AT_EOD": 130,
+      "Method 1|CONFIRMED": 349,
+      "Method 2A|CONFIRMED": 215,
+      "Method 2B|CONFIRMED": 310,
+      "Method 3|INVALIDATED": 37
+    },
+    "ORB": {
+      "ALL|NOT_EVALUATED": 1,
+      "Gap/200DMA|CONFIRMED": 10,
+      "Gap/200DMA|INVALIDATED": 41,
+      "Method 1|CONFIRMED": 9,
+      "Method 1|INVALIDATED": 99,
+      "Method 2|CONFIRMED": 10,
+      "Method 2|INVALIDATED": 185
+    },
+    "PDR": {
+      "ALL|NOT_EVALUATED": 1,
+      "PDR|CONFIRMED": 61,
+      "PDR|INVALIDATED": 41
+    },
+    "PDS": {
+      "ALL|NOT_EVALUATED": 1,
+      "Method 1/2/3|INCOMPLETE_AT_EOD": 4,
+      "Method 1/2/3|INVALIDATED": 61,
+      "Method 1|CONFIRMED": 8,
+      "Method 2|CONFIRMED": 1,
+      "Method 3|CONFIRMED": 14
+    },
+    "RF": {
+      "ALL|NOT_EVALUATED": 1,
+      "RF|CONFIRMED": 2,
+      "RF|INCOMPLETE_AT_EOD": 38,
+      "RF|INVALIDATED": 139
+    }
+  },
+  "single_parameter_sensitivity_counts_only": [
+    {
+      "variant": "trend_mode=EMA5M_PREV_SESSION (Phase 2.1 default)",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Method 1|CONFIRMED": [
+          9,
+          27
+        ],
+        "Method 1|INVALIDATED": [
+          99,
+          81
+        ],
+        "Method 2|CONFIRMED": [
+          10,
+          16
+        ],
+        "Method 2|INVALIDATED": [
+          185,
+          179
+        ]
+      }
+    },
+    {
+      "variant": "trend_mode=EMA5M_PREV_SESSION (Phase 2.1 default)",
+      "strategy": "RF",
+      "delta_vs_default": {
+        "RF|CONFIRMED": [
+          2,
+          12
+        ],
+        "RF|INVALIDATED": [
+          139,
+          129
+        ]
+      }
+    },
+    {
+      "variant": "trend_mode=EMA5M_BASIC",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Method 1|CONFIRMED": [
+          9,
+          36
+        ],
+        "Method 1|INVALIDATED": [
+          99,
+          72
+        ],
+        "Method 2|CONFIRMED": [
+          10,
+          20
+        ],
+        "Method 2|INVALIDATED": [
+          185,
+          175
+        ]
+      }
+    },
+    {
+      "variant": "trend_mode=EMA5M_BASIC",
+      "strategy": "RF",
+      "delta_vs_default": {
+        "RF|CONFIRMED": [
+          2,
+          20
+        ],
+        "RF|INVALIDATED": [
+          139,
+          121
+        ]
+      }
+    },
+    {
+      "variant": "trend_mode=STRUCTURE with swing_k=1",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Method 1|CONFIRMED": [
+          9,
+          15
+        ],
+        "Method 1|INVALIDATED": [
+          99,
+          93
+        ]
+      }
+    },
+    {
+      "variant": "trend_mode=STRUCTURE with swing_k=1",
+      "strategy": "RF",
+      "delta_vs_default": {}
+    },
+    {
+      "variant": "pin_bar=MODERATE (ratio style)",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Gap/200DMA|CONFIRMED": [
+          10,
+          9
+        ],
+        "Gap/200DMA|INVALIDATED": [
+          41,
+          42
+        ],
+        "Method 1|CONFIRMED": [
+          9,
+          8
+        ],
+        "Method 1|INVALIDATED": [
+          99,
+          100
+        ]
+      }
+    },
+    {
+      "variant": "pin_bar=MODERATE (ratio style)",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 2|CONFIRMED": [
+          1,
+          0
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          15
+        ]
+      }
+    },
+    {
+      "variant": "pin_bar=STRICT",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Gap/200DMA|CONFIRMED": [
+          10,
+          9
+        ],
+        "Gap/200DMA|INVALIDATED": [
+          41,
+          42
+        ],
+        "Method 1|CONFIRMED": [
+          9,
+          7
+        ],
+        "Method 1|INVALIDATED": [
+          99,
+          101
+        ],
+        "Method 2|CONFIRMED": [
+          10,
+          8
+        ],
+        "Method 2|INVALIDATED": [
+          185,
+          187
+        ]
+      }
+    },
+    {
+      "variant": "pin_bar=STRICT",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 2|CONFIRMED": [
+          1,
+          0
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          15
+        ]
+      }
+    },
+    {
+      "variant": "pin_bar=LOOSE",
+      "strategy": "ORB",
+      "delta_vs_default": {
+        "Gap/200DMA|CONFIRMED": [
+          10,
+          9
+        ],
+        "Gap/200DMA|INVALIDATED": [
+          41,
+          42
+        ],
+        "Method 1|CONFIRMED": [
+          9,
+          8
+        ],
+        "Method 1|INVALIDATED": [
+          99,
+          100
+        ],
+        "Method 2|CONFIRMED": [
+          10,
+          11
+        ],
+        "Method 2|INVALIDATED": [
+          185,
+          184
+        ]
+      }
+    },
+    {
+      "variant": "pin_bar=LOOSE",
+      "strategy": "PDS",
+      "delta_vs_default": {}
+    },
+    {
+      "variant": "m3_compression_def=C3 (small candles: body <= 30% of range)",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 3|INVALIDATED": [
+          37,
+          2
+        ]
+      }
+    },
+    {
+      "variant": "m3_compression_def=C2",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 3|INVALIDATED": [
+          37,
+          33
+        ]
+      }
+    },
+    {
+      "variant": "irf_support_def=SWING_K2",
+      "strategy": "IRF",
+      "delta_vs_default": {
+        "Method 1/2|INCOMPLETE_AT_EOD": [
+          130,
+          132
+        ],
+        "Method 2A|CONFIRMED": [
+          215,
+          154
+        ],
+        "Method 2B|CONFIRMED": [
+          310,
+          296
+        ]
+      }
+    },
+    {
+      "variant": "PDR zone_lower_boundary=ZONE_FULL",
+      "strategy": "PDR",
+      "delta_vs_default": {}
+    },
+    {
+      "variant": "PDR zone_proximity_points=5 (near-touch)",
+      "strategy": "PDR",
+      "delta_vs_default": {
+        "PDR|CONFIRMED": [
+          61,
+          64
+        ]
+      }
+    },
+    {
+      "variant": "PDR pdr_zone_method=B_SWING_HIGH_REVERSAL",
+      "strategy": "PDR",
+      "delta_vs_default": {}
+    },
+    {
+      "variant": "PDR pdr_zone_method=C_REPEATED_TOUCHES",
+      "strategy": "PDR",
+      "delta_vs_default": {
+        "PDR|CONFIRMED": [
+          61,
+          32
+        ],
+        "PDR|INVALIDATED": [
+          41,
+          66
+        ]
+      }
+    },
+    {
+      "variant": "PDS zone_proximity_points=5 (near-touch)",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1/2/3|INCOMPLETE_AT_EOD": [
+          4,
+          5
+        ],
+        "Method 1|CONFIRMED": [
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "variant": "PDS pds_zone_upper_boundary=ZONE_WICK",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1/2/3|INCOMPLETE_AT_EOD": [
+          4,
+          5
+        ],
+        "Method 1|CONFIRMED": [
+          8,
+          9
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          12
+        ]
+      }
+    },
+    {
+      "variant": "PDS pds_zone_method=B_SWING_LOW_REVERSAL",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1/2/3|INCOMPLETE_AT_EOD": [
+          4,
+          3
+        ],
+        "Method 1/2/3|INVALIDATED": [
+          61,
+          27
+        ],
+        "Method 1|CONFIRMED": [
+          8,
+          16
+        ],
+        "Method 2|CONFIRMED": [
+          1,
+          4
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          18
+        ]
+      }
+    },
+    {
+      "variant": "PDS pds_zone_method=C_REPEATED_TOUCHES",
+      "strategy": "PDS",
+      "delta_vs_default": {
+        "Method 1/2/3|INVALIDATED": [
+          61,
+          39
+        ],
+        "Method 1|CONFIRMED": [
+          8,
+          15
+        ],
+        "Method 2|CONFIRMED": [
+          1,
+          3
+        ],
+        "Method 3|CONFIRMED": [
+          14,
+          18
+        ]
+      }
+    }
+  ],
+  "zone_method_agreement_across_sessions": {
+    "PDR": {
+      "B_SWING_HIGH_REVERSAL: differs from diagnostic highest-high": 198,
+      "C_REPEATED_TOUCHES: differs from diagnostic highest-high": 217,
+      "B_SWING_HIGH_REVERSAL: same as diagnostic highest-high": 49,
+      "C_REPEATED_TOUCHES: no zone (no setup)": 16,
+      "C_REPEATED_TOUCHES: same as diagnostic highest-high": 14
+    },
+    "PDS": {
+      "B_SWING_LOW_REVERSAL: same as A": 38,
+      "B_SWING_LOW_REVERSAL: fell back to A": 0,
+      "C_REPEATED_TOUCHES: differs from A": 220,
+      "C_REPEATED_TOUCHES: fell back to A": 13,
+      "B_SWING_LOW_REVERSAL: differs from A": 209,
+      "C_REPEATED_TOUCHES: same as A": 27
+    }
+  },
+  "selection_policy_event_counts": {
+    "IRF": {
+      "all_confirmed_events": 874,
+      "ALL_VALID_SIGNALS": 865,
+      "FIRST_VALID_SIGNAL_PER_DAY": 174,
+      "ONE_ACTIVE_POSITION_AT_A_TIME": 497,
+      "confirmed_but_entry_blocked_by_closing_auction": 9
+    },
+    "ORB": {
+      "all_confirmed_events": 29,
+      "ALL_VALID_SIGNALS": 29,
+      "FIRST_VALID_SIGNAL_PER_DAY": 21,
+      "ONE_ACTIVE_POSITION_AT_A_TIME": 21,
+      "confirmed_but_entry_blocked_by_closing_auction": 0
+    },
+    "PDR": {
+      "all_confirmed_events": 61,
+      "ALL_VALID_SIGNALS": 61,
+      "FIRST_VALID_SIGNAL_PER_DAY": 61,
+      "ONE_ACTIVE_POSITION_AT_A_TIME": 61,
+      "confirmed_but_entry_blocked_by_closing_auction": 0
+    },
+    "PDS": {
+      "all_confirmed_events": 23,
+      "ALL_VALID_SIGNALS": 23,
+      "FIRST_VALID_SIGNAL_PER_DAY": 23,
+      "ONE_ACTIVE_POSITION_AT_A_TIME": 23,
+      "confirmed_but_entry_blocked_by_closing_auction": 0
+    },
+    "RF": {
+      "all_confirmed_events": 2,
+      "ALL_VALID_SIGNALS": 2,
+      "FIRST_VALID_SIGNAL_PER_DAY": 2,
+      "ONE_ACTIVE_POSITION_AT_A_TIME": 2,
+      "confirmed_but_entry_blocked_by_closing_auction": 0
+    }
+  },
+  "warning": "Counts only. Never used to select an interpretation; never compared with the report's trade counts; no P&L computed."
+}

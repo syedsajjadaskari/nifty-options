@@ -12,14 +12,14 @@ from synthetic import DAY, IST, ctx, minute_rows
 
 import nifty_trading.strategies  # noqa: F401  (registers every @implements)
 from nifty_trading.core.strategy import SignalType, StrategyContext
-from nifty_trading.strategies import ALL_STRATEGIES, IRFStrategy
+from nifty_trading.strategies import ALL_STRATEGIES, IRFStrategy, ProposalConfig
 from nifty_trading.strategies.rule_data import IMPL_P, IMPL_R, NOT, RULES
 from nifty_trading.strategies.rules import IMPLEMENTATIONS
 
 ROOT = Path(__file__).resolve().parents[1]
 DOC_PAGES = {"IRF_Strategy_Guide Updated.pdf": 17, "ORB_Strategy_Rulebook-2.pdf": 13, "PDR_Strategy_Guide.pdf": 4,
              "PDS strategy.pdf": 7, "RF strategy.pdf": 9}
-CLASSES = {"VERIFIED_EXPLICIT", "VERIFIED_QUALITATIVE", "CONFLICTING", "MISSING", "PROPOSED"}
+CLASSES = {"VERIFIED_EXPLICIT", "VERIFIED_QUALITATIVE", "CONFLICTING", "UNRESOLVED", "PROPOSED_FOR_REVIEW", "USER_APPROVED"}
 REQUIRED = {"rule_id", "strategy", "method", "description", "source_document", "source_page", "classification",
             "required_inputs", "mathematical_condition", "evaluation_time", "invalidation_condition",
             "implementation_status", "unresolved_dependencies"}
@@ -74,6 +74,10 @@ def test_no_lookahead_truncated_session_equals_prefix_of_full_session(strategy):
     assert compared == 40 * 75
 
 
+# fixtures written for the Phase 2.1 candidates (EMA trend, full-body zone); the Phase 2.2 defaults are tested in test_phase22_rules
+_LEGACY = ProposalConfig(trend_mode="EMA5M_PREV_SESSION", zone_lower_boundary="ZONE_FULL", pdr_zone_method="A_HIGHEST_HIGH")
+
+
 def _fixtures():
     import test_phase2_irf as irf
     import test_phase2_orb as orb
@@ -81,10 +85,10 @@ def _fixtures():
     return [
         (IRFStrategy(), ctx([irf.IR, (98, 104, 97, 103), (103, 103.5, 98, 99)])),
         (IRFStrategy(), ctx(irf.M2A)), (IRFStrategy(), ctx(irf.M2B)), (IRFStrategy(), ctx(irf.M3)),
-        (ALL_STRATEGIES[1](), ctx([orb.STRONG_UP, (24055, 24056, 24054, 24055)], prev=orb.PREV, ema=23950.0)),
-        (ALL_STRATEGIES[2](), ctx([(24050, 24060, 24040, 24055), (24055, 24058, 24001, 24003), (24003, 24030, 24002, 24025)], prev=o.PDR_PREV)),
+        (ALL_STRATEGIES[1](proposals=_LEGACY), ctx([orb.STRONG_UP, (24055, 24056, 24054, 24055)], prev=orb.PREV, ema=23950.0)),
+        (ALL_STRATEGIES[2](proposals=_LEGACY), ctx([(24050, 24060, 24040, 24055), (24055, 24058, 24000, 24003), (24003, 24030, 24002, 24025)], prev=o.PDR_PREV)),
         (ALL_STRATEGIES[3](), ctx([(23950, 23960, 23940, 23945), (24010, 24015, 23960, 23965)], prev=o.PDS_PREV)),
-        (ALL_STRATEGIES[4](), ctx(o.RF_OK, prev=o.RF_PREV, ema=23950.0)),
+        (ALL_STRATEGIES[4](proposals=_LEGACY), ctx(o.RF_OK, prev=o.RF_PREV, ema=23950.0)),
     ]
 
 
@@ -112,7 +116,7 @@ def test_registry_ids_unique_fields_complete_and_classifications_valid():
     for r in RULES:
         assert REQUIRED <= set(r), r["rule_id"]
         assert r["classification"] in CLASSES
-        if r["classification"] == "PROPOSED":
+        if r["classification"] == "PROPOSED_FOR_REVIEW":
             assert r["implementation_status"] in (IMPL_P, NOT)  # a PROPOSED rule is never 'implemented verified'
 
 
@@ -156,15 +160,17 @@ def test_the_yaml_registry_is_in_sync_with_the_python_registry():
     assert [r["rule_id"] for r in doc["rules"]] == [r["rule_id"] for r in RULES]
     for y, r in zip(doc["rules"], RULES, strict=True):
         assert {k: y[k] for k in r} == yaml.safe_load(yaml.safe_dump(r)), r["rule_id"]  # YAML adds implemented_by / tested_by only
-    assert doc["unresolved_flags"]["RF_TARGET_STATUS"] == "UNRESOLVED"
+    assert doc["unresolved_flags"]["RF_TARGET_STATUS"] == "PROPOSED_FOR_REVIEW"
 
 
 @pytest.mark.rules("RF-011")
 def test_rf_target_is_never_silently_assigned_anywhere():
-    from nifty_trading.strategies.params import RF_TARGET_STATUS, SOURCE
-    assert RF_TARGET_STATUS == "UNRESOLVED" and SOURCE.rf_target_points is None
+    from nifty_trading.strategies.params import RF_TARGET_STATUS, SOURCE, TradeConfig
+    # Phase 2.2: the owner asked for a configurable RESEARCH value of 60; it must stay a proposal, never explicit or user-approved
+    assert RF_TARGET_STATUS == "PROPOSED_FOR_REVIEW" and SOURCE.rf_target_points is None
     from nifty_trading.core.exit_policy import policy_for
-    assert policy_for("RF").t2_points is None
+    assert policy_for("RF").t2_status == "PROPOSED_FOR_REVIEW" and policy_for("RF").t2_points == 60.0
+    assert policy_for("RF", trade=TradeConfig(rf_t2_points=None)).t2_points is None
 
 
 # ------------------------------------------------------------------ BaseStrategy adapter
@@ -194,9 +200,14 @@ needs_data = pytest.mark.skipif(not DATA.exists(), reason="Phase 1 parquet datas
 
 @pytest.fixture(scope="module")
 def real():
-    from nifty_trading.data.sessions import build_session_contexts, load_one_minute
+    from nifty_trading.data.sessions import (
+        build_session_contexts,
+        load_daily_official,
+        load_one_minute,
+        load_warmup_one_minute,
+    )
     df = load_one_minute()
-    ctxs, infos = build_session_contexts(df)
+    ctxs, infos = build_session_contexts(df, daily_df=load_daily_official(), warmup_1m=load_warmup_one_minute())
     return df, ctxs, infos
 
 
@@ -206,15 +217,25 @@ def test_real_dataset_facts(real):
     assert len(df) == 92_981 and df.timestamp.is_unique and df.timestamp.is_monotonic_increasing
     assert str(df.timestamp.dt.tz) == "Asia/Kolkata" and (df.timestamp.dt.second == 0).all()
     assert len(infos) == 248 and len(ctxs) == 247
-    excluded = [d for d, i in infos.items() if not i.usable]
-    assert [str(d) for d in excluded] == ["2025-10-21"]  # Muhurat session
-    flagged = {str(d): i.flags for d, i in infos.items() if i.flags and i.usable}
-    stale = {d for d, f in flagged.items() if any(x.startswith("STALE_FEED_ROWS_EXCLUDED") for x in f)}
-    assert len(stale) == 21 and min(stale) == "2026-08-03" and max(stale) == "2026-08-31"  # frozen-feed tail, then excluded
-    assert set(flagged) == {"2025-11-25", "2026-02-01", "2026-03-10"} | stale
-    for d, c in ctxs.items():
-        n_stale = str(d) in stale
-        assert len(c.candles) == (72 if n_stale else 75), d  # the 15:15, 15:20 and 15:25 candles are dropped, never repaired
+    q = {k: sum(1 for i in infos.values() if i.quality.value == k) for k in ("VALID", "VALID_SPECIAL_SESSION", "PARTIAL", "CORRUPT", "UNVERIFIED", "MISSING")}
+    assert q == {"VALID": 246, "VALID_SPECIAL_SESSION": 2, "PARTIAL": 0, "CORRUPT": 0, "UNVERIFIED": 0, "MISSING": 0}
+    assert [str(d) for d, i in infos.items() if not i.usable] == ["2025-10-21"]  # the Muhurat session: valid but not a standard session
+    cas = {str(d) for d, i in infos.items() if i.cas_regime}
+    assert len(cas) == 21 and min(cas) == "2026-08-03" and max(cas) == "2026-08-31"  # closing-auction regime: kept, flagged, VALID
+    assert all(len(c.candles) == 75 for c in ctxs.values())  # the 15:15/15:20/15:25 auction candles are real and kept
+
+
+@needs_data
+@pytest.mark.rules("DATA-OFFICIAL-CLOSE-001")
+def test_real_official_close_matches_the_externally_published_closes(real):
+    """Closes published by independent sources (Oquilia/Informist/Upstox/Trendlyne) vs the vendor-daily official close."""
+    from datetime import date as D
+    published = {D(2026, 3, 19): 23002.15, D(2026, 1, 27): 25175.40, D(2026, 3, 10): 24261.60, D(2026, 8, 3): 24774.30,
+                 D(2026, 8, 4): 24614.90, D(2026, 5, 27): 23907.15, D(2026, 3, 25): 23306.45, D(2026, 3, 30): 22331.40, D(2026, 7, 31): 24383.60}
+    _, _, infos = real
+    for d, close in published.items():
+        assert infos[d].official_close == pytest.approx(close, abs=0.005), d
+    assert abs(infos[D(2026, 3, 19)].stub_close - 23002.15) > 80  # the 15:30 minute print is NOT the official close pre-auction
 
 
 @needs_data
@@ -239,11 +260,10 @@ def test_real_first_candle_is_rows_0915_to_0919_and_closes_at_0920(real):
 @needs_data
 def test_real_indicator_warmup_facts(real):
     _, ctxs, _ = real
-    days = sorted(ctxs)
-    assert math.isnan(ctxs[days[0]].candles["ema200_5m"].iloc[0]) and math.isnan(ctxs[days[2]].candles["ema200_5m"].iloc[0])
-    assert not math.isnan(ctxs[days[3]].candles["ema200_5m"].iloc[0])  # 3 sessions x 75 >= 200
-    n_daily = sum(not math.isnan(c.daily_sma200_prev) for c in ctxs.values())
-    assert n_daily == 47  # a 200-DMA candidate is evaluable on only the last 47 sessions with Phase 1 data
+    assert not any(math.isnan(c.candles["ema200_5m"].iloc[0]) for c in ctxs.values())  # warm-up data covers every session
+    assert not any(math.isnan(c.daily_sma200_prev) for c in ctxs.values())  # >= 200 official daily bars before every session
+    first = ctxs[sorted(ctxs)[0]]
+    assert first.daily_history_count >= 200 and first.previous is not None  # previous session = 2025-08-29 from the warm-up data
 
 
 @needs_data

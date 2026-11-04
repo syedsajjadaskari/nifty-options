@@ -1,0 +1,8 @@
+blocker,manual_trade_strategy,manual_trades_affected
+COLLISION,IRF,1
+COLLISION,RF,2
+IRF,IRF,5
+ORB,IRF,3
+PDR,IRF,7
+PDR,RF,2
+PDS,IRF,3

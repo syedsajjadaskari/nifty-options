@@ -4,9 +4,10 @@
 Classification vocabulary (task spec):
   VERIFIED_EXPLICIT    directly stated and objectively testable
   VERIFIED_QUALITATIVE directly stated, needs a mathematical interpretation
-  CONFLICTING          different sections give incompatible instructions
-  MISSING              necessary information not provided
-  PROPOSED             engineering interpretation, NOT an original rule
+  CONFLICTING          different sections / examples give incompatible instructions
+  UNRESOLVED           necessary information not provided (was MISSING)
+  PROPOSED_FOR_REVIEW  engineering interpretation, NOT an original rule (was PROPOSED)
+  USER_APPROVED        authorised by the strategy owner (Phase 2.2: only the stop-loss research baseline)
 
 Page numbers are PDF page numbers (1-based) checked against the rendered pages.
 The DOCX has no fixed pagination; its rules cite the section heading instead.
@@ -23,21 +24,29 @@ PERF_DOC = "NIFTY_System_Trading_Strategy_Performance.docx"
 JOURNAL_DOC = "Trading_Journal_Sep2025_Aug2026 REPORT.xlsx"
 
 VE, VQ, CF, MS, PR = (
-    "VERIFIED_EXPLICIT", "VERIFIED_QUALITATIVE", "CONFLICTING", "MISSING", "PROPOSED",
+    "VERIFIED_EXPLICIT", "VERIFIED_QUALITATIVE", "CONFLICTING", "UNRESOLVED", "PROPOSED_FOR_REVIEW",
 )
+USER_APPROVED = "USER_APPROVED"  # a rule becomes USER_APPROVED only when the strategy owner authorises it (a source quote makes it VERIFIED_EXPLICIT).
+UA = USER_APPROVED
+# (Phase 2.1 renamed MISSING -> UNRESOLVED and PROPOSED -> PROPOSED_FOR_REVIEW; Phase 2.2 renamed APPROVED -> USER_APPROVED.)
 # implementation status vocabulary
 IMPL = "IMPLEMENTED_VERIFIED"
 IMPL_P = "IMPLEMENTED_WITH_PROPOSAL"
 IMPL_R = "IMPLEMENTED_RESEARCH_VARIANT"
 NOT = "NOT_IMPLEMENTED_UNRESOLVED"
 SPEC = "SPECIFICATION_ONLY"
+SUPERSEDED = "SUPERSEDED_BY_USER_APPROVED_RULE"  # kept in the registry for the record; no longer the rule in force
+
+#: authority vocabulary of Phase 2.3 (derived from the classification unless a rule says otherwise)
+AUTHORITY_OF = {"VERIFIED_EXPLICIT": "SOURCE_VERIFIED", "VERIFIED_QUALITATIVE": "SOURCE_VERIFIED", "CONFLICTING": "CONFLICTING",
+                "UNRESOLVED": "UNRESOLVED", "PROPOSED_FOR_REVIEW": "PROPOSED_FOR_REVIEW", "USER_APPROVED": "USER_APPROVED"}
 
 _CANDLE = "5m candle close"
 
 
 def R(rule_id, strategy, method, description, doc, page, section, cls, math="", inputs=(),
       when=_CANDLE, invalid="", status=IMPL, unresolved=(), mandatory=True, applies="method",
-      exception="", measurable=None, proposal="", conflicts=""):
+      exception="", measurable=None, proposal="", conflicts="", supersedes="", superseded_by="", approval_source="", effective_phase=""):
     return {
         "rule_id": rule_id, "strategy": strategy, "method": method, "description": description,
         "source_document": doc, "source_page": page, "section": section,
@@ -48,6 +57,8 @@ def R(rule_id, strategy, method, description, doc, page, section, cls, math="", 
         "evaluation_time": when, "invalidation_condition": invalid,
         "implementation_status": status, "unresolved_dependencies": list(unresolved),
         "proposal_parameter": proposal, "conflicts_with": conflicts,
+        "authority": AUTHORITY_OF.get(cls, cls), "supersedes": supersedes, "superseded_by": superseded_by,
+        "approval_source": approval_source, "effective_phase": effective_phase,
     }
 
 
@@ -161,7 +172,7 @@ RULES: list[dict] = [
     R("ORB-TREND-002", "ORB", "Method 1/2", "Price above the 200 EMA is a basic confirmation, supported by bullish structure (mirror for shorts).",
       ORB_DOC, "3,4,5,7", "Methods 1 and 2", VQ, "Close[first] > MA200 (long) / < MA200 (short); 'supporting structure' not quantified",
       ["ema200_5m"], status=IMPL_P, proposal="trend_mode", unresolved=["structure"]),
-    R("ORB-MA-001", "ORB", "ALL", "Terminology conflict: '200 DMA / EMA' (p.2), '200 EMA' (pp.3,5,7), '200 DMA' (pp.1,8,9,12) for what the charts show as one curved line on a 5-minute chart.",
+    R("ORB-MA-001", "ORB", "ALL", "Terminology conflict: '200 DMA / EMA' (p.2), '200 EMA' (pp.3,5,7), '200 DMA' (pp.1,8,9,12) for what the charts show as one curved line on a 5-minute chart. EVIDENCE (Phase 2.1): the PDR chart legends 'EMA 200 close' on a 5-minute chart are reproduced to within 0.005 points by EMA(200) of 5-minute closes (Example 1: 24,582.025 vs 24,582.02; Example 3: 24,925.177 vs 24,925.18); a 200-day average is >400 points away. The ORB charts carry no legend, so ORB's 'DMA' is inferred, not proven.",
       ORB_DOC, "1,2,3,7,8,9,12,13", "multiple", CF, "", [], status=IMPL_P, proposal="ma_mode: EMA200_5M | SMA200_DAILY | EMA200_DAILY",
       unresolved=["author decision: which moving average"]),
     R("ORB-M1-LONG-001", "ORB", "Method 1", "Previous-day resistance is marked as a horizontal line (long).", ORB_DOC, "3", "Method 1 Long step 2", VQ,
@@ -201,7 +212,7 @@ RULES: list[dict] = [
       "if |Close[0]-MA| <= near_band: require Close[0] < MA - margin", ["ema200_5m"], status=IMPL_P, proposal="ma_near_band_points, ma_close_margin_points"),
     R("ORB-GAP-LONG-001", "ORB", "Gap/200DMA", "Gap up: the market opens above the previous close; the gap is required for this setup.",
       ORB_DOC, "8,12", "Special Setup - Gap Above the 200 DMA", VE, "Open[09:15] > PrevClose", ["open_price", "prev_close"], "09:20",
-      status=IMPL_P, proposal="gap_min_points (default 0)", unresolved=["official close vs last bar; minimum size"]),
+      status=IMPL_P, proposal="gap_min_points (default 0); prev_close_source (default OFFICIAL_DAILY: the published NSE close, verified on 9/9 external closes)", unresolved=["minimum gap size"]),
     R("ORB-GAP-LONG-002", "ORB", "Gap/200DMA", "The gap must bring price from below the 200 DMA to above it ('price may have been below it').",
       ORB_DOC, "7,8", "Special Setup step 2", VQ, "PrevClose <= MA_prev and Open[09:15] > MA", ["ma"], status=IMPL_P, proposal="ma_mode",
       unresolved=["'may have been below' - optional or required?"]),
@@ -228,8 +239,8 @@ RULES: list[dict] = [
     R("PDR-001", "PDR", "ALL", "Long-only bias on 5-minute candles.", PDR_DOC, "1", "Strategy at a Glance", VE, "direction == LONG", []),
     R("PDR-002", "PDR", "ALL", "Zone: previous day's high where price peaked and reversed; box from the candle body to the top of the upper wick.",
       PDR_DOC, "1,2", "Marking the Resistance Zone", VQ,
-      "zone_high = High of the previous-day high candle; zone_low = body bottom (ZONE_FULL) | body top (ZONE_WICK)", ["prev_day_candles"], "09:15",
-      status=IMPL_P, proposal="zone_lower_boundary", unresolved=["'relevant candle-body level'", "tie-break when several candles share the high"]),
+      "zone_high = High of the previous-day high candle; zone_low = body TOP (ZONE_WICK, Phase 2.2 default: the guide's drawn zones in charts 1, 2 and 4 are [body top, wick tip] to within about 1-2 points at the bottom edge; chart 4 is dated only by shape-matching) | body bottom (ZONE_FULL candidate)", ["prev_day_candles"], "09:15",
+      status=IMPL_P, proposal="zone_lower_boundary", unresolved=["which candle marks the zone: charts 1, 2, 4 use the session-high candle, chart 3 a shelf of equal highs (PDR-D09)", "tie-break when several candles share the high"]),
     R("PDR-003", "PDR", "ALL", "The zone is an area (not one price), extended forward so it is visible the next trading day.", PDR_DOC, "2", "Draw the zone", VE,
       "zone persists through the next session", []),
     R("PDR-004", "PDR", "ALL", "Next trading day must open gap up; do not enter at the open.", PDR_DOC, "1,2,3", "Next-Day Conditions", VE,
@@ -245,12 +256,13 @@ RULES: list[dict] = [
     R("PDR-008", "PDR", "ALL", "Target is fixed at 70 points for every PDR trade.", PDR_DOC, "1,2,3", "Target and Stop-Loss", VE, "Target = entry + 70", ["entry"], "at entry", status=SPEC,
       conflicts="EXE-T2-001"),
     R("PDR-009", "PDR", "ALL", "Stop-loss 35 or 40 'depending on the situation'; choose before entering, do not move after entry. The selection criterion is not given.",
-      PDR_DOC, "1,2", "Target and Stop-Loss", MS, "", [], "at entry", status=NOT, unresolved=["selection criterion for 35 vs 40"]),
+      PDR_DOC, "1,2", "Target and Stop-Loss", MS, "", [], "at entry", status=IMPL_P, proposal="TradeConfig.stop_variant (USER_APPROVED research baseline 35, EXE-STOP-001)", unresolved=["selection criterion for 35 vs 40 (the owner's 35 is a research baseline, not the author's rule)"]),
     R("PDR-010", "PDR", "ALL", "Checklist: a clear previous-day high and reversal must be identified.", PDR_DOC, "3", "Execution Checklist", VQ,
       "reversal depth after the high >= f * previous-day range (research filter) | OFF", ["prev_day_candles"], "09:15", status=IMPL_P,
       proposal="pdr_reversal_filter (default OFF)", unresolved=["'clear high and reversal' undefined"]),
-    R("PDR-011", "PDR", "ALL", "PROPOSED: the gap-up open must be above the zone for a later 'return to the zone' (support test) to make sense. The source does not state it.",
-      PDR_DOC, "1,2", "(engineering)", PR, "Open[09:15] > zone_high", ["open_price", "zone"], "09:20", status=IMPL_P, proposal="require_open_clear_of_zone (default True)"),
+    R("PDR-011", "PDR", "ALL", "The gap-up open lies ABOVE the zone: the text says the market 'pulls back into the marked zone' (p.1) and 'come back toward the marked zone ... if price keeps rising without returning there is no setup' (p.2). Dated Example 3 (2025-10-07) does NOT settle it: the zone the author drew is about 4-5 points tall (~25,080.5-25,084.5, +/-1, pixel-calibrated by two reviewers against the chart's price tags) versus the engine's 38.6-point zone [25,057.10, 25,095.70] built from the 14:50 spike candle; the open (25,087.55) is about 3 points above the drawn zone, so with the drawn zone the example matches the text. A zone that is above the open is resistance, not support.",
+      PDR_DOC, "1,2,3,4", "Strategy at a Glance; Gap-up open; Chart Example 3", VQ, "Open[09:15] > zone_high", ["open_price", "zone"], "09:20", status=IMPL_P,
+      proposal="pdr_open_vs_zone (default ABOVE_ZONE = the text; NOT_BELOW_ZONE; ANY not recommended)", unresolved=["Example 3's drawn zone differs from the engine's zone construction (PDR-002)"]),
     R("PDR-012", "PDR", "ALL", "PROPOSED: only the first qualifying signal per session is reported; the source is silent on re-entries.",
       "(engineering proposal; not in any source document)", "n/a", "(engineering)", PR, "max_signals_per_session = 1", [], status=IMPL_P, proposal="max_signals_per_session"),
     # ============================ PDS ============================
@@ -283,8 +295,9 @@ RULES: list[dict] = [
       unresolved=["distance measurement; exactly 35 (p.6 open items)"]),
     R("PDS-MISSING-001", "PDS", "ALL", "Entry timing (during the candle or after it closes) is not specified.", PDS_DOC, "6", "Items to Define", MS, "", [], status=IMPL_P,
       proposal="signal fires at candle close (the only point at which the candle's colour is known)"),
-    R("PDS-006", "PDS", "ALL", "PROPOSED: the gap-down open must be below the zone for a later rally into the zone to make sense. The source does not state it.",
-      PDS_DOC, "3,4", "(engineering)", PR, "Open[09:15] < zone_low", ["open_price", "zone"], "09:20", status=IMPL_P, proposal="require_open_clear_of_zone (default True)"),
+    R("PDS-006", "PDS", "ALL", "After the gap-down open 'price is trading below the previous day's support zone' (p.3) and 'must move back up toward the marked zone' (p.4): the open is below the zone. No contrary worked example exists (the PDS charts are undated).",
+      PDS_DOC, "3,4", "The Next-Day Gap-Down Condition; Price Reaching the Resistance Zone", VQ, "Open[09:15] < zone_low", ["open_price", "zone"], "09:20", status=IMPL_P,
+      proposal="pds_open_vs_zone (default BELOW_ZONE = the text; NOT_ABOVE_ZONE | ANY); the asymmetry with PDR-011 is an author decision"),
     R("PDS-007", "PDS", "ALL", "PROPOSED: only the first qualifying signal per session is reported; the source is silent on re-entries.",
       "(engineering proposal; not in any source document)", "n/a", "(engineering)", PR, "max_signals_per_session = 1", [], status=IMPL_P, proposal="max_signals_per_session"),
     # ============================ RF ============================
@@ -305,12 +318,12 @@ RULES: list[dict] = [
       "strict chronological state machine", []),
     R("RF-008", "RF", "ALL", "A previous downtrend with a sudden large gap-up above the 200 EMA is rejected; gap up that exceeds yesterday's range is rejected.", RF_DOC, "5,6", "Why 'above the EMA' is not enough", VQ,
       "TrendFilter must show the uptrend BEFORE the gap (EMA5M_PREV_SESSION or stricter)", ["ema200_5m", "prior_sessions"], status=IMPL_P, proposal="trend_mode"),
-    R("RF-009", "RF", "ALL", "Stop-loss 35-40 'depending on what is logical'; fixed vs candle-extreme not stated (PARTIAL).", RF_DOC, "2,8", "Stop-Loss Rule", MS, "", [], "at entry",
-      status=NOT, unresolved=["35 vs 40 selection; fixed vs candle-extreme"]),
+    R("RF-009", "RF", "ALL", "Stop-loss 35-40 'depending on what is logical'; fixed vs candle-extreme not stated (PARTIAL). Phase 2.2: the owner's research baseline is 35 (USER_APPROVED, EXE-STOP-001), 40 a sensitivity variant; the source rule stays unresolved.", RF_DOC, "2,8", "Stop-Loss Rule", MS, "", [], "at entry",
+      status=IMPL_P, proposal="TradeConfig.stop_variant", unresolved=["35 vs 40 selection; fixed vs candle-extreme (source)"]),
     R("RF-010", "RF", "ALL", "Exact entry price is OPEN (not specified).", RF_DOC, "8", "Rule readiness", MS, "", [], status=IMPL_P,
       proposal="reference price = Close of the return-inside candle (signal candle)"),
-    R("RF-011", "RF", "ALL", "Target is OPEN (not specified). RF_TARGET_STATUS = UNRESOLVED.", RF_DOC, "8", "Rule readiness", MS, "", [], "at entry", status=NOT,
-      unresolved=["RF target distance"]),
+    R("RF-011", "RF", "ALL", "Target is OPEN (not specified). Phase 2.2: a CONFIGURABLE research value of 60 points is carried with RF_TARGET_STATUS = PROPOSED_FOR_REVIEW (evidence: the report's arithmetic and the p.9 chart box 60.80); it is not a source rule and not USER_APPROVED.", RF_DOC, "8", "Rule readiness", MS, "", [], "at entry", status=IMPL_P,
+      proposal="TradeConfig.rf_t2_points (60; None = unresolved)", unresolved=["RF target distance (source)"]),
     R("RF-012", "RF", "ALL", "Trade direction is never stated. 'Opposite of IRF' (p.2) + 'uptrend only' (p.1) + the p.9 reference chart (long-position tool) imply LONG.",
       RF_DOC, "1,2,9", "Strategy at a Glance; Ref. images", PR, "direction == LONG (implied)", [], status=IMPL_P, proposal="rf_direction (default LONG, flagged)",
       unresolved=["explicit confirmation of direction"]),
@@ -334,12 +347,125 @@ RULES: list[dict] = [
     # ============================ DATA / TIMING ============================
     R("DATA-TIME-001", "DATA", "ALL", "A 5-minute candle is usable only after it closes; 09:15-09:20 closes at 09:20.", ORB_DOC, "2,3", "The First 5-Minute Candle", VE,
       "candle with bar_start s is usable at s+5min", [], "bar_end", status=IMPL),
-    R("DATA-QUAL-001", "DATA", "ALL", "PROPOSED data-quality rules (not in any strategy document): frozen-feed rows (>= 5 consecutive identical flat 1-minute rows) are excluded and their 5-minute candles dropped; a session whose previous session has a frozen tail, post-close prints, a missing weekday or an excluded special session between is NOT evaluated by strategies that need the previous-day close/levels.",
+    R("DATA-QUAL-001", "DATA", "ALL", "PROPOSED data-quality rules (not in any strategy document): every session gets a quality status (VALID, VALID_SPECIAL_SESSION, PARTIAL, CORRUPT, MISSING, UNVERIFIED) and only evaluable sessions are evaluated. A frozen run (>= 5 identical flat 1-minute rows) is real market structure inside 15:15-15:29 on/after 2026-08-03 (NSE Closing Auction Session) and an anomaly (CORRUPT) anywhere else. A session whose previous session has a missing unexplained weekday, an excluded special session between, or a previous-close day that differs from the previous session is NOT evaluated by strategies that need previous-day data.",
       "(engineering proposal; not in any source document)", "n/a", "(engineering)", PR, "see data/sessions.py stale_row_mask and PreviousSession.gap_to_this_session_unverified", [], "n/a", status=IMPL_P,
       proposal="allow_unverified_prev_session (default False)"),
-    R("DATA-WARM-001", "DATA", "ALL", "The 200-period moving average must be fully initialised before use (engineering requirement; the PDFs are silent).", "(engineering)", "n/a", "-", PR,
+    R("DATA-CAS-001", "DATA", "ALL", "MARKET STRUCTURE (not a strategy rule): from 2026-08-03 NSE runs a Closing Auction Session; continuous trading in F&O stocks ends 15:15, the index is frozen until the official close appears, so 15:15-15:29 minute data is frozen then jumps. Evidence: 21/21 sessions from 2026-08-03 show it (and 0 before), freeze starts 15:15/15:16, the catch-up bar's close equals the 15:30 print and the published close (24,774.30 on 2026-08-03), two secondary sources describe the rollout. The NSE circular was not read directly.",
+      "(market-structure evidence; not in any source document)", "n/a", "(external)", PR, "frozen rows inside 15:15-15:29 on/after 2026-08-03 are kept and flagged CAS_FROZEN_WINDOW_KEPT", [], "n/a", status=IMPL_P,
+      proposal="prev_day_level_window (ALL_CANDLES default | CONTINUOUS_ONLY)"),
+    R("DATA-OFFICIAL-CLOSE-001", "DATA", "ALL", "The 'previous close' used for gaps is the OFFICIAL NSE closing value = the vendor DAILY close (matches 9 of 9 externally published closes); the 15:30 minute print equals it only from 2026-08-03 (before, it is the last tick: differs by a median 8 points, up to 88). Strategy wording: ORB p.8 'opens above the previous close', RF p.2 'opens above where it previously closed'.",
+      "(external evidence; strategy text only says 'previous close')", "n/a", "(external)", VQ, "PrevClose = vendor daily close of the previous trading row", [], "09:15", status=IMPL_P,
+      proposal="prev_close_source (OFFICIAL_DAILY default | LAST_PRINT_1530)", unresolved=["whether the author's chart gap uses the official close or the last candle"]),
+    R("DATA-WARM-001", "DATA", "ALL", "The 200-period moving average must be fully initialised before use (engineering requirement; the PDFs are silent). Phase 2.1: 2025-07/08 1-minute data is loaded as WARM-UP ONLY so every session's EMA is initialised; the daily 200-day average uses 248 official daily bars before 2025-09-01.", "(engineering)", "n/a", "-", PR,
       "EMA/SMA is NaN until 200 completed observations exist", [], "n/a", status=IMPL_P),
+    # ============================ PHASE 2.2: USER-APPROVED BASELINE, EXECUTION ELIGIBILITY, SHARED PROPOSALS ============================
+    R("EXE-STOP-001", "EXEC", "ALL", "USER-APPROVED provisional RESEARCH baseline stop (Phase 2.2): IRF 35, PDR 35, PDS 35, RF 35 index points; ORB keeps its documented 30. 40 points is the future sensitivity variant for IRF/PDR/PDS/RF. This is NOT the historical manual trader's stop-selection rule (the guides say '35 or 40' and give no selection rule for IRF/PDR/PDS/RF); ORB's 30 is VERIFIED_EXPLICIT (ORB p.1).",
+      "(owner decision, Phase 2.2; ORB: ORB_Strategy_Rulebook p.1)", "n/a", "(owner)", UA, "stop = entry -/+ STOP_BASELINE[strategy]; variant STOP_ALTERNATE", [], "n/a", status=SPEC,
+      proposal="TradeConfig.stop_variant (BASELINE | ALTERNATE_40 | SOURCE_35_40_BY_DISTANCE)", measurable=True),
+    R("EXE-AUCTION-001", "EXEC", "ALL", "PROPOSED execution convention: on closing-auction days (from 2026-08-03) bars starting 15:15-15:29 are index REFERENCE observations, not fillable prices: no simulated fill, no entry whose next bar is such a bar, and no invented closing price. A position still open then is reported UNRESOLVED_AT_CLOSING_AUCTION for Phase 3.",
+      "(engineering; market structure from data_repair_report.md)", "n/a", "(engineering)", PR, "executable(bar) = CONTINUOUS; see core/execution_eligibility.py", [], "n/a", status=IMPL_P,
+      proposal="execution_eligibility.classify_bar", unresolved=["exact auction matching mechanics (not modelled)"]),
+    R("EXE-FILL-001", "EXEC", "ALL", "PROPOSED causal fill convention: a signal confirmed at its candle's close (e.g. 09:20 for the first candle) is acted on from the NEXT 1-minute bar; the reference price (candle close) is not a fill, and the fill is the open of that next bar.",
+      "(engineering; the documents never state the fill price)", "n/a", "(engineering)", PR, "entry_fill = open of the first 1-minute bar starting at signal_timestamp", [], "bar_end", status=IMPL_P,
+      proposal="entry_reference_price", unresolved=["entry price convention of the strategy owner"]),
+    R("TREND-SWING-001", "ALL", "ALL", "PROPOSED swing points (Phase 2.2): a swing high is a candle whose high is strictly greater than the highs of the 2 candles before and the 2 after it; a swing low is the inverse. A swing point becomes known only when the 2nd following candle has CLOSED.",
+      "(engineering proposal; no source gives a numeric swing definition)", "n/a", "(engineering)", PR, "H[j] > H[j-m] and H[j] > H[j+m] for m=1..k; known at bar_end of candle j+k (k=2)", [], "bar_end of j+k", status=IMPL_P, proposal="swing_k"),
+    R("TREND-STRUCT-001", "ALL", "ALL", "PROPOSED established trend (Phase 2.2 'structure' mode). Uptrend: close of the last candle before the open above its EMA(200) AND the latest two confirmed swing highs rising AND the latest two confirmed swing lows rising (downtrend: mirror). Evaluated on PREVIOUS-session information only, so the opening gap can never establish the trend. EMA slope is NOT a condition.",
+      "(engineering proposal; the guides describe trend qualitatively)", "n/a", "(engineering)", PR, "close>EMA200 and SH2>SH1 and SL2>SL1 (up)", [], "09:15 (prior-session data only)", status=IMPL_P, proposal="trend_mode=STRUCTURE_EMA_SWING2"),
+    R("PDR-ZONE-002", "PDR", "ALL", "PROPOSED zone-marking candidates (which candle(s) mark the previous-day resistance): A absolute highest-high candle; B latest confirmed swing high with a bearish reversal candle; C highest cluster of >=2 swing highs (repeated resistance). The PDR guide says only 'find the high where price reached a peak and then reversed' and 'note the candle's body and upper wick'; the selection is NOT defined. Chosen by agreement with the source charts, never by profitability.",
+      PDR_DOC, "1,2,3,4", "Zone marking; Examples", PR, "see definitions.pdr_zone", [], "previous session only", status=IMPL_P, proposal="pdr_zone_method",
+      unresolved=["author's candle selection (PDR-D09)"]),
+    R("PDS-ZONE-002", "PDS", "ALL", "PROPOSED zone-marking candidates for the previous-day support zone (A absolute lowest-low candle; B latest confirmed swing low with a bullish reversal candle; C lowest cluster of >=2 swing lows). Not assumed to be an exact mirror of PDR; the selection is NOT defined in the PDS guide.",
+      PDS_DOC, "1,2,3", "Zone marking; Examples", PR, "see definitions.pds_zone", [], "previous session only", status=IMPL_P, proposal="pds_zone_method",
+      unresolved=["author's candle selection"]),
+    R("DATA-OPEN-001", "DATA", "ALL", "OPEN-PRICE DEFINITION (found in Phase 2.2, not resolved): the 09:15 candle's open is the first 1-minute row's open, but the vendor DAILY open differs from it by more than 5 points on 98 of 247 sessions (up to 64) and equals the open drawn on the guide's own chart in PDR example 1 (2025-09-02: daily open 24,653.00, first-minute open 24,683.25; the author's chart shows a GREEN first candle, ours is red). Using the daily open would change the gap direction on 10 sessions and the first-candle colour on 13. Nothing was changed; the data is untouched.",
+      "(data observation; PDR chart 1, p.3)", "3", "Example 1 (TradingView first candle)", MS, "", ["first_minute_open", "vendor_daily_open"], "09:15", status=NOT,
+      unresolved=["which open the author's charts use (first 1-minute print vs the official opening value)"]),
+    # ============================ PHASE 2.3: USER-APPROVED TRADE SELECTION, DAY STATE MACHINE, POSITION MANAGEMENT ============================
+    R("SEL-FIRST-001", "EXEC", "ALL", "Only the FIRST valid signal among the five strategies, in chronological order of signal confirmation, initiates the first trade of the day. The strategies are not five independent positions: one shared portfolio-level controller selects.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "first confirmed, fillable signal by signal_timestamp wins", [], "signal timestamp", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.1", effective_phase="2.3", supersedes="EXE-SEL-001 (as the only selection rule; the evaluation policies remain as research diagnostics)"),
+    R("SEL-ACTIVE-001", "EXEC", "ALL", "While a position is active every later signal is ignored for execution and kept in a diagnostic log with the reason; an ignored signal is never reused later.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "signal_timestamp < position_end -> IGNORED(POSITION_ACTIVE)", [], "signal timestamp", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.1-3.2", effective_phase="2.3"),
+    R("SEL-TIE-001", "EXEC", "ALL", "Independently valid signals of DIFFERENT strategies confirmed at the same timestamp are a conflict: it is logged as SIMULTANEOUS_SIGNAL_CONFLICT and no strategy is chosen arbitrarily.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "distinct strategies at one timestamp -> conflict", [], "signal timestamp", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.1 and Scenario F", effective_phase="2.3"),
+    R("SEL-TIE-003", "EXEC", "ALL", "CONTROLLER INTERPRETATION awaiting the owner's confirmation (not stated in the instructions): (a) several METHODS of the SAME strategy and direction at one timestamp are treated as ONE trade (identical stop and target; the other methods are listed); (b) opposite directions of one strategy at one timestamp are a conflict, like different strategies. Both choices are unobservable in the data today (all 64 IRF and 8 ORB same-timestamp multi-method groups carry identical references).",
+      "(engineering interpretation of the owner's tie rule)", "n/a", "(engineering)", PR, "same strategy and direction -> one trade; opposite directions -> conflict", [], "signal timestamp", status=IMPL_P,
+      proposal="trading_day._choose", unresolved=["owner confirmation of (a) and (b)"], approval_source="none yet", effective_phase="2.3"),
+    R("SEL-TIE-002", "EXEC", "ALL", "A tie-breaking priority between strategies that signal at the same timestamp has NOT been approved. The controller accepts a TieBreakPolicy only if it is explicitly marked approved; with none, the collision is unresolved: no trade is taken and the day is UNRESOLVED_EXECUTION.",
+      "(absent: no approved policy)", "n/a", "(owner)", MS, "tie_break is None -> UNRESOLVED_EXECUTION", [], "signal timestamp", status=IMPL_P,
+      proposal="DayRules.tie_break (TieBreakPolicy.approved must be True)", unresolved=["which strategy has priority at an identical timestamp"],
+      approval_source="Strategy owner, Phase 2.3 instructions: policy left unresolved", effective_phase="2.3"),
+    R("DAY-T2-001", "EXEC", "ALL", "If the first trade reaches Target 2 the trading day is finished: no further trade.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "first trade outcome Target -> DAY_FINISHED", [], "exit", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.2", effective_phase="2.3"),
+    R("DAY-BUF-001", "EXEC", "ALL", "If the first trade reaches Target 1 and the remaining legs then exit at the post-T1 protective stop (T1_THEN_BUFFER_STOP), no second trade is allowed.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "first trade outcome T1_THEN_BUFFER_STOP -> DAY_FINISHED", [], "exit", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.2 and s5", effective_phase="2.3"),
+    R("DAY-SL-001", "EXEC", "ALL", "If the first trade hits its ORIGINAL full stop-loss before Target 1 (INITIAL_FULL_STOP), exactly one additional trade is permitted, and only a PDR or PDS trade from a valid, independently confirmed signal confirmed after the first trade has fully stopped out.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "INITIAL_FULL_STOP -> SECOND_TRADE_ELIGIBLE; strategies in {PDR, PDS}; signal_timestamp >= position_end", [], "exit", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.2 and Scenario B/D", effective_phase="2.3"),
+    R("DAY-NOREUSE-001", "EXEC", "ALL", "A signal that was ignored while the first position was active is never used retroactively for the second trade.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "second-trade signals need signal_timestamp >= first position end", [], "signal timestamp", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.2", effective_phase="2.3"),
+    R("DAY-UNRES-001", "EXEC", "ALL", "No second trade if the first trade closed by end of day, by an unresolved execution (for example an open position when the closing auction starts, or a NOT_EVALUABLE exit policy) or by any exit class not explicitly approved for re-entry; the day is UNRESOLVED_EXECUTION and nothing is invented.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "INCOMPLETE_EOD / NOT_EVALUABLE -> UNRESOLVED_EXECUTION", [], "exit", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.2 and s9", effective_phase="2.3"),
+    R("DAY-MAX-001", "EXEC", "ALL", "At most 2 entries per day; after the second trade, whatever its outcome, no further trade.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "entries <= 2", [], "entry", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.2", effective_phase="2.3"),
+    R("ENTRY-CUTOFF-001", "EXEC", "ALL", "1:00 PM IST is the strict entry cutoff: no new position may be entered with a fill later than 13:00:00 IST. A candle that closes after 13:00 is not an eligible entry. With the causal fill convention (the open of the bar starting at the signal candle's end) a signal confirmed at exactly 13:00 fills at 13:00:00 and is eligible; one confirmed at 13:05 is rejected as ENTRY_CUTOFF_EXCEEDED. The cutoff concerns new entries only, not open positions. Evaluated in Asia/Kolkata, never in the machine's timezone.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "fill_timestamp (IST) <= 13:00:00", [], "entry", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.3", effective_phase="2.3"),
+    R("SIZE-LOT-001", "EXEC", "ALL", "6 lots, in two equal legs of 3 lots; the lot multiplier is configurable (the historical report used 65 per lot: 390 units, 195 per leg). Synthetic index-point model, not an executable index order.",
+      "NIFTY_System_Trading_Strategy_Performance.docx + owner decision", "n/a", "Intro; Strategy Framework", UA, "lots=6, leg1=3, leg2=3, lot_size=65 (configurable)", [], "n/a", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s3.4 (report: [P2] [P7])", effective_phase="2.3"),
+    R("POST-T1-STOP-006", "EXEC", "ALL", "After Target 1 the remaining 3 lots use a protective stop 6 index points against the ORIGINAL entry: LONG entry - 6, SHORT entry + 6. No trailing, no further adjustment, no move back to entry, no widening. T1 then this stop = T1_THEN_BUFFER_STOP (Leg 1 keeps +27, Leg 2 books about -6 or worse after a gap) and no second trade. A gap through the stop fills at the worse of the level and the open; the adverse slippage is logged.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "stop2 = entry - 6 (LONG) / entry + 6 (SHORT), fixed", [], "after T1", status=IMPL,
+      approval_source="Strategy owner, Phase 2.3 instructions s5", effective_phase="2.3", supersedes="EXE-BE-001"),
+    R("FORCED-EXIT-001", "EXEC", "ALL", "Open positions are closed by a forced exit BEFORE 15:15 IST (the end of continuous trading; the closing-auction bars are never fillable). A position that is still open when the forced-exit minute arrives is closed; the day then ends (no second trade). No closing-auction price and no official close is ever used as a fill.",
+      "(strategy owner decision referred to in the Phase 3.0 instructions)", "n/a", "(owner)", UA, "position open at 15:14 -> forced exit; no later fill", [], "15:14", status=IMPL,
+      approval_source="Strategy owner, Phase 3.0 instructions s1/s3 ('the user-approved forced-exit policy before 15:15'); the written policy was NOT found in the repository, so only its existence and the 15:15 limit are taken from the instruction",
+      effective_phase="3.0"),
+    R("FORCED-EXIT-002", "EXEC", "ALL", "ASSUMPTION (not specified anywhere I could find): the forced exit is scheduled at 15:14:00 IST and fills at the OPEN of the 15:14 one-minute bar - the last continuous minute - consistent with the causal convention that a decision taken at a time t fills at the open of the bar starting at t. The 15:14 bar's close is recorded per trade as a sensitivity reference only. The same time applies to every session, including those before the 2026-08-03 closing-auction regime.",
+      "(engineering assumption for Phase 3.0)", "n/a", "(engineering)", PR, "forced_exit_time = 15:14 IST; fill = open of that bar", [], "15:14", status=IMPL_P,
+      proposal="TradeConfig.forced_exit_time", unresolved=["the owner's exact forced-exit time and price convention"], approval_source="none yet", effective_phase="3.0"),
+    R("TREND-EMA-001", "ALL", "ALL", "Approved research variant A of the ORB/RF trend: the five-minute EMA(200) price location only (previous session's last close above/below its EMA(200); for RF the trend must exist BEFORE the opening gap, so the gap day contributes nothing). Not claimed to reproduce the discretionary trend definition.",
+      "(strategy owner decision, Phase 2.3)", "n/a", "(owner)", UA, "prev-session last close > EMA200 (long) / < EMA200 (short)", [], "09:15 (prior-session data only)", status=IMPL,
+      proposal="trend_mode=EMA_PREV_SESSION_CLOSE", approval_source="Strategy owner, earlier approval confirmed in Phase 2.3 instructions s7", effective_phase="2.3"),
+    R("EXE-SEL-001", "EXEC", "ALL", "PROPOSED evaluation policies for repeated signals (none is a source rule): ALL_VALID_SIGNALS, FIRST_VALID_SIGNAL_PER_DAY, ONE_ACTIVE_POSITION_AT_A_TIME. The complete event log is always kept; a policy only decides which events a later simulation takes.",
+      "(engineering; IRF-GLOBAL-004 is unresolved)", "n/a", "(engineering)", PR, "see strategies/selection.py", [], "n/a", status=IMPL_P, proposal="selection policy"),
+    R("CANDLE-DEF-001", "ALL", "ALL", "PROPOSED candle-quality thresholds (Phase 2.2 owner recommendation; numbers not stated in the PDFs unless the verification note says so): strong candle body >= 60% of range with opposing wick <= 20%; small candle body <= 30% of range; pin bar rejection wick >= 2x body with the close in the favourable 30% of the range.",
+      "(owner recommendation; see phase22_rule_verification.md)", "n/a", "(engineering)", PR, "see strategies/params.py STRONG_CANDLE / PIN_BAR / SMALL_CANDLE_BODY_RATIO_MAX", [], _CANDLE, status=IMPL_P, proposal="strong_candle, pin_bar"),
 ]
+
+def _amend(rule_id: str, **changes) -> None:
+    """Record a Phase 2.3 change of authority/status on an existing rule without erasing its history (the old text stays in ``description``)."""
+    for r in RULES:
+        if r["rule_id"] == rule_id:
+            note = changes.pop("note", "")
+            r.update(changes)
+            if note:
+                r["description"] = r["description"] + " [PHASE 2.3: " + note + "]"
+            if "classification" in changes:
+                r["authority"] = AUTHORITY_OF.get(changes["classification"], changes["classification"])
+            return
+    raise KeyError(rule_id)
+
+
+_amend("EXE-BE-001", implementation_status=SUPERSEDED, superseded_by="POST-T1-STOP-006", effective_phase="2.3",
+       note="SUPERSEDED by the owner's POST-T1-STOP-006 (stop at entry -/+ 6 instead of exactly at the entry). Kept only as the legacy mode post_t1_stop_mode='ENTRY_BREAKEVEN' for report reconciliation.")
+_amend("IRF-GLOBAL-004", note="the owner's portfolio-level rules (SEL-FIRST-001, SEL-ACTIVE-001, DAY-*, ENTRY-CUTOFF-001) now govern trades per day, the latest entry and re-arming AT EXECUTION; the IRF engine still emits every event and the classification is unchanged until the owner confirms that these rules settle this item.")
+_amend("EXE-OUT-001", note="the Breakeven outcome below is the SUPERSEDED legacy class (post_t1_stop_mode='ENTRY_BREAKEVEN'); under POST-T1-STOP-006 the outcomes are Target, T1_THEN_BUFFER_STOP, INITIAL_FULL_STOP (alias SL) and Incomplete.")
+_amend("EXE-SEL-001", superseded_by="SEL-FIRST-001 (as the only selection rule)", note="the evaluation policies remain research diagnostics; the owner-approved controller (SEL-FIRST-001, SEL-ACTIVE-001, DAY-*) is the selection rule in force.")
+_amend("DATA-OPEN-001", classification=USER_APPROVED, implementation_status=IMPL, mandatory=False, approval_source="Strategy owner, Phase 2.3 instructions s7", effective_phase="2.3",
+       note="RESOLVED by the owner: use the ORIGINAL first 1-minute row's open for the opening gap, the first 5-minute candle and all signals; the vendor's separately published daily open is NOT substituted. The observation above stays on record.")
+_amend("TREND-STRUCT-001", classification=USER_APPROVED, approval_source="Strategy owner, earlier approval confirmed in Phase 2.3 instructions s7", effective_phase="2.3",
+       note="approved as research variant B (EMA plus confirmed swing structure). The swing look-back k=2 itself (TREND-SWING-001) is still a proposal; neither variant is claimed to reproduce the discretionary trend.")
+_amend("PDR-ZONE-002", classification=USER_APPROVED, approval_source="Strategy owner, Phase 2.3 instructions s7", effective_phase="2.3",
+       note="the owner approved TWO independent research candidates - A: confirmed reversal swing high (B_SWING_HIGH_REVERSAL), B: repeated resistance shelf (C_REPEATED_TOUCHES). The absolute highest-high candle is kept as a DIAGNOSTIC reference only and never produces a tradable signal. Neither candidate reproduces PDR chart 3.")
 
 RULE_IDS = {r["rule_id"] for r in RULES}
 assert len(RULE_IDS) == len(RULES), "duplicate rule ids"

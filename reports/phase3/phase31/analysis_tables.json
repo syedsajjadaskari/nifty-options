@@ -1,0 +1,260 @@
+{
+  "probe_ORB": {
+    "all_sessions": {
+      "FIRST_CANDLE_DID_NOT_CLOSE_BEYOND_PREV_DAY_HIGH_OR_LOW": 138,
+      "LEVEL_BROKEN_BUT_FILTERED": 109
+    },
+    "sessions_with_a_manual_trade_of_this_strategy": {
+      "FIRST_CANDLE_DID_NOT_CLOSE_BEYOND_PREV_DAY_HIGH_OR_LOW": 37,
+      "LEVEL_BROKEN_BUT_FILTERED": 48
+    }
+  },
+  "probe_PDR": {
+    "all_sessions": {
+      "GAP_UP_BUT_OPEN_NOT_ABOVE_ZONE": 41,
+      "GAP_UP_ZONE_TOUCHED": 61,
+      "ZONE_NEVER_INTERSECTED_BY_ANY_CANDLE": 38,
+      "NO_GAP_UP": 107
+    },
+    "sessions_with_a_manual_trade_of_this_strategy": {
+      "GAP_UP_ZONE_TOUCHED": 4,
+      "GAP_UP_BUT_OPEN_NOT_ABOVE_ZONE": 2,
+      "ZONE_NEVER_INTERSECTED_BY_ANY_CANDLE": 2
+    }
+  },
+  "probe_PDS": {
+    "all_sessions": {
+      "NO_GAP_DOWN": 141,
+      "GAP_DOWN_AND_ZONE_EXIST": 106
+    },
+    "sessions_with_a_manual_trade_of_this_strategy": {
+      "GAP_DOWN_AND_ZONE_EXIST": 3
+    }
+  },
+  "probe_RF": {
+    "all_sessions": {
+      "NO_CLOSE_BELOW_RF_LOW": 29,
+      "GAP_UP_OUTSIDE_PREV_RANGE": 60,
+      "SEQUENCE_COMPLETE": 12,
+      "NO_GAP_UP": 107,
+      "NO_RETURN_INSIDE": 15,
+      "TREND_NOT_ESTABLISHED": 24
+    },
+    "sessions_with_a_manual_trade_of_this_strategy": {
+      "SEQUENCE_COMPLETE": 7,
+      "TREND_NOT_ESTABLISHED": 2,
+      "GAP_UP_OUTSIDE_PREV_RANGE": 7,
+      "NO_GAP_UP": 1
+    }
+  },
+  "probe_IRF": {
+    "all_sessions": {
+      "BREAKOUT_EXISTS": 158,
+      "NO_CLOSE_ABOVE_IRH_BEFORE_13_00": 89
+    },
+    "sessions_with_a_manual_trade_of_this_strategy": {
+      "BREAKOUT_EXISTS": 69,
+      "NO_CLOSE_ABOVE_IRH_BEFORE_13_00": 3
+    }
+  },
+  "record_status_counts": {
+    "IRF|Method 1|CONFIRMED": 349,
+    "IRF|Method 1/2|INCOMPLETE_AT_EOD": 130,
+    "IRF|Method 2A|CONFIRMED": 215,
+    "IRF|Method 2B|CONFIRMED": 310,
+    "IRF|Method 3|INVALIDATED": 37,
+    "ORB|ALL|NOT_EVALUATED": 1,
+    "ORB|Gap/200DMA|CONFIRMED": 10,
+    "ORB|Gap/200DMA|INVALIDATED": 41,
+    "ORB|Method 1|CONFIRMED": 27,
+    "ORB|Method 1|INVALIDATED": 81,
+    "ORB|Method 2|CONFIRMED": 16,
+    "ORB|Method 2|INVALIDATED": 179,
+    "PDR|ALL|NOT_EVALUATED": 1,
+    "PDR|PDR|CONFIRMED": 383,
+    "PDR|PDR|INCOMPLETE_AT_EOD": 9,
+    "PDR|PDR|INVALIDATED": 41,
+    "PDS|ALL|NOT_EVALUATED": 1,
+    "PDS|Method 1|CONFIRMED": 18,
+    "PDS|Method 1/2/3|INCOMPLETE_AT_EOD": 18,
+    "PDS|Method 1/2/3|INVALIDATED": 61,
+    "PDS|Method 2|CONFIRMED": 6,
+    "PDS|Method 3|CONFIRMED": 33,
+    "RF|ALL|NOT_EVALUATED": 1,
+    "RF|RF|CONFIRMED": 12,
+    "RF|RF|INCOMPLETE_AT_EOD": 38,
+    "RF|RF|INVALIDATED": 129
+  },
+  "setup_failure_reasons": {
+    "IRF|Method 1/2|SESSION_ENDED_BEFORE_CONFIRMATION": 130,
+    "ORB|Method 2|TREND:EMA_PREV_SESSION_CLOSE wrong side": 72,
+    "RF|RF|TREND:EMA_PREV_SESSION_CLOSE wrong side": 67,
+    "ORB|Method 2|TRENDLINE_NOT_SUPPORTIVE": 62,
+    "PDS|Method 1/2/3|GAP_DOWN_OPEN_NOT_BELOW_ZONE": 61,
+    "ORB|Method 1|CANDLE_QUALITY(not a strong body / wick too large)": 55,
+    "ORB|Method 2|CANDLE_QUALITY": 45,
+    "PDR|PDR|GAP_UP_OPEN_NOT_ABOVE_ZONE": 41,
+    "RF|RF|NO_RETURN_INSIDE_BEFORE_SESSION_END": 38,
+    "IRF|Method 3|WICK_SHARE_OUT_OF_BAND": 34,
+    "RF|RF|GAP_NOT_UP(DOWN)": 34,
+    "ORB|Gap/200DMA|CANDLE_QUALITY_OR_REJECTION_WICK": 30,
+    "RF|RF|GAP_UP_OUTSIDE_YESTERDAYS_RANGE": 28,
+    "ORB|Method 1|TREND:EMA_PREV_SESSION_CLOSE wrong side": 26,
+    "PDS|Method 1/2/3|NO_QUALIFYING_ENTRY_BEFORE_SESSION_END": 18,
+    "ORB|Gap/200DMA|CLOSE_NOT_BEYOND_MA": 11,
+    "PDR|PDR|NO_GREEN_CANDLE_AFTER_ZONE_TEST_BEFORE_SESSION_END": 9,
+    "IRF|Method 3|SUPPORT_NOT_BROKEN(sweep alone is never enough)": 3,
+    "ORB|ALL|PREV_SESSION_UNVERIFIED(PREV_SESSION_SKIPS_EXCLUDED_SESSION:": 1,
+    "PDR|ALL|PREV_SESSION_UNVERIFIED(PREV_SESSION_SKIPS_EXCLUDED_SESSION:": 1,
+    "PDS|ALL|PREV_SESSION_UNVERIFIED(PREV_SESSION_SKIPS_EXCLUDED_SESSION:": 1,
+    "RF|ALL|PREV_SESSION_UNVERIFIED(PREV_SESSION_SKIPS_EXCLUDED_SESSION:": 1
+  },
+  "irf_manual_vs_raw": {
+    "manual_irf_rows_evaluated": 72,
+    "no_raw_irf_signal_that_day": 3,
+    "nearest_raw_signal_rank_counts": {
+      "1": 54,
+      "2": 10,
+      "3": 2,
+      "4": 2,
+      "5": 1
+    },
+    "nearest_within_0min": 43,
+    "nearest_within_15min": 59,
+    "median_raw_irf_signals_on_those_days": 5.0
+  },
+  "irf_raw_signals_per_session_histogram": {
+    "0": 73,
+    "1": 9,
+    "2": 29,
+    "3": 24,
+    "4": 22,
+    "5": 18,
+    "6": 26,
+    "7": 10,
+    "8": 15,
+    "9": 10,
+    "10": 4,
+    "11": 4,
+    "12": 2,
+    "13": 1
+  },
+  "irf_raw_signals_by_hour": {
+    "09": 68,
+    "10": 192,
+    "11": 163,
+    "12": 126,
+    "13": 126,
+    "14": 140,
+    "15": 59
+  },
+  "manual_entries_by_hour": {
+    "IRF": {
+      "09": 36,
+      "10": 26,
+      "11": 6,
+      "12": 5
+    },
+    "ORB": {
+      "09": 89
+    },
+    "PDR": {
+      "09": 7,
+      "10": 1
+    },
+    "PDS": {
+      "09": 1,
+      "10": 2
+    },
+    "RF": {
+      "09": 14,
+      "10": 2,
+      "11": 1
+    }
+  },
+  "pdr_funnel": {
+    "B_SWING_HIGH_REVERSAL": {
+      "sessions with a PDR record (gap up)": 103,
+      "record: INVALIDATED GAP_UP_OPEN_NOT_ABOVE_ZONE": 41,
+      "record: CONFIRMED ": 383,
+      "record: INCOMPLETE_AT_EOD NO_GREEN_CANDLE_AFTER_ZONE_TEST_BEFORE_SESSIO": 9,
+      "no PDR record (no gap up or session not evaluable)": 144,
+      "record: NOT_EVALUATED PREV_SESSION_UNVERIFIED(PREV_SESSION_SKIPS_EX": 1
+    },
+    "C_REPEATED_TOUCHES": {
+      "sessions with a PDR record (gap up)": 99,
+      "record: INVALIDATED GAP_UP_OPEN_NOT_ABOVE_ZONE": 55,
+      "record: CONFIRMED ": 170,
+      "no PDR record (no gap up or session not evaluable)": 148,
+      "record: INVALIDATED NO_ZONE_CANDIDATE(C_REPEATED_TOUCHES)": 11,
+      "record: NOT_EVALUATED PREV_SESSION_UNVERIFIED(PREV_SESSION_SKIPS_EX": 1,
+      "record: INCOMPLETE_AT_EOD NO_GREEN_CANDLE_AFTER_ZONE_TEST_BEFORE_SESSIO": 3
+    }
+  },
+  "pdr_manual_rows": [
+    {
+      "journal_row": 4,
+      "date": "2025-09-02",
+      "entry_time_label": "09:25",
+      "classification": "EXACT_MATCH",
+      "detail": NaN
+    },
+    {
+      "journal_row": 21,
+      "date": "2025-10-06",
+      "entry_time_label": "09:30",
+      "classification": "EXACT_MATCH",
+      "detail": NaN
+    },
+    {
+      "journal_row": 22,
+      "date": "2025-10-07",
+      "entry_time_label": "09:20",
+      "classification": "SIGNAL_REJECTED_BY_ENTRY_RULE",
+      "detail": "GAP_UP_OPEN_NOT_ABOVE_ZONE; failed=PDR-011"
+    },
+    {
+      "journal_row": 44,
+      "date": "2025-11-20",
+      "entry_time_label": "09:45",
+      "classification": "EXACT_MATCH",
+      "detail": NaN
+    },
+    {
+      "journal_row": 67,
+      "date": "2025-12-31",
+      "entry_time_label": "09:45",
+      "classification": "MISSING_AUTOMATED_SIGNAL",
+      "detail": "ZONE_NEVER_INTERSECTED_BY_ANY_CANDLE"
+    },
+    {
+      "journal_row": 134,
+      "date": "2026-05-19",
+      "entry_time_label": "09:35",
+      "classification": "SIGNAL_REJECTED_BY_ENTRY_RULE",
+      "detail": "GAP_UP_OPEN_NOT_ABOVE_ZONE; failed=PDR-011"
+    },
+    {
+      "journal_row": 147,
+      "date": "2026-06-05",
+      "entry_time_label": "09:25",
+      "classification": "EXACT_MATCH",
+      "detail": NaN
+    },
+    {
+      "journal_row": 152,
+      "date": "2026-06-12",
+      "entry_time_label": "10:20",
+      "classification": "MISSING_AUTOMATED_SIGNAL",
+      "detail": "ZONE_NEVER_INTERSECTED_BY_ANY_CANDLE"
+    }
+  ],
+  "day_level_agreement": {
+    "both traded, same first strategy": 95,
+    "neither traded": 32,
+    "both traded, different first strategy": 67,
+    "manual traded, automated did not": 18,
+    "automated traded, manual did not": 35
+  },
+  "manual_trading_days_in_vendor_sessions": 180
+}

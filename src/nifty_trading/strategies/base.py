@@ -16,10 +16,17 @@ from typing import Any
 
 import pandas as pd
 
+from nifty_trading.core.execution_eligibility import classify_bar
 from nifty_trading.core.strategy import BaseStrategy, Signal, SignalType, StrategyContext
 from nifty_trading.data.sessions import SessionContext, build_session_contexts
 from nifty_trading.strategies.definitions import Candle, to_candles
-from nifty_trading.strategies.params import DEFAULT_PROPOSALS, ProposalConfig
+from nifty_trading.strategies.params import (
+    DEFAULT_PROPOSALS,
+    DEFAULT_TRADE,
+    T2_CONFLICTS,
+    ProposalConfig,
+    TradeConfig,
+)
 from nifty_trading.strategies.rule_data import IMPL_P, IMPL_R, NOT, VE
 from nifty_trading.strategies.rules import RULE_BY_ID, implements
 
@@ -106,7 +113,7 @@ class SignalRecord:
     rule_ids_failed: list[str]
     signal_status: str
     invalidation_reason: str | None
-    verification_status: str
+    verification_status: str  # for a record that is NOT a CONFIRMED signal this only describes the rules satisfied before the setup ended; it carries no signal meaning (see execution_config.entry_rule_status)
     rule_ids_unresolved: list[str] = field(default_factory=list)
     proposals_used: dict[str, Any] = field(default_factory=dict)
     state_trace: list[str] = field(default_factory=list)
@@ -114,6 +121,7 @@ class SignalRecord:
     concurrent_methods: list[str] = field(default_factory=list)
     reference_price_is_fill: bool = False  # always False: a signal is not a filled trade
     instrument: str = INSTRUMENT
+    execution_config: dict[str, Any] = field(default_factory=dict)  # which rule configuration produced this signal (Phase 2.2)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -138,11 +146,13 @@ class SignalEngine(BaseStrategy):
     STRATEGY = ""
     METHODS: tuple[str, ...] = ()
     REQUIRES_PREVIOUS_SESSION = False
+    TREND_METHODS: tuple[str, ...] = ()  # methods that apply the trend_mode proposal ("*" = all); others report NOT_APPLICABLE
 
     def __init__(self, name: str | None = None, params: dict[str, Any] | None = None,
-                 proposals: ProposalConfig | None = None):
+                 proposals: ProposalConfig | None = None, trade: TradeConfig | None = None):
         super().__init__(name or self.STRATEGY, params)
         self.p = proposals or DEFAULT_PROPOSALS
+        self.trade = trade or DEFAULT_TRADE
 
     # ---------------------------------------------------------------- public API
     @implements("DATA-TIME-001")
@@ -169,7 +179,8 @@ class SignalEngine(BaseStrategy):
     @implements("DATA-QUAL-001")
     def _precheck(self, ctx: SessionContext) -> str | None:
         if not ctx.info.usable:
-            return f"SESSION_NOT_USABLE:{ctx.info.status.value}"
+            return f"SESSION_NOT_EVALUABLE:{ctx.info.quality.value}:{ctx.info.status.value}" + (
+                f"({'; '.join(ctx.info.reasons)})" if ctx.info.reasons else "")
         if self.REQUIRES_PREVIOUS_SESSION:
             if ctx.previous is None:
                 return "NO_PREVIOUS_SESSION_IN_DATASET"
@@ -178,6 +189,28 @@ class SignalEngine(BaseStrategy):
                 return f"PREV_SESSION_UNVERIFIED({why})"
         return None
 
+    def exec_config(self, method: str, status: str, execution: str, signal_ts: datetime | None = None) -> dict[str, Any]:
+        """The rule configuration that produced a signal. Never says VERIFIED just because some components are verified:
+        ``entry_rule_status`` is VERIFIED_EXPLICIT only when every satisfied rule is explicit and nothing is unresolved."""
+        t, st = self.trade, self.STRATEGY
+        uses_trend = "*" in self.TREND_METHODS or method in self.TREND_METHODS
+        return {
+            "strategy": st, "method": method, "entry_rule_status": status,
+            "stop_distance": t.stop_points(st), "stop_variant": t.stop_variant, "stop_status": t.stop_status(st) if t.stop_points(st) is not None else "UNRESOLVED",
+            "target_1": t.t1_points, "target_2": t.t2_points(st), "target_2_status": t.t2_status(st),
+            "target_2_conflict": T2_CONFLICTS.get(st),
+            "proposal_config": self.p.to_dict(),  # every PROPOSED_FOR_REVIEW setting in force: two signals under different settings are distinguishable
+            "trade_config": asdict(t),
+            "trend_mode": self.p.trend_mode if uses_trend else "NOT_APPLICABLE",
+            "fill_convention": "NEXT_1M_BAR_OPEN_AFTER_SIGNAL_CANDLE (PROPOSED; the reference price is not a fill)",
+            "execution_status": execution,
+        }
+
+    def _execution_status(self, signal_ts: datetime | None) -> str:
+        if signal_ts is None:
+            return "NOT_EVALUATED"
+        return "RESEARCH_ONLY" if classify_bar(signal_ts).value == "CONTINUOUS" else "ENTRY_BLOCKED_" + classify_bar(signal_ts).value
+
     def _blocked(self, ctx: SessionContext, reason: str, method: str = "ALL") -> SignalRecord:
         return SignalRecord(
             strategy=self.STRATEGY, method=method, direction=self._default_direction(), signal_date=ctx.date,
@@ -185,6 +218,7 @@ class SignalEngine(BaseStrategy):
             signal_candle_low=None, signal_candle_close=None, reference_levels={}, rule_ids_satisfied=[],
             rule_ids_failed=[], signal_status=SignalStatus.NOT_EVALUATED.value, invalidation_reason=reason,
             verification_status=VerificationStatus.NOT_READY.value, flags=list(ctx.data_flags),
+            execution_config=self.exec_config(method, VerificationStatus.NOT_READY.value, "NOT_EVALUATED"),
         )
 
     def _default_direction(self) -> str:
@@ -208,6 +242,9 @@ class SignalEngine(BaseStrategy):
             rule_ids_satisfied=sat, rule_ids_failed=failed or [], signal_status=status.value,
             invalidation_reason=why, verification_status=ver.value, rule_ids_unresolved=unresolved,
             proposals_used=proposals or {}, state_trace=trace or [], flags=list(ctx.data_flags) + (flags or []),
+            execution_config=self.exec_config(
+                method, ({"VERIFIED": "VERIFIED_EXPLICIT"}.get(ver.value, ver.value) if status is SignalStatus.CONFIRMED else "NOT_A_CONFIRMED_SIGNAL"),
+                self._execution_status(c.end) if status is SignalStatus.CONFIRMED else "NOT_A_CONFIRMED_SIGNAL"),
         )
 
     @staticmethod

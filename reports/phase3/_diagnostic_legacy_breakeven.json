@@ -1,0 +1,22 @@
+{
+  "entries": 213,
+  "days_traded": 197,
+  "first_trades": 197,
+  "second_trades": 16,
+  "total_pnl_rs": 141218.99999999942,
+  "gross_profit_rs": 1302990.0,
+  "gross_loss_rs": -1161771.0000000005,
+  "win_rate_pct": 59.15492957746479,
+  "loss_rate_pct": 40.84507042253521,
+  "profit_factor": 1.1215549363859139,
+  "avg_trade_rs": 662.9999999999973,
+  "max_drawdown_rs": 221305.5000000003,
+  "max_consecutive_losses": 5,
+  "target2": 52,
+  "t1_then_buffer_stop": 0,
+  "initial_full_stop": 87,
+  "forced_exit": 0,
+  "legacy_breakeven": 74,
+  "unresolved": 0,
+  "avg_holding_minutes": 42.713615023474176
+}

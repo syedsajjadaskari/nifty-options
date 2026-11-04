@@ -1,0 +1,369 @@
+"""Phase 2.1: decision records for every ambiguous / conflicting / unresolved rule.
+
+Generates (from the data below + reports/phase21/signal_counts_default.json):
+  docs/phase2/decision_records.yaml
+  docs/phase2/strategy_rule_resolution.md
+  docs/phase2/author_decisions_required.md
+
+Evidence categories (Task 5):  A explicit PDF wording | B another page of the same PDF | C worked numerical example |
+D reference-chart annotation | E performance report (or other documentary/market evidence) | F justified but unverified proposal | G author clarification only.
+Classification vocabulary: VERIFIED_EXPLICIT, VERIFIED_QUALITATIVE, PROPOSED_FOR_REVIEW, CONFLICTING, UNRESOLVED, APPROVED (none yet).
+NO decision here is APPROVED: that requires a source that explicitly confirms it or the strategy owner's authorisation.
+Quantitative effects are RECORD COUNTS over 247 evaluable sessions (never profitability) and are read from the counts file.
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
+DOCS = ROOT / "docs" / "phase2"
+COUNTS = json.loads((ROOT / "reports" / "phase21" / "signal_counts_default.json").read_text())
+SENS = {s["variant"]: s["delta_vs_default"] for s in COUNTS["single_parameter_sensitivity_counts_only"]}
+BASE = COUNTS["default_counts"]
+
+
+def eff(prefix: str, key: str) -> str:
+    """'default -> variant' for a record key under the single sensitivity variant whose label starts with ``prefix``."""
+    hits = [v for k, v in SENS.items() if k.startswith(prefix)]
+    if len(hits) != 1:
+        raise KeyError(f"{prefix!r}: {len(hits)} matches")
+    a, b = hits[0].get(key, [None, None])
+    if a is None:
+        strat = prefix.split()[0]
+        a = b = BASE[strat].get(key, 0)
+    return f"{a} -> {b}"
+
+
+def n(strat: str, key: str) -> int:
+    return BASE[strat].get(key, 0)
+
+
+D: list[dict] = []
+
+
+def add(**k):
+    k.setdefault("author_approval_required", True)
+    k.setdefault("changes", [])
+    k.setdefault("priority", 3)
+    D.append(k)
+
+
+# ============================================================ IRF
+add(id="IRF-D01", strategy="IRF", rule_ids=["IRF-M1-C001", "IRF-M1-002"], title="Method 1: the very next candle, or the next or the following candle?",
+    source="IRF_Strategy_Guide Updated.pdf pp.5, 6, 13 vs p.14", evidence=["A", "B", "D"], classification="CONFLICTING",
+    verified_meaning="pp.5 ('The very next candle ... closes back inside'), 6 ('The second candle must close back inside'), 13 ('Watch the very next candle. If it closes back inside the range, the setup is Method 1') and Figure 2 all say the very next candle. Only the p.14 quick card says 'the next candle or following candle'.",
+    implementation="very next candle only (m1_max_candles_after_breakout = 1); the p.14 reading exists as a labelled variant",
+    candidates=["very next candle (4 of 5 passages + figure)", "next or following candle (p.14 card)"],
+    effect=f"Method 1 confirmed {eff('IRF m1_max_candles_after_breakout', 'Method 1|CONFIRMED')}; Method 2A {eff('IRF m1_max_candles_after_breakout', 'Method 2A|CONFIRMED')} (a later failure takes setups from Method 2)",
+    recommended="very next candle", confidence="HIGH", changes=["entry", "trade frequency"], priority=4,
+    plain="Does Method 1 need the failure on the immediately following candle, or may it come one candle later?")
+add(id="IRF-D02", strategy="IRF", rule_ids=["IRF-M1-003"], title="Method 1: what counts as 'closing back inside the range' at the edges?",
+    source="IRF pp.3, 5", evidence=["G"], classification="UNRESOLVED",
+    verified_meaning="'closing price is back below IRH, within the initial range'. A close exactly at IRH, or a close BELOW IRL, is not addressed.",
+    implementation="IRL <= close < IRH; a close exactly at IRH never counts; a close below IRL does not count (variant available)",
+    candidates=["literal (above)", "a close below IRL also counts"], effect=f"Method 1 confirmed {eff('IRF m1_close_below_irl', 'Method 1|CONFIRMED')}",
+    recommended="literal", confidence="MEDIUM", changes=["entry", "trade frequency"], priority=4,
+    plain="If the failure candle closes not just back inside the range but all the way below its low, does it still count as Method 1?")
+add(id="IRF-D03", strategy="IRF", rule_ids=["IRF-GLOBAL-004", "IRF-GLOBAL-005", "IRF-M2-006"], title="How many IRF trades per day, until what time, and may a setup re-arm?",
+    source="no passage in the guide", evidence=["G", "E"], classification="UNRESOLVED",
+    verified_meaning="The guide is silent. DESCRIPTIVE ONLY (not a rule): in the journal every IRF entry label lies between 09:25 and 12:20 and no date has more than one IRF row. The journal is unreliable and NOT used as a rule.",
+    implementation="every occurrence is reported; no cap, no time window; a Method 2 attempt is re-armed only after the previous attempt has resolved (confirmed or invalidated) and has no expiry, so it can fire hours after the breakout that started it; concurrent methods are cross-flagged",
+    candidates=["no cap (current)", "first signal per session", "latest entry time", "N per day"],
+    effect=f"{n('IRF', 'Method 1|CONFIRMED')} Method 1 + {n('IRF', 'Method 2A|CONFIRMED')} Method 2A + {n('IRF', 'Method 2B|CONFIRMED')} Method 2B events a year versus 72 IRF trades in the report; with a 6-candle expiry Method 2A {eff('IRF m2_expiry', 'Method 2A|CONFIRMED')}",
+    recommended="keep reporting every occurrence; decide the selection policy at the trade layer once the author states it (do NOT invent 'one per day')",
+    confidence="LOW", changes=["entry", "trade frequency"], priority=1,
+    plain="The written rules produce far more IRF setups than you actually trade. What else decides which setup you take: only the first of the day, a cut-off time, or something else?")
+add(id="IRF-D04", strategy="IRF", rule_ids=["IRF-M2-002"], title="Method 2: what does 'extends further upward' mean?",
+    source="IRF p.7 step 3", evidence=["F"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="'Price extends further upward beyond the initial range' - no size or time.",
+    implementation="E1: a later candle makes a higher high than the breakout candle",
+    candidates=["E1 higher high than the breakout candle", "E2 a later candle also closes above IRH"], effect=f"Method 2A {eff('IRF m2_extension_definition', 'Method 2A|CONFIRMED')}; Method 2B {eff('IRF m2_extension_definition', 'Method 2B|CONFIRMED')}",
+    recommended="E1", confidence="LOW", changes=["entry", "trade frequency"], priority=3, plain="How far or how long must price keep rising after the breakout before a reversal counts as Method 2?")
+add(id="IRF-D05", strategy="IRF", rule_ids=["IRF-M2-003", "IRF-M2A-002"], title="Method 2: order of the red candle and the level break",
+    source="IRF p.8 steps 3-4, Figure 3", evidence=["B", "D"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="'3. A red candle forms. 4. A candle closes below recent support.' Figure 3 draws the red candle and the break candle as different candles.",
+    implementation="strict order: the red candle comes strictly before the break candle; the extension candle cannot be the red candle",
+    candidates=["strict (current, matches Figure 3)", "break candle may itself be the first red candle"], effect=f"Method 2A {eff('IRF m2a_break_may_be_red_candle', 'Method 2A|CONFIRMED')}",
+    recommended="strict", confidence="MEDIUM", changes=["entry timing"], author_approval_required=False, priority=5, plain="May the candle that closes below support also be the first red candle?")
+add(id="IRF-D06", strategy="IRF", rule_ids=["IRF-M2A-001", "IRF-M3-004"], title="What is 'recent support'?",
+    source="IRF pp.3, 8, 11", evidence=["F"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="'a price level formed by recent candles where price has held or turned upward ... a pullback low' - no lookback, no swing size. The p.10 worked example does not define it numerically.",
+    implementation="SWING_K1: the latest 3-candle fractal low confirmed before the signal candle",
+    candidates=["SWING_K1", "SWING_K2 (5-candle fractal)", "LAST_N3 (lowest low of the last 3 candles)"],
+    effect=f"Method 2A {eff('IRF irf_support_def=SWING_K2', 'Method 2A|CONFIRMED')} (K2); {eff('IRF irf_support_def=LAST_N3', 'Method 2A|CONFIRMED')} (N3)",
+    recommended="SWING_K1", confidence="LOW", changes=["entry", "trade frequency"], priority=3, plain="Which low counts as 'recent support': the last small pullback low, a bigger swing low, or the lowest of the last few candles?")
+add(id="IRF-D07", strategy="IRF", rule_ids=["IRF-M2B-001"], title="Recent resistance = 'the top of the first push'",
+    source="IRF pp.8-10 (table, step 2, worked example 24,128.75)", evidence=["A", "B", "C"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="The worked example (p.10) calls 24,128.75 'the first push tops out' and Figure 4 shows the first push after the breakout. So it is the first swing high after the breakout, not the latest.",
+    implementation="FIRST_PUSH_TOP: the earliest 3-candle fractal high at/after the breakout candle (reproduces the p.10 example exactly)",
+    candidates=["first push top (current)", "latest swing high"], effect=f"Method 2B {eff('IRF irf_resistance_def', 'Method 2B|CONFIRMED')} if the latest swing high were used",
+    recommended="first push top", confidence="MEDIUM", changes=["entry"], author_approval_required=False, priority=5, plain="Is resistance the first high after the breakout, or the most recent high?")
+add(id="IRF-D08", strategy="IRF", rule_ids=["IRF-M2-006"], title="How long does a Method 2 setup stay alive?",
+    source="no passage", evidence=["G"], classification="UNRESOLVED", verified_meaning="No expiry or invalidation is stated before a level breaks.",
+    implementation="never expires before the end of the day; every later close above IRH starts a new attempt",
+    candidates=["no expiry (current)", "expire after N candles"], effect=f"6-candle expiry: Method 2A {eff('IRF m2_expiry', 'Method 2A|CONFIRMED')}, Method 2B {eff('IRF m2_expiry', 'Method 2B|CONFIRMED')}",
+    recommended="no expiry until stated", confidence="LOW", changes=["entry", "trade frequency"], priority=2, plain="If the reversal takes hours to show up, is it still a Method 2 setup?")
+add(id="IRF-D09", strategy="IRF", rule_ids=["IRF-M2B-002"], title="Method 2B: may the push above resistance and the closing red candle be one candle?",
+    source="IRF p.9 steps 3-5, Figure 4", evidence=["B", "D"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="Steps: push back above resistance; a red candle forms; a red candle closes below it. Figure 4 draws separate candles.",
+    implementation="the closing candle may itself be the one that traded above (m2b_push_must_precede_red_candle = False)", candidates=["same candle allowed (current)", "an earlier candle must have pushed above"],
+    effect="measured on request (boundary tested)", recommended="same candle allowed", confidence="LOW", changes=["entry"], priority=4, plain="Must the push above resistance happen on an earlier candle than the red candle that closes back below it?")
+add(id="IRF-D10", strategy="IRF", rule_ids=["IRF-M3-001"], title="Method 3: how many 'small candles' inside the range?",
+    source="IRF pp.11-12, Figure 5", evidence=["D", "F"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="'Small candles form inside the initial range.' Figure 5 draws four small candles; the text only says plural.",
+    implementation="the previous N = 2 candles lie fully inside [IRL, IRH]", candidates=["N = 2 (literal minimum)", "N = 3", "N = 4 (Figure 5)", "also require each range <= 50% of the IR height"],
+    effect=f"Method 3 sweeps passing compression {eff('IRF m3_compression_n=3', 'Method 3|INVALIDATED')} (N=3); {eff('IRF m3_compression_def=C2', 'Method 3|INVALIDATED')} (size rule). Method 3 CONFIRMED signals: {n('IRF', 'Method 3|CONFIRMED')} under every candidate",
+    recommended="N = 2", confidence="LOW", changes=["entry", "trade frequency"], priority=3, plain="How many small candles inside the opening range must precede the sweep, and how small is small?")
+add(id="IRF-D11", strategy="IRF", rule_ids=["IRF-M3-003"], title="Method 3: the 60-70% wick criterion",
+    source="IRF pp.11-13, Figure 5 ('about 65%')", evidence=["A", "C", "D"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="The formula is explicit: share = (High - IRH) / (High - body top). The threshold is 'approximately 60-70%'; the example and Figure 5 show 65%. 'A wick that barely clears IRH' is rejected.",
+    implementation="a literal 0.60-0.70 band (a 79% or 97% share would be rejected)", candidates=["0.60-0.70", ">= 0.60", "0.55-0.75"], effect="no change in confirmed counts (0 Method 3 confirmed under every band); of 37 candidate sweeps 32 have a share below 60%",
+    recommended="keep the literal 0.60-0.70 band (current default) unless you want stronger sweeps counted", confidence="MEDIUM", changes=["entry"], priority=4,
+    plain="'About 60-70% of the wick above the range': is a bigger sweep (say 90%) also fine?")
+add(id="IRF-D12", strategy="IRF", rule_ids=["IRF-M3-C001"], title="Method 3: 'or a Higher price rejection candle also works' (p.14 card only)",
+    source="IRF p.14 vs pp.11-12", evidence=["G"], classification="UNRESOLVED", verified_meaning="An alternative sweep-candle form that is defined nowhere. The trigger (support break) is unchanged.",
+    implementation="not implemented", candidates=["define it", "delete it from the card"], effect="not measurable", recommended="leave unimplemented", confidence="HIGH", changes=["entry"], priority=4,
+    plain="The quick card mentions a 'higher price rejection candle' for Method 3 but no page defines it. What is it, or should it be removed?")
+add(id="IRF-D13", strategy="IRF", rule_ids=["IRF-SL-001"], title="Stop 35 or 40: how is the green candle's distance measured?",
+    source="IRF pp.2, 10, 14", evidence=["A", "C", "F"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="'35 or 40 according to the most recent opposite (green) candle'; p.10: 'the most recent green candle is within 35 of entry, so the 35 stop applies'; p.14: 35 if the distance is below 35, 40 if above. The measuring point and the exact-35 case are not stated; the p.10 example is consistent with a high-based measure but does not discriminate.",
+    implementation="|high of the most recent green candle - entry| <= 35 -> 35 else 40 (absolute value; signal candle included)", candidates=["green high", "green close", "highest green high since the setup began", "signed distance"],
+    effect="stop only; entries unchanged", recommended="green high, <= 35 -> 35", confidence="LOW", changes=["exit"], priority=2,
+    plain="Which price of the last green candle do you measure from, and is a distance of exactly 35 a 35 or a 40?")
+# ============================================================ ORB
+add(id="ORB-D01", strategy="ORB", rule_ids=["ORB-MA-001"], title="'200 DMA', '200 EMA' or '200 MA'?",
+    source="ORB pp.1,2,3,5,7,8,9,12 (three names); PDR pp.3-4 and RF (chart legends / '200 EMA')", evidence=["A", "D", "E"], classification="CONFLICTING",
+    verified_meaning="Verified directly from the source charts: the PDR chart legend reads 'EMA 200 close' on a 5-minute chart and EMA(200) of 5-minute closes reproduces it to within 0.005 point on BOTH examples (24,582.025 vs 24,582.02; 24,925.177 vs 24,925.18). A 200-day average is more than 400 points away. The ORB charts have no legend, so ORB's 'DMA' is inferred from the same curved line.",
+    implementation="EMA(200) of completed 5-minute closes (ma_mode EMA200_5M); the daily readings exist as labelled research variants",
+    candidates=["EMA(200) on 5-minute closes", "SMA(200) of daily closes", "EMA(200) of daily closes"],
+    effect=f"ORB Method 1 confirmed {eff('ORB trend_mode=SMA200_DAILY', 'Method 1|CONFIRMED')} under the daily SMA trend; Gap setup confirmed {eff('ORB ma_mode=SMA200_DAILY', 'Gap/200DMA|CONFIRMED')} under the daily SMA",
+    recommended="EMA(200) on 5-minute closes", confidence="HIGH (PDR/RF charts) / MEDIUM (ORB wording)", changes=["entry", "trade frequency"], priority=4,
+    plain="Is the '200 DMA' in the ORB guide the same 200-period line as the 200 EMA on your 5-minute chart? (The PDR charts say yes.)")
+add(id="ORB-D02", strategy="ORB", rule_ids=["ORB-TREND-001", "ORB-TREND-002", "RF-001"], title="What is an 'established' uptrend / downtrend?",
+    source="ORB pp.1,3,4,12; RF pp.2,4,5", evidence=["A", "B", "F"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="ORB: price above the 200 EMA is 'a basic confirmation, supported by bullish price structure'. RF p.5: above the EMA is never sufficient; a sudden gap above the EMA after a downtrend is rejected. 'Structure' is not quantified anywhere.",
+    implementation="EMA5M_PREV_SESSION: the first candle closes beyond the EMA and the previous session also closed on the trend side of its EMA",
+    candidates=["EMA5M_BASIC", "EMA5M_PREV_SESSION", "EMA5M_PREV_3_SESSIONS", "SMA200_DAILY", "EMA200_DAILY"],
+    effect=f"ORB Method 1 confirmed {eff('ORB trend_mode=EMA5M_BASIC', 'Method 1|CONFIRMED')} (BASIC), {eff('ORB trend_mode=EMA5M_PREV_3', 'Method 1|CONFIRMED')} (3 sessions); RF confirmed {eff('RF trend_mode=EMA5M_BASIC', 'RF|CONFIRMED')} / {eff('RF trend_mode=EMA5M_PREV_3', 'RF|CONFIRMED')}",
+    recommended="EMA5M_PREV_SESSION (encodes only RF p.5's explicit rejection)", confidence="LOW", changes=["entry", "trade frequency"], priority=1,
+    plain="How do you decide the market is 'already in an established trend'? Price above the 200 EMA is a start, but what else counts?")
+add(id="ORB-D03", strategy="ORB", rule_ids=["ORB-M1-LONG-001", "ORB-M1-SHORT-001"], title="Previous-day resistance / support: a line or a zone, and which candle?",
+    source="ORB p.3 step 2 ('horizontal line') vs charts pp.6-7, 12-13 (purple zones)", evidence=["A", "D", "F"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="The text says a horizontal line; every ORB chart draws it as a purple zone (like PDR/PDS). A close beyond the level is required either way.",
+    implementation="previous session high / low (the outer edge of such a zone); only candles before the closing auction are an alternative", candidates=["previous high/low (all candles)", "previous high/low (continuous session only)", "a PDR-style body-to-wick zone"],
+    effect=f"continuous-session-only level: ORB Method 1 invalidated {eff('ORB prev_day_level_window', 'Method 1|INVALIDATED')}; confirmed unchanged", recommended="previous high/low, all candles", confidence="MEDIUM", changes=["entry"], priority=4,
+    plain="Is 'previous-day resistance' simply yesterday's high, or a zone you draw around yesterday's reversal?")
+add(id="ORB-D04", strategy="ORB", rule_ids=["ORB-M1-LONG-003", "ORB-CANDLE-001"], title="Strong candle / pin bar / rejection thresholds",
+    source="ORB pp.3,4,8,10,12", evidence=["A", "F"], classification="PROPOSED_FOR_REVIEW", verified_meaning="Qualitative only: 'strong green body', 'small upper wick', 'bullish pin bar - position and close must support the breakout'.",
+    implementation="MODERATE: body >= 0.60 of range, opposite wick <= 0.20; pin bar wick >= 0.60, body <= 0.33, opposite wick <= 0.15; rejection wick >= 0.33",
+    candidates=["STRICT", "MODERATE", "LOOSE"], effect=f"ORB Method 1 confirmed {eff('ORB strong_candle=STRICT', 'Method 1|CONFIRMED')} (strict), {eff('ORB strong_candle=LOOSE', 'Method 1|CONFIRMED')} (loose)",
+    recommended="MODERATE placeholder", confidence="LOW", changes=["entry", "trade frequency"], priority=3, plain="What makes a first candle 'strong' - give a body-to-range ratio and the largest acceptable wick.")
+add(id="ORB-D05", strategy="ORB", rule_ids=["ORB-CANDLE-001"], title="Does the conditional pin bar also apply to Methods 1 and 2?",
+    source="ORB pp.9-10 ('across all three setups')", evidence=["B"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="p.9: 'Candle quality is an important filter across all three setups'; the p.10 table lists the bullish pin bar as 'Conditional' without restricting it to the gap setup. This is an INFERENCE from one generic sentence and that table, not an explicit statement for Methods 1 and 2.",
+    implementation="applied to Methods 1 and 2 (orb_pin_bar_in_methods_1_2 = True)", candidates=["applied (current)", "gap setup only"], effect=f"ORB Method 1 confirmed {eff('ORB orb_pin_bar_in_methods_1_2=False', 'Method 1|CONFIRMED')} if not applied",
+    recommended="applied", confidence="MEDIUM", changes=["entry", "trade frequency"], author_approval_required=False, priority=5, plain="Can a pin bar replace the 'strong body' requirement in Methods 1 and 2 too?")
+add(id="ORB-D06", strategy="ORB", rule_ids=["ORB-M2-LONG-001", "ORB-M2-SHORT-001"], title="Method 2: inner resistance/support and the trendline",
+    source="ORB pp.4-7 ('inner level drawn approximately')", evidence=["A", "D"], classification="UNRESOLVED",
+    verified_meaning="No objective construction. The annotated chart (p.7) draws them by hand and the guide says 'verify the exact levels on your original chart'.",
+    implementation="RESEARCH VARIANT ONLY: latest 5-candle fractal of the previous session inside its range; line through the last two fractals", candidates=["define a construction rule", "retire Method 2"],
+    effect=f"{n('ORB', 'Method 2|CONFIRMED')} research-variant confirmations (never presented as verified)", recommended="keep blocked", confidence="HIGH", changes=["entry", "trade frequency"], priority=2,
+    plain="How exactly do you pick the 'inner' level and draw the trendline? Without a rule Method 2 cannot be tested.")
+add(id="ORB-D07", strategy="ORB", rule_ids=["ORB-M2-LONG-004"], title="'Near the EMA - wait for a convincing close'",
+    source="ORB pp.5, 7", evidence=["G"], classification="UNRESOLVED", verified_meaning="'near' and 'convincing' have no numbers, and at a 09:20 decision 'wait' has no obvious meaning.",
+    implementation="near <= 15 points -> require a close >= 5 points beyond the EMA (Method 2 only)", candidates=["as implemented", "wait for the next candle"], effect="Method 2 research variant only", recommended="keep", confidence="LOW", changes=["entry"], priority=4,
+    plain="How close to the EMA is 'near', and what does 'wait for a convincing close' mean when the decision is at 09:20?")
+add(id="ORB-D08", strategy="ORB", rule_ids=["ORB-GAP-LONG-001", "ORB-GAP-LONG-002", "ORB-GAP-LONG-005", "ORB-GAP-SHORT-004"], title="Gap-through-the-200-MA setup: 'excessively extended' and the crossing",
+    source="ORB pp.7-9", evidence=["A", "F"], classification="UNRESOLVED",
+    verified_meaning="Gap required; price 'may have been below' the MA and the gap must bring it through; the first candle must close beyond the MA. 'If the opening move is excessively extended ... reject' is MANDATORY but has no number anywhere.",
+    implementation="crossing required (previous close on one side of the MA, open on the other); 'excessively extended' filter OFF and reported unresolved (RESEARCH_VARIANT)", candidates=["no cap", "cap at 150 points"], effect=f"Gap setup confirmed {eff('ORB gap_max_points=150', 'Gap/200DMA|CONFIRMED')} with a 150-point cap",
+    recommended="no cap; keep flagged", confidence="LOW", changes=["entry"], priority=2, plain="What gap size is 'excessively extended' for the 200-MA gap setup?")
+add(id="ORB-D09", strategy="ORB", rule_ids=["ORB-UNIT-001"], title="Are 30 and 60 index points?",
+    source="ORB p.11 ('standardize your units') + performance report", evidence=["E"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="The ORB guide leaves the unit to the user. The report settles it arithmetically: 36 ORB stop-losses total exactly Rs 4,21,200 = 36 x 30 x 390, so 30 is NIFTY index points on 390 quantity.",
+    implementation="index points", candidates=["index points"], effect="none", recommended="index points", confidence="HIGH", changes=["exit"], author_approval_required=False, priority=5, plain="Confirm that ORB's 30/60 are NIFTY index points.")
+# ============================================================ PDR
+add(id="PDR-D01", strategy="PDR", rule_ids=["PDR-002"], title="Zone lower boundary and which candle",
+    source="PDR pp.1-2; PDS p.3", evidence=["A", "B"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="'Small box from candle body to upper wick'; 'Lower boundary: the relevant candle-body level'. PDS says 'body and wick' for its mirror zone.",
+    implementation="[body bottom, high] of the first candle that made the previous day's high", candidates=["body bottom to high", "body top to high (wick only)", "first vs last candle sharing the high"],
+    effect=f"{eff('PDR zone_lower_boundary', 'PDR|CONFIRMED')} (the choice changes no signal in this data)", recommended="body bottom to high", confidence="MEDIUM", changes=["entry"], author_approval_required=False, priority=5,
+    plain="Does the PDR zone run from the body bottom or the body top of the previous day's high candle up to the wick tip?")
+add(id="PDR-D02", strategy="PDR", rule_ids=["PDR-011", "PDR-004"], title="Must the gap-up open lie above the zone?",
+    source="PDR pp.1-2 (text); Example 3 on pp.3-4", evidence=["A", "B", "C", "D"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="Text: the market 'pulls back into the marked zone' (p.1) and 'comes back toward the zone ... if price keeps rising without returning there is no setup' (p.2): the open is above the zone, and a zone above price is resistance, not support. Example 3 (2025-10-07) does NOT contradict this: the zone the author DREW is only about 4-5 points tall (about 25,080.5-25,084.5, +/-1; pixel-calibrated on the chart's price axis, on the 69.90 and 40.60 position boxes and on known candle prices by two reviewers), while the engine's zone [25,057.10, 25,095.70] is 38.6 points tall (the 14:50 spike candle). The open 25,087.55 is about 3 points ABOVE the drawn zone and the 09:15 low (25,083.50) touches its top, so with the drawn zone the example matches the text sequence. (My own first measurement, ~14 points, 25,085-25,097, was wrong.) An earlier Phase 2.1 draft called this a conflict and made 'ANY' the default; that was an artefact of the engine's zone and has been withdrawn (found by the independent review).",
+    implementation="pdr_open_vs_zone = ABOVE_ZONE (the text)", candidates=["ABOVE_ZONE (text; default)", "NOT_BELOW_ZONE (open >= zone low)", "ANY (not recommended)"],
+    effect=f"PDR confirmed {n('PDR', 'PDR|CONFIRMED')} (ABOVE_ZONE); {eff('PDR pdr_open_vs_zone=NOT_BELOW', 'PDR|CONFIRMED')} (NOT_BELOW_ZONE); {eff('PDR pdr_open_vs_zone=ANY', 'PDR|CONFIRMED')} (ANY, of which 55% have the open BELOW the zone)",
+    recommended="ABOVE_ZONE", confidence="MEDIUM", changes=["entry", "trade frequency"], priority=2,
+    plain="Does PDR need the gap-up to open above yesterday's zone (the text), or may it open at/inside it?")
+add(id="PDR-D09", strategy="PDR", rule_ids=["PDR-002", "PDR-003"], title="Zone construction: the engine's zone vs the zone drawn in Example 3",
+    source="PDR pp.1-2 vs chart Example 3 (p.4)", evidence=["A", "C", "D"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="Text: 'the high where price reached a peak and then reversed ... a small box from the candle body to the upper wick'. On 2025-10-06 the engine picks the highest-high candle (14:50 spike: body 25,057.10-25,077.25, wick to 25,095.70, a 38.6-point zone). The zone drawn in Example 3 is only about 4-5 points tall (about 25,080.5-25,084.5, +/-1) and sits on the late-day shelf, about 11 points below the spike's wick tip (25,095.70), so the author did NOT use the spike candle. Examples 1 and 2 are consistent with the engine's zone within chart-reading error. No objective rule reproduces the author's choice of candle.",
+    implementation="the first candle that made the day's highest high; zone = [body bottom, high] (ZONE_FULL)", candidates=["highest-high candle (current)", "ignore single-candle spikes (needs a spike rule)", "the shelf/cluster of late-day highs (not objectively defined)"],
+    effect="not measured (no objective alternative exists to count)", recommended="keep, flagged; ask the author how the reversal candle is chosen", confidence="LOW", changes=["entry"], priority=1,
+    plain="On 2025-10-06 the day's highest candle was a brief spike, but your Example 3 zone sits lower on the late-day shelf. How do you choose which candle marks the zone?")
+add(id="PDR-D03", strategy="PDR", rule_ids=["PDR-006"], title="'Very close approach' to the zone",
+    source="PDR p.2; PDS p.4", evidence=["F"], classification="PROPOSED_FOR_REVIEW", verified_meaning="Wick, body, inside, or 'very close' all count; no distance is given.",
+    implementation="within 5 index points", candidates=["0", "5", "10 points"], effect=f"PDR confirmed {eff('PDR zone_proximity_points=0', 'PDR|CONFIRMED')} (0), {eff('PDR zone_proximity_points=10', 'PDR|CONFIRMED')} (10)",
+    recommended="5 points (placeholder)", confidence="LOW", changes=["entry"], priority=4, plain="How many points away still counts as 'a test of the zone'?")
+add(id="PDR-D04", strategy="PDR", rule_ids=["PDR-007"], title="Green candle: after the touch, or may the touching candle be green?",
+    source="PDR pp.2-3", evidence=["A"], classification="VERIFIED_QUALITATIVE", verified_meaning="'After the zone has been tested, wait for a green candle ... Green candle formed after the interaction'. Entry is on that confirmation; whether during or at the close is not stated.",
+    implementation="a green candle strictly after the interaction candle; signal at its close", candidates=["strictly after (current)", "same candle allowed"], effect=f"{eff('PDR pdr_green_may_be_interaction_candle', 'PDR|CONFIRMED')} (no signal changes)", recommended="strictly after", confidence="HIGH", changes=["entry timing"], author_approval_required=False, priority=5,
+    plain="Is the entry at the close of the green candle that follows the zone test?")
+add(id="PDR-D05", strategy="PDR", rule_ids=["PDR-010"], title="'Clear high and reversal identified'",
+    source="PDR p.3 checklist", evidence=["A", "G"], classification="UNRESOLVED", verified_meaning="A checklist item with no measure. It is the most likely selector between the many literal setups and the few trades taken.",
+    implementation="filter OFF; every record carries PDR-010 as unresolved", candidates=["OFF (current)", "previous-day reversal depth >= 25% of the day's range"], effect=f"PDR confirmed {eff('PDR pdr_reversal_filter', 'PDR|CONFIRMED')} with the 25% depth test",
+    recommended="OFF until defined", confidence="LOW", changes=["entry", "trade frequency"], priority=1, plain="What makes yesterday's high a 'clear high with reversal' worth marking?")
+add(id="PDR-D06", strategy="PDR", rule_ids=["PDR-009"], title="Stop 35 or 40 'depending on the situation'",
+    source="PDR pp.1-2; chart examples pp.3-4", evidence=["A", "D"], classification="UNRESOLVED", verified_meaning="No criterion. The examples show both values: Example 3 stop 40.60, Example 5 stop 35.00.",
+    implementation="not implemented: PDR exits are NOT_EVALUABLE", candidates=["same green-candle rule as IRF/PDS", "always 35", "always 40"], effect="exit only", recommended="none until stated", confidence="LOW", changes=["exit"], priority=2,
+    plain="When do you use a 35-point stop for PDR and when 40?")
+add(id="PDR-D07", strategy="PDR", rule_ids=["PDR-008", "EXE-T2-001"], title="PDR target 70 - but the report records 60 on one PDR winner",
+    source="PDR pp.1-3 and Examples (69.90, 70.40) vs the performance report", evidence=["A", "D", "E"], classification="CONFLICTING",
+    verified_meaning="The guide and both annotated examples say 70. The report's monthly cells imply PDR winners of 5 x 70 + 1 x 60 (exact, unique). The 60-point PDR winner sits in Feb-2026, a month where the JOURNAL has no PDR row and has one extra ORB Target (ORB's target is 60): an attribution difference between the two sources is the most likely explanation. It is not proven.",
+    implementation="target 70 per the guide, flagged conflicting", candidates=["70 (guide + examples)", "60 for the odd trade (report)"], effect="exit only", recommended="70", confidence="MEDIUM", changes=["exit"], priority=2,
+    plain="Was the one PDR winner booked at 60 really a PDR trade? (The journal calls it ORB.)")
+add(id="PDR-D08", strategy="PDR", rule_ids=["PDR-012"], title="Re-entries on the same day", source="silent", evidence=["G"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="Not stated.", implementation="first signal per session only", candidates=["first only", "every retest"], effect="not measured", recommended="first only", confidence="LOW", changes=["trade frequency"], priority=4,
+    plain="After a PDR trade, may a second retest the same day be traded?")
+# ============================================================ PDS
+add(id="PDS-D01", strategy="PDS", rule_ids=["PDS-M1-001"], title="'Good red candle'", source="PDS p.5 (author's open item)", evidence=["A", "F"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="'A good body' with no numbers; the author lists it as an open item.", implementation="MODERATE strong bearish candle", candidates=["STRICT", "MODERATE", "LOOSE"],
+    effect=f"PDS Method 1 confirmed {eff('PDS strong_candle=STRICT', 'Method 1|CONFIRMED')} (strict), {eff('PDS strong_candle=LOOSE', 'Method 1|CONFIRMED')} (loose)", recommended="MODERATE placeholder", confidence="LOW", changes=["entry"], priority=3,
+    plain="What body size makes a red candle 'good' at the PDS zone?")
+add(id="PDS-D02", strategy="PDS", rule_ids=["PDS-M2-001"], title="HPR pin bar ratios", source="PDS p.5 (author's open item)", evidence=["A", "F"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="'Wick-to-body ratio is not specified.'", implementation="MODERATE pin bar (upper wick >= 0.60 of range, body <= 0.33)", candidates=["STRICT", "MODERATE", "LOOSE"],
+    effect=f"PDS Method 2 confirmed {n('PDS', 'Method 2|CONFIRMED')} under the default", recommended="MODERATE placeholder", confidence="LOW", changes=["entry"], priority=3, plain="How long must the upper wick be, relative to the body, for the PDS pin bar?")
+add(id="PDS-D03", strategy="PDS", rule_ids=["PDS-M3-001"], title="Method 3: size of the 'small support', close vs touch, stand-alone use",
+    source="PDS pp.4-6 (all three are the author's own open items)", evidence=["A", "G"], classification="UNRESOLVED",
+    verified_meaning="Not defined by the author: how small the support is, whether a close or a touch breaks it (p.5), and whether Method 3 is used only after a weak red candle or also on its own (p.6).",
+    implementation="latest 3-candle swing low near the zone; break on a CLOSE; only after a weak first red candle", candidates=["close vs touch", "after weak red only vs stand-alone"],
+    effect=f"PDS Method 3 confirmed {eff('PDS pds_m3_break_basis=TOUCH', 'Method 3|CONFIRMED')} (touch); {eff('PDS pds_m3_standalone', 'Method 3|CONFIRMED')} (stand-alone)", recommended="as implemented", confidence="LOW", changes=["entry"], priority=3,
+    plain="For PDS Method 3: how small is the small support, does a close or a touch break it, and can it be used without a weak red candle first?")
+add(id="PDS-D04", strategy="PDS", rule_ids=["PDS-006"], title="Must the gap-down open lie below the zone?", source="PDS pp.3-4", evidence=["A", "B"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="'After the open, price is trading below the previous day's support zone' (p.3) and 'price must move back up toward the marked zone' (p.4). No contrary worked example exists (PDS charts are undated).",
+    implementation="pds_open_vs_zone = BELOW_ZONE (the text)", candidates=["BELOW_ZONE (current)", "NOT_ABOVE_ZONE", "ANY"],
+    effect=f"PDS Method 1 confirmed {eff('PDS pds_open_vs_zone=ANY', 'Method 1|CONFIRMED')}, Method 3 {eff('PDS pds_open_vs_zone=ANY', 'Method 3|CONFIRMED')} with no condition", recommended="BELOW_ZONE (text) pending the PDR decision", confidence="MEDIUM", changes=["entry", "trade frequency"], priority=2,
+    plain="Must the gap-down open be below yesterday's support zone (the text), or may it open at/inside it?")
+add(id="PDS-D05", strategy="PDS", rule_ids=["PDS-SL-001"], title="PDS stop 35/40: distance of the recent green candle", source="PDS pp.2, 5, 6 (author's open items)", evidence=["A", "F"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="Based on 'the distance of the recent green candle'; the measuring point and the exact-35 case are the author's open items. The p.7 chart box reads stop 35.50 (target 70.10).", implementation="same as IRF-D13", candidates=["as IRF-D13"],
+    effect="exit only", recommended="as IRF-D13", confidence="LOW", changes=["exit"], priority=2, plain="See the IRF stop question.")
+add(id="PDS-D06", strategy="PDS", rule_ids=["PDS-TGT-001", "EXE-T2-001"], title="PDS target 70 - but the report records 60 on two of three PDS winners",
+    source="PDS pp.1,2,4,5,6; chart p.7 (70.10) vs the report", evidence=["A", "D", "E"], classification="CONFLICTING",
+    verified_meaning="The guide says 70 on five pages and the p.7 chart box reads 70.10. The report's cells imply PDS winners of 1 x 70 + 2 x 60. The journal's PDS counts equal the report's (3), so attribution does not explain it.",
+    implementation="target 70 per the guide, flagged conflicting", candidates=["70 (guide)", "60 (report)", "author's discretionary change"], effect="exit only", recommended="70", confidence="LOW", changes=["exit"], priority=2,
+    plain="Two PDS trades were booked at 60 points although the guide says 70. Did the PDS target change, or were those exits discretionary?")
+add(id="PDS-D07", strategy="PDS", rule_ids=["PDS-MISSING-001"], title="PDS entry timing", source="PDS p.6", evidence=["A"], classification="UNRESOLVED", verified_meaning="'Not specified whether entry is during the candle or after it closes.'",
+    implementation="signal at candle close (the only moment the colour is known)", candidates=["at the close"], effect="timing only", recommended="at the close", confidence="MEDIUM", changes=["entry timing"], author_approval_required=False, priority=5, plain="Is the PDS entry at the close of the red candle?")
+# ============================================================ RF
+add(id="RF-D01", strategy="RF", rule_ids=["RF-012"], title="RF trade direction", source="RF pp.1,2,9", evidence=["B", "D"], classification="PROPOSED_FOR_REVIEW",
+    verified_meaning="Never stated. 'The opposite of the IRF strategy' (p.2) and 'uptrend only' (p.1) imply long; the p.9 reference chart is a LONG position tool (target box 60.80 above, stop 40.65 below, closed at the stop).",
+    implementation="LONG, flagged RF_DIRECTION_IMPLIED_NOT_STATED", candidates=["long"], effect="direction only", recommended="long", confidence="HIGH", changes=["entry"], priority=4, plain="Confirm that RF is a long-only setup.")
+add(id="RF-D02", strategy="RF", rule_ids=["RF-006"], title="'Price returns inside the range'", source="RF pp.2, 4 (Figure 2 shows the very next candle inside)", evidence=["A", "D"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="After a close below RF Low, price 'must come back inside the original 5-minute range'. Figure 2 shows the candle right after the close-below sitting inside. Close vs touch and how many candles may elapse are not stated.",
+    implementation="R1: the first later candle whose CLOSE is back inside [RF Low, RF High]", candidates=["R1 close inside", "R2 touch of RF Low", "R3 only the very next candle"],
+    effect=f"RF confirmed {eff('RF rf_return_inside_def=R2', 'RF|CONFIRMED')} (R2), {eff('RF rf_return_inside_def=R3', 'RF|CONFIRMED')} (R3)", recommended="R1", confidence="MEDIUM", changes=["entry", "trade frequency"], priority=3,
+    plain="After the close below the opening range, must price close back inside, merely touch it, or do it on the very next candle?")
+add(id="RF-D03", strategy="RF", rule_ids=["RF-004"], title="Gap-up 'within yesterday's range'", source="RF pp.2, 4, 6, 7", evidence=["A"], classification="VERIFIED_EXPLICIT",
+    verified_meaning="A gap that carries the open above yesterday's HIGH is rejected; a gap-down is rejected.", implementation="PrevLow <= open <= PrevHigh and open above the previous official close", candidates=["as implemented"], effect=f"RF levels unchanged by the auction-candle choice ({eff('RF prev_day_level_window', 'RF|CONFIRMED')})",
+    recommended="as implemented", confidence="HIGH", changes=["entry"], author_approval_required=False, priority=5, plain="(Already explicit in the guide.)")
+add(id="RF-D04", strategy="RF", rule_ids=["RF-010"], title="RF exact entry price", source="RF p.8 ('Exact entry price: OPEN')", evidence=["A"], classification="UNRESOLVED", verified_meaning="The author marks it OPEN.",
+    implementation="reference price = close of the return-inside candle", candidates=["close of the return candle", "next candle open"], effect="entry price only", recommended="close of the return candle", confidence="LOW", changes=["entry timing"], priority=2,
+    plain="At what price do you enter RF once price is back inside the range?")
+add(id="RF-D05", strategy="RF", rule_ids=["RF-009"], title="RF stop: 35 or 40, fixed or the candle extreme", source="RF pp.2, 8 (rated PARTIAL by the author)", evidence=["A", "D", "E"], classification="UNRESOLVED",
+    verified_meaning="'Pick 35 or 40 depending on what is logical'. The p.9 chart's stop is 40.65. Against the report: 11 of the 12 RF monthly cells reproduce exactly with stops of 35 or 40. Only the August-2026 cell does not: its stop-loss loss of Rs 17,550 is 45 points in total, which two stops of at least 35 points cannot produce (the report's overall average of 33.1 points per RF stop comes solely from that cell).",
+    implementation="not implemented: RF exits are NOT_EVALUABLE", candidates=["fixed 35", "fixed 40", "beyond the candle extreme", "other"], effect="exit only", recommended="none until stated", confidence="LOW", changes=["exit"], priority=1,
+    plain="How do you place the RF stop? The report's RF numbers fit 35/40 in every month except August 2026, where the loss is smaller than two full stops. Was a stop tighter there?")
+add(id="RF-D06", strategy="RF", rule_ids=["RF-011"], title="RF TARGET (RF_TARGET_STATUS = UNRESOLVED)", source="RF p.8 ('Target: OPEN')", evidence=["A", "D", "E"], classification="UNRESOLVED",
+    verified_meaning="The guide says OPEN. Two non-rule pieces of evidence point to 60: the p.9 example chart's target box (60.80) and the report's arithmetic (all six RF winners booked Target 2 = 60, each cell decomposing uniquely). Neither is a stated rule.",
+    implementation="no target assigned anywhere (policy_for('RF').t2_points is None; evaluate_exit returns NotEvaluable)", candidates=["60 (evidence only)", "70", "other"], effect="exit only; does not affect signal detection",
+    recommended="do NOT assign; ask the author (evidence leans to 60)", confidence="LOW", changes=["exit"], priority=1, plain="What is the RF target? Your chart box and your results both look like 60 points, but the guide says open.")
+# ============================================================ DATA / EXECUTION
+add(id="DATA-D01", strategy="DATA", rule_ids=["DATA-OFFICIAL-CLOSE-001"], title="'Previous close' for gaps: official close or the last minute print?", source="ORB p.8; RF p.2; market evidence", evidence=["A", "E"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="The guides say 'previous close'. The official NSE close = the vendor daily close (9 of 9 externally published closes match - 8 quoted directly, 1 (2026-07-31) derived by subtracting the published point change from the next day's close; the 15:30 minute print matches only 2 of 9 and misses by up to 88 points before the auction regime).",
+    implementation="vendor daily close (prev_close_source = OFFICIAL_DAILY)", candidates=["official daily close", "last 1-minute print at 15:30"],
+    effect=f"PDR confirmed {eff('PDR prev_close_source', 'PDR|CONFIRMED')}; PDS invalidated {eff('PDS prev_close_source', 'Method 1/2/3|INVALIDATED')} if the last print were used (gap direction differs on 9 of 247 sessions)", recommended="official daily close", confidence="HIGH", changes=["entry"], author_approval_required=False, priority=5,
+    plain="Does your chart gap compare today's open with the official close? (It almost surely does.)")
+add(id="DATA-D02", strategy="DATA", rule_ids=["DATA-CAS-001"], title="August 2026 'frozen tail' = NSE Closing Auction Session (NOT corrupt data)", source="market evidence; vendor data", evidence=["E"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="From 2026-08-03 the index is frozen 15:15-15:29 and then steps to the official close; 21/21 sessions show it, 0 before; the fresh re-download is identical; Sep/Oct 2026 show the same; the published closes match. Phase 2's 'critical defect' diagnosis was wrong.",
+    implementation="frozen rows inside the window on/after 2026-08-03 are KEPT and flagged; elsewhere they make a session CORRUPT; previous-day levels use ALL candles by default", candidates=["all candles (chart-faithful, current)", "continuous session only for previous-day levels"],
+    effect=f"5 of the 21 auction sessions have their high or low inside the auction candles; the choice changes the output of exactly one PDR/PDS session (2026-08-26: the PDR signal moves from the 09:20 candle to 12:10, zone [24,260.05, 24,334.55] -> [24,247.05, 24,266.85]) and no RF signal; ORB Method 1 invalidated {eff('ORB prev_day_level_window', 'Method 1|INVALIDATED')}", recommended="all candles", confidence="HIGH", changes=["entry"], author_approval_required=False, priority=5,
+    plain="From Aug 3 the index freezes for the last 15 minutes. Should yesterday's high/low include the final auction candle? (It changes one PDR session and three ORB rejections.)")
+add(id="DATA-D03", strategy="DATA", rule_ids=["DATA-QUAL-001"], title="Missing weekdays and the Phase 1 holiday list", source="NSE closures (secondary sources)", evidence=["E"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="2026-01-15, 03-26, 03-31 and 05-28 are confirmed closures (NSE circular cited by several sources; not read directly). Phase 1's list wrongly marks 02-17, 03-20, 03-27, 05-27 as holidays (all have full sessions).", implementation="evidence-tiered calendar file", candidates=["as recorded"], effect="none", recommended="as recorded", confidence="HIGH", changes=[], author_approval_required=False, priority=5,
+    plain="(Resolved from public evidence.)")
+add(id="DATA-D04", strategy="DATA", rule_ids=["DATA-QUAL-001"], title="Previous-day strategies on 2025-10-23 (a Muhurat session sits between)", source="calendar; vendor daily", evidence=["E", "G"], classification="UNRESOLVED",
+    verified_meaning="The previous regular session is 2025-10-20 but the previous closing value is the Muhurat close of 2025-10-21 (25,868.60). Which one the author's chart uses is unknown.", implementation="that one session is NOT evaluated by previous-day strategies", candidates=["not evaluated (current)", "zone from 10-20, close from the Muhurat session"],
+    effect="1 session", recommended="not evaluated", confidence="MEDIUM", changes=["trade frequency"], priority=5, plain="For the day after Diwali Muhurat trading, which close and which session's high/low do you use?")
+add(id="DATA-D05", strategy="DATA", rule_ids=["DATA-WARM-001"], title="Indicator warm-up", source="strategy PDFs are silent", evidence=["E"], classification="VERIFIED_QUALITATIVE",
+    verified_meaning="Resolved with data: 2025-07/08 minute data (15,789 rows) is loaded as WARM-UP ONLY so every session's EMA(200) is initialised (it reproduces the charts to 0.005 point even on 2025-09-01), and 248 official daily bars precede the first session for the daily 200-day average.",
+    implementation="warm-up data seeds indicators but is never evaluated", candidates=["as implemented"], effect="3 sessions that were unevaluable are now evaluable", recommended="as implemented", confidence="HIGH", changes=[], author_approval_required=False, priority=5, plain="(Resolved.)")
+add(id="EXE-D01", strategy="EXEC", rule_ids=["EXE-T2-001"], title="Target 2 per strategy", source="performance report; strategy guides", evidence=["A", "E"], classification="CONFLICTING",
+    verified_meaning="The report only says 'Target 2 (60 or 70 points, as recorded)'. Guides: IRF 60, ORB 60, PDR 70, PDS 70, RF open. Derived from the report: winners at 70 = 6 (PDR 5, PDS 1); all 74 other winners at 60. See PDR-D07, PDS-D06, RF-D06.", implementation="per-guide values; RF unresolved", candidates=["per guide", "60 everywhere", "per-trade"], effect="exit only",
+    recommended="per guide", confidence="MEDIUM", changes=["exit"], priority=2, plain="State the Target-2 distance for each strategy.")
+add(id="EXE-D02", strategy="EXEC", rule_ids=["EXE-MISSING-001"], title="Same-bar collisions, end of day, costs, lot size", source="performance report", evidence=["E"], classification="UNRESOLVED",
+    verified_meaning="No intrabar rule, no end-of-day outcome, costs excluded. The report applies 65 per lot to the whole year, but NSE's NIFTY lot size was 75 until the Dec-2025/Jan-2026 revision to 65 (secondary sources), so the report's rupee figures for Sep-Dec 2025 are not what 6 real lots would have produced; index-point results are unaffected.",
+    implementation="adverse resolution (stop before target, no favourable fill, breakeven gap at the worse of entry/open); end of day leaves the position open", candidates=["as implemented"], effect="exit only", recommended="as implemented", confidence="MEDIUM", changes=["exit"], priority=3,
+    plain="What happens to a trade still open at the close, and was the lot size really 65 all year?")
+add(id="EXE-D03", strategy="EXEC", rule_ids=["EXE-OUT-001"], title="Trading journal reliability", source="journal workbook vs report", evidence=["E"], classification="UNRESOLVED",
+    verified_meaning="190 rows vs a Summary of 189; 5 weekend-dated rows; 6 of 60 strategy-month cells irreproducible. Three attribution differences (Feb ORB<->PDR, Jun IRF<->ORB, Aug extra ORB Target) explain every count difference exactly. RF August (-Rs 17,550) is irreproducible with any 30/35/40 stop.",
+    implementation="journal NOT used as ground truth", candidates=["author supplies a corrected, timestamped trade list"], effect="n/a", recommended="request a corrected trade list", confidence="HIGH", changes=[], priority=1,
+    plain="Please provide a corrected trade list with date, entry time, strategy AND method, direction, prices, stop and Target-2 used.")
+
+
+def classes_count() -> dict:
+    out: dict[str, int] = {}
+    for d in D:
+        out[d["classification"]] = out.get(d["classification"], 0) + 1
+    return out
+
+
+def main() -> int:
+    assert not any(d["classification"] == "APPROVED" for d in D), "nothing may be APPROVED without explicit confirmation"
+    DOCS.mkdir(parents=True, exist_ok=True)
+    (DOCS / "decision_records.yaml").write_text(
+        "# GENERATED by scripts/phase21_decisions.py - quantitative effects are record counts from reports/phase21/signal_counts_default.json\n"
+        + yaml.safe_dump({"evidence_categories": {"A": "explicit PDF wording", "B": "another page of the same PDF", "C": "worked numerical example", "D": "reference-chart annotation",
+                                                  "E": "performance report / market evidence", "F": "justified but unverified proposal", "G": "author clarification only"},
+                          "approved_count": 0, "decisions": D}, sort_keys=False, allow_unicode=True, width=130))
+    md = ["# Strategy rule resolution (Task 5/7)\n", "> **PARTLY SUPERSEDED BY PHASE 2.2** (`phase22_rule_verification.md`, `phase22_author_decisions.md`): stops are now a USER_APPROVED research baseline (35; ORB 30); RF target 60 is a PROPOSED research value; the PDR zone bottom is the body TOP by default (`PDR-D01` text below said body bottom); strict zone intersection is the default; the trend default is the structure proposal; a new open item `DATA-OPEN-001` (session open price) was found. Where this file and the Phase 2.2 files differ, Phase 2.2 wins.\n",
+          "Every ambiguity from `ambiguous_rules.md` re-examined against the original PDFs. **No decision is APPROVED**: a rule becomes APPROVED only when a source explicitly confirms it or the strategy owner authorises it.",
+          "Evidence categories: **A** explicit PDF wording · **B** another page of the same PDF · **C** worked numerical example · **D** reference-chart annotation · **E** performance report / market evidence · **F** justified but unverified proposal · **G** author clarification only.",
+          "Quantitative effects are **record counts** over 247 evaluable sessions (single change, everything else default) - never profitability.\n",
+          f"Decisions: **{len(D)}** · by classification: {classes_count()} · author approval required: **{sum(d['author_approval_required'] for d in D)}**\n",
+          "| ID | Strategy | Question | Class | Evidence | Recommended | Confidence | Author? |", "|---|---|---|---|---|---|---|---|"]
+    for d in D:
+        md.append(f"| {d['id']} | {d['strategy']} | {d['title']} | {d['classification']} | {','.join(d['evidence'])} | {d['recommended']} | {d['confidence']} | {'yes' if d['author_approval_required'] else 'no'} |")
+    for strat in ("IRF", "ORB", "PDR", "PDS", "RF", "DATA", "EXEC"):
+        md += [f"\n## {strat}\n"]
+        for d in [x for x in D if x["strategy"] == strat]:
+            md += [f"### {d['id']} - {d['title']}\n", f"* **Rules:** {', '.join(d['rule_ids'])} · **Source:** {d['source']} · **Evidence:** {', '.join(d['evidence'])} · **Classification:** {d['classification']}",
+                   f"* **Verified meaning:** {d['verified_meaning']}", f"* **Existing implementation:** {d['implementation']}", "* **Candidate interpretations:** " + "; ".join(d["candidates"]),
+                   f"* **Quantitative effect (record counts):** {d['effect']}", f"* **Recommended interpretation:** {d['recommended']} (confidence {d['confidence']}) · **Author approval required:** {'yes' if d['author_approval_required'] else 'no'} · **Changes:** {', '.join(d['changes']) or '-'}\n"]
+    (DOCS / "strategy_rule_resolution.md").write_text("\n".join(md))
+    # ---- author decisions, prioritised
+    order = {1: "PRIORITY 1 - decides which trades exist (entry selection) or blocks a strategy", 2: "PRIORITY 2 - decides exits / blocks complete-trade backtests", 3: "PRIORITY 3 - entry thresholds (placeholders in use)",
+             4: "PRIORITY 4 - quick confirmations of conflicts and wording", 5: "PRIORITY 5 - resolved from evidence; confirm only if you disagree"}
+    am = ["# Author decisions required\n", "> **PARTLY SUPERSEDED BY PHASE 2.2** (`phase22_rule_verification.md`, `phase22_author_decisions.md`): stops are now a USER_APPROVED research baseline (35; ORB 30); RF target 60 is a PROPOSED research value; the PDR zone bottom is the body TOP by default (`PDR-D01` text below said body bottom); strict zone intersection is the default; the trend default is the structure proposal; a new open item `DATA-OPEN-001` (session open price) was found. Where this file and the Phase 2.2 files differ, Phase 2.2 wins.\n", "Plain-language questions, most important first. Each has a **recommended research default** (what the engine uses now). **None of these defaults is approved**; they are not chosen for profit.\n",
+          "`changes` tells you whether the answer alters entries, exits or how many trades occur.\n"]
+    for pr in (1, 2, 3, 4, 5):
+        items = [d for d in D if d["priority"] == pr and (d["author_approval_required"] or pr <= 2)]
+        if not items:
+            continue
+        am += [f"\n## {order[pr]}\n"]
+        for d in items:
+            am += [f"### {d['id']} ({d['strategy']}) - {d['title']}", f"* **What needs deciding:** {d['plain']}", f"* **Why it matters:** {d['effect']}",
+                   "* **Choices:** " + "; ".join(d["candidates"]), f"* **Recommended research default:** {d['recommended']} (confidence {d['confidence']})",
+                   f"* **Changes:** {', '.join(d['changes']) or 'nothing in the strategy'} · **Evidence classification:** {d['classification']}\n"]
+    (DOCS / "author_decisions_required.md").write_text("\n".join(am))
+    print(json.dumps({"decisions": len(D), "classes": classes_count(), "author_required": sum(d["author_approval_required"] for d in D)}))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

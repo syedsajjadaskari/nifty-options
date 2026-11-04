@@ -13,6 +13,7 @@ STRONG_DN = (23795, 23800, 23740, 23745)  # mirror below PDL
 
 
 def run(c0, *, prev=PREV, ema=23950.0, prior=(True,), **prop):
+    prop.setdefault("trend_mode", "EMA5M_PREV_SESSION")  # these fixtures test other logic with the Phase 2.1 trend proposal; the structure mode is tested in test_phase22_rules
     c = ctx([c0, (c0[3], c0[3] + 1, c0[3] - 1, c0[3])], prev=prev, ema=ema, prior_above=prior)
     return ORBStrategy(proposals=ProposalConfig(**prop)).evaluate_session(c)
 

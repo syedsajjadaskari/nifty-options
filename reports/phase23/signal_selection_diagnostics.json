@@ -1,0 +1,47 @@
+{
+  "counts": {
+    "sessions": 247,
+    "confirmed_signals": 1345,
+    "sessions_with_an_eligible_first_signal": 191,
+    "rejected_after_13:00_cutoff": 484,
+    "sessions_with_signals_but_none_eligible": 13,
+    "sessions_without_any_signal": 43,
+    "rejected_ENTRY_BLOCKED_POST_CLOSE": 14,
+    "rejected_ENTRY_BLOCKED_CLOSING_AUCTION_": 2
+  },
+  "first_eligible_signal_by_strategy": {
+    "IRF": 113,
+    "PDR": 47,
+    "ORB": 21,
+    "PDS": 7,
+    "COLLISION": 3
+  },
+  "first_signal_collisions": [
+    {
+      "date": "2026-02-18",
+      "time": "09:30",
+      "signals": [
+        "PDR/PDR/LONG",
+        "RF/RF/LONG"
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "time": "10:30",
+      "signals": [
+        "IRF/Method 2A/SHORT",
+        "PDS/Method 3/SHORT"
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "time": "10:55",
+      "signals": [
+        "IRF/Method 2A/SHORT",
+        "IRF/Method 2B/SHORT",
+        "PDS/Method 3/SHORT"
+      ]
+    }
+  ],
+  "warning": "Selection-level counts only: no exit simulated, no profit computed, nothing tuned or compared with the report."
+}

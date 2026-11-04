@@ -5,13 +5,15 @@ classification_vocabulary:
   VERIFIED_EXPLICIT: directly stated and objectively testable
   VERIFIED_QUALITATIVE: directly stated but needs a mathematical interpretation
   CONFLICTING: different sections give incompatible instructions
-  MISSING: necessary information not provided
-  PROPOSED: engineering interpretation, NOT an original rule
+  UNRESOLVED: necessary information not provided (was MISSING)
+  PROPOSED_FOR_REVIEW: engineering interpretation, NOT an original rule (was PROPOSED)
+  USER_APPROVED: 'authorised by the strategy owner (Phase 2.2: stop-loss research baseline only)'
 unresolved_flags:
-  RF_TARGET_STATUS: UNRESOLVED
-  RF_STOP_SELECTION: UNRESOLVED
-  PDR_STOP_SELECTION: UNRESOLVED
-  TARGET2_ASSIGNMENT_PER_STRATEGY: UNRESOLVED (guide vs report conflict for PDR/PDS)
+  RF_TARGET_STATUS: PROPOSED_FOR_REVIEW
+  RF_STOP_SELECTION: SOURCE UNRESOLVED; research baseline 35 USER_APPROVED (EXE-STOP-001)
+  PDR_STOP_SELECTION: SOURCE UNRESOLVED; research baseline 35 USER_APPROVED (EXE-STOP-001)
+  TARGET2_ASSIGNMENT_PER_STRATEGY: guide values configured (IRF 60, ORB 60, PDR 70, PDS 70); RF 60 PROPOSED_FOR_REVIEW; PDR/PDS guide-vs-report
+    conflict recorded
 source_constants_stated_in_documents:
   irf_target_points: 60.0
   irf_stop_choices: &id001
@@ -39,6 +41,7 @@ proposal_candidates:
     STRICT: wick>=70%, body<=25%, opposite wick<=10%
     MODERATE: wick>=60%, body<=33%, opp<=15%
     LOOSE: wick>=55%, body<=40%, opp<=20%
+    OWNER_2X_CLOSE30: rejection wick >= 2x body and close within the favourable 30% of the range (owner recommendation)
   rejection_wick:
     STRICT: wick>=25% of range
     MODERATE: wick>=33%
@@ -49,6 +52,10 @@ proposal_candidates:
     EMA5M_PREV_3_SESSIONS: BASIC + each of the previous 3 sessions closed on the trend side of its EMA
     SMA200_DAILY: first-candle close vs SMA(200) of daily official closes up to the previous session (needs 200 prior daily bars)
     EMA200_DAILY: as SMA200_DAILY but exponential
+    EMA_PREV_SESSION_CLOSE: 'VARIANT A (owner-approved research variant): PREVIOUS-session only - its last 5m close vs its own EMA(200); no swing
+      structure'
+    STRUCTURE_EMA_SWING2: 'VARIANT B (owner-approved research variant): PREVIOUS-session only: last close vs its EMA(200) AND the last two confirmed
+      swing highs AND the last two swing lows rising (up) / falling (down); swing = strictly beyond 2 candles each side'
   irf_support_def:
     SWING_K1: latest 3-candle fractal low confirmed before the signal candle
     SWING_K2: latest 5-candle fractal low (2 each side)
@@ -65,6 +72,7 @@ proposal_candidates:
   m3_compression_def:
     C1: previous N candles lie fully inside [IRL, IRH]
     C2: C1 and every one of them has range <= 50% of the initial-range height
+    C3: C1 and every one of them is a small candle (body <= 30% of its range)
   m3_wick_share_band:
     BAND_60_70: 0.60 <= share <= 0.70 (literal)
     MIN_60: share >= 0.60
@@ -73,13 +81,41 @@ proposal_candidates:
     GREEN_HIGH: distance = high of the most recent green candle - entry (short)
     GREEN_CLOSE: distance = close of the most recent green candle - entry (short)
     GREEN_SETUP_HIGH: distance = highest high among green candles since the setup began - entry
+  pdr_open_vs_zone:
+    ABOVE_ZONE: open > zone high (the guide's text; default)
+    NOT_BELOW_ZONE: open >= zone low (price at/above the zone, so it can act as support)
+    ANY: 'no condition on the open beyond the gap-up (55% of its signals open BELOW the zone: not recommended)'
+  pds_open_vs_zone:
+    BELOW_ZONE: open < zone low (the guide's text, p.3; default)
+    NOT_ABOVE_ZONE: open <= zone high
+    ANY: no condition beyond the gap-down
+  prev_close_source:
+    OFFICIAL_DAILY: previous close = the vendor daily close = the published NSE closing value (verified on 9 of 9 external closes)
+    LAST_PRINT_1530: previous close = the last 1-minute print at 15:30 (equal to the official close only from 2026-08-03)
+  prev_day_level_window:
+    ALL_CANDLES: previous-day high/low/zone use every complete 5m candle, as a chart shows them (default)
+    CONTINUOUS_ONLY: on closing-auction days (>= 2026-08-03) use only candles that ended by 15:15
   zone_lower_boundary:
     ZONE_FULL: PDR zone = [body bottom, wick top] (mirrors PDS text 'body and wick')
     ZONE_WICK: PDR zone = [body top, wick top] (wick only)
   zone_proximity_points:
-    '0': touch only
-    '5': within 5 index points
+    '0': actual zone intersection (strict research version)
+    '5': within 5 index points (near-touch proposal)
     '10': within 10 index points
+  pdr_zone_method:
+    A_HIGHEST_HIGH: 'DIAGNOSTIC REFERENCE ONLY (Phase 2.3): the previous session''s absolute highest-high candle; signals built on it are marked
+      DIAGNOSTIC_ONLY_NOT_TRADABLE'
+    B_SWING_HIGH_REVERSAL: 'owner-approved research candidate 1 (confirmed reversal swing high): the LATEST confirmed swing high (swing_k each
+      side) with a red candle at/after the peak; no such swing = no PDR setup'
+    C_REPEATED_TOUCHES: 'owner-approved research candidate 2 (repeated resistance shelf): the highest cluster of >=2 confirmed swing highs within
+      the tolerance; the zone spans the cluster; no cluster = no PDR setup'
+  pds_zone_method:
+    A_LOWEST_LOW: the previous session's absolute lowest-low candle
+    B_SWING_LOW_REVERSAL: the LATEST confirmed swing low with a green candle at/after the trough (bullish reversal)
+    C_REPEATED_TOUCHES: the lowest cluster of >=2 confirmed swing lows within the tolerance; zone spans the cluster
+  pds_zone_upper_boundary:
+    ZONE_FULL: PDS zone = [wick tip, body TOP]
+    ZONE_WICK: PDS zone = [wick tip, body BOTTOM] (wick only)
   rf_return_inside_def:
     R1: first later candle that CLOSES back inside [RF_L, RF_H]
     R2: first later candle whose range touches RF_L (High >= RF_L)
@@ -115,6 +151,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._scan
   tested_by:
@@ -141,6 +182,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._scan
   tested_by:
@@ -166,6 +212,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._scan
   tested_by:
@@ -177,11 +228,13 @@ rules:
   strategy: IRF
   method: ALL
   description: 'NOT STATED: how many IRF trades per day, a latest entry time, and whether a new breakout may re-arm a setup after a signal. Without
-    them the written rules alone produce several signals per session (the report records 72 IRF trades in a year).'
+    them the written rules alone produce several signals per session (the report records 72 IRF trades in a year). [PHASE 2.3: the owner''s portfolio-level
+    rules (SEL-FIRST-001, SEL-ACTIVE-001, DAY-*, ENTRY-CUTOFF-001) now govern trades per day, the latest entry and re-arming AT EXECUTION; the
+    IRF engine still emits every event and the classification is unchanged until the owner confirms that these rules settle this item.]'
   source_document: (absent from the IRF guide)
   source_page: n/a
   section: (absent from the guide)
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -197,6 +250,11 @@ rules:
   - re-arming after a signal
   proposal_parameter: all occurrences are reported; no cap, no window
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._scan
   tested_by:
@@ -224,6 +282,11 @@ rules:
   - which single method is 'forming' when one failure satisfies Method 1 (latest pair) and Method 2 (earlier breakout)
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._scan
   tested_by:
@@ -250,6 +313,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.is_green
   - strategies.definitions.is_red
@@ -277,9 +345,15 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._method1
   tested_by:
+  - test_phase22_rules.py::test_signal_records_the_rule_configuration_and_is_never_marked_verified_wholesale
   - test_phase2_boundaries.py::test_irf_a_close_exactly_at_irh_does_not_start_a_breakout_attempt
   - test_phase2_irf.py::test_m1_non_qualifying
   - test_phase2_irf.py::test_m1_page6_worked_example_enters_at_close_of_second_candle
@@ -308,6 +382,11 @@ rules:
   - 'boundary: close < IRL'
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._method1
   tested_by:
@@ -324,7 +403,7 @@ rules:
   source_document: IRF_Strategy_Guide Updated.pdf
   source_page: '5'
   section: Method 1
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -337,6 +416,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: m1_close_below_irl_counts_as_inside (default False); equality with IRH never counts
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._method1
   tested_by:
@@ -362,6 +446,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._method1
   tested_by:
@@ -389,6 +478,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: m1_max_candles_after_breakout (default 1 = pp.5,6,13; 2 = research variant of p.14)
   conflicts_with: IRF-M1-002
+  authority: CONFLICTING
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._method1
   tested_by:
@@ -415,6 +509,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._m2_step
   tested_by:
@@ -444,6 +543,11 @@ rules:
   - '''extends further'' undefined'
   proposal_parameter: m2_extension_definition
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._m2_step
   tested_by:
@@ -473,6 +577,11 @@ rules:
   - may the extension candle itself be the red candle?
   proposal_parameter: m2_red_may_be_extension_candle
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._m2_step
   tested_by:
@@ -499,6 +608,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._scan
   tested_by:
@@ -523,6 +637,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._m2_step
   tested_by:
@@ -534,7 +653,7 @@ rules:
   source_document: IRF_Strategy_Guide Updated.pdf
   source_page: 7-9
   section: Method 2
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -548,6 +667,11 @@ rules:
   - setup expiry
   proposal_parameter: m2_expiry_candles (default None = never expires before EOD)
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._scan
   tested_by:
@@ -575,6 +699,11 @@ rules:
   - '''recent support'' not numerically defined'
   proposal_parameter: irf_support_def
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.recent_support
   tested_by:
@@ -603,6 +732,11 @@ rules:
   - ordering relative to the red candle (strictly later vs same candle)
   proposal_parameter: m2a_break_may_be_red_candle
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._m2_step
   tested_by:
@@ -632,6 +766,11 @@ rules:
   - '''first push'' not numerically defined'
   proposal_parameter: irf_resistance_def
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.recent_resistance
   tested_by:
@@ -659,6 +798,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._m2_step
   tested_by:
@@ -688,6 +832,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._m2_step
   tested_by:
@@ -717,10 +866,16 @@ rules:
   - N undefined
   proposal_parameter: m3_compression_def
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.compression_ok
   - strategies.irf.IRFStrategy._method3
   tested_by:
+  - test_phase22_rules.py::test_compression_c3_needs_every_candle_small_and_inside_the_range
   - test_phase2_boundaries.py::test_irf_m3_compression_candles_may_touch_the_range_edges_and_exclude_the_opening_candle
   - test_phase2_irf.py::test_m3_needs_compression_inside_the_range_not_a_trending_advance
   - test_phase2_irf.py::test_m3_page12_illustration_sweep_candle_closes_below_support
@@ -747,6 +902,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._method3
   tested_by:
@@ -778,6 +938,11 @@ rules:
   - it is 'never a substitute for the support break'
   proposal_parameter: m3_wick_share_band
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.wick_share_outside
   - strategies.irf.IRFStrategy._method3
@@ -807,6 +972,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: irf_support_def
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.recent_support
   - strategies.irf.IRFStrategy._method3
@@ -834,6 +1004,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._method3
   tested_by:
@@ -860,6 +1035,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.irf.IRFStrategy._method3
   tested_by:
@@ -873,7 +1053,7 @@ rules:
   source_document: IRF_Strategy_Guide Updated.pdf
   source_page: 14 vs 11,12
   section: Quick Reference Card
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -887,6 +1067,11 @@ rules:
   - definition of alternative HPR sweep candle
   proposal_parameter: ''
   conflicts_with: IRF-M3-002
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by: []
   tested_by: []
 - rule_id: IRF-SL-001
@@ -912,6 +1097,11 @@ rules:
   - d == 35 boundary
   proposal_parameter: stop_distance_measure
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.select_stop_distance
   - strategies.irf.IRFStrategy._scan
@@ -941,6 +1131,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.evaluate_exit
   tested_by:
@@ -966,6 +1161,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.policy_for
   tested_by:
@@ -992,6 +1192,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by: []
   tested_by: []
 - rule_id: ORB-GLOBAL-001
@@ -1015,6 +1220,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._scan
   tested_by:
@@ -1041,6 +1251,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._scan
   tested_by:
@@ -1067,9 +1282,15 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.policy_for
   tested_by:
+  - test_phase23_day_controller.py::test_the_trend_research_variants_a_and_b_are_both_selectable_and_neither_is_chosen_by_results
   - test_phase2_exit_policy.py::test_irf_and_orb_policy_values_come_from_the_documents
   - test_phase2_exit_policy.py::test_target_stop_levels_long_and_short
 - rule_id: ORB-GLOBAL-004
@@ -1093,6 +1314,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: entry_reference_price
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method1
   tested_by:
@@ -1104,7 +1330,7 @@ rules:
   source_document: ORB_Strategy_Rulebook-2.pdf
   source_page: '11'
   section: Standardize your units
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -1118,6 +1344,11 @@ rules:
   - units of 30/60
   proposal_parameter: ''
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by: []
   tested_by: []
 - rule_id: ORB-TREND-001
@@ -1143,10 +1374,18 @@ rules:
   - '''established'' undefined'
   proposal_parameter: trend_mode
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
+  - strategies.definitions.ema_prev_session_trend
+  - strategies.definitions.structure_trend
   - strategies.definitions.trend_check
   - strategies.orb.ORBStrategy._method1
   tested_by:
+  - test_phase23_day_controller.py::test_r5_10_variant_a_is_wired_through_the_engines_not_only_the_helper
   - test_phase2_boundaries.py::test_prev_3_sessions_mode_needs_all_three_sessions_on_the_trend_side
   - test_phase2_definitions.py::test_trend_modes_and_warmup_are_explicit_not_silent
   - test_phase2_orb.py::test_indicator_warmup_gives_not_evaluated_never_a_signal
@@ -1174,6 +1413,11 @@ rules:
   - structure
   proposal_parameter: trend_mode
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.trend_check
   - strategies.orb.ORBStrategy._method1
@@ -1186,7 +1430,9 @@ rules:
   strategy: ORB
   method: ALL
   description: 'Terminology conflict: ''200 DMA / EMA'' (p.2), ''200 EMA'' (pp.3,5,7), ''200 DMA'' (pp.1,8,9,12) for what the charts show as one
-    curved line on a 5-minute chart.'
+    curved line on a 5-minute chart. EVIDENCE (Phase 2.1): the PDR chart legends ''EMA 200 close'' on a 5-minute chart are reproduced to within
+    0.005 points by EMA(200) of 5-minute closes (Example 1: 24,582.025 vs 24,582.02; Example 3: 24,925.177 vs 24,925.18); a 200-day average is
+    >400 points away. The ORB charts carry no legend, so ORB''s ''DMA'' is inferred, not proven.'
   source_document: ORB_Strategy_Rulebook-2.pdf
   source_page: 1,2,3,7,8,9,12,13
   section: multiple
@@ -1204,9 +1450,16 @@ rules:
   - 'author decision: which moving average'
   proposal_parameter: 'ma_mode: EMA200_5M | SMA200_DAILY | EMA200_DAILY'
   conflicts_with: ''
+  authority: CONFLICTING
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._gap_setup
   tested_by:
+  - test_phase21_source_examples.py::test_the_200_line_on_the_guides_5_minute_charts_is_an_ema_of_5_minute_closes_to_within_0_01_point
+  - test_phase2_data_layer.py::test_daily_ma_with_a_supplied_daily_series_never_includes_the_sessions_own_close
   - test_phase2_data_layer.py::test_daily_sma_uses_only_closes_strictly_before_the_session_and_the_right_divisor
   - test_phase2_definitions.py::test_daily_200_ma_needs_200_prior_daily_bars
 - rule_id: ORB-M1-LONG-001
@@ -1231,9 +1484,15 @@ rules:
   - '''previous-day resistance'' definition'
   proposal_parameter: orb_prev_day_level_def
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method1
   tested_by:
+  - test_phase2_data_layer.py::test_prev_day_level_window_proposal_changes_only_the_levels_it_names
   - test_phase2_orb.py::test_m1_long_confirms_at_0920_after_the_first_candle_closes
 - rule_id: ORB-M1-LONG-002
   strategy: ORB
@@ -1257,6 +1516,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method1
   tested_by:
@@ -1287,6 +1551,11 @@ rules:
   - '''strong'', ''small'', ''rejection'' thresholds'
   proposal_parameter: strong_candle, rejection_wick
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.strong_bullish
   - strategies.orb.ORBStrategy._method1
@@ -1315,6 +1584,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: orb_prev_day_level_def
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method1
   tested_by:
@@ -1341,6 +1615,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method1
   tested_by:
@@ -1369,6 +1648,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: strong_candle, rejection_wick
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.strong_bearish
   - strategies.orb.ORBStrategy._method1
@@ -1381,7 +1665,7 @@ rules:
   source_document: ORB_Strategy_Rulebook-2.pdf
   source_page: 4,5,7
   section: Method 2 Long steps 2-4
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -1398,6 +1682,11 @@ rules:
   - how near the trendline
   proposal_parameter: orb_inner_level_def, orb_trendline_def
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method2
   tested_by:
@@ -1426,6 +1715,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method2
   tested_by:
@@ -1454,6 +1748,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: strong_candle
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.strong_bullish
   - strategies.orb.ORBStrategy._method2
@@ -1481,9 +1780,15 @@ rules:
   - '''near'', ''convincing'''
   proposal_parameter: ma_near_band_points, ma_close_margin_points
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method2
   tested_by:
+  - test_phase22_rules.py::test_orb_near_ma_uses_the_opening_candle_ema_under_the_structure_trend
   - test_phase2_boundaries.py::test_orb_m2_near_band_is_inclusive_and_the_close_margin_is_exclusive
   - test_phase2_orb.py::test_m2_inner_level_break_with_supportive_trendline_is_only_a_research_variant
   - test_phase2_orb.py::test_m2_near_the_ma_without_a_convincing_close_is_rejected
@@ -1507,6 +1812,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method2
   tested_by:
@@ -1519,7 +1829,7 @@ rules:
   source_document: ORB_Strategy_Rulebook-2.pdf
   source_page: 6,7
   section: Method 2 Short
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -1533,6 +1843,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: orb_inner_level_def, orb_trendline_def
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method2
   tested_by:
@@ -1559,6 +1874,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method2
   tested_by:
@@ -1587,6 +1907,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: strong_candle
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.strong_bearish
   - strategies.orb.ORBStrategy._method2
@@ -1613,6 +1938,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ma_near_band_points, ma_close_margin_points
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._method2
   tested_by:
@@ -1637,14 +1967,21 @@ rules:
   invalidation_condition: ''
   implementation_status: IMPLEMENTED_WITH_PROPOSAL
   unresolved_dependencies:
-  - official close vs last bar; minimum size
-  proposal_parameter: gap_min_points (default 0)
+  - minimum gap size
+  proposal_parameter: 'gap_min_points (default 0); prev_close_source (default OFFICIAL_DAILY: the published NSE close, verified on 9/9 external
+    closes)'
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.gap_info
   - strategies.orb.ORBStrategy._gap_setup
   tested_by:
   - test_phase2_definitions.py::test_gap_info_direction_and_unverified_previous_session
+  - test_phase2_definitions.py::test_gap_uses_the_official_close_by_default_and_the_1530_print_only_by_proposal
   - test_phase2_orb.py::test_gap_long_crosses_ma_and_closes_beyond_it
 - rule_id: ORB-GAP-LONG-002
   strategy: ORB
@@ -1668,6 +2005,11 @@ rules:
   - '''may have been below'' - optional or required?'
   proposal_parameter: ma_mode
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._gap_setup
   tested_by:
@@ -1697,6 +2039,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._gap_setup
   tested_by:
@@ -1727,6 +2074,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: strong_candle, pin_bar
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.bullish_pin
   - strategies.orb.ORBStrategy._gap_setup
@@ -1740,7 +2092,7 @@ rules:
   source_document: ORB_Strategy_Rulebook-2.pdf
   source_page: '9'
   section: Not every gap is valid
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -1756,6 +2108,11 @@ rules:
   - definition of 'excessively extended' (MANDATORY rule, unmeasurable)
   proposal_parameter: gap_max_points (default None = filter disabled)
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._gap_setup
   tested_by:
@@ -1784,6 +2141,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: gap_min_points
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.gap_info
   - strategies.orb.ORBStrategy._gap_setup
@@ -1810,6 +2172,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ma_mode
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._gap_setup
   tested_by:
@@ -1840,6 +2207,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: strong_candle, pin_bar, rejection_wick
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.bearish_pin
   - strategies.orb.ORBStrategy._gap_setup
@@ -1852,7 +2224,7 @@ rules:
   source_document: ORB_Strategy_Rulebook-2.pdf
   source_page: '9'
   section: Not every gap is valid
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -1865,6 +2237,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: gap_max_points
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.orb.ORBStrategy._gap_setup
   tested_by:
@@ -1891,6 +2268,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: strong_candle, pin_bar, rejection_wick
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.bearish_pin
   - strategies.definitions.bullish_pin
@@ -1921,6 +2303,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pdr.PDRStrategy._scan
   tested_by:
@@ -1939,21 +2326,32 @@ rules:
   objectively_measurable: false
   required_inputs:
   - prev_day_candles
-  mathematical_condition: zone_high = High of the previous-day high candle; zone_low = body bottom (ZONE_FULL) | body top (ZONE_WICK)
+  mathematical_condition: 'zone_high = High of the previous-day high candle; zone_low = body TOP (ZONE_WICK, Phase 2.2 default: the guide''s drawn
+    zones in charts 1, 2 and 4 are [body top, wick tip] to within about 1-2 points at the bottom edge; chart 4 is dated only by shape-matching)
+    | body bottom (ZONE_FULL candidate)'
   evaluation_time: 09:15
   invalidation_condition: ''
   implementation_status: IMPLEMENTED_WITH_PROPOSAL
   unresolved_dependencies:
-  - '''relevant candle-body level'''
+  - 'which candle marks the zone: charts 1, 2, 4 use the session-high candle, chart 3 a shelf of equal highs (PDR-D09)'
   - tie-break when several candles share the high
   proposal_parameter: zone_lower_boundary
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.pdr_zone
   - strategies.pdr.PDRStrategy._scan
   tested_by:
+  - test_phase21_source_examples.py::test_pdr_example_3_does_not_discriminate_because_the_engine_zone_is_not_the_authors_drawn_zone
+  - test_phase22_rules.py::test_pdr_dated_charts_reproduce_with_the_strict_wick_zone_default
+  - test_phase22_rules.py::test_pdr_zone_method_a_is_the_absolute_highest_high_candle
   - test_phase2_boundaries.py::test_pdr_zone_tie_break_picks_the_first_or_last_candle_sharing_the_days_high
-  - test_phase2_data_layer.py::test_session_after_a_frozen_tail_is_not_evaluated_for_previous_day_strategies
+  - test_phase2_data_layer.py::test_prev_day_level_window_proposal_changes_only_the_levels_it_names
+  - test_phase2_data_layer.py::test_session_after_an_auction_day_is_evaluable_and_uses_the_official_daily_close
   - test_phase2_pdr_pds_rf.py::test_pdr_gap_up_return_to_zone_then_green_candle
   - test_phase2_pdr_pds_rf.py::test_pdr_zone_lower_boundary_candidates
 - rule_id: PDR-003
@@ -1976,10 +2374,17 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.pdr_zone
   - strategies.pdr.PDRStrategy._scan
   tested_by:
+  - test_phase22_rules.py::test_pdr_dated_charts_reproduce_with_the_strict_wick_zone_default
+  - test_phase22_rules.py::test_pdr_zone_method_a_is_the_absolute_highest_high_candle
   - test_phase2_pdr_pds_rf.py::test_pdr_gap_up_return_to_zone_then_green_candle
 - rule_id: PDR-004
   strategy: PDR
@@ -2003,10 +2408,17 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: gap_min_points
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.gap_info
   - strategies.pdr.PDRStrategy._scan
   tested_by:
+  - test_phase21_source_examples.py::test_pdr_dated_worked_examples_1_and_2_reproduce_under_the_text_default
+  - test_phase22_rules.py::test_a_flat_open_is_no_gap_so_nothing_is_evaluated_at_all
   - test_phase2_boundaries.py::test_flat_open_equal_to_previous_close_is_no_gap_for_rf_and_pdr
   - test_phase2_data_layer.py::test_previous_session_values_are_the_immediately_preceding_session_and_exact
   - test_phase2_definitions.py::test_gap_info_direction_and_unverified_previous_session
@@ -2033,6 +2445,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pdr.PDRStrategy._scan
   tested_by:
@@ -2060,9 +2477,20 @@ rules:
   - '''very close approach'' distance'
   proposal_parameter: zone_proximity_points
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pdr.PDRStrategy._scan
   tested_by:
+  - test_phase21_source_examples.py::test_pdr_dated_worked_examples_1_and_2_reproduce_under_the_text_default
+  - test_phase22_rules.py::test_a_candle_entirely_below_the_zone_is_not_an_intersection_even_with_zero_proximity
+  - test_phase22_rules.py::test_default_proximity_is_zero_so_a_near_miss_is_not_a_zone_test
+  - test_phase22_rules.py::test_pdr_dated_charts_reproduce_with_the_strict_wick_zone_default
+  - test_phase22_rules.py::test_proximity_is_applied_on_the_correct_side_of_the_zone_bottom
+  - test_phase22_rules.py::test_the_documented_phase22_defaults
   - test_phase2_boundaries.py::test_pdr_touch_is_inclusive_and_candle_zero_can_be_the_interaction_candle
   - test_phase2_pdr_pds_rf.py::test_pdr_gap_up_return_to_zone_then_green_candle
   - test_phase2_pdr_pds_rf.py::test_pdr_zone_proximity_candidates_change_what_counts_as_a_test
@@ -2089,9 +2517,16 @@ rules:
   - 'entry timing: during vs at close of the green candle'
   proposal_parameter: pdr_green_may_be_interaction_candle (default False)
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pdr.PDRStrategy._scan
   tested_by:
+  - test_phase21_source_examples.py::test_pdr_dated_worked_examples_1_and_2_reproduce_under_the_text_default
+  - test_phase22_rules.py::test_pdr_dated_charts_reproduce_with_the_strict_wick_zone_default
   - test_phase2_pdr_pds_rf.py::test_pdr_gap_up_return_to_zone_then_green_candle
   - test_phase2_pdr_pds_rf.py::test_pdr_green_candle_must_come_after_the_interaction_candle_by_default
 - rule_id: PDR-008
@@ -2115,9 +2550,15 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: EXE-T2-001
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.policy_for
   tested_by:
+  - test_phase22_rules.py::test_signals_carry_the_complete_rule_configuration_and_the_target_conflict
   - test_phase2_exit_policy.py::test_pdr_pds_targets_are_70_per_guide_but_flagged_as_conflicting_with_the_report
 - rule_id: PDR-009
   strategy: PDR
@@ -2127,7 +2568,7 @@ rules:
   source_document: PDR_Strategy_Guide.pdf
   source_page: 1,2
   section: Target and Stop-Loss
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -2136,11 +2577,16 @@ rules:
   mathematical_condition: ''
   evaluation_time: at entry
   invalidation_condition: ''
-  implementation_status: NOT_IMPLEMENTED_UNRESOLVED
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
   unresolved_dependencies:
-  - selection criterion for 35 vs 40
-  proposal_parameter: ''
+  - selection criterion for 35 vs 40 (the owner's 35 is a research baseline, not the author's rule)
+  proposal_parameter: TradeConfig.stop_variant (USER_APPROVED research baseline 35, EXE-STOP-001)
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.policy_for
   tested_by:
@@ -2167,6 +2613,11 @@ rules:
   - '''clear high and reversal'' undefined'
   proposal_parameter: pdr_reversal_filter (default OFF)
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.previous_day_reversal_ok
   - strategies.pdr.PDRStrategy._scan
@@ -2176,12 +2627,15 @@ rules:
 - rule_id: PDR-011
   strategy: PDR
   method: ALL
-  description: 'PROPOSED: the gap-up open must be above the zone for a later ''return to the zone'' (support test) to make sense. The source does
-    not state it.'
+  description: 'The gap-up open lies ABOVE the zone: the text says the market ''pulls back into the marked zone'' (p.1) and ''come back toward
+    the marked zone ... if price keeps rising without returning there is no setup'' (p.2). Dated Example 3 (2025-10-07) does NOT settle it: the
+    zone the author drew is about 4-5 points tall (~25,080.5-25,084.5, +/-1, pixel-calibrated by two reviewers against the chart''s price tags)
+    versus the engine''s 38.6-point zone [25,057.10, 25,095.70] built from the 14:50 spike candle; the open (25,087.55) is about 3 points above
+    the drawn zone, so with the drawn zone the example matches the text. A zone that is above the open is resistance, not support.'
   source_document: PDR_Strategy_Guide.pdf
-  source_page: 1,2
-  section: (engineering)
-  classification: PROPOSED
+  source_page: 1,2,3,4
+  section: Strategy at a Glance; Gap-up open; Chart Example 3
+  classification: VERIFIED_QUALITATIVE
   mandatory: true
   applies_to: method
   exception: ''
@@ -2193,14 +2647,25 @@ rules:
   evaluation_time: 09:20
   invalidation_condition: ''
   implementation_status: IMPLEMENTED_WITH_PROPOSAL
-  unresolved_dependencies: []
-  proposal_parameter: require_open_clear_of_zone (default True)
+  unresolved_dependencies:
+  - Example 3's drawn zone differs from the engine's zone construction (PDR-002)
+  proposal_parameter: pdr_open_vs_zone (default ABOVE_ZONE = the text; NOT_BELOW_ZONE; ANY not recommended)
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pdr.PDRStrategy._scan
   tested_by:
+  - test_phase21_source_examples.py::test_pdr_any_mode_emits_signals_with_the_open_below_the_zone_which_is_why_it_is_not_the_default
+  - test_phase21_source_examples.py::test_pdr_dated_worked_examples_1_and_2_reproduce_under_the_text_default
+  - test_phase21_source_examples.py::test_pdr_example_3_does_not_discriminate_because_the_engine_zone_is_not_the_authors_drawn_zone
   - test_phase2_boundaries.py::test_open_exactly_at_the_zone_edge_does_not_clear_the_zone
+  - test_phase2_boundaries.py::test_pdr_not_below_zone_allows_an_open_exactly_at_the_zone_low
   - test_phase2_pdr_pds_rf.py::test_pdr_gap_up_that_does_not_clear_the_zone_is_invalidated
+  - test_phase2_pdr_pds_rf.py::test_pdr_records_pdr_011_as_satisfied_only_when_an_open_condition_is_active
 - rule_id: PDR-012
   strategy: PDR
   method: ALL
@@ -2208,7 +2673,7 @@ rules:
   source_document: (engineering proposal; not in any source document)
   source_page: n/a
   section: (engineering)
-  classification: PROPOSED
+  classification: PROPOSED_FOR_REVIEW
   mandatory: true
   applies_to: method
   exception: ''
@@ -2221,6 +2686,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: max_signals_per_session
   conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pdr.PDRStrategy._scan
   tested_by:
@@ -2246,6 +2716,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pds.PDSStrategy._scan
   tested_by:
@@ -2272,10 +2747,16 @@ rules:
   - tie-break when several candles share the low
   proposal_parameter: pds_zone_tie_break
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.pds_zone
   - strategies.pds.PDSStrategy._scan
   tested_by:
+  - test_phase22_rules.py::test_pds_zone_methods_mirror_with_lows_and_do_not_assume_an_exact_mirror_of_pdr
   - test_phase2_pdr_pds_rf.py::test_pds_method1_first_red_candle_at_zone_is_a_good_red_candle
 - rule_id: PDS-003
   strategy: PDS
@@ -2299,10 +2780,16 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: gap_min_points
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.gap_info
   - strategies.pds.PDSStrategy._scan
   tested_by:
+  - test_phase22_rules.py::test_a_flat_open_is_no_gap_so_nothing_is_evaluated_at_all
   - test_phase2_data_layer.py::test_previous_session_values_are_the_immediately_preceding_session_and_exact
   - test_phase2_definitions.py::test_gap_info_direction_and_unverified_previous_session
   - test_phase2_pdr_pds_rf.py::test_pds_gap_up_day_is_not_evaluated
@@ -2327,6 +2814,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pds.PDSStrategy._scan
   tested_by:
@@ -2353,9 +2845,16 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: zone_proximity_points
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pds.PDSStrategy._scan
   tested_by:
+  - test_phase22_rules.py::test_pds_default_requires_the_candle_to_intersect_the_zone
+  - test_phase22_rules.py::test_pds_ignores_a_candle_that_jumps_entirely_above_the_zone_without_intersecting_it
   - test_phase2_boundaries.py::test_pds_a_candle_entirely_above_the_zone_band_is_not_at_the_zone
   - test_phase2_boundaries.py::test_pds_touch_boundary_high_exactly_at_zone_low_minus_proximity_counts
   - test_phase2_pdr_pds_rf.py::test_pds_method1_first_red_candle_at_zone_is_a_good_red_candle
@@ -2382,6 +2881,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: pds_first_red_scope
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pds.PDSStrategy._scan
   tested_by:
@@ -2414,6 +2918,11 @@ rules:
   - body size / close position not numerically defined (p.5 open item)
   proposal_parameter: strong_candle
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.strong_bearish
   - strategies.pds.PDSStrategy._scan
@@ -2445,10 +2954,16 @@ rules:
   - wick-to-body ratio not specified (p.5 open item)
   proposal_parameter: pin_bar
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.bearish_pin
   - strategies.pds.PDSStrategy._scan
   tested_by:
+  - test_phase22_rules.py::test_pds_pin_bar_whose_high_only_reaches_the_zone_bottom_counts_as_pushing_into_it
   - test_phase2_boundaries.py::test_pds_pin_bar_must_push_into_or_above_the_zone_not_merely_approach_it
   - test_phase2_pdr_pds_rf.py::test_pds_method2_red_pin_bar_with_higher_price_rejection
 - rule_id: PDS-M3-001
@@ -2478,6 +2993,11 @@ rules:
   - stand-alone vs only-after-weak-red (p.6 open item)
   proposal_parameter: pds_small_support_def, pds_m3_break_basis, pds_m3_standalone
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pds.PDSStrategy._scan
   tested_by:
@@ -2507,6 +3027,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: EXE-T2-001
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.policy_for
   tested_by:
@@ -2533,6 +3058,11 @@ rules:
   - distance measurement; exactly 35 (p.6 open items)
   proposal_parameter: stop_distance_measure
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.select_stop_distance
   - strategies.pds.PDSStrategy._scan
@@ -2546,7 +3076,7 @@ rules:
   source_document: PDS strategy.pdf
   source_page: '6'
   section: Items to Define
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -2559,6 +3089,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: signal fires at candle close (the only point at which the candle's colour is known)
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pds.PDSStrategy._scan
   tested_by:
@@ -2566,11 +3101,12 @@ rules:
 - rule_id: PDS-006
   strategy: PDS
   method: ALL
-  description: 'PROPOSED: the gap-down open must be below the zone for a later rally into the zone to make sense. The source does not state it.'
+  description: 'After the gap-down open ''price is trading below the previous day''s support zone'' (p.3) and ''must move back up toward the marked
+    zone'' (p.4): the open is below the zone. No contrary worked example exists (the PDS charts are undated).'
   source_document: PDS strategy.pdf
   source_page: 3,4
-  section: (engineering)
-  classification: PROPOSED
+  section: The Next-Day Gap-Down Condition; Price Reaching the Resistance Zone
+  classification: VERIFIED_QUALITATIVE
   mandatory: true
   applies_to: method
   exception: ''
@@ -2583,12 +3119,19 @@ rules:
   invalidation_condition: ''
   implementation_status: IMPLEMENTED_WITH_PROPOSAL
   unresolved_dependencies: []
-  proposal_parameter: require_open_clear_of_zone (default True)
+  proposal_parameter: pds_open_vs_zone (default BELOW_ZONE = the text; NOT_ABOVE_ZONE | ANY); the asymmetry with PDR-011 is an author decision
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pds.PDSStrategy._scan
   tested_by:
   - test_phase2_boundaries.py::test_open_exactly_at_the_zone_edge_does_not_clear_the_zone
+  - test_phase2_boundaries.py::test_pds_not_above_zone_allows_an_open_exactly_at_the_zone_high
+  - test_phase2_pdr_pds_rf.py::test_pds_any_mode_does_not_block_and_the_default_does_block_an_open_inside_the_zone
   - test_phase2_pdr_pds_rf.py::test_pds_gap_down_that_does_not_clear_the_zone_is_invalidated
 - rule_id: PDS-007
   strategy: PDS
@@ -2597,7 +3140,7 @@ rules:
   source_document: (engineering proposal; not in any source document)
   source_page: n/a
   section: (engineering)
-  classification: PROPOSED
+  classification: PROPOSED_FOR_REVIEW
   mandatory: true
   applies_to: method
   exception: ''
@@ -2610,6 +3153,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: max_signals_per_session
   conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.pds.PDSStrategy._scan
   tested_by:
@@ -2636,11 +3184,23 @@ rules:
   - '''established uptrend'' structure'
   proposal_parameter: trend_mode
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
+  - strategies.definitions.ema_prev_session_trend
+  - strategies.definitions.structure_trend
   - strategies.definitions.trend_check
   - strategies.rf.RFStrategy._scan
   tested_by:
+  - test_phase21_source_examples.py::test_the_200_line_on_the_guides_5_minute_charts_is_an_ema_of_5_minute_closes_to_within_0_01_point
+  - test_phase22_rules.py::test_the_opening_gap_cannot_establish_the_trend
+  - test_phase23_day_controller.py::test_r5_10_variant_a_is_wired_through_the_engines_not_only_the_helper
+  - test_phase23_day_controller.py::test_variant_a_uses_only_the_previous_sessions_close_against_its_ema_and_never_the_gap_day
   - test_phase2_boundaries.py::test_rf_trend_is_judged_at_the_opening_candle_not_at_the_return_inside_candle
+  - test_phase2_data_layer.py::test_a_session_closing_exactly_at_its_ema_is_not_counted_as_above_it
   - test_phase2_data_layer.py::test_prior_session_ema_flags_are_newest_first_and_use_each_sessions_last_candle
   - test_phase2_pdr_pds_rf.py::test_rf_ema_warmup_gives_not_evaluated
   - test_phase2_pdr_pds_rf.py::test_rf_full_sequence_close_below_then_return_inside
@@ -2666,6 +3226,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.rf.RFStrategy._scan
   tested_by:
@@ -2692,10 +3257,16 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: gap_min_points
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.gap_info
   - strategies.rf.RFStrategy._scan
   tested_by:
+  - test_phase22_rules.py::test_a_flat_open_is_no_gap_so_nothing_is_evaluated_at_all
   - test_phase2_boundaries.py::test_flat_open_equal_to_previous_close_is_no_gap_for_rf_and_pdr
   - test_phase2_definitions.py::test_gap_info_direction_and_unverified_previous_session
   - test_phase2_pdr_pds_rf.py::test_rf_full_sequence_close_below_then_return_inside
@@ -2723,6 +3294,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.rf.RFStrategy._scan
   tested_by:
@@ -2750,6 +3326,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.rf.RFStrategy._scan
   tested_by:
@@ -2779,6 +3360,11 @@ rules:
   - close vs touch; how many candles may elapse
   proposal_parameter: rf_return_inside_def
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.rf.RFStrategy._scan
   tested_by:
@@ -2805,6 +3391,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.rf.RFStrategy._scan
   tested_by:
@@ -2832,11 +3423,17 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: trend_mode
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.definitions.trend_check
   - strategies.rf.RFStrategy._scan
   tested_by:
   - test_phase2_boundaries.py::test_prev_3_sessions_mode_needs_all_three_sessions_on_the_trend_side
+  - test_phase2_data_layer.py::test_a_session_closing_exactly_at_its_ema_is_not_counted_as_above_it
   - test_phase2_data_layer.py::test_prior_session_ema_flags_are_newest_first_and_use_each_sessions_last_candle
   - test_phase2_definitions.py::test_trend_modes_and_warmup_are_explicit_not_silent
   - test_phase2_orb.py::test_m1_trend_filter_blocks_and_modes_are_distinct
@@ -2844,11 +3441,12 @@ rules:
 - rule_id: RF-009
   strategy: RF
   method: ALL
-  description: Stop-loss 35-40 'depending on what is logical'; fixed vs candle-extreme not stated (PARTIAL).
+  description: 'Stop-loss 35-40 ''depending on what is logical''; fixed vs candle-extreme not stated (PARTIAL). Phase 2.2: the owner''s research
+    baseline is 35 (USER_APPROVED, EXE-STOP-001), 40 a sensitivity variant; the source rule stays unresolved.'
   source_document: RF strategy.pdf
   source_page: 2,8
   section: Stop-Loss Rule
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -2857,16 +3455,21 @@ rules:
   mathematical_condition: ''
   evaluation_time: at entry
   invalidation_condition: ''
-  implementation_status: NOT_IMPLEMENTED_UNRESOLVED
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
   unresolved_dependencies:
-  - 35 vs 40 selection; fixed vs candle-extreme
-  proposal_parameter: ''
+  - 35 vs 40 selection; fixed vs candle-extreme (source)
+  proposal_parameter: TradeConfig.stop_variant
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.policy_for
   tested_by:
-  - test_phase2_exit_policy.py::test_rf_policy_stays_unresolved_and_is_not_evaluable
-  - test_phase2_pdr_pds_rf.py::test_rf_target_stays_unresolved_and_does_not_block_signal_detection
+  - test_phase2_exit_policy.py::test_rf_policy_carries_a_proposed_target_and_the_user_approved_stop
+  - test_phase2_pdr_pds_rf.py::test_rf_target_stays_a_proposal_and_does_not_block_signal_detection
 - rule_id: RF-010
   strategy: RF
   method: ALL
@@ -2874,7 +3477,7 @@ rules:
   source_document: RF strategy.pdf
   source_page: '8'
   section: Rule readiness
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -2887,18 +3490,24 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: reference price = Close of the return-inside candle (signal candle)
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.rf.RFStrategy._scan
   tested_by:
-  - test_phase2_pdr_pds_rf.py::test_rf_target_stays_unresolved_and_does_not_block_signal_detection
+  - test_phase2_pdr_pds_rf.py::test_rf_target_stays_a_proposal_and_does_not_block_signal_detection
 - rule_id: RF-011
   strategy: RF
   method: ALL
-  description: Target is OPEN (not specified). RF_TARGET_STATUS = UNRESOLVED.
+  description: 'Target is OPEN (not specified). Phase 2.2: a CONFIGURABLE research value of 60 points is carried with RF_TARGET_STATUS = PROPOSED_FOR_REVIEW
+    (evidence: the report''s arithmetic and the p.9 chart box 60.80); it is not a source rule and not USER_APPROVED.'
   source_document: RF strategy.pdf
   source_page: '8'
   section: Rule readiness
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -2907,17 +3516,23 @@ rules:
   mathematical_condition: ''
   evaluation_time: at entry
   invalidation_condition: ''
-  implementation_status: NOT_IMPLEMENTED_UNRESOLVED
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
   unresolved_dependencies:
-  - RF target distance
-  proposal_parameter: ''
+  - RF target distance (source)
+  proposal_parameter: TradeConfig.rf_t2_points (60; None = unresolved)
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.policy_for
   tested_by:
-  - test_phase2_exit_policy.py::test_rf_policy_stays_unresolved_and_is_not_evaluable
+  - test_phase2_exit_policy.py::test_rf_policy_carries_a_proposed_target_and_the_user_approved_stop
+  - test_phase2_exit_policy.py::test_rf_without_a_configured_target_is_still_not_evaluable
   - test_phase2_integrity.py::test_rf_target_is_never_silently_assigned_anywhere
-  - test_phase2_pdr_pds_rf.py::test_rf_target_stays_unresolved_and_does_not_block_signal_detection
+  - test_phase2_pdr_pds_rf.py::test_rf_target_stays_a_proposal_and_does_not_block_signal_detection
 - rule_id: RF-012
   strategy: RF
   method: ALL
@@ -2926,7 +3541,7 @@ rules:
   source_document: RF strategy.pdf
   source_page: 1,2,9
   section: Strategy at a Glance; Ref. images
-  classification: PROPOSED
+  classification: PROPOSED_FOR_REVIEW
   mandatory: true
   applies_to: method
   exception: ''
@@ -2940,6 +3555,11 @@ rules:
   - explicit confirmation of direction
   proposal_parameter: rf_direction (default LONG, flagged)
   conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.rf.RFStrategy._scan
   tested_by:
@@ -2964,6 +3584,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.rf.RFStrategy._scan
   tested_by:
@@ -2975,7 +3600,7 @@ rules:
   source_document: (engineering proposal; not in any source document)
   source_page: n/a
   section: (engineering)
-  classification: PROPOSED
+  classification: PROPOSED_FOR_REVIEW
   mandatory: true
   applies_to: method
   exception: ''
@@ -2988,6 +3613,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: max_signals_per_session
   conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.rf.RFStrategy._scan
   tested_by:
@@ -3012,6 +3642,11 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.levels
   tested_by:
@@ -3036,9 +3671,15 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.levels
   tested_by:
+  - test_phase23_day_controller.py::test_target_and_stop_levels_per_strategy
   - test_phase2_exit_policy.py::test_position_model_matches_the_report
   - test_phase2_exit_policy.py::test_target_stop_levels_long_and_short
 - rule_id: EXE-T2-001
@@ -3048,7 +3689,7 @@ rules:
   source_document: NIFTY_System_Trading_Strategy_Performance.docx
   source_page: n/a
   section: Intro
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -3062,16 +3703,25 @@ rules:
   - deterministic T2 per strategy/method
   proposal_parameter: ''
   conflicts_with: PDR-008,PDS-TGT-001
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.policy_for
   tested_by:
+  - test_phase22_rules.py::test_target_table_statuses_never_promote_rf_or_hide_the_pdr_pds_conflict
+  - test_phase23_day_controller.py::test_target_and_stop_levels_per_strategy
   - test_phase2_exit_policy.py::test_pdr_pds_targets_are_70_per_guide_but_flagged_as_conflicting_with_the_report
-  - test_phase2_exit_policy.py::test_rf_policy_stays_unresolved_and_is_not_evaluable
+  - test_phase2_exit_policy.py::test_rf_policy_carries_a_proposed_target_and_the_user_approved_stop
+  - test_phase2_exit_policy.py::test_rf_without_a_configured_target_is_still_not_evaluable
   - test_phase2_exit_policy.py::test_target_stop_levels_long_and_short
 - rule_id: EXE-BE-001
   strategy: EXEC
   method: ALL
-  description: Once Target 1 is booked, the stop on Leg 2 moves to the entry price.
+  description: 'Once Target 1 is booked, the stop on Leg 2 moves to the entry price. [PHASE 2.3: SUPERSEDED by the owner''s POST-T1-STOP-006 (stop
+    at entry -/+ 6 instead of exactly at the entry). Kept only as the legacy mode post_t1_stop_mode=''ENTRY_BREAKEVEN'' for report reconciliation.]'
   source_document: NIFTY_System_Trading_Strategy_Performance.docx
   source_page: n/a
   section: Strategy Framework
@@ -3084,22 +3734,28 @@ rules:
   mathematical_condition: 'after T1: SL2 = entry'
   evaluation_time: n/a
   invalidation_condition: ''
-  implementation_status: SPECIFICATION_ONLY
+  implementation_status: SUPERSEDED_BY_USER_APPROVED_RULE
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
-  implemented_by:
-  - core.exit_policy.evaluate_exit
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: POST-T1-STOP-006
+  approval_source: ''
+  effective_phase: '2.3'
+  implemented_by: []
   tested_by:
+  - test_phase23_day_controller.py::test_r5_03_the_legacy_breakeven_class_also_finishes_the_day_through_the_controller
+  - test_phase23_day_controller.py::test_the_causal_entry_bar_rule_applies_through_simulate_exit_in_the_legacy_exact_entry_mode
   - test_phase2_boundaries.py::test_breakeven_stop_gapped_through_fills_at_the_open_not_at_entry
   - test_phase2_boundaries.py::test_same_bar_target1_and_breakeven_fills_the_leg2_stop_at_the_worse_of_entry_and_open
-  - test_phase2_exit_policy.py::test_breakeven_after_target1_books_only_leg1_rs_5265
-  - test_phase2_exit_policy.py::test_same_bar_target1_and_breakeven_touch_is_ambiguous_and_resolved_adversely
-  - test_phase2_exit_policy.py::test_short_side_mirrors_target_and_breakeven
+  - test_phase2_exit_policy.py::test_the_superseded_exact_entry_breakeven_survives_only_as_a_labelled_legacy_mode
 - rule_id: EXE-OUT-001
   strategy: EXEC
   method: ALL
-  description: 'Outcomes: Target (T1+T2), Breakeven (T1 then entry), Stop-loss (both legs stopped, full 390 qty).'
+  description: 'Outcomes: Target (T1+T2), Breakeven (T1 then entry), Stop-loss (both legs stopped, full 390 qty). [PHASE 2.3: the Breakeven outcome
+    below is the SUPERSEDED legacy class (post_t1_stop_mode=''ENTRY_BREAKEVEN''); under POST-T1-STOP-006 the outcomes are Target, T1_THEN_BUFFER_STOP,
+    INITIAL_FULL_STOP (alias SL) and Incomplete.]'
   source_document: NIFTY_System_Trading_Strategy_Performance.docx
   source_page: n/a
   section: Strategy Framework
@@ -3116,10 +3772,16 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.evaluate_exit
   tested_by:
-  - test_phase2_exit_policy.py::test_breakeven_after_target1_books_only_leg1_rs_5265
+  - test_phase23_day_controller.py::test_initial_full_stop_exits_all_six_lots_before_target_1
+  - test_phase2_exit_policy.py::test_after_target1_the_remaining_legs_stop_6_points_against_the_entry_not_at_the_entry
   - test_phase2_exit_policy.py::test_stop_loss_loses_full_390_quantity
   - test_phase2_exit_policy.py::test_target_outcome_books_both_legs_rs_16965_for_a_60_point_target2
 - rule_id: EXE-PNL-001
@@ -3142,12 +3804,21 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.evaluate_exit
   tested_by:
-  - test_phase2_exit_policy.py::test_breakeven_after_target1_books_only_leg1_rs_5265
+  - test_phase2_exit_policy.py::test_after_target1_the_remaining_legs_stop_6_points_against_the_entry_not_at_the_entry
   - test_phase2_exit_policy.py::test_stop_loss_loses_full_390_quantity
   - test_phase2_exit_policy.py::test_target_outcome_books_both_legs_rs_16965_for_a_60_point_target2
+  - test_phase3_metrics.py::test_costs_are_a_fixed_amount_plus_slippage_on_every_unit_in_and_out
+  - test_phase3_metrics.py::test_monthly_equity_and_ordering
+  - test_phase3_metrics.py::test_profit_factor_edge_cases
+  - test_phase3_metrics.py::test_summary_numbers_on_a_known_ledger
 - rule_id: EXE-DD-001
   strategy: EXEC
   method: ALL
@@ -3168,8 +3839,14 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by: []
-  tested_by: []
+  tested_by:
+  - test_phase3_metrics.py::test_drawdown_uses_a_running_high_that_starts_at_zero_and_streaks_count_only_losses
 - rule_id: EXE-MISSING-001
   strategy: EXEC
   method: ALL
@@ -3178,7 +3855,7 @@ rules:
   source_document: NIFTY_System_Trading_Strategy_Performance.docx
   source_page: n/a
   section: '-'
-  classification: MISSING
+  classification: UNRESOLVED
   mandatory: true
   applies_to: method
   exception: ''
@@ -3194,9 +3871,17 @@ rules:
   - per-trade stop distance
   proposal_parameter: ''
   conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - core.exit_policy.evaluate_exit
   tested_by:
+  - test_phase22_rules.py::test_stop_touched_in_a_reference_bar_is_not_filled_and_the_position_is_flagged_unresolved
+  - test_phase23_day_controller.py::test_gap_through_the_post_t1_stop_fills_at_the_open_and_logs_the_adverse_slippage
+  - test_phase23_day_controller.py::test_same_bar_conservatism_stop_before_target_and_post_t1_stop_before_target_2
   - test_phase2_boundaries.py::test_an_exact_touch_of_a_stop_or_target_counts_as_hit
   - test_phase2_boundaries.py::test_breakeven_stop_gapped_through_fills_at_the_open_not_at_entry
   - test_phase2_boundaries.py::test_same_bar_target1_and_breakeven_fills_the_leg2_stop_at_the_worse_of_entry_and_open
@@ -3204,7 +3889,7 @@ rules:
   - test_phase2_exit_policy.py::test_no_favourable_fills_gapped_stop_fills_at_open_gapped_target_fills_at_level
   - test_phase2_exit_policy.py::test_same_bar_leg2_stop_and_target2_resolved_as_stop
   - test_phase2_exit_policy.py::test_same_bar_stop_and_target1_is_ambiguous_and_resolved_adversely
-  - test_phase2_exit_policy.py::test_same_bar_target1_and_breakeven_touch_is_ambiguous_and_resolved_adversely
+  - test_phase2_exit_policy.py::test_same_bar_target1_and_post_t1_stop_touch_is_ambiguous_and_resolved_adversely
 - rule_id: DATA-TIME-001
   strategy: DATA
   method: ALL
@@ -3225,10 +3910,16 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.base.SignalEngine.evaluate_session
   tested_by:
-  - test_phase2_data_layer.py::test_official_close_is_the_close_of_the_1530_print_not_its_open
+  - test_phase22_rules.py::test_orb_and_rf_with_structure_trend_never_use_candles_beyond_the_prefix
+  - test_phase23_day_controller.py::test_decisions_do_not_depend_on_later_signals_or_on_bars_before_the_fill
   - test_phase2_data_layer.py::test_previous_session_values_are_the_immediately_preceding_session_and_exact
   - test_phase2_integrity.py::test_every_worked_fixture_signal_appears_only_when_its_trigger_candle_closes
   - test_phase2_integrity.py::test_no_lookahead_truncated_session_equals_prefix_of_full_session
@@ -3241,21 +3932,24 @@ rules:
   - test_phase2_sessions.py::test_missing_close_stub_is_flagged_and_falls_back_to_last_bar
   - test_phase2_sessions.py::test_missing_minute_drops_the_whole_candle_no_synthetic_fill
   - test_phase2_sessions.py::test_missing_opening_minute_makes_session_unusable
+  - test_phase2_sessions.py::test_quality_statuses_cover_the_defined_vocabulary
   - test_phase2_sessions.py::test_records_after_1530_are_clipped_and_flagged
-  - test_phase2_sessions.py::test_saturday_and_sunday_sessions_are_both_flagged_as_weekend_special_sessions
   - test_phase2_sessions.py::test_special_muhurat_style_session_is_excluded
   - test_phase2_sessions.py::test_unexplained_weekday_gap_between_sessions_is_flagged_not_silent
   - test_phase2_sessions.py::test_warmup_first_sessions_have_no_ema_and_daily_ma_is_unavailable
+  - test_phase2_sessions.py::test_weekend_sessions_must_be_known_special_sessions
 - rule_id: DATA-QUAL-001
   strategy: DATA
   method: ALL
-  description: 'PROPOSED data-quality rules (not in any strategy document): frozen-feed rows (>= 5 consecutive identical flat 1-minute rows) are
-    excluded and their 5-minute candles dropped; a session whose previous session has a frozen tail, post-close prints, a missing weekday or an
-    excluded special session between is NOT evaluated by strategies that need the previous-day close/levels.'
+  description: 'PROPOSED data-quality rules (not in any strategy document): every session gets a quality status (VALID, VALID_SPECIAL_SESSION,
+    PARTIAL, CORRUPT, MISSING, UNVERIFIED) and only evaluable sessions are evaluated. A frozen run (>= 5 identical flat 1-minute rows) is real
+    market structure inside 15:15-15:29 on/after 2026-08-03 (NSE Closing Auction Session) and an anomaly (CORRUPT) anywhere else. A session whose
+    previous session has a missing unexplained weekday, an excluded special session between, or a previous-close day that differs from the previous
+    session is NOT evaluated by strategies that need previous-day data.'
   source_document: (engineering proposal; not in any source document)
   source_page: n/a
   section: (engineering)
-  classification: PROPOSED
+  classification: PROPOSED_FOR_REVIEW
   mandatory: true
   applies_to: method
   exception: ''
@@ -3268,21 +3962,108 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: allow_unverified_prev_session (default False)
   conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
   - strategies.base.SignalEngine._precheck
   tested_by:
-  - test_phase2_data_layer.py::test_frozen_feed_rows_are_excluded_and_their_candles_dropped_not_repaired
-  - test_phase2_data_layer.py::test_session_after_a_frozen_tail_is_not_evaluated_for_previous_day_strategies
-  - test_phase2_data_layer.py::test_special_session_between_and_post_close_prints_make_the_previous_close_unverified
+  - test_phase21_source_examples.py::test_runner_covers_every_session_exactly_once_for_non_evaluable_days_and_evaluates_the_rest
+  - test_phase21_source_examples.py::test_the_committed_session_quality_manifest_matches_a_fresh_recomputation
+  - test_phase2_data_layer.py::test_a_frozen_run_inside_the_window_that_starts_late_is_not_the_auction_freeze
+  - test_phase2_data_layer.py::test_a_frozen_run_that_ends_exactly_at_1529_is_still_inside_the_auction_window
+  - test_phase2_data_layer.py::test_a_missing_daily_row_makes_the_next_sessions_previous_close_unverified_instead_of_silently_using_the_print
+  - test_phase2_data_layer.py::test_frozen_tail_inside_the_closing_auction_window_is_real_market_structure_and_is_kept
+  - test_phase2_data_layer.py::test_session_after_an_auction_day_is_evaluable_and_uses_the_official_daily_close
+  - test_phase2_data_layer.py::test_special_session_between_makes_the_previous_close_day_unverified_and_post_close_prints_matter_only_without_a_daily_close
   - test_phase2_data_layer.py::test_stale_mask_needs_a_run_of_identical_consecutive_flat_rows
+  - test_phase2_data_layer.py::test_the_same_frozen_pattern_is_still_an_anomaly_before_the_regime_date_or_outside_the_window
+- rule_id: DATA-CAS-001
+  strategy: DATA
+  method: ALL
+  description: 'MARKET STRUCTURE (not a strategy rule): from 2026-08-03 NSE runs a Closing Auction Session; continuous trading in F&O stocks ends
+    15:15, the index is frozen until the official close appears, so 15:15-15:29 minute data is frozen then jumps. Evidence: 21/21 sessions from
+    2026-08-03 show it (and 0 before), freeze starts 15:15/15:16, the catch-up bar''s close equals the 15:30 print and the published close (24,774.30
+    on 2026-08-03), two secondary sources describe the rollout. The NSE circular was not read directly.'
+  source_document: (market-structure evidence; not in any source document)
+  source_page: n/a
+  section: (external)
+  classification: PROPOSED_FOR_REVIEW
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: frozen rows inside 15:15-15:29 on/after 2026-08-03 are kept and flagged CAS_FROZEN_WINDOW_KEPT
+  evaluation_time: n/a
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies: []
+  proposal_parameter: prev_day_level_window (ALL_CANDLES default | CONTINUOUS_ONLY)
+  conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
+  implemented_by:
+  - strategies.definitions.prev_candles
+  tested_by:
+  - test_phase22_rules.py::test_every_closing_auction_session_has_its_reference_bars_marked_non_executable
+  - test_phase2_data_layer.py::test_a_frozen_run_inside_the_window_that_starts_late_is_not_the_auction_freeze
+  - test_phase2_data_layer.py::test_a_frozen_run_that_ends_exactly_at_1529_is_still_inside_the_auction_window
+  - test_phase2_data_layer.py::test_frozen_tail_inside_the_closing_auction_window_is_real_market_structure_and_is_kept
+  - test_phase2_data_layer.py::test_prev_day_level_window_proposal_changes_only_the_levels_it_names
+  - test_phase2_data_layer.py::test_session_after_an_auction_day_is_evaluable_and_uses_the_official_daily_close
+  - test_phase2_data_layer.py::test_the_same_frozen_pattern_is_still_an_anomaly_before_the_regime_date_or_outside_the_window
+- rule_id: DATA-OFFICIAL-CLOSE-001
+  strategy: DATA
+  method: ALL
+  description: 'The ''previous close'' used for gaps is the OFFICIAL NSE closing value = the vendor DAILY close (matches 9 of 9 externally published
+    closes); the 15:30 minute print equals it only from 2026-08-03 (before, it is the last tick: differs by a median 8 points, up to 88). Strategy
+    wording: ORB p.8 ''opens above the previous close'', RF p.2 ''opens above where it previously closed''.'
+  source_document: (external evidence; strategy text only says 'previous close')
+  source_page: n/a
+  section: (external)
+  classification: VERIFIED_QUALITATIVE
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: PrevClose = vendor daily close of the previous trading row
+  evaluation_time: 09:15
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies:
+  - whether the author's chart gap uses the official close or the last candle
+  proposal_parameter: prev_close_source (OFFICIAL_DAILY default | LAST_PRINT_1530)
+  conflicts_with: ''
+  authority: SOURCE_VERIFIED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
+  implemented_by:
+  - strategies.definitions.gap_info
+  tested_by:
+  - test_phase2_data_layer.py::test_a_missing_daily_row_makes_the_next_sessions_previous_close_unverified_instead_of_silently_using_the_print
+  - test_phase2_data_layer.py::test_official_close_difference_from_the_1530_print_is_flagged_with_a_tolerance_and_the_print_is_wired_into_the_previous_session
+  - test_phase2_data_layer.py::test_session_after_an_auction_day_is_evaluable_and_uses_the_official_daily_close
+  - test_phase2_definitions.py::test_gap_uses_the_official_close_by_default_and_the_1530_print_only_by_proposal
+  - test_phase2_integrity.py::test_real_official_close_matches_the_externally_published_closes
 - rule_id: DATA-WARM-001
   strategy: DATA
   method: ALL
-  description: The 200-period moving average must be fully initialised before use (engineering requirement; the PDFs are silent).
+  description: 'The 200-period moving average must be fully initialised before use (engineering requirement; the PDFs are silent). Phase 2.1:
+    2025-07/08 1-minute data is loaded as WARM-UP ONLY so every session''s EMA is initialised; the daily 200-day average uses 248 official daily
+    bars before 2025-09-01.'
   source_document: (engineering)
   source_page: n/a
   section: '-'
-  classification: PROPOSED
+  classification: PROPOSED_FOR_REVIEW
   mandatory: true
   applies_to: method
   exception: ''
@@ -3295,9 +4076,984 @@ rules:
   unresolved_dependencies: []
   proposal_parameter: ''
   conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
   implemented_by:
+  - strategies.definitions.ema_prev_session_trend
+  - strategies.definitions.structure_trend
   - strategies.definitions.trend_check
   tested_by:
+  - test_phase2_data_layer.py::test_daily_ma_with_a_supplied_daily_series_never_includes_the_sessions_own_close
   - test_phase2_data_layer.py::test_daily_sma_uses_only_closes_strictly_before_the_session_and_the_right_divisor
+  - test_phase2_data_layer.py::test_warmup_data_seeds_the_ema_and_the_previous_session_but_is_never_evaluated
   - test_phase2_definitions.py::test_daily_200_ma_needs_200_prior_daily_bars
   - test_phase2_orb.py::test_indicator_warmup_gives_not_evaluated_never_a_signal
+- rule_id: EXE-STOP-001
+  strategy: EXEC
+  method: ALL
+  description: 'USER-APPROVED provisional RESEARCH baseline stop (Phase 2.2): IRF 35, PDR 35, PDS 35, RF 35 index points; ORB keeps its documented
+    30. 40 points is the future sensitivity variant for IRF/PDR/PDS/RF. This is NOT the historical manual trader''s stop-selection rule (the guides
+    say ''35 or 40'' and give no selection rule for IRF/PDR/PDS/RF); ORB''s 30 is VERIFIED_EXPLICIT (ORB p.1).'
+  source_document: '(owner decision, Phase 2.2; ORB: ORB_Strategy_Rulebook p.1)'
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: true
+  required_inputs: []
+  mathematical_condition: stop = entry -/+ STOP_BASELINE[strategy]; variant STOP_ALTERNATE
+  evaluation_time: n/a
+  invalidation_condition: ''
+  implementation_status: SPECIFICATION_ONLY
+  unresolved_dependencies: []
+  proposal_parameter: TradeConfig.stop_variant (BASELINE | ALTERNATE_40 | SOURCE_35_40_BY_DISTANCE)
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
+  implemented_by:
+  - core.exit_policy.policy_for
+  tested_by:
+  - test_phase22_rules.py::test_alternate_stop_is_40_for_the_four_strategies_and_orb_is_preserved
+  - test_phase22_rules.py::test_default_stop_is_the_user_approved_35_and_orb_keeps_its_documented_30
+  - test_phase22_rules.py::test_engines_report_trend_mode_only_where_a_trend_proposal_is_used
+  - test_phase22_rules.py::test_entry_rule_status_maps_a_verified_record_and_never_labels_non_signals
+  - test_phase22_rules.py::test_signal_records_the_rule_configuration_and_is_never_marked_verified_wholesale
+  - test_phase22_rules.py::test_signals_carry_the_complete_rule_configuration_and_the_target_conflict
+  - test_phase22_rules.py::test_target_table_statuses_never_promote_rf_or_hide_the_pdr_pds_conflict
+  - test_phase22_rules.py::test_the_documented_phase22_defaults
+  - test_phase22_rules.py::test_the_source_distance_stop_variant_works_through_simulate_exit
+  - test_phase22_rules.py::test_the_stop_distance_actually_moves_the_stop_level_and_the_loss
+  - test_phase22_rules.py::test_unknown_stop_variant_is_rejected
+  - test_phase23_day_controller.py::test_target_and_stop_levels_per_strategy
+  - test_phase23_day_controller.py::test_the_40_point_alternative_applies_to_the_four_strategies_and_orb_stays_30
+  - test_phase2_exit_policy.py::test_rf_policy_carries_a_proposed_target_and_the_user_approved_stop
+  - test_phase3_metrics.py::test_the_four_scenarios_are_distinct_fixed_and_never_combined
+- rule_id: EXE-AUCTION-001
+  strategy: EXEC
+  method: ALL
+  description: 'PROPOSED execution convention: on closing-auction days (from 2026-08-03) bars starting 15:15-15:29 are index REFERENCE observations,
+    not fillable prices: no simulated fill, no entry whose next bar is such a bar, and no invented closing price. A position still open then is
+    reported UNRESOLVED_AT_CLOSING_AUCTION for Phase 3.'
+  source_document: (engineering; market structure from data_repair_report.md)
+  source_page: n/a
+  section: (engineering)
+  classification: PROPOSED_FOR_REVIEW
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: executable(bar) = CONTINUOUS; see core/execution_eligibility.py
+  evaluation_time: n/a
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies:
+  - exact auction matching mechanics (not modelled)
+  proposal_parameter: execution_eligibility.classify_bar
+  conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
+  implemented_by: []
+  tested_by:
+  - test_phase22_rules.py::test_a_normal_exit_before_the_auction_is_unaffected
+  - test_phase22_rules.py::test_an_entry_whose_next_bar_is_a_reference_bar_is_blocked
+  - test_phase22_rules.py::test_bar_eligibility_on_a_closing_auction_day_and_a_pre_regime_day
+  - test_phase22_rules.py::test_bars_from_frame_marks_real_auction_and_post_close_rows
+  - test_phase22_rules.py::test_eligibility_uses_exchange_time_and_refuses_to_run_without_the_auction_calendar
+  - test_phase22_rules.py::test_every_closing_auction_session_has_its_reference_bars_marked_non_executable
+  - test_phase22_rules.py::test_post_close_bars_are_not_reported_as_a_closing_auction_problem
+  - test_phase22_rules.py::test_regime_boundary_date_and_non_trading_days
+  - test_phase22_rules.py::test_research_eod_flatten_uses_the_last_executable_bar_not_the_auction_catch_up
+  - test_phase22_rules.py::test_research_flatten_still_reports_that_the_auction_truncated_the_day
+  - test_phase22_rules.py::test_signal_in_the_auction_window_is_flagged_entry_blocked
+  - test_phase22_rules.py::test_simulate_exit_uses_the_causal_fill_and_does_not_force_breakeven_on_the_entry_bar
+  - test_phase22_rules.py::test_stop_touched_in_a_reference_bar_is_not_filled_and_the_position_is_flagged_unresolved
+  - test_phase22_rules.py::test_t1_booked_before_the_auction_keeps_leg_two_open_and_unresolved
+  - test_phase22_rules.py::test_target_touched_in_a_reference_bar_is_not_filled_either
+  - test_phase23_day_controller.py::test_a_position_still_open_when_the_closing_auction_starts_is_unresolved_not_invented
+  - test_phase23_day_controller.py::test_a_signal_whose_entry_bar_is_a_closing_auction_reference_bar_cannot_trade
+- rule_id: EXE-FILL-001
+  strategy: EXEC
+  method: ALL
+  description: 'PROPOSED causal fill convention: a signal confirmed at its candle''s close (e.g. 09:20 for the first candle) is acted on from
+    the NEXT 1-minute bar; the reference price (candle close) is not a fill, and the fill is the open of that next bar.'
+  source_document: (engineering; the documents never state the fill price)
+  source_page: n/a
+  section: (engineering)
+  classification: PROPOSED_FOR_REVIEW
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: entry_fill = open of the first 1-minute bar starting at signal_timestamp
+  evaluation_time: bar_end
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies:
+  - entry price convention of the strategy owner
+  proposal_parameter: entry_reference_price
+  conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
+  implemented_by: []
+  tested_by:
+  - test_phase22_rules.py::test_causal_fill_is_the_next_bar_open_and_exit_end_follows_the_final_bar
+  - test_phase22_rules.py::test_entry_bar_that_reaches_target_1_is_not_stopped_merely_because_it_opened_at_the_entry
+  - test_phase22_rules.py::test_signal_in_the_auction_window_is_flagged_entry_blocked
+  - test_phase22_rules.py::test_simulate_exit_uses_the_causal_fill_and_does_not_force_breakeven_on_the_entry_bar
+  - test_phase22_rules.py::test_the_source_distance_stop_variant_works_through_simulate_exit
+  - test_phase23_day_controller.py::test_the_causal_entry_bar_rule_applies_through_simulate_exit_in_the_legacy_exact_entry_mode
+- rule_id: TREND-SWING-001
+  strategy: ALL
+  method: ALL
+  description: 'PROPOSED swing points (Phase 2.2): a swing high is a candle whose high is strictly greater than the highs of the 2 candles before
+    and the 2 after it; a swing low is the inverse. A swing point becomes known only when the 2nd following candle has CLOSED.'
+  source_document: (engineering proposal; no source gives a numeric swing definition)
+  source_page: n/a
+  section: (engineering)
+  classification: PROPOSED_FOR_REVIEW
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: H[j] > H[j-m] and H[j] > H[j+m] for m=1..k; known at bar_end of candle j+k (k=2)
+  evaluation_time: bar_end of j+k
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies: []
+  proposal_parameter: swing_k
+  conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
+  implemented_by:
+  - strategies.definitions.confirmed_swing_highs
+  - strategies.definitions.confirmed_swing_lows
+  - strategies.definitions.structure_trend
+  tested_by:
+  - test_phase22_rules.py::test_a_swing_needs_k_candles_on_both_sides_and_never_wraps_around_the_start
+  - test_phase22_rules.py::test_structure_trend_up_needs_close_above_ema_and_rising_swing_highs_and_lows
+  - test_phase22_rules.py::test_swing_detection_is_prefix_invariant
+  - test_phase22_rules.py::test_swing_high_is_strict_and_needs_two_candles_each_side
+  - test_phase22_rules.py::test_swing_low_is_strict_and_an_equal_neighbour_is_not_a_swing
+  - test_phase22_rules.py::test_swing_point_is_unknown_until_the_second_following_candle_has_closed
+- rule_id: TREND-STRUCT-001
+  strategy: ALL
+  method: ALL
+  description: 'PROPOSED established trend (Phase 2.2 ''structure'' mode). Uptrend: close of the last candle before the open above its EMA(200)
+    AND the latest two confirmed swing highs rising AND the latest two confirmed swing lows rising (downtrend: mirror). Evaluated on PREVIOUS-session
+    information only, so the opening gap can never establish the trend. EMA slope is NOT a condition. [PHASE 2.3: approved as research variant
+    B (EMA plus confirmed swing structure). The swing look-back k=2 itself (TREND-SWING-001) is still a proposal; neither variant is claimed to
+    reproduce the discretionary trend.]'
+  source_document: (engineering proposal; the guides describe trend qualitatively)
+  source_page: n/a
+  section: (engineering)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: close>EMA200 and SH2>SH1 and SL2>SL1 (up)
+  evaluation_time: 09:15 (prior-session data only)
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies: []
+  proposal_parameter: trend_mode=STRUCTURE_EMA_SWING2
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, earlier approval confirmed in Phase 2.3 instructions s7
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.definitions.structure_trend
+  tested_by:
+  - test_phase22_rules.py::test_orb_and_rf_with_structure_trend_never_use_candles_beyond_the_prefix
+  - test_phase22_rules.py::test_structure_trend_down_is_the_mirror
+  - test_phase22_rules.py::test_structure_trend_is_selectable_as_a_proposal_and_validated
+  - test_phase22_rules.py::test_structure_trend_none_and_false_cases_never_become_true
+  - test_phase22_rules.py::test_structure_trend_up_needs_close_above_ema_and_rising_swing_highs_and_lows
+  - test_phase22_rules.py::test_structure_trend_with_a_single_swing_high_or_low_is_false_not_an_error_and_each_condition_matters
+  - test_phase22_rules.py::test_the_documented_phase22_defaults
+  - test_phase22_rules.py::test_the_opening_gap_cannot_establish_the_trend
+- rule_id: PDR-ZONE-002
+  strategy: PDR
+  method: ALL
+  description: 'PROPOSED zone-marking candidates (which candle(s) mark the previous-day resistance): A absolute highest-high candle; B latest
+    confirmed swing high with a bearish reversal candle; C highest cluster of >=2 swing highs (repeated resistance). The PDR guide says only ''find
+    the high where price reached a peak and then reversed'' and ''note the candle''s body and upper wick''; the selection is NOT defined. Chosen
+    by agreement with the source charts, never by profitability. [PHASE 2.3: the owner approved TWO independent research candidates - A: confirmed
+    reversal swing high (B_SWING_HIGH_REVERSAL), B: repeated resistance shelf (C_REPEATED_TOUCHES). The absolute highest-high candle is kept as
+    a DIAGNOSTIC reference only and never produces a tradable signal. Neither candidate reproduces PDR chart 3.]'
+  source_document: PDR_Strategy_Guide.pdf
+  source_page: 1,2,3,4
+  section: Zone marking; Examples
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: see definitions.pdr_zone
+  evaluation_time: previous session only
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies:
+  - author's candle selection (PDR-D09)
+  proposal_parameter: pdr_zone_method
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s7
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.definitions.pdr_diagnostic_zone
+  - strategies.definitions.pdr_zone
+  tested_by:
+  - test_phase22_rules.py::test_no_zone_method_reproduces_chart_3_so_the_candle_choice_stays_open
+  - test_phase22_rules.py::test_pdr_zone_method_a_is_the_absolute_highest_high_candle
+  - test_phase22_rules.py::test_pdr_zone_method_b_is_the_latest_confirmed_swing_high_with_a_bearish_reversal_candle
+  - test_phase22_rules.py::test_pdr_zone_method_c_is_the_highest_cluster_of_repeated_swing_highs
+  - test_phase22_rules.py::test_the_documented_phase22_defaults
+  - test_phase22_rules.py::test_zone_b_counts_the_peak_candle_itself_as_the_reversal_and_cluster_tolerance_is_inclusive
+  - test_phase22_rules.py::test_zone_config_is_validated
+  - test_phase22_rules.py::test_zone_method_uses_only_previous_session_candles_and_swing_confirmation
+- rule_id: PDS-ZONE-002
+  strategy: PDS
+  method: ALL
+  description: PROPOSED zone-marking candidates for the previous-day support zone (A absolute lowest-low candle; B latest confirmed swing low
+    with a bullish reversal candle; C lowest cluster of >=2 swing lows). Not assumed to be an exact mirror of PDR; the selection is NOT defined
+    in the PDS guide.
+  source_document: PDS strategy.pdf
+  source_page: 1,2,3
+  section: Zone marking; Examples
+  classification: PROPOSED_FOR_REVIEW
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: see definitions.pds_zone
+  evaluation_time: previous session only
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies:
+  - author's candle selection
+  proposal_parameter: pds_zone_method
+  conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
+  implemented_by:
+  - strategies.definitions.pds_zone
+  tested_by:
+  - test_phase22_rules.py::test_pds_zone_methods_mirror_with_lows_and_do_not_assume_an_exact_mirror_of_pdr
+- rule_id: DATA-OPEN-001
+  strategy: DATA
+  method: ALL
+  description: 'OPEN-PRICE DEFINITION (found in Phase 2.2, not resolved): the 09:15 candle''s open is the first 1-minute row''s open, but the
+    vendor DAILY open differs from it by more than 5 points on 98 of 247 sessions (up to 64) and equals the open drawn on the guide''s own chart
+    in PDR example 1 (2025-09-02: daily open 24,653.00, first-minute open 24,683.25; the author''s chart shows a GREEN first candle, ours is red).
+    Using the daily open would change the gap direction on 10 sessions and the first-candle colour on 13. Nothing was changed; the data is untouched.
+    [PHASE 2.3: RESOLVED by the owner: use the ORIGINAL first 1-minute row''s open for the opening gap, the first 5-minute candle and all signals;
+    the vendor''s separately published daily open is NOT substituted. The observation above stays on record.]'
+  source_document: (data observation; PDR chart 1, p.3)
+  source_page: '3'
+  section: Example 1 (TradingView first candle)
+  classification: USER_APPROVED
+  mandatory: false
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs:
+  - first_minute_open
+  - vendor_daily_open
+  mathematical_condition: ''
+  evaluation_time: 09:15
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies:
+  - which open the author's charts use (first 1-minute print vs the official opening value)
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s7
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.definitions.gap_info
+  tested_by:
+  - test_phase23_day_controller.py::test_the_original_first_one_minute_open_is_the_session_open_not_the_vendor_daily_open
+- rule_id: SEL-FIRST-001
+  strategy: EXEC
+  method: ALL
+  description: 'Only the FIRST valid signal among the five strategies, in chronological order of signal confirmation, initiates the first trade
+    of the day. The strategies are not five independent positions: one shared portfolio-level controller selects.'
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: first confirmed, fillable signal by signal_timestamp wins
+  evaluation_time: signal timestamp
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: EXE-SEL-001 (as the only selection rule; the evaluation policies remain as research diagnostics)
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.1
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_a_diagnostic_only_or_entry_blocked_signal_is_rejected_and_the_next_valid_one_trades
+  - test_phase23_day_controller.py::test_a_signal_whose_entry_bar_is_a_closing_auction_reference_bar_cannot_trade
+  - test_phase23_day_controller.py::test_decisions_do_not_depend_on_later_signals_or_on_bars_before_the_fill
+  - test_phase23_day_controller.py::test_only_confirmed_signals_count_and_non_confirmed_records_are_never_traded
+  - test_phase23_day_controller.py::test_r5_08_records_of_another_session_are_rejected_and_naive_timestamps_are_read_as_ist
+  - test_phase23_day_controller.py::test_the_first_valid_signal_in_time_order_opens_the_first_trade_and_later_ones_are_only_logged
+- rule_id: SEL-ACTIVE-001
+  strategy: EXEC
+  method: ALL
+  description: While a position is active every later signal is ignored for execution and kept in a diagnostic log with the reason; an ignored
+    signal is never reused later.
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: signal_timestamp < position_end -> IGNORED(POSITION_ACTIVE)
+  evaluation_time: signal timestamp
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.1-3.2
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_r5_03_signals_are_also_ignored_while_the_second_trade_is_active_and_the_entry_price_is_recorded
+  - test_phase23_day_controller.py::test_the_first_valid_signal_in_time_order_opens_the_first_trade_and_later_ones_are_only_logged
+  - test_phase3_metrics.py::test_signal_counts_classify_the_diagnostic_log
+- rule_id: SEL-TIE-001
+  strategy: EXEC
+  method: ALL
+  description: 'Independently valid signals of DIFFERENT strategies confirmed at the same timestamp are a conflict: it is logged as SIMULTANEOUS_SIGNAL_CONFLICT
+    and no strategy is chosen arbitrarily.'
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: distinct strategies at one timestamp -> conflict
+  evaluation_time: signal timestamp
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.1 and Scenario F
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_one_strategy_and_direction_with_several_methods_at_one_timestamp_is_one_trade
+  - test_phase23_day_controller.py::test_opposite_directions_of_one_strategy_at_one_timestamp_are_also_a_conflict
+  - test_phase23_day_controller.py::test_simultaneous_signals_of_different_strategies_are_a_logged_conflict_not_an_arbitrary_choice
+  - test_phase23_day_controller.py::test_two_strategies_going_the_same_way_in_the_same_minute_are_still_a_conflict
+- rule_id: SEL-TIE-003
+  strategy: EXEC
+  method: ALL
+  description: 'CONTROLLER INTERPRETATION awaiting the owner''s confirmation (not stated in the instructions): (a) several METHODS of the SAME
+    strategy and direction at one timestamp are treated as ONE trade (identical stop and target; the other methods are listed); (b) opposite directions
+    of one strategy at one timestamp are a conflict, like different strategies. Both choices are unobservable in the data today (all 64 IRF and
+    8 ORB same-timestamp multi-method groups carry identical references).'
+  source_document: (engineering interpretation of the owner's tie rule)
+  source_page: n/a
+  section: (engineering)
+  classification: PROPOSED_FOR_REVIEW
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: same strategy and direction -> one trade; opposite directions -> conflict
+  evaluation_time: signal timestamp
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies:
+  - owner confirmation of (a) and (b)
+  proposal_parameter: trading_day._choose
+  conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: none yet
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_r5_02_an_approved_winner_that_signals_both_ways_at_once_is_still_a_conflict
+- rule_id: SEL-TIE-002
+  strategy: EXEC
+  method: ALL
+  description: 'A tie-breaking priority between strategies that signal at the same timestamp has NOT been approved. The controller accepts a TieBreakPolicy
+    only if it is explicitly marked approved; with none, the collision is unresolved: no trade is taken and the day is UNRESOLVED_EXECUTION.'
+  source_document: '(absent: no approved policy)'
+  source_page: n/a
+  section: (owner)
+  classification: UNRESOLVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: tie_break is None -> UNRESOLVED_EXECUTION
+  evaluation_time: signal timestamp
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies:
+  - which strategy has priority at an identical timestamp
+  proposal_parameter: DayRules.tie_break (TieBreakPolicy.approved must be True)
+  conflicts_with: ''
+  authority: UNRESOLVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: 'Strategy owner, Phase 2.3 instructions: policy left unresolved'
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_a_tie_break_policy_is_applied_only_when_explicitly_approved
+  - test_phase23_day_controller.py::test_r5_02_an_approved_winner_that_signals_both_ways_at_once_is_still_a_conflict
+  - test_phase23_day_controller.py::test_simultaneous_signals_of_different_strategies_are_a_logged_conflict_not_an_arbitrary_choice
+- rule_id: DAY-T2-001
+  strategy: EXEC
+  method: ALL
+  description: 'If the first trade reaches Target 2 the trading day is finished: no further trade.'
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: first trade outcome Target -> DAY_FINISHED
+  evaluation_time: exit
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.2
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_scenario_a_target_2_finishes_the_day_and_a_later_signal_is_ignored
+- rule_id: DAY-BUF-001
+  strategy: EXEC
+  method: ALL
+  description: If the first trade reaches Target 1 and the remaining legs then exit at the post-T1 protective stop (T1_THEN_BUFFER_STOP), no second
+    trade is allowed.
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: first trade outcome T1_THEN_BUFFER_STOP -> DAY_FINISHED
+  evaluation_time: exit
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.2 and s5
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_scenario_c_t1_then_buffer_stop_finishes_the_day_without_a_second_trade
+- rule_id: DAY-SL-001
+  strategy: EXEC
+  method: ALL
+  description: If the first trade hits its ORIGINAL full stop-loss before Target 1 (INITIAL_FULL_STOP), exactly one additional trade is permitted,
+    and only a PDR or PDS trade from a valid, independently confirmed signal confirmed after the first trade has fully stopped out.
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: INITIAL_FULL_STOP -> SECOND_TRADE_ELIGIBLE; strategies in {PDR, PDS}; signal_timestamp >= position_end
+  evaluation_time: exit
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.2 and Scenario B/D
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_r5_03_signals_are_also_ignored_while_the_second_trade_is_active_and_the_entry_price_is_recorded
+  - test_phase23_day_controller.py::test_scenario_b_initial_full_stop_allows_one_pdr_trade_and_then_the_day_is_finished
+  - test_phase23_day_controller.py::test_scenario_d_only_pdr_or_pds_may_be_the_second_trade
+  - test_phase23_day_controller.py::test_the_second_trade_is_subject_to_the_cutoff_too
+- rule_id: DAY-NOREUSE-001
+  strategy: EXEC
+  method: ALL
+  description: A signal that was ignored while the first position was active is never used retroactively for the second trade.
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: second-trade signals need signal_timestamp >= first position end
+  evaluation_time: signal timestamp
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.2
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_a_signal_confirmed_in_the_same_minute_as_the_exit_bar_is_still_ignored_and_the_next_minute_is_allowed
+  - test_phase23_day_controller.py::test_a_signal_ignored_while_the_first_position_was_active_is_never_reused_for_the_second_trade
+- rule_id: DAY-UNRES-001
+  strategy: EXEC
+  method: ALL
+  description: No second trade if the first trade closed by end of day, by an unresolved execution (for example an open position when the closing
+    auction starts, or a NOT_EVALUABLE exit policy) or by any exit class not explicitly approved for re-entry; the day is UNRESOLVED_EXECUTION
+    and nothing is invented.
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: INCOMPLETE_EOD / NOT_EVALUABLE -> UNRESOLVED_EXECUTION
+  evaluation_time: exit
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.2 and s9
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_a_first_trade_left_open_at_the_end_of_the_data_is_unresolved_and_allows_no_second_trade
+  - test_phase23_day_controller.py::test_a_position_still_open_when_the_closing_auction_starts_is_unresolved_not_invented
+  - test_phase23_day_controller.py::test_an_exit_policy_that_cannot_be_evaluated_is_reported_as_no_position_to_the_selection_helpers
+  - test_phase23_day_controller.py::test_an_exit_policy_that_cannot_be_evaluated_makes_the_day_unresolved
+  - test_phase23_day_controller.py::test_r5_03_the_legacy_breakeven_class_also_finishes_the_day_through_the_controller
+  - test_phase3_forced_exit.py::test_the_day_controller_finishes_the_day_after_a_forced_exit_and_allows_no_second_trade
+- rule_id: DAY-MAX-001
+  strategy: EXEC
+  method: ALL
+  description: At most 2 entries per day; after the second trade, whatever its outcome, no further trade.
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: entries <= 2
+  evaluation_time: entry
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.2
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_the_entries_per_day_limit_is_enforced_by_the_rules_object_not_only_by_the_state_machine_shape
+  - test_phase23_day_controller.py::test_the_second_trade_may_end_in_any_outcome_and_still_finishes_the_day
+  - test_phase23_day_controller.py::test_there_is_never_a_third_trade_even_after_two_full_stops
+- rule_id: ENTRY-CUTOFF-001
+  strategy: EXEC
+  method: ALL
+  description: '1:00 PM IST is the strict entry cutoff: no new position may be entered with a fill later than 13:00:00 IST. A candle that closes
+    after 13:00 is not an eligible entry. With the causal fill convention (the open of the bar starting at the signal candle''s end) a signal
+    confirmed at exactly 13:00 fills at 13:00:00 and is eligible; one confirmed at 13:05 is rejected as ENTRY_CUTOFF_EXCEEDED. The cutoff concerns
+    new entries only, not open positions. Evaluated in Asia/Kolkata, never in the machine''s timezone.'
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: fill_timestamp (IST) <= 13:00:00
+  evaluation_time: entry
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s3.3
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.trading_day.run_trading_day
+  tested_by:
+  - test_phase23_day_controller.py::test_a_13_00_signal_whose_fill_bar_would_come_later_is_rejected
+  - test_phase23_day_controller.py::test_a_signal_confirmed_at_exactly_13_00_fills_at_13_00_and_is_eligible_but_13_01_is_not
+  - test_phase23_day_controller.py::test_r5_08_records_of_another_session_are_rejected_and_naive_timestamps_are_read_as_ist
+  - test_phase23_day_controller.py::test_scenario_e_a_signal_confirmed_after_13_00_is_not_entered
+  - test_phase23_day_controller.py::test_the_cutoff_governs_new_entries_only_an_open_position_keeps_running_past_13_00
+  - test_phase23_day_controller.py::test_the_cutoff_uses_asia_kolkata_not_the_machine_or_signal_timezone
+  - test_phase23_day_controller.py::test_the_second_trade_is_subject_to_the_cutoff_too
+- rule_id: SIZE-LOT-001
+  strategy: EXEC
+  method: ALL
+  description: '6 lots, in two equal legs of 3 lots; the lot multiplier is configurable (the historical report used 65 per lot: 390 units, 195
+    per leg). Synthetic index-point model, not an executable index order.'
+  source_document: NIFTY_System_Trading_Strategy_Performance.docx + owner decision
+  source_page: n/a
+  section: Intro; Strategy Framework
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: lots=6, leg1=3, leg2=3, lot_size=65 (configurable)
+  evaluation_time: n/a
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: 'Strategy owner, Phase 2.3 instructions s3.4 (report: [P2] [P7])'
+  effective_phase: '2.3'
+  implemented_by:
+  - core.exit_policy.policy_for
+  tested_by:
+  - test_phase23_day_controller.py::test_r5_09_configuration_cannot_make_the_legs_unequal_or_widen_the_stop
+  - test_phase23_day_controller.py::test_six_lots_in_two_equal_legs_of_three_and_a_configurable_lot_size
+- rule_id: POST-T1-STOP-006
+  strategy: EXEC
+  method: ALL
+  description: 'After Target 1 the remaining 3 lots use a protective stop 6 index points against the ORIGINAL entry: LONG entry - 6, SHORT entry
+    + 6. No trailing, no further adjustment, no move back to entry, no widening. T1 then this stop = T1_THEN_BUFFER_STOP (Leg 1 keeps +27, Leg
+    2 books about -6 or worse after a gap) and no second trade. A gap through the stop fills at the worse of the level and the open; the adverse
+    slippage is logged.'
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: stop2 = entry - 6 (LONG) / entry + 6 (SHORT), fixed
+  evaluation_time: after T1
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: EXE-BE-001
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 2.3 instructions s5
+  effective_phase: '2.3'
+  implemented_by:
+  - core.exit_policy.evaluate_exit
+  tested_by:
+  - test_phase22_rules.py::test_entry_bar_that_reaches_target_1_is_not_stopped_merely_because_it_opened_at_the_entry
+  - test_phase23_day_controller.py::test_gap_through_the_post_t1_stop_fills_at_the_open_and_logs_the_adverse_slippage
+  - test_phase23_day_controller.py::test_initial_full_stop_exits_all_six_lots_before_target_1
+  - test_phase23_day_controller.py::test_long_post_t1_stop_is_entry_minus_6_and_short_is_entry_plus_6_exactly
+  - test_phase23_day_controller.py::test_r5_01_a_bar_that_opens_below_the_stop_level_before_target_1_is_not_a_gap_through_the_post_t1_stop
+  - test_phase23_day_controller.py::test_r5_09_configuration_cannot_make_the_legs_unequal_or_widen_the_stop
+  - test_phase23_day_controller.py::test_same_bar_conservatism_stop_before_target_and_post_t1_stop_before_target_2
+  - test_phase23_day_controller.py::test_scenario_c_t1_then_buffer_stop_finishes_the_day_without_a_second_trade
+  - test_phase23_day_controller.py::test_the_worked_examples_of_the_owner_long_and_short
+  - test_phase23_day_controller.py::test_there_is_no_trailing_stop_the_post_t1_level_never_moves_whatever_price_does
+  - test_phase2_exit_policy.py::test_after_target1_the_remaining_legs_stop_6_points_against_the_entry_not_at_the_entry
+  - test_phase2_exit_policy.py::test_same_bar_target1_and_post_t1_stop_touch_is_ambiguous_and_resolved_adversely
+  - test_phase2_exit_policy.py::test_short_side_mirrors_target_and_the_buffer_stop_at_entry_plus_6
+  - test_phase2_exit_policy.py::test_the_superseded_exact_entry_breakeven_survives_only_as_a_labelled_legacy_mode
+- rule_id: FORCED-EXIT-001
+  strategy: EXEC
+  method: ALL
+  description: Open positions are closed by a forced exit BEFORE 15:15 IST (the end of continuous trading; the closing-auction bars are never
+    fillable). A position that is still open when the forced-exit minute arrives is closed; the day then ends (no second trade). No closing-auction
+    price and no official close is ever used as a fill.
+  source_document: (strategy owner decision referred to in the Phase 3.0 instructions)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: position open at 15:14 -> forced exit; no later fill
+  evaluation_time: '15:14'
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: ''
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, Phase 3.0 instructions s1/s3 ('the user-approved forced-exit policy before 15:15'); the written policy was
+    NOT found in the repository, so only its existence and the 15:15 limit are taken from the instruction
+  effective_phase: '3.0'
+  implemented_by:
+  - core.exit_policy.evaluate_exit
+  tested_by:
+  - test_phase3_forced_exit.py::test_a_position_still_open_at_15_14_is_closed_at_that_minutes_open_whole_position
+  - test_phase3_forced_exit.py::test_a_stop_or_target_before_the_forced_minute_wins_and_the_forced_minute_bar_is_not_walked
+  - test_phase3_forced_exit.py::test_after_target_1_only_leg_two_is_force_closed_and_leg_one_keeps_its_27_points
+  - test_phase3_forced_exit.py::test_if_the_forced_exit_minute_cannot_be_filled_the_position_stays_unresolved_never_invented
+  - test_phase3_forced_exit.py::test_the_day_controller_finishes_the_day_after_a_forced_exit_and_allows_no_second_trade
+  - test_phase3_forced_exit.py::test_without_the_policy_the_old_behaviour_is_unchanged
+- rule_id: FORCED-EXIT-002
+  strategy: EXEC
+  method: ALL
+  description: 'ASSUMPTION (not specified anywhere I could find): the forced exit is scheduled at 15:14:00 IST and fills at the OPEN of the 15:14
+    one-minute bar - the last continuous minute - consistent with the causal convention that a decision taken at a time t fills at the open of
+    the bar starting at t. The 15:14 bar''s close is recorded per trade as a sensitivity reference only. The same time applies to every session,
+    including those before the 2026-08-03 closing-auction regime.'
+  source_document: (engineering assumption for Phase 3.0)
+  source_page: n/a
+  section: (engineering)
+  classification: PROPOSED_FOR_REVIEW
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: forced_exit_time = 15:14 IST; fill = open of that bar
+  evaluation_time: '15:14'
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies:
+  - the owner's exact forced-exit time and price convention
+  proposal_parameter: TradeConfig.forced_exit_time
+  conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: none yet
+  effective_phase: '3.0'
+  implemented_by:
+  - core.exit_policy.evaluate_exit
+  tested_by:
+  - test_phase3_forced_exit.py::test_a_position_still_open_at_15_14_is_closed_at_that_minutes_open_whole_position
+  - test_phase3_forced_exit.py::test_if_the_forced_exit_minute_cannot_be_filled_the_position_stays_unresolved_never_invented
+- rule_id: TREND-EMA-001
+  strategy: ALL
+  method: ALL
+  description: 'Approved research variant A of the ORB/RF trend: the five-minute EMA(200) price location only (previous session''s last close
+    above/below its EMA(200); for RF the trend must exist BEFORE the opening gap, so the gap day contributes nothing). Not claimed to reproduce
+    the discretionary trend definition.'
+  source_document: (strategy owner decision, Phase 2.3)
+  source_page: n/a
+  section: (owner)
+  classification: USER_APPROVED
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: prev-session last close > EMA200 (long) / < EMA200 (short)
+  evaluation_time: 09:15 (prior-session data only)
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_VERIFIED
+  unresolved_dependencies: []
+  proposal_parameter: trend_mode=EMA_PREV_SESSION_CLOSE
+  conflicts_with: ''
+  authority: USER_APPROVED
+  supersedes: ''
+  superseded_by: ''
+  approval_source: Strategy owner, earlier approval confirmed in Phase 2.3 instructions s7
+  effective_phase: '2.3'
+  implemented_by:
+  - strategies.definitions.ema_prev_session_trend
+  tested_by:
+  - test_phase23_day_controller.py::test_r5_10_variant_a_is_wired_through_the_engines_not_only_the_helper
+  - test_phase23_day_controller.py::test_variant_a_uses_only_the_previous_sessions_close_against_its_ema_and_never_the_gap_day
+- rule_id: EXE-SEL-001
+  strategy: EXEC
+  method: ALL
+  description: 'PROPOSED evaluation policies for repeated signals (none is a source rule): ALL_VALID_SIGNALS, FIRST_VALID_SIGNAL_PER_DAY, ONE_ACTIVE_POSITION_AT_A_TIME.
+    The complete event log is always kept; a policy only decides which events a later simulation takes. [PHASE 2.3: the evaluation policies remain
+    research diagnostics; the owner-approved controller (SEL-FIRST-001, SEL-ACTIVE-001, DAY-*) is the selection rule in force.]'
+  source_document: (engineering; IRF-GLOBAL-004 is unresolved)
+  source_page: n/a
+  section: (engineering)
+  classification: PROPOSED_FOR_REVIEW
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: see strategies/selection.py
+  evaluation_time: n/a
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies: []
+  proposal_parameter: selection policy
+  conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: SEL-FIRST-001 (as the only selection rule)
+  approval_source: ''
+  effective_phase: ''
+  implemented_by:
+  - strategies.selection.apply_policy
+  tested_by:
+  - test_phase22_rules.py::test_a_position_that_never_closes_blocks_the_rest_of_that_session_visibly
+  - test_phase22_rules.py::test_all_valid_signals_keeps_every_confirmed_executable_event_and_logs_the_rest
+  - test_phase22_rules.py::test_causal_fill_is_the_next_bar_open_and_exit_end_follows_the_final_bar
+  - test_phase22_rules.py::test_first_valid_signal_per_day_is_per_day_and_per_strategy
+  - test_phase22_rules.py::test_no_fill_is_not_a_position_and_blocks_nothing
+  - test_phase22_rules.py::test_one_active_position_skips_signals_while_a_position_is_open
+  - test_phase22_rules.py::test_one_active_requires_an_end_function_and_unknown_policy_is_rejected
+  - test_phase23_day_controller.py::test_an_exit_policy_that_cannot_be_evaluated_is_reported_as_no_position_to_the_selection_helpers
+- rule_id: CANDLE-DEF-001
+  strategy: ALL
+  method: ALL
+  description: 'PROPOSED candle-quality thresholds (Phase 2.2 owner recommendation; numbers not stated in the PDFs unless the verification note
+    says so): strong candle body >= 60% of range with opposing wick <= 20%; small candle body <= 30% of range; pin bar rejection wick >= 2x body
+    with the close in the favourable 30% of the range.'
+  source_document: (owner recommendation; see phase22_rule_verification.md)
+  source_page: n/a
+  section: (engineering)
+  classification: PROPOSED_FOR_REVIEW
+  mandatory: true
+  applies_to: method
+  exception: ''
+  objectively_measurable: false
+  required_inputs: []
+  mathematical_condition: see strategies/params.py STRONG_CANDLE / PIN_BAR / SMALL_CANDLE_BODY_RATIO_MAX
+  evaluation_time: 5m candle close
+  invalidation_condition: ''
+  implementation_status: IMPLEMENTED_WITH_PROPOSAL
+  unresolved_dependencies: []
+  proposal_parameter: strong_candle, pin_bar
+  conflicts_with: ''
+  authority: PROPOSED_FOR_REVIEW
+  supersedes: ''
+  superseded_by: ''
+  approval_source: ''
+  effective_phase: ''
+  implemented_by:
+  - strategies.definitions.bearish_pin
+  - strategies.definitions.bullish_pin
+  - strategies.definitions.is_small
+  tested_by:
+  - test_phase22_rules.py::test_bearish_pin_is_the_mirror_and_needs_an_upper_wick
+  - test_phase22_rules.py::test_boundary_candles_at_index_scale_prices_are_not_flipped_by_float_error
+  - test_phase22_rules.py::test_compression_c3_needs_every_candle_small_and_inside_the_range
+  - test_phase22_rules.py::test_owner_pin_bar_close_must_lie_in_the_favourable_30_percent
+  - test_phase22_rules.py::test_owner_pin_bar_wick_to_body_boundary
+  - test_phase22_rules.py::test_owner_thresholds_keep_strong_candle_and_pin_bar_mutually_exclusive
+  - test_phase22_rules.py::test_strong_and_small_candle_thresholds
+  - test_phase22_rules.py::test_the_documented_phase22_defaults

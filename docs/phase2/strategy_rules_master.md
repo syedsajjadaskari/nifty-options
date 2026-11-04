@@ -177,8 +177,8 @@ Candle `c = (O, H, L, C)`, all on completed 5-minute bars built from 1-minute ro
 * **Warm-up:** EMA(200) of 5-min bars needs 200 completed candles (≈ 3 sessions). A daily 200-day average needs 200 prior daily bars — with Phase 1 data it exists for only the **last 47 of 247 sessions** (from 2026-06-25). No partial initialisation is ever used.
 * "Established uptrend/downtrend" is not numerically defined in any document (ORB p.3 "supported by bullish price structure"; RF p.5 "must already be demonstrated"). The default `EMA5M_PREV_SESSION` encodes only RF p.5's explicit *invalid* example (previous session below the EMA); stronger structure tests are not invented.
 
-## 7. Data caveat found by the independent review
-From 2026-08-03 every session's last ~14 minutes are a frozen feed (identical price, then a 150–200-point catch-up bar). Those rows are excluded, the 15:15/15:20/15:25 candles are dropped, and the following session is not evaluated by strategies that need a previous-day close or zone. See `agent_review_report.md` (C-1) and `reports/phase2/dataset_verification.md` (`feed_quality`).
+## 7. Data caveat (corrected in Phase 2.1)
+From 2026-08-03 the index is frozen 15:15-15:29 and then steps to the official close because NSE introduced a **Closing Auction Session**. This is real market structure, not corrupt data; the candles are kept and flagged. Phase 2's earlier wording here (a "frozen feed", dropped candles, unevaluable following sessions) was wrong. See `data_repair_report.md`.
 
 ## 8. Engine behaviour under the default proposals (descriptive only)
 See `reports/phase2/signal_counts_default.md` — counts of emitted records per method. They are **not** used to choose interpretations and **must not** be compared to the 189-trade report to tune thresholds.

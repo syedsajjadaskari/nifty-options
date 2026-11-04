@@ -1,0 +1,189 @@
+{
+  "version": "1.0",
+  "generated_utc": "2026-11-01",
+  "analysis_window": [
+    "2025-09-01",
+    "2026-08-31"
+  ],
+  "note": "Calendar used by the Phase 2.1 data-quality layer. Evidence tiers: A = multiple independent secondary sources AND absence in both vendor series (1-minute and daily); B = absence in both vendor series AND on the Phase 1 calendar AND a standard NSE festival, not individually re-verified in Phase 2.1. The NSE circulars themselves could not be read directly (nseindia.com was not queried); this is therefore secondary-source evidence.",
+  "market_structure_changes": [
+    {
+      "id": "NSE_CLOSING_AUCTION_SESSION",
+      "effective_date": "2026-08-03",
+      "description": "From 2026-08-03 continuous trading in F&O-eligible stocks (all NIFTY 50 constituents) ends at 15:15 and a Closing Auction Session follows; the index does not update during the auction and the official close appears at the end. In the vendor 1-minute data this is a frozen price from 15:15/15:16 to 15:27/15:28 followed by one catch-up bar (15:28 in 9 sessions, 15:29 in 12) whose close equals the 15:30 print and the official close.",
+      "index_frozen_window_hhmm": [
+        "15:15",
+        "15:29"
+      ],
+      "evidence": [
+        "https://groww.in/blog/nse-extends-f-and-o-trading-hours-by-10-minutes-new-timings-effective-from-august-3-2026",
+        "https://www.sahi.com/blogs/closing-auction-session-cas-explained-nse-bse-closing-price-rules-2026",
+        "https://www.oquilia.com/markets/today/2026-08-03 (close 24,774.30, equals vendor daily and 15:30 print)",
+        "data: 21/21 sessions 2026-08-03..08-31 show the pattern; 19/19 in Oct 2026 and 21/21 in Sep 2026 (diagnostic download); 0 sessions before 2026-08-03"
+      ],
+      "confidence": "HIGH for the regime start date and the data pattern (data + 2 sources + exact external close); the NSE circular was not read directly"
+    }
+  ],
+  "holidays": [
+    {
+      "date": "2025-10-02",
+      "name": "Mahatma Gandhi Jayanti / Dussehra",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Mahatma Gandhi Jayanti / Dussehra is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    },
+    {
+      "date": "2025-10-22",
+      "name": "Diwali Balipratipada",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Diwali Balipratipada is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    },
+    {
+      "date": "2025-11-05",
+      "name": "Guru Nanak Jayanti",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Guru Nanak Jayanti is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    },
+    {
+      "date": "2025-12-25",
+      "name": "Christmas",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Christmas is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "name": "Maharashtra municipal elections (special closure)",
+      "evidence_tier": "A",
+      "evidence": [
+        "https://www.freepressjournal.in/business/nse-trading-halt-on-january-15-maharashtra-civic-polls-prompt-one-day-stock-market-closure-across-capital-segment",
+        "https://www.theweek.in/news/biz-tech/2026/01/15/why-indian-stock-currency-commodities-markets-closed-on-jan-15-holiday.html",
+        "NSE circular dated 2026-01-12 (as cited by the above; not read directly)"
+      ]
+    },
+    {
+      "date": "2026-01-26",
+      "name": "Republic Day",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Republic Day is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "name": "Holi",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Holi is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "name": "Ram Navami",
+      "evidence_tier": "A",
+      "evidence": [
+        "https://www.theweek.in/news/biz-tech/2026/03/26/indian-stock-market-holidays-ram-navami.amp.html",
+        "Phase 1 calendar listed 2026-03-27 instead (wrong day: 03-27 has a full session)"
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "name": "Mahavir Jayanti",
+      "evidence_tier": "A",
+      "evidence": [
+        "https://www.businesstoday.in/markets/stocks/story/stock-market-holiday-today-on-last-day-of-fy26-nse-bse-closed-for-mahavir-jayanti-2026-523221-2026-03-31",
+        "https://fyers.in/notice-board/trading-holiday-on-march-31-2026-on-account-of-shri-mahavir-jayanti/",
+        "consistent: Nifty's FY26/March closing level 22,331.40 is the 2026-03-30 close"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "name": "Good Friday",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Good Friday is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "name": "Dr. Ambedkar Jayanti",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Dr. Ambedkar Jayanti is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "name": "Maharashtra Day",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Maharashtra Day is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "name": "Bakri Id / Eid al-Adha",
+      "evidence_tier": "A",
+      "evidence": [
+        "https://www.outlookmoney.com/invest/stock-market-holidays-this-week-nse-bse-to-remain-shut-on-may-28-for-bakri-eid",
+        "Phase 1 calendar listed 2026-05-27 instead (wrong day: 05-27 has a full session, Nifty close 23,907.15)"
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "name": "Muharram",
+      "evidence_tier": "B",
+      "evidence": [
+        "absent from the vendor 1-minute and daily series; on Phase 1's holiday list; Muharram is a standard NSE trading holiday (not individually re-verified against the NSE circular in Phase 2.1)"
+      ]
+    }
+  ],
+  "special_sessions": [
+    {
+      "date": "2025-10-21",
+      "name": "Diwali Laxmi Pujan Muhurat trading (evening, ~13:45-14:45 in the vendor data, 61 one-minute rows)",
+      "evaluable_by_strategies": false,
+      "evidence_tier": "A",
+      "evidence": [
+        "Phase 1 calendar; vendor 1m and daily both carry the date; non-standard hours"
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "name": "Union Budget day (Sunday) - normal-hours special trading session",
+      "evaluable_by_strategies": true,
+      "evidence_tier": "A",
+      "evidence": [
+        "vendor 1m: 376 rows 09:15-15:30; vendor daily row present; very large intraday ranges consistent with a Budget-day reaction"
+      ]
+    }
+  ],
+  "phase1_calendar_errors": [
+    {
+      "date": "2026-02-17",
+      "phase1_label": "Maha Shivratri holiday",
+      "finding": "full session exists in both vendor series (1m and daily)"
+    },
+    {
+      "date": "2026-03-20",
+      "phase1_label": "Id-Ul-Fitr holiday",
+      "finding": "full session exists in both vendor series"
+    },
+    {
+      "date": "2026-03-27",
+      "phase1_label": "Ram Navami holiday",
+      "finding": "full session exists; the holiday was 2026-03-26"
+    },
+    {
+      "date": "2026-05-27",
+      "phase1_label": "Bakri Id holiday",
+      "finding": "full session exists, Nifty close 23,907.15 confirmed externally; the holiday was 2026-05-28"
+    }
+  ]
+}
