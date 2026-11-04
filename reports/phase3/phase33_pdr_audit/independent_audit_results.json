@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "the affected set derived independently from raw data equals the delivered file (count not hard-coded)": {
+      "pass": true,
+      "n": 27,
+      "detail": "independent count 27 of 54 PDR trades; delivered 27",
+      "n_failures": 0,
+      "failures": []
+    },
+    "every PDR trade is LONG and every confirmation candle is bullish (close > open)": {
+      "pass": true,
+      "n": 54,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "zone boundaries, source candle, confirmation OHLC, close-minus-floor, timestamps, fill = raw minute open (all 54 PDR trades)": {
+      "pass": true,
+      "n": 54,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "gap, previous-day high, interaction candle, retest low and penetration depth reproduced by an independent sequence scan (54 trades)": {
+      "pass": true,
+      "n": 54,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "every PDR confirmed signal of the engine (383) is reproduced from raw data; the only difference is the day the engine blocks as NOT_EVALUATED": {
+      "pass": true,
+      "n": 383,
+      "detail": "mine 384, engine 383, only-mine [('2025-10-23', '15:20')], only-engine []",
+      "n_failures": 0,
+      "failures": []
+    },
+    "each of the 27 classifications follows the documented decision rule when re-applied to the delivered columns": {
+      "pass": true,
+      "n": 54,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "counterfactual counts A-D recomputed from raw-derived columns": {
+      "pass": true,
+      "n": 54,
+      "detail": "A 54, B 27, C 20, D 8; none of the 27 affected trades satisfies B, C or D by construction",
+      "n_failures": 0,
+      "failures": []
+    },
+    "journal comparison: a PDR journal row within 15 minutes exists exactly when the delivered class says matched": {
+      "pass": true,
+      "n": 54,
+      "detail": "matched PDR trades 5 (1 through the Phase 2.1 alternate-label attribution; among the 27: 0)",
+      "n_failures": 0,
+      "failures": []
+    },
+    "27 charts exist (one per affected trade), titles carry the independently derived close/floor/distance, POST_ENTRY and zone-source labels present": {
+      "pass": true,
+      "n": 27,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "Phase 3.0 / 3.1 / 3.2 reports and ledgers, raw data, source PDFs and the journal are unchanged (hash snapshot taken before Phase 3.3)": {
+      "pass": true,
+      "n": 619,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    }
+  },
+  "classification_counts": {
+    "NOT_AFFECTED": 27,
+    "SOURCE_AMBIGUOUS": 26,
+    "ZONE_SELECTION_DISPUTED": 1
+  },
+  "all_pass": true
+}

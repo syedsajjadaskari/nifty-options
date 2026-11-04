@@ -1,0 +1,19 @@
+variant,signals,days_with_a_signal,first_signal_per_day,note
+"legacy engine (reversal swing zone, any green candle) - for reference",383,61,61,Phase 3.0 research candidate B; not changed
+"revised A, default patterns",81,31,31,ACTIVE research candidate A
+"revised B, default patterns (tolerance 5)",81,31,31,ACTIVE research candidate B
+"revised A, EXAMPLE_LENIENT patterns",103,32,32,sensitivity: thresholds read off the guide's four dated entry candles; not the default
+"revised B, EXAMPLE_LENIENT patterns",103,32,32,sensitivity
+"revised B, tolerance 10",81,31,31,sensitivity of the unresolved cluster tolerance
+"revised B, tolerance 15",81,31,31,sensitivity of the unresolved cluster tolerance
+"revised B, spike excluded when it lies above a shelf (diagnostic)",82,33,33,contradicts PDR-A01 (the ceiling is below the day high); diagnostic only
+"revised A, open may be anywhere (open_vs_zone=ANY)",158,68,68,sensitivity of the preserved PDR-011 proposal (not an author rule)
+"revised A, confirmation may be the test candle itself",88,32,32,sensitivity of the preserved sequence rule
+"revised A, good green body only",72,30,30,diagnostic: pattern 1 alone
+"revised A, lower-price rejection only",15,11,11,diagnostic: pattern 2 alone
+"revised A, hammer only",30,21,21,diagnostic: pattern 3 alone
+"revised B, open may be anywhere (open_vs_zone=ANY)",159,68,68,sensitivity of the preserved PDR-011 proposal (not an author rule)
+"revised B, confirmation may be the test candle itself",88,32,32,sensitivity of the preserved sequence rule
+"revised B, good green body only",72,30,30,diagnostic: pattern 1 alone
+"revised B, lower-price rejection only",15,11,11,diagnostic: pattern 2 alone
+"revised B, hammer only",30,21,21,diagnostic: pattern 3 alone

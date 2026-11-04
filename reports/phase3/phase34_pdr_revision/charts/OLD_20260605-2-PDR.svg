@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1040" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<style>text{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}</style>
+<rect width="1500" height="1040" fill="#fafafa"/>
+<text x="20" y="24" font-size="16" font-weight="bold">20260605-2-PDR: old PDR trade - revised-rule verdict A: REMOVED / B: REMOVED</text>
+<text x="20" y="42" fill="#555">old zone = legacy reversal swing (grey); candidate zones A (blue) / B (purple); the old confirmation candle is marked CONFIRM?</text>
+<rect x="70" y="80" width="560" height="330" fill="#fff" stroke="#bbb"/><text x="70" y="72" font-size="13" font-weight="bold">1. Previous session 2026-06-04: previous-day high, zone sources</text>
+<line x1="70" x2="630" y1="410.0" y2="410.0" stroke="#eee"/><text x="66" y="414.0" text-anchor="end" fill="#555" font-size="10">23,235.7</text>
+<line x1="70" x2="630" y1="344.0" y2="344.0" stroke="#eee"/><text x="66" y="348.0" text-anchor="end" fill="#555" font-size="10">23,284.4</text>
+<line x1="70" x2="630" y1="278.0" y2="278.0" stroke="#eee"/><text x="66" y="282.0" text-anchor="end" fill="#555" font-size="10">23,333.0</text>
+<line x1="70" x2="630" y1="212.0" y2="212.0" stroke="#eee"/><text x="66" y="216.0" text-anchor="end" fill="#555" font-size="10">23,381.7</text>
+<line x1="70" x2="630" y1="146.0" y2="146.0" stroke="#eee"/><text x="66" y="150.0" text-anchor="end" fill="#555" font-size="10">23,430.4</text>
+<line x1="70" x2="630" y1="80.0" y2="80.0" stroke="#eee"/><text x="66" y="84.0" text-anchor="end" fill="#555" font-size="10">23,479.1</text>
+<rect x="562.8" y="98.9" width="67.2" height="37.3" fill="#1565c0" opacity="0.13"/>
+<line x1="562.8" x2="630" y1="98.9" y2="98.9" stroke="#1565c0" stroke-width="1.5"/>
+<line x1="562.8" x2="630" y1="136.2" y2="136.2" stroke="#1565c0" stroke-dasharray="5,3"/>
+<rect x="76" y="85.0" width="9" height="9" fill="#1565c0" opacity="0.5"/><text x="89" y="93.0" fill="#1565c0" font-size="10" font-weight="bold">A = B [23,437.60, 23,465.15]</text>
+<rect x="562.8" y="98.9" width="67.2" height="37.3" fill="#757575" opacity="0.13"/>
+<line x1="562.8" x2="630" y1="98.9" y2="98.9" stroke="#757575" stroke-width="1.5"/>
+<line x1="562.8" x2="630" y1="136.2" y2="136.2" stroke="#757575" stroke-dasharray="5,3"/>
+<rect x="76" y="98.0" width="9" height="9" fill="#757575" opacity="0.5"/><text x="89" y="106.0" fill="#757575" font-size="10" font-weight="bold">legacy reversal swing (diagnostic) [23,437.60, 23,465.15]</text>
+<line x1="70" x2="630" y1="98.9" y2="98.9" stroke="#b71c1c" stroke-dasharray="3,3"/><text x="626" y="95.9" text-anchor="end" fill="#b71c1c" font-size="10">previous-day high 23,465.15 (14:45)</text>
+<g opacity="1.0"><line x1="73.7" x2="73.7" y1="238.1" y2="391.1" stroke="#2e7d32"/><rect x="71.2" y="260.6" width="5.1" height="86.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="81.2" x2="81.2" y1="244.4" y2="298.1" stroke="#c62828"/><rect x="78.7" y="262.5" width="5.1" height="7.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="88.7" x2="88.7" y1="245.8" y2="282.5" stroke="#c62828"/><rect x="86.1" y="267.9" width="5.1" height="7.7" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="96.1" x2="96.1" y1="269.5" y2="316.9" stroke="#c62828"/><rect x="93.6" y="275.7" width="5.1" height="5.2" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="103.6" x2="103.6" y1="232.5" y2="294.7" stroke="#c62828"/><rect x="101.1" y="280.1" width="5.1" height="13.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="111.1" x2="111.1" y1="245.6" y2="312.2" stroke="#2e7d32"/><rect x="108.5" y="247.7" width="5.1" height="45.5" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="118.5" x2="118.5" y1="194.4" y2="247.5" stroke="#2e7d32"/><rect x="116.0" y="203.0" width="5.1" height="44.5" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="126.0" x2="126.0" y1="194.7" y2="220.7" stroke="#2e7d32"/><rect x="123.5" y="194.9" width="5.1" height="10.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="133.5" x2="133.5" y1="129.9" y2="203.0" stroke="#2e7d32"/><rect x="130.9" y="176.6" width="5.1" height="19.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="140.9" x2="140.9" y1="145.7" y2="188.7" stroke="#2e7d32"/><rect x="138.4" y="159.0" width="5.1" height="18.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="148.4" x2="148.4" y1="129.9" y2="159.2" stroke="#2e7d32"/><rect x="145.9" y="141.4" width="5.1" height="17.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="155.9" x2="155.9" y1="128.0" y2="150.9" stroke="#c62828"/><rect x="153.3" y="143.6" width="5.1" height="1.2" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="163.3" x2="163.3" y1="120.4" y2="164.1" stroke="#2e7d32"/><rect x="160.8" y="129.1" width="5.1" height="14.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="170.8" x2="170.8" y1="120.0" y2="140.9" stroke="#2e7d32"/><rect x="168.3" y="122.7" width="5.1" height="5.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="178.3" x2="178.3" y1="119.7" y2="156.6" stroke="#c62828"/><rect x="175.7" y="123.2" width="5.1" height="32.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="185.7" x2="185.7" y1="151.2" y2="204.3" stroke="#c62828"/><rect x="183.2" y="156.0" width="5.1" height="47.4" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="193.2" x2="193.2" y1="185.0" y2="220.4" stroke="#c62828"/><rect x="190.7" y="202.9" width="5.1" height="3.4" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="200.7" x2="200.7" y1="171.4" y2="207.0" stroke="#2e7d32"/><rect x="198.1" y="172.8" width="5.1" height="33.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="208.1" x2="208.1" y1="124.2" y2="174.1" stroke="#2e7d32"/><rect x="205.6" y="160.0" width="5.1" height="12.2" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="215.6" x2="215.6" y1="149.0" y2="173.9" stroke="#2e7d32"/><rect x="213.1" y="157.9" width="5.1" height="1.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="223.1" x2="223.1" y1="140.2" y2="158.2" stroke="#2e7d32"/><rect x="220.5" y="153.5" width="5.1" height="4.7" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="230.5" x2="230.5" y1="146.1" y2="207.1" stroke="#c62828"/><rect x="228.0" y="154.5" width="5.1" height="34.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="238.0" x2="238.0" y1="186.7" y2="221.4" stroke="#c62828"/><rect x="235.5" y="189.8" width="5.1" height="17.2" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="245.5" x2="245.5" y1="179.6" y2="210.3" stroke="#2e7d32"/><rect x="242.9" y="184.7" width="5.1" height="21.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="252.9" x2="252.9" y1="182.1" y2="207.5" stroke="#c62828"/><rect x="250.4" y="184.4" width="5.1" height="23.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="260.4" x2="260.4" y1="195.2" y2="209.0" stroke="#2e7d32"/><rect x="257.9" y="202.0" width="5.1" height="5.5" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="267.9" x2="267.9" y1="182.1" y2="215.0" stroke="#2e7d32"/><rect x="265.3" y="197.1" width="5.1" height="4.5" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="275.3" x2="275.3" y1="184.8" y2="242.2" stroke="#2e7d32"/><rect x="272.8" y="185.1" width="5.1" height="12.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="282.8" x2="282.8" y1="124.2" y2="190.5" stroke="#2e7d32"/><rect x="280.3" y="125.3" width="5.1" height="60.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="290.3" x2="290.3" y1="103.2" y2="129.5" stroke="#c62828"/><rect x="287.7" y="125.3" width="5.1" height="2.7" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="297.7" x2="297.7" y1="117.2" y2="139.2" stroke="#c62828"/><rect x="295.2" y="127.9" width="5.1" height="5.2" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="305.2" x2="305.2" y1="129.6" y2="188.9" stroke="#c62828"/><rect x="302.7" y="133.9" width="5.1" height="50.2" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="312.7" x2="312.7" y1="145.1" y2="191.3" stroke="#2e7d32"/><rect x="310.1" y="161.4" width="5.1" height="21.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="320.1" x2="320.1" y1="130.6" y2="165.2" stroke="#2e7d32"/><rect x="317.6" y="144.9" width="5.1" height="16.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="327.6" x2="327.6" y1="122.3" y2="147.4" stroke="#2e7d32"/><rect x="325.1" y="126.0" width="5.1" height="18.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="335.1" x2="335.1" y1="118.8" y2="148.2" stroke="#c62828"/><rect x="332.5" y="125.1" width="5.1" height="8.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="342.5" x2="342.5" y1="119.4" y2="149.1" stroke="#c62828"/><rect x="340.0" y="134.0" width="5.1" height="11.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="350.0" x2="350.0" y1="136.6" y2="155.6" stroke="#c62828"/><rect x="347.5" y="146.5" width="5.1" height="1.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="357.5" x2="357.5" y1="139.4" y2="157.0" stroke="#2e7d32"/><rect x="354.9" y="145.7" width="5.1" height="2.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="364.9" x2="364.9" y1="143.8" y2="192.7" stroke="#c62828"/><rect x="362.4" y="145.9" width="5.1" height="45.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="372.4" x2="372.4" y1="184.4" y2="212.6" stroke="#2e7d32"/><rect x="369.9" y="184.4" width="5.1" height="7.5" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="379.9" x2="379.9" y1="179.1" y2="209.6" stroke="#c62828"/><rect x="377.3" y="184.0" width="5.1" height="23.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="387.3" x2="387.3" y1="180.2" y2="210.4" stroke="#2e7d32"/><rect x="384.8" y="188.6" width="5.1" height="19.7" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="394.8" x2="394.8" y1="180.4" y2="200.7" stroke="#2e7d32"/><rect x="392.3" y="180.4" width="5.1" height="8.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="402.3" x2="402.3" y1="165.5" y2="185.5" stroke="#2e7d32"/><rect x="399.7" y="165.7" width="5.1" height="14.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="409.7" x2="409.7" y1="157.4" y2="185.2" stroke="#c62828"/><rect x="407.2" y="165.9" width="5.1" height="5.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="417.2" x2="417.2" y1="170.8" y2="210.1" stroke="#c62828"/><rect x="414.7" y="171.1" width="5.1" height="8.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="424.7" x2="424.7" y1="173.9" y2="278.3" stroke="#c62828"/><rect x="422.1" y="180.1" width="5.1" height="96.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="432.1" x2="432.1" y1="245.9" y2="305.0" stroke="#2e7d32"/><rect x="429.6" y="250.5" width="5.1" height="26.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="439.6" x2="439.6" y1="236.4" y2="273.8" stroke="#2e7d32"/><rect x="437.1" y="246.7" width="5.1" height="4.7" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="447.1" x2="447.1" y1="229.7" y2="255.7" stroke="#2e7d32"/><rect x="444.5" y="238.4" width="5.1" height="10.2" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="454.5" x2="454.5" y1="232.8" y2="256.8" stroke="#2e7d32"/><rect x="452.0" y="234.5" width="5.1" height="3.5" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="462.0" x2="462.0" y1="220.8" y2="238.3" stroke="#2e7d32"/><rect x="459.5" y="224.9" width="5.1" height="10.2" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="469.5" x2="469.5" y1="221.4" y2="260.2" stroke="#c62828"/><rect x="466.9" y="225.0" width="5.1" height="14.4" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="476.9" x2="476.9" y1="220.6" y2="247.7" stroke="#2e7d32"/><rect x="474.4" y="229.0" width="5.1" height="11.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="484.4" x2="484.4" y1="222.3" y2="252.6" stroke="#c62828"/><rect x="481.9" y="228.0" width="5.1" height="5.7" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="491.9" x2="491.9" y1="217.2" y2="254.7" stroke="#2e7d32"/><rect x="489.3" y="230.7" width="5.1" height="3.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="499.3" x2="499.3" y1="162.3" y2="230.9" stroke="#2e7d32"/><rect x="496.8" y="173.6" width="5.1" height="55.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="506.8" x2="506.8" y1="152.8" y2="186.9" stroke="#2e7d32"/><rect x="504.3" y="153.9" width="5.1" height="19.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="514.3" x2="514.3" y1="141.5" y2="169.8" stroke="#c62828"/><rect x="511.7" y="154.2" width="5.1" height="14.2" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="521.7" x2="521.7" y1="147.7" y2="168.4" stroke="#2e7d32"/><rect x="519.2" y="163.8" width="5.1" height="4.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="529.2" x2="529.2" y1="153.5" y2="179.2" stroke="#c62828"/><rect x="526.7" y="163.4" width="5.1" height="5.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="536.7" x2="536.7" y1="147.7" y2="169.1" stroke="#2e7d32"/><rect x="534.1" y="160.4" width="5.1" height="8.5" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="544.1" x2="544.1" y1="121.7" y2="166.5" stroke="#2e7d32"/><rect x="541.6" y="147.9" width="5.1" height="12.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="551.6" x2="551.6" y1="115.6" y2="146.6" stroke="#2e7d32"/><rect x="549.1" y="121.5" width="5.1" height="25.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="559.1" x2="559.1" y1="119.2" y2="144.1" stroke="#c62828"/><rect x="556.5" y="120.3" width="5.1" height="21.9" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="566.5" x2="566.5" y1="98.9" y2="149.5" stroke="#2e7d32"/><rect x="564.0" y="136.2" width="5.1" height="5.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="574.0" x2="574.0" y1="131.0" y2="178.0" stroke="#c62828"/><rect x="571.5" y="135.6" width="5.1" height="41.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="581.5" x2="581.5" y1="163.8" y2="183.6" stroke="#2e7d32"/><rect x="578.9" y="166.7" width="5.1" height="11.7" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="588.9" x2="588.9" y1="162.3" y2="207.1" stroke="#c62828"/><rect x="586.4" y="167.1" width="5.1" height="32.7" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="596.4" x2="596.4" y1="164.5" y2="202.9" stroke="#2e7d32"/><rect x="593.9" y="170.1" width="5.1" height="29.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="603.9" x2="603.9" y1="159.6" y2="174.0" stroke="#2e7d32"/><rect x="601.3" y="162.7" width="5.1" height="6.7" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="611.3" x2="611.3" y1="148.6" y2="169.6" stroke="#2e7d32"/><rect x="608.8" y="160.5" width="5.1" height="3.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="618.8" x2="618.8" y1="140.6" y2="171.4" stroke="#2e7d32"/><rect x="616.3" y="146.1" width="5.1" height="14.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="626.3" x2="626.3" y1="123.8" y2="149.0" stroke="#2e7d32"/><rect x="623.7" y="135.7" width="5.1" height="10.6" fill="#2e7d32"/></g>
+<rect x="562.1" y="95.9" width="9.0" height="56.6" fill="none" stroke="#1565c0" stroke-width="2"/>
+<rect x="562.1" y="95.9" width="9.0" height="56.6" fill="none" stroke="#757575" stroke-width="2"/>
+<rect x="700" y="80" width="780" height="330" fill="#fff" stroke="#bbb"/><text x="700" y="72" font-size="13" font-weight="bold">2. ZOOM: test and confirmation candle (shaded = after the entry, context only)</text>
+<line x1="700" x2="1480" y1="410.0" y2="410.0" stroke="#eee"/><text x="696" y="414.0" text-anchor="end" fill="#555" font-size="10">23,416.6</text>
+<line x1="700" x2="1480" y1="344.0" y2="344.0" stroke="#eee"/><text x="696" y="348.0" text-anchor="end" fill="#555" font-size="10">23,434.4</text>
+<line x1="700" x2="1480" y1="278.0" y2="278.0" stroke="#eee"/><text x="696" y="282.0" text-anchor="end" fill="#555" font-size="10">23,452.1</text>
+<line x1="700" x2="1480" y1="212.0" y2="212.0" stroke="#eee"/><text x="696" y="216.0" text-anchor="end" fill="#555" font-size="10">23,469.9</text>
+<line x1="700" x2="1480" y1="146.0" y2="146.0" stroke="#eee"/><text x="696" y="150.0" text-anchor="end" fill="#555" font-size="10">23,487.7</text>
+<line x1="700" x2="1480" y1="80.0" y2="80.0" stroke="#eee"/><text x="696" y="84.0" text-anchor="end" fill="#555" font-size="10">23,505.4</text>
+<rect x="700.0" y="229.7" width="780.0" height="102.4" fill="#1565c0" opacity="0.13"/>
+<line x1="700.0" x2="1480" y1="229.7" y2="229.7" stroke="#1565c0" stroke-width="1.5"/>
+<line x1="700.0" x2="1480" y1="332.1" y2="332.1" stroke="#1565c0" stroke-dasharray="5,3"/>
+<rect x="706" y="85.0" width="9" height="9" fill="#1565c0" opacity="0.5"/><text x="719" y="93.0" fill="#1565c0" font-size="10" font-weight="bold">A = B [23,437.60, 23,465.15]</text>
+<rect x="700.0" y="229.7" width="780.0" height="102.4" fill="#757575" opacity="0.13"/>
+<line x1="700.0" x2="1480" y1="229.7" y2="229.7" stroke="#757575" stroke-width="1.5"/>
+<line x1="700.0" x2="1480" y1="332.1" y2="332.1" stroke="#757575" stroke-dasharray="5,3"/>
+<rect x="706" y="98.0" width="9" height="9" fill="#757575" opacity="0.5"/><text x="719" y="106.0" fill="#757575" font-size="10" font-weight="bold">legacy reversal swing (diagnostic) [23,437.60, 23,465.15]</text>
+<g opacity="1.0"><line x1="765.0" x2="765.0" y1="172.4" y2="296.2" stroke="#2e7d32"/><rect x="720.8" y="188.2" width="88.4" height="54.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="895.0" x2="895.0" y1="182.1" y2="301.2" stroke="#c62828"/><rect x="850.8" y="189.2" width="88.4" height="112.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="1025.0" x2="1025.0" y1="224.3" y2="325.9" stroke="#2e7d32"/><rect x="980.8" y="256.6" width="88.4" height="43.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1155.0" x2="1155.0" y1="237.3" y2="311.4" stroke="#c62828"/><rect x="1110.8" y="258.1" width="88.4" height="50.4" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1285.0" x2="1285.0" y1="158.7" y2="381.7" stroke="#2e7d32"/><rect x="1240.8" y="214.8" width="88.4" height="94.8" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1415.0" x2="1415.0" y1="108.3" y2="336.0" stroke="#2e7d32"/><rect x="1370.8" y="132.8" width="88.4" height="83.1" fill="#2e7d32"/></g>
+<text x="1025.0" y="218.3" text-anchor="middle" font-weight="bold" fill="#1b5e20">CONFIRMATION CANDLE 09:50</text>
+<line x1="1090.0" x2="1090.0" y1="229.7" y2="256.6" stroke="#d50000" stroke-width="2.5"/><text x="1084.0" y="243.1" text-anchor="end" fill="#d50000" font-weight="bold">close 23,457.90: 7.25 pts NOT above the A = B ceiling</text>
+<polygon points="1090.0,258.1 1099.0,252.1 1099.0,264.1" fill="#000"/><text x="1102.0" y="262.1" text-anchor="start" font-weight="bold">entry 23,457.50 @ 09:55 (open of the next 1-min bar)</text>
+<text x="706" y="392" fill="#333" font-size="10">A = B: patterns passed NONE; close 23,457.90 vs ceiling 23,465.15 = -7.25 -&gt; does NOT qualify (no pattern passes)</text>
+<text x="706" y="404" fill="#333" font-size="10">   green body fail (bullish True, body 43% &gt;= 60%, upper wick 32% &lt;= 20%); rejection fail (wick/body 0.58, reached zone True); hammer fail (wick/body 0.58)</text>
+<rect x="70" y="470" width="1410" height="400" fill="#fff" stroke="#bbb"/><text x="70" y="462" font-size="13" font-weight="bold">3. Session 2026-06-05: open 23,483.35 (gap +66.80 vs the official close); zones extended forward; entry; journal</text>
+<line x1="70" x2="1480" y1="870.0" y2="870.0" stroke="#eee"/><text x="66" y="874.0" text-anchor="end" fill="#555" font-size="10">23,274.9</text>
+<line x1="70" x2="1480" y1="803.3" y2="803.3" stroke="#eee"/><text x="66" y="807.3" text-anchor="end" fill="#555" font-size="10">23,316.0</text>
+<line x1="70" x2="1480" y1="736.7" y2="736.7" stroke="#eee"/><text x="66" y="740.7" text-anchor="end" fill="#555" font-size="10">23,357.1</text>
+<line x1="70" x2="1480" y1="670.0" y2="670.0" stroke="#eee"/><text x="66" y="674.0" text-anchor="end" fill="#555" font-size="10">23,398.2</text>
+<line x1="70" x2="1480" y1="603.3" y2="603.3" stroke="#eee"/><text x="66" y="607.3" text-anchor="end" fill="#555" font-size="10">23,439.3</text>
+<line x1="70" x2="1480" y1="536.7" y2="536.7" stroke="#eee"/><text x="66" y="540.7" text-anchor="end" fill="#555" font-size="10">23,480.5</text>
+<line x1="70" x2="1480" y1="470.0" y2="470.0" stroke="#eee"/><text x="66" y="474.0" text-anchor="end" fill="#555" font-size="10">23,521.6</text>
+<rect x="70.0" y="561.5" width="1410.0" height="44.7" fill="#1565c0" opacity="0.13"/>
+<line x1="70.0" x2="1480" y1="561.5" y2="561.5" stroke="#1565c0" stroke-width="1.5"/>
+<line x1="70.0" x2="1480" y1="606.2" y2="606.2" stroke="#1565c0" stroke-dasharray="5,3"/>
+<rect x="76" y="475.0" width="9" height="9" fill="#1565c0" opacity="0.5"/><text x="89" y="483.0" fill="#1565c0" font-size="10" font-weight="bold">A = B [23,437.60, 23,465.15]</text>
+<rect x="70.0" y="561.5" width="1410.0" height="44.7" fill="#757575" opacity="0.13"/>
+<line x1="70.0" x2="1480" y1="561.5" y2="561.5" stroke="#757575" stroke-width="1.5"/>
+<line x1="70.0" x2="1480" y1="606.2" y2="606.2" stroke="#757575" stroke-dasharray="5,3"/>
+<rect x="76" y="488.0" width="9" height="9" fill="#757575" opacity="0.5"/><text x="89" y="496.0" fill="#757575" font-size="10" font-weight="bold">legacy reversal swing (diagnostic) [23,437.60, 23,465.15]</text>
+<line x1="70" x2="1480" y1="561.5" y2="561.5" stroke="#b71c1c" stroke-dasharray="3,3"/><text x="1476" y="558.5" text-anchor="end" fill="#b71c1c" font-size="10">previous-day high 23,465.15</text>
+<line x1="70" x2="1480" y1="532.0" y2="532.0" stroke="#455a64" stroke-dasharray="1,3"/><text x="1476" y="543.0" text-anchor="end" fill="#455a64" font-size="10">session open 23,483.35</text>
+<g opacity="1.0"><line x1="79.4" x2="79.4" y1="482.9" y2="591.2" stroke="#c62828"/><rect x="73.0" y="532.0" width="12.8" height="44.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="98.2" x2="98.2" y1="556.3" y2="601.9" stroke="#c62828"/><rect x="91.8" y="576.2" width="12.8" height="7.9" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="117.0" x2="117.0" y1="561.0" y2="598.6" stroke="#2e7d32"/><rect x="110.6" y="569.8" width="12.8" height="14.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="135.8" x2="135.8" y1="536.5" y2="581.8" stroke="#c62828"/><rect x="129.4" y="546.7" width="12.8" height="21.4" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="154.6" x2="154.6" y1="526.1" y2="592.6" stroke="#2e7d32"/><rect x="148.2" y="563.8" width="12.8" height="4.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="173.4" x2="173.4" y1="536.5" y2="590.5" stroke="#2e7d32"/><rect x="167.0" y="543.4" width="12.8" height="23.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="192.2" x2="192.2" y1="540.7" y2="592.7" stroke="#c62828"/><rect x="185.8" y="543.8" width="12.8" height="48.9" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="211.0" x2="211.0" y1="559.1" y2="603.5" stroke="#2e7d32"/><rect x="204.6" y="573.2" width="12.8" height="19.1" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="229.8" x2="229.8" y1="564.8" y2="597.2" stroke="#c62828"/><rect x="223.4" y="573.9" width="12.8" height="22.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="248.6" x2="248.6" y1="530.5" y2="627.8" stroke="#2e7d32"/><rect x="242.2" y="555.0" width="12.8" height="41.3" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="267.4" x2="267.4" y1="508.5" y2="607.9" stroke="#2e7d32"/><rect x="261.0" y="519.3" width="12.8" height="36.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="286.2" x2="286.2" y1="484.5" y2="557.6" stroke="#c62828"/><rect x="279.8" y="518.8" width="12.8" height="37.3" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="305.0" x2="305.0" y1="527.4" y2="581.3" stroke="#2e7d32"/><rect x="298.6" y="539.8" width="12.8" height="17.5" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="323.8" x2="323.8" y1="516.7" y2="560.6" stroke="#2e7d32"/><rect x="317.4" y="521.2" width="12.8" height="19.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="342.6" x2="342.6" y1="509.0" y2="567.6" stroke="#c62828"/><rect x="336.2" y="521.5" width="12.8" height="31.2" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="361.4" x2="361.4" y1="546.7" y2="616.7" stroke="#c62828"/><rect x="355.0" y="552.1" width="12.8" height="64.6" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="380.2" x2="380.2" y1="610.5" y2="730.2" stroke="#c62828"/><rect x="373.8" y="615.2" width="12.8" height="110.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="399.0" x2="399.0" y1="714.0" y2="760.8" stroke="#c62828"/><rect x="392.6" y="724.3" width="12.8" height="8.1" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="417.8" x2="417.8" y1="707.3" y2="777.3" stroke="#2e7d32"/><rect x="411.4" y="707.3" width="12.8" height="24.4" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="436.6" x2="436.6" y1="679.3" y2="710.3" stroke="#2e7d32"/><rect x="430.2" y="695.1" width="12.8" height="14.3" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="455.4" x2="455.4" y1="659.6" y2="701.7" stroke="#2e7d32"/><rect x="449.0" y="663.4" width="12.8" height="31.7" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="474.2" x2="474.2" y1="578.8" y2="661.3" stroke="#2e7d32"/><rect x="467.8" y="579.7" width="12.8" height="81.6" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="493.0" x2="493.0" y1="513.4" y2="587.2" stroke="#2e7d32"/><rect x="486.6" y="553.3" width="12.8" height="26.4" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="511.8" x2="511.8" y1="539.4" y2="595.9" stroke="#c62828"/><rect x="505.4" y="552.7" width="12.8" height="43.1" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="530.6" x2="530.6" y1="582.5" y2="636.4" stroke="#c62828"/><rect x="524.2" y="595.4" width="12.8" height="25.4" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="549.4" x2="549.4" y1="615.5" y2="678.3" stroke="#c62828"/><rect x="543.0" y="619.9" width="12.8" height="27.6" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="568.2" x2="568.2" y1="633.8" y2="660.6" stroke="#2e7d32"/><rect x="561.8" y="637.4" width="12.8" height="11.7" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="587.0" x2="587.0" y1="607.4" y2="640.8" stroke="#2e7d32"/><rect x="580.6" y="630.0" width="12.8" height="7.5" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="605.8" x2="605.8" y1="624.2" y2="661.7" stroke="#c62828"/><rect x="599.4" y="629.9" width="12.8" height="15.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="624.6" x2="624.6" y1="597.5" y2="649.9" stroke="#2e7d32"/><rect x="618.2" y="630.0" width="12.8" height="13.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="643.4" x2="643.4" y1="600.7" y2="632.1" stroke="#2e7d32"/><rect x="637.0" y="613.3" width="12.8" height="16.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="662.2" x2="662.2" y1="610.4" y2="645.4" stroke="#c62828"/><rect x="655.8" y="612.6" width="12.8" height="32.3" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="681.0" x2="681.0" y1="639.2" y2="672.1" stroke="#c62828"/><rect x="674.6" y="644.8" width="12.8" height="26.3" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="699.8" x2="699.8" y1="617.9" y2="671.9" stroke="#2e7d32"/><rect x="693.4" y="619.6" width="12.8" height="50.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="718.6" x2="718.6" y1="605.2" y2="627.0" stroke="#c62828"/><rect x="712.2" y="619.1" width="12.8" height="6.1" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="737.4" x2="737.4" y1="599.9" y2="650.9" stroke="#2e7d32"/><rect x="731.0" y="602.8" width="12.8" height="21.4" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="756.2" x2="756.2" y1="589.1" y2="616.0" stroke="#c62828"/><rect x="749.8" y="603.1" width="12.8" height="5.7" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="775.0" x2="775.0" y1="587.6" y2="612.2" stroke="#2e7d32"/><rect x="768.6" y="594.6" width="12.8" height="14.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="793.8" x2="793.8" y1="577.5" y2="607.9" stroke="#c62828"/><rect x="787.4" y="594.0" width="12.8" height="13.1" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="812.6" x2="812.6" y1="602.8" y2="658.4" stroke="#c62828"/><rect x="806.2" y="607.4" width="12.8" height="38.3" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="831.4" x2="831.4" y1="635.2" y2="697.6" stroke="#c62828"/><rect x="825.0" y="645.6" width="12.8" height="20.4" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="850.2" x2="850.2" y1="661.9" y2="720.1" stroke="#c62828"/><rect x="843.8" y="665.7" width="12.8" height="42.6" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="869.0" x2="869.0" y1="686.2" y2="716.8" stroke="#c62828"/><rect x="862.6" y="707.8" width="12.8" height="2.1" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="887.8" x2="887.8" y1="702.5" y2="746.2" stroke="#c62828"/><rect x="881.4" y="710.0" width="12.8" height="12.1" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="906.6" x2="906.6" y1="711.7" y2="728.5" stroke="#2e7d32"/><rect x="900.2" y="719.5" width="12.8" height="3.1" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="925.4" x2="925.4" y1="708.8" y2="734.4" stroke="#2e7d32"/><rect x="919.0" y="709.2" width="12.8" height="10.5" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="944.2" x2="944.2" y1="705.7" y2="758.6" stroke="#c62828"/><rect x="937.8" y="709.3" width="12.8" height="43.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="963.0" x2="963.0" y1="742.9" y2="774.5" stroke="#c62828"/><rect x="956.6" y="750.8" width="12.8" height="17.7" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="981.8" x2="981.8" y1="730.7" y2="779.1" stroke="#2e7d32"/><rect x="975.4" y="739.9" width="12.8" height="27.8" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1000.6" x2="1000.6" y1="736.9" y2="804.0" stroke="#c62828"/><rect x="994.2" y="739.3" width="12.8" height="48.2" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1019.4" x2="1019.4" y1="756.6" y2="812.1" stroke="#c62828"/><rect x="1013.0" y="787.8" width="12.8" height="24.2" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1038.2" x2="1038.2" y1="782.9" y2="841.7" stroke="#c62828"/><rect x="1031.8" y="812.2" width="12.8" height="1.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1057.0" x2="1057.0" y1="793.9" y2="821.5" stroke="#2e7d32"/><rect x="1050.6" y="799.3" width="12.8" height="12.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1075.8" x2="1075.8" y1="794.7" y2="857.1" stroke="#c62828"/><rect x="1069.4" y="799.2" width="12.8" height="29.9" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1094.6" x2="1094.6" y1="794.6" y2="834.5" stroke="#2e7d32"/><rect x="1088.2" y="801.7" width="12.8" height="26.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1113.4" x2="1113.4" y1="792.8" y2="818.2" stroke="#c62828"/><rect x="1107.0" y="800.8" width="12.8" height="8.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1132.2" x2="1132.2" y1="779.2" y2="816.0" stroke="#2e7d32"/><rect x="1125.8" y="779.2" width="12.8" height="31.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1151.0" x2="1151.0" y1="765.2" y2="796.2" stroke="#c62828"/><rect x="1144.6" y="780.2" width="12.8" height="3.1" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1169.8" x2="1169.8" y1="761.2" y2="785.7" stroke="#2e7d32"/><rect x="1163.4" y="779.9" width="12.8" height="1.7" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1188.6" x2="1188.6" y1="774.1" y2="807.4" stroke="#c62828"/><rect x="1182.2" y="775.4" width="12.8" height="21.2" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1207.4" x2="1207.4" y1="794.3" y2="824.2" stroke="#c62828"/><rect x="1201.0" y="795.4" width="12.8" height="15.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1226.2" x2="1226.2" y1="785.2" y2="827.6" stroke="#2e7d32"/><rect x="1219.8" y="790.0" width="12.8" height="20.7" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1245.0" x2="1245.0" y1="741.6" y2="790.7" stroke="#2e7d32"/><rect x="1238.6" y="745.6" width="12.8" height="43.5" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1263.8" x2="1263.8" y1="722.8" y2="759.3" stroke="#c62828"/><rect x="1257.4" y="745.3" width="12.8" height="9.7" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1282.6" x2="1282.6" y1="747.9" y2="798.9" stroke="#c62828"/><rect x="1276.2" y="756.8" width="12.8" height="15.2" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1301.4" x2="1301.4" y1="658.9" y2="776.4" stroke="#2e7d32"/><rect x="1295.0" y="669.1" width="12.8" height="104.3" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1320.2" x2="1320.2" y1="637.5" y2="724.4" stroke="#c62828"/><rect x="1313.8" y="670.3" width="12.8" height="40.4" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1339.0" x2="1339.0" y1="685.3" y2="712.0" stroke="#2e7d32"/><rect x="1332.6" y="694.0" width="12.8" height="16.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1357.8" x2="1357.8" y1="687.8" y2="742.8" stroke="#c62828"/><rect x="1351.4" y="696.1" width="12.8" height="32.9" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1376.6" x2="1376.6" y1="717.5" y2="785.6" stroke="#c62828"/><rect x="1370.2" y="726.8" width="12.8" height="4.4" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1395.4" x2="1395.4" y1="718.3" y2="742.8" stroke="#2e7d32"/><rect x="1389.0" y="728.0" width="12.8" height="3.1" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1414.2" x2="1414.2" y1="716.0" y2="738.8" stroke="#2e7d32"/><rect x="1407.8" y="721.5" width="12.8" height="5.1" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1433.0" x2="1433.0" y1="689.0" y2="722.7" stroke="#2e7d32"/><rect x="1426.6" y="711.3" width="12.8" height="11.3" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1451.8" x2="1451.8" y1="703.0" y2="730.3" stroke="#c62828"/><rect x="1445.4" y="710.9" width="12.8" height="3.2" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1470.6" x2="1470.6" y1="700.8" y2="725.4" stroke="#c62828"/><rect x="1464.2" y="715.4" width="12.8" height="2.2" fill="#c62828"/></g>
+<text x="211.0" y="553.1" text-anchor="middle" font-weight="bold" fill="#1b5e20">CONFIRM?</text>
+<polygon points="220.4,573.9 213.4,587.9 227.4,587.9" fill="#000"/><text x="230.4" y="597.9" font-weight="bold">ENTRY 23,457.50</text>
+<line x1="117.0" x2="117.0" y1="470" y2="870" stroke="#d500f9" stroke-dasharray="2,3"/><text x="120.0" y="482" fill="#d500f9" font-size="10">JOURNAL PDR 09:25 BE (row 147)</text>
+<text x="20" y="905" font-size="12" fill="#222">OLD executed trade 20260605-2-PDR (Phase 3.0): entry 23,457.50 at 09:55. Old confirmation candle 09:50 O 23,446.10 H 23,466.60 L 23,439.25 C 23,457.90.</text>
+<text x="20" y="921" font-size="12" fill="#222">Candidate A: REMOVED_BY_PATTERN_RULE;REMOVED_BY_CLOSE_RULE - none of good-green-body / lower-price-rejection / hammer passes; the close 23,457.90 is 7.25 points below the new ceiling 23,465.15</text>
+<text x="20" y="937" font-size="12" fill="#222">(strictly above is required)</text>
+<text x="20" y="953" font-size="12" fill="#222">Candidate B: REMOVED_BY_PATTERN_RULE;REMOVED_BY_CLOSE_RULE - none of good-green-body / lower-price-rejection / hammer passes; the close 23,457.90 is 7.25 points below the new ceiling 23,465.15</text>
+<text x="20" y="969" font-size="12" fill="#222">(strictly above is required)</text>
+<text x="20" y="985" font-size="12" fill="#222">The shared portfolio controller was NOT re-run: this is a signal-level comparison, not a removed trade.</text>
+<text x="20" y="1025" font-size="11" fill="#666">Real 5-minute candles (IST, start-labelled). Zones are research candidates (PROPOSED_FOR_REVIEW in their numeric details); charts support verification, the CSV files are authoritative.</text>
+</svg>

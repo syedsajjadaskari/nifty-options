@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1010" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<style>text{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}</style>
+<rect width="1500" height="1010" fill="#fafafa"/>
+<text x="20" y="24" font-size="16" font-weight="bold">20251217-2-PDR  PDR LONG  2025-12-17  -  confirmation close 25,865.55 is 17.65 points BELOW the zone floor 25,883.20  [SOURCE_AMBIGUOUS]</text>
+<text x="20" y="42" fill="#555">real 5-minute candles rebuilt from the raw 1-minute data; zone = B_SWING_HIGH_REVERSAL (body top .. wick high of the 14:55 candle of 2025-12-16); fill 25,865.25 at 09:55 (open of the next 1-minute bar); candles after the entry are POST_ENTRY context only</text>
+<rect x="70" y="80" width="560" height="330" fill="#fff" stroke="#bbb"/>
+<text x="70" y="72" font-size="13" font-weight="bold">1. Previous session 2025-12-16: zone source candle, previous-day high</text>
+<line x1="70" x2="630" y1="410.0" y2="410.0" stroke="#eee"/><text x="66" y="414.0" text-anchor="end" fill="#555" font-size="10">25,825.7</text>
+<line x1="70" x2="630" y1="344.0" y2="344.0" stroke="#eee"/><text x="66" y="348.0" text-anchor="end" fill="#555" font-size="10">25,856.4</text>
+<line x1="70" x2="630" y1="278.0" y2="278.0" stroke="#eee"/><text x="66" y="282.0" text-anchor="end" fill="#555" font-size="10">25,887.1</text>
+<line x1="70" x2="630" y1="212.0" y2="212.0" stroke="#eee"/><text x="66" y="216.0" text-anchor="end" fill="#555" font-size="10">25,917.8</text>
+<line x1="70" x2="630" y1="146.0" y2="146.0" stroke="#eee"/><text x="66" y="150.0" text-anchor="end" fill="#555" font-size="10">25,948.4</text>
+<line x1="70" x2="630" y1="80.0" y2="80.0" stroke="#eee"/><text x="66" y="84.0" text-anchor="end" fill="#555" font-size="10">25,979.1</text>
+<rect x="577.7" y="245.8" width="52.3" height="40.6" fill="#1565c0" opacity="0.16"/>
+<line x1="577.7" x2="630" y1="245.8" y2="245.8" stroke="#1565c0" stroke-width="1.2"/>
+<line x1="577.7" x2="630" y1="286.4" y2="286.4" stroke="#0d47a1" stroke-width="1.6" stroke-dasharray="6,3"/>
+<text x="76" y="242.8" text-anchor="start" fill="#1565c0" font-size="10">zone ceiling 25,902.05</text>
+<text x="76" y="298.4" text-anchor="start" fill="#0d47a1" font-size="10" font-weight="bold">zone FLOOR 25,883.20</text>
+<line x1="70" x2="630" y1="99.6" y2="99.6" stroke="#b71c1c" stroke-dasharray="3,3"/><text x="74" y="96.6" fill="#b71c1c" font-size="10">previous-day high 25,970.00 (09:15)</text>
+<g opacity="1.0"><line x1="73.7" x2="73.7" y1="99.6" y2="200.3" stroke="#c62828"/><rect x="71.2" y="139.4" width="5.1" height="17.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="81.2" x2="81.2" y1="147.7" y2="188.8" stroke="#c62828"/><rect x="78.7" y="167.7" width="5.1" height="15.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="88.7" x2="88.7" y1="174.5" y2="207.0" stroke="#c62828"/><rect x="86.1" y="183.8" width="5.1" height="16.7" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="96.1" x2="96.1" y1="196.4" y2="232.8" stroke="#c62828"/><rect x="93.6" y="201.3" width="5.1" height="13.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="103.6" x2="103.6" y1="213.2" y2="245.3" stroke="#2e7d32"/><rect x="101.1" y="213.6" width="5.1" height="2.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="111.1" x2="111.1" y1="183.9" y2="224.3" stroke="#2e7d32"/><rect x="108.5" y="192.9" width="5.1" height="22.7" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="118.5" x2="118.5" y1="157.8" y2="207.0" stroke="#2e7d32"/><rect x="116.0" y="171.9" width="5.1" height="22.4" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="126.0" x2="126.0" y1="156.1" y2="185.0" stroke="#2e7d32"/><rect x="123.5" y="159.8" width="5.1" height="12.2" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="133.5" x2="133.5" y1="158.0" y2="244.6" stroke="#c62828"/><rect x="130.9" y="161.5" width="5.1" height="75.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="140.9" x2="140.9" y1="237.1" y2="294.2" stroke="#c62828"/><rect x="138.4" y="237.2" width="5.1" height="32.2" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="148.4" x2="148.4" y1="250.1" y2="278.0" stroke="#c62828"/><rect x="145.9" y="269.5" width="5.1" height="1.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="155.9" x2="155.9" y1="263.3" y2="288.6" stroke="#2e7d32"/><rect x="153.3" y="265.6" width="5.1" height="4.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="163.3" x2="163.3" y1="218.6" y2="275.7" stroke="#2e7d32"/><rect x="160.8" y="223.4" width="5.1" height="43.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="170.8" x2="170.8" y1="211.7" y2="235.7" stroke="#c62828"/><rect x="168.3" y="222.8" width="5.1" height="1.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="178.3" x2="178.3" y1="201.4" y2="235.7" stroke="#c62828"/><rect x="175.7" y="223.2" width="5.1" height="4.5" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="185.7" x2="185.7" y1="208.6" y2="232.4" stroke="#2e7d32"/><rect x="183.2" y="221.7" width="5.1" height="7.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="193.2" x2="193.2" y1="217.0" y2="251.0" stroke="#c62828"/><rect x="190.7" y="221.0" width="5.1" height="18.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="200.7" x2="200.7" y1="233.0" y2="254.2" stroke="#2e7d32"/><rect x="198.1" y="238.8" width="5.1" height="1.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="208.1" x2="208.1" y1="233.6" y2="253.0" stroke="#c62828"/><rect x="205.6" y="239.8" width="5.1" height="6.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="215.6" x2="215.6" y1="236.4" y2="255.8" stroke="#2e7d32"/><rect x="213.1" y="239.4" width="5.1" height="6.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="223.1" x2="223.1" y1="225.5" y2="269.9" stroke="#c62828"/><rect x="220.5" y="240.1" width="5.1" height="9.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="230.5" x2="230.5" y1="242.9" y2="268.9" stroke="#2e7d32"/><rect x="228.0" y="250.0" width="5.1" height="1.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="238.0" x2="238.0" y1="227.9" y2="257.5" stroke="#2e7d32"/><rect x="235.5" y="242.1" width="5.1" height="11.4" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="245.5" x2="245.5" y1="236.7" y2="263.7" stroke="#c62828"/><rect x="242.9" y="243.7" width="5.1" height="9.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="252.9" x2="252.9" y1="241.7" y2="266.1" stroke="#2e7d32"/><rect x="250.4" y="244.9" width="5.1" height="9.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="260.4" x2="260.4" y1="226.1" y2="256.8" stroke="#c62828"/><rect x="257.9" y="243.7" width="5.1" height="10.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="267.9" x2="267.9" y1="234.9" y2="264.5" stroke="#2e7d32"/><rect x="265.3" y="238.5" width="5.1" height="14.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="275.3" x2="275.3" y1="233.8" y2="275.7" stroke="#c62828"/><rect x="272.8" y="238.0" width="5.1" height="33.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="282.8" x2="282.8" y1="271.5" y2="298.3" stroke="#c62828"/><rect x="280.3" y="272.3" width="5.1" height="9.5" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="290.3" x2="290.3" y1="280.0" y2="309.0" stroke="#c62828"/><rect x="287.7" y="282.6" width="5.1" height="21.2" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="297.7" x2="297.7" y1="290.9" y2="311.9" stroke="#2e7d32"/><rect x="295.2" y="297.0" width="5.1" height="5.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="305.2" x2="305.2" y1="269.6" y2="300.9" stroke="#2e7d32"/><rect x="302.7" y="270.0" width="5.1" height="26.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="312.7" x2="312.7" y1="271.3" y2="308.3" stroke="#c62828"/><rect x="310.1" y="271.3" width="5.1" height="30.4" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="320.1" x2="320.1" y1="296.6" y2="313.7" stroke="#c62828"/><rect x="317.6" y="301.2" width="5.1" height="1.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="327.6" x2="327.6" y1="280.3" y2="303.3" stroke="#2e7d32"/><rect x="325.1" y="285.8" width="5.1" height="15.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="335.1" x2="335.1" y1="270.3" y2="297.0" stroke="#2e7d32"/><rect x="332.5" y="277.1" width="5.1" height="8.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="342.5" x2="342.5" y1="263.3" y2="288.5" stroke="#2e7d32"/><rect x="340.0" y="264.2" width="5.1" height="13.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="350.0" x2="350.0" y1="256.2" y2="274.3" stroke="#2e7d32"/><rect x="347.5" y="264.3" width="5.1" height="1.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="357.5" x2="357.5" y1="231.9" y2="269.3" stroke="#2e7d32"/><rect x="354.9" y="237.0" width="5.1" height="27.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="364.9" x2="364.9" y1="219.1" y2="260.7" stroke="#2e7d32"/><rect x="362.4" y="237.1" width="5.1" height="1.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="372.4" x2="372.4" y1="234.0" y2="286.5" stroke="#c62828"/><rect x="369.9" y="237.5" width="5.1" height="34.5" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="379.9" x2="379.9" y1="256.1" y2="292.7" stroke="#2e7d32"/><rect x="377.3" y="263.9" width="5.1" height="8.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="387.3" x2="387.3" y1="262.4" y2="301.5" stroke="#c62828"/><rect x="384.8" y="262.4" width="5.1" height="32.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="394.8" x2="394.8" y1="248.4" y2="298.2" stroke="#2e7d32"/><rect x="392.3" y="286.6" width="5.1" height="7.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="402.3" x2="402.3" y1="248.1" y2="300.2" stroke="#2e7d32"/><rect x="399.7" y="252.9" width="5.1" height="33.2" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="409.7" x2="409.7" y1="251.9" y2="283.8" stroke="#c62828"/><rect x="407.2" y="252.6" width="5.1" height="29.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="417.2" x2="417.2" y1="279.9" y2="302.2" stroke="#c62828"/><rect x="414.7" y="282.8" width="5.1" height="3.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="424.7" x2="424.7" y1="264.7" y2="290.7" stroke="#2e7d32"/><rect x="422.1" y="278.5" width="5.1" height="8.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="432.1" x2="432.1" y1="257.3" y2="301.2" stroke="#c62828"/><rect x="429.6" y="276.8" width="5.1" height="8.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="439.6" x2="439.6" y1="274.0" y2="285.9" stroke="#2e7d32"/><rect x="437.1" y="277.7" width="5.1" height="6.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="447.1" x2="447.1" y1="272.3" y2="287.7" stroke="#c62828"/><rect x="444.5" y="277.3" width="5.1" height="4.5" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="454.5" x2="454.5" y1="256.5" y2="283.1" stroke="#2e7d32"/><rect x="452.0" y="259.1" width="5.1" height="22.1" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="462.0" x2="462.0" y1="229.8" y2="262.3" stroke="#2e7d32"/><rect x="459.5" y="232.9" width="5.1" height="25.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="469.5" x2="469.5" y1="215.3" y2="250.6" stroke="#c62828"/><rect x="466.9" y="232.4" width="5.1" height="6.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="476.9" x2="476.9" y1="187.5" y2="243.2" stroke="#2e7d32"/><rect x="474.4" y="199.2" width="5.1" height="40.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="484.4" x2="484.4" y1="189.1" y2="216.5" stroke="#c62828"/><rect x="481.9" y="200.6" width="5.1" height="8.7" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="491.9" x2="491.9" y1="207.4" y2="262.2" stroke="#c62828"/><rect x="489.3" y="210.5" width="5.1" height="45.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="499.3" x2="499.3" y1="251.5" y2="271.7" stroke="#c62828"/><rect x="496.8" y="256.2" width="5.1" height="1.4" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="506.8" x2="506.8" y1="229.2" y2="293.7" stroke="#c62828"/><rect x="504.3" y="258.9" width="5.1" height="19.4" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="514.3" x2="514.3" y1="274.0" y2="302.1" stroke="#c62828"/><rect x="511.7" y="277.4" width="5.1" height="8.8" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="521.7" x2="521.7" y1="283.5" y2="337.1" stroke="#c62828"/><rect x="519.2" y="285.1" width="5.1" height="52.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="529.2" x2="529.2" y1="311.6" y2="360.6" stroke="#2e7d32"/><rect x="526.7" y="314.0" width="5.1" height="21.4" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="536.7" x2="536.7" y1="306.5" y2="355.3" stroke="#c62828"/><rect x="534.1" y="311.9" width="5.1" height="5.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="544.1" x2="544.1" y1="314.0" y2="360.9" stroke="#c62828"/><rect x="541.6" y="317.0" width="5.1" height="39.4" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="551.6" x2="551.6" y1="329.5" y2="360.9" stroke="#2e7d32"/><rect x="549.1" y="333.0" width="5.1" height="25.4" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="559.1" x2="559.1" y1="310.0" y2="336.0" stroke="#2e7d32"/><rect x="556.5" y="323.6" width="5.1" height="8.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="566.5" x2="566.5" y1="294.9" y2="338.4" stroke="#2e7d32"/><rect x="564.0" y="315.5" width="5.1" height="6.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="574.0" x2="574.0" y1="268.1" y2="321.1" stroke="#2e7d32"/><rect x="571.5" y="294.7" width="5.1" height="20.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="581.5" x2="581.5" y1="245.8" y2="298.0" stroke="#2e7d32"/><rect x="578.9" y="286.4" width="5.1" height="9.6" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="588.9" x2="588.9" y1="257.0" y2="306.7" stroke="#c62828"/><rect x="586.4" y="285.0" width="5.1" height="18.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="596.4" x2="596.4" y1="285.2" y2="331.7" stroke="#c62828"/><rect x="593.9" y="305.4" width="5.1" height="19.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="603.9" x2="603.9" y1="291.5" y2="346.3" stroke="#c62828"/><rect x="601.3" y="326.5" width="5.1" height="6.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="611.3" x2="611.3" y1="329.8" y2="368.2" stroke="#c62828"/><rect x="608.8" y="336.3" width="5.1" height="28.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="618.8" x2="618.8" y1="348.4" y2="390.4" stroke="#2e7d32"/><rect x="616.3" y="354.0" width="5.1" height="8.9" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="626.3" x2="626.3" y1="340.9" y2="378.0" stroke="#c62828"/><rect x="623.7" y="353.5" width="5.1" height="1.4" fill="#c62828"/></g>
+<rect x="577.0" y="242.8" width="9.0" height="58.2" fill="none" stroke="#f9a825" stroke-width="2"/>
+<text x="573.5" y="322.0" text-anchor="end" font-weight="bold" fill="#e65100">ZONE SOURCE 14:55</text>
+<rect x="69.3" y="96.6" width="9.0" height="106.7" fill="none" stroke="#b71c1c" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="73.7" y="91.6" text-anchor="middle" fill="#b71c1c" font-weight="bold">DAY HIGH 09:15</text>
+<text x="76" y="426" fill="#444">zone source is NOT the previous-day-high candle (zone ceiling 67.95 points below the day high)</text>
+<rect x="700" y="80" width="780" height="330" fill="#fff" stroke="#bbb"/>
+<text x="700" y="72" font-size="13" font-weight="bold">2. ZOOM: retest and confirmation (shaded = POST_ENTRY, context only)</text>
+<line x1="700" x2="1480" y1="410.0" y2="410.0" stroke="#eee"/><text x="696" y="414.0" text-anchor="end" fill="#555" font-size="10">25,813.5</text>
+<line x1="700" x2="1480" y1="344.0" y2="344.0" stroke="#eee"/><text x="696" y="348.0" text-anchor="end" fill="#555" font-size="10">25,838.6</text>
+<line x1="700" x2="1480" y1="278.0" y2="278.0" stroke="#eee"/><text x="696" y="282.0" text-anchor="end" fill="#555" font-size="10">25,863.7</text>
+<line x1="700" x2="1480" y1="212.0" y2="212.0" stroke="#eee"/><text x="696" y="216.0" text-anchor="end" fill="#555" font-size="10">25,888.9</text>
+<line x1="700" x2="1480" y1="146.0" y2="146.0" stroke="#eee"/><text x="696" y="150.0" text-anchor="end" fill="#555" font-size="10">25,914.0</text>
+<line x1="700" x2="1480" y1="80.0" y2="80.0" stroke="#eee"/><text x="696" y="84.0" text-anchor="end" fill="#555" font-size="10">25,939.1</text>
+<rect x="700.0" y="177.3" width="780.0" height="49.5" fill="#1565c0" opacity="0.16"/>
+<line x1="700.0" x2="1480" y1="177.3" y2="177.3" stroke="#1565c0" stroke-width="1.2"/>
+<line x1="700.0" x2="1480" y1="226.9" y2="226.9" stroke="#0d47a1" stroke-width="1.6" stroke-dasharray="6,3"/>
+<text x="706" y="174.3" text-anchor="start" fill="#1565c0" font-size="10">zone ceiling 25,902.05</text>
+<text x="706" y="238.9" text-anchor="start" fill="#0d47a1" font-size="10" font-weight="bold">zone FLOOR 25,883.20</text>
+<g opacity="1.0"><line x1="739.0" x2="739.0" y1="123.8" y2="267.3" stroke="#2e7d32"/><rect x="712.5" y="130.9" width="53.0" height="123.8" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="817.0" x2="817.0" y1="119.6" y2="174.0" stroke="#c62828"/><rect x="790.5" y="125.1" width="53.0" height="48.4" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="895.0" x2="895.0" y1="122.0" y2="196.4" stroke="#2e7d32"/><rect x="868.5" y="126.2" width="53.0" height="46.3" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="973.0" x2="973.0" y1="107.4" y2="151.6" stroke="#c62828"/><rect x="946.5" y="125.0" width="53.0" height="20.0" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="1051.0" x2="1051.0" y1="136.0" y2="240.3" stroke="#c62828"/><rect x="1024.5" y="144.1" width="53.0" height="89.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="1129.0" x2="1129.0" y1="209.0" y2="286.3" stroke="#c62828"/><rect x="1102.5" y="234.7" width="53.0" height="45.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="1207.0" x2="1207.0" y1="272.9" y2="309.4" stroke="#2e7d32"/><rect x="1180.5" y="273.3" width="53.0" height="7.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1285.0" x2="1285.0" y1="239.3" y2="288.8" stroke="#2e7d32"/><rect x="1258.5" y="266.2" width="53.0" height="7.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1363.0" x2="1363.0" y1="258.8" y2="327.5" stroke="#c62828"/><rect x="1336.5" y="265.9" width="53.0" height="58.5" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1441.0" x2="1441.0" y1="324.1" y2="382.6" stroke="#c62828"/><rect x="1414.5" y="325.6" width="53.0" height="20.8" fill="#c62828"/></g>
+<text x="895.0" y="210.4" text-anchor="middle" font-weight="bold" fill="#6a1b9a">TEST 09:30</text>
+<text x="1207.0" y="266.9" text-anchor="middle" font-weight="bold" fill="#1b5e20">CONFIRM (green) 09:50</text>
+<line x1="1246.0" x2="1246.0" y1="226.9" y2="273.3" stroke="#d50000" stroke-width="2.5"/>
+<text x="1240.0" y="250.1" text-anchor="end" fill="#d50000" font-weight="bold">close 25,865.55: 17.65 pts below floor</text>
+<polygon points="1246.0,274.0 1255.0,268.0 1255.0,280.0" fill="#000"/><text x="1258.0" y="278.0" font-weight="bold">LONG entry 25,865.25 @ 09:55</text>
+<text x="706" y="404" fill="#444">retest low 25,851.80 = 31.40 pts below the floor; test candle closed at/above the floor</text>
+<rect x="70" y="470" width="1410" height="400" fill="#fff" stroke="#bbb"/>
+<text x="70" y="462" font-size="13" font-weight="bold">3. Session 2025-12-17: gap-up open 25,902.40 (+42.30 vs official close 25,860.10); zone extended forward; entry; journal</text>
+<line x1="70" x2="1480" y1="870.0" y2="870.0" stroke="#eee"/><text x="66" y="874.0" text-anchor="end" fill="#555" font-size="10">25,763.8</text>
+<line x1="70" x2="1480" y1="803.3" y2="803.3" stroke="#eee"/><text x="66" y="807.3" text-anchor="end" fill="#555" font-size="10">25,799.3</text>
+<line x1="70" x2="1480" y1="736.7" y2="736.7" stroke="#eee"/><text x="66" y="740.7" text-anchor="end" fill="#555" font-size="10">25,834.9</text>
+<line x1="70" x2="1480" y1="670.0" y2="670.0" stroke="#eee"/><text x="66" y="674.0" text-anchor="end" fill="#555" font-size="10">25,870.4</text>
+<line x1="70" x2="1480" y1="603.3" y2="603.3" stroke="#eee"/><text x="66" y="607.3" text-anchor="end" fill="#555" font-size="10">25,905.9</text>
+<line x1="70" x2="1480" y1="536.7" y2="536.7" stroke="#eee"/><text x="66" y="540.7" text-anchor="end" fill="#555" font-size="10">25,941.5</text>
+<line x1="70" x2="1480" y1="470.0" y2="470.0" stroke="#eee"/><text x="66" y="474.0" text-anchor="end" fill="#555" font-size="10">25,977.0</text>
+<rect x="70.0" y="610.6" width="1410.0" height="35.4" fill="#1565c0" opacity="0.16"/>
+<line x1="70.0" x2="1480" y1="610.6" y2="610.6" stroke="#1565c0" stroke-width="1.2"/>
+<line x1="70.0" x2="1480" y1="646.0" y2="646.0" stroke="#0d47a1" stroke-width="1.6" stroke-dasharray="6,3"/>
+<text x="1476" y="607.6" text-anchor="end" fill="#1565c0" font-size="10">zone ceiling 25,902.05</text>
+<text x="1476" y="658.0" text-anchor="end" fill="#0d47a1" font-size="10" font-weight="bold">zone FLOOR 25,883.20</text>
+<line x1="70" x2="1480" y1="483.1" y2="483.1" stroke="#b71c1c" stroke-dasharray="3,3"/><text x="1476" y="480.1" text-anchor="end" fill="#b71c1c" font-size="10">previous-day high 25,970.00</text>
+<g opacity="1.0"><line x1="79.4" x2="79.4" y1="609.9" y2="694.8" stroke="#c62828"/><rect x="73.0" y="609.9" width="12.8" height="55.1" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="98.2" x2="98.2" y1="572.4" y2="674.9" stroke="#2e7d32"/><rect x="91.8" y="577.5" width="12.8" height="88.4" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="117.0" x2="117.0" y1="569.4" y2="608.3" stroke="#c62828"/><rect x="110.6" y="573.4" width="12.8" height="34.5" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="135.8" x2="135.8" y1="571.1" y2="624.2" stroke="#2e7d32"/><rect x="129.4" y="574.1" width="12.8" height="33.0" fill="#2e7d32"/></g>
+<g opacity="1.0"><line x1="154.6" x2="154.6" y1="560.7" y2="592.2" stroke="#c62828"/><rect x="148.2" y="573.3" width="12.8" height="14.3" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="173.4" x2="173.4" y1="581.1" y2="655.6" stroke="#c62828"/><rect x="167.0" y="586.9" width="12.8" height="63.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="192.2" x2="192.2" y1="633.2" y2="688.4" stroke="#c62828"/><rect x="185.8" y="651.6" width="12.8" height="32.6" fill="#c62828"/></g>
+<g opacity="1.0"><line x1="211.0" x2="211.0" y1="678.8" y2="704.9" stroke="#2e7d32"/><rect x="204.6" y="679.1" width="12.8" height="5.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="229.8" x2="229.8" y1="654.9" y2="690.2" stroke="#2e7d32"/><rect x="223.4" y="674.0" width="12.8" height="5.6" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="248.6" x2="248.6" y1="668.8" y2="717.9" stroke="#c62828"/><rect x="242.2" y="673.8" width="12.8" height="41.8" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="267.4" x2="267.4" y1="715.4" y2="757.2" stroke="#c62828"/><rect x="261.0" y="716.4" width="12.8" height="14.8" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="286.2" x2="286.2" y1="720.9" y2="747.1" stroke="#2e7d32"/><rect x="279.8" y="725.1" width="12.8" height="5.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="305.0" x2="305.0" y1="705.0" y2="745.6" stroke="#2e7d32"/><rect x="298.6" y="710.6" width="12.8" height="16.1" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="323.8" x2="323.8" y1="709.7" y2="752.6" stroke="#c62828"/><rect x="317.4" y="711.6" width="12.8" height="41.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="342.6" x2="342.6" y1="744.3" y2="783.3" stroke="#c62828"/><rect x="336.2" y="752.6" width="12.8" height="23.9" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="361.4" x2="361.4" y1="746.0" y2="781.4" stroke="#2e7d32"/><rect x="355.0" y="759.9" width="12.8" height="18.7" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="380.2" x2="380.2" y1="761.0" y2="780.4" stroke="#c62828"/><rect x="373.8" y="761.1" width="12.8" height="13.1" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="399.0" x2="399.0" y1="755.2" y2="780.6" stroke="#2e7d32"/><rect x="392.6" y="766.4" width="12.8" height="6.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="417.8" x2="417.8" y1="736.6" y2="774.0" stroke="#2e7d32"/><rect x="411.4" y="749.3" width="12.8" height="16.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="436.6" x2="436.6" y1="743.5" y2="769.2" stroke="#c62828"/><rect x="430.2" y="747.2" width="12.8" height="20.6" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="455.4" x2="455.4" y1="761.4" y2="798.7" stroke="#2e7d32"/><rect x="449.0" y="765.5" width="12.8" height="2.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="474.2" x2="474.2" y1="745.3" y2="777.6" stroke="#2e7d32"/><rect x="467.8" y="760.4" width="12.8" height="4.3" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="493.0" x2="493.0" y1="733.2" y2="763.8" stroke="#2e7d32"/><rect x="486.6" y="743.1" width="12.8" height="17.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="511.8" x2="511.8" y1="720.3" y2="749.3" stroke="#2e7d32"/><rect x="505.4" y="721.9" width="12.8" height="21.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="530.6" x2="530.6" y1="706.9" y2="730.6" stroke="#c62828"/><rect x="524.2" y="723.2" width="12.8" height="4.5" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="549.4" x2="549.4" y1="726.1" y2="754.6" stroke="#c62828"/><rect x="543.0" y="727.6" width="12.8" height="20.5" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="568.2" x2="568.2" y1="744.1" y2="778.1" stroke="#c62828"/><rect x="561.8" y="749.1" width="12.8" height="25.7" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="587.0" x2="587.0" y1="759.4" y2="789.5" stroke="#c62828"/><rect x="580.6" y="773.7" width="12.8" height="2.9" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="605.8" x2="605.8" y1="760.6" y2="778.9" stroke="#2e7d32"/><rect x="599.4" y="762.2" width="12.8" height="12.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="624.6" x2="624.6" y1="737.6" y2="762.0" stroke="#2e7d32"/><rect x="618.2" y="749.7" width="12.8" height="12.4" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="643.4" x2="643.4" y1="714.2" y2="756.2" stroke="#2e7d32"/><rect x="637.0" y="718.3" width="12.8" height="30.7" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="662.2" x2="662.2" y1="705.8" y2="759.2" stroke="#c62828"/><rect x="655.8" y="716.6" width="12.8" height="29.7" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="681.0" x2="681.0" y1="739.4" y2="771.6" stroke="#c62828"/><rect x="674.6" y="747.1" width="12.8" height="22.3" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="699.8" x2="699.8" y1="768.1" y2="808.5" stroke="#c62828"/><rect x="693.4" y="770.1" width="12.8" height="36.3" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="718.6" x2="718.6" y1="786.2" y2="822.1" stroke="#c62828"/><rect x="712.2" y="806.6" width="12.8" height="12.2" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="737.4" x2="737.4" y1="786.1" y2="821.0" stroke="#2e7d32"/><rect x="731.0" y="808.9" width="12.8" height="9.8" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="756.2" x2="756.2" y1="784.9" y2="812.3" stroke="#2e7d32"/><rect x="749.8" y="785.1" width="12.8" height="24.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="775.0" x2="775.0" y1="785.7" y2="814.5" stroke="#c62828"/><rect x="768.6" y="786.5" width="12.8" height="23.3" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="793.8" x2="793.8" y1="801.1" y2="830.4" stroke="#c62828"/><rect x="787.4" y="812.2" width="12.8" height="16.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="812.6" x2="812.6" y1="809.9" y2="828.9" stroke="#2e7d32"/><rect x="806.2" y="813.9" width="12.8" height="15.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="831.4" x2="831.4" y1="810.2" y2="831.5" stroke="#c62828"/><rect x="825.0" y="813.2" width="12.8" height="13.2" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="850.2" x2="850.2" y1="811.2" y2="831.0" stroke="#2e7d32"/><rect x="843.8" y="813.5" width="12.8" height="12.1" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="869.0" x2="869.0" y1="797.5" y2="817.3" stroke="#2e7d32"/><rect x="862.6" y="805.4" width="12.8" height="5.5" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="887.8" x2="887.8" y1="778.0" y2="825.5" stroke="#c62828"/><rect x="881.4" y="804.1" width="12.8" height="21.4" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="906.6" x2="906.6" y1="822.3" y2="838.7" stroke="#c62828"/><rect x="900.2" y="824.9" width="12.8" height="8.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="925.4" x2="925.4" y1="811.2" y2="840.2" stroke="#2e7d32"/><rect x="919.0" y="813.7" width="12.8" height="20.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="944.2" x2="944.2" y1="797.4" y2="813.5" stroke="#c62828"/><rect x="937.8" y="811.7" width="12.8" height="1.8" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="963.0" x2="963.0" y1="804.5" y2="828.9" stroke="#c62828"/><rect x="956.6" y="813.5" width="12.8" height="4.8" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="981.8" x2="981.8" y1="793.1" y2="823.4" stroke="#2e7d32"/><rect x="975.4" y="794.9" width="12.8" height="23.3" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1000.6" x2="1000.6" y1="783.0" y2="802.8" stroke="#2e7d32"/><rect x="994.2" y="784.4" width="12.8" height="11.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1019.4" x2="1019.4" y1="753.0" y2="786.4" stroke="#2e7d32"/><rect x="1013.0" y="780.7" width="12.8" height="5.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1038.2" x2="1038.2" y1="773.0" y2="808.3" stroke="#c62828"/><rect x="1031.8" y="780.6" width="12.8" height="22.9" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1057.0" x2="1057.0" y1="800.8" y2="822.8" stroke="#c62828"/><rect x="1050.6" y="802.0" width="12.8" height="16.8" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1075.8" x2="1075.8" y1="811.2" y2="836.4" stroke="#c62828"/><rect x="1069.4" y="815.1" width="12.8" height="12.3" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1094.6" x2="1094.6" y1="808.5" y2="827.4" stroke="#2e7d32"/><rect x="1088.2" y="819.8" width="12.8" height="7.6" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1113.4" x2="1113.4" y1="812.2" y2="826.1" stroke="#2e7d32"/><rect x="1107.0" y="814.1" width="12.8" height="5.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1132.2" x2="1132.2" y1="806.8" y2="838.0" stroke="#2e7d32"/><rect x="1125.8" y="809.4" width="12.8" height="4.7" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1151.0" x2="1151.0" y1="805.1" y2="826.5" stroke="#c62828"/><rect x="1144.6" y="810.7" width="12.8" height="3.2" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1169.8" x2="1169.8" y1="804.6" y2="819.3" stroke="#c62828"/><rect x="1163.4" y="814.6" width="12.8" height="3.7" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1188.6" x2="1188.6" y1="801.6" y2="825.6" stroke="#2e7d32"/><rect x="1182.2" y="804.8" width="12.8" height="12.9" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1207.4" x2="1207.4" y1="749.9" y2="807.3" stroke="#2e7d32"/><rect x="1201.0" y="750.7" width="12.8" height="54.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1226.2" x2="1226.2" y1="740.8" y2="809.1" stroke="#c62828"/><rect x="1219.8" y="750.2" width="12.8" height="56.8" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1245.0" x2="1245.0" y1="802.4" y2="825.2" stroke="#c62828"/><rect x="1238.6" y="806.7" width="12.8" height="10.9" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1263.8" x2="1263.8" y1="779.9" y2="819.0" stroke="#2e7d32"/><rect x="1257.4" y="782.4" width="12.8" height="35.4" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1282.6" x2="1282.6" y1="765.2" y2="852.7" stroke="#c62828"/><rect x="1276.2" y="781.3" width="12.8" height="66.1" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1301.4" x2="1301.4" y1="812.7" y2="856.9" stroke="#2e7d32"/><rect x="1295.0" y="814.8" width="12.8" height="32.1" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1320.2" x2="1320.2" y1="776.4" y2="819.2" stroke="#2e7d32"/><rect x="1313.8" y="789.2" width="12.8" height="28.0" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1339.0" x2="1339.0" y1="757.6" y2="796.9" stroke="#2e7d32"/><rect x="1332.6" y="777.9" width="12.8" height="10.6" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1357.8" x2="1357.8" y1="772.9" y2="793.2" stroke="#2e7d32"/><rect x="1351.4" y="776.4" width="12.8" height="3.2" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1376.6" x2="1376.6" y1="742.9" y2="776.2" stroke="#2e7d32"/><rect x="1370.2" y="755.9" width="12.8" height="20.3" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1395.4" x2="1395.4" y1="750.2" y2="769.8" stroke="#c62828"/><rect x="1389.0" y="755.2" width="12.8" height="13.3" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1414.2" x2="1414.2" y1="764.6" y2="773.6" stroke="#c62828"/><rect x="1407.8" y="768.4" width="12.8" height="3.0" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1433.0" x2="1433.0" y1="769.9" y2="784.8" stroke="#c62828"/><rect x="1426.6" y="771.6" width="12.8" height="4.6" fill="#c62828"/></g>
+<g opacity="0.45"><line x1="1451.8" x2="1451.8" y1="751.6" y2="780.5" stroke="#2e7d32"/><rect x="1445.4" y="755.9" width="12.8" height="19.7" fill="#2e7d32"/></g>
+<g opacity="0.45"><line x1="1470.6" x2="1470.6" y1="735.0" y2="762.0" stroke="#c62828"/><rect x="1464.2" y="753.4" width="12.8" height="6.2" fill="#c62828"/></g>
+<text x="135.8" y="565.1" text-anchor="middle" font-weight="bold" fill="#6a1b9a">TEST</text>
+<text x="211.0" y="672.8" text-anchor="middle" font-weight="bold" fill="#1b5e20">CONFIRM</text>
+<polygon points="220.4,679.7 213.4,693.7 227.4,693.7" fill="#000"/><text x="230.4" y="703.7" font-weight="bold">ENTRY 25,865.25</text>
+<line x1="117.0" x2="117.0" y1="470" y2="870" stroke="#9e9e9e" stroke-dasharray="2,3"/><text x="120.0" y="482" fill="#9e9e9e" font-size="10">JOURNAL IRF 09:25 Target (row 58)</text>
+<text x="20" y="900" font-size="12" fill="#222">Classification SOURCE_AMBIGUOUS (MEDIUM confidence): all written conditions hold (gap-up, not at the open, zone interaction, green candle after it) but the guide never says whether the green</text>
+<text x="20" y="916" font-size="12" fill="#222">candle must close at/above the zone; no alternative source-plausible zone changes the result</text>
+<text x="20" y="932" font-size="12" fill="#222">Journal: EXTRA_AUTOMATED_TRADE; guide figures: Examples 2/3 in the wick (price dips below the floor on the test) - DIFFERS: their confirmation candles close above the ceiling, this one</text>
+<text x="20" y="948" font-size="12" fill="#222">closes below the floor</text>
+<text x="20" y="990" font-size="11" fill="#666">Candle OHLC in the zoom: confirmation O 25,862.90 H 25,865.70 L 25,851.80 C 25,865.55; interaction candle 09:30 L 25,894.80. Zone floor/ceiling are the body top / wick high of the source candle. Charts support verification; the CSVs are authoritative.</text>
+</svg>

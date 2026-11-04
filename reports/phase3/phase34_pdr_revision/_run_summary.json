@@ -1,0 +1,19 @@
+{
+  "legacy_stream_identical_to_phase32_export": true,
+  "old_signals": 383,
+  "old_first_signal_days": 61,
+  "old_executed_trades": 54,
+  "revised": {
+    "A": {
+      "signals": 81,
+      "days": 31,
+      "lenient_signals": 103
+    },
+    "B": {
+      "signals": 81,
+      "days": 31,
+      "lenient_signals": 103
+    }
+  },
+  "sessions": 247
+}

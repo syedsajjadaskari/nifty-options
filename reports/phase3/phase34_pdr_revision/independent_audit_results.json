@@ -1,0 +1,103 @@
+{
+  "checks": {
+    "candidate A: the signal stream rebuilt independently from raw data equals the engine's (default patterns)": {
+      "pass": true,
+      "n": 81,
+      "detail": "independent 81, engine 81, details 81; only-mine [], only-engine []",
+      "n_failures": 0,
+      "failures": []
+    },
+    "candidate A: zone floor/ceiling, close, patterns passed, interaction candle and close > ceiling equal the independent values": {
+      "pass": true,
+      "n": 81,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "candidate A: the EXAMPLE_LENIENT sensitivity counts equal the independent counts": {
+      "pass": true,
+      "n": 103,
+      "detail": "independent 103",
+      "n_failures": 0,
+      "failures": []
+    },
+    "candidate A: the zone of every one of the 247 sessions equals the independent construction and its ceiling is the previous-day high (PDR-A01)": {
+      "pass": true,
+      "n": 247,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "candidate B: the signal stream rebuilt independently from raw data equals the engine's (default patterns)": {
+      "pass": true,
+      "n": 81,
+      "detail": "independent 81, engine 81, details 81; only-mine [], only-engine []",
+      "n_failures": 0,
+      "failures": []
+    },
+    "candidate B: zone floor/ceiling, close, patterns passed, interaction candle and close > ceiling equal the independent values": {
+      "pass": true,
+      "n": 81,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "candidate B: the EXAMPLE_LENIENT sensitivity counts equal the independent counts": {
+      "pass": true,
+      "n": 103,
+      "detail": "independent 103",
+      "n_failures": 0,
+      "failures": []
+    },
+    "candidate B: the zone of every one of the 247 sessions equals the independent construction and its ceiling is the previous-day high (PDR-A01)": {
+      "pass": true,
+      "n": 247,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "all 383 old signals and all 54 old trades are compared for both candidates": {
+      "pass": true,
+      "n": 766,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "the removal tags of every old signal that is not valid under the revision equal an independent evaluation (zone / pattern / close)": {
+      "pass": true,
+      "n": 766,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "journal comparison: the nearest candidate-A signal within 15 minutes of every PDR / disputed journal row equals the delivered result": {
+      "pass": true,
+      "n": 12,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "journal 2x2 table (thresholds x open rule, both candidates, 8 PDR rows) equals the independent recomputation incl. the open-anywhere runs": {
+      "pass": true,
+      "n": 8,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "every source / test / script / data / Phase 3.0-3.3 report / PDF / journal file of the before-snapshot is byte-identical (other engines, controller, stops, targets, ledgers, raw data)": {
+      "pass": true,
+      "n": 810,
+      "detail": "",
+      "n_failures": 0,
+      "failures": []
+    },
+    "the only new source file is the revised engine module": {
+      "pass": true,
+      "n": 1,
+      "detail": "['src/nifty_trading/strategies/pdr_revised.py']",
+      "n_failures": 0,
+      "failures": []
+    }
+  },
+  "all_pass": true
+}

@@ -1,0 +1,18 @@
+# Phase 3.3 - owner decisions required (PDR)
+
+Only the decisions the documents and the data cannot settle. Nothing was changed in this phase; none of the options below was chosen by its win rate or profit.
+
+| # | decision | why it is open (evidence) | options (diagnostic counts, not recommendations) |
+|---|---|---|---|
+| 1 | **Is a zone-hold confirmation required?** (must the green confirmation candle close at/above the zone floor, or above the ceiling?) | Not written in the guide; the purpose statement and all four dated figures point to a hold, the text and the checklist do not require it. 27 of 54 entries close below the floor. | keep the written text (A: 54); close >= floor (B: 27); close > ceiling (C: 20); the written rule stays if the owner says the guide means only 'a green candle' |
+| 2 | **May the retest low trade below the floor?** (reading D / D2) | In the author's Examples 2 and 3 the confirmation candle's own wick trades 20.0 and 3.7 points below the drawn floor before closing above the ceiling; the candles before it hold above the floor in Examples 1, 3, 4 and break it by 3.25 points (on a 3.7-point box) in Example 2. The figures cannot separate D2 from a tolerant D2. | D satisfied by 8 of 54, D2 by 10; a tolerance (points) would have to come from the owner |
+| 3 | **Which previous-day candle marks the zone?** (day-high candle, latest reversal swing, or repeated-highs shelf) | The guide says 'the high where price reached a peak and then reversed'; its examples use the session-high candle (1, 2, 4) and a shelf (3). The engine's zone is the day-high candle in only 13 of 54 trades; it changes the entry for 1 of the 27 and is an open question for 22 of them. | A / B / C (PDR-ZONE-002); the registry already lists B and C as owner-approved research candidates |
+| 4 | **Must the open lie above the zone?** (PDR-011) | 'Pulls back into the marked zone' implies it; it is not a stated rule; the engine rejects days when the open is inside the zone. | keep / drop / allow open inside the zone |
+| 5 | **What counts as a 'very close approach'?** | No number in the guide (p.2 s4.2); the engine uses strict range overlap (proximity 0). | a number of points, or strict overlap |
+| 6 | **Second trades:** may a second PDR entry follow an original full stop on the same day when price has traded through the zone? | 7 of the 27 affected entries are second trades; the controller rule is approved, the zone-hold question is separate. | follows decision 1 |
+| 7 | **Journal:** are the unmatched PDR entries meant to be taken? | None of the 27 affected trades matches a journal PDR row. Of the 5 automated PDR trades that match (4 exact, 1 within tolerance - the latter a row labelled ORB and attributed to PDR by the Phase 2.1 hypothesis), four close above the ceiling and one (20260605-1) inside the zone. The journal has 4 PDR rows with no automated trade (2025-10-07 09:20 Target; 2025-12-31 09:45 Target; 2026-05-19 09:35 BE; 2026-06-12 10:20 BE); one of them is the Example 3 date. The journal records no zone or price, so no discretionary decision can be inferred. | owner to say how the journal PDR entries were chosen |
+
+## Source figures that need the owner's eye
+
+* Example 5 (PDR p.4) has no date and cannot be matched to the data; at high zoom the entry session seems to open at/inside the zone with no visible gap-up (a low-resolution reading) - please look; it matters for the gap-up rule and decision 4.
+* Example 3 (PDR p.4, 2025-10-07) is not reproduced by the engine zone ([25,077.25, 25,095.70], 18.45 points, from the 14:50 spike; the open 25,087.55 is inside it so the engine rejects the day); the drawn zone is a 3.6-point shelf, and the journal has a PDR entry on that day at 09:20.
