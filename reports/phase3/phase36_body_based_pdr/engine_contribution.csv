@@ -1,0 +1,6 @@
+strategy,engine,raw_engine_records,confirmed_signals,fully_valid_signals,signals_within_13_00_cutoff,executed_trades,ignored_signals,rejected_by_controller,setups_not_completed,contributed_signals_to_controller
+IRF,IRFStrategy (unchanged),1041,874,865,557,109,503,256,167,True
+ORB,ORBStrategy (unchanged),355,53,53,53,41,0,0,302,True
+PDR,"PDRBodyStrategy (Phase 3.6, body-based zone, open strictly above, provisional thresholds)",183,87,85,62,25,57,5,96,True
+PDS,PDSStrategy (unchanged),137,57,56,35,11,38,8,80,True
+RF,RFStrategy (unchanged),180,12,12,10,10,1,1,168,True

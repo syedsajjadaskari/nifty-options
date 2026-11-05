@@ -1,0 +1,107 @@
+{
+ "2019-03..2019-12": {
+  "a": "5paisa",
+  "b": "secondary",
+  "dates_a": 196,
+  "dates_b": 201,
+  "dates_in_both": 196,
+  "dates_only_a": [],
+  "dates_only_b": [
+   "2019-06-27",
+   "2019-06-28",
+   "2019-07-01",
+   "2019-07-02",
+   "2019-07-03"
+  ],
+  "bars_compared": 73444,
+  "share_exact_all_fields": 0.0,
+  "share_close_within_0_05": 0.2627,
+  "share_close_within_1": 0.9476,
+  "mean_abs_close_diff": 0.3969,
+  "p99_abs_close_diff": 4.85,
+  "max_abs_close_diff": 65.15,
+  "days_with_any_diff_over_1pt": 195,
+  "bars_only_in_a": 0,
+  "bars_only_in_b": 56,
+  "timestamp_shift_test": {
+   "-1": {
+    "bars": 73248,
+    "share_close_equal_within_0_05": 0.0214
+   },
+   "0": {
+    "bars": 73444,
+    "share_close_equal_within_0_05": 0.2627
+   },
+   "1": {
+    "bars": 73248,
+    "share_close_equal_within_0_05": 0.0223
+   }
+  }
+ },
+ "2022-08..2025-08": {
+  "a": "5paisa",
+  "b": "secondary",
+  "dates_a": 761,
+  "dates_b": 761,
+  "dates_in_both": 761,
+  "dates_only_a": [],
+  "dates_only_b": [],
+  "bars_compared": 284776,
+  "share_exact_all_fields": 0.3975,
+  "share_close_within_0_05": 0.5356,
+  "share_close_within_1": 0.922,
+  "mean_abs_close_diff": 0.3212,
+  "p99_abs_close_diff": 2.4,
+  "max_abs_close_diff": 76.7,
+  "days_with_any_diff_over_1pt": 599,
+  "bars_only_in_a": 160,
+  "bars_only_in_b": 53,
+  "timestamp_shift_test": {
+   "-1": {
+    "bars": 284014,
+    "share_close_equal_within_0_05": 0.0141
+   },
+   "0": {
+    "bars": 284776,
+    "share_close_equal_within_0_05": 0.5356
+   },
+   "1": {
+    "bars": 284023,
+    "share_close_equal_within_0_05": 0.0142
+   }
+  }
+ },
+ "2025-09..2026-08": {
+  "a": "5paisa (Phase 1 dataset)",
+  "b": "secondary",
+  "dates_a": 248,
+  "dates_b": 248,
+  "dates_in_both": 248,
+  "dates_only_a": [],
+  "dates_only_b": [],
+  "bars_compared": 92685,
+  "share_exact_all_fields": 0.7426,
+  "share_close_within_0_05": 0.8754,
+  "share_close_within_1": 0.9803,
+  "mean_abs_close_diff": 0.0888,
+  "p99_abs_close_diff": 1.45,
+  "max_abs_close_diff": 52.85,
+  "days_with_any_diff_over_1pt": 152,
+  "bars_only_in_a": 1,
+  "bars_only_in_b": 0,
+  "timestamp_shift_test": {
+   "-1": {
+    "bars": 92437,
+    "share_close_equal_within_0_05": 0.0154
+   },
+   "0": {
+    "bars": 92685,
+    "share_close_equal_within_0_05": 0.8754
+   },
+   "1": {
+    "bars": 92438,
+    "share_close_equal_within_0_05": 0.0155
+   }
+  }
+ }
+}

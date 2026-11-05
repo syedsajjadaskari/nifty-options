@@ -1,0 +1,866 @@
+{
+ "loader_info": {
+  "chronological_input": true,
+  "commit_date": "2026-11-04T10:05:16Z",
+  "commit_sha": "f1e07e7d236c1860bab6f5b7002fd46f0739595c",
+  "conflicting_duplicate_timestamps": 0,
+  "duplicate_dates": [],
+  "duplicate_rows_removed": 0,
+  "max_rounding_deviation": 0.0,
+  "rows_in": 700880,
+  "rows_out": 700880,
+  "source_id": "TECHNOVUS_1M"
+ },
+ "partitions": {
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2017/month=04/candles.parquet": {
+   "first": "2017-04-03 09:15:00+05:30",
+   "last": "2017-04-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2017/NIFTY50_1min_2017.csv"
+   ],
+   "rows": 6750,
+   "sha256": "e9b1d13c341764f2361ec77dc484e104a83e716f863343c331662b23de294b70"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2017/month=05/candles.parquet": {
+   "first": "2017-05-02 09:15:00+05:30",
+   "last": "2017-05-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2017/NIFTY50_1min_2017.csv"
+   ],
+   "rows": 8250,
+   "sha256": "f628c0b7f71c4d01a00e4d70045bfa7127488b43cdda3a792b41d73d2f762f86"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2017/month=06/candles.parquet": {
+   "first": "2017-06-01 09:15:00+05:30",
+   "last": "2017-06-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2017/NIFTY50_1min_2017.csv"
+   ],
+   "rows": 7875,
+   "sha256": "4fe0933fdc58102707986588cc3a06f3fa32fd67f44fb95f98ed0cde74acae7f"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2017/month=07/candles.parquet": {
+   "first": "2017-07-03 09:15:00+05:30",
+   "last": "2017-07-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2017/NIFTY50_1min_2017.csv"
+   ],
+   "rows": 7875,
+   "sha256": "1af7dc87ce17bd45157ba6d91b52320832ca99d3cdc902232e1271d33ef7b566"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2017/month=08/candles.parquet": {
+   "first": "2017-08-01 09:15:00+05:30",
+   "last": "2017-08-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2017/NIFTY50_1min_2017.csv"
+   ],
+   "rows": 7875,
+   "sha256": "cea58cdd2c63532e9b3524b83b3121cdb97492db2548fa042a4b139b9770e6f4"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2017/month=09/candles.parquet": {
+   "first": "2017-09-01 09:15:00+05:30",
+   "last": "2017-09-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2017/NIFTY50_1min_2017.csv"
+   ],
+   "rows": 7875,
+   "sha256": "f7856f31739fb87edcd15f0d788aa09eb58cde1cb6571cea977ba533776d7a90"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2017/month=10/candles.parquet": {
+   "first": "2017-10-03 09:15:00+05:30",
+   "last": "2017-10-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2017/NIFTY50_1min_2017.csv"
+   ],
+   "rows": 7125,
+   "sha256": "0477d44bbddb13b47e66c99d35372ace6c38b51746774f85fcf35f55156fed6c"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2017/month=11/candles.parquet": {
+   "first": "2017-11-01 09:15:00+05:30",
+   "last": "2017-11-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2017/NIFTY50_1min_2017.csv"
+   ],
+   "rows": 8250,
+   "sha256": "8484a00338104b90b442d2d2809231b6a35b4d615154a825d74f37ccb8e477a4"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2017/month=12/candles.parquet": {
+   "first": "2017-12-01 09:15:00+05:30",
+   "last": "2017-12-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2017/NIFTY50_1min_2017.csv"
+   ],
+   "rows": 7500,
+   "sha256": "37963227791d4d58be52e3db58a40922d3d45731f8a6290638d0d5d69c6e076f"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=01/candles.parquet": {
+   "first": "2018-01-01 09:15:00+05:30",
+   "last": "2018-01-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 8250,
+   "sha256": "c85b84d6d5a9f16a94c0350643c2fe2706166e655c59a3cdcb0842eb2ed788d1"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=02/candles.parquet": {
+   "first": "2018-02-01 09:15:00+05:30",
+   "last": "2018-02-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 7125,
+   "sha256": "27f5dade845c94e2f2298c82787f11dd8daefed1b7f8d42e90ac0c21940495d5"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=03/candles.parquet": {
+   "first": "2018-03-01 09:15:00+05:30",
+   "last": "2018-03-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 7125,
+   "sha256": "1f75c360d11784c1e41fefbcb700abf5623e7bfd9092d03cec561730c8464c04"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=04/candles.parquet": {
+   "first": "2018-04-02 09:15:00+05:30",
+   "last": "2018-04-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 7875,
+   "sha256": "1d0871bbdf99595629742465d51d9f8851bd1334f2fef3657455e6213ab14a54"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=05/candles.parquet": {
+   "first": "2018-05-02 09:15:00+05:30",
+   "last": "2018-05-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 8250,
+   "sha256": "3878e7e301570d66d4a4b9276cb36e54a3467bd30f8eeccc76a7b6ee9c4421f8"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=06/candles.parquet": {
+   "first": "2018-06-01 09:15:00+05:30",
+   "last": "2018-06-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 7875,
+   "sha256": "a18abe211469568d1d52e71696699a7b7a4ba432505a85846dcfba35d7b51646"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=07/candles.parquet": {
+   "first": "2018-07-02 09:15:00+05:30",
+   "last": "2018-07-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 8249,
+   "sha256": "adb25d0f9ea65debdd222b4b0900980c6d635bd2744cdbf252dd0860dc733e40"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=08/candles.parquet": {
+   "first": "2018-08-01 09:15:00+05:30",
+   "last": "2018-08-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 7875,
+   "sha256": "41cb1aa80b9640a59bd7023eab03f3118fabf626df69d1533fa569f62800e099"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=09/candles.parquet": {
+   "first": "2018-09-03 09:15:00+05:30",
+   "last": "2018-09-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 6750,
+   "sha256": "7451d75b307703f2cd6894a4c2d6e2fd1f5b7b176af2b2e0c5fad0e3b1965c92"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=10/candles.parquet": {
+   "first": "2018-10-01 09:15:00+05:30",
+   "last": "2018-10-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 7875,
+   "sha256": "91e22965897849df4d3ff27b6c27e1137adc90ff0a45cf1963d8cbd9aca5319d"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=11/candles.parquet": {
+   "first": "2018-11-01 09:15:00+05:30",
+   "last": "2018-11-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 7125,
+   "sha256": "84698eb1017c9dc5221bf5e830e296cfdae578e111288aa255da3a31f59a9b8a"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2018/month=12/candles.parquet": {
+   "first": "2018-12-03 09:15:00+05:30",
+   "last": "2018-12-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2018/NIFTY50_1min_2018.csv"
+   ],
+   "rows": 7500,
+   "sha256": "d8cf73aa17a578b3c7b687e4c567d4d55e55098eed3d6e9dfc76464235c08899"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=01/candles.parquet": {
+   "first": "2019-01-01 09:15:00+05:30",
+   "last": "2019-01-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 8625,
+   "sha256": "7a1cc74f12a70ece5ad52d8188c9c637d51eebda908750b0957fa91f75bcaf96"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=02/candles.parquet": {
+   "first": "2019-02-01 09:15:00+05:30",
+   "last": "2019-02-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 7500,
+   "sha256": "976d32c39efd4326de02c73dd79cbf661169e7b6c9ed14c745eea80fa83ae63d"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=03/candles.parquet": {
+   "first": "2019-03-01 09:15:00+05:30",
+   "last": "2019-03-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 7125,
+   "sha256": "be4f109625069759b638322f8662c45bc9db65a520193db18657330d0a3f2089"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=04/candles.parquet": {
+   "first": "2019-04-01 09:15:00+05:30",
+   "last": "2019-04-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 7125,
+   "sha256": "988d75823003d38731f31ae101308c200ba17db0925ee49ff5bb8090c7dee2d4"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=05/candles.parquet": {
+   "first": "2019-05-02 09:15:00+05:30",
+   "last": "2019-05-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 8250,
+   "sha256": "7b12efbfe02713ba286f99226ed6c984bb4ab14fc14fce40ff6780564978ecc7"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=06/candles.parquet": {
+   "first": "2019-06-03 09:15:00+05:30",
+   "last": "2019-06-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 7125,
+   "sha256": "6d4f2a313a93c1dc2f6455720ba672edd49f040b83bb442782770fae3521b885"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=07/candles.parquet": {
+   "first": "2019-07-01 09:15:00+05:30",
+   "last": "2019-07-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 8625,
+   "sha256": "e9564241856ae0a774415432b3e70c88f8b87047ca730541af2593b0256b8be6"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=08/candles.parquet": {
+   "first": "2019-08-01 09:15:00+05:30",
+   "last": "2019-08-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 7500,
+   "sha256": "2498ce86ab3b193fa96da600b84cd1fbf431f9530a22deb0e1619b58c5074a10"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=09/candles.parquet": {
+   "first": "2019-09-03 09:15:00+05:30",
+   "last": "2019-09-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 7125,
+   "sha256": "407dc3ede189d1e651d0b09c800338a1d2ab4b1f4a3797c132e11fd607af7ddd"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=10/candles.parquet": {
+   "first": "2019-10-01 09:15:00+05:30",
+   "last": "2019-10-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 7125,
+   "sha256": "5bd69eaab9acf2432404e79231ef2ad43e8df168375ca4602d52caab7c40253f"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=11/candles.parquet": {
+   "first": "2019-11-01 09:15:00+05:30",
+   "last": "2019-11-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 7500,
+   "sha256": "96c66dc0ecc09c94ece64230d96e0323dedb058bb468352e405333e10e52fed8"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2019/month=12/candles.parquet": {
+   "first": "2019-12-02 09:15:00+05:30",
+   "last": "2019-12-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2019/NIFTY50_1min_2019.csv"
+   ],
+   "rows": 7875,
+   "sha256": "b802c0c65601af5b08f41f42eaa1b944a362c9c0a23178d5b56bc8acf85b0ee8"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=01/candles.parquet": {
+   "first": "2022-01-03 09:15:00+05:30",
+   "last": "2022-01-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 7499,
+   "sha256": "151361c9871461e69ce37ef4647dabb6371b163c8fc85f7a3b0bd571d6c89c58"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=02/candles.parquet": {
+   "first": "2022-02-01 09:15:00+05:30",
+   "last": "2022-02-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 7500,
+   "sha256": "6a344926054f31a297cf3f54dd524db6f12a368985068cf4e0ef75444f5d1d19"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=03/candles.parquet": {
+   "first": "2022-03-02 09:15:00+05:30",
+   "last": "2022-03-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 7872,
+   "sha256": "092428c9422339329f425fa85fb58f5d56f389b9a315eeabb25a0aa4cc6acb4c"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=04/candles.parquet": {
+   "first": "2022-04-01 09:15:00+05:30",
+   "last": "2022-04-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 7125,
+   "sha256": "b0d53dd70793e6e6036f187fa6bda5b096eb4858baf390573816d4f4a8c1bf84"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=05/candles.parquet": {
+   "first": "2022-05-02 09:15:00+05:30",
+   "last": "2022-05-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 7875,
+   "sha256": "3f9719593e0b93ec377bd4fc49e12e32893f834bab87ab5b5cef5a2ffe32fb6e"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=06/candles.parquet": {
+   "first": "2022-06-01 09:15:00+05:30",
+   "last": "2022-06-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 8250,
+   "sha256": "75ea7d456f3783be377db204963410ef9d13a70abfe9e1124d01afbf0c28e53a"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=07/candles.parquet": {
+   "first": "2022-07-01 09:15:00+05:30",
+   "last": "2022-07-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 7875,
+   "sha256": "c79ea87f15adb5a54ece88a097b65e2c0882037f78fcb28125e307d0d1eb27d5"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=08/candles.parquet": {
+   "first": "2022-08-01 09:15:00+05:30",
+   "last": "2022-08-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 7500,
+   "sha256": "d77064b0260c21aaf298c025e5e27375a6210fdd71d3bc0d9f1cf4869ab85c98"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=09/candles.parquet": {
+   "first": "2022-09-01 09:15:00+05:30",
+   "last": "2022-09-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 8249,
+   "sha256": "d1ba4413a91c4de8f421ced59e8e48ed49f3c0786ec817c0e2fee122b42a8d32"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=10/candles.parquet": {
+   "first": "2022-10-03 09:15:00+05:30",
+   "last": "2022-10-31 15:28:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 6749,
+   "sha256": "bf7b11ee1b7e95423c8d5ab4c7c44940bd40c9cb07b22eb8f79e0ef6e9814c1b"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=11/candles.parquet": {
+   "first": "2022-11-01 09:15:00+05:30",
+   "last": "2022-11-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 7874,
+   "sha256": "5e09f833f81bb688a80d834aa8c82b5e071323c9d3cd0741283589b3b90d50d8"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2022/month=12/candles.parquet": {
+   "first": "2022-12-01 09:15:00+05:30",
+   "last": "2022-12-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2022/NIFTY50_1min_2022.csv"
+   ],
+   "rows": 8249,
+   "sha256": "233e823f599dac3174a30b1809c3c443c40a2e64599181d477f4da97fe4ad23a"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=01/candles.parquet": {
+   "first": "2023-01-02 09:15:00+05:30",
+   "last": "2023-01-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 7874,
+   "sha256": "d25e65dda0edab3b339b19582b15cf4db15d44721060d5006a92fe969c6c895f"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=02/candles.parquet": {
+   "first": "2023-02-01 09:15:00+05:30",
+   "last": "2023-02-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 7499,
+   "sha256": "6f64824878eb9ed0e1a9b977b64d56fff73efec6bdad6dd7e2f3cdcdd64267e2"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=03/candles.parquet": {
+   "first": "2023-03-01 09:15:00+05:30",
+   "last": "2023-03-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 7875,
+   "sha256": "d8fe46693c6277948ead1b0278d8ad6511b144ac6d00b0d211fee19f4d86c867"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=04/candles.parquet": {
+   "first": "2023-04-03 09:15:00+05:30",
+   "last": "2023-04-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 6372,
+   "sha256": "e122af4bcba1ac21c0f901da91a7f1dc43c27925b1ef23cfc0232285b8814d19"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=05/candles.parquet": {
+   "first": "2023-05-02 09:15:00+05:30",
+   "last": "2023-05-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 8250,
+   "sha256": "0e1a7c8c9521a716814bdae766a2e37cfd129263efb0b5c8dd8165497540323a"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=06/candles.parquet": {
+   "first": "2023-06-01 09:15:00+05:30",
+   "last": "2023-06-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 7875,
+   "sha256": "5c507a02414cbeba35bdc1da423cd9ab14f965d0e048bb2339d8f637cd3a8f84"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=07/candles.parquet": {
+   "first": "2023-07-03 09:15:00+05:30",
+   "last": "2023-07-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 7875,
+   "sha256": "ac72804913d77bc6d0889b7883b70f0e3d9ac55baf6422923dc5be3a05272d43"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=08/candles.parquet": {
+   "first": "2023-08-01 09:15:00+05:30",
+   "last": "2023-08-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 8250,
+   "sha256": "abd56ec764292025604174b9a2a5072745ec36c6039a11ced7e59534b3107058"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=09/candles.parquet": {
+   "first": "2023-09-01 09:15:00+05:30",
+   "last": "2023-09-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 7500,
+   "sha256": "20972f1aa30a6dc8e4516043663bceab5c4f8ec06e887fcb2d3d7ac266ebc28e"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=10/candles.parquet": {
+   "first": "2023-10-03 09:15:00+05:30",
+   "last": "2023-10-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 7500,
+   "sha256": "f145997132aff34aea10af4ce87845493b12f4ad3aefd0dd409b028d5015482a"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=11/candles.parquet": {
+   "first": "2023-11-01 09:15:00+05:30",
+   "last": "2023-11-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 7561,
+   "sha256": "9b10016271169de3ad9e7e4061ea21a2e9fe387eeaa4b3ef4575a29306d9b52c"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2023/month=12/candles.parquet": {
+   "first": "2023-12-01 09:15:00+05:30",
+   "last": "2023-12-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2023/NIFTY50_1min_2023.csv"
+   ],
+   "rows": 7500,
+   "sha256": "eb4c5cd75792b996e93bda09e723f6a3dfd5e98d7b7ea0b985370dc14bbc95f8"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=01/candles.parquet": {
+   "first": "2024-01-01 09:15:00+05:30",
+   "last": "2024-01-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 8250,
+   "sha256": "462801c9c6d714189694dc618e8198e3c29a2873344784755195d99bb6187289"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=02/candles.parquet": {
+   "first": "2024-02-01 09:15:00+05:30",
+   "last": "2024-02-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 7875,
+   "sha256": "1d31178d7b9310c42dc0742ca0531f7a6915b5c0a28bf5229c99ee05f65e2a82"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=03/candles.parquet": {
+   "first": "2024-03-01 09:15:00+05:30",
+   "last": "2024-03-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 6857,
+   "sha256": "83fbf63ef9b5d430fa46e118334e11f7345d0deabdddbf2c47c0d91ca40e06e5"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=04/candles.parquet": {
+   "first": "2024-04-01 09:15:00+05:30",
+   "last": "2024-04-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 7500,
+   "sha256": "f7f5c717f21f31711afbec4717d54ef11bd9958a8848f2972994b72251407c18"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=05/candles.parquet": {
+   "first": "2024-05-02 09:15:00+05:30",
+   "last": "2024-05-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 7981,
+   "sha256": "55a25fd731e620bbca751f5bcd057436a41e72efcb411de7f7de373eae316763"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=06/candles.parquet": {
+   "first": "2024-06-03 09:15:00+05:30",
+   "last": "2024-06-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 7125,
+   "sha256": "8fb88234589537de75c8c9b180596ebd77bd6483aa5c72ff9911497d2eabfaf0"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=07/candles.parquet": {
+   "first": "2024-07-01 09:15:00+05:30",
+   "last": "2024-07-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 8250,
+   "sha256": "38a84eccab9a3c80d139061e1d2cb6817b40d91c7fc0efa65dc1c80b6cdac41e"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=08/candles.parquet": {
+   "first": "2024-08-01 09:15:00+05:30",
+   "last": "2024-08-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 7875,
+   "sha256": "5f9c7d8d4714f8f0e6b5444860405de0130537d9f59962a7f657392d91228f87"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=09/candles.parquet": {
+   "first": "2024-09-02 09:15:00+05:30",
+   "last": "2024-09-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 7875,
+   "sha256": "b112ecf8135082b1f9843802f95955e416a31bdb5ae8b3112f4f9f653991cc9f"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=10/candles.parquet": {
+   "first": "2024-10-01 09:15:00+05:30",
+   "last": "2024-10-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 8250,
+   "sha256": "2ae35e0f3cd19d0a739b1fe6f5c6c81fe68d87160d1a939826b83003bc7f4d6d"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=11/candles.parquet": {
+   "first": "2024-11-01 18:00:00+05:30",
+   "last": "2024-11-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 6810,
+   "sha256": "a567cc3c6bda94a15ad0efef03932ce08c1afcb730f32c660f072c3916afb1da"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2024/month=12/candles.parquet": {
+   "first": "2024-12-02 09:15:00+05:30",
+   "last": "2024-12-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2024/NIFTY50_1min_2024.csv"
+   ],
+   "rows": 7875,
+   "sha256": "6da0c627538ed6be1800468330979507cef26aa521bf0350083fdb41a9443213"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=01/candles.parquet": {
+   "first": "2025-01-01 09:15:00+05:30",
+   "last": "2025-01-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 8625,
+   "sha256": "3a693ab58700e9b98bd2c7004a0bd71b3a3d3adf3bd274cf9e9d39c15f87568e"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=02/candles.parquet": {
+   "first": "2025-02-01 09:15:00+05:30",
+   "last": "2025-02-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 7500,
+   "sha256": "8c71ed00f22e663ee3398514ace48d0b67c12aa8fb98cf6b6cc42d0963cf12da"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=03/candles.parquet": {
+   "first": "2025-03-03 09:15:00+05:30",
+   "last": "2025-03-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 7125,
+   "sha256": "3c095f7967c5a61c64384ef56cc28fc9c0925aaaf4fd966acdd787189b85964c"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=04/candles.parquet": {
+   "first": "2025-04-01 09:15:00+05:30",
+   "last": "2025-04-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 7125,
+   "sha256": "9f5bdcc662cb14cd61cf72b54412b02281eb39ad9d0e3713178639cf411cbd02"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=05/candles.parquet": {
+   "first": "2025-05-02 09:15:00+05:30",
+   "last": "2025-05-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 7875,
+   "sha256": "e8251197997f76672fedf714f5076d211def6163716fa716cca70a1cf44f0e51"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=06/candles.parquet": {
+   "first": "2025-06-02 09:15:00+05:30",
+   "last": "2025-06-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 7875,
+   "sha256": "7bca1812e39acae2c7be914d61d03a51aebdea303eda0fc7451cdc7ac762aad4"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=07/candles.parquet": {
+   "first": "2025-07-01 09:15:00+05:30",
+   "last": "2025-07-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 8625,
+   "sha256": "456c53d1428d6d8f5d8eb71cb8fd281ba81955c8fc4586460cda04f315b1368e"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=08/candles.parquet": {
+   "first": "2025-08-01 09:15:00+05:30",
+   "last": "2025-08-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 7125,
+   "sha256": "408addc190ab1665e87bbce327e7966a2e1a1074ec31e2b3035331b63e4ce69f"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=09/candles.parquet": {
+   "first": "2025-09-01 09:15:00+05:30",
+   "last": "2025-09-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 8250,
+   "sha256": "c51b795f4c2a875c17399f19c48e5cfd18328c023b77e852fb4a2605a316b483"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=10/candles.parquet": {
+   "first": "2025-10-01 09:15:00+05:30",
+   "last": "2025-10-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 7560,
+   "sha256": "b08e6610c82c4ba60451022015f6bad08d3424943286fbe6f036266787f502e8"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=11/candles.parquet": {
+   "first": "2025-11-03 09:15:00+05:30",
+   "last": "2025-11-28 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 7125,
+   "sha256": "d8deeb0a052709542d20e24cc43b9710834830e8c93b4d0e93997de94c56ffbe"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2025/month=12/candles.parquet": {
+   "first": "2025-12-01 09:15:00+05:30",
+   "last": "2025-12-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2025/NIFTY50_1min_2025.csv"
+   ],
+   "rows": 8250,
+   "sha256": "400754b8222dd309635a514b51cbac52a301576952b96acb2ad2857a04ceb745"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=01/candles.parquet": {
+   "first": "2026-01-01 09:15:00+05:30",
+   "last": "2026-01-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-01.csv"
+   ],
+   "rows": 7500,
+   "sha256": "fc22c01ec77370b4a21a3fe69485a889b88e8bb1816f5e06d3f19058b5637672"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=02/candles.parquet": {
+   "first": "2026-02-01 09:15:00+05:30",
+   "last": "2026-02-27 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-02.csv"
+   ],
+   "rows": 7875,
+   "sha256": "98a64c1f0ac2128bbe2e9e60f821e490883dae031581c3db2689cb5323b4a20a"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=03/candles.parquet": {
+   "first": "2026-03-02 09:15:00+05:30",
+   "last": "2026-03-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-03.csv"
+   ],
+   "rows": 7125,
+   "sha256": "67a7ad815911f47f002619e0aa509c7c4334550b4bc26cf7336d12c712891f1d"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=04/candles.parquet": {
+   "first": "2026-04-01 09:15:00+05:30",
+   "last": "2026-04-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-04.csv"
+   ],
+   "rows": 7500,
+   "sha256": "3e3060213926ce60f6c90ec5feec06dcf50b881e33aedf86510d0c1b31cf8403"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=05/candles.parquet": {
+   "first": "2026-05-04 09:15:00+05:30",
+   "last": "2026-05-29 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-05.csv"
+   ],
+   "rows": 7125,
+   "sha256": "77049eb3eec9d4d727cbaecef1df4cf2cc8e162227dd97a842206222b5d1324a"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=06/candles.parquet": {
+   "first": "2026-06-01 09:15:00+05:30",
+   "last": "2026-06-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-06.csv"
+   ],
+   "rows": 7875,
+   "sha256": "12f9d17148b92735925370cd8de4954cd7f28d682981da1c3933b043cdeb58a4"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=07/candles.parquet": {
+   "first": "2026-07-01 09:15:00+05:30",
+   "last": "2026-07-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-07.csv"
+   ],
+   "rows": 8625,
+   "sha256": "8bc8e684fb7dfca5c52d0a0767d9ccf20ac2d08272a9b14a247f2be705f3bb86"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=08/candles.parquet": {
+   "first": "2026-08-03 09:15:00+05:30",
+   "last": "2026-08-31 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-08.csv"
+   ],
+   "rows": 7875,
+   "sha256": "d3866927d81d7c21ce718cba9ac0fef7f6d94b22faa009abd72d7962c68aab74"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=09/candles.parquet": {
+   "first": "2026-09-01 09:15:00+05:30",
+   "last": "2026-09-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-09.csv"
+   ],
+   "rows": 7875,
+   "sha256": "6d45baaf1e18c2b3ee8d8ec71c6310f0ff982af846d4ead9b9d89676db33c353"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=10/candles.parquet": {
+   "first": "2026-10-01 09:15:00+05:30",
+   "last": "2026-10-30 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-10.csv"
+   ],
+   "rows": 7500,
+   "sha256": "1382d5c54c6ebb49336239b0989eec757b604122f46399b3505abc13e3798892"
+  },
+  "data/phase4/processed/TECHNOVUS_1M/nifty50/year=2026/month=11/candles.parquet": {
+   "first": "2026-11-02 09:15:00+05:30",
+   "last": "2026-11-04 15:29:00+05:30",
+   "raw_files": [
+    "1min/2026/NIFTY50_1min_2026-11.csv"
+   ],
+   "rows": 1125,
+   "sha256": "9ded1ed72035dd8e4365b1fe223e1ce2b1ec74ef724e95bdd106cc5556a2e186"
+  }
+ },
+ "raw_files": {
+  "1min/2017/NIFTY50_1min_2017.csv": "9dca1f48ea1726958241160992c40ac1f61aedfa463b4cba5d9167d4ed38a6b6",
+  "1min/2018/NIFTY50_1min_2018.csv": "898cfbcd09422dbc3afb76c44685348e8229019151766eccfc33bcb5d38f92e2",
+  "1min/2019/NIFTY50_1min_2019.csv": "796b90771e130151e8cdb6251d0e7895a9f65d30cac4799f950638d981e1ef6d",
+  "1min/2022/NIFTY50_1min_2022.csv": "930acb495657287f8873ddb37a9c8517ea9baa56aeb86a7d4712cee658045ee3",
+  "1min/2023/NIFTY50_1min_2023.csv": "cc261ba326b3c61c5e54c58d4d6732263985d7f24e343111e916ca7625a0dde4",
+  "1min/2024/NIFTY50_1min_2024.csv": "f0a82b04aeb8722c8fae0431daf8507feb70e4c7783c75010f9dfbbbee00951b",
+  "1min/2025/NIFTY50_1min_2025.csv": "632eccf5137216d46ef5ad26ec975e56b0a8ceb4adfa804083d380cc3fe60b3d",
+  "1min/2026/NIFTY50_1min_2026-01.csv": "c9cf474e8542e60358872580498c10e549883cec497bc7d8f9651533ee7b889d",
+  "1min/2026/NIFTY50_1min_2026-02.csv": "cd4a0ce01b316aacee1cbdbe2fd2aa70c8ab1a159b624353715f912854f726e7",
+  "1min/2026/NIFTY50_1min_2026-03.csv": "397a249f02116aad77a8e1ec76048434522d05a69cec4e8e2870b1cf99695815",
+  "1min/2026/NIFTY50_1min_2026-04.csv": "38d61de4383494720f8200a1ddbc03a4e586dbce7fe9a6abb694f86df2349a6c",
+  "1min/2026/NIFTY50_1min_2026-05.csv": "401687147b485b7b74c39cc63537ff226f093569f72772c23452869ab03fbfd0",
+  "1min/2026/NIFTY50_1min_2026-06.csv": "54d6899167a713eafff168cb0b5ce5e85b0e4e2afdfdf82b139c0a38279c1ded",
+  "1min/2026/NIFTY50_1min_2026-07.csv": "8aa29ad194a62075d00de80ffeb19c366b4f54f3aa7775c12cae1e12471a8217",
+  "1min/2026/NIFTY50_1min_2026-08.csv": "156c91df4181ec6bd2430f35472131277d62c4d10fbc0a82aca78ebb872d3ac2",
+  "1min/2026/NIFTY50_1min_2026-09.csv": "489c95b84e7f9fb7e90c80cd09e9410949c8f0eb5e48508c4fe7ccd0d15bd93a",
+  "1min/2026/NIFTY50_1min_2026-10.csv": "86ddc06c9d448eb3867600a408386509d5628d25114a6d9faaef83018314cbf3",
+  "1min/2026/NIFTY50_1min_2026-11.csv": "25ef0e655df1975cc2b4900fb42e3f7374f09678e49272a26603cd008b8f1a9c"
+ },
+ "source_id": "TECHNOVUS_1M",
+ "written_utc": "2026-11-05T00:48:59.532097Z"
+}

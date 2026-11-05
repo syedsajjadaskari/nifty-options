@@ -31,7 +31,7 @@ from nifty_trading.data.sessions import (
 from nifty_trading.research import phase3 as P
 from nifty_trading.research import phase31 as R
 from nifty_trading.research import phase32 as X
-from nifty_trading.strategies.definitions import prev_high_low, to_candles
+from nifty_trading.strategies.definitions import prev_candles, prev_high_low, to_candles
 from nifty_trading.strategies.rules import RULE_BY_ID
 from nifty_trading.strategies.selection import is_valid
 
@@ -67,6 +67,11 @@ class Bundle:
     ledger: list[dict] = field(default_factory=list)
     provenance: dict = field(default_factory=dict)
     prior_counts: dict = field(default_factory=dict)
+    phase_label: str = "Phase 3.2"  # shown in the workbook title and the daily journals
+    banner: str = "Automated, read-only reconstruction of the Phase 3.0 baseline."
+    pdr_engine: str = "LEGACY"
+    has_journal: bool = True  # False for periods without a manual journal (Phase 4 historical windows): no journal comparison, no 'extra automated trade' labels
+    revised_pdr: bool = False  # True when the Phase 3.4 revised PDR engine fed the controller (the Phase 3.0 ledger is then expected to differ)
 
 
 def partition_of(day: date) -> str:
@@ -121,6 +126,8 @@ def ledger_matches_phase30(rows: list[dict]) -> dict:
             diffs.append(f"{key(r)} missing in frozen ledger")
             continue
         for k, v in r.items():
+            if k == "scenario":
+                continue  # the scenario LABEL differs by construction (baseline vs phase35_*); every numeric/time/outcome field is compared
             if k in f and _s(v) != f[k]:
                 try:
                     if abs(float(v) - float(f[k])) < 1e-9:
@@ -159,19 +166,39 @@ def chart_inputs(tr, ex, sig, r) -> dict:
     return {"hlines": hl, "zones": zones}
 
 
-def build(progress=None) -> Bundle:  # noqa: C901
-    m1 = load_one_minute()
-    ctxs, infos = build_session_contexts(m1, daily_df=load_daily_official(), warmup_1m=load_warmup_one_minute())
-    m1 = m1.assign(_d=m1.timestamp.dt.date)
-    bars = {d: bars_from_frame(g) for d, g in m1.groupby("_d")}
-    sc = P.scenarios()["baseline"]
+def build(progress=None, scenario=None, *, data=None, journal: bool = True, partition_fn=None, provenance_override: dict | None = None) -> Bundle:  # noqa: C901
+    """``data`` = None reads the Phase 1 dataset exactly as before. A Phase 4 caller passes an object with ``ctxs``, ``infos``, ``bars`` (built from another source and calendar) and ``journal=False``
+    (no manual journal exists for that period); ``partition_fn(date)`` names the source partition of a bar (default: the Phase 1 layout) and ``provenance_override`` replaces the data hashes."""
+    if data is None:
+        m1 = load_one_minute()
+        ctxs, infos = build_session_contexts(m1, daily_df=load_daily_official(), warmup_1m=load_warmup_one_minute())
+        m1 = m1.assign(_d=m1.timestamp.dt.date)
+        bars = {d: bars_from_frame(g) for d, g in m1.groupby("_d")}
+    else:
+        ctxs, infos, bars = data.ctxs, data.infos, data.bars
+    partition_of = partition_fn or globals()["partition_of"]  # noqa: F841 - shadows the module function inside this build only
+    sc = scenario or P.scenarios()["baseline"]
+    revised = sc.pdr_engine in P.NON_LEGACY_PDR
+    body = sc.pdr_engine == "BODY_BASED_PHASE36"
     tls = R.run_timelines(sc, ctxs, bars)
-    cfg_id = X.config_id(sc.proposals, sc.trade, "baseline")
+    cfg_id = X.config_id(sc.proposals, sc.trade, sc.key, sc.pdr_revision if revised else None)
     b = Bundle(sc, cfg_id, sorted(tls), tls, infos)
-    b.provenance = provenance()
+    b.pdr_engine = sc.pdr_engine
+    if body:
+        b.phase_label = "Phase 3.6"
+        b.banner = ("Automated reconstruction of the Phase 3.6 combined backtest: the Phase 3.0 controller, stops, targets and sizing with PDR = the body-based engine (wicks ignored; open strictly above the zone; "
+                    "numeric pattern thresholds and zone-lower-boundary conventions are provisional research assumptions, NOT approved by the strategy author).")
+        b.revised_pdr = True
+    elif revised:
+        b.phase_label = "Phase 3.5"
+        b.banner = ("Automated reconstruction of the Phase 3.5 combined backtest: the Phase 3.0 controller, stops, targets and sizing with PDR = the Phase 3.4 revised engine "
+                    "(provisional pattern thresholds and open-above-zone assumption, NOT approved by the strategy author).")
+        b.revised_pdr = True
+    b.provenance = provenance_override if provenance_override is not None else provenance()
+    b.has_journal = journal
     # ------------------------------------------------------------------ manual journal and matching (Phase 3.1 methodology, unchanged)
     sessions = {str(d): infos[d].quality.value for d in infos}
-    manual = load_manual(sessions)
+    manual = load_manual(sessions) if journal else []
     b.manual_norm = manual
     matched_rows, used = R.match_manual_to_automated(manual, tls, sc.proposals)
     for r in matched_rows:
@@ -191,12 +218,12 @@ def build(progress=None) -> Bundle:  # noqa: C901
             legs, narrative, prog = X.explain_exits(d, tr, bars[d], sc.trade)
             row = X.trade_row(d, tr, inp, ex, legs, narrative, prog, cfg_id, partition_of(d))
             mrow = by_trade.get((str(d), tr.trade_no))
-            row.update({"manual_journal_row": mrow["journal_row"] if mrow else "", "manual_match_class": mrow["classification"] if mrow else "NO_MANUAL_COUNTERPART",
+            row.update({"manual_journal_row": mrow["journal_row"] if mrow else "", "manual_match_class": mrow["classification"] if mrow else ("NO_MANUAL_COUNTERPART" if journal else "NOT_APPLICABLE_NO_JOURNAL_FOR_PERIOD"),
                         "manual_time_label": mrow["entry_time_label"] if mrow else "", "manual_outcome": mrow["exit_classification_entered"] if mrow else ""})
             b.trades.append(row)
             b.explanations[ex.trade_id] = ex
             b.trade_objs[ex.trade_id] = tr
-            ledger_rows.append(P.ledger_row("baseline", d, tr, tl.result))
+            ledger_rows.append(P.ledger_row(sc.key, d, tr, tl.result))
             for c in ex.checks:
                 b.checks.append(asdict(c))
             for lg in legs:
@@ -291,7 +318,7 @@ def build(progress=None) -> Bundle:  # noqa: C901
     matched_keys = {(r["date"], int(r["auto_trade_no"])) for r in matched_rows if r["classification"] in ("EXACT_MATCH", "TIME_SHIFTED_MATCH")}
     n_extra = 0
     for t in b.trades:
-        if (t["date"], t["trade_no_of_day"]) in matched_keys:
+        if not journal or (t["date"], t["trade_no_of_day"]) in matched_keys:
             continue
         n_extra += 1
         md = manual_by_day.get(t["date"], [])
@@ -347,7 +374,8 @@ def build(progress=None) -> Bundle:  # noqa: C901
         not_eval = sorted({f"{r.strategy}: {r.invalidation_reason or ''}" for r in tl.records if r.signal_status == "NOT_EVALUATED"})
         if not_eval:
             flags.append("PARTIAL_STRATEGY_COVERAGE")
-        triage = ("REVIEW: " + "+".join(flags)) if flags else ("NO_TRADE_BOTH" if not ts and not man else ("MATCHED_EXACT_NO_FLAGS" if ts else "NO_FLAGS"))
+        triage = (("REVIEW: " + "+".join(flags)) if flags else ("NO_TRADE_BOTH" if not ts and not man else ("MATCHED_EXACT_NO_FLAGS" if ts else "NO_FLAGS"))) if journal else \
+            (("REVIEW: " + "+".join(flags)) if flags else ("TRADED_NO_FLAGS" if ts else "NO_TRADE"))
         gross = sum(t["gross_pnl_rs"] for t in ts)
         net = sum(t["illustrative_net_pnl_rs"] for t in ts)
         b.daily.append({
@@ -358,6 +386,8 @@ def build(progress=None) -> Bundle:  # noqa: C901
             "trade_ids": ";".join(t["trade_id"] for t in ts), "strategies_traded": ";".join(t["strategy"] for t in ts), "gross_pnl_rs": gross, "illustrative_net_pnl_rs": net,
             "strategies_not_evaluated": " | ".join(not_eval), "day_end_portfolio_state": tl.result.final_state.value, "manual_journal_trades": len(man), "manual_matched": sum(1 for c in cm if c["journal_row"] != "" and c["match_classification"] in ("EXACT_MATCH", "TIME_SHIFTED_MATCH")),
             "manual_unmatched": len(unmatched), "extra_automated_trades": len(extras), "automated_review_flag": triage, "owner_review_status": ""})
+        if b.pdr_engine == "BODY_BASED_PHASE36" and prev is not None:  # the PDR ceiling of this engine is the highest BODY high, not the wick high shown above
+            b.daily[-1]["prev_day_highest_body_high"] = max(max(c.o, c.c) for c in to_candles(prev_candles(prev, sc.proposals)))
     # ------------------------------------------------------------------ verification issues
     iss = b.issues
     ino = 0

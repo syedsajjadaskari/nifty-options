@@ -1,0 +1,17 @@
+variant,signals,days_with_a_signal,note
+"Phase 3.0 legacy engine (reversal swing zone, any green candle)",383,61,reference: Phase 3.2 export
+Phase 3.5 wick-ceiling engine (candidate A),81,31,"reference: re-run read-only, identical to the Phase 3.5 export"
+"Phase 3.6 body-based A, RESEARCH_DEFAULT patterns (ACTIVE)",87,33,active research configuration
+"Phase 3.6 body-based B, RESEARCH_DEFAULT patterns",87,33,"candidate B (multiple-body-high zone): same ceiling, different floor"
+"Phase 3.6 body-based A, EXAMPLE_LENIENT patterns",113,33,sensitivity: thresholds read off the guide's four dated entry candles (circular for those candles); not an approval
+"Phase 3.6 body-based B, EXAMPLE_LENIENT patterns",113,33,sensitivity
+"Phase 3.6 body-based A, TREAT_AS_LINE zero-height policy",87,33,sensitivity / diagnostic (counts only)
+"Phase 3.6 body-based A, open may be anywhere (sensitivity; NOT the author rule)",164,69,sensitivity / diagnostic (counts only)
+"Phase 3.6 body-based A, confirmation may be the test candle (sensitivity)",100,35,sensitivity / diagnostic (counts only)
+"Phase 3.6 body-based A, good green body only",81,33,sensitivity / diagnostic (counts only)
+"Phase 3.6 body-based A, lower-price rejection only",14,10,sensitivity / diagnostic (counts only)
+"Phase 3.6 body-based A, hammer only",28,20,sensitivity / diagnostic (counts only)
+"Phase 3.6 body-based B, body spike excluded when above a shelf (diagnostic)",67,29,diagnostic and NOT meaningful: the shelf flag fires for nearly every session because a shelf of repeated body highs can lie anywhere in the day (counts only)
+"Phase 3.6 body-based B, tolerance 5 points",87,33,sensitivity / diagnostic (counts only)
+"Phase 3.6 body-based B, tolerance 10 points",87,33,sensitivity / diagnostic (counts only)
+"Phase 3.6 body-based B, tolerance 15 points",87,33,sensitivity / diagnostic (counts only)

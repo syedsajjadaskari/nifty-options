@@ -1,0 +1,285 @@
+{
+  "checks": {
+    "entry price equals the raw 1-minute bar open at the fill minute (all trades)": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "candle OHLC equals an independent 5-minute aggregation of the raw 1-minute rows": {
+      "pass": true,
+      "n": 755,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "body %, wick %, direction, strong/pin/small flags equal an independent calculation": {
+      "pass": true,
+      "n": 755,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "EMA(200) of 5-minute closes equals an independent causal recomputation (warm-up + data)": {
+      "pass": true,
+      "n": 755,
+      "detail": "tolerance 1e-3",
+      "failures": [],
+      "n_failures": 0
+    },
+    "each candle is available at its own end time": {
+      "pass": true,
+      "n": 755,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no explanation candle is later than the signal confirmation": {
+      "pass": true,
+      "n": 755,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "independent exit walk reproduces every trade's outcome, both exit times and prices, and the source-bar OHLC": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "leg P&L = (exit - entry) x direction x 195 per leg and the legs sum to the trade's gross P&L": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "independent total gross P&L (legs re-priced from the raw bars) equals the delivered ledger total": {
+      "pass": true,
+      "n": 196,
+      "detail": "independent 297,765.00 vs ledger 297,765.00",
+      "failures": [],
+      "n_failures": 0
+    },
+    "illustrative net = gross - Rs 500 - 0.5 point x 2 x 390 units on every trade": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "initial stop, Target 1, Target 2 and the post-T1 stop follow the approved distances": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "IRF IRH/IRL and RF High/Low equal the raw first 5-minute candle": {
+      "pass": true,
+      "n": 119,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDR/PDS/RF/ORB-gap opening gap equals raw first open minus the official previous close": {
+      "pass": true,
+      "n": 56,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "ORB Method 1 level equals the raw previous-session high/low and the first candle broke and closed beyond it": {
+      "pass": true,
+      "n": 27,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDR zone equals the independent previous-day highest-BODY-high candle zone (body low .. body high, wicks ignored); PDS zone equals the independent lowest-low construction": {
+      "pass": true,
+      "n": 36,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every evaluable session has a journal; every executed trade is in its journal with a chart; no review status was auto-filled": {
+      "pass": true,
+      "n": 247,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every trade has a selection check (SEL-FIRST-001 or DAY-SL-001)": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every second trade is a PDR/PDS signal confirmed after the first trade's original full stop": {
+      "pass": true,
+      "n": 8,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no executed trade has a failed entry condition or a recomputation mismatch": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every trade has a setup explanation, a selection explanation and an exit narrative": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "workbook equals the CSV files cell by cell (all sheets, all rows)": {
+      "pass": true,
+      "n": 193542,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "manual comparison: every match is same date, <=15 minutes, unique; matched + extra automated = executed trades; 190 journal rows all present": {
+      "pass": true,
+      "n": 190,
+      "detail": "matched 88, extras 108, workbook rows 190",
+      "failures": [],
+      "n_failures": 0
+    },
+    "Phase 3.0 ledger files are byte-identical to the hashes frozen at the start of Phase 3.1": {
+      "pass": true,
+      "n": 4,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the PDR signals fed to the controller equal an independent rebuild of the body-based rules (highest body high, open strictly above, three patterns, strict close) from the raw data": {
+      "pass": true,
+      "n": 87,
+      "detail": "independent 87, controller input 87; only-mine []; only-engine []; zero-height sessions []",
+      "failures": [],
+      "n_failures": 0
+    },
+    "candidate B (multiple-body-high zone) rebuilt independently gives the same signals as candidate A (same ceiling by construction)": {
+      "pass": true,
+      "n": 87,
+      "detail": "A 87, B 87",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every executed PDR trade: signal in the independent rebuild, ceiling = previous-session highest BODY high (never above the wick high), open strictly above it, close strictly above it, patterns equal the explanation, entry = next 1-minute open": {
+      "pass": true,
+      "n": 25,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the confirmed signals of IRF, ORB, PDS and RF equal the Phase 3.5 export and the Phase 3.2 export row for row (date, time, method, direction, reference close)": {
+      "pass": true,
+      "n": 996,
+      "detail": "new 996, Phase 3.5 996, Phase 3.2 996",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the Phase 3.5 PDR stream (81) is still the wick-ceiling stream and differs from the body-based stream, which has a different count": {
+      "pass": true,
+      "n": 87,
+      "detail": "Phase 3.5 81, Phase 3.6 87, common 63",
+      "failures": [],
+      "n_failures": 0
+    },
+    "all five engines contributed confirmed signals and executed trades": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 874, 'PDR': 87, 'ORB': 53, 'RF': 12, 'PDS': 57}, trades {'IRF': 109, 'PDR': 25, 'ORB': 41, 'RF': 10, 'PDS': 11}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "controller rules: first valid signal of the day, max 2 trades, fill <= 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing was valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 188,
+      "detail": "2 no-trade day(s) from same-minute conflicts",
+      "failures": [],
+      "n_failures": 0
+    },
+    "strategy_performance.csv and the Phase 3.0 / 3.5 / 3.6 comparison equal an independent recomputation (trade counts, gross, illustrative net) from the three ledgers": {
+      "pass": true,
+      "n": 24,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "monthly P&L (gross) of the three runs equals an independent recomputation": {
+      "pass": true,
+      "n": 12,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "manual journal matching reproduced independently equals the delivered matches (same journal row -> same trade, same delta)": {
+      "pass": true,
+      "n": 88,
+      "detail": "independent 88 matches (66 exact), delivered 88; journal time labels equal the workbook: True",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every trade id is unique and links to its chart and its daily-journal section": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every data file, every earlier report (Phase 2.x - 3.5), every other engine, both earlier PDR engines, the controller and every other file of the before-snapshot is byte-identical (only the listed research modules / CLI changed)": {
+      "pass": true,
+      "n": 1983,
+      "detail": "allowed edits: ['scripts/phase35_run.py', 'src/nifty_trading/research/phase3.py', 'src/nifty_trading/research/phase31.py', 'src/nifty_trading/research/phase32.py', 'src/nifty_trading/research/phase32_build.py', 'src/nifty_trading/research/phase32_excel.py', 'src/nifty_trading/research/phase32_render.py']",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the five engines, the Phase 3.4 / 3.5 PDR engine, the controller, the selection rules and the parameter definitions are byte-identical": {
+      "pass": true,
+      "n": 11,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file of the Phase 3.5 results directory is byte-identical to its pre-Phase-3.6 hash": {
+      "pass": true,
+      "n": 470,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    }
+  },
+  "non_standard_sessions_excluded_from_the_independent_ema": [
+    "2025-10-21"
+  ],
+  "strategy_outcome_coverage": {
+    "IRF|INITIAL_FULL_STOP": 49,
+    "IRF|T1_THEN_BUFFER_STOP": 28,
+    "IRF|TARGET": 32,
+    "ORB|INITIAL_FULL_STOP": 14,
+    "ORB|T1_THEN_BUFFER_STOP": 12,
+    "ORB|TARGET": 15,
+    "PDR|FORCED_EXIT": 1,
+    "PDR|INITIAL_FULL_STOP": 8,
+    "PDR|T1_THEN_BUFFER_STOP": 6,
+    "PDR|TARGET": 10,
+    "PDS|INITIAL_FULL_STOP": 3,
+    "PDS|T1_THEN_BUFFER_STOP": 2,
+    "PDS|TARGET": 6,
+    "RF|INITIAL_FULL_STOP": 4,
+    "RF|T1_THEN_BUFFER_STOP": 4,
+    "RF|TARGET": 2
+  },
+  "all_pass": true
+}

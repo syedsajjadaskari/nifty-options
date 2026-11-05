@@ -1,0 +1,245 @@
+[
+ {
+  "from": "2025-09-01",
+  "to": "2025-09-05",
+  "note": "baseline: inside the existing dataset",
+  "rows": 1880,
+  "columns": [
+   "Datetime",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Volume"
+  ],
+  "first": "2025-09-01T09:15:00",
+  "last": "2025-09-05T15:30:00",
+  "sample_first_row": {
+   "Datetime": "2025-09-01T09:15:00",
+   "Open": "24432.7",
+   "High": "24509.5",
+   "Low": "24432.7",
+   "Close": "24507.05",
+   "Volume": "0"
+  },
+  "distinct_dates": 5
+ },
+ {
+  "from": "2025-01-02",
+  "to": "2025-01-08",
+  "note": "Jan 2025",
+  "rows": 1880,
+  "columns": [
+   "Datetime",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Volume"
+  ],
+  "first": "2025-01-02T09:15:00",
+  "last": "2025-01-08T15:30:00",
+  "sample_first_row": {
+   "Datetime": "2025-01-02T09:15:00",
+   "Open": "23789.5",
+   "High": "23807.95",
+   "Low": "23778.4",
+   "Close": "23787.6",
+   "Volume": "0"
+  },
+  "distinct_dates": 5
+ },
+ {
+  "from": "2024-06-03",
+  "to": "2024-06-07",
+  "note": "Jun 2024",
+  "rows": 1880,
+  "columns": [
+   "Datetime",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Volume"
+  ],
+  "first": "2024-06-03T09:15:00",
+  "last": "2024-06-07T15:30:00",
+  "sample_first_row": {
+   "Datetime": "2024-06-03T09:15:00",
+   "Open": "23321.25",
+   "High": "23337.9",
+   "Low": "23086.75",
+   "Close": "23111.15",
+   "Volume": "0"
+  },
+  "distinct_dates": 5
+ },
+ {
+  "from": "2023-06-01",
+  "to": "2023-06-07",
+  "note": "Jun 2023",
+  "rows": 1880,
+  "columns": [
+   "Datetime",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Volume"
+  ],
+  "first": "2023-06-01T09:15:00",
+  "last": "2023-06-07T15:30:00",
+  "sample_first_row": {
+   "Datetime": "2023-06-01T09:15:00",
+   "Open": "18570.2",
+   "High": "18570.2",
+   "Low": "18528.8",
+   "Close": "18528.8",
+   "Volume": "0"
+  },
+  "distinct_dates": 5
+ },
+ {
+  "from": "2022-09-01",
+  "to": "2022-09-07",
+  "note": "Sep 2022 (window B start)",
+  "rows": 1880,
+  "columns": [
+   "Datetime",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Volume"
+  ],
+  "first": "2022-09-01T09:15:00",
+  "last": "2022-09-07T15:30:00",
+  "sample_first_row": {
+   "Datetime": "2022-09-01T09:15:00",
+   "Open": "17485.7",
+   "High": "17552.85",
+   "Low": "17485.7",
+   "Close": "17551.35",
+   "Volume": "0"
+  },
+  "distinct_dates": 5
+ },
+ {
+  "from": "2022-01-03",
+  "to": "2022-01-07",
+  "note": "Jan 2022",
+  "rows": 1880,
+  "columns": [
+   "Datetime",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Volume"
+  ],
+  "first": "2022-01-03T09:15:00",
+  "last": "2022-01-07T15:30:00",
+  "sample_first_row": {
+   "Datetime": "2022-01-03T09:15:00",
+   "Open": "17392.3",
+   "High": "17438.4",
+   "Low": "17392.3",
+   "Close": "17428.4",
+   "Volume": "0"
+  },
+  "distinct_dates": 5
+ },
+ {
+  "from": "2021-01-04",
+  "to": "2021-01-08",
+  "note": "Jan 2021",
+  "rows": 1879,
+  "columns": [
+   "Datetime",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Volume"
+  ],
+  "first": "2021-01-04T09:15:00",
+  "last": "2021-01-08T15:30:00",
+  "sample_first_row": {
+   "Datetime": "2021-01-04T09:15:00",
+   "Open": "14097.15",
+   "High": "14106.4",
+   "Low": "14091.65",
+   "Close": "14097.55",
+   "Volume": "0"
+  },
+  "distinct_dates": 5
+ },
+ {
+  "from": "2020-01-01",
+  "to": "2020-01-08",
+  "note": "Jan 2020",
+  "rows": 2256,
+  "columns": [
+   "Datetime",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Volume"
+  ],
+  "first": "2020-01-01T09:15:00",
+  "last": "2020-01-08T15:30:00",
+  "sample_first_row": {
+   "Datetime": "2020-01-01T09:15:00",
+   "Open": "12204.25",
+   "High": "12215.9",
+   "Low": "12204.25",
+   "Close": "12215.45",
+   "Volume": "0"
+  },
+  "distinct_dates": 6
+ },
+ {
+  "from": "2019-06-03",
+  "to": "2019-06-07",
+  "note": "Jun 2019",
+  "rows": 1504,
+  "columns": [
+   "Datetime",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Volume"
+  ],
+  "first": "2019-06-03T09:15:00",
+  "last": "2019-06-07T15:30:00",
+  "sample_first_row": {
+   "Datetime": "2019-06-03T09:15:00",
+   "Open": "11953.75",
+   "High": "11953.75",
+   "Low": "11943.55",
+   "Close": "11944.95",
+   "Volume": "0"
+  },
+  "distinct_dates": 4
+ },
+ {
+  "from": "2019-01-01",
+  "to": "2019-01-08",
+  "note": "Jan 2019 (window D start)",
+  "rows": 0
+ },
+ {
+  "from": "2018-06-01",
+  "to": "2018-06-07",
+  "note": "Jun 2018",
+  "rows": 0
+ },
+ {
+  "from": "2018-01-01",
+  "to": "2018-01-08",
+  "note": "Jan 2018 (window C start)",
+  "rows": 0
+ }
+]

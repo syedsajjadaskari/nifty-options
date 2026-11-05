@@ -1,0 +1,3 @@
+comparison,trades_vendor_a,trades_vendor_b,identical_trade_signals,same_outcome_among_identical,trades_only_vendor_a,trades_only_vendor_b,gross_rs_vendor_a,gross_rs_vendor_b,net_rs_vendor_a,net_rs_vendor_b,confirmed_signals_vendor_a,confirmed_signals_vendor_b,signals_in_both,signal_agreement_pct_of_union,gross_rs_on_trades_only_a,gross_rs_on_trades_only_b,gross_rs_on_identical_trades_a,gross_rs_on_identical_trades_b
+Window B: 5paisa vs secondary-vendor minutes,609,601,471,461,138,130,509398.5,626135.25,-32611.5,91245.25,3142,3073,2591,71.5,-4914.0,127393.5,514312.5,498741.75
+2019-03..12: 5paisa vs secondary-vendor minutes (sessions of both),149,149,118,116,31,31,352608.75,259623.0,219998.75,127013.0,872,831,681,66.6,33764.25,-56979.0,318844.5,316602.0

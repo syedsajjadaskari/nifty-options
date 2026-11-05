@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta
 from pathlib import Path
 
-from nifty_trading.research.phase3 import Scenario, make_engines
+from nifty_trading.research.phase3 import NON_LEGACY_PDR, Scenario, make_engines
 from nifty_trading.strategies.base import SignalRecord
 from nifty_trading.strategies.definitions import (
     gap_info,
@@ -137,14 +137,16 @@ class DayTimeline:
     ctx: object
     records: list[SignalRecord]
     result: DayResult
+    pdr_revision: object = None  # the PDRRevisionConfig when the revised PDR engine produced this day (diagnostics then use the revised zone), else None
 
 
 def run_timelines(sc: Scenario, ctxs: dict, bars_by_day: dict, rules: DayRules | None = None) -> dict[date, DayTimeline]:
-    engines = make_engines(sc.proposals, sc.trade)
+    engines = make_engines(sc.proposals, sc.trade, sc.pdr_engine, sc.pdr_revision)
+    rev = sc.pdr_revision if sc.pdr_engine in NON_LEGACY_PDR else None
     out = {}
     for d in sorted(ctxs):
         recs = [r for e in engines for r in e.evaluate_session(ctxs[d])]
-        out[d] = DayTimeline(d, ctxs[d], recs, run_trading_day(d, recs, bars_by_day[d], sc.trade, rules or DayRules()))
+        out[d] = DayTimeline(d, ctxs[d], recs, run_trading_day(d, recs, bars_by_day[d], sc.trade, rules or DayRules()), rev)
     return out
 
 
@@ -282,6 +284,24 @@ def probe(strategy: str, tl: DayTimeline, props) -> dict:
             out["code"] = "LEVEL_BROKEN_BUT_FILTERED"
         else:
             out["code"] = "FIRST_CANDLE_DID_NOT_CLOSE_BEYOND_PREV_DAY_HIGH_OR_LOW"
+        return out
+    if strategy == "PDR" and tl.pdr_revision is not None:
+        # revised engines: the zone is the previous-day-high zone of that engine (Phase 3.4 / 3.5: wick high; Phase 3.6: highest BODY high), never the retired reversal-swing zone
+        from nifty_trading.strategies.definitions import prev_candles
+        from nifty_trading.strategies.pdr_body import PDRBodyConfig
+        from nifty_trading.strategies.pdr_body import build_zone as build_body_zone
+        from nifty_trading.strategies.pdr_revised import build_zone
+        pcs_ = to_candles(prev_candles(prev, props))
+        rz = build_body_zone(pcs_, tl.pdr_revision) if isinstance(tl.pdr_revision, PDRBodyConfig) else build_zone(pcs_, tl.pdr_revision)
+        out.update({"zone": [rz.floor, rz.ceiling], "zone_kind": rz.kind})
+        if g.direction != "UP":
+            out["code"] = "NO_GAP_UP"
+        elif not ctx.open_price > rz.ceiling:
+            out["code"] = "GAP_UP_BUT_OPEN_NOT_ABOVE_ZONE"
+        elif not any(c.l <= rz.ceiling and c.h >= rz.floor for c in cs):
+            out["code"] = "ZONE_NEVER_INTERSECTED_BY_ANY_CANDLE"
+        else:
+            out["code"] = "GAP_UP_ZONE_TOUCHED"
         return out
     if strategy == "PDR":
         from dataclasses import replace as _rep

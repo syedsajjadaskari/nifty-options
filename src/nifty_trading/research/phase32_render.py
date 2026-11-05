@@ -146,11 +146,12 @@ def render_day(b: Bundle, d: date, rel_charts: str = "../../charts") -> str:  # 
     cmp_rows = [c for c in b.manual_cmp if c["date"] == str(d)]
     tl = b.timelines[d]
     L: list[str] = [f"# Trading journal - {d} ({d:%A})", "",
-                    "> Automated, read-only reconstruction of the Phase 3.0 baseline. Synthetic NIFTY 50 index-point P&L (the index is not tradable). The owner's review status is intentionally blank.", ""]
+                    f"> {b.banner} Synthetic NIFTY 50 index-point P&L (the index is not tradable). The owner's review status is intentionally blank.", ""]
     # A
     L += ["## A. Trading day overview", "", table(["item", "value"], [
         ["Date / weekday", f"{d} / {d:%A}"], ["Session type", daily["session_type"]], ["Original session open (first 1-minute open)", daily["original_session_open"]],
-        ["Previous session", daily["previous_session"]], ["Previous-day high / low", f"{cell(daily['prev_day_high'])} / {cell(daily['prev_day_low'])}"],
+        ["Previous session", daily["previous_session"]], ["Previous-day high / low (wicks included)", f"{cell(daily['prev_day_high'])} / {cell(daily['prev_day_low'])}"],
+        *([["Previous-day highest BODY high (the body-based PDR ceiling; wicks ignored)", cell(daily["prev_day_highest_body_high"])]] if daily.get("prev_day_highest_body_high") not in (None, "") else []),
         ["Previous-day official close / last 5-minute close", f"{cell(daily['prev_day_official_close'])} / {cell(daily['prev_day_last_5m_close'])}"],
         ["Raw engine records / confirmed signals / fully valid signals", f"{daily['raw_engine_records']} / {daily['confirmed_signals']} / {daily['fully_valid_signals']}"],
         ["Setups that did not complete (invalidated / incomplete)", daily["setups_not_confirmed"]], ["Executed trades", f"{daily['executed_trades']} {daily['trade_ids']}"],
@@ -212,10 +213,12 @@ def render_day(b: Bundle, d: date, rel_charts: str = "../../charts") -> str:  # 
         L += ["#### 9. Gross and illustrative net P&L", "", table(["item", "value (Rs)"], [
             ["Leg 1 gross", t["leg1_pnl_rs"]], ["Leg 2 gross", t["leg2_pnl_rs"]], ["Trade gross (= Leg 1 + Leg 2)", t["gross_pnl_rs"]], ["Illustrative fixed cost", -t["illustrative_cost_rs"]],
             ["Illustrative slippage (0.5 pt on every fill, entry + exits, all units)", -t["illustrative_slippage_rs"]], ["Illustrative net", t["illustrative_net_pnl_rs"]]]), "",
-            "#### 10. Manual journal comparison", "", (cm["explanation"] if cm else "No journal counterpart."), ""]
+            "#### 10. Manual journal comparison", "", ("No manual journal exists for this period; no comparison." if not b.has_journal else (cm["explanation"] if cm else "No journal counterpart.")), ""]
     # D
     L += ["## D. Manual journal comparison", ""]
-    if cmp_rows:
+    if not b.has_journal:
+        L += ["No manual journal exists for this period (the manual journal covers 2025-09-01 .. 2026-08-31 only); no comparison is made and no automated trade is labelled 'extra'.", ""]
+    elif cmp_rows:
         L += [table(["comparison", "journal row", "journal strategy", "manual time", "manual direction", "manual outcome", "match class", "trade", "auto entry", "auto outcome", "explanation"],
                     [[c["comparison_id"], c["journal_row"], c["journal_strategy"], c["manual_entry_time_label"], c["manual_direction"], c["manual_outcome"], c["match_classification"], c["trade_id"],
                       f"{c['auto_entry_time']} @ {cell(c['auto_entry_price'])}" if c["trade_id"] else "", c["auto_outcome"], c["explanation"]] for c in cmp_rows]), "",
@@ -240,7 +243,7 @@ def write_daily(b: Bundle, out: Path) -> int:
 # ====================================================================================================== json snapshots
 def configuration_snapshot(b: Bundle) -> dict:
     sc = b.scenario
-    return {"phase": "3.2", "scenario": sc.key, "title": sc.title, "rule_configuration_id": b.cfg_id, "proposal_config": sc.proposals.to_dict(), "trade_config": asdict(sc.trade),
+    return {"phase": b.phase_label.replace("Phase ", ""), "scenario": sc.key, "title": sc.title, "rule_configuration_id": b.cfg_id, "proposal_config": sc.proposals.to_dict(), "trade_config": asdict(sc.trade),
             "controller": {"collision_policy": "MARK_DAY_UNRESOLVED", "entry_cutoff": "13:00:00 IST", "max_entries_per_day": 2, "second_trade_strategies": ["PDR", "PDS"], "tie_break": None},
             "stops": {s: sc.trade.stop_points(s) for s in X.STRATEGY_ORDER}, "targets_1": sc.trade.t1_points, "targets_2": {s: sc.trade.t2_points(s) for s in X.STRATEGY_ORDER},
             "target_2_status": {s: sc.trade.t2_status(s) for s in X.STRATEGY_ORDER}, "post_t1_stop": "entry -6 (LONG) / +6 (SHORT), no trailing", "forced_exit": "15:14 minute open - PROVISIONAL implementer assumption",

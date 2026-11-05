@@ -1,0 +1,12 @@
+{
+ "volatility": "annualised standard deviation (%) of the last 20 daily log returns before the session: LOW_VOL < 10.0, MID_VOL 10.0-16.0, HIGH_VOL >= 16.0",
+ "trend": "Kaufman efficiency ratio of the last 60 daily closes before the session (|net change| / sum of |daily changes|): TRENDING_UP / TRENDING_DOWN if >= 0.25 (sign of the net change), else SIDEWAYS",
+ "causal": "only closes strictly before the session date are used",
+ "declared": "round numbers written after the windows had been run once for sanity checks (their totals had been seen) but before any regime or robustness table existed; not fitted, but post-hoc diagnostics on five windows with small cells",
+ "confidence_rubric": {
+  "HIGH": "same provider as the Phase 3.6 baseline, full coverage, >= 99% of sessions usable, official daily closes, and a second vendor overlaps with mean |1-minute close difference| <= 0.10 point",
+  "MODERATE": "same provider as the baseline, >= 98% of sessions usable, official daily closes, a second vendor overlaps but mean |difference| > 0.10 point (the vendors' minute bars differ)",
+  "LOW": "single provider with a partial year and / or provider gaps, and a second vendor that differs materially",
+  "EXPLORATORY_UNVERIFIABLE": "the minute source cannot be checked against an independent vendor for (part of) the period; treat as exploratory only"
+ }
+}

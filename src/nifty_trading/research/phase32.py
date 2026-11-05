@@ -50,10 +50,26 @@ from nifty_trading.strategies.definitions import (
     wick_share_outside,
 )
 from nifty_trading.strategies.params import ProposalConfig, TradeConfig
+from nifty_trading.strategies.pdr_body import PDR_BODY_RULES, PDRBodyConfig, body_high
+from nifty_trading.strategies.pdr_body import build_zone as build_body_zone
+from nifty_trading.strategies.pdr_revised import (
+    PDR_REVISION_RULES,
+    PDRRevisionConfig,
+    build_zone,
+    build_zone_b,
+    classify_confirmation,
+)
 from nifty_trading.strategies.rules import RULE_BY_ID
 from nifty_trading.strategies.trading_day import TradeRecord
 
 RESULTS = ("PASS", "FAIL", "NOT_APPLICABLE", "UNRESOLVED")
+# the Phase 3.4 revision rules (PDR-A01 ...) are not in the Phase 2 registry; they carry their own statuses
+PDR_REV_STATUS = {r["rule_id"]: r["status"] for r in PDR_REVISION_RULES}
+PDR_REV_STATUS["PDR-A04x"] = "PROPOSED_FOR_REVIEW"  # disclosure row of the provisional parameters
+PDR_REV_STATUS.update({r["rule_id"]: r["status"] for r in PDR_BODY_RULES})  # Phase 3.6 body-based rules (PDR-B..), disjoint ids
+PDR_REV_STATUS["PDR-B04x"] = "PROPOSED_FOR_REVIEW"
+PDR_REV_DEFINITION = {"SOURCE_VERIFIED": "SOURCE_VERIFIED_IN_THE_GUIDE", "AUTHOR_APPROVED": "AUTHOR_STATEMENT_NUMERIC_DETAILS_ARE_SEPARATE_PROPOSED_ROWS", "OWNER_INTERPRETATION": "OWNER_INTERPRETATION_OF_AUTHOR_WORDS",
+                      "PROPOSED_FOR_REVIEW": "NUMERIC_DEFINITION_PROPOSED_FOR_REVIEW", "USER_APPROVED": "USER_APPROVED", "PRESERVED_FROM_PHASE2": "PRESERVED_FROM_PHASE2"}
 STATUS_MAP = {"VERIFIED_EXPLICIT": "SOURCE_VERIFIED", "VERIFIED_QUALITATIVE": "SOURCE_VERIFIED", "USER_APPROVED": "USER_APPROVED",
               "PROPOSED_FOR_REVIEW": "PROPOSED_FOR_REVIEW", "CONFLICTING": "CONFLICTING", "UNRESOLVED": "UNRESOLVED"}
 STRATEGY_ORDER = ("IRF", "ORB", "PDR", "PDS", "RF")
@@ -69,12 +85,16 @@ def hm(ts: datetime | None) -> str:
 
 
 def rule_status(rule_id: str) -> str:
+    if rule_id in PDR_REV_STATUS:
+        return PDR_REV_STATUS[rule_id]
     r = RULE_BY_ID.get(rule_id)
     return "NOT_A_RULE" if r is None else STATUS_MAP[r["classification"]]
 
 
 def definition_status(rule_id: str) -> str:
     """What kind of numerical definition the code uses for this rule (the source wording may be qualitative)."""
+    if rule_id in PDR_REV_STATUS:
+        return PDR_REV_DEFINITION[PDR_REV_STATUS[rule_id]]
     r = RULE_BY_ID.get(rule_id)
     if r is None:
         return "NOT_A_REGISTRY_RULE"
@@ -87,6 +107,13 @@ def definition_status(rule_id: str) -> str:
 
 
 def rule_source(rule_id: str) -> str:
+    if rule_id in PDR_REV_STATUS:
+        body = next((x for x in PDR_BODY_RULES if x["rule_id"] == rule_id), None)
+        if body is not None:
+            return "PDR body-based rules (Phase 3.6): " + body["source"]
+        if rule_id.startswith("PDR-B"):  # the PDR-B04x disclosure row
+            return "PDR body-based rules (Phase 3.6): disclosure of the provisional parameters"
+        return "PDR revision rules (Phase 3.4): " + next((x["source"] for x in PDR_REVISION_RULES if x["rule_id"] == rule_id), "disclosure of the provisional parameters")
     r = RULE_BY_ID.get(rule_id)
     if r is None:
         return "(not a registry rule)"
@@ -225,10 +252,13 @@ def trade_id_of(day, tr: TradeRecord) -> str:
     return f"{day:%Y%m%d}-{tr.trade_no}-{tr.signal.strategy}"
 
 
-def config_id(proposals: ProposalConfig, trade: TradeConfig, label: str = "baseline") -> str:
+def config_id(proposals: ProposalConfig, trade: TradeConfig, label: str = "baseline", pdr_revision: Any = None) -> str:
     import hashlib
     import json
-    blob = json.dumps({"p": proposals.to_dict(), "t": asdict(trade)}, sort_keys=True, default=str)
+    d = {"p": proposals.to_dict(), "t": asdict(trade)}
+    if pdr_revision is not None:  # only the revised-PDR scenario adds a key, so every earlier configuration id is unchanged
+        d["pdr_revision"] = asdict(pdr_revision)
+    blob = json.dumps(d, sort_keys=True, default=str)
     return f"CFG-{label}-{hashlib.sha256(blob.encode()).hexdigest()[:10]}"
 
 
@@ -790,6 +820,206 @@ def explain_pdr(inp: DayInputs, tr: TradeRecord, ex: Explanation) -> None:
                         f"The engine does not check that the zone held (confirmation close {'inside/above' if held else 'BELOW'} the zone floor).")
 
 
+# ====================================================================================================== PDR (Phase 3.4 revised engine)
+def _pat_text(name: str, d: dict[str, Any], th: dict[str, float], ceiling: float) -> tuple[str, str]:
+    """(observed, required) text of one revised confirmation pattern, from the numbers the engine used."""
+    def pc(v):
+        return "undefined" if v is None else f"{100 * v:.2f}%"
+    if name == "GOOD_GREEN_BODY":
+        return (f"colour {'green' if d.get('bullish') else 'NOT green'}; body {pc(d.get('body_pct'))}; upper wick {pc(d.get('upper_wick_pct'))}",
+                f"green, body >= {100 * th['green_body_min']:g}% and upper wick <= {100 * th['green_upper_wick_max']:g}% of the range")
+    if name == "LOWER_PRICE_REJECTION":
+        wb = d.get("wick_to_body")
+        return (f"lower wick {px(d.get('lower_wick'))} = {'undefined' if wb is None else f'{wb:.2f}'} x body {px(d.get('body'))}; close {pc(d.get('close_from_high_pct'))} below the high; low {px(d.get('low'))}"
+                f"{'' if d.get('low_reached_zone') is None else ('; low reached the zone ceiling ' + px(ceiling) if d['low_reached_zone'] else '; low did NOT reach the zone ceiling ' + px(ceiling))}",
+                f"lower wick >= {th['reject_wick_to_body_min']:g} x body, close within the top {100 * th['reject_close_fraction_max']:g}% of the range, low <= zone ceiling (colour not required)")
+    wb = d.get("wick_to_body")
+    return (f"lower wick {px(d.get('lower_wick'))} = {'undefined' if wb is None else f'{wb:.2f}'} x body; upper wick {pc(d.get('upper_wick_pct'))}; body bottom at {pc(d.get('body_position'))} of the range",
+            f"lower wick >= {th['hammer_wick_to_body_min']:g} x body, upper wick <= {100 * th['hammer_upper_wick_max']:g}%, body bottom >= {100 * th['hammer_body_position_min']:g}% of the range (colour not required)")
+
+
+def explain_pdr_revised(inp: DayInputs, tr: TradeRecord, ex: Explanation) -> None:  # noqa: C901
+    sig, cs, p, ctx = tr.signal, inp.cs, inp.proposals, inp.ctx
+    lv = sig.reference_levels
+    prev = ctx.previous
+    pcs = prev_cs(inp)
+    cfg = PDRRevisionConfig(**{**sig.proposals_used["pdr_revision"], "patterns_enabled": tuple(sig.proposals_used["pdr_revision"]["patterns_enabled"])})
+    th = cfg.thresholds
+    sig_i = inp.idx(sig.signal_candle_start)
+    sc = cs[sig_i]
+    g = explain_gap(inp, ex, "PDR-004", "UP")
+    z = build_zone(pcs, cfg)
+    ph, pl = prev_high_low(prev, p)
+    ex.add("ZONE", "PDR-001", "direction", "LONG (PDR is long only)", "long-only", "PASS" if sig.direction == "LONG" else "FAIL", sig.signal_timestamp, "PDR buys a retest of previous-day resistance after a gap up")
+    dh = pcs[z.members[0]]
+    ex.ref("zone_source_candle", dh, f"previous-day-high candle that anchors the zone ({cfg.zone_candidate})", "PREVIOUS")
+    ok_z = _close(z.floor, lv["zone_floor"]) and _close(z.ceiling, lv["zone_ceiling"])
+    ex.add("ZONE", "PDR-A01", "zone ceiling = the previous session's highest high; the zone is drawn from the body top to the wick high of that candle",
+           f"previous session {prev.date}: highest high {px(ph)} made by the {hm(dh.start)} candle (O {px(dh.o)} H {px(dh.h)} L {px(dh.l)} C {px(dh.c)}); zone [{px(z.floor)} (body top), {px(z.ceiling)} (wick high)]; "
+           f"engine recorded [{px(lv['zone_floor'])}, {px(lv['zone_ceiling'])}]", "ceiling = previous-day high (author: the day's high should be considered and a zone drawn)",
+           "PASS" if ok_z and _close(z.ceiling, ph) else "FAIL", f"{prev.date} 15:30", "the zone is anchored on the previous day's high, never on a lower swing high", "zone_source_candle",
+           name="Zone ceiling is the previous-day high (zone drawn from body top to wick high)", fidelity="AUTHOR_STATEMENT; floor convention (body top) is PROPOSED")
+    ex.levels["zone"] = (z.floor, z.ceiling, "PDR zone (previous-day-high anchored)")
+    ex.levels["prev_high"] = ph
+    zb = build_zone_b(pcs, PDRRevisionConfig(zone_candidate="B_MULTIPLE_HIGH_CLUSTER"))
+    ex.add("ZONE", "PDR-A02", "multiple highs connected into one zone (author principle; candidate B)",
+           f"candidate A (used): [{px(z.floor)}, {px(z.ceiling)}] from the day-high candle only. Candidate B (multiple-high cluster, tolerance {PDRRevisionConfig().b_tolerance_points:g} points) would be [{px(zb.floor)}, {px(zb.ceiling)}] "
+           f"({zb.kind}, {zb.touches} touch(es)); ceiling difference {px(zb.ceiling - z.ceiling)} points", "a zone that connects all relevant highs (numbers not given by the author)",
+           "UNRESOLVED", f"{prev.date} 15:30", "candidate B has the same ceiling by construction, so this signal is unaffected by the choice; the lower boundary is a research parameter",
+           name="Multiple-high zone not applied (candidate A used); the numeric details are research parameters")
+    flat = z.ceiling <= z.floor
+    ex.add("ZONE", "PDR-003", "the zone is an area, not a single price", f"zone height {px(z.ceiling - z.floor)} points [{px(z.floor)}, {px(z.ceiling)}]"
+           + ("; the previous-day-high candle closed on its high (no upper wick above its body), so the zone from body top to wick high degenerates to a LINE at the previous-day high" if flat else ""),
+           "a rectangle with positive height (the author gave no rule for a zero-height zone)", "UNRESOLVED" if flat else "PASS", f"{prev.date} 15:30",
+           "price may touch any part of the area; a line zone is touched when a candle's range includes that price", "zone_source_candle",
+           name="Zone is an area (zero-height zone: undefined by the author)" if flat else None, fidelity="ZERO_HEIGHT_ZONE_NOT_DEFINED_BY_THE_AUTHOR" if flat else "")
+    op = ctx.open_price
+    ex.add("SETUP", "PDR-A03a", "open relative to the zone ceiling (preserved legacy PDR-011, a research assumption)", f"today's open {px(op)} vs zone ceiling {px(z.ceiling)}: {px(op - z.ceiling)} points above",
+           "open > zone ceiling", "PASS" if op > z.ceiling else "FAIL", f"{ctx.date} 09:15", "the guide has price pull back into the zone after a gap up; requiring the open above the previous-day high is NOT an author rule",
+           name="Open above the zone ceiling (research assumption, not author-approved)", fidelity="RESEARCH_ASSUMPTION_PRESERVED_FROM_PHASE2")
+    jstart = lv.get("interaction_candle_start")
+    ji = next(k for k, c in enumerate(cs) if hm(c.start) == jstart)
+    jc = cs[ji]
+    prior_idx = [inp.idx(r.signal_candle_start) for r in inp.records if r.strategy == "PDR" and r.signal_status == "CONFIRMED" and r.signal_timestamp < sig.signal_timestamp]
+    scan_from = (max(prior_idx) + 1) if prior_idx else 0
+    prox = cfg.proximity_points
+    first_touch = next((k for k in range(scan_from, len(cs)) if cs[k].l <= z.ceiling + prox and cs[k].h >= z.floor - prox), None)
+    ex.ref("interaction_candle", jc, "first candle whose range overlaps the zone (the test)")
+    ex.ref("confirmation_candle", sc, "candle that satisfies one of the three patterns and closes above the zone ceiling")
+    ex.add("CONFIRMATION", "PDR-A03", "the first candle whose [low, high] overlaps the zone (+/- proximity) is the test; the confirmation must come strictly after it",
+           f"{describe_candle(jc, p)}; low {px(jc.l)} vs zone ceiling {px(z.ceiling)}, high {px(jc.h)} vs zone floor {px(z.floor)}; proximity {prox:g}; confirmation candle {hm(sc.start)} is candle no. {sig_i + 1}, the test candle no. {ji + 1}",
+           "range overlaps the zone; confirmation after the test", "PASS" if first_touch == ji and ji < sig_i else "FAIL", jc.end,
+           "the retest of the previous-day resistance" + (f" (re-armed after the earlier signal: scanning restarted after the {hm(cs[scan_from - 1].start)} candle)" if scan_from else ""), "interaction_candle", name="Test candle: the zone is revisited")
+    res = classify_confirmation(sc, z.floor, z.ceiling, cfg)
+    names = {"GOOD_GREEN_BODY": ("PDR-A04a", "Pattern 1: good green body"), "LOWER_PRICE_REJECTION": ("PDR-A04b", "Pattern 2: lower-price rejection candle"), "HAMMER": ("PDR-A04c", "Pattern 3: hammer candle")}
+    for pname, (rid, title) in names.items():
+        d = dict(res["patterns"][pname])
+        d.setdefault("low", sc.l)
+        obs, req = _pat_text(pname, d, th, z.ceiling)
+        passed = bool(res["patterns"][pname]["passed"])
+        ex.add("CONFIRMATION", rid, f"{title} on the {hm(sc.start)}-{hm(sc.end)} candle (O {px(sc.o)} H {px(sc.h)} L {px(sc.l)} C {px(sc.c)}); thresholds are PROVISIONAL ({cfg.pattern_profile})", obs + (" -> PASSES" if passed else " -> does not pass"),
+               req, "PASS" if passed else "NOT_APPLICABLE", sc.end, "one of the three patterns is enough (author: one good green body OR lower price rejection OR hammer); a pattern that does not pass is not an error",
+               "confirmation_candle", name=title + " (provisional thresholds)", fidelity="THRESHOLDS_PROPOSED_FOR_REVIEW_NOT_AUTHOR_APPROVED")
+    rec_patterns = list(lv.get("patterns_passed", []))
+    ex.add("CONFIRMATION", "PDR-A04", "at least one of the three patterns passes (OR logic; every passing pattern is recorded)", f"patterns passed: {', '.join(res['patterns_passed']) or 'NONE'} (engine recorded: {', '.join(rec_patterns) or 'none'})",
+           "at least one pattern", "PASS" if res["patterns_passed"] and res["patterns_passed"] == rec_patterns else "FAIL", sc.end, "the author's entry candle requirement", "confirmation_candle",
+           name="At least one confirmation pattern passes")
+    ex.add("CONFIRMATION", "PDR-A05", "the confirmation candle must close above the zone", f"close {px(sc.c)} vs zone ceiling {px(z.ceiling)}: {sc.c - z.ceiling:+.2f} points (floor {px(z.floor)}; low {px(sc.l)} {'dipped into/below the zone' if sc.l <= z.ceiling else 'stayed above the zone'})",
+           "close > zone ceiling, strictly (lower wick may penetrate the zone)", "PASS" if sc.c > z.ceiling and res["close_above_ceiling"] else "FAIL", sc.end,
+           "no pattern overrides the close rule", "confirmation_candle", name="Confirmation candle closes strictly above the zone ceiling",
+           fidelity="AUTHOR_STATEMENT 'the candle should close above the zone'; 'strictly' and 'the ceiling' are OWNER_INTERPRETATION")
+    ex.add("CONFIRMATION", "PDR-A06", "no entry at the open and no look-ahead: the order is placed only after the confirmation candle has completed",
+           f"test candle {hm(jc.start)} (no. {ji + 1}) precedes the confirmation candle {hm(sc.start)}-{hm(sc.end)}; signal stamped {hm(sig.signal_timestamp)}; fill {hm(tr.fill_timestamp)} at the open of that 1-minute bar = {px(tr.entry_price)}",
+           "interaction before the confirmation; fill after the confirmation candle's end", "PASS" if ji < sig_i and tr.fill_timestamp == sig.signal_timestamp else "FAIL", sc.end,
+           "existing causal fill convention (EXE-FILL-001)", "interaction_candle", name="Causal entry: fill at the next 1-minute open after the confirmation candle")
+    ex.add("NOTE", "PDR-A04x", "provisional parameters this signal rests on", f"pattern thresholds {cfg.pattern_profile}: {th}; open-above-zone rule {cfg.open_vs_zone}; test-candle confirmation allowed: {cfg.confirmation_may_be_interaction_candle}; wait policy {cfg.wait_policy}",
+           "n/a (disclosure)", "UNRESOLVED", sc.end, "the strategy author has NOT approved these numbers or the open-above-zone assumption; the signal is a RESEARCH_VARIANT, never VERIFIED",
+           name="PDR revised: thresholds, open rule and wait policy are provisional research assumptions")
+    ex.add("NOTE", "PDR-012", "repeated PDR signals today", f"{sum(1 for r in inp.records if r.strategy == 'PDR' and r.signal_status == 'CONFIRMED')} confirmed PDR signal(s) in the session",
+           "n/a (disclosure)", "NOT_APPLICABLE", sc.end, "the per-session cap is lifted for the controller runs; the controller trades only the first (and a PDR/PDS second trade after an initial full stop)")
+    ex.setup_summary = (f"PDR LONG (revised engine, {cfg.zone_candidate}, provisional thresholds): the session opened {g.points:.2f} points above the previous close and {px(op - z.ceiling)} points above the previous-day high "
+                        f"{px(z.ceiling)} (zone [{px(z.floor)}, {px(z.ceiling)}] from the {hm(dh.start)} candle of {prev.date}). The {hm(jc.start)} candle ({px(jc.l)} - {px(jc.h)}) tested the zone; the {hm(sc.start)} candle "
+                        f"({'green' if sc.c > sc.o else 'not green'}, O {px(sc.o)} H {px(sc.h)} L {px(sc.l)} C {px(sc.c)}) passed {', '.join(res['patterns_passed'])} and closed {sc.c - z.ceiling:.2f} points above the zone ceiling, "
+                        f"confirming the entry at {hm(sc.end)}. The pattern thresholds and the open-above-zone requirement are provisional research assumptions, not approved by the strategy author.")
+
+
+# ====================================================================================================== PDR (Phase 3.6 body-based engine)
+def explain_pdr_body(inp: DayInputs, tr: TradeRecord, ex: Explanation) -> None:  # noqa: C901
+    sig, cs, p, ctx = tr.signal, inp.cs, inp.proposals, inp.ctx
+    lv = sig.reference_levels
+    prev = ctx.previous
+    pcs = prev_cs(inp)
+    cfg = PDRBodyConfig(**{**sig.proposals_used["pdr_body"], "patterns_enabled": tuple(sig.proposals_used["pdr_body"]["patterns_enabled"])})
+    th = cfg.thresholds
+    sig_i = inp.idx(sig.signal_candle_start)
+    sc = cs[sig_i]
+    g = explain_gap(inp, ex, "PDR-004", "UP")
+    z = build_body_zone(pcs, cfg)
+    ph, pl = prev_high_low(prev, p)
+    ex.add("ZONE", "PDR-001", "direction", "LONG (PDR is long only)", "long-only", "PASS" if sig.direction == "LONG" else "FAIL", sig.signal_timestamp, "PDR buys a retest of previous-day resistance after a gap up")
+    dh = pcs[z.members[0]]
+    wick_idx = max(range(len(pcs)), key=lambda k: pcs[k].h)
+    ex.ref("zone_source_candle", dh, f"candle of the previous session's highest BODY high ({cfg.zone_candidate})", "PREVIOUS")
+    ex.ref("prev_day_wick_high_candle", pcs[wick_idx], "candle of the previous session's highest WICK (ignored by the author's rule; shown for comparison)", "PREVIOUS")
+    top = sorted(((body_high(c), c) for c in pcs), key=lambda t: -t[0])[:4]
+    ok_z = _close(z.floor, lv["zone_floor"]) and _close(z.ceiling, lv["zone_ceiling"]) and _close(z.ceiling, max(body_high(c) for c in pcs))
+    ex.add("ZONE", "PDR-B01a", "wicks ignored, bodies considered: body_high = max(open, close) of every completed previous-session 5-minute candle; ceiling = the highest body_high; floor = body low of that candle",
+           f"previous session {prev.date}: highest body high {px(z.ceiling)} on the {hm(dh.start)} candle (O {px(dh.o)} C {px(dh.c)}; wick high of that candle {px(dh.h)}, ignored); four highest body highs: "
+           + "; ".join(f"{px(v)} ({hm(c.start)})" for v, c in top) + f". Highest WICK of the session {px(ph)} ({hm(pcs[wick_idx].start)} candle) is {px(ph - z.ceiling)} points above the ceiling and plays no part. "
+           f"Zone [{px(z.floor)} (body low), {px(z.ceiling)} (body high)]; engine recorded [{px(lv['zone_floor'])}, {px(lv['zone_ceiling'])}]",
+           "ceiling = highest body high of the previous session (author: wick ignored, body considered)", "PASS" if ok_z else "FAIL", f"{prev.date} 15:30",
+           "a wick-only price never becomes resistance; the zone is drawn from candle bodies", "zone_source_candle,prev_day_wick_high_candle",
+           name="Zone ceiling is the previous-day highest BODY high (wicks ignored)", fidelity="AUTHOR_STATEMENT; the exact body-high reading and the floor are PROPOSED / OWNER_INTERPRETATION")
+    ex.levels["zone"] = (z.floor, z.ceiling, "PDR zone (previous-day highest body high)")
+    ex.levels["prev_high"] = z.ceiling
+    zb = build_body_zone(pcs, PDRBodyConfig(zone_candidate="B_MULTIPLE_BODY_HIGH_CLUSTER"))
+    ex.add("ZONE", "PDR-B02", "multiple highs connected into one zone (author principle; candidate B)",
+           f"candidate A (used): [{px(z.floor)}, {px(z.ceiling)}]. Candidate B (multiple-body-high cluster, tolerance {PDRBodyConfig().b_tolerance_points:g} points) would be [{px(zb.floor)}, {px(zb.ceiling)}] "
+           f"({zb.kind}, {zb.touches} touch(es), member body highs {', '.join(px(v) for v in zb.member_body_highs)}); ceiling difference {px(zb.ceiling - z.ceiling)} points",
+           "a zone that connects all relevant highs (numbers not given by the author)", "UNRESOLVED", f"{prev.date} 15:30",
+           "candidate B has the same ceiling by construction, so this signal is unaffected by the choice; the lower boundary and the cluster numbers are research parameters",
+           name="Multiple-body-high zone not applied (candidate A used); the numeric details are research parameters")
+    ex.add("ZONE", "PDR-003", "the zone is an area, not a single price", f"zone height {px(z.ceiling - z.floor)} points [{px(z.floor)}, {px(z.ceiling)}]", "a rectangle with positive height (a zero-height zone is left unresolved by the engine)",
+           "PASS" if z.ceiling > z.floor else "FAIL", f"{prev.date} 15:30", "price may touch any part of the area", "zone_source_candle")
+    op = ctx.open_price
+    ex.add("SETUP", "PDR-B03", "the session opens strictly above the previous day's resistance zone (author-approved)", f"today's first 1-minute open {px(op)} vs zone ceiling {px(z.ceiling)}: {px(op - z.ceiling)} points above (open - ceiling = {op - z.ceiling:+.2f})",
+           "open > zone ceiling (equal or inside the zone rejects the setup)", "PASS" if op > z.ceiling else "FAIL", f"{ctx.date} 09:15", "the original first-minute open is used, never a vendor daily open",
+           name="Open strictly above the zone ceiling (author-approved)")
+    jstart = lv.get("interaction_candle_start")
+    ji = next(k for k, c in enumerate(cs) if hm(c.start) == jstart)
+    jc = cs[ji]
+    prior_idx = [inp.idx(r.signal_candle_start) for r in inp.records if r.strategy == "PDR" and r.signal_status == "CONFIRMED" and r.signal_timestamp < sig.signal_timestamp]
+    scan_from = (max(prior_idx) + 1) if prior_idx else 0
+    prox = cfg.proximity_points
+    first_touch = next((k for k in range(scan_from, len(cs)) if cs[k].l <= z.ceiling + prox and cs[k].h >= z.floor - prox), None)
+    ex.ref("interaction_candle", jc, "first candle whose range overlaps the zone (the test)")
+    ex.ref("confirmation_candle", sc, "candle that satisfies one of the three patterns and closes above the zone ceiling")
+    ex.add("CONFIRMATION", "PDR-B03b", "the first candle whose [low, high] overlaps the zone (+/- proximity) is the test; the confirmation must come strictly after it",
+           f"{describe_candle(jc, p)}; low {px(jc.l)} vs zone ceiling {px(z.ceiling)}, high {px(jc.h)} vs zone floor {px(z.floor)}; proximity {prox:g}; confirmation candle {hm(sc.start)} is candle no. {sig_i + 1}, the test candle no. {ji + 1}",
+           "range overlaps the zone; confirmation after the test", "PASS" if first_touch == ji and ji < sig_i else "FAIL", jc.end,
+           "the retest of the previous-day resistance" + (f" (re-armed after the earlier signal: scanning restarted after the {hm(cs[scan_from - 1].start)} candle)" if scan_from else ""), "interaction_candle", name="Test candle: the zone is revisited")
+    res = classify_confirmation(sc, z.floor, z.ceiling, cfg.pattern_config())
+    names = {"GOOD_GREEN_BODY": "Pattern 1: good green body", "LOWER_PRICE_REJECTION": "Pattern 2: lower-price rejection candle", "HAMMER": "Pattern 3: hammer candle"}
+    for pname, title in names.items():
+        d = dict(res["patterns"][pname])
+        d.setdefault("low", sc.l)
+        obs, req = _pat_text(pname, d, th, z.ceiling)
+        passed = bool(res["patterns"][pname]["passed"])
+        ex.add("CONFIRMATION", "PDR-B04c", f"{title} on the {hm(sc.start)}-{hm(sc.end)} candle (O {px(sc.o)} H {px(sc.h)} L {px(sc.l)} C {px(sc.c)}); the numeric thresholds are PROVISIONAL ({cfg.pattern_profile}), not author-approved",
+               obs + (" -> PASSES" if passed else " -> does not pass"), req, "PASS" if passed else "NOT_APPLICABLE", sc.end,
+               "one of the three patterns is enough (author: one good green body OR lower price rejection OR hammer); fixed thresholds are not required by the author, so the numbers are a research convention; a pattern that does not pass is not an error",
+               "confirmation_candle", name=title + " (provisional research thresholds)", fidelity="THRESHOLDS_PROPOSED_FOR_REVIEW_NOT_AUTHOR_APPROVED")
+    rec_patterns = list(lv.get("patterns_passed", []))
+    ex.add("CONFIRMATION", "PDR-B04", "at least one of the three patterns passes (OR logic; every passing pattern is recorded)", f"patterns passed: {', '.join(res['patterns_passed']) or 'NONE'} (engine recorded: {', '.join(rec_patterns) or 'none'})",
+           "at least one pattern", "PASS" if res["patterns_passed"] and res["patterns_passed"] == rec_patterns else "FAIL", sc.end, "the author's entry candle requirement", "confirmation_candle",
+           name="At least one confirmation pattern passes")
+    ex.add("CONFIRMATION", "PDR-B05", "the confirmation candle must close above the zone", f"close {px(sc.c)} vs zone ceiling {px(z.ceiling)}: {sc.c - z.ceiling:+.2f} points (floor {px(z.floor)}; low {px(sc.l)} {'dipped into/below the zone' if sc.l <= z.ceiling else 'stayed above the zone'})",
+           "close > zone ceiling, strictly (lower wick may penetrate the zone)", "PASS" if sc.c > z.ceiling and res["close_above_ceiling"] else "FAIL", sc.end, "no pattern overrides the close rule", "confirmation_candle",
+           name="Confirmation candle closes strictly above the zone ceiling", fidelity="AUTHOR_STATEMENT 'the candle should close above the zone'; 'strictly' and 'the ceiling' are OWNER_INTERPRETATION")
+    ex.add("CONFIRMATION", "PDR-B06", "no entry at the open and no look-ahead: the order is placed only after the confirmation candle has completed",
+           f"test candle {hm(jc.start)} (no. {ji + 1}) precedes the confirmation candle {hm(sc.start)}-{hm(sc.end)}; signal stamped {hm(sig.signal_timestamp)}; fill {hm(tr.fill_timestamp)} at the open of that 1-minute bar = {px(tr.entry_price)}",
+           "interaction before the confirmation; fill after the confirmation candle's end", "PASS" if ji < sig_i and tr.fill_timestamp == sig.signal_timestamp else "FAIL", sc.end,
+           "existing causal fill convention (EXE-FILL-001)", "interaction_candle", name="Causal entry: fill at the next 1-minute open after the confirmation candle")
+    ex.add("NOTE", "PDR-B04x", "provisional parameters this signal rests on", f"pattern thresholds {cfg.pattern_profile}: {th}; zone lower boundary = hull of the member bodies; zero-height policy {cfg.zero_height_policy}; wait policy {cfg.wait_policy}; "
+           f"cluster parameters (candidate B only) tolerance {cfg.b_tolerance_points:g}, touches {cfg.b_min_touches}, separation {cfg.b_min_separation_candles}",
+           "n/a (disclosure)", "UNRESOLVED", sc.end, "the strategy author has NOT approved these numbers or conventions; the signal is a RESEARCH_VARIANT, never VERIFIED",
+           name="PDR body-based: numeric thresholds and zone conventions are provisional research assumptions")
+    ex.add("NOTE", "PDR-012", "repeated PDR signals today", f"{sum(1 for r in inp.records if r.strategy == 'PDR' and r.signal_status == 'CONFIRMED')} confirmed PDR signal(s) in the session",
+           "n/a (disclosure)", "NOT_APPLICABLE", sc.end, "this engine reports EVERY qualifying signal (the per-session cap is lifted); the controller trades only the first (and a PDR/PDS second trade after an initial full stop)",
+           name="Repeated PDR signals today (disclosure: all are reported, the controller takes the first)")
+    broke = [c for c in cs[ji:sig_i] if c.c < z.floor]
+    ex.add("NOTE", "PDR-B07", "state of the zone between the test and the confirmation (the author and the guide are silent on price crossing below the zone)",
+           f"test candle {hm(jc.start)} (no. {ji + 1}), confirmation candle {hm(sc.start)} (no. {sig_i + 1}): {sig_i - ji} candle(s) later; "
+           + (f"{len(broke)} candle(s) in between CLOSED BELOW the zone floor {px(z.floor)} (lowest close {px(min(c.c for c in broke))}) before price returned above the ceiling" if broke else "no candle in between closed below the zone floor"),
+           "n/a (disclosure; the wait policy is a research parameter)", "UNRESOLVED" if broke else "NOT_APPLICABLE", sc.end,
+           "the engine keeps a tested setup armed until a candle qualifies; whether a zone that price has closed through should still count is an owner decision",
+           name="Wait policy / zone that price closed through before the confirmation (research assumption)")
+    ex.setup_summary = (f"PDR LONG (body-based engine, {cfg.zone_candidate}): the session opened {g.points:.2f} points above the previous close and {px(op - z.ceiling)} points above the previous-day highest BODY high "
+                        f"{px(z.ceiling)} (zone [{px(z.floor)}, {px(z.ceiling)}] from the {hm(dh.start)} candle of {prev.date}; the highest wick {px(ph)} is ignored). The {hm(jc.start)} candle ({px(jc.l)} - {px(jc.h)}) tested the zone; "
+                        f"the {hm(sc.start)} candle ({'green' if sc.c > sc.o else 'not green'}, O {px(sc.o)} H {px(sc.h)} L {px(sc.l)} C {px(sc.c)}) passed {', '.join(res['patterns_passed'])} and closed {sc.c - z.ceiling:.2f} points above the zone ceiling, "
+                        f"confirming the entry at {hm(sc.end)}. The pattern thresholds and the zone's lower boundary are provisional research assumptions, not approved by the strategy author.")
+
+
 # ====================================================================================================== PDS
 def explain_pds(inp: DayInputs, tr: TradeRecord, ex: Explanation) -> None:
     sig, cs, p, ctx = tr.signal, inp.cs, inp.proposals, inp.ctx
@@ -927,7 +1157,12 @@ EXPLAINERS = {"IRF": explain_irf, "ORB": explain_orb, "PDR": explain_pdr, "PDS":
 def explain_trade(day, tr: TradeRecord, inp: DayInputs) -> Explanation:
     ex = Explanation(trade_id_of(day, tr))
     explain_selection(inp, tr, ex)
-    EXPLAINERS[tr.signal.strategy](inp, tr, ex)
+    if tr.signal.strategy == "PDR" and tr.signal.execution_config.get("pdr_body"):
+        explain_pdr_body(inp, tr, ex)  # Phase 3.6 body-based engine
+    elif tr.signal.strategy == "PDR" and tr.signal.execution_config.get("pdr_revision"):
+        explain_pdr_revised(inp, tr, ex)  # Phase 3.4 revised engine
+    else:
+        EXPLAINERS[tr.signal.strategy](inp, tr, ex)
     explain_execution_levels(inp, tr, ex)
     order = {"SELECTION": 0, "SETUP": 1, "TREND": 2, "ZONE": 3, "CONFIRMATION": 4, "EXECUTION": 5, "NOTE": 6}
     ex.checks.sort(key=lambda c: (order[c.group], c.seq))

@@ -1,0 +1,18 @@
+{
+  "trading_days": 247,
+  "trades": 196,
+  "daily_journals": 247,
+  "charts": 196,
+  "checks": 4506,
+  "confirmed_signals": 1083,
+  "ignored": 599,
+  "rejected_or_incomplete": 1083,
+  "manual_rows": 190,
+  "journal_exact": 66,
+  "journal_time_shifted": 22,
+  "issues": 245,
+  "simultaneous_conflict_days": 2,
+  "recomputation_mismatches": 0,
+  "ledger_identical_to_phase30": false,
+  "ledger_differences_vs_phase30": 607
+}

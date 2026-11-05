@@ -1,0 +1,7 @@
+strategy,entries,first_trades,second_trades,days_traded,gross_pnl_rs,net_illustrative_pnl_rs,win_rate_pct,profit_factor,avg_trade_rs,max_drawdown_rs,max_consecutive_losses,target2,t1_then_buffer_stop,initial_full_stop,forced_exit,unresolved,avg_holding_minutes,contribution_pct_of_gross
+IRF,102,102,0,102,-56062.5,-146842.5,53.92,0.9126,-549.63,180180.0,5,28,27,47,0,0,43.82,-32.6
+ORB,41,41,0,41,138469.5,101979.5,65.85,1.8385,3377.3,36445.5,3,15,12,14,0,0,38.85,80.4
+PDR,54,42,12,46,29074.5,-18985.5,62.96,1.1065,538.42,96144.75,3,11,23,20,0,0,50.69,16.9
+PDS,11,7,4,10,80554.5,70764.5,72.73,2.9587,7323.14,27475.5,2,6,2,3,0,0,79.82,46.8
+RF,5,5,0,5,-19890.0,-24340.0,40.0,0.5143,-3978.0,27300.0,2,1,1,3,0,0,80.8,-11.6
+ALL,213,197,16,197,172146.0,-17424.0,59.15,1.1482,808.2,208240.5,5,61,65,87,0,0,47.33,100.0

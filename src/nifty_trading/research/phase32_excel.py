@@ -16,6 +16,8 @@ from openpyxl.worksheet.datavalidation import DataValidation
 from nifty_trading.research import phase3 as P
 from nifty_trading.research.phase32_build import Bundle, counts_vs_phase31
 from nifty_trading.strategies.params import DEFAULT_PROPOSALS
+from nifty_trading.strategies.pdr_body import PDR_BODY_RULES
+from nifty_trading.strategies.pdr_revised import PDR_REVISION_RULES
 from nifty_trading.strategies.rule_data import RULES
 
 INR = '[$₹-4009]#,##0.00;[Red]-[$₹-4009]#,##0.00'
@@ -54,6 +56,16 @@ def style_header(ws, ncols: int) -> None:
     ws.row_dimensions[1].height = 32
 
 
+EXCEL_CELL_LIMIT = 32000  # Excel rejects cells above 32,767 characters; longer text is cut with a visible marker (the CSV file always holds the full text)
+TRUNCATION_MARK = " ...[TRUNCATED IN EXCEL - full text in the CSV file]"
+
+
+def cell_text(v):
+    if isinstance(v, str) and len(v) > EXCEL_CELL_LIMIT:
+        return v[:EXCEL_CELL_LIMIT - len(TRUNCATION_MARK)] + TRUNCATION_MARK
+    return v
+
+
 def write_table(ws, rows: list[dict], freeze_cols: int = 1) -> dict[str, int]:
     fields: list[str] = []
     for r in rows:
@@ -69,7 +81,7 @@ def write_table(ws, rows: list[dict], freeze_cols: int = 1) -> dict[str, int]:
                 v = str(v)  # identical to what the CSV writer stores
             if isinstance(v, bool):
                 v = "TRUE" if v else "FALSE"
-            c = ws.cell(row=ri, column=ci, value=("" if v is None else v))
+            c = ws.cell(row=ri, column=ci, value=("" if v is None else cell_text(v)))
             if isinstance(v, (int, float)) and not isinstance(v, bool):
                 nf = fmt_for(f)
                 if nf:
@@ -108,7 +120,7 @@ def param_status(key: str) -> str:
 
 def dashboard(wb: Workbook, b: Bundle) -> None:
     ws = wb["Dashboard"]
-    ws["A1"], ws["A1"].font = "NIFTY 50 - explainable backtest and daily verification (Phase 3.2)", TITLE
+    ws["A1"], ws["A1"].font = f"NIFTY 50 - explainable backtest and daily verification ({b.phase_label})", TITLE
     ws["A2"] = (f"Period 2025-09-01 .. 2026-08-31 | rule configuration {b.cfg_id} | synthetic index-point P&L (the index is not tradable) | owner review fields are blank | "
                 "no parameter was tuned; this is a verification aid, not a recommendation")
     rows = sorted(b.ledger, key=P.sequence_key)
@@ -138,7 +150,7 @@ def dashboard(wb: Workbook, b: Bundle) -> None:
         sub = [x for x in rows if x["strategy"] == s]
         strat_items.append((s, f"{len(sub)} trades | gross Rs {sum(x['gross_pnl_rs'] for x in sub):,.0f}", None))
     r = block("Trades by strategy", strat_items, r)
-    r = block("Journal agreement (Phase 3.1 methodology, unchanged)", [
+    r = block("Journal agreement (Phase 3.1 methodology, unchanged)" if b.has_journal else "Journal agreement: not applicable (no manual journal exists for this period)", [
         ("Manual journal rows", cv["manual_rows"], None), ("Exact matches (same candle)", cv["exact"], None), ("Time-shifted matches (<= 15 min)", cv["time_shifted"], None),
         ("Unmatched manual trades", cv["manual_rows"] - cv["exact"] - cv["time_shifted"], None), ("Extra automated trades", cv["extras"], None),
         ("Matches equal Phase 3.1 figures", "YES" if cv["classification_equal_to_phase31"] else "NO - see data_provenance.json", None)], r)
@@ -147,7 +159,8 @@ def dashboard(wb: Workbook, b: Bundle) -> None:
         ("Executed trades with a full entry explanation", f"{len(b.trades)} / {len(b.trades)}", None), ("Exit explanations (both legs)", f"{len({g['trade_id'] for g in b.legs})} / {len(b.trades)} trades", None),
         ("Entry conditions recorded", len(b.checks), None), ("... PASS / FAIL / UNRESOLVED / NOT_APPLICABLE", f"{chk['PASS']} / {chk['FAIL']} / {chk['UNRESOLVED']} / {chk['NOT_APPLICABLE']}", None),
         ("Trades whose recomputation matches the engine's own record", f"{n_ok} / {len(b.trades)}", None),
-        ("Phase 3.0 baseline ledger reproduced field by field", "IDENTICAL" if b.ledger_check["identical"] else f"{b.ledger_check['n_differences']} DIFFERENCES", None)], r)
+        ("Phase 3.0 baseline ledger reproduced field by field" if not b.revised_pdr else "Ledger vs the Phase 3.0 baseline (DIFFERENCES EXPECTED: PDR engine changed)",
+         "IDENTICAL" if b.ledger_check["identical"] else f"{b.ledger_check['n_differences']} DIFFERENCES", None)], r)
     ws.cell(row=r, column=1, value="Navigation").font = Font(bold=True, size=12, color="1F3864")
     for i, (name, _) in enumerate(SHEETS[1:], 1):
         c = ws.cell(row=r + i, column=1, value=name)
@@ -188,11 +201,20 @@ def rule_definitions(wb: Workbook, b: Bundle) -> None:
     ws = wb["Rule Definitions"]
     rows = []
     for r in RULES:
-        rows.append({"kind": "RULE", "id": r["rule_id"], "strategy": r["strategy"], "method": r["method"], "description": r["description"], "source": f"{r['source_document']} p.{r['source_page']}",
+        rows.append({"kind": "RULE", "id": r["rule_id"], "strategy": r["strategy"], "method": r["method"],
+                     "description": ("[Phase 2 registry text - the revised PDR engine is governed by the PDR-A / PDR-B rules listed below] " if b.revised_pdr and r["strategy"] == "PDR" else "") + r["description"], "source": f"{r['source_document']} p.{r['source_page']}",
                      "approval_status": r["classification"], "implementation_status": r["implementation_status"], "mathematical_condition": r["mathematical_condition"],
                      "proposal": r.get("proposal_parameter", "") or "", "unresolved_dependencies": ";".join(r.get("unresolved_dependencies", []) or [])})
+    if b.revised_pdr:
+        for r in (PDR_BODY_RULES if b.pdr_engine == "BODY_BASED_PHASE36" else PDR_REVISION_RULES):
+            rows.append({"kind": "REVISION RULE (Phase 3.6 body-based, active PDR)" if b.pdr_engine == "BODY_BASED_PHASE36" else "REVISION RULE (Phase 3.4, active PDR)", "id": r["rule_id"], "strategy": "PDR", "method": "PDR", "description": r["text"], "source": r["source"], "approval_status": r["status"],
+                         "implementation_status": "ACTIVE", "mathematical_condition": r.get("implemented_by", ""), "proposal": r.get("parameter", "") or "", "unresolved_dependencies": ""})
+        for k, v in asdict(b.scenario.pdr_revision).items():
+            rows.append({"kind": "PARAMETER (PDRBodyConfig)" if b.pdr_engine == "BODY_BASED_PHASE36" else "PARAMETER (PDRRevisionConfig)", "id": k, "strategy": "PDR", "method": "PDR", "description": f"active value: {v}",
+                         "source": "src/nifty_trading/strategies/pdr_body.py" if b.pdr_engine == "BODY_BASED_PHASE36" else "src/nifty_trading/strategies/pdr_revised.py",
+                         "approval_status": "PROPOSED_FOR_REVIEW (research setting; not approved by the strategy author)", "implementation_status": "ACTIVE", "mathematical_condition": "", "proposal": "", "unresolved_dependencies": ""})
     for k, v in b.scenario.proposals.to_dict().items():
-        rows.append({"kind": "PARAMETER (ProposalConfig)", "id": k, "strategy": "", "method": "", "description": f"active value: {v}  (shipped default: {getattr(DEFAULT_PROPOSALS, k, 'n/a')})", "source": "src/nifty_trading/strategies/params.py",
+        rows.append({"kind": "PARAMETER (ProposalConfig)", "id": k, "strategy": "", "method": "", "description": (f"IGNORED by the revised PDR engine (used only by the legacy engine and diagnostics); value {v}" if b.revised_pdr and k.startswith("pdr_") else f"active value: {v}  (shipped default: {getattr(DEFAULT_PROPOSALS, k, 'n/a')})"), "source": "src/nifty_trading/strategies/params.py",
                      "approval_status": param_status(k), "implementation_status": "ACTIVE", "mathematical_condition": "", "proposal": "", "unresolved_dependencies": ""})
     for k, v in asdict(b.scenario.trade).items():
         rows.append({"kind": "PARAMETER (TradeConfig)", "id": k, "strategy": "", "method": "", "description": f"active value: {v}", "source": "src/nifty_trading/strategies/params.py",

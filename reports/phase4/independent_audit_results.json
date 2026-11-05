@@ -1,0 +1,446 @@
+{
+  "checks": {
+    "every raw provider file equals the SHA-256 recorded at retrieval (5paisa responses; secondary files also equal the repository's git blob SHA-1)": {
+      "pass": true,
+      "n": 99,
+      "detail": "secondary commit f1e07e7d23",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every processed partition equals the SHA-256 in its source manifest": {
+      "pass": true,
+      "n": 140,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "processed minute and daily data equal an independent reload of the raw files (timestamps and all four prices; the only difference is the 2-decimal rounding of the daily series' float32 noise)": {
+      "pass": true,
+      "n": 1062476,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the derived trading calendar equals an independent derivation from the raw daily and minute files (holidays and special sessions with their evaluable flag)": {
+      "pass": true,
+      "n": 130,
+      "detail": "holidays 121 vs 121; special 9 vs 9",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the calendar method reproduces the evidence-tier 2025-26 calendar (holidays and special sessions), independently": {
+      "pass": true,
+      "n": 16,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no trade falls on a derived holiday or on a non-evaluable special session": {
+      "pass": true,
+      "n": 939,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all trades)": {
+      "pass": true,
+      "n": 609,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 609,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B] leg P&L = (exit - entry) x direction x 195 per leg; gross and illustrative net recomputed; stops / targets follow the frozen distances": {
+      "pass": true,
+      "n": 609,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (2383 candles with an EMA)": {
+      "pass": true,
+      "n": 2383,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 2383,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 565,
+      "detail": "11 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B] all five strategies produced signals and were traded": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 2487, 'RF': 80, 'PDR': 305, 'PDS': 121, 'ORB': 149}, trades {'IRF': 328, 'PDR': 106, 'PDS': 27, 'ORB': 101, 'RF': 47}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 744,
+      "detail": "expected 744 vs 744, in source 743 vs 743",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B] at least 200 daily bars precede the window (daily moving averages) and warm-up rows exist where the source has them": {
+      "pass": true,
+      "n": 1401,
+      "detail": "warm-up minute sessions 20",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B_TV] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all trades)": {
+      "pass": true,
+      "n": 601,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B_TV] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 601,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B_TV] leg P&L = (exit - entry) x direction x 195 per leg; gross and illustrative net recomputed; stops / targets follow the frozen distances": {
+      "pass": true,
+      "n": 601,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B_TV] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (2358 candles with an EMA)": {
+      "pass": true,
+      "n": 2358,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B_TV] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 2358,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B_TV] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 557,
+      "detail": "7 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B_TV] all five strategies produced signals and were traded": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 2433, 'RF': 75, 'PDR': 299, 'PDS': 131, 'ORB': 135}, trades {'IRF': 333, 'PDR': 105, 'PDS': 28, 'ORB': 90, 'RF': 45}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B_TV] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 744,
+      "detail": "expected 744 vs 744, in source 743 vs 743",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[B_TV] at least 200 daily bars precede the window (daily moving averages) and warm-up rows exist where the source has them": {
+      "pass": true,
+      "n": 1401,
+      "detail": "warm-up minute sessions 30",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[C] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all trades)": {
+      "pass": true,
+      "n": 185,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[C] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 185,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[C] leg P&L = (exit - entry) x direction x 195 per leg; gross and illustrative net recomputed; stops / targets follow the frozen distances": {
+      "pass": true,
+      "n": 185,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[C] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (725 candles with an EMA)": {
+      "pass": true,
+      "n": 725,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[C] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 725,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[C] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 180,
+      "detail": "0 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[C] all five strategies produced signals and were traded": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'RF': 24, 'IRF': 733, 'PDR': 113, 'ORB': 61, 'PDS': 23}, trades {'RF': 18, 'PDR': 32, 'IRF': 90, 'ORB': 42, 'PDS': 3}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[C] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 246,
+      "detail": "expected 246 vs 246, in source 245 vs 245",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[C] at least 200 daily bars precede the window (daily moving averages) and warm-up rows exist where the source has them": {
+      "pass": true,
+      "n": 248,
+      "detail": "warm-up minute sessions 30",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_5P] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all trades)": {
+      "pass": true,
+      "n": 149,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_5P] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 149,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_5P] leg P&L = (exit - entry) x direction x 195 per leg; gross and illustrative net recomputed; stops / targets follow the frozen distances": {
+      "pass": true,
+      "n": 149,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_5P] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (565 candles with an EMA)": {
+      "pass": true,
+      "n": 577,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_5P] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 577,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_5P] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 145,
+      "detail": "4 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_5P] all five strategies produced signals and were traded": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 690, 'PDR': 96, 'ORB': 49, 'RF': 15, 'PDS': 22}, trades {'IRF': 85, 'PDR': 17, 'ORB': 35, 'RF': 10, 'PDS': 2}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_5P] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 201,
+      "detail": "expected 201 vs 201, in source 196 vs 196",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_5P] at least 200 daily bars precede the window (daily moving averages) and warm-up rows exist where the source has them": {
+      "pass": true,
+      "n": 537,
+      "detail": "warm-up minute sessions 0",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_TV] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all trades)": {
+      "pass": true,
+      "n": 182,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_TV] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 182,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_TV] leg P&L = (exit - entry) x direction x 195 per leg; gross and illustrative net recomputed; stops / targets follow the frozen distances": {
+      "pass": true,
+      "n": 182,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_TV] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (720 candles with an EMA)": {
+      "pass": true,
+      "n": 720,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_TV] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 720,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_TV] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 177,
+      "detail": "4 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_TV] all five strategies produced signals and were traded": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'RF': 24, 'IRF': 816, 'PDR': 108, 'ORB': 51, 'PDS': 24}, trades {'RF': 15, 'IRF': 106, 'PDR': 21, 'ORB': 37, 'PDS': 3}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_TV] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 244,
+      "detail": "expected 244 vs 244, in source 244 vs 244",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[D_TV] at least 200 daily bars precede the window (daily moving averages) and warm-up rows exist where the source has them": {
+      "pass": true,
+      "n": 494,
+      "detail": "warm-up minute sessions 29",
+      "failures": [],
+      "n_failures": 0
+    },
+    "annual_comparison.csv equals an independent recomputation for every row (trades, gross, net, profit factor, drawdown, losing streak, win rate, outcomes, index points = gross / 390)": {
+      "pass": true,
+      "n": 12,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the three annual slices of Window B sum to the three-year window (trades, gross, net)": {
+      "pass": true,
+      "n": 4,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the Phase 3.6 reference row reproduces its reported results (196 trades, gross Rs 297,765, illustrative net Rs 123,325)": {
+      "pass": true,
+      "n": 1,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "cost sensitivity (fill-level costs) recomputed independently for three periods x four scenarios; the Rs 500 / 0.5 point scenario equals the Phase 3.6 headline": {
+      "pass": true,
+      "n": 12,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every trade of every window records the minute-source id, daily-source id, partition SHA-256 (= the real file hash) and raw-file SHA-256; ids are unique; every trade has its chart and journal section; every session has a journal": {
+      "pass": true,
+      "n": 1726,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the workbook's main sheets equal the CSV files cell by cell": {
+      "pass": true,
+      "n": 61234,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the 2022-08..2025-08 vendor-overlap figures (bars compared, share identical, mean |close difference|) equal an independent recomputation": {
+      "pass": true,
+      "n": 284776,
+      "detail": "bars 284,776; identical 0.3975; mean |diff| 0.3212",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every strategy, controller, execution and session-construction file equals the hash recorded in the freeze": {
+      "pass": true,
+      "n": 26,
+      "detail": "FROZEN-PHASE36-42cea2600bd4",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the freeze's regression check regenerated the Phase 3.6 backtest and found every file identical": {
+      "pass": true,
+      "n": 466,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file of the before-snapshot (data, every earlier report, engines, controller, scripts, tests, docs) is byte-identical except the three research modules edited for Phase 4": {
+      "pass": true,
+      "n": 2474,
+      "detail": "allowed edits: ['src/nifty_trading/research/phase32_build.py', 'src/nifty_trading/research/phase32_excel.py', 'src/nifty_trading/research/phase32_render.py']",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file of the Phase 3.6 results directory is byte-identical to its pre-Phase-4 hash": {
+      "pass": true,
+      "n": 484,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the Phase 1 dataset and its metadata (data/processed, data/metadata) are byte-identical": {
+      "pass": true,
+      "n": 21,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    }
+  },
+  "all_pass": true
+}

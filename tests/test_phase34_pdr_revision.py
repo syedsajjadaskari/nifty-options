@@ -316,7 +316,13 @@ def test_other_engines_the_controller_stops_targets_and_shared_definitions_are_b
     assert sha(prefix) == snap[prefix]
 
 
+# Phase 3.5 deliberately edits the research modules (engine selection, explainer), so the broad Phase 3.4 freeze is superseded by the Phase 3.5 freeze (tests/test_phase35_combined.py)
+# once reports/phase3/phase35_combined/before_snapshot.json exists. The per-engine / controller / stops hash tests below stay active.
+superseded = pytest.mark.skipif((OUT.parent / "phase35_combined" / "before_snapshot.json").exists(), reason="superseded by the Phase 3.5 snapshot test")
+
+
 @needs_snapshot
+@superseded
 def test_no_source_test_or_script_file_that_existed_before_changed_and_all_data_and_phase3_reports_are_identical():
     snap = json.loads(snap_path.read_text())["files"]
     changed = [p for p, h in snap.items() if (p.startswith(("src/", "tests/", "scripts/", "data/", "reports/phase3/", "docs/strategy_docs/", "docs/trading journal/")) and (ROOT / p).exists() and sha(p) != h)]

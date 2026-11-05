@@ -23,6 +23,8 @@ from nifty_trading.strategies import (
     RFStrategy,
 )
 from nifty_trading.strategies.params import DEFAULT_TRADE, ProposalConfig, TradeConfig
+from nifty_trading.strategies.pdr_body import PDRBodyConfig, PDRBodyStrategy
+from nifty_trading.strategies.pdr_revised import PDRRevisedStrategy, PDRRevisionConfig
 from nifty_trading.strategies.trading_day import DayResult, DayRules, run_trading_day
 
 FORCED_EXIT_TIME = time(15, 14)  # FORCED-EXIT-002 (assumption): closed at the OPEN of the 15:14 minute, i.e. before 15:15
@@ -37,6 +39,9 @@ class Scenario:
     proposals: ProposalConfig
     trade: TradeConfig
     notes: str = ""
+    # which PDR engine feeds the shared controller: "LEGACY" (pdr.py, the Phase 3.0 behaviour, the default) or "REVISED_PHASE34" (pdr_revised.py; pdr_revision selects its configuration)
+    pdr_engine: str = "LEGACY"
+    pdr_revision: PDRRevisionConfig | PDRBodyConfig | None = None  # the configuration of the selected non-legacy PDR engine (Phase 3.4 / 3.5 revision, or the Phase 3.6 body-based config)
 
 
 def _base_proposals() -> ProposalConfig:
@@ -58,9 +63,34 @@ def scenarios() -> dict[str, Scenario]:
     }
 
 
-def make_engines(p: ProposalConfig, t: TradeConfig):
-    return [IRFStrategy(proposals=p, trade=t), ORBStrategy(proposals=p, trade=t), PDRStrategy(proposals=p, trade=t),
-            PDSStrategy(proposals=p, trade=t), RFStrategy(proposals=p, trade=t)]
+PDR_ENGINES = ("LEGACY", "REVISED_PHASE34", "BODY_BASED_PHASE36")
+NON_LEGACY_PDR = ("REVISED_PHASE34", "BODY_BASED_PHASE36")
+
+
+def make_engines(p: ProposalConfig, t: TradeConfig, pdr_engine: str = "LEGACY", pdr_revision: PDRRevisionConfig | PDRBodyConfig | None = None):
+    """The five engines in their fixed order. Only the PDR slot can change; IRF, ORB, PDS and RF are constructed exactly as before."""
+    if pdr_engine == "LEGACY":
+        pdr = PDRStrategy(proposals=p, trade=t)
+    elif pdr_engine == "REVISED_PHASE34":  # Phase 3.4 / 3.5: wick-high ceiling (its meaning never changes)
+        pdr = PDRRevisedStrategy(proposals=p, trade=t, revision=pdr_revision or PDRRevisionConfig())
+    elif pdr_engine == "BODY_BASED_PHASE36":  # Phase 3.6: previous-day highest BODY high ceiling, wicks ignored
+        pdr = PDRBodyStrategy(proposals=p, trade=t, revision=pdr_revision or PDRBodyConfig())
+    else:
+        raise ValueError(f"pdr_engine must be one of {PDR_ENGINES}, got {pdr_engine!r}")
+    return [IRFStrategy(proposals=p, trade=t), ORBStrategy(proposals=p, trade=t), pdr, PDSStrategy(proposals=p, trade=t), RFStrategy(proposals=p, trade=t)]
+
+
+def combined_scenario(pdr_engine: str = "REVISED_PHASE34") -> Scenario:
+    """Phase 3.5: the Phase 3.0 baseline controller, stops, targets, sizing and cutoff with the chosen PDR engine (default: the Phase 3.4 revised engine, candidate A = previous-day-high anchored zone,
+    RESEARCH_DEFAULT provisional pattern thresholds, open-above-zone kept as a labelled research assumption). Nothing is tuned."""
+    base = scenarios()["baseline"]
+    if pdr_engine == "LEGACY":
+        return replace(base, key="phase35_legacy_check", title="Phase 3.5 regression check: the Phase 3.0 baseline with the LEGACY PDR engine", pdr_engine="LEGACY", pdr_revision=None)
+    if pdr_engine == "BODY_BASED_PHASE36":
+        return replace(base, key="phase36_body_based", title="Phase 3.6: five strategies, shared controller, PDR = body-based engine (wicks ignored, open strictly above the zone; provisional pattern thresholds)",
+                       pdr_engine=pdr_engine, pdr_revision=PDRBodyConfig(zone_candidate="A_HIGHEST_BODY_HIGH", pattern_profile="RESEARCH_DEFAULT"))
+    return replace(base, key="phase35_combined", title="Phase 3.5: five strategies, shared controller, PDR = Phase 3.4 revised engine (candidate A, provisional thresholds)",
+                   pdr_engine=pdr_engine, pdr_revision=PDRRevisionConfig(zone_candidate="A_DAY_HIGH_ANCHORED", pattern_profile="RESEARCH_DEFAULT"))
 
 
 # ---------------------------------------------------------------------------------------------------------------- run
@@ -77,7 +107,7 @@ class ScenarioResult:
 
 def run_scenario(sc: Scenario, ctxs: dict, infos: dict, bars_by_day: dict) -> ScenarioResult:
     out = ScenarioResult(sc)
-    engines = make_engines(sc.proposals, sc.trade)
+    engines = make_engines(sc.proposals, sc.trade, sc.pdr_engine, sc.pdr_revision)
     for d in sorted(infos):
         if d not in ctxs:
             info = infos[d]

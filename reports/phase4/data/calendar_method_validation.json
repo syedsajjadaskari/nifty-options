@@ -1,0 +1,16 @@
+{
+ "period": "2025-09-01..2026-08-31",
+ "derived_holidays": 14,
+ "evidence_holidays": 14,
+ "holidays_only_derived": [],
+ "holidays_only_evidence": [],
+ "special_sessions_derived": {
+  "2025-10-21": false,
+  "2026-02-01": true
+ },
+ "special_sessions_evidence": {
+  "2025-10-21": false,
+  "2026-02-01": true
+ },
+ "identical": true
+}
