@@ -1,0 +1,320 @@
+{
+ "phase36-frozen": {
+  "confirmed_total": 1083,
+  "by_strategy": {
+   "IRF": 874,
+   "ORB": 53,
+   "PDR": 87,
+   "PDS": 57,
+   "RF": 12
+  },
+  "by_method": {
+   "IRF/Method 1": 349,
+   "IRF/Method 2A": 215,
+   "IRF/Method 2B": 310,
+   "ORB/Gap/200DMA": 10,
+   "ORB/Method 1": 27,
+   "ORB/Method 2": 16,
+   "PDR/PDR": 87,
+   "PDS/Method 1": 18,
+   "PDS/Method 2": 6,
+   "PDS/Method 3": 33,
+   "RF/RF": 12
+  },
+  "authority": "ACTIVE_REFERENCE"
+ },
+ "phase52-approved": {
+  "confirmed_total": 1083,
+  "by_strategy": {
+   "IRF": 874,
+   "ORB": 53,
+   "PDR": 87,
+   "PDS": 57,
+   "RF": 12
+  },
+  "by_method": {
+   "IRF/Method 1": 349,
+   "IRF/Method 2A": 215,
+   "IRF/Method 2B": 310,
+   "ORB/Gap/200DMA": 10,
+   "ORB/Method 1": 27,
+   "ORB/Method 2": 16,
+   "PDR/PDR": 87,
+   "PDS/Method 1": 18,
+   "PDS/Method 2": 6,
+   "PDS/Method 3": 33,
+   "RF/RF": 12
+  },
+  "authority": "USER_APPROVED_VERIFIED"
+ },
+ "phase52-cand-orb-colour": {
+  "confirmed_total": 1080,
+  "by_strategy": {
+   "IRF": 874,
+   "ORB": 50,
+   "PDR": 87,
+   "PDS": 57,
+   "RF": 12
+  },
+  "by_method": {
+   "IRF/Method 1": 349,
+   "IRF/Method 2A": 215,
+   "IRF/Method 2B": 310,
+   "ORB/Gap/200DMA": 10,
+   "ORB/Method 1": 24,
+   "ORB/Method 2": 16,
+   "PDR/PDR": 87,
+   "PDS/Method 1": 18,
+   "PDS/Method 2": 6,
+   "PDS/Method 3": 33,
+   "RF/RF": 12
+  },
+  "authority": "CANDIDATE_NOT_APPROVED"
+ },
+ "phase52-cand-irf-first-red-low": {
+  "confirmed_total": 1148,
+  "by_strategy": {
+   "IRF": 939,
+   "ORB": 53,
+   "PDR": 87,
+   "PDS": 57,
+   "RF": 12
+  },
+  "by_method": {
+   "IRF/Method 1": 349,
+   "IRF/Method 2A": 298,
+   "IRF/Method 2B": 292,
+   "ORB/Gap/200DMA": 10,
+   "ORB/Method 1": 27,
+   "ORB/Method 2": 16,
+   "PDR/PDR": 87,
+   "PDS/Method 1": 18,
+   "PDS/Method 2": 6,
+   "PDS/Method 3": 33,
+   "RF/RF": 12
+  },
+  "authority": "CANDIDATE_NOT_APPROVED"
+ },
+ "phase52-cand-irf-first-red-body-low": {
+  "confirmed_total": 1234,
+  "by_strategy": {
+   "IRF": 1025,
+   "ORB": 53,
+   "PDR": 87,
+   "PDS": 57,
+   "RF": 12
+  },
+  "by_method": {
+   "IRF/Method 1": 349,
+   "IRF/Method 2A": 399,
+   "IRF/Method 2B": 277,
+   "ORB/Gap/200DMA": 10,
+   "ORB/Method 1": 27,
+   "ORB/Method 2": 16,
+   "PDR/PDR": 87,
+   "PDS/Method 1": 18,
+   "PDS/Method 2": 6,
+   "PDS/Method 3": 33,
+   "RF/RF": 12
+  },
+  "authority": "CANDIDATE_NOT_APPROVED"
+ },
+ "first_eligible_verdicts": {
+  "PDR:ENGINE_ON_FIRST_ELIGIBLE_CANDLE": 33,
+  "PDR:NO_SIGNAL_EITHER": 214,
+  "PDS:ENGINE_ON_FIRST_ELIGIBLE_CANDLE": 23,
+  "PDS:NO_SIGNAL_EITHER": 224
+ },
+ "pds_sessions_with_co_confirmed_methods": [],
+ "approved_equals_frozen_on_every_signal_key": true,
+ "irf_flag_counts": {
+  "signals": 874,
+  "executed": 115,
+  "signals_within_13_00_cutoff": 557,
+  "E1_close_gap_below_ema_28": {
+   "all_signals": 70,
+   "executed": 12,
+   "within_13_00_cutoff": 43,
+   "executed_within_cutoff": 12,
+   "all_signals_by_method": {
+    "Method 1": 31,
+    "Method 2B": 23,
+    "Method 2A": 16
+   }
+  },
+  "E2_entry_gap_below_ema_28": {
+   "all_signals": 70,
+   "executed": 12,
+   "within_13_00_cutoff": 42,
+   "executed_within_cutoff": 12,
+   "all_signals_by_method": {
+    "Method 1": 31,
+    "Method 2B": 23,
+    "Method 2A": 16
+   }
+  },
+  "E3_low_gap_below_ema_28": {
+   "all_signals": 60,
+   "executed": 11,
+   "within_13_00_cutoff": 35,
+   "executed_within_cutoff": 11,
+   "all_signals_by_method": {
+    "Method 1": 27,
+    "Method 2B": 19,
+    "Method 2A": 14
+   }
+  },
+  "E4_abs_close_gap_28": {
+   "all_signals": 116,
+   "executed": 19,
+   "within_13_00_cutoff": 70,
+   "executed_within_cutoff": 19,
+   "all_signals_by_method": {
+    "Method 1": 50,
+    "Method 2B": 42,
+    "Method 2A": 24
+   }
+  },
+  "E1_27": {
+   "all_signals": 65,
+   "executed": 10,
+   "within_13_00_cutoff": 39,
+   "executed_within_cutoff": 10,
+   "all_signals_by_method": {
+    "Method 1": 30,
+    "Method 2B": 20,
+    "Method 2A": 15
+   }
+  },
+  "E2_27": {
+   "all_signals": 66,
+   "executed": 10,
+   "within_13_00_cutoff": 39,
+   "executed_within_cutoff": 10,
+   "all_signals_by_method": {
+    "Method 1": 29,
+    "Method 2B": 22,
+    "Method 2A": 15
+   }
+  },
+  "E1_between_27_and_28": {
+   "all_signals": 5,
+   "executed": 2,
+   "within_13_00_cutoff": 4,
+   "executed_within_cutoff": 2,
+   "all_signals_by_method": {
+    "Method 2A": 1,
+    "Method 2B": 3,
+    "Method 1": 1
+   }
+  },
+  "E2_between_27_and_28": {
+   "all_signals": 4,
+   "executed": 2,
+   "within_13_00_cutoff": 3,
+   "executed_within_cutoff": 2,
+   "all_signals_by_method": {
+    "Method 2A": 1,
+    "Method 2B": 1,
+    "Method 1": 2
+   }
+  },
+  "ema_between_entry_and_t1": {
+   "all_signals": 66,
+   "executed": 10,
+   "within_13_00_cutoff": 39,
+   "executed_within_cutoff": 10,
+   "all_signals_by_method": {
+    "Method 1": 29,
+    "Method 2B": 22,
+    "Method 2A": 15
+   }
+  },
+  "D1_entry_at_or_below_running_low": {
+   "all_signals": 3,
+   "executed": 0,
+   "within_13_00_cutoff": 3,
+   "executed_within_cutoff": 0,
+   "all_signals_by_method": {
+    "Method 2A": 3
+   }
+  },
+  "D2_close_below_running_low_before": {
+   "all_signals": 3,
+   "executed": 0,
+   "within_13_00_cutoff": 3,
+   "executed_within_cutoff": 0,
+   "all_signals_by_method": {
+    "Method 2A": 3
+   }
+  },
+  "D3_close_at_running_low_incl_candle": {
+   "all_signals": 0,
+   "executed": 0,
+   "within_13_00_cutoff": 0,
+   "executed_within_cutoff": 0,
+   "all_signals_by_method": {}
+  },
+  "D4_t1_beyond_running_low": {
+   "all_signals": 28,
+   "executed": 1,
+   "within_13_00_cutoff": 20,
+   "executed_within_cutoff": 1,
+   "all_signals_by_method": {
+    "Method 1": 15,
+    "Method 2A": 10,
+    "Method 2B": 3
+   }
+  },
+  "D5_entry_within_28_of_running_low": {
+   "all_signals": 26,
+   "executed": 1,
+   "within_13_00_cutoff": 18,
+   "executed_within_cutoff": 1,
+   "all_signals_by_method": {
+    "Method 1": 16,
+    "Method 2A": 7,
+    "Method 2B": 3
+   }
+  },
+  "D6_running_low_already_below_irl": {
+   "all_signals": 352,
+   "executed": 35,
+   "within_13_00_cutoff": 184,
+   "executed_within_cutoff": 35,
+   "all_signals_by_method": {
+    "Method 2A": 86,
+    "Method 2B": 108,
+    "Method 1": 158
+   }
+  },
+  "D7_earlier_close_below_irl": {
+   "all_signals": 227,
+   "executed": 19,
+   "within_13_00_cutoff": 97,
+   "executed_within_cutoff": 19,
+   "all_signals_by_method": {
+    "Method 2A": 57,
+    "Method 2B": 75,
+    "Method 1": 95
+   }
+  },
+  "D8_entry_below_previous_day_low": {
+   "all_signals": 95,
+   "executed": 14,
+   "within_13_00_cutoff": 58,
+   "executed_within_cutoff": 14,
+   "all_signals_by_method": {
+    "Method 1": 40,
+    "Method 2A": 25,
+    "Method 2B": 30
+   }
+  }
+ },
+ "orb_missing_signal_causes": {
+  "METHOD2_TRENDLINE": 2,
+  "LEVEL_CONSTRUCTION (no previous-day level broken; Method 2 inner level undefined in the source)": 6,
+  "STRONG_CANDLE_THRESHOLD": 3,
+  "EMA_REQUIREMENT": 2
+ }
+}

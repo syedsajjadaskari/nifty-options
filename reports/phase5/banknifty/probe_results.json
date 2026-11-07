@@ -1,0 +1,603 @@
+{
+ "documentation": "https://xstream.5paisa.com/dev-docs/market-data-system/historical-candles",
+ "instrument": {
+  "symbol": "BANKNIFTY",
+  "full_name": "BANKNIFTY",
+  "exchange": "N",
+  "exchange_label": "NSE",
+  "exchange_segment": "C",
+  "scrip_code": 999920005,
+  "scrip_type": "EQ",
+  "series": "EQ",
+  "tick_size_master": 0.0,
+  "lot_size_master": 2000,
+  "is_index": true,
+  "expected_index_name": "Nifty Bank",
+  "master_file": "data/raw/phase5_instrument_master/scrip_master_20261105T024711Z.csv",
+  "master_sha256": "85054710c0b40552546e81042692a22b42299bc53b93c9c9b092f20e263148ca",
+  "not_the_index_rejected_rows_with_same_name": [],
+  "similar_index_rows_in_same_segment": [
+   {
+    "ScripCode": 999920005,
+    "Name": "BANKNIFTY",
+    "FullName": "BANKNIFTY"
+   },
+   {
+    "ScripCode": 999920017,
+    "Name": "NIFTY PSU BANK",
+    "FullName": "NIFTY PSU BANK"
+   },
+   {
+    "ScripCode": 999920025,
+    "Name": "NIFTY PVT BANK",
+    "FullName": "NIFTY PVT BANK"
+   }
+  ],
+  "name_note": ""
+ },
+ "probes": [
+  {
+   "label": "recent_week",
+   "interval": "1m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:47:13.868592+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/recent_week_1m_2026-08-24_2026-08-28.csv",
+   "sha256": "35e942a1181b743bdf317c1f2c40d2bedd4e7e67427d8149028ec1511ace0190",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 57260.0,
+   "close_max": 57986.2,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "window_a_start",
+   "interval": "1m",
+   "from": "2025-09-01",
+   "to": "2025-09-05",
+   "requested_utc": "2026-11-05T02:47:16.641282+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/window_a_start_1m_2025-09-01_2025-09-05.csv",
+   "sha256": "633873479877ef8764114d1075e7cf4a6396a15945c96509d2a2569641a4f644",
+   "first_timestamp": "2025-09-01T09:15:00",
+   "last_timestamp": "2025-09-05T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 53574.35,
+   "close_max": 54412.25,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "main_start",
+   "interval": "1m",
+   "from": "2022-09-01",
+   "to": "2022-09-07",
+   "requested_utc": "2026-11-05T02:47:18.099723+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/main_start_1m_2022-09-01_2022-09-07.csv",
+   "sha256": "33f746afa5314a2607bc7a425f8a586fe047e3a81e93d8660ac5481f7ae71fec",
+   "first_timestamp": "2022-09-01T09:15:00",
+   "last_timestamp": "2022-09-07T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 39002.1,
+   "close_max": 40024.8,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "pre_main_2022_01",
+   "interval": "1m",
+   "from": "2022-01-03",
+   "to": "2022-01-07",
+   "requested_utc": "2026-11-05T02:47:19.557937+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/pre_main_2022_01_1m_2022-01-03_2022-01-07.csv",
+   "sha256": "17b5acd39eb33ca8cbeb137f1e9f4efddf9e7f533f42985e2028ae64e65c718a",
+   "first_timestamp": "2022-01-03T09:15:00",
+   "last_timestamp": "2022-01-07T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 35543.35,
+   "close_max": 38123.1,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "2021_12",
+   "interval": "1m",
+   "from": "2021-12-01",
+   "to": "2021-12-07",
+   "requested_utc": "2026-11-05T02:47:20.974012+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/2021_12_1m_2021-12-01_2021-12-07.csv",
+   "sha256": "ef98cf8812bd6cedf4e286de27f3c2ddf7da0ed3327b7a36fbf78e04928ba9a5",
+   "first_timestamp": "2021-12-01T09:15:00",
+   "last_timestamp": "2021-12-07T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 35704.8,
+   "close_max": 36829.6,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "2019_06",
+   "interval": "1m",
+   "from": "2019-06-03",
+   "to": "2019-06-07",
+   "requested_utc": "2026-11-05T02:47:22.362482+00:00",
+   "status": "COMPLETED",
+   "rows": 1504,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/2019_06_1m_2019-06-03_2019-06-07.csv",
+   "sha256": "9c6bf2630ecf74cbee577d288b4390bc1023fc46f8b8e654c5c219d637bd0386",
+   "first_timestamp": "2019-06-03T09:15:00",
+   "last_timestamp": "2019-06-07T15:30:00",
+   "distinct_dates": 4,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 30649.55,
+   "close_max": 31740.7,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "2019_03",
+   "interval": "1m",
+   "from": "2019-03-01",
+   "to": "2019-03-08",
+   "requested_utc": "2026-11-05T02:47:23.863283+00:00",
+   "status": "COMPLETED",
+   "rows": 1878,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/2019_03_1m_2019-03-01_2019-03-08.csv",
+   "sha256": "c6289d8b7176c4a80eeda720f5f98894450a3e89f513952519cfa023041bf68f",
+   "first_timestamp": "2019-03-01T09:15:00",
+   "last_timestamp": "2019-03-08T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    374,
+    376
+   ],
+   "close_min": 26953.6,
+   "close_max": 27807.35,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "2019_01",
+   "interval": "1m",
+   "from": "2019-01-01",
+   "to": "2019-01-31",
+   "requested_utc": "2026-11-05T02:47:25.461838+00:00",
+   "status": "EMPTY",
+   "rows": 0
+  },
+  {
+   "label": "2018_06",
+   "interval": "1m",
+   "from": "2018-06-04",
+   "to": "2018-06-08",
+   "requested_utc": "2026-11-05T02:47:27.000445+00:00",
+   "status": "EMPTY",
+   "rows": 0
+  },
+  {
+   "label": "2018_01",
+   "interval": "1m",
+   "from": "2018-01-01",
+   "to": "2018-01-31",
+   "requested_utc": "2026-11-05T02:47:28.573671+00:00",
+   "status": "EMPTY",
+   "rows": 0
+  },
+  {
+   "label": "2017",
+   "interval": "1m",
+   "from": "2017-06-01",
+   "to": "2017-06-30",
+   "requested_utc": "2026-11-05T02:47:30.009941+00:00",
+   "status": "EMPTY",
+   "rows": 0
+  },
+  {
+   "label": "interval_check",
+   "interval": "5m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:47:31.496367+00:00",
+   "status": "COMPLETED",
+   "rows": 380,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/interval_check_5m_2026-08-24_2026-08-28.csv",
+   "sha256": "ac8df8ce602465ef0e2ed9b09e344835de71744b5b5b8d6afa408c3ec2576978",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    76,
+    76
+   ],
+   "close_min": 57273.15,
+   "close_max": 57976.3,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "10m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:47:32.790208+00:00",
+   "status": "COMPLETED",
+   "rows": 190,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/interval_check_10m_2026-08-24_2026-08-28.csv",
+   "sha256": "589dde670ea397b52aa64014255daee2ec1de2e9b96f0310f6c07142befa12c4",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:25:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:25:00",
+   "rows_per_date_min_max": [
+    38,
+    38
+   ],
+   "close_min": 57276.35,
+   "close_max": 57968.0,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "15m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:47:34.097196+00:00",
+   "status": "COMPLETED",
+   "rows": 130,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/interval_check_15m_2026-08-24_2026-08-28.csv",
+   "sha256": "abcc4d8d0034266df98dd3deb682799c5fcf7624e8548f4fb781bdfac35f6833",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    26,
+    26
+   ],
+   "close_min": 57276.35,
+   "close_max": 57976.3,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "30m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:47:35.464623+00:00",
+   "status": "COMPLETED",
+   "rows": 65,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/interval_check_30m_2026-08-24_2026-08-28.csv",
+   "sha256": "889e8b319c1e3d254c8fa63813abc8abaab380752d2fcbdbcf6aefa01c15bbeb",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:15:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:15:00",
+   "rows_per_date_min_max": [
+    13,
+    13
+   ],
+   "close_min": 57276.35,
+   "close_max": 57968.0,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "60m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:47:36.848985+00:00",
+   "status": "COMPLETED",
+   "rows": 35,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/interval_check_60m_2026-08-24_2026-08-28.csv",
+   "sha256": "7073519c45f7533e23c2e9d477f690f9bc6e138bf7b5193778ac5ea4df50a5ed",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:15:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:15:00",
+   "rows_per_date_min_max": [
+    7,
+    7
+   ],
+   "close_min": 57276.35,
+   "close_max": 57954.45,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "1d",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:47:38.190283+00:00",
+   "status": "COMPLETED",
+   "rows": 5,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/interval_check_1d_2026-08-24_2026-08-28.csv",
+   "sha256": "c06ed986f9cba421bdabbe4eb734b035c442afbeb7ffe2f389f5ae8a48b17301",
+   "first_timestamp": "2026-08-24T00:00:00",
+   "last_timestamp": "2026-08-28T00:00:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 57496.3,
+   "close_max": 57783.75,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "daily_2018",
+   "interval": "1d",
+   "from": "2018-01-01",
+   "to": "2018-12-31",
+   "requested_utc": "2026-11-05T02:47:39.335582+00:00",
+   "status": "COMPLETED",
+   "rows": 246,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/daily_2018_1d_2018-01-01_2018-12-31.csv",
+   "sha256": "b52363fd8cf6ea8020cc7b9c37348d0bb135742c452acc75c204a92df1b85160",
+   "first_timestamp": "2018-01-01T00:00:00",
+   "last_timestamp": "2018-12-31T00:00:00",
+   "distinct_dates": 246,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 23670.4,
+   "close_max": 28320.0,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "daily_2019",
+   "interval": "1d",
+   "from": "2019-01-01",
+   "to": "2019-12-31",
+   "requested_utc": "2026-11-05T02:47:40.507354+00:00",
+   "status": "COMPLETED",
+   "rows": 244,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/daily_2019_1d_2019-01-01_2019-12-31.csv",
+   "sha256": "2bca8d0694025ef76b96c275e6d4b5acb77e307660fa1820151556b63a694b35",
+   "first_timestamp": "2019-01-01T00:00:00",
+   "last_timestamp": "2019-12-31T00:00:00",
+   "distinct_dates": 244,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 26573.4,
+   "close_max": 32412.35,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "daily_2017",
+   "interval": "1d",
+   "from": "2017-01-01",
+   "to": "2017-06-30",
+   "requested_utc": "2026-11-05T02:47:41.691618+00:00",
+   "status": "COMPLETED",
+   "rows": 123,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/daily_2017_1d_2017-01-01_2017-06-30.csv",
+   "sha256": "303e12a844ebc5c434708c6ad6915c831c2543e6c322ff239a4f96424e59f123",
+   "first_timestamp": "2017-01-02T00:00:00",
+   "last_timestamp": "2017-06-30T00:00:00",
+   "distinct_dates": 123,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 17891.0,
+   "close_max": 23742.15,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "daily_2022_09",
+   "interval": "1d",
+   "from": "2022-08-01",
+   "to": "2022-09-30",
+   "requested_utc": "2026-11-05T02:47:43.036971+00:00",
+   "status": "COMPLETED",
+   "rows": 42,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/banknifty/5paisa/probe/daily_2022_09_1d_2022-08-01_2022-09-30.csv",
+   "sha256": "8186bcbe518e555d58aeb4f911112396e63a70f584380fa38ce5d9ac2e1401aa",
+   "first_timestamp": "2022-08-01T00:00:00",
+   "last_timestamp": "2022-09-30T00:00:00",
+   "distinct_dates": 42,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 37647.75,
+   "close_max": 41468.3,
+   "price_level_in_expected_range": true
+  }
+ ]
+}

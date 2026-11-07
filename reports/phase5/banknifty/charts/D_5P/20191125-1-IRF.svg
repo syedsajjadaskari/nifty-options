@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="640" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<style>text{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}</style>
+<rect width="1380" height="640" fill="white"/>
+<text x="78" y="22" font-size="15" font-weight="bold">20191125-1-IRF  IRF Method 2B SHORT  2019-11-25  -&gt; INITIAL_FULL_STOP  gross Rs -13,650</text>
+<text x="78" y="40" fill="#555">real 5-minute candles (IST); markers sit at their exact 1-minute positions; synthetic index points, not a tradable price</text>
+<line x1="78" x2="1090" y1="594.0" y2="594.0" stroke="#eee"/><text x="6" y="598.0" fill="#555">31,033</text>
+<line x1="78" x2="1090" y1="503.7" y2="503.7" stroke="#eee"/><text x="6" y="507.7" fill="#555">31,130</text>
+<line x1="78" x2="1090" y1="413.3" y2="413.3" stroke="#eee"/><text x="6" y="417.3" fill="#555">31,226</text>
+<line x1="78" x2="1090" y1="323.0" y2="323.0" stroke="#eee"/><text x="6" y="327.0" fill="#555">31,322</text>
+<line x1="78" x2="1090" y1="232.7" y2="232.7" stroke="#eee"/><text x="6" y="236.7" fill="#555">31,418</text>
+<line x1="78" x2="1090" y1="142.3" y2="142.3" stroke="#eee"/><text x="6" y="146.3" fill="#555">31,514</text>
+<line x1="78" x2="1090" y1="52.0" y2="52.0" stroke="#eee"/><text x="6" y="56.0" fill="#555">31,610</text>
+<line x1="118.5" x2="118.5" y1="52" y2="594" stroke="#f3f3f3"/><text x="104.5" y="610" fill="#555">09:30</text>
+<line x1="199.4" x2="199.4" y1="52" y2="594" stroke="#f3f3f3"/><text x="185.4" y="610" fill="#555">10:00</text>
+<line x1="280.4" x2="280.4" y1="52" y2="594" stroke="#f3f3f3"/><text x="266.4" y="610" fill="#555">10:30</text>
+<line x1="361.4" x2="361.4" y1="52" y2="594" stroke="#f3f3f3"/><text x="347.4" y="610" fill="#555">11:00</text>
+<line x1="442.3" x2="442.3" y1="52" y2="594" stroke="#f3f3f3"/><text x="428.3" y="610" fill="#555">11:30</text>
+<line x1="523.3" x2="523.3" y1="52" y2="594" stroke="#f3f3f3"/><text x="509.3" y="610" fill="#555">12:00</text>
+<line x1="604.2" x2="604.2" y1="52" y2="594" stroke="#f3f3f3"/><text x="590.2" y="610" fill="#555">12:30</text>
+<line x1="685.2" x2="685.2" y1="52" y2="594" stroke="#f3f3f3"/><text x="671.2" y="610" fill="#555">13:00</text>
+<line x1="766.2" x2="766.2" y1="52" y2="594" stroke="#f3f3f3"/><text x="752.2" y="610" fill="#555">13:30</text>
+<line x1="847.1" x2="847.1" y1="52" y2="594" stroke="#f3f3f3"/><text x="833.1" y="610" fill="#555">14:00</text>
+<line x1="928.1" x2="928.1" y1="52" y2="594" stroke="#f3f3f3"/><text x="914.1" y="610" fill="#555">14:30</text>
+<line x1="1009.0" x2="1009.0" y1="52" y2="594" stroke="#f3f3f3"/><text x="995.0" y="610" fill="#555">15:00</text>
+<line x1="1090.0" x2="1090.0" y1="52" y2="594" stroke="#f3f3f3"/><text x="1076.0" y="610" fill="#555">15:30</text>
+<line x1="78" x2="1090" y1="451.6" y2="451.6" stroke="#1565c0" stroke-dasharray="6,4"/><text x="1094" y="454.6" fill="#1565c0" font-size="10">IRH 31,185.00</text>
+<line x1="78" x2="1090" y1="573.1" y2="573.1" stroke="#1565c0" stroke-dasharray="6,4"/><text x="1094" y="576.1" fill="#1565c0" font-size="10">IRL 31,055.75</text>
+<line x1="78" x2="1090" y1="385.6" y2="385.6" stroke="#ad1457" stroke-dasharray="6,4"/><text x="1094" y="388.6" fill="#ad1457" font-size="10">recent resistance 31,255.25</text>
+<polyline points="84.7,411.0 98.2,411.8 111.7,412.3 125.2,412.2 138.7,412.0 152.2,412.1 165.7,411.8 179.2,411.5 192.7,411.1 206.2,410.8 219.7,410.6 233.2,410.4 246.7,410.1 260.2,409.8 273.7,409.7 287.1,409.4 300.6,408.9 314.1,408.1 327.6,407.6 341.1,406.9 354.6,406.4 368.1,405.9 381.6,405.3 395.1,404.9 408.6,404.4 422.1,404.0 435.6,403.0 449.1,402.1 462.6,401.3 476.1,400.2 489.5,399.2 503.0,398.4 516.5,397.6 530.0,396.5 543.5,395.3 557.0,394.2 570.5,393.1 584.0,391.9 597.5,390.6 611.0,389.3 624.5,388.0 638.0,386.9 651.5,385.6 665.0,384.3 678.5,383.2 691.9,382.1 705.4,381.0 718.9,379.9 732.4,378.7 745.9,377.7 759.4,376.4 772.9,374.6 786.4,372.5 799.9,370.3 813.4,368.0 826.9,365.8 840.4,363.9 853.9,361.7 867.4,359.7 880.9,357.7 894.3,355.6 907.8,353.1 921.3,350.8 934.8,348.5 948.3,346.7 961.8,344.6 975.3,342.4 988.8,340.5 1002.3,338.7 1015.8,336.6 1029.3,334.3 1042.8,332.0 1056.3,329.7 1069.8,327.3 1083.3,324.9" fill="none" stroke="#f9a825" stroke-width="1.6"/><text x="82" y="632" fill="#f9a825">EMA(200) of 5-minute closes</text>
+<line x1="84.7" x2="84.7" y1="451.6" y2="573.1" stroke="#2e7d32"/><rect x="80.2" y="461.7" width="9.2" height="99.7" fill="#2e7d32"/>
+<line x1="98.2" x2="98.2" y1="462.1" y2="492.0" stroke="#c62828"/><rect x="93.7" y="462.1" width="9.2" height="27.3" fill="#c62828"/>
+<line x1="111.7" x2="111.7" y1="454.3" y2="523.4" stroke="#2e7d32"/><rect x="107.1" y="459.4" width="9.2" height="31.9" fill="#2e7d32"/>
+<line x1="125.2" x2="125.2" y1="391.7" y2="458.2" stroke="#2e7d32"/><rect x="120.6" y="404.7" width="9.2" height="53.5" fill="#2e7d32"/>
+<line x1="138.7" x2="138.7" y1="385.6" y2="424.3" stroke="#2e7d32"/><rect x="134.1" y="393.3" width="9.2" height="8.7" fill="#2e7d32"/>
+<line x1="152.2" x2="152.2" y1="386.8" y2="426.3" stroke="#c62828"/><rect x="147.6" y="394.6" width="9.2" height="28.4" fill="#c62828"/>
+<line x1="165.7" x2="165.7" y1="368.3" y2="416.5" stroke="#2e7d32"/><rect x="161.1" y="375.0" width="9.2" height="41.5" fill="#2e7d32"/>
+<line x1="179.2" x2="179.2" y1="374.7" y2="405.1" stroke="#c62828"/><rect x="174.6" y="378.5" width="9.2" height="7.4" fill="#c62828"/>
+<line x1="192.7" x2="192.7" y1="365.3" y2="394.6" stroke="#2e7d32"/><rect x="188.1" y="372.8" width="9.2" height="12.9" fill="#2e7d32"/>
+<line x1="206.2" x2="206.2" y1="356.5" y2="387.3" stroke="#c62828"/><rect x="201.6" y="369.5" width="9.2" height="12.9" fill="#c62828"/>
+<line x1="219.7" x2="219.7" y1="378.4" y2="391.2" stroke="#c62828"/><rect x="215.1" y="381.2" width="9.2" height="5.7" fill="#c62828"/>
+<line x1="233.2" x2="233.2" y1="386.5" y2="404.6" stroke="#c62828"/><rect x="228.6" y="386.7" width="9.2" height="9.0" fill="#c62828"/>
+<line x1="246.7" x2="246.7" y1="373.4" y2="408.7" stroke="#2e7d32"/><rect x="242.1" y="374.2" width="9.2" height="22.4" fill="#2e7d32"/>
+<line x1="260.2" x2="260.2" y1="367.0" y2="385.7" stroke="#c62828"/><rect x="255.6" y="373.8" width="9.2" height="11.9" fill="#c62828"/>
+<line x1="273.7" x2="273.7" y1="375.2" y2="404.0" stroke="#c62828"/><rect x="269.1" y="382.8" width="9.2" height="8.2" fill="#c62828"/>
+<line x1="287.1" x2="287.1" y1="363.8" y2="393.6" stroke="#2e7d32"/><rect x="282.6" y="381.3" width="9.2" height="8.6" fill="#2e7d32"/>
+<line x1="300.6" x2="300.6" y1="362.0" y2="385.8" stroke="#2e7d32"/><rect x="296.1" y="364.0" width="9.2" height="18.2" fill="#2e7d32"/>
+<line x1="314.1" x2="314.1" y1="320.3" y2="365.5" stroke="#2e7d32"/><rect x="309.5" y="323.7" width="9.2" height="37.6" fill="#2e7d32"/>
+<line x1="327.6" x2="327.6" y1="323.8" y2="361.8" stroke="#c62828"/><rect x="323.0" y="324.8" width="9.2" height="30.9" fill="#c62828"/>
+<line x1="341.1" x2="341.1" y1="338.8" y2="362.0" stroke="#2e7d32"/><rect x="336.5" y="345.6" width="9.2" height="8.3" fill="#2e7d32"/>
+<line x1="354.6" x2="354.6" y1="341.9" y2="362.3" stroke="#c62828"/><rect x="350.0" y="342.9" width="9.2" height="8.4" fill="#c62828"/>
+<line x1="368.1" x2="368.1" y1="348.3" y2="362.5" stroke="#c62828"/><rect x="363.5" y="351.2" width="9.2" height="7.0" fill="#c62828"/>
+<line x1="381.6" x2="381.6" y1="342.9" y2="366.7" stroke="#2e7d32"/><rect x="377.0" y="344.9" width="9.2" height="12.5" fill="#2e7d32"/>
+<line x1="395.1" x2="395.1" y1="342.8" y2="372.7" stroke="#c62828"/><rect x="390.5" y="342.8" width="9.2" height="22.1" fill="#c62828"/>
+<line x1="408.6" x2="408.6" y1="337.9" y2="373.6" stroke="#2e7d32"/><rect x="404.0" y="359.4" width="9.2" height="5.3" fill="#2e7d32"/>
+<line x1="422.1" x2="422.1" y1="348.6" y2="366.7" stroke="#2e7d32"/><rect x="417.5" y="356.9" width="9.2" height="2.5" fill="#2e7d32"/>
+<line x1="435.6" x2="435.6" y1="302.4" y2="357.3" stroke="#2e7d32"/><rect x="431.0" y="310.3" width="9.2" height="47.0" fill="#2e7d32"/>
+<line x1="449.1" x2="449.1" y1="296.9" y2="318.2" stroke="#c62828"/><rect x="444.5" y="308.6" width="9.2" height="2.3" fill="#c62828"/>
+<line x1="462.6" x2="462.6" y1="288.7" y2="316.7" stroke="#c62828"/><rect x="458.0" y="311.8" width="9.2" height="3.1" fill="#c62828"/>
+<line x1="476.1" x2="476.1" y1="289.1" y2="321.1" stroke="#2e7d32"/><rect x="471.5" y="292.7" width="9.2" height="19.8" fill="#2e7d32"/>
+<line x1="489.5" x2="489.5" y1="288.1" y2="311.3" stroke="#c62828"/><rect x="485.0" y="292.0" width="9.2" height="14.3" fill="#c62828"/>
+<line x1="503.0" x2="503.0" y1="304.9" y2="319.4" stroke="#c62828"/><rect x="498.5" y="306.3" width="9.2" height="8.6" fill="#c62828"/>
+<line x1="516.5" x2="516.5" y1="302.3" y2="322.4" stroke="#c62828"/><rect x="511.9" y="312.9" width="9.2" height="1.3" fill="#c62828"/>
+<line x1="530.0" x2="530.0" y1="293.9" y2="333.3" stroke="#2e7d32"/><rect x="525.4" y="294.6" width="9.2" height="15.6" fill="#2e7d32"/>
+<line x1="543.5" x2="543.5" y1="268.9" y2="290.5" stroke="#2e7d32"/><rect x="538.9" y="270.9" width="9.2" height="19.6" fill="#2e7d32"/>
+<line x1="557.0" x2="557.0" y1="267.5" y2="292.6" stroke="#c62828"/><rect x="552.4" y="269.6" width="9.2" height="11.8" fill="#c62828"/>
+<line x1="570.5" x2="570.5" y1="264.4" y2="289.0" stroke="#c62828"/><rect x="565.9" y="280.9" width="9.2" height="2.5" fill="#c62828"/>
+<line x1="584.0" x2="584.0" y1="266.9" y2="287.8" stroke="#2e7d32"/><rect x="579.4" y="278.5" width="9.2" height="3.9" fill="#2e7d32"/>
+<line x1="597.5" x2="597.5" y1="257.2" y2="288.6" stroke="#2e7d32"/><rect x="592.9" y="262.5" width="9.2" height="17.2" fill="#2e7d32"/>
+<line x1="611.0" x2="611.0" y1="250.0" y2="270.8" stroke="#2e7d32"/><rect x="606.4" y="259.1" width="9.2" height="4.2" fill="#2e7d32"/>
+<line x1="624.5" x2="624.5" y1="251.8" y2="280.2" stroke="#c62828"/><rect x="619.9" y="259.1" width="9.2" height="2.8" fill="#c62828"/>
+<line x1="638.0" x2="638.0" y1="262.3" y2="276.1" stroke="#c62828"/><rect x="633.4" y="262.6" width="9.2" height="8.0" fill="#c62828"/>
+<line x1="651.5" x2="651.5" y1="253.6" y2="271.7" stroke="#2e7d32"/><rect x="646.9" y="257.2" width="9.2" height="12.4" fill="#2e7d32"/>
+<line x1="665.0" x2="665.0" y1="248.6" y2="269.8" stroke="#2e7d32"/><rect x="660.4" y="252.6" width="9.2" height="4.7" fill="#2e7d32"/>
+<line x1="678.5" x2="678.5" y1="251.4" y2="279.0" stroke="#c62828"/><rect x="673.9" y="251.4" width="9.2" height="23.7" fill="#c62828"/>
+<line x1="691.9" x2="691.9" y1="267.5" y2="289.7" stroke="#c62828"/><rect x="687.4" y="274.1" width="9.2" height="2.9" fill="#c62828"/>
+<line x1="705.4" x2="705.4" y1="267.4" y2="282.2" stroke="#2e7d32"/><rect x="700.9" y="272.5" width="9.2" height="1.7" fill="#2e7d32"/>
+<line x1="718.9" x2="718.9" y1="261.1" y2="280.6" stroke="#c62828"/><rect x="714.3" y="269.3" width="9.2" height="2.6" fill="#c62828"/>
+<line x1="732.4" x2="732.4" y1="257.3" y2="276.3" stroke="#2e7d32"/><rect x="727.8" y="259.5" width="9.2" height="11.5" fill="#2e7d32"/>
+<line x1="745.9" x2="745.9" y1="257.1" y2="277.2" stroke="#c62828"/><rect x="741.3" y="261.1" width="9.2" height="10.0" fill="#c62828"/>
+<line x1="759.4" x2="759.4" y1="235.9" y2="272.8" stroke="#2e7d32"/><rect x="754.8" y="244.8" width="9.2" height="25.1" fill="#2e7d32"/>
+<line x1="772.9" x2="772.9" y1="190.5" y2="245.3" stroke="#2e7d32"/><rect x="768.3" y="195.2" width="9.2" height="48.4" fill="#2e7d32"/>
+<line x1="786.4" x2="786.4" y1="163.7" y2="204.0" stroke="#2e7d32"/><rect x="781.8" y="170.2" width="9.2" height="25.0" fill="#2e7d32"/>
+<line x1="799.9" x2="799.9" y1="133.1" y2="169.5" stroke="#2e7d32"/><rect x="795.3" y="154.1" width="9.2" height="13.2" fill="#2e7d32"/>
+<line x1="813.4" x2="813.4" y1="127.7" y2="157.5" stroke="#2e7d32"/><rect x="808.8" y="130.4" width="9.2" height="20.2" fill="#2e7d32"/>
+<line x1="826.9" x2="826.9" y1="118.2" y2="148.6" stroke="#c62828"/><rect x="822.3" y="131.8" width="9.2" height="16.8" fill="#c62828"/>
+<line x1="840.4" x2="840.4" y1="137.7" y2="182.7" stroke="#c62828"/><rect x="835.8" y="145.7" width="9.2" height="26.8" fill="#c62828"/>
+<line x1="853.9" x2="853.9" y1="144.6" y2="175.8" stroke="#2e7d32"/><rect x="849.3" y="151.5" width="9.2" height="18.6" fill="#2e7d32"/>
+<line x1="867.4" x2="867.4" y1="139.0" y2="161.7" stroke="#c62828"/><rect x="862.8" y="150.8" width="9.2" height="7.0" fill="#c62828"/>
+<line x1="880.9" x2="880.9" y1="140.2" y2="161.9" stroke="#c62828"/><rect x="876.3" y="156.8" width="9.2" height="2.0" fill="#c62828"/>
+<line x1="894.3" x2="894.3" y1="139.3" y2="160.7" stroke="#2e7d32"/><rect x="889.8" y="144.5" width="9.2" height="14.2" fill="#2e7d32"/>
+<line x1="907.8" x2="907.8" y1="96.5" y2="146.1" stroke="#2e7d32"/><rect x="903.3" y="103.2" width="9.2" height="41.4" fill="#2e7d32"/>
+<line x1="921.3" x2="921.3" y1="98.8" y2="124.9" stroke="#c62828"/><rect x="916.7" y="102.1" width="9.2" height="17.2" fill="#c62828"/>
+<line x1="934.8" x2="934.8" y1="116.2" y2="142.9" stroke="#c62828"/><rect x="930.2" y="120.2" width="9.2" height="5.4" fill="#c62828"/>
+<line x1="948.3" x2="948.3" y1="126.8" y2="190.3" stroke="#c62828"/><rect x="943.7" y="127.4" width="9.2" height="39.2" fill="#c62828"/>
+<line x1="961.8" x2="961.8" y1="128.8" y2="169.0" stroke="#2e7d32"/><rect x="957.2" y="135.7" width="9.2" height="31.1" fill="#2e7d32"/>
+<line x1="975.3" x2="975.3" y1="122.2" y2="150.2" stroke="#2e7d32"/><rect x="970.7" y="122.9" width="9.2" height="15.3" fill="#2e7d32"/>
+<line x1="988.8" x2="988.8" y1="123.1" y2="157.0" stroke="#c62828"/><rect x="984.2" y="123.1" width="9.2" height="32.8" fill="#c62828"/>
+<line x1="1002.3" x2="1002.3" y1="147.7" y2="163.7" stroke="#2e7d32"/><rect x="997.7" y="156.1" width="9.2" height="1.0" fill="#2e7d32"/>
+<line x1="1015.8" x2="1015.8" y1="121.9" y2="155.6" stroke="#2e7d32"/><rect x="1011.2" y="131.1" width="9.2" height="23.4" fill="#2e7d32"/>
+<line x1="1029.3" x2="1029.3" y1="91.6" y2="137.0" stroke="#2e7d32"/><rect x="1024.7" y="105.3" width="9.2" height="27.0" fill="#2e7d32"/>
+<line x1="1042.8" x2="1042.8" y1="83.9" y2="107.9" stroke="#2e7d32"/><rect x="1038.2" y="99.9" width="9.2" height="5.4" fill="#2e7d32"/>
+<line x1="1056.3" x2="1056.3" y1="85.1" y2="116.1" stroke="#2e7d32"/><rect x="1051.7" y="100.6" width="9.2" height="1.0" fill="#2e7d32"/>
+<line x1="1069.8" x2="1069.8" y1="72.9" y2="103.5" stroke="#2e7d32"/><rect x="1065.2" y="83.5" width="9.2" height="14.8" fill="#2e7d32"/>
+<line x1="1083.3" x2="1083.3" y1="81.8" y2="101.3" stroke="#c62828"/><rect x="1078.7" y="82.1" width="9.2" height="12.9" fill="#c62828"/>
+<text x="84.7" y="447.6" text-anchor="middle" font-size="9" fill="#37474f" font-weight="bold">IR</text>
+<text x="179.2" y="370.7" text-anchor="middle" font-size="9" fill="#37474f" font-weight="bold">SIGNAL</text>
+<text x="125.2" y="387.7" text-anchor="middle" font-size="9" fill="#37474f" font-weight="bold">BRK</text>
+<text x="138.7" y="381.6" text-anchor="middle" font-size="9" fill="#37474f" font-weight="bold">EXT</text>
+<text x="152.2" y="382.8" text-anchor="middle" font-size="9" fill="#37474f" font-weight="bold">RED</text>
+<text x="138.7" y="371.6" text-anchor="middle" font-size="9" fill="#37474f" font-weight="bold">PUSH</text>
+<line x1="185.9" x2="307.4" y1="385.7" y2="385.7" stroke="#000" stroke-width="1.6"/><text x="310.4" y="388.7" fill="#000" font-size="10">entry 31,255.15</text>
+<line x1="185.9" x2="307.4" y1="352.8" y2="352.8" stroke="#c62828" stroke-width="1.6" stroke-dasharray="5,3"/><text x="310.4" y="355.8" fill="#c62828" font-size="10">original stop 31,290.15</text>
+<line x1="185.9" x2="307.4" y1="411.1" y2="411.1" stroke="#2e7d32" stroke-width="1.6" stroke-dasharray="5,3"/><text x="310.4" y="414.1" fill="#2e7d32" font-size="10">Target 1 31,228.15</text>
+<line x1="185.9" x2="307.4" y1="442.1" y2="442.1" stroke="#1b5e20" stroke-width="1.6" stroke-dasharray="5,3"/><text x="310.4" y="445.1" fill="#1b5e20" font-size="10">Target 2 31,195.15</text>
+<polygon points="185.9,385.7 178.9,371.7 192.9,371.7" fill="#000"/><text x="194.9" y="367.7" font-weight="bold">SHORT entry 31,255.15 @ 09:55</text>
+<circle cx="307.4" cy="352.8" r="5" fill="#fff" stroke="#6a1b9a" stroke-width="2"/><text x="314.4" y="345.8" fill="#6a1b9a" font-weight="bold">Legs 1+2: original stop 31,290.15 @ 10:40</text>
+<line x1="685.2" x2="685.2" y1="52" y2="594" stroke="#777" stroke-dasharray="1,4"/><text x="635.2" y="48" fill="#777" font-size="10">13:00 entry cutoff</text>
+<line x1="1046.8" x2="1046.8" y1="52" y2="594" stroke="#777" stroke-dasharray="1,4"/><text x="996.8" y="48" fill="#777" font-size="10">15:14 provisional forced exit</text>
+</svg>

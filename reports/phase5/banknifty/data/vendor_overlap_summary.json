@@ -1,0 +1,74 @@
+{
+ "2019-03..2019-12": {
+  "a": "5paisa",
+  "b": "secondary",
+  "dates_a": 196,
+  "dates_b": 201,
+  "dates_in_both": 196,
+  "dates_only_a": [],
+  "dates_only_b": [
+   "2019-06-27",
+   "2019-06-28",
+   "2019-07-01",
+   "2019-07-02",
+   "2019-07-03"
+  ],
+  "bars_compared": 73448,
+  "share_exact_all_fields": 0.2513,
+  "share_close_within_0_05": 0.4102,
+  "share_close_within_1": 0.6608,
+  "mean_abs_close_diff": 1.5588,
+  "p99_abs_close_diff": 19.05,
+  "max_abs_close_diff": 368.85,
+  "days_with_any_diff_over_1pt": 196,
+  "bars_only_in_a": 4,
+  "bars_only_in_b": 33,
+  "timestamp_shift_test": {
+   "-1": {
+    "bars": 73250,
+    "share_close_equal_within_0_05": 0.0054
+   },
+   "0": {
+    "bars": 73448,
+    "share_close_equal_within_0_05": 0.4102
+   },
+   "1": {
+    "bars": 73250,
+    "share_close_equal_within_0_05": 0.0064
+   }
+  }
+ },
+ "2022-08..2026-04-22": {
+  "a": "5paisa",
+  "b": "secondary",
+  "dates_a": 919,
+  "dates_b": 919,
+  "dates_in_both": 919,
+  "dates_only_a": [],
+  "dates_only_b": [],
+  "bars_compared": 343698,
+  "share_exact_all_fields": 0.458,
+  "share_close_within_0_05": 0.5785,
+  "share_close_within_1": 0.7254,
+  "mean_abs_close_diff": 1.0141,
+  "p99_abs_close_diff": 8.6,
+  "max_abs_close_diff": 365.8,
+  "days_with_any_diff_over_1pt": 918,
+  "bars_only_in_a": 175,
+  "bars_only_in_b": 52,
+  "timestamp_shift_test": {
+   "-1": {
+    "bars": 342778,
+    "share_close_equal_within_0_05": 0.0048
+   },
+   "0": {
+    "bars": 343698,
+    "share_close_equal_within_0_05": 0.5785
+   },
+   "1": {
+    "bars": 342781,
+    "share_close_equal_within_0_05": 0.0047
+   }
+  }
+ }
+}

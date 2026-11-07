@@ -1,0 +1,46 @@
+date,status,first_red_candle_start,first_red_ohlc,body_pct,upper_wick_pct,lower_wick_pct,frozen_numeric_verdict,phase53_verdict,frozen_first_pds_signal,phase53_first_pds_signal,change,frozen_signals_total,phase53_signals_total,later_strong_red_candles_after_weak_first_red
+2025-09-22,ARMED,09:50,25315.25/25317.35/25284.65/25305.1,31.0,6.4,62.5,WEAK(Method 3 path),WEAK(Method 3 path - source quality rule),11:25 Method 3,11:25 Method 3,SAME,4,5,11:15 (signal 11:20); 11:55 (signal 12:00); 13:15 (signal 13:20)
+2025-09-26,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2025-11-03,ARMED,09:15,25694.1/25737.45/25659.2/25687.85,8.0,55.4,36.6,WEAK(Method 3 path),RED_PIN(Method 2),12:15 Method 3,09:20 Method 2,EARLIER,1,5,10:10 (signal 10:15); 12:10 (signal 12:15)
+2025-11-07,ARMED,12:50,25486.2/25502.35/25474.75/25478.45,28.1,58.5,13.4,PIN(Method 2),RED_PIN(Method 2),12:55 Method 2,12:55 Method 2,SAME,3,3,13:55 (signal 14:00); 14:00 (signal 14:05); 14:50 (signal 14:55); 15:20 (signal 15:25)
+2025-11-14,ARMED,09:20,25811.1/25811.1/25783.55/25788.7,81.3,0.0,18.7,STRONG(Method 1),GOOD_RED(Method 1),09:25 Method 1,09:25 Method 1,SAME,5,10,11:15 (signal 11:20); 12:30 (signal 12:35); 12:35 (signal 12:40); 12:50 (signal 12:55); 12:55 (signal 13:00)
+2025-12-02,ARMED,09:25,26144.45/26151.15/26129.1/26130.2,64.6,30.4,5.0,STRONG(Method 1),GOOD_RED(Method 1),09:30 Method 1,09:30 Method 1,SAME,2,2,
+2025-12-09,ARMED,12:15,25893.1/25896.15/25887.45/25888.15,56.9,35.1,8.0,WEAK(Method 3 path),GOOD_RED(Method 1),12:40 Method 3,12:20 Method 1,EARLIER,2,7,12:25 (signal 12:30); 12:35 (signal 12:40); 14:00 (signal 14:05)
+2025-12-18,ARMED,09:25,25796.3/25804.35/25780.05/25780.05,66.9,33.1,0.0,STRONG(Method 1),GOOD_RED(Method 1),09:30 Method 1,09:30 Method 1,SAME,1,5,09:40 (signal 09:45); 14:20 (signal 14:25); 14:35 (signal 14:40); 14:55 (signal 15:00)
+2025-12-26,ARMED,09:25,26134.35/26139.85/26125.4/26132.85,10.4,38.1,51.6,WEAK(Method 3 path),WEAK(Method 3 path - source quality rule),09:55 Method 3,09:55 Method 3,SAME,1,1,09:30 (signal 09:35)
+2026-01-06,ARMED,09:35,26217.35/26229.3/26193.4/26200.0,48.3,33.3,18.4,WEAK(Method 3 path),GOOD_RED(Method 1),10:40 Method 3,09:40 Method 1,EARLIER,4,6,10:35 (signal 10:40)
+2026-01-19,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-01-21,ARMED,09:20,25239.2/25240.2/25185.95/25221.4,32.8,1.8,65.3,WEAK(Method 3 path),WEAK(Method 3 path - source quality rule),10:25 Method 3,10:25 Method 3,SAME,3,9,09:35 (signal 09:40); 10:05 (signal 10:10); 13:15 (signal 13:20); 13:30 (signal 13:35)
+2026-02-12,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-02-13,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-02-16,ARMED,09:25,25482.6/25484.45/25453.65/25472.25,33.6,6.0,60.4,WEAK(Method 3 path),WEAK(Method 3 path - source quality rule),,,SAME,0,0,09:40 (signal 09:45); 09:45 (signal 09:50)
+2026-03-02,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-03-04,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-03-09,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-03-12,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-03-13,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-03-19,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-03-23,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-03-30,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-04-02,ARMED,14:25,22673.85/22684.3/22645.85/22665.65,21.3,27.2,51.5,WEAK(Method 3 path),WEAK(Method 3 path - source quality rule),,,SAME,0,0,14:35 (signal 14:40); 14:40 (signal 14:45)
+2026-04-13,ARMED,14:00,23893.05/23897.3/23882.6/23887.6,37.1,28.9,34.0,WEAK(Method 3 path),GOOD_RED(Method 1),15:05 Method 3,14:05 Method 1,EARLIER,1,4,14:05 (signal 14:10)
+2026-04-23,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-04-24,ARMED_NO_RED_CANDLE_AT_ZONE,,,,,,,,,,SAME,0,0,
+2026-04-30,ARMED,14:45,24074.75/24081.25/24036.75/24036.75,85.4,14.6,0.0,STRONG(Method 1),GOOD_RED(Method 1),14:50 Method 1,14:50 Method 1,SAME,1,1,
+2026-05-08,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-05-11,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-05-12,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-05-18,ARMED,13:05,23645.9/23647.25/23605.25/23610.35,84.6,3.2,12.1,STRONG(Method 1),GOOD_RED(Method 1),13:10 Method 1,13:10 Method 1,SAME,2,4,13:35 (signal 13:40); 14:05 (signal 14:10); 14:20 (signal 14:25)
+2026-05-20,ARMED,11:30,23599.95/23607.95/23588.55/23594.5,28.1,41.2,30.7,WEAK(Method 3 path),RED_PIN(Method 2),12:10 Method 3,11:35 Method 2,EARLIER,3,5,12:00 (signal 12:05); 12:05 (signal 12:10); 12:45 (signal 12:50); 13:00 (signal 13:05); 13:10 (signal 13:15)
+2026-05-27,ARMED,09:30,23903.95/23903.95/23869.75/23881.2,66.5,0.0,33.5,WEAK(Method 3 path),GOOD_RED(Method 1),13:20 Method 3,09:35 Method 1,EARLIER,3,9,13:10 (signal 13:15); 13:15 (signal 13:20); 13:40 (signal 13:45); 14:10 (signal 14:15); 14:25 (signal 14:30)
+2026-06-02,ARMED,10:30,23371.0/23373.2/23334.75/23343.35,71.9,5.7,22.4,WEAK(Method 3 path),GOOD_RED(Method 1),10:55 Method 3,10:35 Method 1,EARLIER,2,2,
+2026-06-08,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-06-11,ARMED,10:20,23183.15/23191.5/23174.7/23176.9,37.2,49.7,13.1,WEAK(Method 3 path),RED_PIN(Method 2),14:45 Method 3,10:25 Method 2,EARLIER,2,3,10:45 (signal 10:50); 10:50 (signal 10:55); 11:10 (signal 11:15); 14:40 (signal 14:45); 14:50 (signal 14:55)
+2026-06-19,ARMED_NO_RED_CANDLE_AT_ZONE,,,,,,,,,,SAME,0,0,
+2026-06-23,ARMED,09:40,24126.4/24133.05/24109.45/24114.85,48.9,28.2,22.9,WEAK(Method 3 path),GOOD_RED(Method 1),10:30 Method 3,09:45 Method 1,EARLIER,4,9,10:40 (signal 10:45); 11:25 (signal 11:30); 11:30 (signal 11:35); 11:40 (signal 11:45)
+2026-07-08,ARMED_NO_ZONE_RETEST,,,,,,,,,,SAME,0,0,
+2026-07-13,ARMED,10:00,24121.05/24128.65/24105.2/24110.1,46.7,32.4,20.9,WEAK(Method 3 path),GOOD_RED(Method 1),10:55 Method 3,10:05 Method 1,EARLIER,3,7,10:35 (signal 10:40)
+2026-07-23,ARMED,10:10,23966.6/23968.0/23955.75/23957.35,75.5,11.4,13.1,STRONG(Method 1),GOOD_RED(Method 1),10:15 Method 1,10:15 Method 1,SAME,5,7,10:50 (signal 10:55); 11:10 (signal 11:15); 11:15 (signal 11:20); 12:10 (signal 12:15)
+2026-07-24,ARMED,14:05,23816.85/23817.75/23800.35/23800.35,94.8,5.2,0.0,STRONG(Method 1),GOOD_RED(Method 1),14:10 Method 1,14:10 Method 1,SAME,1,1,
+2026-08-07,ARMED,09:25,24613.3/24614.65/24600.5/24601.6,82.7,9.5,7.8,STRONG(Method 1),GOOD_RED(Method 1),09:30 Method 1,09:30 Method 1,SAME,2,2,
+2026-08-18,ARMED,09:30,24245.1/24246.4/24220.65/24232.65,48.3,5.0,46.6,WEAK(Method 3 path),GOOD_RED(Method 1),10:50 Method 3,09:35 Method 1,EARLIER,2,4,09:40 (signal 09:45); 10:05 (signal 10:10); 10:35 (signal 10:40)

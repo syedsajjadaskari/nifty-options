@@ -1,0 +1,120 @@
+"""Phase 5.1: the author's handwritten corrections, transcribed from the rendered pages (reports/phase5/phase51_author_corrections/pages/page_N_full.png) of
+docs/strategy_docs/corrected/Adobe Scan Nov 05, 2026.pdf (six pages, no text layer: every word below was read from the images by eye, none from OCR).
+
+One record per dated entry plus the two red-star general remarks. Wording is kept as written (spelling and grammar of the author, ``[...]`` = cut by the page edge, ``(?)`` = uncertain reading).
+Writes all_author_corrections.csv and handwritten_corrections_transcribed.md. Nothing here is an interpretation that changes a rule: the interpretation columns are marked as such.
+"""
+
+from __future__ import annotations
+
+import csv
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "reports" / "phase5" / "phase51_author_corrections"
+PDF = "docs/strategy_docs/corrected/Adobe Scan Nov 05, 2026.pdf"
+
+# fields: id, page, as_written, date, trade_no, label, status, verbatim, suggested, timing, requirement, drawing, uncertain, confidence
+R = [
+    ("AC01", 1, "20250901-1", "2025-09-01", "1", "IRF", "ACTIVE", "IRF should be entered at the resistance itself. | Entry can either be break of Support/Resistance which ever happens first. | 60+ body candle in the entry side.", "IRF (same strategy, different entry point)", "earlier (at the resistance itself)",
+     "entry = a break of the support OR of the resistance, whichever happens first; the entry-side candle must have a body of 60+ (percent, read as body share of the candle)", "Rising green candles, then a few red/green candles under a line marked 'Resistance' with a lower line marked 'Support'; 'Entry' is written under the lower line at a candle that breaks below Support.",
+     "'60+ body' (percent of the candle range is my reading); the two statements 'entered at the resistance itself' and 'either support or resistance break, whichever first' are both written and are not obviously the same instruction", "medium-high"),
+    ("AC02", 1, "20250902-1", "2025-09-02", "1", "PDR", "ACTIVE", "Enter here | PDR Zone | Support from previous day resistance.", "PDR (earlier entry)", "earlier ('Enter here' is drawn above the zone)",
+     "the zone is the previous day's resistance acting as support; entry where the arrow points", "Three candles (red, red, green) sit on top of a box labelled 'PDR Zone'; a horizontal line from the top of the candles ends in an arrow 'Enter here' at the level of the green candle's close.", "which candle the arrow marks (the green candle's close vs the next candle) is read from the drawing, not stated in words", "medium"),
+    ("AC03", 1, "20250910-1", "2025-09-10", "1", "IRF", "ACTIVE", "The first red candle only should be considered. | This candle should be considered | only break of first red candle which is outside the 5 min range, only the red candles break of S/R should be entered.", "IRF (same strategy, correct reference candle)", "not stated",
+     "use ONLY the first red candle that lies outside the first 5-minute range; enter only on a break of THAT red candle's support/resistance (S/R)", "Tall red and green candles on the left, then small candles near a line with an arrow pointing back (left) at the first red candle; the underlined words 'This candle should be considered' point to it.", "'S/R' read as support/resistance", "high (text) / medium (drawing)"),
+    ("AC04", 1, "20250911-1", "2025-09-11", "1", "IRF", "ACTIVE", "This should be an ORB trade. | It is shown as IRF, ORB should activate Ep 30 pts SL.", "ORB", "not stated", "ORB stop of 30 points is quoted as the reason ('Ep' is read as 'i.e.')", "none", "'Ep' (read as 'i.e.', also written in AC20)", "high"),
+    ("AC05", 1, "20250912-1", "2025-09-12", "1", "IRF", "ACTIVE", "This should be RF entry, IRF should not be taken as RF is activated.", "RF", "not stated", "RF activation takes precedence over IRF on that day (as the author sees it)", "none", "", "high"),
+    ("AC06", 2, "20250916-1", "2025-09-16", "1", "IRF", "ACTIVE", "IRF is taken, which is wrong. | ORB should take place in this condition[s]", "ORB", "not stated", "IRF should not have been taken; ORB should apply", "none", "last word cut by the page edge", "high"),
+    ("AC07", 2, "20250917-1", "2025-09-17", "1", "IRF", "ACTIVE", "IRF should be taken after 5 candles at 6th candle, because the entry candle body is 40% Wick is 60%. | entry should be activated here. | This should be ignored.", "IRF (later candle)", "later (the 6th candle instead of an earlier one)",
+     "an entry candle whose body is 40% (wick 60%) is not valid; take the later candle", "Rising green candles, then a red candle and a small green one near two lines; an arrow 'This should be ignored' points to a red candle on the left; 'entry should be activated here' points to a later red candle on the right.", "which candle 'the 6th' is counted from is not stated", "high (text) / medium (drawing)"),
+    ("AC08", 2, "20250922-1", "2025-09-22", "1", "IRF", "ACTIVE", "Entry should have activated earlier, marking first red candles Support/Resista[nce]", "IRF (earlier entry)", "earlier", "mark the support/resistance of the FIRST red candle", "none", "end of the line cut by the page edge", "high"),
+    ("AC09", 2, "20250929-1", "2025-09-29", "1", "IRF", "ACTIVE", "Late entry, red candle should be marked, 1st red candle.", "IRF (earlier entry)", "earlier", "the 1st red candle should be marked", "none", "", "high"),
+    ("AC10", 2, "20251006-1", "2025-10-06", "1", "PDR", "ACTIVE", "Long. | Enter in 1st green candle.", "PDR (earlier entry)", "earlier (first green candle)", "enter in the 1st green candle", "Red and green candles above a box labelled PDR; an arrow from a green candle's top is labelled 'Long.'", "", "high"),
+    ("AC11", 2, "20251007-1", "2025-10-07", "1", "PDR", "ACTIVE", "Entry in 1st green candle.", "PDR (earlier entry)", "earlier (first green candle)", "enter in the 1st green candle", "none", "", "high"),
+    ("AC12", 3, "20251008-1", "2025-10-08", "1", "IRF", "ACTIVE", "This should be an ORB trade, but is shown as IRF. | ORB should activate, Instead IRF is activated.", "ORB", "not stated", "ORB should have activated", "none", "", "high"),
+    ("AC13", 3, "20251009-1", "2025-10-09", "1", "IRF", "ACTIVE", "Wait for EMA. | The candle should close below EMA when the space btn. the entry candle is less than 27. | Wait. | 200 EMA [5 min TF] | Entry.", "IRF (later entry)", "later (wait for the EMA break)",
+     "if the space between the entry candle and the 200 EMA (5-minute) is less than 27, wait for a candle to close below the EMA", "A yellow rising curve labelled '200 EMA [5 min TF]'; candles sit on a line above it; 'Wait.' at the upper candle; 'Entry' at a lower red candle that crosses the EMA.", "'the space btn. the entry candle' - the distance is not explicitly 'to the EMA' (read so from the drawing)", "high (text) / medium (drawing)"),
+    ("AC14", 3, "20251016-1", "2025-10-16", "1", "IRF", "ACTIVE", "ORB should have activated, instead IRF is activated.", "ORB", "not stated", "ORB should have activated", "none", "", "high"),
+    ("AC15", 3, "20251017-1", "2025-10-17", "1", "IRF", "ACTIVE", "ORB should have activated, instead IRF is activated.", "ORB", "not stated", "ORB should have activated", "none", "", "high"),
+    ("AC16", 3, "20251027-1", "2025-10-27", "1", "IRF", "ACTIVE", "ORB should have activated, instead IRF is activated. | IRF activation is also wrong.", "ORB", "not stated", "ORB should have activated; the IRF activation itself is also wrong", "none", "the closing stroke of 'wrong.' is a descender / underline, not a strike-through", "high"),
+    ("AC17", 3, "20251107-2", "2025-11-07", "2", "PDS", "ACTIVE", "IRF should activate first which gives an SL. | 2nd trade should be PDS.", "IRF first (it stops out), then PDS as the 2nd trade", "earlier (IRF before the PDS)", "IRF first; the second trade should be the PDS", "none", "", "high"),
+    ("G01", 3, "(page 3, red star)", "", "", "PDR/PDS", "GENERAL_RULE_INCOMPLETE", "PDR/PDS should activate only before", "PDR / PDS", "restricts the time of day (inferred)", "NOT COMPLETE: the sentence stops at 'before' at the foot of the page; the continuation is not on the scan", "none",
+     "the end of the sentence is missing on the scan - what follows 'before' (a time, a strategy, an event) is unknown; two small red marks ('ee' and ',,') sit to the right of 'before' and are not words", "high (what is written) / the rule itself is unknown"),
+    ("AC18", 4, "20251110-1", "2025-11-10", "1", "IRF", "ACTIVE", "Should be ignored as Tgt 1 is not above EMA, tgt 1 is less than 27. | Should wait until EMA break.", "IRF (later entry, or none)", "later (wait until the EMA is broken)",
+     "ignore the entry when target 1 is not above the EMA, i.e. the EMA is within 27 of the entry ('tgt 1 is less than 27'); wait until the EMA breaks", "none", "'Tgt 1 is not above EMA' - read as: the EMA lies between the entry and target 1; 'tgt 1 is less than 27' read as: the distance to the EMA is under 27", "medium-high"),
+    ("AC19", 4, "20251112-1", "2025-11-12", "1", "IRF", "ACTIVE", "This day trading should be completely stopped as IRF is already activate[d] Ep entry is below days low.", "no trade (IRF should not have been taken at the day's low)", "not at all",
+     "trading for the day should stop because the IRF activation is below the day's low", "none", "'activate[d]' cut by the page edge; 'Ep' read as 'i.e.'; 'completely stopped' - whether all strategies stop or only IRF is not stated", "medium-high"),
+    ("G02", 4, "(page 4, red)", "", "", "IRF", "GENERAL_RULE", "IRF should not activate at days low.", "IRF", "not at all (when at the day's low)", "an IRF activation at the day's low is not allowed", "none", "'at days low' - the exact measurement (wick or close, before or including the signal candle) is not stated", "high"),
+    ("AC20", 4, "20251113-1", "2025-11-13", "1", "IRF", "ACTIVE", "First red candle only should be considered.", "IRF (same strategy, correct reference candle)", "not stated", "use only the first red candle", "none", "", "high"),
+    ("AC21", 4, "20251114-1", "2025-11-14", "1", "PDS", "ACTIVE", "The IRF should be activated instead of PDS. | PDS criteria is not satisfying.", "IRF", "not stated", "PDS criteria are not met", "none", "", "high"),
+    ("AC22", 4, "20251114-2", "2025-11-14", "2", "PDS", "ACTIVE", "IRF should activate. | Same day 2nd trade, ig it's glitch.", "IRF", "not stated", "a second trade on the same day is called a glitch ('ig' read as 'I guess')", "none", "'ig' (read as 'I guess')", "high"),
+    ("AC23", 4, "20251120-1", "2025-11-20", "1", "IRF", "CROSSED_OUT", "[crossed out:] RF should be activated + Or PDR should be activated as it Sab[?]", "(crossed out - not an active instruction)", "n/a", "n/a", "none", "heavily scribbled out; the last word is illegible ('Sab...' / 'Gap(?)')", "low (crossed out)"),
+    ("AC24", 4, "20251121-1", "2025-11-21", "1", "IRF", "ACTIVE", "ORB should have activated, but IRF is activated", "ORB", "not stated", "ORB should have activated", "none", "", "high"),
+    ("AC25", 5, "20251124-1", "2025-11-24", "1", "IRF", "ACTIVE", "RF should be activated, but IRF is entered", "RF", "not stated", "RF should have activated", "none", "", "high"),
+    ("AC26", 5, "20251126-1", "2025-11-26", "1", "IRF", "ACTIVE", "First red candle should be considered", "IRF (same strategy, correct reference candle)", "not stated", "use the first red candle", "none", "", "high"),
+    ("AC27", 5, "20251127-1", "2025-11-27", "1", "(none written)", "ACTIVE", "ORB is activated on a red candle for long side, which is wrong. ORB for long should be in green closing.", "ORB (long only on a green close)", "not stated", "an ORB long must close green (a red first candle must not give a long)", "none", "no strategy label is written beside the date; the text is about ORB; a scribbled-over word sits between 'long' and 'side'", "high"),
+    ("AC28", 5, "20251128-1", "2025-11-28", "1", "IRF", "ACTIVE", "ORB should be activated instead of IRF", "ORB", "not stated", "ORB should have activated", "none", "", "high"),
+    ("AC29", 5, "20251201-1", "2025-12-01", "1", "PDR", "ACTIVE", "Early entry should take place in 1st green candle", "PDR (earlier entry)", "earlier (first green candle)", "enter in the 1st green candle", "none", "", "high"),
+    ("AC30", 5, "20251201-2", "2025-12-01", "2", "PDR", "ACTIVE", "2nd entry should be ignored.", "no second trade", "not at all", "the 2nd entry should be ignored", "none", "", "high"),
+    ("AC31", 5, "20251205-1", "2025-12-05", "1", "IRF", "ACTIVE", "ORB should activate instead of IRF.", "ORB", "not stated", "ORB should have activated", "none", "", "high"),
+    ("AC32", 5, "20251211", "2025-12-11", "1", "IRF", "ACTIVE", "Should be ignored as candle body is less than 50%. | 2nd candle should also be ignores as it is at day's low.", "no trade (candle ignored)", "not at all / later",
+     "ignore a candle whose body is under 50%; ignore the 2nd candle too because it is at the day's low", "none", "'body' is written above the line with a caret; no '-1' is written after the date; 50% here vs '60+' (AC01) and 40% (AC07)", "high"),
+    ("AC33", 5, "20251212-1", "2025-12-12", "1", "IRF", "ACTIVE", "Should be ORB, But IRF is activated.", "ORB", "not stated", "ORB should have activated", "none", "", "high"),
+    ("AC34", 6, "20251215-1", "2025-12-15", "1", "IRF", "ACTIVE", "First red candle should be considered.", "IRF (same strategy, correct reference candle)", "not stated", "use the first red candle", "none", "", "high"),
+    ("AC35", 6, "20251218-1", "2025-12-18", "1", "PDS (reads 'PPS')", "ACTIVE", "Should take resistance in the zone, breakout of zone Ep trap is not conside[red]", "PDS (as labelled)", "not stated", "take the resistance inside the zone; a zone breakout 'i.e. trap' is not considered", "none",
+     "the label could be 'PDS' or 'PPS'; the content ('resistance in the zone', 'breakout of zone') is worded like PDR; the last word is cut by the page edge", "medium"),
+    ("AC36", 6, "20251223-1", "2025-12-23", "1", "PDR", "ACTIVE", "RF should be activated instead of PDR. | PDR is also wrong.", "RF", "not stated", "RF instead of PDR; the PDR itself is also wrong", "none", "", "high"),
+    ("AC37", 6, "20251224-1", "2025-12-24", "1", "IRF", "ACTIVE", "ORB should be activated instead of IRF", "ORB", "not stated", "ORB should have activated", "none", "", "high"),
+    ("AC38", 6, "20251216-1 (as written; read as 20251226-1)", "2025-12-26", "1", "PDS", "ACTIVE", "First candle entry.", "PDS (first candle entry)", "earlier (first candle)", "entry on the first candle", "none",
+     "the date reads 2025-12-16 or 2025-12-26; no trade exists on 2025-12-16, while 20251226-1 is a PDS Method 3 trade, and the entry sits between 20251224 and 20251230 in page order - so it is read as 2025-12-26", "medium"),
+    ("AC39", 6, "20251230-1", "2025-12-30", "1", "IRF", "ACTIVE", "ORB should be activated instead of IRF.", "ORB", "not stated", "ORB should have activated", "none", "", "high"),
+    ("AC40", 6, "20251231-1", "2025-12-31", "1", "PDR", "ACTIVE", "ORB should activate first, Which hits SL Ep then PDR. | PDR 1st candle entry.", "ORB first (it stops out), then PDR on its 1st candle", "earlier (ORB first; PDR on the 1st candle)", "ORB first; PDR entry on the first candle", "none", "'Ep' read as 'i.e.'; the second strategy is written 'PPR' and read as PDR", "high"),
+]
+FIELDS = ["correction_id", "pdf_page", "trade_id_as_written", "date", "trade_no", "strategy_label_as_written", "status", "author_text_verbatim", "suggested_strategy", "earlier_later_or_not_at_all", "requirement_stated", "drawing_interpretation", "uncertain_phrases", "transcription_confidence", "source_image"]
+
+
+def rows() -> list[dict]:
+    out = []
+    for r in R:
+        d = dict(zip(FIELDS[:-1], r, strict=True))
+        d["source_image"] = f"reports/phase5/phase51_author_corrections/pages/page_{d['pdf_page']}_full.png (page {d['pdf_page']} of {PDF})"
+        out.append(d)
+    return out
+
+
+def main() -> int:
+    OUT.mkdir(parents=True, exist_ok=True)
+    rs = rows()
+    with open(OUT / "all_author_corrections.csv", "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=FIELDS)
+        w.writeheader()
+        w.writerows(rs)
+    dated = [r for r in rs if r["date"]]
+    L = ["# Handwritten corrections, transcribed (Phase 5.1)", "",
+         f"Source: `{PDF}` - six scanned pages, no text layer. Every page was rendered (`pages/page_N_full.png`, plus top/bottom crops) and read by eye; wording is kept as written. `[...]` = cut by the page edge, `(?)` = uncertain reading. "
+         "**Crossed-out text is recorded but is NOT an active instruction.** Interpretation columns (suggested strategy, timing, requirement, drawing) are my reading and are labelled as such; the verbatim line is the evidence.", "",
+         f"Totals: **{len(dated)} dated entries** ({sum(1 for r in dated if r['status'] == 'ACTIVE')} active, {sum(1 for r in dated if r['status'] == 'CROSSED_OUT')} crossed out) and **2 red-star general remarks** (one of them incomplete). "
+         "The entries are the Phase 3.6 automated ledger's trade ids: the strategy label written beside each date equals the Phase 3.6 strategy of that trade for 38 labelled entries independently of any date reading; AC27 has no label; AC38 matches only after its date is resolved (also supported by the manual journal: a PDS row at 09:30 on 2025-12-26, none on 2025-12-16).", "",
+         "Reading notes: 'Ep' is read as 'i.e.' (it appears in AC04, AC19, AC35, AC40); 'ig' as 'I guess'; 'Tgt' as target; 'S/R' as support/resistance; 'SL' as stop-loss; 'btn.' as between.", ""]
+    for p in range(1, 7):
+        L += [f"## Page {p}", ""]
+        for r in (x for x in rs if x["pdf_page"] == p):
+            title = r["correction_id"] + (f" - {r['trade_id_as_written']}" if r["date"] else " - general remark")
+            L += [f"### {title}  ({r['status']})", "",
+                  f"* **PDF page:** {r['pdf_page']}   **Date written:** {r['trade_id_as_written'] or '(none)'}   **Strategy label as written:** {r['strategy_label_as_written']}",
+                  f"* **Author's observation (verbatim):** {r['author_text_verbatim']}",
+                  f"* **Suggested correct strategy / action (my reading):** {r['suggested_strategy']}",
+                  f"* **Earlier, later or not at all:** {r['earlier_later_or_not_at_all']}",
+                  f"* **Candle-pattern or level requirement stated:** {r['requirement_stated']}",
+                  f"* **Drawing interpretation (my reading):** {r['drawing_interpretation']}",
+                  f"* **Uncertain phrases:** {r['uncertain_phrases'] or 'none'}",
+                  f"* **Transcription confidence:** {r['transcription_confidence']}",
+                  f"* **Source image:** `{r['source_image']}`", ""]
+    (OUT / "handwritten_corrections_transcribed.md").write_text("\n".join(L) + "\n")
+    print(f"{len(dated)} dated entries, {len(rs) - len(dated)} general remarks")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

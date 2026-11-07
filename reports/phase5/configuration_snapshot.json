@@ -1,0 +1,227 @@
+{
+ "phase": "5.0",
+ "generated_utc": "2026-11-05T04:21:14.260506+00:00",
+ "frozen_configuration_id": "FROZEN-PHASE36-42cea2600bd4",
+ "freeze_record": "reports/phase4/strategy_freeze.json (Phase 4; unchanged)",
+ "parameters": {
+  "proposal_config": {
+   "label": "PROPOSED_FOR_REVIEW",
+   "strong_candle": "MODERATE",
+   "pin_bar": "OWNER_2X_CLOSE30",
+   "rejection_wick": "MODERATE",
+   "trend_mode": "EMA_PREV_SESSION_CLOSE",
+   "ma_mode": "EMA200_5M",
+   "swing_k": 2,
+   "small_candle_body_ratio_max": 0.3,
+   "irf_support_def": "SWING_K1",
+   "irf_resistance_def": "FIRST_PUSH_TOP",
+   "m1_max_candles_after_breakout": 1,
+   "m1_close_below_irl_counts_as_inside": false,
+   "m2_extension_definition": "E1",
+   "m2_red_may_be_extension_candle": false,
+   "m2b_push_must_precede_red_candle": false,
+   "m2a_break_may_be_red_candle": false,
+   "m2_expiry_candles": null,
+   "m3_compression_def": "C1",
+   "m3_compression_n": 2,
+   "m3_compression_size_frac": 0.5,
+   "m3_wick_share_band": "BAND_60_70",
+   "stop_distance_measure": "GREEN_HIGH",
+   "stop_boundary_inclusive_35": true,
+   "gap_min_points": 0.0,
+   "gap_max_points": null,
+   "zone_lower_boundary": "ZONE_WICK",
+   "prev_day_level_window": "ALL_CANDLES",
+   "pdr_zone_method": "B_SWING_HIGH_REVERSAL",
+   "pds_zone_method": "A_LOWEST_LOW",
+   "pds_zone_upper_boundary": "ZONE_FULL",
+   "zone_cluster_tolerance_points": 5.0,
+   "zone_cluster_min_touches": 2,
+   "zone_tie_break": "FIRST",
+   "zone_proximity_points": 0.0,
+   "pdr_green_may_be_interaction_candle": false,
+   "pdr_reversal_filter": "OFF",
+   "pds_small_support_def": "SWING_K1_NEAR_ZONE",
+   "pds_m3_break_basis": "CLOSE",
+   "pds_m3_standalone": false,
+   "rf_return_inside_def": "R1",
+   "rf_direction": "LONG",
+   "ma_near_band_points": 15.0,
+   "ma_close_margin_points": 5.0,
+   "entry_reference_price": "SIGNAL_CANDLE_CLOSE",
+   "orb_pin_bar_in_methods_1_2": true,
+   "pdr_open_vs_zone": "ABOVE_ZONE",
+   "pds_open_vs_zone": "BELOW_ZONE",
+   "prev_close_source": "OFFICIAL_DAILY",
+   "max_signals_per_session": 99,
+   "allow_unverified_prev_session": false,
+   "signal_window_end": null
+  },
+  "trade_config": {
+   "stop_variant": "BASELINE",
+   "t1_points": 27.0,
+   "rf_t2_points": 60.0,
+   "total_lots": 6,
+   "leg1_lots": 3,
+   "lot_size": 65,
+   "post_t1_stop_mode": "BUFFER",
+   "post_t1_buffer_points": 6.0,
+   "forced_exit_time": "15:14:00"
+  },
+  "pdr_body_config": {
+   "zone_candidate": "A_HIGHEST_BODY_HIGH",
+   "b_local_high_k": 1,
+   "b_min_touches": 2,
+   "b_tolerance_points": 5.0,
+   "b_min_separation_candles": 2,
+   "b_spike_policy": "ALWAYS_INCLUDE_HIGHEST_BODY_HIGH",
+   "zero_height_policy": "UNRESOLVED_NO_SETUP",
+   "pattern_profile": "RESEARCH_DEFAULT",
+   "patterns_enabled": [
+    "GOOD_GREEN_BODY",
+    "LOWER_PRICE_REJECTION",
+    "HAMMER"
+   ],
+   "proximity_points": 0.0,
+   "open_vs_zone": "ABOVE_ZONE",
+   "confirmation_may_be_interaction_candle": false,
+   "wait_policy": "WAIT_FOR_QUALIFYING_CANDLE"
+  },
+  "day_rules": {
+   "entry_cutoff": "13:00:00",
+   "max_entries": 2,
+   "second_trade_strategies": [
+    "PDR",
+    "PDS"
+   ],
+   "tie_break": null,
+   "collision_policy": "MARK_DAY_UNRESOLVED"
+  },
+  "targets_2": {
+   "IRF": 60.0,
+   "ORB": 60.0,
+   "PDR": 70.0,
+   "PDS": 70.0,
+   "RF": 60.0
+  },
+  "stops": {
+   "IRF": 35.0,
+   "ORB": 30.0,
+   "PDR": 35.0,
+   "PDS": 35.0,
+   "RF": 35.0
+  },
+  "target_1_points": 27.0,
+  "post_t1_buffer_points": 6.0,
+  "lots": {
+   "total": 6,
+   "leg1": 3,
+   "lot_size_fixed_multiplier": 65
+  },
+  "forced_exit_time": "15:14:00",
+  "entry_cutoff": "13:00 IST",
+  "scenario_key": "phase36_body_based",
+  "pdr_engine": "BODY_BASED_PHASE36"
+ },
+ "active_file_hashes_verified_now": {
+  "src/nifty_trading/strategies/irf.py": "d0e103a1b5044ea76dd8ecb28f31367f34b062729b6493e2ffbbd05baf293fe3",
+  "src/nifty_trading/strategies/orb.py": "1e32888de7e6951c6b4fe186950da58e41876a29451673eb8ff23743d2a35f97",
+  "src/nifty_trading/strategies/pdr_body.py": "59ff807afc8813129c4d804775e54691a7fa027b303cd9ce7636c630531bf095",
+  "src/nifty_trading/strategies/pdr_revised.py": "d18549efe76b28f74dc96606e844bf899d5982594bde73d47676770492e1a07b",
+  "src/nifty_trading/strategies/pds.py": "4496061195624a1db1085baf956d07f277069a8c66a4c3cc9b008cea41fe4852",
+  "src/nifty_trading/strategies/rf.py": "ede1ec29cefa897e0f7b8768fbc226451433ab99443abbfd758cdd43ab6c311d",
+  "src/nifty_trading/strategies/base.py": "8198ca96262850a5c3dd51fc411909e8ec1f1451ddf8aad8c7716c2d083cc21e",
+  "src/nifty_trading/strategies/definitions.py": "5eb6e70150467a912d0d7af251abe9a6806d1872cb32d60cd8d5845ccac4a72d",
+  "src/nifty_trading/strategies/params.py": "b19f4004e71075b32aceed62ee215acee50552632a8ea5e9373a9d980bdf7545",
+  "src/nifty_trading/strategies/selection.py": "768bee461dcec3e3175bd9e3ccc7809ea52b762aebb37cf4552138e6bbdba39b",
+  "src/nifty_trading/strategies/trading_day.py": "c8ffc42771edac4df9ece5155c4b4c39a3d3e67c27f03b89b979daffd70e775b",
+  "src/nifty_trading/strategies/rules.py": "12ab09299d314a7b07609cc6936d22c4e161b12e6602668f0980e601ae52cbf2",
+  "src/nifty_trading/strategies/rule_data.py": "34db2531e870c0b5c7a3abe82ded325bdde5c043e25a461041ad040692a61a1f",
+  "src/nifty_trading/core/exit_policy.py": "f98d9ff3ee84ef6eaac7206371b70e73345885d633ba43726f40e33d4636b872",
+  "src/nifty_trading/core/execution_eligibility.py": "3d51dd2d879e25acc4074821f71d6f0e8d4b68020a548286830737e6a559724d",
+  "src/nifty_trading/data/sessions.py": "7e1542756941e7203d557a36219264d6f5513afe743b4e0be18b90d185d2e127",
+  "src/nifty_trading/data/market_calendar.py": "8fc3a07e6e910c1b444cdc95826540d8effbb358fae3f686d4817a439a783f3d",
+  "src/nifty_trading/research/phase3.py": "a1ab31f9734bc9be77385338f2a10c62e44d5a3a9c0fa607009dedb5de84641d",
+  "src/nifty_trading/research/phase31.py": "cd743b22e68d31ce051b78d64eefc4dbceda8923332bdffd25f67febe0ebf125",
+  "src/nifty_trading/research/phase32.py": "916bd040c0f37cc18554381ff34ae87c6f011c0113bbaf0d6d1d429e148b314d",
+  "src/nifty_trading/research/phase32_build.py": "d68a7fbeec7f36ef14e9eb8c95421b7cd9edd4e76328ebd33b4c0aa56f1d5e61",
+  "src/nifty_trading/research/phase32_render.py": "934dd79e210c2381a938bffc3ad5462c2fc215675fd61a255e88dd640f4138a0",
+  "src/nifty_trading/research/phase32_excel.py": "d1c531da5fc2349f1c17dc5a64d9581ae6910225de0db6ba4df0c2694d4b534a",
+  "src/nifty_trading/research/phase32_charts.py": "618523eef569d55826150b2f6ced88b72ab39a246fc59c0854b8e15040b876bb",
+  "src/nifty_trading/research/phase35.py": "192d5d6c3a61f5c7cf54c4e1566577b0432eb3d1ac838e64ee95ac6f4f3b36e2",
+  "src/nifty_trading/research/phase36.py": "c01875c4914db2648fc7d12b85828ab652101d6816cf3018b0e64a85286ded95"
+ },
+ "active_file_hashes_equal_freeze": true,
+ "stops_targets": {
+  "unit": "index points, the NIFTY values, NOT scaled to the index level",
+  "initial_stop": {
+   "ORB": 30,
+   "IRF": 35,
+   "PDR": 35,
+   "PDS": 35,
+   "RF": 35
+  },
+  "target_1": 27,
+  "target_2": {
+   "IRF": 60,
+   "ORB": 60,
+   "PDR": 70,
+   "PDS": 70,
+   "RF": 60
+  },
+  "post_t1_stop": "entry -/+ 6 points",
+  "entry_cutoff": "13:00 IST",
+  "max_trades_per_day": 2,
+  "second_trade": "PDR/PDS only, after an initial full stop before T1"
+ },
+ "units": "390 = 6 x 65, a fixed comparison multiplier for index-point P&L in rupees; NOT a contract size for BANKNIFTY or SENSEX",
+ "engineering_changes": [
+  "NEW src/nifty_trading/research/phase5_data.py (index registry, loaders, Parquet-ZSTD writers), phase5.py (windows, run, write), phase5_options.py (journal block), phase5_report.py (tables)",
+  "NEW scripts/phase5_discover.py, phase5_fetch.py, phase5_build_data.py, phase5_run.py, phase5_compare.py, phase5_freeze.py, phase5_options_probe.py, phase5_docs.py, phase5_independent_audit.py",
+  "NO existing source file was edited in Phase 5 (strategies, controller, execution, session construction, the Phase 3.2 framework and the Phase 4 modules are byte-identical to the Phase 4 freeze)"
+ ],
+ "index_specific_hardcoding_inventory": [
+  {
+   "where": "src/nifty_trading/strategies/base.py:33 and :281",
+   "what": "INSTRUMENT = 'NIFTY 50 ...' and instrument='NIFTY 50' on every Signal record",
+   "handling": "label only; the rendered texts and CSV values are relabelled in phase5.relabel(); the signal logic never reads it"
+  },
+  {
+   "where": "src/nifty_trading/strategies/rule_data.py:156,334,335,341,422,423",
+   "what": "rule texts mention NIFTY 50 / 65 units per lot",
+   "handling": "provenance of the frozen rules (the source documents); kept verbatim in rule references, instrument phrases relabelled in outputs"
+  },
+  {
+   "where": "src/nifty_trading/strategies/params.py:309",
+   "what": "6 lots x 65 = 390 units (3 + 3)",
+   "handling": "unchanged; 390 is a fixed per-index comparison multiplier, not a contract size for BANKNIFTY or SENSEX"
+  },
+  {
+   "where": "src/nifty_trading/data/sessions.py:95,105,113",
+   "what": "default loaders read data/processed/nifty50, nifty50_warmup, nifty50_daily",
+   "handling": "not used by Phase 5: build_session_contexts() takes data frames, which phase4_data.build_window_data() passes from the index-specific processed namespace"
+  },
+  {
+   "where": "src/nifty_trading/research/phase32_build.py:78,96",
+   "what": "partition_of() and provenance() default to the nifty50 layout",
+   "handling": "build() accepts partition_fn and provenance_override (the Phase 4 extension); Phase 5 passes its own"
+  },
+  {
+   "where": "src/nifty_trading/data/market_calendar.py",
+   "what": "closing-auction regime id 'NSE_CLOSING_AUCTION_SESSION' from the NSE calendar file",
+   "handling": "Phase 5 writes a calendar per index DERIVED from that index's own data; the regime entry is added only when the index's own data show the freeze pattern (reports/phase5/<index>/data/closing_auction_evidence.json)"
+  },
+  {
+   "where": "src/nifty_trading/instruments/resolver.py:50-110, data/downloader.py:195-262, data/storage.py",
+   "what": "resolve_nifty50_index(), scrip 999920000 / exchange N, 'nifty50' partitions",
+   "handling": "not used: scripts/phase5_discover.py resolves each index from the broker master by name and exchange and verifies the identity with probes"
+  },
+  {
+   "where": "src/nifty_trading/core/risk.py:13",
+   "what": "max_position_size 1800 = 50 NIFTY lots",
+   "handling": "not used by any backtest"
+  }
+ ],
+ "multi_symbol_support_verified": "build_session_contexts() and phase32_build.build(data=...) accept data frames and a partition function; no strategy file reads an instrument identifier (see inventory)",
+ "nifty_preservation": "reports/phase5/before_snapshot.json (taken before any Phase 5 output existed) and `python scripts/phase5_freeze.py --verify`"
+}

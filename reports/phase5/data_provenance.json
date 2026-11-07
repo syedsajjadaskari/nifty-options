@@ -1,0 +1,197 @@
+{
+ "phase": "5.0",
+ "generated_utc": "2026-11-05T05:49:57.439143+00:00",
+ "instruments": {
+  "banknifty": {
+   "symbol": "BANKNIFTY",
+   "full_name": "BANKNIFTY",
+   "exchange": "N",
+   "exchange_label": "NSE",
+   "exchange_segment": "C",
+   "scrip_code": 999920005,
+   "scrip_type": "EQ",
+   "series": "EQ",
+   "tick_size_master": 0.0,
+   "lot_size_master": 2000,
+   "is_index": true,
+   "expected_index_name": "Nifty Bank",
+   "master_file": "data/raw/phase5_instrument_master/scrip_master_20261105T024711Z.csv",
+   "master_sha256": "85054710c0b40552546e81042692a22b42299bc53b93c9c9b092f20e263148ca",
+   "not_the_index_rejected_rows_with_same_name": [],
+   "similar_index_rows_in_same_segment": [
+    {
+     "ScripCode": 999920005,
+     "Name": "BANKNIFTY",
+     "FullName": "BANKNIFTY"
+    },
+    {
+     "ScripCode": 999920017,
+     "Name": "NIFTY PSU BANK",
+     "FullName": "NIFTY PSU BANK"
+    },
+    {
+     "ScripCode": 999920025,
+     "Name": "NIFTY PVT BANK",
+     "FullName": "NIFTY PVT BANK"
+    }
+   ],
+   "name_note": ""
+  },
+  "sensex": {
+   "symbol": "SENSEX",
+   "full_name": null,
+   "exchange": "B",
+   "exchange_label": "BSE",
+   "exchange_segment": "C",
+   "scrip_code": 999901,
+   "scrip_type": "XX",
+   "series": "EQ",
+   "tick_size_master": 0.01,
+   "lot_size_master": 1,
+   "is_index": true,
+   "expected_index_name": "S&P BSE Sensex",
+   "master_file": "data/raw/phase5_instrument_master/scrip_master_20261105T024711Z.csv",
+   "master_sha256": "85054710c0b40552546e81042692a22b42299bc53b93c9c9b092f20e263148ca",
+   "not_the_index_rejected_rows_with_same_name": [],
+   "similar_index_rows_in_same_segment": [
+    {
+     "ScripCode": 999901,
+     "Name": "SENSEX",
+     "FullName": NaN
+    },
+    {
+     "ScripCode": 999903,
+     "Name": "BSE BANKEX",
+     "FullName": NaN
+    },
+    {
+     "ScripCode": 999941,
+     "Name": "S&P BSE SENSEX NEXT 50",
+     "FullName": "S&P BSE SENSEX NEXT 50"
+    },
+    {
+     "ScripCode": 999942,
+     "Name": "S&P BSE PRIVATE BANKS INDEX",
+     "FullName": "S&P BSE PRIVATE BANKS INDEX"
+    },
+    {
+     "ScripCode": 999943,
+     "Name": "BSE SENSEX 50",
+     "FullName": "BSE SENSEX 50"
+    }
+   ],
+   "name_note": "the master gives no full name for this row, so the identity is confirmed by the exchange, the 99xxxx index code and the price level in the probe below"
+  }
+ },
+ "instrument_master": {
+  "file": "data/raw/phase5_instrument_master/scrip_master_20261105T024711Z.csv",
+  "sha256": "85054710c0b40552546e81042692a22b42299bc53b93c9c9b092f20e263148ca"
+ },
+ "five_paisa": {
+  "banknifty": {
+   "manifest": "data/raw/banknifty/5paisa/manifest.json",
+   "manifest_sha256": "2f16b1ff6b055990e16ec18bb5bde2335829c4c82420dd23e5a75aabcf0b23a8",
+   "request_status_counts": {
+    "1d:COMPLETED": 20,
+    "1m:EMPTY": 14,
+    "1m:COMPLETED": 59
+   }
+  },
+  "sensex": {
+   "manifest": "data/raw/sensex/5paisa/manifest.json",
+   "manifest_sha256": "2aa6e7a09d2baf51704f950e48e1eb234f3962d06bb2eee1a6a809c126200f04",
+   "request_status_counts": {
+    "1d:COMPLETED": 20,
+    "1m:EMPTY": 14,
+    "1m:COMPLETED": 59
+   }
+  }
+ },
+ "secondary_sources": {
+  "banknifty": {
+   "commit_date": "2026-04-23T07:54:40Z",
+   "commit_message": "update Bank Nifty 1m dataset to 2026-04-22",
+   "commit_sha": "6bdda6e571dd5e345ef3441df528a1fdccdbb0e9",
+   "default_branch": "main",
+   "note": "files stored exactly as served; the blob SHA-1 is git's object id and is checked against the repository tree; the underlying data vendor is not named by the repository (README: 'extracted from a reliable financial data provider')",
+   "repo_description": " Bank Nifty minute data with intervals ranging from 1 minute to 1 day",
+   "repo_license_spdx": "MIT",
+   "repository": "https://github.com/sandeepkapri/BankNifty-Data",
+   "retrieved_utc": "2026-11-05T02:51:23.225244+00:00",
+   "files": {
+    "LICENSE": {
+     "bytes": 1070,
+     "git_blob_sha": "dfa3f06079b2fd5fa02ba5f090b56fbe9d7cd421",
+     "sha256": "ef09254acf5a8f0486cd8529c541f20d253130c8b896d43e9dec2a21bd7a0e2a",
+     "status": "OK"
+    },
+    "README.md": {
+     "bytes": 2671,
+     "git_blob_sha": "bd7bfdfc0e4305d9476fc3054a54289f266013e3",
+     "sha256": "06e17fc9d34fa754981d719fafa626243bbbfccd91203cb532deda7d0c8b3bab",
+     "status": "OK"
+    },
+    "bank-nifty-1m-data.csv": {
+     "bytes": 67508825,
+     "git_blob_sha": "3d8e0a1ebc8befc5c6988999f926ab082c04515d",
+     "sha256": "5826b09aa91494408045a1454121e62e4aad79677269e4c34f226d27bf12dffa",
+     "status": "OK"
+    }
+   }
+  },
+  "sensex": {
+   "commit_date": "2024-04-09T08:29:03Z",
+   "commit_message": "Time series forecasting with LSTM notebook added",
+   "commit_sha": "e385abcde715c22d606e337f0fe1a6b92c2209f2",
+   "default_branch": "main",
+   "note": "files stored exactly as served; the blob SHA-1 is git's object id and is checked against the repository tree; the underlying data vendor is not named by the repository (README: 'extracted from a reliable financial data provider')",
+   "repo_description": "sensex_candlestick_data.csv: This dataset contains minute-level data for Sensex spanning from March 8, 2018, to March 22, 2024. The dataset is suitable for financial analysis, algorithmic trading strategies, and time series forecasting.",
+   "repo_license_spdx": "MIT",
+   "repository": "https://github.com/sandeepkapri/Sensex-Minute-Data",
+   "retrieved_utc": "2026-11-05T02:51:37.235655+00:00",
+   "files": {
+    "LICENSE": {
+     "bytes": 1070,
+     "git_blob_sha": "dfa3f06079b2fd5fa02ba5f090b56fbe9d7cd421",
+     "sha256": "ef09254acf5a8f0486cd8529c541f20d253130c8b896d43e9dec2a21bd7a0e2a",
+     "status": "OK"
+    },
+    "README.md": {
+     "bytes": 1961,
+     "git_blob_sha": "51b9ae392106a5e0f4034c0bfcc6435b87f8be8f",
+     "sha256": "580cd9c5813f291f292f23c30ab30083818d9b1aa5871c30f219ea251318f7f0",
+     "status": "OK"
+    },
+    "sensex_candlestick_data.csv": {
+     "bytes": 34628664,
+     "git_blob_sha": "3b29fce2466f1eaed895a69a0e2177e56302977a",
+     "sha256": "68f696ac420bbe57e0127d71c11ecf6f308e548f89953e6ec8f24c42c04ddaff",
+     "status": "OK"
+    }
+   }
+  }
+ },
+ "processed_manifests": {
+  "banknifty": {
+   "FIVEPAISA_1M_BANKNIFTY": "data/processed/banknifty/FIVEPAISA_1M_BANKNIFTY/source_manifest.json",
+   "KAPRI_1M_BANKNIFTY": "data/processed/banknifty/KAPRI_1M_BANKNIFTY/source_manifest.json",
+   "FIVEPAISA_1D_BANKNIFTY": "data/processed/banknifty/FIVEPAISA_1D_BANKNIFTY/source_manifest.json"
+  },
+  "sensex": {
+   "FIVEPAISA_1M_SENSEX": "data/processed/sensex/FIVEPAISA_1M_SENSEX/source_manifest.json",
+   "KAPRI_1M_SENSEX": "data/processed/sensex/KAPRI_1M_SENSEX/source_manifest.json",
+   "FIVEPAISA_1D_SENSEX": "data/processed/sensex/FIVEPAISA_1D_SENSEX/source_manifest.json"
+  }
+ },
+ "calendar_files": {
+  "banknifty": "data/processed/banknifty/calendar_derived.json",
+  "sensex": "data/processed/sensex/calendar_derived.json"
+ },
+ "build_provenance": {
+  "banknifty": "reports/phase5/banknifty/data/data_provenance_build.json",
+  "sensex": "reports/phase5/sensex/data/data_provenance_build.json"
+ },
+ "frozen_configuration_id": "FROZEN-PHASE36-42cea2600bd4",
+ "git_head_at_run": "2026-11-05T04:21:14.260506+00:00",
+ "note": "Raw vendor data are kept under data/raw (git-ignored); every trade row carries the minute-source id, daily-source id, partition SHA-256 and raw-file SHA-256."
+}

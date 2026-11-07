@@ -1,0 +1,159 @@
+{
+  "checks": {
+    "the handwritten PDF has six pages, all six rendered page images exist, and the PDF is byte-identical to its baseline hash": {
+      "pass": true,
+      "n": 6,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "all 40 dated entries are weekdays, resolve to exactly one Phase 3.6 trade, and the strategy label written beside the date equals that trade's strategy (AC27 has no label)": {
+      "pass": true,
+      "n": 40,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "transcription: 40 dated entries, 2 general remarks, exactly one crossed-out entry (AC23) and it has no classification": {
+      "pass": true,
+      "n": 42,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every evidence candle (38 dates) equals an independent 5-minute aggregation of the raw one-minute rows: OHLC, colour, body %, and the causal EMA(200) of 5-minute closes": {
+      "pass": true,
+      "n": 2850,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "previous-session high and low in the evidence equal the independent previous-session 5-minute extremes": {
+      "pass": true,
+      "n": 38,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "each dated automated trade: entry = raw 1-minute open at the fill minute, outcome and both exit times equal an independent exit walk, and its delivered rule checks show 0 failures (supports 'no confirmed implementation defect')": {
+      "pass": true,
+      "n": 40,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the IRF population counts behind the candidate rules (EMA within 27 below the entry, close below the session low so far, entry-candle body < 60 / 50 / 40) equal an independent recomputation, trade by trade": {
+      "pass": true,
+      "n": 109,
+      "detail": "{'body_lt_60': 55, 'body_lt_50': 35, 'body_lt_40': 28, 'ema_within_27': 9, 'close_below_session_low': 0}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the 'first red candle' reading (re-implemented from the author's wording) differs from the engine's entry on exactly the Method-2 IRF trades listed in population_impact.json": {
+      "pass": true,
+      "n": 42,
+      "detail": "37 of 42",
+      "failures": [],
+      "n_failures": 0
+    },
+    "for every dated IRF entry the 'first red candle (fully above, body >= 60)' entry printed in the day report equals the independent computation": {
+      "pass": true,
+      "n": 27,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the PDR 'first green candle' counts (earlier than the engine's confirmation) equal an independent recomputation from the zone in the Phase 3.6 signals and the raw candles": {
+      "pass": true,
+      "n": 25,
+      "detail": "19 of 25",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the ORB signals changed by the colour variant are exactly the confirmed Phase 3.6 ORB signals whose first candle colour contradicts the direction (independent recomputation from the raw first candle)": {
+      "pass": true,
+      "n": 53,
+      "detail": "[('2025-11-27', 'Method 1', 'LONG'), ('2026-01-05', 'Method 1', 'LONG'), ('2026-04-24', 'Method 1', 'SHORT')]",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every executed trade the variant removes is either one of those ORB trades or a later trade on the same day (no other day is touched)": {
+      "pass": true,
+      "n": 4,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the frozen scenario re-run through the unchanged controller reproduces the Phase 3.6 ledger identities (196 trades) before the variant is applied": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every active observation has at least one classification and all classifications belong to the required set (plus NO_DISCREPANCY_FOUND); no observation is classified CONFIRMED_SOFTWARE_BUG or WRONG_STRATEGY_SELECTION": {
+      "pass": true,
+      "n": 42,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "only AC27 is implemented, and only as an opt-in variant": {
+      "pass": true,
+      "n": 1,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "in strategy_selection_conflicts.csv the 'expected strategy produced confirmed signals' column equals the Phase 3.6 signal table, row by row": {
+      "pass": true,
+      "n": 19,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every dated observation has a day report and a chart": {
+      "pass": true,
+      "n": 40,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "confirmed_software_defects.md states 'none' and no frozen file differs from its hash (strategy, controller, framework)": {
+      "pass": true,
+      "n": 1,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file in the baseline snapshot (all of src, scripts, tests, docs, data, reports: the strategy files, the Phase 3.6 / 4 / 5 reports, the historical datasets, the manual journal and the handwritten PDF) is byte-identical": {
+      "pass": true,
+      "n": 14888,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the only files added outside reports/phase5/phase51_author_corrections are the declared Phase 5.1 scripts, tests and the two new modules (orb_colour.py, phase51.py)": {
+      "pass": true,
+      "n": 14898,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file hashed in the Phase 4 freeze (engines, controller, execution, session construction, framework) is unchanged": {
+      "pass": true,
+      "n": 26,
+      "detail": "FROZEN-PHASE36-42cea2600bd4",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the variant is a subclass that only post-filters confirmed records (it contains no stop, target, level or threshold value)": {
+      "pass": true,
+      "n": 1,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    }
+  },
+  "all_pass": true
+}

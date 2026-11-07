@@ -1,0 +1,145 @@
+{
+  "checks": {
+    "IRF EMA table: EMA(200), the EMA's position relative to the signal candle (above / below / inside), the range distance, the close distance and the four pass flags (range / close, 28 / 27) equal an independent recomputation from the raw candles for every confirmed IRF signal": {
+      "pass": true,
+      "n": 1813,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every surviving IRF signal of the EMA configurations has at least 28 points of range clearance from the EMA(200) of its own (completed) signal candle": {
+      "pass": true,
+      "n": 1531,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every logged EMA rejection really has less than 28 points of range clearance, using the EMA value of the signal candle itself (no later value)": {
+      "pass": true,
+      "n": 921,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "boundary cases near exactly 28.0 points are decided inclusively (>= 28 passes)": {
+      "pass": true,
+      "n": 3,
+      "detail": "3 signals within 0.05 of the boundary",
+      "failures": [],
+      "n_failures": 0
+    },
+    "IRF Method 2A under the first-red-low rule: breakout, extension, the FIRST red candle after the extension (never replaced), support = that candle's LOW (wick included) and the FIRST later close below it (earlier closes below it are allowed only where the EMA gate logged a rejection) match the raw candle sequence": {
+      "pass": true,
+      "n": 569,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDR (Phase 5.3): for every session the first eligible confirmation candle re-derived from the raw candles (body-based zone, strict open above, retest first, green candle or lower-price rejection, close strictly above the ceiling) equals the engine's first PDR signal": {
+      "pass": true,
+      "n": 68,
+      "detail": "36 sessions with a signal",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDR (Phase 5.3): the first signal is never later than the frozen engine's first signal on the same session": {
+      "pass": true,
+      "n": 36,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDS (Phase 5.3): for every session the first eligible confirmation (Methods 1 / 2 on the FIRST red candle at the zone with the body-dominance / upper-wick-dominance tests; a weak first red candle is NOT taken and Method 3 needs the small-support break) re-derived from the raw candles equals the engine's first PDS signal and method": {
+      "pass": true,
+      "n": 45,
+      "detail": "23 sessions with a signal",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDS (Phase 5.3): no signal is ever taken on a weak first red candle (every session whose first red candle is weak has either no signal or a Method 3 signal)": {
+      "pass": true,
+      "n": 45,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every Phase 5.3 configuration changes only its own strategies: RF and every other strategy are identical to the frozen signals (no cross-strategy priority; ORB and RF are untouched in the combined configuration)": {
+      "pass": true,
+      "n": 10,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the Phase 5.2 approved configuration still equals the frozen Phase 3.6 signal set": {
+      "pass": true,
+      "n": 1083,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the frozen reference reproduces the Phase 3.6 signal table (1,083 confirmed signals)": {
+      "pass": true,
+      "n": 1083,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "IRF Method 1 and Method 3 signals are identical under the first-red-low rule alone (scope: Method 2A only; Method 2B is resistance-based)": {
+      "pass": true,
+      "n": 349,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no confirmed ORB signal exists on any of the 13 disputed dates in the Phase 3.6 or the Phase 5.3 author-corrected configuration (the controller skipped nothing)": {
+      "pass": true,
+      "n": 13,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "confirmed-signal totals per configuration and strategy quoted in signal_counts.json equal the delivered signal table": {
+      "pass": true,
+      "n": 12,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the change counts quoted in signal_counts.json equal the rows of signal_comparison.csv": {
+      "pass": true,
+      "n": 5,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every required Phase 5.3 deliverable exists": {
+      "pass": true,
+      "n": 17,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file in the Phase 5.3 baseline snapshot (all of src, scripts, tests, docs, data, reports: Phase 3.0-5.2 reports, the frozen strategy files, the historical datasets, the manual journal, the handwritten PDF) is byte-identical": {
+      "pass": true,
+      "n": 15169,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the only files added outside reports/phase5/phase53_author_corrected are the declared Phase 5.3 scripts, tests and new modules": {
+      "pass": true,
+      "n": 15177,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file hashed in the Phase 4 freeze (engines incl. RF, controller, execution, session construction, framework) is unchanged": {
+      "pass": true,
+      "n": 26,
+      "detail": "FROZEN-PHASE36-42cea2600bd4",
+      "failures": [],
+      "n_failures": 0
+    }
+  },
+  "all_pass": true
+}

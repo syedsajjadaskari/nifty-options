@@ -1,0 +1,15 @@
+# The author's latest clarifications (telephone call and follow-up)
+
+Signal-level evidence only: no controller, no fills, no P&L and no revised backtest were run. Candidates are NOT approved rules.
+
+The call itself is not recorded anywhere I can read; the statements below are quoted from the Phase 5.2 brief. 'USER_APPROVED' marks what the owner explicitly approved; everything else is the author's statement, which is authoritative evidence of intent but is implemented only where its meaning is unambiguous.
+
+| # | statement (as given) | authority | what was verified | Phase 5.2 outcome |
+|---|---|---|---|---|
+| C1 | "ORB is ignored many times, and IRF is taken instead." | AUTHOR_STATEMENT | on the 13 Phase 5.1 'ORB should have activated' dates the engine produced no ORB signal at all; causes found: METHOD2_TRENDLINE 2, LEVEL_CONSTRUCTION 6, STRONG_CANDLE_THRESHOLD 3, EMA_REQUIREMENT 2 | explained, not changed; no priority override of IRF |
+| C2 | "IRF should use the first red candle that creates the support level, followed by entry." | AUTHOR_STATEMENT (level definition not given) | only Method 2A takes a support level that a red candle leaves behind; the guide's 'recent support' is a pullback low (IRF-M2A-001); the dated handwritten examples do not fix the level | two separately labelled CANDIDATES (low / body low of the first red candle); active rule UNRESOLVED |
+| C3 | "Sometimes IRF is correct, but the gap between the EMA and the candle should be 28 points." | AUTHOR_STATEMENT (measure, inequality and scope not given; the handwritten pages say 27) | no EMA or 28 / 27-point statement exists in the IRF guide; diagnostics computed for every confirmed IRF signal | diagnostics only; UNRESOLVED |
+| C4 | "IRF should not be activated if it is at the day's low. This is already in the documents." | AUTHOR_STATEMENT; the claim 'already in the documents' could NOT be verified | searched the text layer of all five guides and viewed the IRF reference charts: no such statement (the guide mentions the low only for marking the initial range) | diagnostics only (five alternative readings, running low at decision time); UNRESOLVED |
+| C5 | "Entry should occur on the first eligible candle." (PDR and PDS) | USER_APPROVED as clarified by the owner: the first completed candle after ALL required strategy conditions are satisfied, not the first five-minute candle of the day | re-derived independently from the raw candles for every session: the engines already activate on that candle; PDR 33 setups and PDS 23 setups, 0 late entries | SATISFIED UNDER THE PRESERVED PROPOSALS (PDR-A07, numeric thresholds, PDS-M-001); the author's handwritten examples are NOT satisfied; no signal changes; diagnostics + sensitivity added; PDS co-confirmed methods recorded |
+
+Statements C2-C4 are not turned into rules by their wording alone: the brief forbids inventing the support level, the EMA inequality, or the meaning of 'at the day's low'. Each is reported with the evidence needed to decide (see `remaining_owner_decisions.md`).

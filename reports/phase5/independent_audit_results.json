@@ -1,0 +1,1013 @@
+{
+  "checks": {
+    "[BANKNIFTY] the instrument is the BANKNIFTY INDEX: exactly one index row (code >= 999000) with that name on the right exchange and cash/index segment in the broker's master (hash-matched copy), equal to the mapping used for every request": {
+      "pass": true,
+      "n": 1,
+      "detail": "scrip 999920005, exchange N; look-alike ETF / fund rows with the same name (not the index): 0",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] daily closes stay in a plausible range for the index and the 2022-09-01 daily close agrees with the minute data of that day to within 400 points (identity sanity check)": {
+      "pass": true,
+      "n": 2391,
+      "detail": "min 16,918 max 61,551",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] every raw provider file equals the SHA-256 recorded at retrieval (secondary files also equal the repository's git blob SHA-1); licence MIT recorded": {
+      "pass": true,
+      "n": 96,
+      "detail": "secondary commit 6bdda6e571",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] every processed partition equals the SHA-256 in its source manifest": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] processed minute and daily data equal an independent reload of the raw files; Parquet compression is ZSTD": {
+      "pass": true,
+      "n": 1497743,
+      "detail": "compression ['ZSTD']",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] 5paisa minute rows: IST, at most one 15:30 stub row per session, a 09:15 bar on >95% of sessions (bar-START labels)": {
+      "pass": true,
+      "n": 452443,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] closing-auction regime: the freeze pattern (15:16..15:26 flat) is absent before 2026-08-03 and present on >=90% of sessions from it, and the calendar applies the regime exactly then": {
+      "pass": true,
+      "n": 21,
+      "detail": "before 0/44, from 21/21, applied True",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] the derived trading calendar equals an independent derivation (holidays and special sessions with their evaluable flag)": {
+      "pass": true,
+      "n": 150,
+      "detail": "holidays 135 vs 135; special 15 vs 15",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] holiday dates versus the NIFTY calendars (information: NSE vs BSE closures should agree)": {
+      "pass": true,
+      "n": 135,
+      "detail": "0 date(s) differ from the NIFTY derived/evidence calendars: []",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] no trade falls on a derived holiday or on a non-evaluable special session": {
+      "pass": true,
+      "n": 1139,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 820 trades)": {
+      "pass": true,
+      "n": 820,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 820,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 820,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (3198 candles with an EMA)": {
+      "pass": true,
+      "n": 3198,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 3198,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 984,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 761,
+      "detail": "13 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] all five strategies produced signals and were traded": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 3399, 'RF': 95, 'ORB': 221, 'PDR': 409, 'PDS': 183}, trades {'IRF': 445, 'RF': 61, 'ORB': 147, 'PDR': 131, 'PDS': 36}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 992,
+      "detail": "expected 992 vs 992, in source 991 vs 991",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][M] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 20": {
+      "pass": true,
+      "n": 1401,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 328 trades)": {
+      "pass": true,
+      "n": 328,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 328,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 328,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (1310 candles with an EMA)": {
+      "pass": true,
+      "n": 1310,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 1310,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 385,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 296,
+      "detail": "10 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] all five strategies produced signals and were traded": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 1336, 'RF': 35, 'ORB': 77, 'PDR': 202, 'PDS': 78}, trades {'IRF': 179, 'RF': 22, 'ORB': 47, 'PDR': 68, 'PDS': 12}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 389,
+      "detail": "expected 389 vs 389, in source 389 vs 389",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][MS] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 30": {
+      "pass": true,
+      "n": 1401,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 194 trades)": {
+      "pass": true,
+      "n": 194,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 194,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 194,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (736 candles with an EMA)": {
+      "pass": true,
+      "n": 736,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 736,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 244,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 180,
+      "detail": "3 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] all five strategies produced signals (a strategy may have no first-valid-signal trade in a short window)": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'PDR': 75, 'IRF': 911, 'RF': 19, 'PDS': 43, 'ORB': 58}, trades {'PDR': 30, 'IRF': 109, 'RF': 11, 'PDS': 6, 'ORB': 38}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 246,
+      "detail": "expected 246 vs 246, in source 246 vs 246",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][C] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 30": {
+      "pass": true,
+      "n": 248,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 157 trades)": {
+      "pass": true,
+      "n": 157,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 157,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 157,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (593 candles with an EMA)": {
+      "pass": true,
+      "n": 606,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 606,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 195,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 145,
+      "detail": "3 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] all five strategies produced signals (a strategy may have no first-valid-signal trade in a short window)": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 710, 'PDR': 62, 'RF': 18, 'ORB': 53, 'PDS': 21}, trades {'IRF': 89, 'PDR': 17, 'RF': 13, 'ORB': 35, 'PDS': 3}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 201,
+      "detail": "expected 201 vs 201, in source 196 vs 196",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_5P] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 0": {
+      "pass": true,
+      "n": 537,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 197 trades)": {
+      "pass": true,
+      "n": 197,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 197,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 197,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (750 candles with an EMA)": {
+      "pass": true,
+      "n": 750,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 750,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 243,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 187,
+      "detail": "3 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] all five strategies produced signals (a strategy may have no first-valid-signal trade in a short window)": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'RF': 28, 'IRF': 879, 'PDR': 79, 'ORB': 69, 'PDS': 24}, trades {'IRF': 106, 'RF': 18, 'ORB': 47, 'PDS': 4, 'PDR': 22}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 244,
+      "detail": "expected 244 vs 244, in source 244 vs 244",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY][D_TV] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 29": {
+      "pass": true,
+      "n": 494,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] annual_comparison.csv and strategy_performance.csv equal an independent recomputation for every row (trades, index points, drawdown, profit factor, win rate, outcomes, stop % of index, per-strategy points; points x 390 = rupees)": {
+      "pass": true,
+      "n": 10,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] the four annual slices sum to the main window (trades, index points)": {
+      "pass": true,
+      "n": 4,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] cost sensitivity (fill-level costs) recomputed independently for two periods x four scenarios": {
+      "pass": true,
+      "n": 8,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] every trade of every window records index, minute-source id, daily-source id, partition SHA-256 (= the real file hash) and raw-file SHA-256; ids are unique; each trade has its chart and journal section; each evaluated session has a journal": {
+      "pass": true,
+      "n": 1696,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] every journal ends with the option-feasibility block and contains NO option premium, strike, expiry or option P&L number (no invented option executions)": {
+      "pass": true,
+      "n": 2056,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] journals carry the correct instrument label (no residual 'NIFTY 50' instrument phrase)": {
+      "pass": true,
+      "n": 2056,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] no trade table has an option / premium / strike column": {
+      "pass": true,
+      "n": 5,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] the verification workbook's main sheets equal the CSV files cell by cell": {
+      "pass": true,
+      "n": 143322,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[BANKNIFTY] the 2022-08..2026-04-22 vendor-overlap figures (bars compared, share identical, mean |close difference|) equal an independent recomputation": {
+      "pass": true,
+      "n": 343698,
+      "detail": "bars 343,698; identical 0.4580; mean |diff| 1.0141",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] the instrument is the SENSEX INDEX: exactly one index row (code >= 999000) with that name on the right exchange and cash/index segment in the broker's master (hash-matched copy), equal to the mapping used for every request": {
+      "pass": true,
+      "n": 1,
+      "detail": "scrip 999901, exchange B; look-alike ETF / fund rows with the same name (not the index): 0",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] daily closes stay in a plausible range for the index and the 2022-09-01 daily close agrees with the minute data of that day to within 400 points (identity sanity check)": {
+      "pass": true,
+      "n": 2389,
+      "detail": "min 25,981 max 85,836",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] every raw provider file equals the SHA-256 recorded at retrieval (secondary files also equal the repository's git blob SHA-1); licence MIT recorded": {
+      "pass": true,
+      "n": 96,
+      "detail": "secondary commit e385abcde7",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] every processed partition equals the SHA-256 in its source manifest": {
+      "pass": true,
+      "n": 133,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] processed minute and daily data equal an independent reload of the raw files; Parquet compression is ZSTD": {
+      "pass": true,
+      "n": 1010934,
+      "detail": "compression ['ZSTD']",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] 5paisa minute rows: IST, at most one 15:30 stub row per session, a 09:15 bar on >95% of sessions (bar-START labels)": {
+      "pass": true,
+      "n": 453597,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] closing-auction regime: the freeze pattern (15:16..15:26 flat) is absent before 2026-08-03 and present on >=90% of sessions from it, and the calendar applies the regime exactly then": {
+      "pass": true,
+      "n": 21,
+      "detail": "before 0/44, from 21/21, applied True",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] the derived trading calendar equals an independent derivation (holidays and special sessions with their evaluable flag)": {
+      "pass": true,
+      "n": 150,
+      "detail": "holidays 134 vs 134; special 16 vs 16",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] holiday dates versus the NIFTY calendars (information: NSE vs BSE closures should agree)": {
+      "pass": true,
+      "n": 134,
+      "detail": "1 date(s) differ from the NIFTY derived/evidence calendars: ['2022-08-09']",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] no trade falls on a derived holiday or on a non-evaluable special session": {
+      "pass": true,
+      "n": 1091,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 821 trades)": {
+      "pass": true,
+      "n": 821,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 821,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 821,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (3195 candles with an EMA)": {
+      "pass": true,
+      "n": 3195,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 3195,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 982,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 755,
+      "detail": "10 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] all five strategies produced signals and were traded": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 3381, 'RF': 94, 'PDR': 361, 'PDS': 217, 'ORB': 184}, trades {'IRF': 444, 'RF': 65, 'PDR': 129, 'ORB': 127, 'PDS': 56}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 988,
+      "detail": "expected 988 vs 988, in source 985 vs 985",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][M] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 20": {
+      "pass": true,
+      "n": 1403,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 326 trades)": {
+      "pass": true,
+      "n": 326,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 326,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 326,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (1283 candles with an EMA)": {
+      "pass": true,
+      "n": 1283,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 1283,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 385,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 298,
+      "detail": "4 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] all five strategies produced signals and were traded": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 1321, 'RF': 36, 'PDS': 75, 'PDR': 166, 'ORB': 78}, trades {'IRF': 170, 'RF': 24, 'ORB': 56, 'PDS': 17, 'PDR': 59}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 387,
+      "detail": "expected 387 vs 387, in source 387 vs 387",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][MS] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 31": {
+      "pass": true,
+      "n": 1403,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 151 trades)": {
+      "pass": true,
+      "n": 151,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 151,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 151,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (569 candles with an EMA)": {
+      "pass": true,
+      "n": 575,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 575,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 197,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 143,
+      "detail": "1 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] all five strategies produced signals (a strategy may have no first-valid-signal trade in a short window)": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 621, 'ORB': 49, 'PDR': 96, 'RF': 23, 'PDS': 16}, trades {'IRF': 75, 'ORB': 35, 'RF': 10, 'PDR': 31}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 246,
+      "detail": "expected 246 vs 246, in source 200 vs 200",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][C] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 0": {
+      "pass": true,
+      "n": 248,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 170 trades)": {
+      "pass": true,
+      "n": 170,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 170,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 170,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (646 candles with an EMA)": {
+      "pass": true,
+      "n": 655,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 655,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 200,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 157,
+      "detail": "1 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] all five strategies produced signals (a strategy may have no first-valid-signal trade in a short window)": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'IRF': 680, 'PDR': 122, 'RF': 27, 'ORB': 57, 'PDS': 12}, trades {'IRF': 82, 'PDR': 29, 'ORB': 40, 'RF': 17, 'PDS': 2}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 202,
+      "detail": "expected 202 vs 202, in source 201 vs 201",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_5P] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 0": {
+      "pass": true,
+      "n": 537,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] entry price = raw 1-minute open at the fill minute = signal candle end, and <= 13:00 (all 191 trades)": {
+      "pass": true,
+      "n": 191,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] independent exit walk reproduces every trade's outcome, both exit times and prices (stop before target, gap fills, post-T1 stop entry -/+ 6, T2, 15:14 forced exit)": {
+      "pass": true,
+      "n": 191,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] index-point P&L (weighted over the two legs) and the fixed-390 rupee P&L recomputed; stops / targets are the frozen NIFTY point distances (not rescaled)": {
+      "pass": true,
+      "n": 191,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] explanation candles equal an independent 5-minute aggregation of the raw rows; geometry flags equal; EMA(200) equals an independent causal recomputation (738 candles with an EMA)": {
+      "pass": true,
+      "n": 738,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] no look-ahead: every explanation candle ends at or before the signal, previous-session candles precede the trade date, warm-up rows precede the window": {
+      "pass": true,
+      "n": 738,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] previous-day high / low (from the previous session's 5-minute candles; continuous candles on auction days) and the previous-day official close (= vendor daily close) equal an independent recomputation": {
+      "pass": true,
+      "n": 234,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] controller rules on the delivered tables: first valid signal, max 2 trades, cutoff 13:00, second trade only PDR/PDS after an original full stop, no trade only if nothing valid (or a same-minute conflict)": {
+      "pass": true,
+      "n": 177,
+      "detail": "1 conflict day(s)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] all five strategies produced signals (a strategy may have no first-valid-signal trade in a short window)": {
+      "pass": true,
+      "n": 5,
+      "detail": "signals {'RF': 31, 'IRF': 752, 'PDR': 131, 'ORB': 60, 'PDS': 12}, trades {'RF': 20, 'IRF': 94, 'PDR': 34, 'ORB': 42, 'PDS': 1}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] coverage: expected sessions (derived calendar) and sessions present in the raw source equal the delivered coverage table": {
+      "pass": true,
+      "n": 245,
+      "detail": "expected 245 vs 245, in source 245 vs 245",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX][D_TV] at least 200 daily bars precede the window (daily moving averages); warm-up minute sessions in the same source: 29": {
+      "pass": true,
+      "n": 494,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] annual_comparison.csv and strategy_performance.csv equal an independent recomputation for every row (trades, index points, drawdown, profit factor, win rate, outcomes, stop % of index, per-strategy points; points x 390 = rupees)": {
+      "pass": true,
+      "n": 10,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] the four annual slices sum to the main window (trades, index points)": {
+      "pass": true,
+      "n": 4,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] cost sensitivity (fill-level costs) recomputed independently for two periods x four scenarios": {
+      "pass": true,
+      "n": 8,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] every trade of every window records index, minute-source id, daily-source id, partition SHA-256 (= the real file hash) and raw-file SHA-256; ids are unique; each trade has its chart and journal section; each evaluated session has a journal": {
+      "pass": true,
+      "n": 1659,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] every journal ends with the option-feasibility block and contains NO option premium, strike, expiry or option P&L number (no invented option executions)": {
+      "pass": true,
+      "n": 2003,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] journals carry the correct instrument label (no residual 'NIFTY 50' instrument phrase)": {
+      "pass": true,
+      "n": 2003,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] no trade table has an option / premium / strike column": {
+      "pass": true,
+      "n": 5,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] the verification workbook's main sheets equal the CSV files cell by cell": {
+      "pass": true,
+      "n": 140278,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "[SENSEX] the 2022-08..2024-03-22 vendor-overlap figures (bars compared, share identical, mean |close difference|) equal an independent recomputation": {
+      "pass": true,
+      "n": 151931,
+      "detail": "bars 151,931; identical 0.7770; mean |diff| 0.3141",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file of the before-snapshot (all git-tracked files incl. strategies, controller, execution, framework, tests, docs; data/processed/nifty50*; data/phase4; data/raw/phase4_*; reports/phase3; reports/phase4) is byte-identical": {
+      "pass": true,
+      "n": 6659,
+      "detail": "snapshot of git head 9cada7fcd0",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no file was added inside any NIFTY data or earlier-report directory": {
+      "pass": true,
+      "n": 6441,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every strategy, controller, execution, session-construction and framework file hashed in the Phase 4 freeze is unchanged": {
+      "pass": true,
+      "n": 26,
+      "detail": "FROZEN-PHASE36-42cea2600bd4",
+      "failures": [],
+      "n_failures": 0
+    },
+    "configuration_snapshot.json records the frozen id, equal active-file hashes and the stop / target / cutoff values of the brief": {
+      "pass": true,
+      "n": 1,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the NIFTY main-window reference in the comparison (Phase 4 window B + the unchanged Phase 3.6 window A) equals an independent sum of those trade tables": {
+      "pass": true,
+      "n": 805,
+      "detail": "805 trades, 2,069.65 index points",
+      "failures": [],
+      "n_failures": 0
+    },
+    "option-data availability claims are backed by the saved probe: the master lists no expired contract and no returned candle has a bid, ask or open-interest column": {
+      "pass": true,
+      "n": 50,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    }
+  },
+  "all_pass": true
+}

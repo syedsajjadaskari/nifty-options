@@ -1,0 +1,613 @@
+{
+ "documentation": "https://xstream.5paisa.com/dev-docs/market-data-system/historical-candles",
+ "instrument": {
+  "symbol": "SENSEX",
+  "full_name": null,
+  "exchange": "B",
+  "exchange_label": "BSE",
+  "exchange_segment": "C",
+  "scrip_code": 999901,
+  "scrip_type": "XX",
+  "series": "EQ",
+  "tick_size_master": 0.01,
+  "lot_size_master": 1,
+  "is_index": true,
+  "expected_index_name": "S&P BSE Sensex",
+  "master_file": "data/raw/phase5_instrument_master/scrip_master_20261105T024711Z.csv",
+  "master_sha256": "85054710c0b40552546e81042692a22b42299bc53b93c9c9b092f20e263148ca",
+  "not_the_index_rejected_rows_with_same_name": [],
+  "similar_index_rows_in_same_segment": [
+   {
+    "ScripCode": 999901,
+    "Name": "SENSEX",
+    "FullName": NaN
+   },
+   {
+    "ScripCode": 999903,
+    "Name": "BSE BANKEX",
+    "FullName": NaN
+   },
+   {
+    "ScripCode": 999941,
+    "Name": "S&P BSE SENSEX NEXT 50",
+    "FullName": "S&P BSE SENSEX NEXT 50"
+   },
+   {
+    "ScripCode": 999942,
+    "Name": "S&P BSE PRIVATE BANKS INDEX",
+    "FullName": "S&P BSE PRIVATE BANKS INDEX"
+   },
+   {
+    "ScripCode": 999943,
+    "Name": "BSE SENSEX 50",
+    "FullName": "BSE SENSEX 50"
+   }
+  ],
+  "name_note": "the master gives no full name for this row, so the identity is confirmed by the exchange, the 99xxxx index code and the price level in the probe below"
+ },
+ "probes": [
+  {
+   "label": "recent_week",
+   "interval": "1m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:47:44.307764+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/recent_week_1m_2026-08-24_2026-08-28.csv",
+   "sha256": "6e122bbe4660a149e1613517e3a21fd36806f8b8814ebfbe6db1fafff4a09381",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 76933.59,
+   "close_max": 77978.47,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "window_a_start",
+   "interval": "1m",
+   "from": "2025-09-01",
+   "to": "2025-09-05",
+   "requested_utc": "2026-11-05T02:47:45.734428+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/window_a_start_1m_2025-09-01_2025-09-05.csv",
+   "sha256": "77b09451700affb26376d7bfbaea095c823a56581692d7632f6d543cb619a3db",
+   "first_timestamp": "2025-09-01T09:15:00",
+   "last_timestamp": "2025-09-05T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 80019.09,
+   "close_max": 81286.47,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "main_start",
+   "interval": "1m",
+   "from": "2022-09-01",
+   "to": "2022-09-07",
+   "requested_utc": "2026-11-05T02:47:48.003025+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/main_start_1m_2022-09-01_2022-09-07.csv",
+   "sha256": "dd09357c29e24704ac3d1741fef8793d78175f89d0eb2dbd9380124693772582",
+   "first_timestamp": "2022-09-01T09:15:00",
+   "last_timestamp": "2022-09-07T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 58544.01,
+   "close_max": 59523.52,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "pre_main_2022_01",
+   "interval": "1m",
+   "from": "2022-01-03",
+   "to": "2022-01-07",
+   "requested_utc": "2026-11-05T02:47:49.558892+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/pre_main_2022_01_1m_2022-01-03_2022-01-07.csv",
+   "sha256": "3d2b3f07d4de55f6c6965f5a4697a96adbd437e0c5f7139060f0fba78283e2a8",
+   "first_timestamp": "2022-01-03T09:15:00",
+   "last_timestamp": "2022-01-07T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 58503.16,
+   "close_max": 60327.98,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "2021_12",
+   "interval": "1m",
+   "from": "2021-12-01",
+   "to": "2021-12-07",
+   "requested_utc": "2026-11-05T02:47:51.146823+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/2021_12_1m_2021-12-01_2021-12-07.csv",
+   "sha256": "b5ccab06a339b5d85e3c556d2a2f090f85e60be96b340e6450ed84c67875483a",
+   "first_timestamp": "2021-12-01T09:15:00",
+   "last_timestamp": "2021-12-07T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 56699.62,
+   "close_max": 58733.52,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "2019_06",
+   "interval": "1m",
+   "from": "2019-06-03",
+   "to": "2019-06-07",
+   "requested_utc": "2026-11-05T02:47:52.717966+00:00",
+   "status": "COMPLETED",
+   "rows": 1504,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/2019_06_1m_2019-06-03_2019-06-07.csv",
+   "sha256": "49e9f9bb4c540666770033029c26b7aa266ff4cbb4df8321b2441e3934c46364",
+   "first_timestamp": "2019-06-03T09:15:00",
+   "last_timestamp": "2019-06-07T15:30:00",
+   "distinct_dates": 4,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 39307.03,
+   "close_max": 40307.72,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "2019_03",
+   "interval": "1m",
+   "from": "2019-03-01",
+   "to": "2019-03-08",
+   "requested_utc": "2026-11-05T02:47:54.133626+00:00",
+   "status": "COMPLETED",
+   "rows": 1880,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/2019_03_1m_2019-03-01_2019-03-08.csv",
+   "sha256": "f24cce6e5deaa64c7583a57efeebb361d97b11c66b77bbf1337bc2e60d1c983b",
+   "first_timestamp": "2019-03-01T09:15:00",
+   "last_timestamp": "2019-03-08T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    376,
+    376
+   ],
+   "close_min": 35954.14,
+   "close_max": 36819.98,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "2019_01",
+   "interval": "1m",
+   "from": "2019-01-01",
+   "to": "2019-01-31",
+   "requested_utc": "2026-11-05T02:47:55.610850+00:00",
+   "status": "EMPTY",
+   "rows": 0
+  },
+  {
+   "label": "2018_06",
+   "interval": "1m",
+   "from": "2018-06-04",
+   "to": "2018-06-08",
+   "requested_utc": "2026-11-05T02:47:56.987830+00:00",
+   "status": "EMPTY",
+   "rows": 0
+  },
+  {
+   "label": "2018_01",
+   "interval": "1m",
+   "from": "2018-01-01",
+   "to": "2018-01-31",
+   "requested_utc": "2026-11-05T02:47:58.453127+00:00",
+   "status": "EMPTY",
+   "rows": 0
+  },
+  {
+   "label": "2017",
+   "interval": "1m",
+   "from": "2017-06-01",
+   "to": "2017-06-30",
+   "requested_utc": "2026-11-05T02:47:59.926774+00:00",
+   "status": "EMPTY",
+   "rows": 0
+  },
+  {
+   "label": "interval_check",
+   "interval": "5m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:48:01.348359+00:00",
+   "status": "COMPLETED",
+   "rows": 380,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/interval_check_5m_2026-08-24_2026-08-28.csv",
+   "sha256": "ae6588ced6d4e674a4f884cc9efeb0524abf2fca7d5e04d99956ad4eab926be9",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    76,
+    76
+   ],
+   "close_min": 76933.59,
+   "close_max": 77961.97,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "10m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:48:02.745157+00:00",
+   "status": "COMPLETED",
+   "rows": 190,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/interval_check_10m_2026-08-24_2026-08-28.csv",
+   "sha256": "84b4bdef95ee58288695e7bdacc4e16090f9e87f12c4cbf804af195acdb4ce1b",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:25:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:25:00",
+   "rows_per_date_min_max": [
+    38,
+    38
+   ],
+   "close_min": 76933.59,
+   "close_max": 77960.9,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "15m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:48:04.041289+00:00",
+   "status": "COMPLETED",
+   "rows": 130,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/interval_check_15m_2026-08-24_2026-08-28.csv",
+   "sha256": "1e53c66f8dcb47453be2d63432f6617a44cd5d54a58f56e074a07dd45521be99",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:30:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:30:00",
+   "rows_per_date_min_max": [
+    26,
+    26
+   ],
+   "close_min": 76933.59,
+   "close_max": 77960.9,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "30m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:48:05.378560+00:00",
+   "status": "COMPLETED",
+   "rows": 65,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/interval_check_30m_2026-08-24_2026-08-28.csv",
+   "sha256": "297977f819fd2cb650a42b76912cc45c3a91a3524a9a5393a4ad7782bfe6251b",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:15:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:15:00",
+   "rows_per_date_min_max": [
+    13,
+    13
+   ],
+   "close_min": 76933.59,
+   "close_max": 77960.9,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "60m",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:48:06.711165+00:00",
+   "status": "COMPLETED",
+   "rows": 35,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/interval_check_60m_2026-08-24_2026-08-28.csv",
+   "sha256": "5dcf209096931c5d5a0512cc7d8aac5542f9030685ec14054e9e258ca7b1b05c",
+   "first_timestamp": "2026-08-24T09:15:00",
+   "last_timestamp": "2026-08-28T15:15:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "09:15:00",
+   "last_time_of_day": "15:15:00",
+   "rows_per_date_min_max": [
+    7,
+    7
+   ],
+   "close_min": 76933.59,
+   "close_max": 77859.61,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "interval_check",
+   "interval": "1d",
+   "from": "2026-08-24",
+   "to": "2026-08-28",
+   "requested_utc": "2026-11-05T02:48:08.046811+00:00",
+   "status": "COMPLETED",
+   "rows": 5,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/interval_check_1d_2026-08-24_2026-08-28.csv",
+   "sha256": "bcbea9a8751c3754a403316e235ee560aea2ee23a23e7e07b2321f48fc8846da",
+   "first_timestamp": "2026-08-24T00:00:00",
+   "last_timestamp": "2026-08-28T00:00:00",
+   "distinct_dates": 5,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 76933.59,
+   "close_max": 77656.09,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "daily_2018",
+   "interval": "1d",
+   "from": "2018-01-01",
+   "to": "2018-12-31",
+   "requested_utc": "2026-11-05T02:48:09.300840+00:00",
+   "status": "COMPLETED",
+   "rows": 246,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/daily_2018_1d_2018-01-01_2018-12-31.csv",
+   "sha256": "0b1fc122fa666321c32aee64ea38ede2c360033dd7b86de0304538e0ab74a201",
+   "first_timestamp": "2018-01-01T00:00:00",
+   "last_timestamp": "2018-12-31T00:00:00",
+   "distinct_dates": 246,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 32596.54,
+   "close_max": 38896.63,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "daily_2019",
+   "interval": "1d",
+   "from": "2019-01-01",
+   "to": "2019-12-31",
+   "requested_utc": "2026-11-05T02:48:10.567534+00:00",
+   "status": "COMPLETED",
+   "rows": 245,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/daily_2019_1d_2019-01-01_2019-12-31.csv",
+   "sha256": "885d829596425f17178acde1f442f5ec4e5b91d234a3cc4c68250e498eac5670",
+   "first_timestamp": "2019-01-01T00:00:00",
+   "last_timestamp": "2019-12-31T00:00:00",
+   "distinct_dates": 245,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 35352.61,
+   "close_max": 41681.54,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "daily_2017",
+   "interval": "1d",
+   "from": "2017-01-01",
+   "to": "2017-06-30",
+   "requested_utc": "2026-11-05T02:48:11.712827+00:00",
+   "status": "COMPLETED",
+   "rows": 123,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/daily_2017_1d_2017-01-01_2017-06-30.csv",
+   "sha256": "15953435cd8a3e6b40179a14a030072f6f1c45ad00f6e80d315154968603beac",
+   "first_timestamp": "2017-01-02T00:00:00",
+   "last_timestamp": "2017-06-30T00:00:00",
+   "distinct_dates": 123,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 26595.45,
+   "close_max": 31311.57,
+   "price_level_in_expected_range": true
+  },
+  {
+   "label": "daily_2022_09",
+   "interval": "1d",
+   "from": "2022-08-01",
+   "to": "2022-09-30",
+   "requested_utc": "2026-11-05T02:48:12.867540+00:00",
+   "status": "COMPLETED",
+   "rows": 42,
+   "columns": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+   ],
+   "file": "data/raw/sensex/5paisa/probe/daily_2022_09_1d_2022-08-01_2022-09-30.csv",
+   "sha256": "0b803c7a8735a6fb5568e2444da333652c01f860fd517428e7d3239fc0c691ee",
+   "first_timestamp": "2022-08-01T00:00:00",
+   "last_timestamp": "2022-09-30T00:00:00",
+   "distinct_dates": 42,
+   "first_time_of_day": "00:00:00",
+   "last_time_of_day": "00:00:00",
+   "rows_per_date_min_max": [
+    1,
+    1
+   ],
+   "close_min": 56409.96,
+   "close_max": 60571.08,
+   "price_level_in_expected_range": true
+  }
+ ]
+}

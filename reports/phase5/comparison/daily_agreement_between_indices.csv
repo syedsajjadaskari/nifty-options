@@ -1,0 +1,4 @@
+pair,common_sessions,sessions_with_a_trade_on_either,sessions_with_a_trade_on_both,both_first_trade_same_strategy_and_direction,both_same_set_of_directions,both_same_sign_of_day_result,pct_of_both_same_first_signal,pct_of_both_same_sign,correlation_of_daily_index_points,note
+NIFTY vs BANKNIFTY,983,866,646,387,487,367,59.9,56.8,0.106,daily index-point results on the common sessions (0 when no trade); correlation of points across different index levels is a rough co-movement measure only
+NIFTY vs SENSEX,983,812,695,575,613,433,82.7,62.3,0.23,daily index-point results on the common sessions (0 when no trade); correlation of points across different index levels is a rough co-movement measure only
+BANKNIFTY vs SENSEX,983,872,643,391,482,350,60.8,54.4,0.058,daily index-point results on the common sessions (0 when no trade); correlation of points across different index levels is a rough co-movement measure only

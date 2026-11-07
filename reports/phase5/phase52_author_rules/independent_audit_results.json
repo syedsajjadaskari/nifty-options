@@ -1,0 +1,124 @@
+{
+  "checks": {
+    "the three PDR patterns audited are the ones enabled in the Phase 3.6 configuration snapshot": {
+      "pass": true,
+      "n": 3,
+      "detail": "pattern names are in the frozen snapshot; the numeric values are the Phase 3.5/3.6 research defaults in strategies/pdr_revised.py::PROFILES (read here as constants)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDR: for every evaluated session the first eligible confirmation candle re-derived from the raw candles (body-based zone, strict open above, retest, patterns, close strictly above the ceiling) equals the engine's first PDR signal: no LATE_ENTRY_DEFECT and no missed entry": {
+      "pass": true,
+      "n": 247,
+      "detail": "67 armed setups, 33 first-eligible signals",
+      "failures": [],
+      "n_failures": 0
+    },
+    "PDS: for every evaluated session the first eligible confirmation (Method 1 / 2 on the first red candle at the zone, Method 3 only after a weak first candle and on the first support break) re-derived from the raw candles equals the engine's first PDS signal and method": {
+      "pass": true,
+      "n": 247,
+      "detail": "45 armed setups, 23 first-eligible signals",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no setup in the PDR / PDS diagnostics is flagged LATE_ENTRY_DEFECT or ELIGIBLE_CANDLE_BUT_NO_ENGINE_SIGNAL": {
+      "pass": true,
+      "n": 246,
+      "detail": "{'NO_SIGNAL_EITHER': 190, 'ENGINE_ON_FIRST_ELIGIBLE_CANDLE': 56}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "IRF diagnostics: EMA(200), entry price (next one-minute open), entry-EMA distance, EMA between entry and Target 1 and the running session low equal an independent recomputation for every confirmed IRF signal; the running low uses only candles closed before the signal": {
+      "pass": true,
+      "n": 874,
+      "detail": "272 signals where the final daily low is lower than the running low (a look-ahead implementation would differ)",
+      "failures": [],
+      "n_failures": 0
+    },
+    "IRF readings D6 (running low already below the initial range low), D7 (an earlier close below it), D8 (entry below the previous day's low) and the 13:00 cutoff flag equal an independent recomputation for every confirmed IRF signal": {
+      "pass": true,
+      "n": 874,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "IRF flag counts quoted in signal_counts.json (28- and 27-point EMA readings, close below the running low, Target 1 beyond the running low) equal recomputation from the diagnostics table": {
+      "pass": true,
+      "n": 5,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "candidate IRF Method 2A signals: each one's breakout, extension, FIRST red candle after the extension, support level (low or body low of that candle) and the FIRST later close below it match the raw candle sequence (the reference candle is never replaced by a later one)": {
+      "pass": true,
+      "n": 697,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the approved configuration's confirmed signals equal the frozen Phase 3.6 reference on date, strategy, method, direction and time (first-eligible principle already satisfied; only the PDS co-confirmation annotation differs)": {
+      "pass": true,
+      "n": 1083,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every candidate changes only its own strategy: RF, PDR, PDS and the other strategy are identical to the frozen signals under every candidate (no change to RF; no cross-strategy priority)": {
+      "pass": true,
+      "n": 3,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "IRF Method 1 and Method 3 signals are identical under the first-red candidate (scope: Method 2A only)": {
+      "pass": true,
+      "n": 349,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "ORB audit: first-candle OHLC, previous-day level, Method 1 level-broken flag, EMA and colour-matches-direction equal an independent recomputation on the 13 disputed dates, both directions": {
+      "pass": true,
+      "n": 26,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the Phase 3.6 signal table has no confirmed ORB signal on any of the 13 disputed dates (the engine produced none, so the controller could not have skipped one)": {
+      "pass": true,
+      "n": 13,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every required Phase 5.2 deliverable exists": {
+      "pass": true,
+      "n": 17,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file in the Phase 5.2 baseline snapshot (all of src, scripts, tests, docs, data, reports: Phase 3.0-5.1 reports, the frozen strategy files, the historical datasets, the manual journal, the handwritten PDF) is byte-identical": {
+      "pass": true,
+      "n": 15055,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the only files added outside reports/phase5/phase52_author_rules are the declared Phase 5.2 scripts, tests and new modules": {
+      "pass": true,
+      "n": 15063,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file hashed in the Phase 4 freeze (engines incl. RF, controller, execution, session construction, framework) is unchanged": {
+      "pass": true,
+      "n": 26,
+      "detail": "FROZEN-PHASE36-42cea2600bd4",
+      "failures": [],
+      "n_failures": 0
+    }
+  },
+  "all_pass": true
+}

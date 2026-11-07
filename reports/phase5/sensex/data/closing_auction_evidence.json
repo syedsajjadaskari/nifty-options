@@ -1,0 +1,13 @@
+{
+ "5paisa": {
+  "sessions_before_2026_08_03": 44,
+  "frozen_pattern_before": 0,
+  "sessions_from_2026_08_03": 21,
+  "frozen_pattern_from": 21,
+  "first_session_with_pattern": "2026-08-03",
+  "note": "pattern = the 11 one-minute bars 15:16..15:26 are all flat at one price"
+ },
+ "secondary": {
+  "note": "the secondary files end before 2026-08 for SENSEX; BANKNIFTY ends 2026-04-22"
+ }
+}

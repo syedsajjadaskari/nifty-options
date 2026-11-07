@@ -1,0 +1,133 @@
+{
+ "holidays_per_year": {
+  "2017": 12,
+  "2018": 15,
+  "2019": 17,
+  "2020": 12,
+  "2021": 13,
+  "2022": 12,
+  "2023": 15,
+  "2024": 16,
+  "2025": 13,
+  "2026": 10
+ },
+ "special_sessions": {
+  "2017-10-19": {
+   "name": "derived special session (weekday, first bar is not 09:15: an evening / Muhurat session or a missing opening bar)",
+   "evaluable": false
+  },
+  "2018-11-07": {
+   "name": "derived special session (weekday, first bar is not 09:15: an evening / Muhurat session or a missing opening bar)",
+   "evaluable": false
+  },
+  "2019-10-27": {
+   "name": "derived special session (weekend, non-standard hours)",
+   "evaluable": false
+  },
+  "2020-02-01": {
+   "name": "derived special session (weekend, normal hours)",
+   "evaluable": true
+  },
+  "2020-11-14": {
+   "name": "derived special session (weekend, non-standard hours)",
+   "evaluable": false
+  },
+  "2021-11-04": {
+   "name": "derived special session (weekday, first bar is not 09:15: an evening / Muhurat session or a missing opening bar)",
+   "evaluable": false
+  },
+  "2022-10-24": {
+   "name": "derived special session (weekday, first bar is not 09:15: an evening / Muhurat session or a missing opening bar)",
+   "evaluable": false
+  },
+  "2023-11-12": {
+   "name": "derived special session (weekend, non-standard hours)",
+   "evaluable": false
+  },
+  "2024-01-20": {
+   "name": "derived special session (weekend, normal hours)",
+   "evaluable": true
+  },
+  "2024-03-02": {
+   "name": "derived special session (weekend, non-standard hours)",
+   "evaluable": false
+  },
+  "2024-05-18": {
+   "name": "derived special session (weekend, non-standard hours)",
+   "evaluable": false
+  },
+  "2024-11-01": {
+   "name": "derived special session (weekday, first bar is not 09:15: an evening / Muhurat session or a missing opening bar)",
+   "evaluable": false
+  },
+  "2025-02-01": {
+   "name": "derived special session (weekend, normal hours)",
+   "evaluable": true
+  },
+  "2025-10-21": {
+   "name": "derived special session (weekday, first bar is not 09:15: an evening / Muhurat session or a missing opening bar)",
+   "evaluable": false
+  },
+  "2026-02-01": {
+   "name": "derived special session (weekend, normal hours)",
+   "evaluable": true
+  }
+ },
+ "gaps_between_series": [
+  {
+   "date": "2019-06-27",
+   "daily_candle": true,
+   "minutes_FIVEPAISA_1M_BANKNIFTY": false,
+   "minutes_KAPRI_1M_BANKNIFTY": true
+  },
+  {
+   "date": "2019-06-28",
+   "daily_candle": true,
+   "minutes_FIVEPAISA_1M_BANKNIFTY": false,
+   "minutes_KAPRI_1M_BANKNIFTY": true
+  },
+  {
+   "date": "2019-07-01",
+   "daily_candle": true,
+   "minutes_FIVEPAISA_1M_BANKNIFTY": false,
+   "minutes_KAPRI_1M_BANKNIFTY": true
+  },
+  {
+   "date": "2019-07-02",
+   "daily_candle": true,
+   "minutes_FIVEPAISA_1M_BANKNIFTY": false,
+   "minutes_KAPRI_1M_BANKNIFTY": true
+  },
+  {
+   "date": "2019-07-03",
+   "daily_candle": true,
+   "minutes_FIVEPAISA_1M_BANKNIFTY": false,
+   "minutes_KAPRI_1M_BANKNIFTY": true
+  },
+  {
+   "date": "2022-05-27",
+   "daily_candle": false,
+   "minutes_KAPRI_1M_BANKNIFTY": true
+  },
+  {
+   "date": "2022-10-24",
+   "daily_candle": true,
+   "minutes_FIVEPAISA_1M_BANKNIFTY": false,
+   "minutes_KAPRI_1M_BANKNIFTY": true
+  },
+  {
+   "date": "2022-11-17",
+   "daily_candle": false,
+   "minutes_FIVEPAISA_1M_BANKNIFTY": true,
+   "minutes_KAPRI_1M_BANKNIFTY": true
+  },
+  {
+   "date": "2024-01-12",
+   "daily_candle": false,
+   "minutes_FIVEPAISA_1M_BANKNIFTY": true,
+   "minutes_KAPRI_1M_BANKNIFTY": true
+  }
+ ],
+ "opening_bar_defects": [],
+ "closing_auction_applied": true
+}

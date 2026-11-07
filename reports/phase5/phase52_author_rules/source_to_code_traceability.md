@@ -1,0 +1,13 @@
+# Source to code traceability
+
+| clarification | source / authority | code | tests | outputs |
+|---|---|---|---|---|
+| PDR / PDS first eligible candle (USER_APPROVED) | owner clarification; PDR-A03..A07, PDS-M-001, PDS-M3-001 | `strategies/pdr_body.py::PDRBodyStrategy._scan` and `strategies/pds.py::PDSStrategy._scan` (frozen, unchanged); `research/phase52_diag.py::pdr_setup_diagnostics / pds_setup_diagnostics / compare_with_engine` | tests/test_phase52_author_rules.py (first eligible, later stronger ignored, retest first, Method 3 sequence, no look-ahead, no real late entry) | pdr_first_eligible_audit.md, pds_first_eligible_audit.md, *_first_eligible_setups.csv |
+| PDS co-confirmed methods recorded | brief 5.2 | `strategies/pds_first_eligible.py::PDSCoConfirmStrategy` | test_pds_co_confirmation_is_recorded_without_creating_a_second_signal | signal_counts.json (sessions with co-confirmed methods) |
+| IRF first red candle support (candidate) | AUTHOR_CALL + HANDWRITTEN AC01/03/08/09/20/26/34 | `strategies/irf_candidates.py::IRFFirstRedStrategy` (Method 2A only) | first_red_candle_candidates..., baseline_mode..., audit check on raw candles | irf_first_red_candle_audit.md, irf_first_red_comparison.csv, before_after_signals.csv |
+| IRF EMA gap (diagnostics) | AUTHOR_CALL (28) + HANDWRITTEN AC13/AC18 (27) | `research/phase52_diag.py::irf_measurements` | test_ema_measurements_and_the_ema_between_entry_and_target_1 | irf_ema_28_point_audit.md, irf_signal_diagnostics.csv |
+| IRF day's low (diagnostics) | AUTHOR_CALL; HANDWRITTEN G02 / AC19 / AC32 | `research/phase52_diag.py::irf_measurements` (running low at decision time) | test_running_low_uses_only_candles_closed_before_the_decision... | irf_day_low_audit.md, irf_signal_diagnostics.csv |
+| ORB missing signals (audit) | AUTHOR_CALL + HANDWRITTEN (13 dates) | `research/phase52_diag.py::orb_audit / orb_cause_category` | test_orb_cause_categories_follow_the_first_failing_rule | orb_missing_signal_audit.md / .csv / .json |
+| ORB colour (candidate) | HANDWRITTEN AC27 (long); ORB-GLOBAL-002 (short mirror) | `strategies/orb_colour.py::ORBColourStrategy` (Phase 5.1, unchanged) | tests/test_phase51_author_corrections.py; configuration tests here | before_after_signals.csv (config phase52-cand-orb-colour) |
+| Selectable configurations | brief section 3 | `research/phase52.py::CONFIGS / make_engines52 / signals_for` | test_configurations_are_separately_selectable_and_replace_only_their_own_slot | scripts/phase52_run.py --list |
+| Portfolio rules, RF, frozen engines | USER_APPROVED / SOURCE_VERIFIED | not touched | baseline-file hash test, frozen-signal regression | independent_audit.md |

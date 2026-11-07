@@ -1,0 +1,35 @@
+{
+ "symbol": "BANKNIFTY",
+ "full_name": "BANKNIFTY",
+ "exchange": "N",
+ "exchange_label": "NSE",
+ "exchange_segment": "C",
+ "scrip_code": 999920005,
+ "scrip_type": "EQ",
+ "series": "EQ",
+ "tick_size_master": 0.0,
+ "lot_size_master": 2000,
+ "is_index": true,
+ "expected_index_name": "Nifty Bank",
+ "master_file": "data/raw/phase5_instrument_master/scrip_master_20261105T024711Z.csv",
+ "master_sha256": "85054710c0b40552546e81042692a22b42299bc53b93c9c9b092f20e263148ca",
+ "not_the_index_rejected_rows_with_same_name": [],
+ "similar_index_rows_in_same_segment": [
+  {
+   "ScripCode": 999920005,
+   "Name": "BANKNIFTY",
+   "FullName": "BANKNIFTY"
+  },
+  {
+   "ScripCode": 999920017,
+   "Name": "NIFTY PSU BANK",
+   "FullName": "NIFTY PSU BANK"
+  },
+  {
+   "ScripCode": 999920025,
+   "Name": "NIFTY PVT BANK",
+   "FullName": "NIFTY PVT BANK"
+  }
+ ],
+ "name_note": ""
+}
