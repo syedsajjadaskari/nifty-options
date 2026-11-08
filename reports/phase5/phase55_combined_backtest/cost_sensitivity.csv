@@ -1,0 +1,19 @@
+config,cost_scenario,fixed_cost_rs_per_trade,slippage_points_per_side,trades,first_trades,second_trades,winning_trades,losing_trades,win_rate_pct,net_pnl_rs,gross_points_total,avg_points_per_trade,profit_factor,max_drawdown_rs,t2_hits,t1_then_post_t1_stop,initial_full_stops,forced_exits,unresolved_exits,t1_hits,avg_holding_minutes,ambiguous_trades
+A,A: Gross P&L without costs,0.0,0.0,196,188,8,117,79,59.69,297765.0,763.5,3.895,1.284,130650.0,65,52,78,1,0,117,49.9,0
+A,"B: Rs 70 per trade, zero slippage",70.0,0.0,196,188,8,117,79,59.69,284045.0,763.5,3.895,1.269,133450.0,65,52,78,1,0,117,49.9,0
+A,C: Rs 70 per trade + 0.25 point slippage per side,70.0,0.25,196,188,8,117,79,59.69,245825.0,763.5,3.895,1.23,141250.0,65,52,78,1,0,117,49.9,0
+A,D: Rs 70 per trade + 0.5 point slippage per side,70.0,0.5,196,188,8,117,79,59.69,207605.0,763.5,3.895,1.191,149050.0,65,52,78,1,0,117,49.9,0
+A,E: Rs 70 per trade + 1.0 point slippage per side,70.0,1.0,196,188,8,117,79,59.69,131165.0,763.5,3.895,1.118,175700.5,65,52,78,1,0,117,49.9,0
+A,"ALT: Rs 70 per order fill (entry + each exit leg), zero slippage - interpretation sensitivity",70 per fill,0.0,196,188,8,117,79,59.69,256605.0,763.5,3.895,1.269,139050.0,65,52,78,1,0,117,49.9,0
+B,A: Gross P&L without costs,0.0,0.0,188,175,13,110,78,58.51,258550.5,662.95,3.526,1.25,204145.5,62,47,77,2,0,110,52.5,0
+B,"B: Rs 70 per trade, zero slippage",70.0,0.0,188,175,13,110,78,58.51,245390.5,662.95,3.526,1.236,207785.5,62,47,77,2,0,110,52.5,0
+B,C: Rs 70 per trade + 0.25 point slippage per side,70.0,0.25,188,175,13,110,78,58.51,208730.5,662.95,3.526,1.198,217925.5,62,47,77,2,0,110,52.5,0
+B,D: Rs 70 per trade + 0.5 point slippage per side,70.0,0.5,188,175,13,110,78,58.51,172070.5,662.95,3.526,1.161,228065.5,62,47,77,2,0,110,52.5,0
+B,E: Rs 70 per trade + 1.0 point slippage per side,70.0,1.0,188,175,13,110,78,58.51,98750.5,662.95,3.526,1.09,248345.5,62,47,77,2,0,110,52.5,0
+B,"ALT: Rs 70 per order fill (entry + each exit leg), zero slippage - interpretation sensitivity",70 per fill,0.0,188,175,13,110,78,58.51,219070.5,662.95,3.526,1.236,215065.5,62,47,77,2,0,110,52.5,0
+C,A: Gross P&L without costs,0.0,0.0,190,177,13,111,79,58.42,250945.5,643.45,3.387,1.24,215845.5,62,48,78,2,0,111,51.2,0
+C,"B: Rs 70 per trade, zero slippage",70.0,0.0,190,177,13,111,79,58.42,237645.5,643.45,3.387,1.226,219555.5,62,48,78,2,0,111,51.2,0
+C,C: Rs 70 per trade + 0.25 point slippage per side,70.0,0.25,190,177,13,111,79,58.42,200595.5,643.45,3.387,1.188,229890.5,62,48,78,2,0,111,51.2,0
+C,D: Rs 70 per trade + 0.5 point slippage per side,70.0,0.5,190,177,13,111,79,58.42,163545.5,643.45,3.387,1.151,240225.5,62,48,78,2,0,111,51.2,0
+C,E: Rs 70 per trade + 1.0 point slippage per side,70.0,1.0,190,177,13,111,79,58.42,89445.5,643.45,3.387,1.08,260895.5,62,48,78,2,0,111,51.2,0
+C,"ALT: Rs 70 per order fill (entry + each exit leg), zero slippage - interpretation sensitivity",70 per fill,0.0,190,177,13,111,79,58.42,211045.5,643.45,3.387,1.226,226975.5,62,48,78,2,0,111,51.2,0

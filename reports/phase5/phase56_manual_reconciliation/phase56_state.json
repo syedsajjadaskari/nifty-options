@@ -1,0 +1,399 @@
+{
+ "journal": {
+  "rows": 190,
+  "summary_sheet": {
+   "Total trades": "189",
+   "Final cumulative P&L (\u20b9)": "769860",
+   "Target outcomes": "80",
+   "Break-even outcomes": "44",
+   "Stop-loss outcomes": "65",
+   "Winning P&L entries (\u20b9)": "1600560",
+   "Losing P&L entries (\u20b9)": "-830700"
+  },
+  "by_strategy": {
+   "IRF": 73,
+   "PDR": 8,
+   "ORB": 89,
+   "RF": 17,
+   "PDS": 3
+  },
+  "weekend_rows": [
+   [
+    23,
+    26,
+    "2025-10-11",
+    "Sat",
+    "ORB"
+   ],
+   [
+    82,
+    89,
+    "2026-02-14",
+    "Sat",
+    "IRF"
+   ],
+   [
+    181,
+    194,
+    "2026-08-15",
+    "Sat",
+    "ORB"
+   ],
+   [
+    185,
+    198,
+    "2026-08-22",
+    "Sat",
+    "ORB"
+   ],
+   [
+    189,
+    202,
+    "2026-08-29",
+    "Sat",
+    "ORB"
+   ]
+  ],
+  "rows_on_evaluated_sessions": 185,
+  "rows_not_on_evaluated_sessions": [
+   [
+    23,
+    "2025-10-11"
+   ],
+   [
+    82,
+    "2026-02-14"
+   ],
+   [
+    181,
+    "2026-08-15"
+   ],
+   [
+    185,
+    "2026-08-22"
+   ],
+   [
+    189,
+    "2026-08-29"
+   ]
+  ],
+  "time_label_types": {
+   "'10:00'": 4,
+   "'09:25'": 6,
+   "'09:15'": 78,
+   "'09:40'": 12,
+   "'10:35'": 1,
+   "'09:45'": 10,
+   "'10:10'": 4,
+   "'10:05'": 4,
+   "'09:30'": 4,
+   "'09:20'": 1,
+   "'09:50'": 9,
+   "'10:15'": 3,
+   "'11:00'": 5,
+   "'10:30'": 4,
+   "'09:35'": 7,
+   "'10:55'": 1,
+   "'12:10'": 1,
+   "'09:55'": 4,
+   "'10:20'": 3,
+   "'12:05'": 2,
+   "'10:50'": 1,
+   "'11:05'": 1,
+   "'11:25'": 1,
+   "'12:20'": 1,
+   "'12:00'": 1,
+   "'10:45'": 2,
+   "'10:40'": 1,
+   "datetime": 19
+  },
+  "outcomes": {
+   "BE": 44,
+   "Target": 81,
+   "SL": 65
+  },
+  "dates_with_two_rows": 5,
+  "dates_with_three_or_more_rows": 0
+ },
+ "matching": {
+  "A": {
+   "automated_trades": 196,
+   "strict": 66,
+   "time_tolerant": 21,
+   "date_strategy_only": 18,
+   "manual_rows_unmatched_total": 103,
+   "manual_rows_no_trade_same_date_strategy": 85,
+   "automated_unmatched_total": 109,
+   "automated_no_manual_counterpart": 91,
+   "strict_by_strategy": {
+    "ORB": 35,
+    "RF": 4,
+    "IRF": 26,
+    "PDS": 1
+   },
+   "tolerant_by_strategy": {
+    "PDR": 3,
+    "RF": 3,
+    "IRF": 15
+   },
+   "manual_only_by_strategy": {
+    "ORB": 54,
+    "IRF": 32,
+    "PDR": 5,
+    "RF": 10,
+    "PDS": 2
+   },
+   "automated_only_by_strategy": {
+    "RF": 3,
+    "IRF": 68,
+    "PDS": 10,
+    "ORB": 6,
+    "PDR": 22
+   },
+   "manual_only_causes": {
+    "LEVEL_CONSTRUCTION_MISMATCH": 20,
+    "EARLIER_SIGNAL": 9,
+    "UNRESOLVED_DISCRETIONARY_SELECTION": 5,
+    "LATER_SIGNAL": 10,
+    "MANUAL_JOURNAL_INCONSISTENCY": 5,
+    "CANDLE_STRENGTH_MISMATCH": 22,
+    "DIFFERENT_STRATEGY_SELECTED": 12,
+    "EMA_FILTER_MISMATCH": 7,
+    "OPENING_GAP_MISMATCH": 12,
+    "PORTFOLIO_CONTROLLER_CONSTRAINT": 1
+   },
+   "automated_only_causes": {
+    "DIFFERENT_STRATEGY_SELECTED": 57,
+    "UNRESOLVED_DISCRETIONARY_SELECTION": 27,
+    "PORTFOLIO_CONTROLLER_CONSTRAINT": 7,
+    "EARLIER_SIGNAL": 9,
+    "LATER_SIGNAL": 9
+   },
+   "outcome_agreement_matched": {
+    "agree": 80,
+    "total": 87
+   },
+   "wrong_strategy_dates": 57,
+   "manual_rows_on_dates_with_no_automated_trade": 19
+  },
+  "B": {
+   "automated_trades": 188,
+   "strict": 64,
+   "time_tolerant": 14,
+   "date_strategy_only": 17,
+   "manual_rows_unmatched_total": 112,
+   "manual_rows_no_trade_same_date_strategy": 95,
+   "automated_unmatched_total": 110,
+   "automated_no_manual_counterpart": 93,
+   "strict_by_strategy": {
+    "ORB": 35,
+    "RF": 4,
+    "IRF": 20,
+    "PDR": 4,
+    "PDS": 1
+   },
+   "tolerant_by_strategy": {
+    "PDR": 1,
+    "RF": 3,
+    "IRF": 10
+   },
+   "manual_only_by_strategy": {
+    "ORB": 54,
+    "IRF": 43,
+    "PDR": 3,
+    "RF": 10,
+    "PDS": 2
+   },
+   "automated_only_by_strategy": {
+    "RF": 3,
+    "IRF": 60,
+    "PDS": 18,
+    "ORB": 6,
+    "PDR": 23
+   },
+   "manual_only_causes": {
+    "LEVEL_CONSTRUCTION_MISMATCH": 20,
+    "EARLIER_SIGNAL": 10,
+    "UNRESOLVED_DISCRETIONARY_SELECTION": 5,
+    "EMA_FILTER_MISMATCH": 16,
+    "MANUAL_JOURNAL_INCONSISTENCY": 5,
+    "CANDLE_STRENGTH_MISMATCH": 22,
+    "LATER_SIGNAL": 10,
+    "DIFFERENT_STRATEGY_SELECTED": 12,
+    "OPENING_GAP_MISMATCH": 12
+   },
+   "automated_only_causes": {
+    "DIFFERENT_STRATEGY_SELECTED": 57,
+    "UNRESOLVED_DISCRETIONARY_SELECTION": 24,
+    "PORTFOLIO_CONTROLLER_CONSTRAINT": 12,
+    "EARLIER_SIGNAL": 9,
+    "LATER_SIGNAL": 8
+   },
+   "outcome_agreement_matched": {
+    "agree": 71,
+    "total": 78
+   },
+   "wrong_strategy_dates": 57,
+   "manual_rows_on_dates_with_no_automated_trade": 29
+  },
+  "C": {
+   "automated_trades": 190,
+   "strict": 67,
+   "time_tolerant": 14,
+   "date_strategy_only": 17,
+   "manual_rows_unmatched_total": 109,
+   "manual_rows_no_trade_same_date_strategy": 92,
+   "automated_unmatched_total": 109,
+   "automated_no_manual_counterpart": 92,
+   "strict_by_strategy": {
+    "ORB": 38,
+    "RF": 4,
+    "IRF": 20,
+    "PDR": 4,
+    "PDS": 1
+   },
+   "tolerant_by_strategy": {
+    "PDR": 1,
+    "RF": 3,
+    "IRF": 10
+   },
+   "manual_only_by_strategy": {
+    "ORB": 51,
+    "IRF": 43,
+    "PDR": 3,
+    "RF": 10,
+    "PDS": 2
+   },
+   "automated_only_by_strategy": {
+    "RF": 3,
+    "IRF": 59,
+    "PDS": 18,
+    "ORB": 6,
+    "PDR": 23
+   },
+   "manual_only_causes": {
+    "LEVEL_CONSTRUCTION_MISMATCH": 20,
+    "EARLIER_SIGNAL": 10,
+    "UNRESOLVED_DISCRETIONARY_SELECTION": 5,
+    "EMA_FILTER_MISMATCH": 12,
+    "MANUAL_JOURNAL_INCONSISTENCY": 5,
+    "CANDLE_STRENGTH_MISMATCH": 27,
+    "LATER_SIGNAL": 10,
+    "DIFFERENT_STRATEGY_SELECTED": 12,
+    "OPENING_GAP_MISMATCH": 8
+   },
+   "automated_only_causes": {
+    "DIFFERENT_STRATEGY_SELECTED": 56,
+    "UNRESOLVED_DISCRETIONARY_SELECTION": 24,
+    "PORTFOLIO_CONTROLLER_CONSTRAINT": 12,
+    "EARLIER_SIGNAL": 9,
+    "LATER_SIGNAL": 8
+   },
+   "outcome_agreement_matched": {
+    "agree": 74,
+    "total": 81
+   },
+   "wrong_strategy_dates": 56,
+   "manual_rows_on_dates_with_no_automated_trade": 27
+  }
+ },
+ "delta_distribution": {
+  "A|DATE_STRATEGY_ONLY|-135": 1,
+  "A|DATE_STRATEGY_ONLY|-100": 1,
+  "A|DATE_STRATEGY_ONLY|-85": 2,
+  "A|DATE_STRATEGY_ONLY|-50": 1,
+  "A|DATE_STRATEGY_ONLY|-45": 1,
+  "A|DATE_STRATEGY_ONLY|-35": 1,
+  "A|DATE_STRATEGY_ONLY|-25": 1,
+  "A|DATE_STRATEGY_ONLY|-20": 1,
+  "A|DATE_STRATEGY_ONLY|20": 6,
+  "A|DATE_STRATEGY_ONLY|30": 1,
+  "A|DATE_STRATEGY_ONLY|95": 1,
+  "A|DATE_STRATEGY_ONLY|150": 1,
+  "A|STRICT|0": 66,
+  "A|TIME_TOLERANT|-15": 4,
+  "A|TIME_TOLERANT|-10": 3,
+  "A|TIME_TOLERANT|-5": 4,
+  "A|TIME_TOLERANT|5": 5,
+  "A|TIME_TOLERANT|10": 3,
+  "A|TIME_TOLERANT|15": 2,
+  "B|DATE_STRATEGY_ONLY|-135": 1,
+  "B|DATE_STRATEGY_ONLY|-100": 1,
+  "B|DATE_STRATEGY_ONLY|-85": 1,
+  "B|DATE_STRATEGY_ONLY|-50": 1,
+  "B|DATE_STRATEGY_ONLY|-45": 1,
+  "B|DATE_STRATEGY_ONLY|-35": 1,
+  "B|DATE_STRATEGY_ONLY|-25": 1,
+  "B|DATE_STRATEGY_ONLY|-20": 2,
+  "B|DATE_STRATEGY_ONLY|20": 6,
+  "B|DATE_STRATEGY_ONLY|30": 1,
+  "B|DATE_STRATEGY_ONLY|150": 1,
+  "B|STRICT|0": 64,
+  "B|TIME_TOLERANT|-15": 1,
+  "B|TIME_TOLERANT|-10": 2,
+  "B|TIME_TOLERANT|-5": 5,
+  "B|TIME_TOLERANT|5": 4,
+  "B|TIME_TOLERANT|10": 2,
+  "C|DATE_STRATEGY_ONLY|-135": 1,
+  "C|DATE_STRATEGY_ONLY|-100": 1,
+  "C|DATE_STRATEGY_ONLY|-85": 1,
+  "C|DATE_STRATEGY_ONLY|-50": 1,
+  "C|DATE_STRATEGY_ONLY|-45": 1,
+  "C|DATE_STRATEGY_ONLY|-35": 1,
+  "C|DATE_STRATEGY_ONLY|-25": 1,
+  "C|DATE_STRATEGY_ONLY|-20": 2,
+  "C|DATE_STRATEGY_ONLY|20": 6,
+  "C|DATE_STRATEGY_ONLY|30": 1,
+  "C|DATE_STRATEGY_ONLY|150": 1,
+  "C|STRICT|0": 67,
+  "C|TIME_TOLERANT|-15": 1,
+  "C|TIME_TOLERANT|-10": 2,
+  "C|TIME_TOLERANT|-5": 5,
+  "C|TIME_TOLERANT|5": 4,
+  "C|TIME_TOLERANT|10": 2
+ },
+ "cause_counts": {
+  "A": {
+   "LEVEL_CONSTRUCTION_MISMATCH": 20,
+   "EXIT_MANAGEMENT_MISMATCH": 7,
+   "EARLIER_SIGNAL": 18,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 32,
+   "LATER_SIGNAL": 19,
+   "MANUAL_JOURNAL_INCONSISTENCY": 5,
+   "CANDLE_STRENGTH_MISMATCH": 22,
+   "DIFFERENT_STRATEGY_SELECTED": 69,
+   "EMA_FILTER_MISMATCH": 7,
+   "OPENING_GAP_MISMATCH": 12,
+   "PORTFOLIO_CONTROLLER_CONSTRAINT": 8
+  },
+  "B": {
+   "LEVEL_CONSTRUCTION_MISMATCH": 20,
+   "EXIT_MANAGEMENT_MISMATCH": 7,
+   "EARLIER_SIGNAL": 19,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 29,
+   "EMA_FILTER_MISMATCH": 16,
+   "MANUAL_JOURNAL_INCONSISTENCY": 5,
+   "CANDLE_STRENGTH_MISMATCH": 22,
+   "LATER_SIGNAL": 18,
+   "DIFFERENT_STRATEGY_SELECTED": 69,
+   "OPENING_GAP_MISMATCH": 12,
+   "PORTFOLIO_CONTROLLER_CONSTRAINT": 12
+  },
+  "C": {
+   "LEVEL_CONSTRUCTION_MISMATCH": 20,
+   "EXIT_MANAGEMENT_MISMATCH": 7,
+   "EARLIER_SIGNAL": 19,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 29,
+   "EMA_FILTER_MISMATCH": 12,
+   "MANUAL_JOURNAL_INCONSISTENCY": 5,
+   "CANDLE_STRENGTH_MISMATCH": 27,
+   "LATER_SIGNAL": 18,
+   "DIFFERENT_STRATEGY_SELECTED": 68,
+   "OPENING_GAP_MISMATCH": 8,
+   "PORTFOLIO_CONTROLLER_CONSTRAINT": 12
+  }
+ },
+ "daily_reports": 247,
+ "charts": 143,
+ "material_mismatch_dates": 148
+}

@@ -1,0 +1,367 @@
+{
+  "phase": "5.5",
+  "synthetic_pnl_only": true,
+  "configurations": {
+    "A": {
+      "id": "FROZEN-PHASE36-42cea2600bd4",
+      "title": "Configuration A - frozen Phase 3.6 (FROZEN-PHASE36-42cea2600bd4)",
+      "engines": [
+        "IRFStrategy",
+        "ORBStrategy",
+        "PDRBodyStrategy",
+        "PDSStrategy",
+        "RFStrategy"
+      ],
+      "provisional_assumptions": [
+        "PDR body-based numeric pattern thresholds (PROPOSED, RESEARCH_DEFAULT)",
+        "forced exit at the open of the 15:14 minute (implementer assumption)",
+        "RF Target 2 of 60 (research assumption)",
+        "PDR / PDS Target 2 of 70 versus the report's 60 (recorded source conflict)",
+        "no approved tie-break: simultaneous signals of different strategies leave the day unresolved",
+        "stop before target inside a 1-minute bar (conservative convention, not a source rule)",
+        "ORB Method 2 inner level / trendline and strength profile (research constructions)"
+      ]
+    },
+    "B": {
+      "id": "PHASE55-B-a3ca4d04dd11",
+      "title": "Configuration B - Phase 5.3 author-corrected (provisional conventions)",
+      "engines": [
+        "IRFPhase53Strategy",
+        "ORBStrategy",
+        "PDRFirstEligibleStrategy",
+        "PDSFirstEligibleStrategy",
+        "RFStrategy"
+      ],
+      "provisional_assumptions": [
+        "everything provisional in A",
+        "IRF Method 2A support = LOW of the first red candle, searched after the extension candle (level owner-approved; search start and method scope provisional)",
+        "IRF minimum 28-point EMA(200) clearance measured to the nearest point of the signal candle's range, inclusive, all IRF methods (PROVISIONAL_EMA_RANGE_DISTANCE; the author's measure and directionality are unconfirmed)",
+        "PDR earliest eligible confirmation: green candle or dominant-lower-wick rejection, retest candle excluded (PROVISIONAL_PDR_MINIMAL_CONFIRMATION)",
+        "PDS earliest eligible confirmation via structural dominance tests; weak first red candle still goes to Method 3 (PROVISIONAL_PDS_MINIMAL_QUALITY)",
+        "IRF day's-low restriction NOT applied (PENDING_OWNER_DEFINITION)"
+      ]
+    },
+    "C": {
+      "id": "PHASE55-C-144ceb6b28b1",
+      "title": "Configuration C - Phase 5.3 + ORB gap crossing (provisional research scenario)",
+      "engines": [
+        "IRFPhase53Strategy",
+        "ORBCandidateStrategy",
+        "PDRFirstEligibleStrategy",
+        "PDSFirstEligibleStrategy",
+        "RFStrategy"
+      ],
+      "provisional_assumptions": [
+        "everything provisional in B",
+        "ORB Gap / 200 DMA: the first CANDLE (not only the open) may cross the average (Phase 5.4 candidate; the rulebook's figures draw it, the frozen engine requires the open beyond it)",
+        "indicator = the repository's EMA(200) of completed five-minute closes; the rulebook mixes '200 DMA' and '200 EMA' (ORB-MA-001): UNRESOLVED, so C is a labelled provisional research scenario, not the author's confirmed method"
+      ]
+    }
+  },
+  "frozen_identity_verification": {
+    "frozen_configuration_id": "FROZEN-PHASE36-42cea2600bd4",
+    "id_recomputed_from_stored_blob": "FROZEN-PHASE36-42cea2600bd4",
+    "active_files_verified": 26,
+    "live_parameters_equal_the_frozen_parameters": true,
+    "source_snapshot": {
+      "file": "reports/phase4/frozen/source_snapshot_phase36.tar.gz",
+      "sha256": "a597b46a8673f85281346334451f2edac9e692f02563554ab2bf0c82c1213046"
+    },
+    "git_head_at_freeze": "ed5642a1d9a3de734a01c5e2a0dfd1dce16760e6"
+  },
+  "frozen_active_file_hashes": {
+    "src/nifty_trading/strategies/irf.py": "d0e103a1b5044ea76dd8ecb28f31367f34b062729b6493e2ffbbd05baf293fe3",
+    "src/nifty_trading/strategies/orb.py": "1e32888de7e6951c6b4fe186950da58e41876a29451673eb8ff23743d2a35f97",
+    "src/nifty_trading/strategies/pdr_body.py": "59ff807afc8813129c4d804775e54691a7fa027b303cd9ce7636c630531bf095",
+    "src/nifty_trading/strategies/pdr_revised.py": "d18549efe76b28f74dc96606e844bf899d5982594bde73d47676770492e1a07b",
+    "src/nifty_trading/strategies/pds.py": "4496061195624a1db1085baf956d07f277069a8c66a4c3cc9b008cea41fe4852",
+    "src/nifty_trading/strategies/rf.py": "ede1ec29cefa897e0f7b8768fbc226451433ab99443abbfd758cdd43ab6c311d",
+    "src/nifty_trading/strategies/base.py": "8198ca96262850a5c3dd51fc411909e8ec1f1451ddf8aad8c7716c2d083cc21e",
+    "src/nifty_trading/strategies/definitions.py": "5eb6e70150467a912d0d7af251abe9a6806d1872cb32d60cd8d5845ccac4a72d",
+    "src/nifty_trading/strategies/params.py": "b19f4004e71075b32aceed62ee215acee50552632a8ea5e9373a9d980bdf7545",
+    "src/nifty_trading/strategies/selection.py": "768bee461dcec3e3175bd9e3ccc7809ea52b762aebb37cf4552138e6bbdba39b",
+    "src/nifty_trading/strategies/trading_day.py": "c8ffc42771edac4df9ece5155c4b4c39a3d3e67c27f03b89b979daffd70e775b",
+    "src/nifty_trading/strategies/rules.py": "12ab09299d314a7b07609cc6936d22c4e161b12e6602668f0980e601ae52cbf2",
+    "src/nifty_trading/strategies/rule_data.py": "34db2531e870c0b5c7a3abe82ded325bdde5c043e25a461041ad040692a61a1f",
+    "src/nifty_trading/core/exit_policy.py": "f98d9ff3ee84ef6eaac7206371b70e73345885d633ba43726f40e33d4636b872",
+    "src/nifty_trading/core/execution_eligibility.py": "3d51dd2d879e25acc4074821f71d6f0e8d4b68020a548286830737e6a559724d",
+    "src/nifty_trading/data/sessions.py": "7e1542756941e7203d557a36219264d6f5513afe743b4e0be18b90d185d2e127",
+    "src/nifty_trading/data/market_calendar.py": "8fc3a07e6e910c1b444cdc95826540d8effbb358fae3f686d4817a439a783f3d",
+    "src/nifty_trading/research/phase3.py": "a1ab31f9734bc9be77385338f2a10c62e44d5a3a9c0fa607009dedb5de84641d",
+    "src/nifty_trading/research/phase31.py": "cd743b22e68d31ce051b78d64eefc4dbceda8923332bdffd25f67febe0ebf125",
+    "src/nifty_trading/research/phase32.py": "916bd040c0f37cc18554381ff34ae87c6f011c0113bbaf0d6d1d429e148b314d",
+    "src/nifty_trading/research/phase32_build.py": "d68a7fbeec7f36ef14e9eb8c95421b7cd9edd4e76328ebd33b4c0aa56f1d5e61",
+    "src/nifty_trading/research/phase32_render.py": "934dd79e210c2381a938bffc3ad5462c2fc215675fd61a255e88dd640f4138a0",
+    "src/nifty_trading/research/phase32_excel.py": "d1c531da5fc2349f1c17dc5a64d9581ae6910225de0db6ba4df0c2694d4b534a",
+    "src/nifty_trading/research/phase32_charts.py": "618523eef569d55826150b2f6ced88b72ab39a246fc59c0854b8e15040b876bb",
+    "src/nifty_trading/research/phase35.py": "192d5d6c3a61f5c7cf54c4e1566577b0432eb3d1ac838e64ee95ac6f4f3b36e2",
+    "src/nifty_trading/research/phase36.py": "c01875c4914db2648fc7d12b85828ab652101d6816cf3018b0e64a85286ded95"
+  },
+  "phase5_candidate_file_hashes": {
+    "src/nifty_trading/strategies/irf_candidates.py": "1e9c57131424d2459da62f42b7b9d1e84a151ce385a54874d09e7e1f52e41809",
+    "src/nifty_trading/strategies/irf_phase53.py": "5584aa6fa0f5406f397ff81f7898e5b8300c791fef1d53a2ae3f722179a4f4c0",
+    "src/nifty_trading/strategies/first_eligible_phase53.py": "3bd07efcddfcc358da2c495136f37dd2388a9b72fa569ec93b6cdc4e25a15173",
+    "src/nifty_trading/strategies/orb_candidates.py": "4835e60c41fd16b05bf97070425fd6e462669c8c0c2de0e8dc06b6ed13f9270a",
+    "src/nifty_trading/strategies/orb_colour.py": "350836da40b5bd5d894c5e6bae8cf5dbc1435bed1e27da672121e5c320c63c0b",
+    "src/nifty_trading/research/phase53.py": "f265d28dd8b6ce9a64a17d50758e72b7a790a7c2297c27ba535c09a5a4365004",
+    "src/nifty_trading/research/phase55.py": "0c3d4f04bdc22586a1480d949768026ed33552f5a6cd4b92c8a47b7d708c6c65"
+  },
+  "parameters_common_to_all": {
+    "proposal_config": {
+      "label": "PROPOSED_FOR_REVIEW",
+      "strong_candle": "MODERATE",
+      "pin_bar": "OWNER_2X_CLOSE30",
+      "rejection_wick": "MODERATE",
+      "trend_mode": "EMA_PREV_SESSION_CLOSE",
+      "ma_mode": "EMA200_5M",
+      "swing_k": 2,
+      "small_candle_body_ratio_max": 0.3,
+      "irf_support_def": "SWING_K1",
+      "irf_resistance_def": "FIRST_PUSH_TOP",
+      "m1_max_candles_after_breakout": 1,
+      "m1_close_below_irl_counts_as_inside": false,
+      "m2_extension_definition": "E1",
+      "m2_red_may_be_extension_candle": false,
+      "m2b_push_must_precede_red_candle": false,
+      "m2a_break_may_be_red_candle": false,
+      "m2_expiry_candles": null,
+      "m3_compression_def": "C1",
+      "m3_compression_n": 2,
+      "m3_compression_size_frac": 0.5,
+      "m3_wick_share_band": "BAND_60_70",
+      "stop_distance_measure": "GREEN_HIGH",
+      "stop_boundary_inclusive_35": true,
+      "gap_min_points": 0.0,
+      "gap_max_points": null,
+      "zone_lower_boundary": "ZONE_WICK",
+      "prev_day_level_window": "ALL_CANDLES",
+      "pdr_zone_method": "B_SWING_HIGH_REVERSAL",
+      "pds_zone_method": "A_LOWEST_LOW",
+      "pds_zone_upper_boundary": "ZONE_FULL",
+      "zone_cluster_tolerance_points": 5.0,
+      "zone_cluster_min_touches": 2,
+      "zone_tie_break": "FIRST",
+      "zone_proximity_points": 0.0,
+      "pdr_green_may_be_interaction_candle": false,
+      "pdr_reversal_filter": "OFF",
+      "pds_small_support_def": "SWING_K1_NEAR_ZONE",
+      "pds_m3_break_basis": "CLOSE",
+      "pds_m3_standalone": false,
+      "rf_return_inside_def": "R1",
+      "rf_direction": "LONG",
+      "ma_near_band_points": 15.0,
+      "ma_close_margin_points": 5.0,
+      "entry_reference_price": "SIGNAL_CANDLE_CLOSE",
+      "orb_pin_bar_in_methods_1_2": true,
+      "pdr_open_vs_zone": "ABOVE_ZONE",
+      "pds_open_vs_zone": "BELOW_ZONE",
+      "prev_close_source": "OFFICIAL_DAILY",
+      "max_signals_per_session": 99,
+      "allow_unverified_prev_session": false,
+      "signal_window_end": null
+    },
+    "trade_config": {
+      "stop_variant": "BASELINE",
+      "t1_points": 27.0,
+      "rf_t2_points": 60.0,
+      "total_lots": 6,
+      "leg1_lots": 3,
+      "lot_size": 65,
+      "post_t1_stop_mode": "BUFFER",
+      "post_t1_buffer_points": 6.0,
+      "forced_exit_time": "15:14:00"
+    },
+    "pdr_body_config": {
+      "zone_candidate": "A_HIGHEST_BODY_HIGH",
+      "b_local_high_k": 1,
+      "b_min_touches": 2,
+      "b_tolerance_points": 5.0,
+      "b_min_separation_candles": 2,
+      "b_spike_policy": "ALWAYS_INCLUDE_HIGHEST_BODY_HIGH",
+      "zero_height_policy": "UNRESOLVED_NO_SETUP",
+      "pattern_profile": "RESEARCH_DEFAULT",
+      "patterns_enabled": [
+        "GOOD_GREEN_BODY",
+        "LOWER_PRICE_REJECTION",
+        "HAMMER"
+      ],
+      "proximity_points": 0.0,
+      "open_vs_zone": "ABOVE_ZONE",
+      "confirmation_may_be_interaction_candle": false,
+      "wait_policy": "WAIT_FOR_QUALIFYING_CANDLE"
+    },
+    "day_rules": {
+      "entry_cutoff": "13:00:00",
+      "max_entries": 2,
+      "second_trade_strategies": [
+        "PDR",
+        "PDS"
+      ],
+      "tie_break": null,
+      "collision_policy": "MARK_DAY_UNRESOLVED"
+    },
+    "targets_2": {
+      "IRF": 60.0,
+      "ORB": 60.0,
+      "PDR": 70.0,
+      "PDS": 70.0,
+      "RF": 60.0
+    },
+    "stops": {
+      "IRF": 35.0,
+      "ORB": 30.0,
+      "PDR": 35.0,
+      "PDS": 35.0,
+      "RF": 35.0
+    },
+    "target_1_points": 27.0,
+    "post_t1_buffer_points": 6.0,
+    "lots": {
+      "total": 6,
+      "leg1": 3,
+      "lot_size_fixed_multiplier": 65
+    },
+    "forced_exit_time": "15:14:00",
+    "entry_cutoff": "13:00 IST",
+    "scenario_key": "phase36_body_based",
+    "pdr_engine": "BODY_BASED_PHASE36"
+  },
+  "cost_model": {
+    "fixed_cost_rs_per_trade": 70.0,
+    "status": "owner's indicative estimate (brokerage ~Rs 30 + other charges ~Rs 40); NOT a verified broker bill; coverage of entry / partial exits UNCONFIRMED; applied once per executed trade",
+    "slippage_points_per_side": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "slippage_application": "adverse points on every unit of every actual fill: entry once (entry units), each exited leg once (its own units); no unit is charged twice; legs without a fillable exit have no exit fill",
+    "scenarios": [
+      {
+        "id": "A",
+        "label": "Gross P&L without costs",
+        "fixed_rs": 0.0,
+        "slip_points_per_side": 0.0
+      },
+      {
+        "id": "B",
+        "label": "Rs 70 per trade, zero slippage",
+        "fixed_rs": 70.0,
+        "slip_points_per_side": 0.0
+      },
+      {
+        "id": "C",
+        "label": "Rs 70 per trade + 0.25 point slippage per side",
+        "fixed_rs": 70.0,
+        "slip_points_per_side": 0.25
+      },
+      {
+        "id": "D",
+        "label": "Rs 70 per trade + 0.5 point slippage per side",
+        "fixed_rs": 70.0,
+        "slip_points_per_side": 0.5
+      },
+      {
+        "id": "E",
+        "label": "Rs 70 per trade + 1.0 point slippage per side",
+        "fixed_rs": 70.0,
+        "slip_points_per_side": 1.0
+      }
+    ],
+    "old_fixed_500_assumption": "NOT USED"
+  },
+  "position": {
+    "lots": 6,
+    "units_per_lot": 65,
+    "total_units": 390,
+    "legs": "3 + 3 lots (195 + 195 units)",
+    "note": "synthetic comparison multiplier: the index is not tradable and historical lot sizes differ"
+  },
+  "exit_rules": {
+    "stops": {
+      "IRF": 35.0,
+      "ORB": 30.0,
+      "PDR": 35.0,
+      "PDS": 35.0,
+      "RF": 35.0
+    },
+    "target_1_points": 27.0,
+    "targets_2": {
+      "IRF": 60.0,
+      "ORB": 60.0,
+      "PDR": 70.0,
+      "PDS": 70.0,
+      "RF": 60.0
+    },
+    "post_t1_stop": "entry -/+ 6 points; no trailing",
+    "forced_exit": "open of the 15:14 one-minute bar (provisional implementer assumption; before 15:15 IST; never a closing-auction fill)",
+    "intrabar": "stop before target inside a 1-minute bar (conservative, not a source rule); stops fill at the worse of the level and the bar open"
+  },
+  "controller": {
+    "entry_cutoff": "13:00:00",
+    "max_entries": 2,
+    "second_trade_strategies": [
+      "PDR",
+      "PDS"
+    ],
+    "tie_break": null,
+    "collision_policy": "MARK_DAY_UNRESOLVED"
+  },
+  "entry_cutoff_ist": "13:00",
+  "forced_exit_limit": "15:15:00",
+  "data": {
+    "primary_window": "2025-09-01..2026-08-31 (Phase 1 5paisa one-minute NIFTY 50)",
+    "provenance": {
+      "python": "3.12.10",
+      "timezone": "Asia/Kolkata",
+      "calendar": "NSE calendar 2025-26 (data/metadata/nse_calendar_2025_2026.json)",
+      "git_head": "cd419b5a51a5a97019d85e03d89070aa5cd4e631",
+      "git_dirty_files": 22,
+      "src_sha256": "d67ca8297041e7bc20322d095702ff887ec3cc61c370378576abc598410ccc25",
+      "src_snapshot_note": "the working tree holds uncommitted Phase 2.x-3.x work; src_sha256 is the hash of every src/**/*.py file used for this run",
+      "data_files_sha256": {
+        "data/processed/nifty50/year=2025/month=09/candles.parquet": "3be49f163859a409aec1734f363120f355ac9269dfe10d5563023735a7be2214",
+        "data/processed/nifty50/year=2025/month=10/candles.parquet": "49021d45ec32c832a878dc42c86e2b72f92820b82769faa8f3eacbada05ab99d",
+        "data/processed/nifty50/year=2025/month=11/candles.parquet": "4522bf8916dc391ab42cf5a3136024a8893764200bfd86dbeb3f6b9a7ff3ad48",
+        "data/processed/nifty50/year=2025/month=12/candles.parquet": "5e71f101390dc698f7c1f4dc6d60f7beffb88429a1f5a539b847ec7950a68fbf",
+        "data/processed/nifty50/year=2026/month=01/candles.parquet": "a502014d814c2901c1b247673a3ec4e9edc88d0b8d7517dab26ee6d8dcdcd0a0",
+        "data/processed/nifty50/year=2026/month=02/candles.parquet": "03fb7db6d47247f8cc543c2a72e3883dc0543b2a0b6f8a745611b43d09e2ffe8",
+        "data/processed/nifty50/year=2026/month=03/candles.parquet": "d485a047ea908930cef13b383e7493f20fd56a37ba2d5c18b951a0df50354185",
+        "data/processed/nifty50/year=2026/month=04/candles.parquet": "948e2b5ef5491c588c7167d96b109f89ea5687a7c6f417bcb9f6909d7a2a5918",
+        "data/processed/nifty50/year=2026/month=05/candles.parquet": "74beaed47cde93ca23d160377f565bbba8d4a349770f7d9142adefd3608504bc",
+        "data/processed/nifty50/year=2026/month=06/candles.parquet": "a088b9c67523cf300ba2e5feeee9f0d4313f42ea19a0ad9a2f679dd979eabfef",
+        "data/processed/nifty50/year=2026/month=07/candles.parquet": "e3b35a0adbdaa255947c9911e0da41a558da717e9a239ced9383a3e03f97910c",
+        "data/processed/nifty50/year=2026/month=08/candles.parquet": "f60f703d7137d02dd8d51cc07b8b6daac41a0d6592b086957868185b4865c594",
+        "data/processed/nifty50_daily/candles.parquet": "0a4717c7f60974e3a071b9f24b6c4bca9acf86d8fb4ad43fc747652db757f01d",
+        "data/processed/nifty50_warmup/year=2025/month=07/candles.parquet": "cf53992e29cf4f92100671d47b8486a4b80f9253d83427fb32ff0031f7cf2bc9",
+        "data/processed/nifty50_warmup/year=2025/month=08/candles.parquet": "0eea0bfa8fd9bbdab2a9cf93d67e714fbb27029da19c212b78c565f3c9985e49"
+      },
+      "metadata_sha256": {
+        "data/metadata/nse_calendar_2025_2026.json": "12648af90a678b40de879616ae5f2db4ab8578d48de86370bfa90062bbb252fe",
+        "data/metadata/session_quality_manifest.json": "44c7d54222941374d239b3011fdbe4aec4864fa3a6ce30274bdd5349b799f059"
+      },
+      "phase30_ledgers_sha256": {
+        "reports/phase3/baseline/trades.csv": "6bf4b9eccdc60f7031a5e0fb8aa45584651efada8ae481caeb09b5e8bc13bdfb",
+        "reports/phase3/ema_structure/trades.csv": "29b8e9a588d9962381fc0d643d179e2c287946bec38e43abcc3f467e984e7cc2",
+        "reports/phase3/pdr_shelf/trades.csv": "4a74d6507d240ede96e973a1a372a63ddf8fdbd6a6d0764701ace76998550639",
+        "reports/phase3/sl40/trades.csv": "80531aa5da95313946c77384c1d1f39833daaa238d99fb9f561cc241f5bb18c7"
+      },
+      "price_source": "original NIFTY 50 one-minute bars (timestamp = bar START, IST); 5-minute candles built causally from them; first 1-minute open is the session open",
+      "period": "2025-09-01 .. 2026-08-31"
+    },
+    "robustness_window": "2022-09-01..2025-08-31 (Phase 4 5paisa window B)"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "packages": {
+      "pandas": "3.1.0",
+      "numpy": "2.5.4",
+      "openpyxl": "3.1.5",
+      "pytest": "9.2.0",
+      "ruff": "0.17.3"
+    }
+  },
+  "journal_workbook_sha256": "97a9ad4dfb5520619bb979770115d7b6f4e3e37e649af255c543f5fce9694781",
+  "reproduce": "cd /Users/syedaskari/algo/nifty-options && source .venv/bin/activate && python scripts/phase55_run.py"
+}

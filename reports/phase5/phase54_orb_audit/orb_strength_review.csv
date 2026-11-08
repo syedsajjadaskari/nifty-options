@@ -1,0 +1,14 @@
+date,direction,ohlc,colour,body_pct,opposite_wick_pct,same_side_wick_pct,close_location_pct,strong_STRICT,body_margin_STRICT,opp_wick_margin_STRICT,strong_MODERATE,body_margin_MODERATE,opp_wick_margin_MODERATE,strong_LOOSE,body_margin_LOOSE,opp_wick_margin_LOOSE,pin_bar_active_definition,pin_wick_to_body,pin_close_distance_from_favourable_extreme_pct,rejection_wick_flag_active_definition,range,body,upper_wick,lower_wick,distance_close_to_previous_day_level,level_broken_Method_1
+2025-09-11,LONG,24945.5/25002.1/24945.5/25000.8,GREEN,97.7,2.3,0.0,97.7,True,27.7,12.7,True,37.7,17.7,True,47.7,22.7,False,0.0,2.3,False,56.6,55.3,1.3,0.0,-34.55,False
+2025-09-16,LONG,25079.5/25110.25/25072.25/25106.75,GREEN,71.71,9.21,19.08,90.79,True,1.71,5.79,True,11.71,10.79,True,21.71,15.79,False,0.27,9.21,False,38.0,27.25,3.5,7.25,-30.7,False
+2025-10-08,LONG,25079.75/25146.95/25079.75/25146.05,GREEN,98.66,1.34,0.0,98.66,True,28.66,13.66,True,38.66,18.66,True,48.66,23.66,False,0.0,1.34,False,67.2,66.3,0.9,0.0,-74.3,False
+2025-10-16,LONG,25401.0/25424.65/25382.85/25412.15,GREEN,26.67,29.9,43.42,70.1,False,-43.33,-14.9,False,-33.33,-9.9,False,-23.33,-4.9,False,1.63,29.9,False,41.8,11.15,12.5,18.15,47.8,True
+2025-10-17,LONG,25541.3/25564.7/25508.95/25554.05,GREEN,22.87,19.1,58.03,80.9,False,-47.13,-4.1,False,-37.13,0.9,False,-27.13,5.9,True,2.54,19.1,False,55.75,12.75,10.65,32.35,-70.75,False
+2025-10-27,LONG,25851.95/25877.6/25828.1/25861.4,GREEN,19.09,32.73,48.18,67.27,False,-50.91,-17.73,False,-40.91,-12.73,False,-30.91,-7.73,False,2.52,32.73,False,49.5,9.45,16.2,23.85,-77.9,False
+2025-11-21,LONG,26116.2/26141.85/26096.5/26138.75,GREEN,49.72,6.84,43.44,93.16,False,-20.28,8.16,False,-10.28,13.16,False,-0.28,18.16,False,0.87,6.84,False,45.35,22.55,3.1,19.7,-107.45,False
+2025-11-28,LONG,26237.45/26246.9/26172.9/26242.15,GREEN,6.35,6.42,87.23,93.58,False,-63.65,8.58,False,-53.65,13.58,False,-43.65,18.58,True,13.73,6.42,False,74.0,4.7,4.75,64.55,-67.9,False
+2025-12-05,LONG,26001.15/26050.6/25991.85/26050.6,GREEN,84.17,0.0,15.83,100.0,True,14.17,15.0,True,24.17,20.0,True,34.17,25.0,False,0.19,0.0,False,58.75,49.45,0.0,9.3,-47.2,False
+2025-12-12,LONG,25982.75/26002.8/25964.9/26002.55,GREEN,52.24,0.66,47.1,99.34,False,-17.76,14.34,False,-7.76,19.34,True,2.24,24.34,False,0.9,0.66,False,37.9,19.8,0.25,17.85,80.8,True
+2025-12-24,LONG,26183.75/26201.55/26142.0/26198.25,GREEN,24.35,5.54,70.11,94.46,False,-45.65,9.46,False,-35.65,14.46,False,-25.65,19.46,True,2.88,5.54,False,59.55,14.5,3.3,41.75,-35.3,False
+2025-12-30,SHORT,25951.0/25951.0/25894.6/25908.05,RED,76.15,23.85,0.0,23.85,False,6.15,-8.85,False,16.15,-3.85,True,26.15,1.15,False,0.0,23.85,False,56.4,42.95,0.0,13.45,14.2,True
+2025-12-31,LONG,25975.45/26026.85/25975.45/26013.65,GREEN,74.32,25.68,0.0,74.32,False,4.32,-10.68,False,14.32,-5.68,False,24.32,-0.68,False,0.0,25.68,False,51.4,38.2,13.2,0.0,36.9,True

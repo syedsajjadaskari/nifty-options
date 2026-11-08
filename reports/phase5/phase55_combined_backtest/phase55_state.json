@@ -1,0 +1,2144 @@
+{
+ "frozen_identity": {
+  "frozen_configuration_id": "FROZEN-PHASE36-42cea2600bd4",
+  "id_recomputed_from_stored_blob": "FROZEN-PHASE36-42cea2600bd4",
+  "active_files_verified": 26,
+  "live_parameters_equal_the_frozen_parameters": true,
+  "source_snapshot": {
+   "file": "reports/phase4/frozen/source_snapshot_phase36.tar.gz",
+   "sha256": "a597b46a8673f85281346334451f2edac9e692f02563554ab2bf0c82c1213046"
+  },
+  "git_head_at_freeze": "ed5642a1d9a3de734a01c5e2a0dfd1dce16760e6"
+ },
+ "reproduction": {
+  "phase36_trades": 196,
+  "configuration_A_trades": 196,
+  "compared_columns": 64,
+  "trade_mismatches": 0,
+  "signals_equal": true,
+  "phase36_signals": 1083,
+  "configuration_A_signals": 1083,
+  "gross_pnl_rs_phase36": 297765.0,
+  "gross_pnl_rs_configuration_A": 297765.0,
+  "first_mismatches": []
+ },
+ "signal_validation": {
+  "A": {
+   "config_id": "FROZEN-PHASE36-42cea2600bd4",
+   "confirmed_signals": 1083,
+   "by_strategy": {
+    "IRF": 874,
+    "ORB": 53,
+    "PDR": 87,
+    "PDS": 57,
+    "RF": 12
+   },
+   "by_method": {
+    "IRF/Method 1": 349,
+    "IRF/Method 2A": 215,
+    "IRF/Method 2B": 310,
+    "ORB/Gap/200DMA": 10,
+    "ORB/Method 1": 27,
+    "ORB/Method 2": 16,
+    "PDR/PDR": 87,
+    "PDS/Method 1": 18,
+    "PDS/Method 2": 6,
+    "PDS/Method 3": 33,
+    "RF/RF": 12
+   },
+   "expected": {
+    "total": 1083,
+    "IRF": 874,
+    "ORB": 53,
+    "PDR": 87,
+    "PDS": 57,
+    "RF": 12
+   },
+   "matches_expected": true,
+   "duplicate_signal_keys": 0,
+   "off_5_minute_grid": 0,
+   "before_09_20": 0,
+   "signals_at_or_before_13_00": 717,
+   "signals_after_13_00": 366,
+   "same_minute_multi_strategy_groups": 18,
+   "same_minute_groups": [
+    [
+     "2025-09-22 14:00",
+     [
+      "IRF/Method 1/SHORT",
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-11-07 14:05",
+     [
+      "IRF/Method 2A/SHORT",
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-11-14 09:55",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-11-14 13:05",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 12:40",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 14:05",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-01-06 10:40",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-04-13 15:05",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-04-30 14:50",
+     [
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2026-05-18 14:25",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-05-20 12:10",
+     [
+      "IRF/Method 2A/SHORT",
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-06-02 10:55",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-06-02 12:00",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-06-23 10:30",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-07-13 10:55",
+     [
+      "IRF/Method 2A/SHORT",
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-07-13 11:45",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-07-23 11:20",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-08-07 10:15",
+     [
+      "IRF/Method 1/SHORT",
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ]
+   ],
+   "failed_entry_checks": 0,
+   "failed_entry_checks_by_rule": {},
+   "trades_with_failed_entry_checks": 0,
+   "trades_with_unresolved_checks": 189
+  },
+  "B": {
+   "config_id": "PHASE55-B-a3ca4d04dd11",
+   "confirmed_signals": 1109,
+   "by_strategy": {
+    "IRF": 786,
+    "ORB": 53,
+    "PDR": 147,
+    "PDS": 111,
+    "RF": 12
+   },
+   "by_method": {
+    "IRF/Method 1": 267,
+    "IRF/Method 2A": 271,
+    "IRF/Method 2B": 248,
+    "ORB/Gap/200DMA": 10,
+    "ORB/Method 1": 27,
+    "ORB/Method 2": 16,
+    "PDR/PDR": 147,
+    "PDS/Method 1": 73,
+    "PDS/Method 2": 19,
+    "PDS/Method 3": 19,
+    "RF/RF": 12
+   },
+   "expected": {
+    "total": 1109,
+    "IRF": 786,
+    "ORB": 53,
+    "PDR": 147,
+    "PDS": 111,
+    "RF": 12
+   },
+   "matches_expected": true,
+   "duplicate_signal_keys": 0,
+   "off_5_minute_grid": 0,
+   "before_09_20": 0,
+   "signals_at_or_before_13_00": 738,
+   "signals_after_13_00": 371,
+   "same_minute_multi_strategy_groups": 15,
+   "same_minute_groups": [
+    [
+     "2025-09-22 11:25",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-11-03 10:10",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-11-07 14:05",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-11-14 13:05",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 12:20",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 12:35",
+     [
+      "IRF/Method 2A/SHORT",
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 12:40",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 13:45",
+     [
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 14:05",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 14:15",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2026-03-17 10:45",
+     [
+      "IRF/Method 1/SHORT",
+      "PDR/PDR/LONG"
+     ]
+    ],
+    [
+     "2026-05-20 13:25",
+     [
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 2/SHORT"
+     ]
+    ],
+    [
+     "2026-06-11 14:45",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-07-23 10:55",
+     [
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2026-07-23 12:05",
+     [
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 2/SHORT"
+     ]
+    ]
+   ],
+   "failed_entry_checks": 51,
+   "failed_entry_checks_by_rule": {
+    "IRF IRF-M2A-001": 21,
+    "IRF IRF-M2A-002": 4,
+    "PDR PDR-B04": 17,
+    "PDS PDS-M2-001": 3,
+    "PDS PDS-M1-001": 6
+   },
+   "trades_with_failed_entry_checks": 47,
+   "trades_with_unresolved_checks": 171
+  },
+  "C": {
+   "config_id": "PHASE55-C-144ceb6b28b1",
+   "confirmed_signals": 1112,
+   "by_strategy": {
+    "IRF": 786,
+    "ORB": 56,
+    "PDR": 147,
+    "PDS": 111,
+    "RF": 12
+   },
+   "by_method": {
+    "IRF/Method 1": 267,
+    "IRF/Method 2A": 271,
+    "IRF/Method 2B": 248,
+    "ORB/Gap/200DMA": 13,
+    "ORB/Method 1": 27,
+    "ORB/Method 2": 16,
+    "PDR/PDR": 147,
+    "PDS/Method 1": 73,
+    "PDS/Method 2": 19,
+    "PDS/Method 3": 19,
+    "RF/RF": 12
+   },
+   "expected": null,
+   "matches_expected": null,
+   "duplicate_signal_keys": 0,
+   "off_5_minute_grid": 0,
+   "before_09_20": 0,
+   "signals_at_or_before_13_00": 741,
+   "signals_after_13_00": 371,
+   "same_minute_multi_strategy_groups": 15,
+   "same_minute_groups": [
+    [
+     "2025-09-22 11:25",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-11-03 10:10",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-11-07 14:05",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-11-14 13:05",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 12:20",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 12:35",
+     [
+      "IRF/Method 2A/SHORT",
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 12:40",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 13:45",
+     [
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 14:05",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2025-12-09 14:15",
+     [
+      "IRF/Method 1/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2026-03-17 10:45",
+     [
+      "IRF/Method 1/SHORT",
+      "PDR/PDR/LONG"
+     ]
+    ],
+    [
+     "2026-05-20 13:25",
+     [
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 2/SHORT"
+     ]
+    ],
+    [
+     "2026-06-11 14:45",
+     [
+      "IRF/Method 2A/SHORT",
+      "PDS/Method 3/SHORT"
+     ]
+    ],
+    [
+     "2026-07-23 10:55",
+     [
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 1/SHORT"
+     ]
+    ],
+    [
+     "2026-07-23 12:05",
+     [
+      "IRF/Method 2B/SHORT",
+      "PDS/Method 2/SHORT"
+     ]
+    ]
+   ],
+   "failed_entry_checks": 53,
+   "failed_entry_checks_by_rule": {
+    "IRF IRF-M2A-001": 20,
+    "IRF IRF-M2A-002": 4,
+    "PDR PDR-B04": 17,
+    "PDS PDS-M2-001": 3,
+    "PDS PDS-M1-001": 6,
+    "ORB ORB-GAP-SHORT-002": 2,
+    "ORB ORB-GAP-LONG-002": 1
+   },
+   "trades_with_failed_entry_checks": 49,
+   "trades_with_unresolved_checks": 173
+  },
+  "difference_summary": {
+   "A_vs_B": {
+    "IRF:ONLY_IN_A": 391,
+    "PDR:ONLY_IN_A": 26,
+    "PDS:ONLY_IN_A": 20,
+    "IRF:ONLY_IN_B": 303,
+    "PDR:ONLY_IN_B": 86,
+    "PDS:ONLY_IN_B": 74
+   },
+   "A_vs_C": {
+    "IRF:ONLY_IN_A": 391,
+    "PDR:ONLY_IN_A": 26,
+    "PDS:ONLY_IN_A": 20,
+    "IRF:ONLY_IN_C": 303,
+    "PDR:ONLY_IN_C": 86,
+    "PDS:ONLY_IN_C": 74,
+    "ORB:ONLY_IN_C": 3
+   },
+   "B_vs_C": {
+    "ORB:ONLY_IN_C": 3
+   }
+  }
+ },
+ "summary": {
+  "A": {
+   "signals": {
+    "total": 1083,
+    "IRF": 874,
+    "ORB": 53,
+    "PDR": 87,
+    "PDS": 57,
+    "RF": 12,
+    "by_method": {
+     "IRF/Method 1": 349,
+     "IRF/Method 2A": 215,
+     "IRF/Method 2B": 310,
+     "ORB/Gap/200DMA": 10,
+     "ORB/Method 1": 27,
+     "ORB/Method 2": 16,
+     "PDR/PDR": 87,
+     "PDS/Method 1": 18,
+     "PDS/Method 2": 6,
+     "PDS/Method 3": 33,
+     "RF/RF": 12
+    }
+   },
+   "sessions": {
+    "sessions": 247,
+    "sessions_with_a_trade": 188,
+    "no_trade_sessions": 59,
+    "final_states": {
+     "DAY_FINISHED": 123,
+     "SECOND_TRADE_ELIGIBLE": 65,
+     "READY_FOR_FIRST_TRADE": 57,
+     "UNRESOLVED_EXECUTION": 2
+    }
+   },
+   "A": {
+    "trades": 196,
+    "first_trades": 188,
+    "second_trades": 8,
+    "winning_trades": 117,
+    "losing_trades": 79,
+    "win_rate_pct": 59.69,
+    "net_pnl_rs": 297765.0,
+    "gross_points_total": 763.5,
+    "avg_points_per_trade": 3.895,
+    "profit_factor": 1.284,
+    "max_drawdown_rs": 130650.0,
+    "t2_hits": 65,
+    "t1_then_post_t1_stop": 52,
+    "initial_full_stops": 78,
+    "forced_exits": 1,
+    "unresolved_exits": 0,
+    "t1_hits": 117,
+    "avg_holding_minutes": 49.9,
+    "ambiguous_trades": 0
+   },
+   "B": {
+    "trades": 196,
+    "first_trades": 188,
+    "second_trades": 8,
+    "winning_trades": 117,
+    "losing_trades": 79,
+    "win_rate_pct": 59.69,
+    "net_pnl_rs": 284045.0,
+    "gross_points_total": 763.5,
+    "avg_points_per_trade": 3.895,
+    "profit_factor": 1.269,
+    "max_drawdown_rs": 133450.0,
+    "t2_hits": 65,
+    "t1_then_post_t1_stop": 52,
+    "initial_full_stops": 78,
+    "forced_exits": 1,
+    "unresolved_exits": 0,
+    "t1_hits": 117,
+    "avg_holding_minutes": 49.9,
+    "ambiguous_trades": 0
+   },
+   "C": {
+    "trades": 196,
+    "first_trades": 188,
+    "second_trades": 8,
+    "winning_trades": 117,
+    "losing_trades": 79,
+    "win_rate_pct": 59.69,
+    "net_pnl_rs": 245825.0,
+    "gross_points_total": 763.5,
+    "avg_points_per_trade": 3.895,
+    "profit_factor": 1.23,
+    "max_drawdown_rs": 141250.0,
+    "t2_hits": 65,
+    "t1_then_post_t1_stop": 52,
+    "initial_full_stops": 78,
+    "forced_exits": 1,
+    "unresolved_exits": 0,
+    "t1_hits": 117,
+    "avg_holding_minutes": 49.9,
+    "ambiguous_trades": 0
+   },
+   "D": {
+    "trades": 196,
+    "first_trades": 188,
+    "second_trades": 8,
+    "winning_trades": 117,
+    "losing_trades": 79,
+    "win_rate_pct": 59.69,
+    "net_pnl_rs": 207605.0,
+    "gross_points_total": 763.5,
+    "avg_points_per_trade": 3.895,
+    "profit_factor": 1.191,
+    "max_drawdown_rs": 149050.0,
+    "t2_hits": 65,
+    "t1_then_post_t1_stop": 52,
+    "initial_full_stops": 78,
+    "forced_exits": 1,
+    "unresolved_exits": 0,
+    "t1_hits": 117,
+    "avg_holding_minutes": 49.9,
+    "ambiguous_trades": 0
+   },
+   "E": {
+    "trades": 196,
+    "first_trades": 188,
+    "second_trades": 8,
+    "winning_trades": 117,
+    "losing_trades": 79,
+    "win_rate_pct": 59.69,
+    "net_pnl_rs": 131165.0,
+    "gross_points_total": 763.5,
+    "avg_points_per_trade": 3.895,
+    "profit_factor": 1.118,
+    "max_drawdown_rs": 175700.5,
+    "t2_hits": 65,
+    "t1_then_post_t1_stop": 52,
+    "initial_full_stops": 78,
+    "forced_exits": 1,
+    "unresolved_exits": 0,
+    "t1_hits": 117,
+    "avg_holding_minutes": 49.9,
+    "ambiguous_trades": 0
+   }
+  },
+  "B": {
+   "signals": {
+    "total": 1109,
+    "IRF": 786,
+    "ORB": 53,
+    "PDR": 147,
+    "PDS": 111,
+    "RF": 12,
+    "by_method": {
+     "IRF/Method 1": 267,
+     "IRF/Method 2A": 271,
+     "IRF/Method 2B": 248,
+     "ORB/Gap/200DMA": 10,
+     "ORB/Method 1": 27,
+     "ORB/Method 2": 16,
+     "PDR/PDR": 147,
+     "PDS/Method 1": 73,
+     "PDS/Method 2": 19,
+     "PDS/Method 3": 19,
+     "RF/RF": 12
+    }
+   },
+   "sessions": {
+    "sessions": 247,
+    "sessions_with_a_trade": 175,
+    "no_trade_sessions": 72,
+    "final_states": {
+     "DAY_FINISHED": 115,
+     "SECOND_TRADE_ELIGIBLE": 60,
+     "READY_FOR_FIRST_TRADE": 71,
+     "UNRESOLVED_EXECUTION": 1
+    }
+   },
+   "A": {
+    "trades": 188,
+    "first_trades": 175,
+    "second_trades": 13,
+    "winning_trades": 110,
+    "losing_trades": 78,
+    "win_rate_pct": 58.51,
+    "net_pnl_rs": 258550.5,
+    "gross_points_total": 662.95,
+    "avg_points_per_trade": 3.526,
+    "profit_factor": 1.25,
+    "max_drawdown_rs": 204145.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 47,
+    "initial_full_stops": 77,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 110,
+    "avg_holding_minutes": 52.5,
+    "ambiguous_trades": 0
+   },
+   "B": {
+    "trades": 188,
+    "first_trades": 175,
+    "second_trades": 13,
+    "winning_trades": 110,
+    "losing_trades": 78,
+    "win_rate_pct": 58.51,
+    "net_pnl_rs": 245390.5,
+    "gross_points_total": 662.95,
+    "avg_points_per_trade": 3.526,
+    "profit_factor": 1.236,
+    "max_drawdown_rs": 207785.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 47,
+    "initial_full_stops": 77,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 110,
+    "avg_holding_minutes": 52.5,
+    "ambiguous_trades": 0
+   },
+   "C": {
+    "trades": 188,
+    "first_trades": 175,
+    "second_trades": 13,
+    "winning_trades": 110,
+    "losing_trades": 78,
+    "win_rate_pct": 58.51,
+    "net_pnl_rs": 208730.5,
+    "gross_points_total": 662.95,
+    "avg_points_per_trade": 3.526,
+    "profit_factor": 1.198,
+    "max_drawdown_rs": 217925.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 47,
+    "initial_full_stops": 77,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 110,
+    "avg_holding_minutes": 52.5,
+    "ambiguous_trades": 0
+   },
+   "D": {
+    "trades": 188,
+    "first_trades": 175,
+    "second_trades": 13,
+    "winning_trades": 110,
+    "losing_trades": 78,
+    "win_rate_pct": 58.51,
+    "net_pnl_rs": 172070.5,
+    "gross_points_total": 662.95,
+    "avg_points_per_trade": 3.526,
+    "profit_factor": 1.161,
+    "max_drawdown_rs": 228065.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 47,
+    "initial_full_stops": 77,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 110,
+    "avg_holding_minutes": 52.5,
+    "ambiguous_trades": 0
+   },
+   "E": {
+    "trades": 188,
+    "first_trades": 175,
+    "second_trades": 13,
+    "winning_trades": 110,
+    "losing_trades": 78,
+    "win_rate_pct": 58.51,
+    "net_pnl_rs": 98750.5,
+    "gross_points_total": 662.95,
+    "avg_points_per_trade": 3.526,
+    "profit_factor": 1.09,
+    "max_drawdown_rs": 248345.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 47,
+    "initial_full_stops": 77,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 110,
+    "avg_holding_minutes": 52.5,
+    "ambiguous_trades": 0
+   }
+  },
+  "C": {
+   "signals": {
+    "total": 1112,
+    "IRF": 786,
+    "ORB": 56,
+    "PDR": 147,
+    "PDS": 111,
+    "RF": 12,
+    "by_method": {
+     "IRF/Method 1": 267,
+     "IRF/Method 2A": 271,
+     "IRF/Method 2B": 248,
+     "ORB/Gap/200DMA": 13,
+     "ORB/Method 1": 27,
+     "ORB/Method 2": 16,
+     "PDR/PDR": 147,
+     "PDS/Method 1": 73,
+     "PDS/Method 2": 19,
+     "PDS/Method 3": 19,
+     "RF/RF": 12
+    }
+   },
+   "sessions": {
+    "sessions": 247,
+    "sessions_with_a_trade": 177,
+    "no_trade_sessions": 70,
+    "final_states": {
+     "DAY_FINISHED": 116,
+     "SECOND_TRADE_ELIGIBLE": 61,
+     "READY_FOR_FIRST_TRADE": 69,
+     "UNRESOLVED_EXECUTION": 1
+    }
+   },
+   "A": {
+    "trades": 190,
+    "first_trades": 177,
+    "second_trades": 13,
+    "winning_trades": 111,
+    "losing_trades": 79,
+    "win_rate_pct": 58.42,
+    "net_pnl_rs": 250945.5,
+    "gross_points_total": 643.45,
+    "avg_points_per_trade": 3.387,
+    "profit_factor": 1.24,
+    "max_drawdown_rs": 215845.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 48,
+    "initial_full_stops": 78,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 111,
+    "avg_holding_minutes": 51.2,
+    "ambiguous_trades": 0
+   },
+   "B": {
+    "trades": 190,
+    "first_trades": 177,
+    "second_trades": 13,
+    "winning_trades": 111,
+    "losing_trades": 79,
+    "win_rate_pct": 58.42,
+    "net_pnl_rs": 237645.5,
+    "gross_points_total": 643.45,
+    "avg_points_per_trade": 3.387,
+    "profit_factor": 1.226,
+    "max_drawdown_rs": 219555.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 48,
+    "initial_full_stops": 78,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 111,
+    "avg_holding_minutes": 51.2,
+    "ambiguous_trades": 0
+   },
+   "C": {
+    "trades": 190,
+    "first_trades": 177,
+    "second_trades": 13,
+    "winning_trades": 111,
+    "losing_trades": 79,
+    "win_rate_pct": 58.42,
+    "net_pnl_rs": 200595.5,
+    "gross_points_total": 643.45,
+    "avg_points_per_trade": 3.387,
+    "profit_factor": 1.188,
+    "max_drawdown_rs": 229890.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 48,
+    "initial_full_stops": 78,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 111,
+    "avg_holding_minutes": 51.2,
+    "ambiguous_trades": 0
+   },
+   "D": {
+    "trades": 190,
+    "first_trades": 177,
+    "second_trades": 13,
+    "winning_trades": 111,
+    "losing_trades": 79,
+    "win_rate_pct": 58.42,
+    "net_pnl_rs": 163545.5,
+    "gross_points_total": 643.45,
+    "avg_points_per_trade": 3.387,
+    "profit_factor": 1.151,
+    "max_drawdown_rs": 240225.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 48,
+    "initial_full_stops": 78,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 111,
+    "avg_holding_minutes": 51.2,
+    "ambiguous_trades": 0
+   },
+   "E": {
+    "trades": 190,
+    "first_trades": 177,
+    "second_trades": 13,
+    "winning_trades": 111,
+    "losing_trades": 79,
+    "win_rate_pct": 58.42,
+    "net_pnl_rs": 89445.5,
+    "gross_points_total": 643.45,
+    "avg_points_per_trade": 3.387,
+    "profit_factor": 1.08,
+    "max_drawdown_rs": 260895.5,
+    "t2_hits": 62,
+    "t1_then_post_t1_stop": 48,
+    "initial_full_stops": 78,
+    "forced_exits": 2,
+    "unresolved_exits": 0,
+    "t1_hits": 111,
+    "avg_holding_minutes": 51.2,
+    "ambiguous_trades": 0
+   }
+  }
+ },
+ "ambiguous_trades": {
+  "A": 0,
+  "B": 0,
+  "C": 0
+ },
+ "comparison_kinds": {
+  "A_vs_B": {
+   "TRADED_ONLY_IN_A": 16,
+   "FIRST_TRADE_CHANGED": 42,
+   "SAME_ENTRIES_DIFFERENT_EXIT_OR_PNL": 3,
+   "SECOND_TRADE_DIFFERS": 1,
+   "TRADED_ONLY_IN_B": 3
+  },
+  "A_vs_C": {
+   "TRADED_ONLY_IN_A": 16,
+   "FIRST_TRADE_CHANGED": 42,
+   "SAME_ENTRIES_DIFFERENT_EXIT_OR_PNL": 3,
+   "TRADED_ONLY_IN_C": 5,
+   "SECOND_TRADE_DIFFERS": 1
+  },
+  "B_vs_C": {
+   "TRADED_ONLY_IN_C": 2,
+   "FIRST_TRADE_CHANGED": 1
+  }
+ },
+ "unresolved_exits": {
+  "A": 0,
+  "B": 0,
+  "C": 0
+ },
+ "daily_reports": {
+  "daily_reports": 193,
+  "charts_for_changed_trades": 112
+ },
+ "robustness": {
+  "window": "Window B 2022-09-01..2025-08-31 (5paisa minutes)",
+  "status": "DATA_VALIDATED",
+  "sessions_evaluated": 738,
+  "minute_source": "FIVEPAISA_1M_PHASE4",
+  "A": {
+   "signals": {
+    "total": 3142,
+    "IRF": 2487,
+    "ORB": 149,
+    "PDR": 305,
+    "PDS": 121,
+    "RF": 80,
+    "by_method": {
+     "IRF/Method 1": 971,
+     "IRF/Method 2A": 553,
+     "IRF/Method 2B": 963,
+     "ORB/Gap/200DMA": 26,
+     "ORB/Method 1": 72,
+     "ORB/Method 2": 51,
+     "PDR/PDR": 305,
+     "PDS/Method 1": 35,
+     "PDS/Method 2": 16,
+     "PDS/Method 3": 70,
+     "RF/RF": 80
+    }
+   },
+   "sessions": {
+    "sessions": 738,
+    "sessions_with_a_trade": 565,
+    "no_trade_sessions": 173,
+    "final_states": {
+     "DAY_FINISHED": 377,
+     "READY_FOR_FIRST_TRADE": 162,
+     "SECOND_TRADE_ELIGIBLE": 188,
+     "UNRESOLVED_EXECUTION": 11
+    }
+   },
+   "gross": {
+    "trades": 609,
+    "first_trades": 565,
+    "second_trades": 44,
+    "winning_trades": 352,
+    "losing_trades": 257,
+    "win_rate_pct": 57.8,
+    "net_pnl_rs": 509398.5,
+    "gross_points_total": 1306.15,
+    "avg_points_per_trade": 2.145,
+    "profit_factor": 1.149,
+    "max_drawdown_rs": 188340.75,
+    "t2_hits": 179,
+    "t1_then_post_t1_stop": 152,
+    "initial_full_stops": 256,
+    "forced_exits": 22,
+    "unresolved_exits": 0,
+    "t1_hits": 351,
+    "avg_holding_minutes": 70.8,
+    "ambiguous_trades": 6
+   },
+   "net_70": {
+    "trades": 609,
+    "first_trades": 565,
+    "second_trades": 44,
+    "winning_trades": 352,
+    "losing_trades": 257,
+    "win_rate_pct": 57.8,
+    "net_pnl_rs": 466768.5,
+    "gross_points_total": 1306.15,
+    "avg_points_per_trade": 2.145,
+    "profit_factor": 1.136,
+    "max_drawdown_rs": 194502.75,
+    "t2_hits": 179,
+    "t1_then_post_t1_stop": 152,
+    "initial_full_stops": 256,
+    "forced_exits": 22,
+    "unresolved_exits": 0,
+    "t1_hits": 351,
+    "avg_holding_minutes": 70.8,
+    "ambiguous_trades": 6
+   },
+   "net_70_slip_1": {
+    "trades": 609,
+    "first_trades": 565,
+    "second_trades": 44,
+    "winning_trades": 352,
+    "losing_trades": 257,
+    "win_rate_pct": 57.8,
+    "net_pnl_rs": -8251.5,
+    "gross_points_total": 1306.15,
+    "avg_points_per_trade": 2.145,
+    "profit_factor": 0.998,
+    "max_drawdown_rs": 378669.25,
+    "t2_hits": 179,
+    "t1_then_post_t1_stop": 152,
+    "initial_full_stops": 256,
+    "forced_exits": 22,
+    "unresolved_exits": 0,
+    "t1_hits": 351,
+    "avg_holding_minutes": 70.8,
+    "ambiguous_trades": 6
+   },
+   "by_year": {
+    "2022": {
+     "gross": {
+      "trades": 64,
+      "first_trades": 60,
+      "second_trades": 4,
+      "winning_trades": 31,
+      "losing_trades": 33,
+      "win_rate_pct": 48.44,
+      "net_pnl_rs": -96690.75,
+      "gross_points_total": -247.925,
+      "avg_points_per_trade": -3.874,
+      "profit_factor": 0.782,
+      "max_drawdown_rs": 188340.75,
+      "t2_hits": 16,
+      "t1_then_post_t1_stop": 13,
+      "initial_full_stops": 33,
+      "forced_exits": 2,
+      "unresolved_exits": 0,
+      "t1_hits": 31,
+      "avg_holding_minutes": 88.4,
+      "ambiguous_trades": 0
+     },
+     "net_70": {
+      "trades": 64,
+      "first_trades": 60,
+      "second_trades": 4,
+      "winning_trades": 31,
+      "losing_trades": 33,
+      "win_rate_pct": 48.44,
+      "net_pnl_rs": -101170.75,
+      "gross_points_total": -247.925,
+      "avg_points_per_trade": -3.874,
+      "profit_factor": 0.773,
+      "max_drawdown_rs": 191630.75,
+      "t2_hits": 16,
+      "t1_then_post_t1_stop": 13,
+      "initial_full_stops": 33,
+      "forced_exits": 2,
+      "unresolved_exits": 0,
+      "t1_hits": 31,
+      "avg_holding_minutes": 88.4,
+      "ambiguous_trades": 0
+     }
+    },
+    "2023": {
+     "gross": {
+      "trades": 206,
+      "first_trades": 195,
+      "second_trades": 11,
+      "winning_trades": 130,
+      "losing_trades": 76,
+      "win_rate_pct": 63.11,
+      "net_pnl_rs": 462949.5,
+      "gross_points_total": 1187.05,
+      "avg_points_per_trade": 5.762,
+      "profit_factor": 1.46,
+      "max_drawdown_rs": 79365.0,
+      "t2_hits": 64,
+      "t1_then_post_t1_stop": 50,
+      "initial_full_stops": 76,
+      "forced_exits": 16,
+      "unresolved_exits": 0,
+      "t1_hits": 129,
+      "avg_holding_minutes": 102.8,
+      "ambiguous_trades": 0
+     },
+     "net_70": {
+      "trades": 206,
+      "first_trades": 195,
+      "second_trades": 11,
+      "winning_trades": 130,
+      "losing_trades": 76,
+      "win_rate_pct": 63.11,
+      "net_pnl_rs": 448529.5,
+      "gross_points_total": 1187.05,
+      "avg_points_per_trade": 5.762,
+      "profit_factor": 1.443,
+      "max_drawdown_rs": 80065.0,
+      "t2_hits": 64,
+      "t1_then_post_t1_stop": 50,
+      "initial_full_stops": 76,
+      "forced_exits": 16,
+      "unresolved_exits": 0,
+      "t1_hits": 129,
+      "avg_holding_minutes": 102.8,
+      "ambiguous_trades": 0
+     }
+    },
+    "2024": {
+     "gross": {
+      "trades": 210,
+      "first_trades": 190,
+      "second_trades": 20,
+      "winning_trades": 115,
+      "losing_trades": 95,
+      "win_rate_pct": 54.76,
+      "net_pnl_rs": 6483.75,
+      "gross_points_total": 16.625,
+      "avg_points_per_trade": 0.079,
+      "profit_factor": 1.005,
+      "max_drawdown_rs": 174710.25,
+      "t2_hits": 59,
+      "t1_then_post_t1_stop": 54,
+      "initial_full_stops": 94,
+      "forced_exits": 3,
+      "unresolved_exits": 0,
+      "t1_hits": 115,
+      "avg_holding_minutes": 50.0,
+      "ambiguous_trades": 3
+     },
+     "net_70": {
+      "trades": 210,
+      "first_trades": 190,
+      "second_trades": 20,
+      "winning_trades": 115,
+      "losing_trades": 95,
+      "win_rate_pct": 54.76,
+      "net_pnl_rs": -8216.25,
+      "gross_points_total": 16.625,
+      "avg_points_per_trade": 0.079,
+      "profit_factor": 0.993,
+      "max_drawdown_rs": 180940.25,
+      "t2_hits": 59,
+      "t1_then_post_t1_stop": 54,
+      "initial_full_stops": 94,
+      "forced_exits": 3,
+      "unresolved_exits": 0,
+      "t1_hits": 115,
+      "avg_holding_minutes": 50.0,
+      "ambiguous_trades": 3
+     }
+    },
+    "2025": {
+     "gross": {
+      "trades": 129,
+      "first_trades": 120,
+      "second_trades": 9,
+      "winning_trades": 76,
+      "losing_trades": 53,
+      "win_rate_pct": 58.91,
+      "net_pnl_rs": 136656.0,
+      "gross_points_total": 350.4,
+      "avg_points_per_trade": 2.716,
+      "profit_factor": 1.193,
+      "max_drawdown_rs": 173706.0,
+      "t2_hits": 40,
+      "t1_then_post_t1_stop": 35,
+      "initial_full_stops": 53,
+      "forced_exits": 1,
+      "unresolved_exits": 0,
+      "t1_hits": 76,
+      "avg_holding_minutes": 44.7,
+      "ambiguous_trades": 3
+     },
+     "net_70": {
+      "trades": 129,
+      "first_trades": 120,
+      "second_trades": 9,
+      "winning_trades": 76,
+      "losing_trades": 53,
+      "win_rate_pct": 58.91,
+      "net_pnl_rs": 127626.0,
+      "gross_points_total": 350.4,
+      "avg_points_per_trade": 2.716,
+      "profit_factor": 1.179,
+      "max_drawdown_rs": 177206.0,
+      "t2_hits": 40,
+      "t1_then_post_t1_stop": 35,
+      "initial_full_stops": 53,
+      "forced_exits": 1,
+      "unresolved_exits": 0,
+      "t1_hits": 76,
+      "avg_holding_minutes": 44.7,
+      "ambiguous_trades": 3
+     }
+    }
+   },
+   "by_strategy": {
+    "IRF": {
+     "trades": 328,
+     "first_trades": 328,
+     "second_trades": 0,
+     "winning_trades": 192,
+     "losing_trades": 136,
+     "win_rate_pct": 58.54,
+     "net_pnl_rs": 357415.5,
+     "gross_points_total": 916.45,
+     "avg_points_per_trade": 2.794,
+     "profit_factor": 1.194,
+     "max_drawdown_rs": 161596.5,
+     "t2_hits": 106,
+     "t1_then_post_t1_stop": 76,
+     "initial_full_stops": 135,
+     "forced_exits": 11,
+     "unresolved_exits": 0,
+     "t1_hits": 192,
+     "avg_holding_minutes": 69.4,
+     "ambiguous_trades": 5
+    },
+    "ORB": {
+     "trades": 101,
+     "first_trades": 101,
+     "second_trades": 0,
+     "winning_trades": 58,
+     "losing_trades": 43,
+     "win_rate_pct": 57.43,
+     "net_pnl_rs": 108254.25,
+     "gross_points_total": 277.575,
+     "avg_points_per_trade": 2.748,
+     "profit_factor": 1.215,
+     "max_drawdown_rs": 146961.75,
+     "t2_hits": 28,
+     "t1_then_post_t1_stop": 28,
+     "initial_full_stops": 43,
+     "forced_exits": 2,
+     "unresolved_exits": 0,
+     "t1_hits": 58,
+     "avg_holding_minutes": 49.8,
+     "ambiguous_trades": 0
+    },
+    "PDR": {
+     "trades": 106,
+     "first_trades": 73,
+     "second_trades": 33,
+     "winning_trades": 54,
+     "losing_trades": 52,
+     "win_rate_pct": 50.94,
+     "net_pnl_rs": -98192.25,
+     "gross_points_total": -251.775,
+     "avg_points_per_trade": -2.375,
+     "profit_factor": 0.862,
+     "max_drawdown_rs": 257468.25,
+     "t2_hits": 23,
+     "t1_then_post_t1_stop": 22,
+     "initial_full_stops": 52,
+     "forced_exits": 9,
+     "unresolved_exits": 0,
+     "t1_hits": 53,
+     "avg_holding_minutes": 95.2,
+     "ambiguous_trades": 0
+    },
+    "PDS": {
+     "trades": 27,
+     "first_trades": 16,
+     "second_trades": 11,
+     "winning_trades": 18,
+     "losing_trades": 9,
+     "win_rate_pct": 66.67,
+     "net_pnl_rs": 83811.0,
+     "gross_points_total": 214.9,
+     "avg_points_per_trade": 7.959,
+     "profit_factor": 1.68,
+     "max_drawdown_rs": 36309.0,
+     "t2_hits": 9,
+     "t1_then_post_t1_stop": 9,
+     "initial_full_stops": 9,
+     "forced_exits": 0,
+     "unresolved_exits": 0,
+     "t1_hits": 18,
+     "avg_holding_minutes": 42.1,
+     "ambiguous_trades": 0
+    },
+    "RF": {
+     "trades": 47,
+     "first_trades": 47,
+     "second_trades": 0,
+     "winning_trades": 30,
+     "losing_trades": 17,
+     "win_rate_pct": 63.83,
+     "net_pnl_rs": 58110.0,
+     "gross_points_total": 149.0,
+     "avg_points_per_trade": 3.17,
+     "profit_factor": 1.25,
+     "max_drawdown_rs": 69615.0,
+     "t2_hits": 13,
+     "t1_then_post_t1_stop": 17,
+     "initial_full_stops": 17,
+     "forced_exits": 0,
+     "unresolved_exits": 0,
+     "t1_hits": 30,
+     "avg_holding_minutes": 86.9,
+     "ambiguous_trades": 1
+    }
+   }
+  },
+  "B": {
+   "signals": {
+    "total": 3121,
+    "IRF": 2182,
+    "ORB": 149,
+    "PDR": 453,
+    "PDS": 257,
+    "RF": 80,
+    "by_method": {
+     "IRF/Method 1": 710,
+     "IRF/Method 2A": 697,
+     "IRF/Method 2B": 775,
+     "ORB/Gap/200DMA": 26,
+     "ORB/Method 1": 72,
+     "ORB/Method 2": 51,
+     "PDR/PDR": 453,
+     "PDS/Method 1": 140,
+     "PDS/Method 2": 74,
+     "PDS/Method 3": 43,
+     "RF/RF": 80
+    }
+   },
+   "sessions": {
+    "sessions": 738,
+    "sessions_with_a_trade": 543,
+    "no_trade_sessions": 195,
+    "final_states": {
+     "DAY_FINISHED": 368,
+     "READY_FOR_FIRST_TRADE": 186,
+     "SECOND_TRADE_ELIGIBLE": 175,
+     "UNRESOLVED_EXECUTION": 9
+    }
+   },
+   "gross": {
+    "trades": 598,
+    "first_trades": 543,
+    "second_trades": 55,
+    "winning_trades": 340,
+    "losing_trades": 258,
+    "win_rate_pct": 56.86,
+    "net_pnl_rs": 152538.75,
+    "gross_points_total": 391.125,
+    "avg_points_per_trade": 0.654,
+    "profit_factor": 1.044,
+    "max_drawdown_rs": 282798.75,
+    "t2_hits": 155,
+    "t1_then_post_t1_stop": 160,
+    "initial_full_stops": 257,
+    "forced_exits": 26,
+    "unresolved_exits": 0,
+    "t1_hits": 337,
+    "avg_holding_minutes": 71.5,
+    "ambiguous_trades": 7
+   },
+   "net_70": {
+    "trades": 598,
+    "first_trades": 543,
+    "second_trades": 55,
+    "winning_trades": 340,
+    "losing_trades": 258,
+    "win_rate_pct": 56.86,
+    "net_pnl_rs": 110678.75,
+    "gross_points_total": 391.125,
+    "avg_points_per_trade": 0.654,
+    "profit_factor": 1.032,
+    "max_drawdown_rs": 289588.75,
+    "t2_hits": 155,
+    "t1_then_post_t1_stop": 160,
+    "initial_full_stops": 257,
+    "forced_exits": 26,
+    "unresolved_exits": 0,
+    "t1_hits": 337,
+    "avg_holding_minutes": 71.5,
+    "ambiguous_trades": 7
+   },
+   "net_70_slip_1": {
+    "trades": 598,
+    "first_trades": 543,
+    "second_trades": 55,
+    "winning_trades": 339,
+    "losing_trades": 259,
+    "win_rate_pct": 56.69,
+    "net_pnl_rs": -355761.25,
+    "gross_points_total": 391.125,
+    "avg_points_per_trade": 0.654,
+    "profit_factor": 0.903,
+    "max_drawdown_rs": 536491.25,
+    "t2_hits": 155,
+    "t1_then_post_t1_stop": 160,
+    "initial_full_stops": 257,
+    "forced_exits": 26,
+    "unresolved_exits": 0,
+    "t1_hits": 337,
+    "avg_holding_minutes": 71.5,
+    "ambiguous_trades": 7
+   },
+   "by_year": {
+    "2022": {
+     "gross": {
+      "trades": 65,
+      "first_trades": 60,
+      "second_trades": 5,
+      "winning_trades": 31,
+      "losing_trades": 34,
+      "win_rate_pct": 47.69,
+      "net_pnl_rs": -148083.0,
+      "gross_points_total": -379.7,
+      "avg_points_per_trade": -5.842,
+      "profit_factor": 0.676,
+      "max_drawdown_rs": 165048.0,
+      "t2_hits": 13,
+      "t1_then_post_t1_stop": 16,
+      "initial_full_stops": 34,
+      "forced_exits": 2,
+      "unresolved_exits": 0,
+      "t1_hits": 31,
+      "avg_holding_minutes": 87.5,
+      "ambiguous_trades": 0
+     },
+     "net_70": {
+      "trades": 65,
+      "first_trades": 60,
+      "second_trades": 5,
+      "winning_trades": 31,
+      "losing_trades": 34,
+      "win_rate_pct": 47.69,
+      "net_pnl_rs": -152633.0,
+      "gross_points_total": -379.7,
+      "avg_points_per_trade": -5.842,
+      "profit_factor": 0.667,
+      "max_drawdown_rs": 169528.0,
+      "t2_hits": 13,
+      "t1_then_post_t1_stop": 16,
+      "initial_full_stops": 34,
+      "forced_exits": 2,
+      "unresolved_exits": 0,
+      "t1_hits": 31,
+      "avg_holding_minutes": 87.5,
+      "ambiguous_trades": 0
+     }
+    },
+    "2023": {
+     "gross": {
+      "trades": 198,
+      "first_trades": 184,
+      "second_trades": 14,
+      "winning_trades": 122,
+      "losing_trades": 76,
+      "win_rate_pct": 61.62,
+      "net_pnl_rs": 232586.25,
+      "gross_points_total": 596.375,
+      "avg_points_per_trade": 3.012,
+      "profit_factor": 1.231,
+      "max_drawdown_rs": 121602.0,
+      "t2_hits": 48,
+      "t1_then_post_t1_stop": 54,
+      "initial_full_stops": 76,
+      "forced_exits": 20,
+      "unresolved_exits": 0,
+      "t1_hits": 119,
+      "avg_holding_minutes": 107.8,
+      "ambiguous_trades": 0
+     },
+     "net_70": {
+      "trades": 198,
+      "first_trades": 184,
+      "second_trades": 14,
+      "winning_trades": 122,
+      "losing_trades": 76,
+      "win_rate_pct": 61.62,
+      "net_pnl_rs": 218726.25,
+      "gross_points_total": 596.375,
+      "avg_points_per_trade": 3.012,
+      "profit_factor": 1.216,
+      "max_drawdown_rs": 124192.0,
+      "t2_hits": 48,
+      "t1_then_post_t1_stop": 54,
+      "initial_full_stops": 76,
+      "forced_exits": 20,
+      "unresolved_exits": 0,
+      "t1_hits": 119,
+      "avg_holding_minutes": 107.8,
+      "ambiguous_trades": 0
+     }
+    },
+    "2024": {
+     "gross": {
+      "trades": 209,
+      "first_trades": 184,
+      "second_trades": 25,
+      "winning_trades": 116,
+      "losing_trades": 93,
+      "win_rate_pct": 55.5,
+      "net_pnl_rs": -8024.25,
+      "gross_points_total": -20.575,
+      "avg_points_per_trade": -0.098,
+      "profit_factor": 0.993,
+      "max_drawdown_rs": 282798.75,
+      "t2_hits": 55,
+      "t1_then_post_t1_stop": 59,
+      "initial_full_stops": 92,
+      "forced_exits": 3,
+      "unresolved_exits": 0,
+      "t1_hits": 116,
+      "avg_holding_minutes": 50.6,
+      "ambiguous_trades": 4
+     },
+     "net_70": {
+      "trades": 209,
+      "first_trades": 184,
+      "second_trades": 25,
+      "winning_trades": 116,
+      "losing_trades": 93,
+      "win_rate_pct": 55.5,
+      "net_pnl_rs": -22654.25,
+      "gross_points_total": -20.575,
+      "avg_points_per_trade": -0.098,
+      "profit_factor": 0.982,
+      "max_drawdown_rs": 289588.75,
+      "t2_hits": 55,
+      "t1_then_post_t1_stop": 59,
+      "initial_full_stops": 92,
+      "forced_exits": 3,
+      "unresolved_exits": 0,
+      "t1_hits": 116,
+      "avg_holding_minutes": 50.6,
+      "ambiguous_trades": 4
+     }
+    },
+    "2025": {
+     "gross": {
+      "trades": 126,
+      "first_trades": 115,
+      "second_trades": 11,
+      "winning_trades": 71,
+      "losing_trades": 55,
+      "win_rate_pct": 56.35,
+      "net_pnl_rs": 76059.75,
+      "gross_points_total": 195.025,
+      "avg_points_per_trade": 1.548,
+      "profit_factor": 1.103,
+      "max_drawdown_rs": 158915.25,
+      "t2_hits": 39,
+      "t1_then_post_t1_stop": 31,
+      "initial_full_stops": 55,
+      "forced_exits": 1,
+      "unresolved_exits": 0,
+      "t1_hits": 71,
+      "avg_holding_minutes": 41.1,
+      "ambiguous_trades": 3
+     },
+     "net_70": {
+      "trades": 126,
+      "first_trades": 115,
+      "second_trades": 11,
+      "winning_trades": 71,
+      "losing_trades": 55,
+      "win_rate_pct": 56.35,
+      "net_pnl_rs": 67239.75,
+      "gross_points_total": 195.025,
+      "avg_points_per_trade": 1.548,
+      "profit_factor": 1.091,
+      "max_drawdown_rs": 163535.25,
+      "t2_hits": 39,
+      "t1_then_post_t1_stop": 31,
+      "initial_full_stops": 55,
+      "forced_exits": 1,
+      "unresolved_exits": 0,
+      "t1_hits": 71,
+      "avg_holding_minutes": 41.1,
+      "ambiguous_trades": 3
+     }
+    }
+   },
+   "by_strategy": {
+    "IRF": {
+     "trades": 274,
+     "first_trades": 274,
+     "second_trades": 0,
+     "winning_trades": 162,
+     "losing_trades": 112,
+     "win_rate_pct": 59.12,
+     "net_pnl_rs": 176406.75,
+     "gross_points_total": 452.325,
+     "avg_points_per_trade": 1.651,
+     "profit_factor": 1.116,
+     "max_drawdown_rs": 158730.0,
+     "t2_hits": 76,
+     "t1_then_post_t1_stop": 74,
+     "initial_full_stops": 111,
+     "forced_exits": 13,
+     "unresolved_exits": 0,
+     "t1_hits": 160,
+     "avg_holding_minutes": 72.9,
+     "ambiguous_trades": 5
+    },
+    "ORB": {
+     "trades": 101,
+     "first_trades": 101,
+     "second_trades": 0,
+     "winning_trades": 58,
+     "losing_trades": 43,
+     "win_rate_pct": 57.43,
+     "net_pnl_rs": 108254.25,
+     "gross_points_total": 277.575,
+     "avg_points_per_trade": 2.748,
+     "profit_factor": 1.215,
+     "max_drawdown_rs": 146961.75,
+     "t2_hits": 28,
+     "t1_then_post_t1_stop": 28,
+     "initial_full_stops": 43,
+     "forced_exits": 2,
+     "unresolved_exits": 0,
+     "t1_hits": 58,
+     "avg_holding_minutes": 49.8,
+     "ambiguous_trades": 0
+    },
+    "PDR": {
+     "trades": 123,
+     "first_trades": 85,
+     "second_trades": 38,
+     "winning_trades": 61,
+     "losing_trades": 62,
+     "win_rate_pct": 49.59,
+     "net_pnl_rs": -169552.5,
+     "gross_points_total": -434.75,
+     "avg_points_per_trade": -3.535,
+     "profit_factor": 0.8,
+     "max_drawdown_rs": 237168.75,
+     "t2_hits": 26,
+     "t1_then_post_t1_stop": 26,
+     "initial_full_stops": 62,
+     "forced_exits": 9,
+     "unresolved_exits": 0,
+     "t1_hits": 60,
+     "avg_holding_minutes": 87.8,
+     "ambiguous_trades": 1
+    },
+    "PDS": {
+     "trades": 52,
+     "first_trades": 35,
+     "second_trades": 17,
+     "winning_trades": 29,
+     "losing_trades": 23,
+     "win_rate_pct": 55.77,
+     "net_pnl_rs": -7029.75,
+     "gross_points_total": -18.025,
+     "avg_points_per_trade": -0.347,
+     "profit_factor": 0.978,
+     "max_drawdown_rs": 105894.75,
+     "t2_hits": 12,
+     "t1_then_post_t1_stop": 15,
+     "initial_full_stops": 23,
+     "forced_exits": 2,
+     "unresolved_exits": 0,
+     "t1_hits": 29,
+     "avg_holding_minutes": 53.0,
+     "ambiguous_trades": 0
+    },
+    "RF": {
+     "trades": 48,
+     "first_trades": 48,
+     "second_trades": 0,
+     "winning_trades": 30,
+     "losing_trades": 18,
+     "win_rate_pct": 62.5,
+     "net_pnl_rs": 44460.0,
+     "gross_points_total": 114.0,
+     "avg_points_per_trade": 2.375,
+     "profit_factor": 1.181,
+     "max_drawdown_rs": 69615.0,
+     "t2_hits": 13,
+     "t1_then_post_t1_stop": 17,
+     "initial_full_stops": 18,
+     "forced_exits": 0,
+     "unresolved_exits": 0,
+     "t1_hits": 30,
+     "avg_holding_minutes": 88.0,
+     "ambiguous_trades": 1
+    }
+   }
+  },
+  "C": {
+   "signals": {
+    "total": 3132,
+    "IRF": 2182,
+    "ORB": 160,
+    "PDR": 453,
+    "PDS": 257,
+    "RF": 80,
+    "by_method": {
+     "IRF/Method 1": 710,
+     "IRF/Method 2A": 697,
+     "IRF/Method 2B": 775,
+     "ORB/Gap/200DMA": 37,
+     "ORB/Method 1": 72,
+     "ORB/Method 2": 51,
+     "PDR/PDR": 453,
+     "PDS/Method 1": 140,
+     "PDS/Method 2": 74,
+     "PDS/Method 3": 43,
+     "RF/RF": 80
+    }
+   },
+   "sessions": {
+    "sessions": 738,
+    "sessions_with_a_trade": 546,
+    "no_trade_sessions": 192,
+    "final_states": {
+     "DAY_FINISHED": 372,
+     "READY_FOR_FIRST_TRADE": 183,
+     "SECOND_TRADE_ELIGIBLE": 174,
+     "UNRESOLVED_EXECUTION": 9
+    }
+   },
+   "gross": {
+    "trades": 601,
+    "first_trades": 546,
+    "second_trades": 55,
+    "winning_trades": 344,
+    "losing_trades": 257,
+    "win_rate_pct": 57.24,
+    "net_pnl_rs": 269538.75,
+    "gross_points_total": 691.125,
+    "avg_points_per_trade": 1.15,
+    "profit_factor": 1.079,
+    "max_drawdown_rs": 280848.75,
+    "t2_hits": 161,
+    "t1_then_post_t1_stop": 158,
+    "initial_full_stops": 256,
+    "forced_exits": 26,
+    "unresolved_exits": 0,
+    "t1_hits": 341,
+    "avg_holding_minutes": 71.1,
+    "ambiguous_trades": 6
+   },
+   "net_70": {
+    "trades": 601,
+    "first_trades": 546,
+    "second_trades": 55,
+    "winning_trades": 344,
+    "losing_trades": 257,
+    "win_rate_pct": 57.24,
+    "net_pnl_rs": 227468.75,
+    "gross_points_total": 691.125,
+    "avg_points_per_trade": 1.15,
+    "profit_factor": 1.066,
+    "max_drawdown_rs": 287638.75,
+    "t2_hits": 161,
+    "t1_then_post_t1_stop": 158,
+    "initial_full_stops": 256,
+    "forced_exits": 26,
+    "unresolved_exits": 0,
+    "t1_hits": 341,
+    "avg_holding_minutes": 71.1,
+    "ambiguous_trades": 6
+   },
+   "net_70_slip_1": {
+    "trades": 601,
+    "first_trades": 546,
+    "second_trades": 55,
+    "winning_trades": 343,
+    "losing_trades": 258,
+    "win_rate_pct": 57.07,
+    "net_pnl_rs": -241311.25,
+    "gross_points_total": 691.125,
+    "avg_points_per_trade": 1.15,
+    "profit_factor": 0.933,
+    "max_drawdown_rs": 451026.25,
+    "t2_hits": 161,
+    "t1_then_post_t1_stop": 158,
+    "initial_full_stops": 256,
+    "forced_exits": 26,
+    "unresolved_exits": 0,
+    "t1_hits": 341,
+    "avg_holding_minutes": 71.1,
+    "ambiguous_trades": 6
+   },
+   "by_year": {
+    "2022": {
+     "gross": {
+      "trades": 65,
+      "first_trades": 60,
+      "second_trades": 5,
+      "winning_trades": 31,
+      "losing_trades": 34,
+      "win_rate_pct": 47.69,
+      "net_pnl_rs": -146133.0,
+      "gross_points_total": -374.7,
+      "avg_points_per_trade": -5.765,
+      "profit_factor": 0.678,
+      "max_drawdown_rs": 163098.0,
+      "t2_hits": 13,
+      "t1_then_post_t1_stop": 16,
+      "initial_full_stops": 34,
+      "forced_exits": 2,
+      "unresolved_exits": 0,
+      "t1_hits": 31,
+      "avg_holding_minutes": 85.6,
+      "ambiguous_trades": 0
+     },
+     "net_70": {
+      "trades": 65,
+      "first_trades": 60,
+      "second_trades": 5,
+      "winning_trades": 31,
+      "losing_trades": 34,
+      "win_rate_pct": 47.69,
+      "net_pnl_rs": -150683.0,
+      "gross_points_total": -374.7,
+      "avg_points_per_trade": -5.765,
+      "profit_factor": 0.67,
+      "max_drawdown_rs": 167578.0,
+      "t2_hits": 13,
+      "t1_then_post_t1_stop": 16,
+      "initial_full_stops": 34,
+      "forced_exits": 2,
+      "unresolved_exits": 0,
+      "t1_hits": 31,
+      "avg_holding_minutes": 85.6,
+      "ambiguous_trades": 0
+     }
+    },
+    "2023": {
+     "gross": {
+      "trades": 199,
+      "first_trades": 185,
+      "second_trades": 14,
+      "winning_trades": 125,
+      "losing_trades": 74,
+      "win_rate_pct": 62.81,
+      "net_pnl_rs": 312731.25,
+      "gross_points_total": 801.875,
+      "avg_points_per_trade": 4.03,
+      "profit_factor": 1.32,
+      "max_drawdown_rs": 97305.0,
+      "t2_hits": 51,
+      "t1_then_post_t1_stop": 54,
+      "initial_full_stops": 74,
+      "forced_exits": 20,
+      "unresolved_exits": 0,
+      "t1_hits": 122,
+      "avg_holding_minutes": 107.7,
+      "ambiguous_trades": 0
+     },
+     "net_70": {
+      "trades": 199,
+      "first_trades": 185,
+      "second_trades": 14,
+      "winning_trades": 125,
+      "losing_trades": 74,
+      "win_rate_pct": 62.81,
+      "net_pnl_rs": 298801.25,
+      "gross_points_total": 801.875,
+      "avg_points_per_trade": 4.03,
+      "profit_factor": 1.304,
+      "max_drawdown_rs": 98355.0,
+      "t2_hits": 51,
+      "t1_then_post_t1_stop": 54,
+      "initial_full_stops": 74,
+      "forced_exits": 20,
+      "unresolved_exits": 0,
+      "t1_hits": 122,
+      "avg_holding_minutes": 107.7,
+      "ambiguous_trades": 0
+     }
+    },
+    "2024": {
+     "gross": {
+      "trades": 210,
+      "first_trades": 185,
+      "second_trades": 25,
+      "winning_trades": 116,
+      "losing_trades": 94,
+      "win_rate_pct": 55.24,
+      "net_pnl_rs": -2954.25,
+      "gross_points_total": -7.575,
+      "avg_points_per_trade": -0.036,
+      "profit_factor": 0.998,
+      "max_drawdown_rs": 280848.75,
+      "t2_hits": 56,
+      "t1_then_post_t1_stop": 58,
+      "initial_full_stops": 93,
+      "forced_exits": 3,
+      "unresolved_exits": 0,
+      "t1_hits": 116,
+      "avg_holding_minutes": 50.3,
+      "ambiguous_trades": 4
+     },
+     "net_70": {
+      "trades": 210,
+      "first_trades": 185,
+      "second_trades": 25,
+      "winning_trades": 116,
+      "losing_trades": 94,
+      "win_rate_pct": 55.24,
+      "net_pnl_rs": -17654.25,
+      "gross_points_total": -7.575,
+      "avg_points_per_trade": -0.036,
+      "profit_factor": 0.986,
+      "max_drawdown_rs": 287638.75,
+      "t2_hits": 56,
+      "t1_then_post_t1_stop": 58,
+      "initial_full_stops": 93,
+      "forced_exits": 3,
+      "unresolved_exits": 0,
+      "t1_hits": 116,
+      "avg_holding_minutes": 50.3,
+      "ambiguous_trades": 4
+     }
+    },
+    "2025": {
+     "gross": {
+      "trades": 127,
+      "first_trades": 116,
+      "second_trades": 11,
+      "winning_trades": 72,
+      "losing_trades": 55,
+      "win_rate_pct": 56.69,
+      "net_pnl_rs": 105894.75,
+      "gross_points_total": 271.525,
+      "avg_points_per_trade": 2.138,
+      "profit_factor": 1.144,
+      "max_drawdown_rs": 158915.25,
+      "t2_hits": 41,
+      "t1_then_post_t1_stop": 30,
+      "initial_full_stops": 55,
+      "forced_exits": 1,
+      "unresolved_exits": 0,
+      "t1_hits": 72,
+      "avg_holding_minutes": 40.9,
+      "ambiguous_trades": 2
+     },
+     "net_70": {
+      "trades": 127,
+      "first_trades": 116,
+      "second_trades": 11,
+      "winning_trades": 72,
+      "losing_trades": 55,
+      "win_rate_pct": 56.69,
+      "net_pnl_rs": 97004.75,
+      "gross_points_total": 271.525,
+      "avg_points_per_trade": 2.138,
+      "profit_factor": 1.131,
+      "max_drawdown_rs": 163535.25,
+      "t2_hits": 41,
+      "t1_then_post_t1_stop": 30,
+      "initial_full_stops": 55,
+      "forced_exits": 1,
+      "unresolved_exits": 0,
+      "t1_hits": 72,
+      "avg_holding_minutes": 40.9,
+      "ambiguous_trades": 2
+     }
+    }
+   },
+   "by_strategy": {
+    "IRF": {
+     "trades": 266,
+     "first_trades": 266,
+     "second_trades": 0,
+     "winning_trades": 160,
+     "losing_trades": 106,
+     "win_rate_pct": 60.15,
+     "net_pnl_rs": 250116.75,
+     "gross_points_total": 641.325,
+     "avg_points_per_trade": 2.411,
+     "profit_factor": 1.174,
+     "max_drawdown_rs": 131430.0,
+     "t2_hits": 76,
+     "t1_then_post_t1_stop": 72,
+     "initial_full_stops": 105,
+     "forced_exits": 13,
+     "unresolved_exits": 0,
+     "t1_hits": 158,
+     "avg_holding_minutes": 74.1,
+     "ambiguous_trades": 4
+    },
+    "ORB": {
+     "trades": 112,
+     "first_trades": 112,
+     "second_trades": 0,
+     "winning_trades": 64,
+     "losing_trades": 48,
+     "win_rate_pct": 57.14,
+     "net_pnl_rs": 151544.25,
+     "gross_points_total": 388.575,
+     "avg_points_per_trade": 3.469,
+     "profit_factor": 1.27,
+     "max_drawdown_rs": 165096.75,
+     "t2_hits": 34,
+     "t1_then_post_t1_stop": 28,
+     "initial_full_stops": 48,
+     "forced_exits": 2,
+     "unresolved_exits": 0,
+     "t1_hits": 64,
+     "avg_holding_minutes": 46.9,
+     "ambiguous_trades": 0
+    },
+    "PDR": {
+     "trades": 123,
+     "first_trades": 85,
+     "second_trades": 38,
+     "winning_trades": 61,
+     "losing_trades": 62,
+     "win_rate_pct": 49.59,
+     "net_pnl_rs": -169552.5,
+     "gross_points_total": -434.75,
+     "avg_points_per_trade": -3.535,
+     "profit_factor": 0.8,
+     "max_drawdown_rs": 237168.75,
+     "t2_hits": 26,
+     "t1_then_post_t1_stop": 26,
+     "initial_full_stops": 62,
+     "forced_exits": 9,
+     "unresolved_exits": 0,
+     "t1_hits": 60,
+     "avg_holding_minutes": 87.8,
+     "ambiguous_trades": 1
+    },
+    "PDS": {
+     "trades": 52,
+     "first_trades": 35,
+     "second_trades": 17,
+     "winning_trades": 29,
+     "losing_trades": 23,
+     "win_rate_pct": 55.77,
+     "net_pnl_rs": -7029.75,
+     "gross_points_total": -18.025,
+     "avg_points_per_trade": -0.347,
+     "profit_factor": 0.978,
+     "max_drawdown_rs": 105894.75,
+     "t2_hits": 12,
+     "t1_then_post_t1_stop": 15,
+     "initial_full_stops": 23,
+     "forced_exits": 2,
+     "unresolved_exits": 0,
+     "t1_hits": 29,
+     "avg_holding_minutes": 53.0,
+     "ambiguous_trades": 0
+    },
+    "RF": {
+     "trades": 48,
+     "first_trades": 48,
+     "second_trades": 0,
+     "winning_trades": 30,
+     "losing_trades": 18,
+     "win_rate_pct": 62.5,
+     "net_pnl_rs": 44460.0,
+     "gross_points_total": 114.0,
+     "avg_points_per_trade": 2.375,
+     "profit_factor": 1.181,
+     "max_drawdown_rs": 69615.0,
+     "t2_hits": 13,
+     "t1_then_post_t1_stop": 17,
+     "initial_full_stops": 18,
+     "forced_exits": 0,
+     "unresolved_exits": 0,
+     "t1_hits": 30,
+     "avg_holding_minutes": 88.0,
+     "ambiguous_trades": 1
+    }
+   }
+  },
+  "A_reproduces_phase4_window_B": {
+   "phase4_trades": 609,
+   "configuration_A_trades": 609,
+   "gross_equal": true
+  }
+ }
+}

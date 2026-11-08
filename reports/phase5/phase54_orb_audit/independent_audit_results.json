@@ -1,0 +1,117 @@
+{
+  "checks": {
+    "the 13 disputed dates: first candle OHLC (09:15 start), body and wick percentages, previous-day high / low / official close, opening gap and EMA(200) at the first candle equal an independent recomputation from the raw one-minute data": {
+      "pass": true,
+      "n": 13,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the 13 dates: the Method 1 'level broken' predicate, the strong-candle verdicts under the STRICT / MODERATE / LOOSE profiles (with the wick against the trade), and the trend numbers (previous close minus its EMA, first close minus the EMA) equal an independent recomputation": {
+      "pass": true,
+      "n": 13,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the 13 dates: the frozen Method 2 trendline (the last two previous-session k=2 fractal lows / highs; slope, extrapolated value at the open and the 'supportive' verdict) equals an independent recomputation": {
+      "pass": true,
+      "n": 13,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the level families on the 13 dates (previous-day extreme, the extreme of the last 2 / 3 / 5 sessions, the frozen latest inner fractal) and whether the first candle broke and closed beyond each equal an independent recomputation": {
+      "pass": true,
+      "n": 117,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "population: the number of sessions on which the colour-direction first candle breaks and closes beyond the previous-day high / low equals an independent count": {
+      "pass": true,
+      "n": 247,
+      "detail": "independent 69 vs reported 69",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the ten cases where the 'open crosses the 200 average' and 'the candle crosses the 200 average' readings of the Gap setup differ really differ (previous close on the wrong side, the candle closes beyond the average, the open does not)": {
+      "pass": true,
+      "n": 10,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the manual journal read from the original workbook: 190 rows, 89 ORB rows, 5 weekend-dated rows; the overlap with the Phase 3.6 ORB signal dates and the counts of ORB journal dates without an engine ORB signal equal an independent recount": {
+      "pass": true,
+      "n": 190,
+      "detail": "in-session ORB journal dates 85; engine overlap 35; engine ORB dates without a journal ORB 6",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the journal cross-check table lists exactly the 89 ORB journal rows once each": {
+      "pass": true,
+      "n": 89,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the frozen ORB reference in the variant table has 53 confirmed signals equal to the Phase 3.6 ORB signals, and the frozen engine equals the Phase 3.6 table (summary flag)": {
+      "pass": true,
+      "n": 53,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "variant table consistency: a single loosened gate removes no frozen signal, the stricter profile / colour / structure variants add none": {
+      "pass": true,
+      "n": 12,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no variant reproduces more than two of the thirteen disputed dates (each variant loosens or re-defines ONE unresolved construction; combinations were deliberately not searched)": {
+      "pass": true,
+      "n": 12,
+      "detail": "{'orb-frozen': '0', 'orb-var-inner-highest-fractal': '0', 'orb-var-inner-nearest-from-open': '1', 'orb-var-inner-highest-broken': '1', 'orb-var-trendline-any-pair': '1', 'orb-var-trendline-none': '2', 'orb-var-strength-strict': '0', 'orb-var-strength-loose': '2', 'orb-var-trend-structure': '0', 'orb-var-trend-ema-basic': '0', 'orb-var-gap-candle-crossing': '0', 'orb-var-colour': '0'}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the source-rule registry uses only the six classification labels and never describes an implemented research variant as an explicit document rule": {
+      "pass": true,
+      "n": 47,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every required Phase 5.4 deliverable exists, with one chart-based case study (daily report + SVG chart) for each of the 13 disputed dates": {
+      "pass": true,
+      "n": 37,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file in the Phase 5.4 baseline snapshot (all of src, scripts, tests, docs, data, reports: Phase 3.0-5.3, the frozen strategy files, the historical datasets, the manual journal, the source PDFs) is byte-identical": {
+      "pass": true,
+      "n": 15283,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the only files added outside reports/phase5/phase54_orb_audit are the declared Phase 5.4 scripts, tests and new modules": {
+      "pass": true,
+      "n": 15291,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file hashed in the Phase 4 freeze (engines incl. ORB, RF, controller, execution, session construction, framework) is unchanged": {
+      "pass": true,
+      "n": 26,
+      "detail": "FROZEN-PHASE36-42cea2600bd4",
+      "failures": [],
+      "n_failures": 0
+    }
+  },
+  "all_pass": true
+}

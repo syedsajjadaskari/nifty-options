@@ -1,0 +1,10 @@
+family,sessions,level_exists,first_candle_breaks_and_closes_beyond,pct_of_sessions_broken,broken_and_strong_MODERATE_or_pin,broken_and_strong_LOOSE_or_pin,broken_and_trend_active,broken_strong_and_trend (all gates but the trendline),broken_on_the_13_disputed_dates,broken_on_dates_with_a_journal_orb_row (descriptive),broken_on_dates_with_no_journal_orb_row (descriptive)
+M1_PREVIOUS_DAY_EXTREME,247,247,69,27.9,33,41,49,24,4,48,21
+M2_LATEST_FRACTAL_K2,247,247,118,47.8,56,65,70,36,7,72,46
+M2_HIGHEST_FRACTAL_K2,247,247,84,34.0,38,46,57,28,4,56,28
+M2_NEAREST_FRACTAL_FROM_OPEN_K2,247,191,76,30.8,38,44,37,22,8,42,34
+M2_HIGHEST_BROKEN_FRACTAL_K2,247,156,156,63.2,70,81,94,47,12,82,74
+MS_EXTREME_2_SESSIONS,246,246,49,19.9,23,31,41,19,3,36,13
+MS_EXTREME_3_SESSIONS,246,246,41,16.7,17,23,35,15,3,28,13
+MS_EXTREME_5_SESSIONS,246,246,26,10.6,11,15,25,11,2,19,7
+MS_SWING_NEAREST_FROM_OPEN_3_SESSIONS,246,216,113,45.9,52,59,60,33,9,57,56

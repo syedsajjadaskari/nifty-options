@@ -1,0 +1,201 @@
+{
+ "checks": {
+  "journal workbook re-read: 190 data rows (ids 1..190), Summary sheet says 189, 89 ORB rows, outcomes Target 81 / SL 65 / BE 44, five weekend-dated rows (all Saturdays), 19 time objects, five dates with two rows, none with more": {
+   "pass": true,
+   "n": 190,
+   "detail": "{'IRF': 73, 'PDR': 8, 'ORB': 89, 'RF': 17, 'PDS': 3} {'BE': 44, 'Target': 81, 'SL': 65} weekend=[(23, '2025-10-11'), (82, '2026-02-14'), (181, '2026-08-15'), (185, '2026-08-22'), (189, '2026-08-29')]",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the journal workbook is byte-identical to the Phase 5.5 baseline snapshot": {
+   "pass": true,
+   "n": 1,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the state file's journal facts equal the recount": {
+   "pass": true,
+   "n": 1,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the five weekend-dated rows have NO one-minute data on those dates (not exchange sessions); every weekday journal date is a session of the dataset": {
+   "pass": true,
+   "n": 190,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration A: the independent staged one-to-one matching reproduces every delivered pair (stage, trade, time difference)": {
+   "pass": true,
+   "n": 105,
+   "detail": "strict 66 / tolerant 21 / date+strategy only 18; state 66 / 21 / 18",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration A: one-to-one - every journal row appears exactly once, no trade is used by two journal rows, every executed trade is either in a strict / time-tolerant pair or in the automated-only table (never both; date-and-strategy-only trades are listed in the automated-only table too)": {
+   "pass": true,
+   "n": 281,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration A: every pair has the same date and strategy, the stage agrees with the time difference, and the descriptive outcome-class flag is recomputed correctly": {
+   "pass": true,
+   "n": 281,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration A: outcome-class agreement among strict + time-tolerant pairs recounted": {
+   "pass": true,
+   "n": 87,
+   "detail": "80/87",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration B: the independent staged one-to-one matching reproduces every delivered pair (stage, trade, time difference)": {
+   "pass": true,
+   "n": 95,
+   "detail": "strict 64 / tolerant 14 / date+strategy only 17; state 64 / 14 / 17",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration B: one-to-one - every journal row appears exactly once, no trade is used by two journal rows, every executed trade is either in a strict / time-tolerant pair or in the automated-only table (never both; date-and-strategy-only trades are listed in the automated-only table too)": {
+   "pass": true,
+   "n": 283,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration B: every pair has the same date and strategy, the stage agrees with the time difference, and the descriptive outcome-class flag is recomputed correctly": {
+   "pass": true,
+   "n": 283,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration B: outcome-class agreement among strict + time-tolerant pairs recounted": {
+   "pass": true,
+   "n": 78,
+   "detail": "71/78",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration C: the independent staged one-to-one matching reproduces every delivered pair (stage, trade, time difference)": {
+   "pass": true,
+   "n": 98,
+   "detail": "strict 67 / tolerant 14 / date+strategy only 17; state 67 / 14 / 17",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration C: one-to-one - every journal row appears exactly once, no trade is used by two journal rows, every executed trade is either in a strict / time-tolerant pair or in the automated-only table (never both; date-and-strategy-only trades are listed in the automated-only table too)": {
+   "pass": true,
+   "n": 282,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration C: every pair has the same date and strategy, the stage agrees with the time difference, and the descriptive outcome-class flag is recomputed correctly": {
+   "pass": true,
+   "n": 282,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "configuration C: outcome-class agreement among strict + time-tolerant pairs recounted": {
+   "pass": true,
+   "n": 81,
+   "detail": "74/81",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the weekend rows are never matched, keep their original dates, carry the weekend flag and the cause MANUAL_JOURNAL_INCONSISTENCY in all three configurations": {
+   "pass": true,
+   "n": 15,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every delivered journal row equals the original workbook row (date, label, strategy, outcome): nothing was altered, relabelled or invented": {
+   "pass": true,
+   "n": 846,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every classified mismatch uses only the specified root-cause vocabulary and carries evidence text": {
+   "pass": true,
+   "n": 673,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the classified-mismatch table covers every manual row without a strict / time-tolerant match, every matched pair with a different exit class and every automated-only trade": {
+   "pass": true,
+   "n": 673,
+   "detail": "expected {'A': 219, 'B': 229, 'C': 225} got {'A': 219, 'B': 229, 'C': 225}",
+   "failures": [],
+   "n_failures": 0
+  },
+  "manual_only / automated_only table sizes equal the state counts per configuration": {
+   "pass": true,
+   "n": 6,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "ORB evidence: the first 09:15 candle (colour, open, high, low, close) and the previous-day high quoted in every manual-only ORB explanation equal the values recomputed from the raw one-minute data": {
+   "pass": true,
+   "n": 147,
+   "detail": "42 previous-day highs checked",
+   "failures": [],
+   "n_failures": 0
+  },
+  "dates on which the journal and the automated system traded only DIFFERENT strategies (no weekday journal strategy of the date appears among its automated trades) recounted per configuration": {
+   "pass": true,
+   "n": 3,
+   "detail": "delivered {'A': 57, 'B': 57, 'C': 56}; independent count {'A': 57, 'B': 57, 'C': 56}",
+   "failures": [],
+   "n_failures": 0
+  },
+  "weekday journal rows on sessions with NO automated trade recounted per configuration (equals the state field; all of them are unmatched)": {
+   "pass": true,
+   "n": 3,
+   "detail": "independent {'A': 19, 'B': 29, 'C': 27}; state {'A': 19, 'B': 29, 'C': 27}",
+   "failures": [],
+   "n_failures": 0
+  },
+  "second trades without a journal counterpart are explained as controller re-entries after a full stop (never as first valid signals)": {
+   "pass": true,
+   "n": 31,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "247 session explanations and the charts exist; each chart is a well-formed SVG": {
+   "pass": true,
+   "n": 247,
+   "detail": "143 charts",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the Phase 5.6 deliverables exist (independent_audit.md is written after this audit)": {
+   "pass": true,
+   "n": 16,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every file of the Phase 5.5 baseline snapshot is still byte-identical (journal, candles, source code, earlier reports)": {
+   "pass": true,
+   "n": 15340,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  }
+ },
+ "all_pass": true
+}

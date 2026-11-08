@@ -1,0 +1,16 @@
+{
+ "charts": {
+  "charts_all": 574,
+  "charts_time_tolerant": 49,
+  "charts_handwritten_dates": 109,
+  "charts_exact_matches": 197,
+  "charts_orb_focus": 176,
+  "charts_automated_only": 276,
+  "charts_config_differences": 175,
+  "charts_date_strategy_only": 52
+ },
+ "executed_trades": 574,
+ "journal_day_charts": 50,
+ "orb_dates": 50,
+ "differing_trades": 175
+}

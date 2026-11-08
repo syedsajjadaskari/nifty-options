@@ -1,0 +1,16 @@
+config,strategy,raw_confirmed_signals,signals_at_or_before_13_00,sessions_with_a_signal_before_the_cutoff,executed_trades,first_trades,second_trades,ignored_position_active,rejected_by_controller
+A,IRF,874,557,152,109,109,0,503,256
+A,ORB,53,53,41,41,41,0,0,0
+A,PDR,87,62,28,25,21,4,57,5
+A,PDS,57,35,17,11,7,4,38,8
+A,RF,12,10,10,10,10,0,1,1
+B,IRF,786,510,132,90,90,0,466,210
+B,ORB,53,53,41,41,41,0,0,0
+B,PDR,147,98,30,28,22,6,111,8
+B,PDS,111,67,19,19,12,7,74,18
+B,RF,12,10,10,10,10,0,1,1
+C,IRF,786,510,132,89,89,0,467,210
+C,ORB,56,56,44,44,44,0,0,0
+C,PDR,147,98,30,28,22,6,111,8
+C,PDS,111,67,19,19,12,7,74,18
+C,RF,12,10,10,10,10,0,1,1

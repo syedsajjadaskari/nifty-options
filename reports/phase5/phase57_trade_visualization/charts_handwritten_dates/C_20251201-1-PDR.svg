@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="890" viewBox="0 0 1560 890" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<metadata id="phase57">{&quot;kind&quot;: &quot;TRADE&quot;, &quot;config&quot;: &quot;C&quot;, &quot;trade_id&quot;: &quot;20251201-1-PDR&quot;, &quot;date&quot;: &quot;2025-12-01&quot;, &quot;strategy&quot;: &quot;PDR&quot;, &quot;method&quot;: &quot;PDR&quot;, &quot;direction&quot;: &quot;LONG&quot;, &quot;entry_ts&quot;: &quot;2025-12-01 09:25&quot;, &quot;entry&quot;: 26292.5, &quot;stop&quot;: 26257.5, &quot;t1&quot;: 26319.5, &quot;t2&quot;: 26362.5, &quot;post_t1&quot;: null, &quot;exits&quot;: [{&quot;leg&quot;: &quot;FULL&quot;, &quot;reason&quot;: &quot;ORIGINAL_STOP_BEFORE_T1&quot;, &quot;ts&quot;: &quot;2025-12-01 10:45&quot;, &quot;price&quot;: 26257.5, &quot;label&quot;: &quot;FULL EXIT \u2014 Initial SL, 10:45 @ 26,257.50&quot;}], &quot;match_status&quot;: &quot;AUTOMATED_ONLY&quot;, &quot;journal_row&quot;: null, &quot;journal_label&quot;: null, &quot;journal_outcome&quot;: null, &quot;gross_pnl_rs&quot;: -13650.0, &quot;outcome&quot;: &quot;INITIAL_FULL_STOP&quot;, &quot;scale&quot;: {&quot;plot_top&quot;: 116, &quot;plot_bottom&quot;: 600, &quot;price_low&quot;: 26215.273, &quot;price_high&quot;: 26371.777000000002, &quot;plot_left&quot;: 80, &quot;plot_right&quot;: 1260, &quot;t_open&quot;: 555, &quot;t_end&quot;: 675}}</metadata>
+<style>text{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}</style>
+<rect width="1560" height="890" fill="white"/>
+<text x="40" y="26" font-size="18" font-weight="bold" fill="#111">TRADE 20251201-1-PDR   PDR LONG</text>
+<text x="40" y="47" font-size="13" fill="#333">Date 2025-12-01 (Monday)   |   Configuration C - B + ORB gap crossing (provisional)   |   First trade of the day   |   outcome INITIAL_FULL_STOP</text>
+<text x="40" y="66" font-size="12" fill="#444">Signal candle 09:20-09:25 (5-min)   |   Entry 09:25 @ 26,292.50   |   Gross Rs -13,650   |   no journal row with this date and strategy was left for this trade</text>
+<rect x="1353" y="10" width="167" height="30" rx="5" fill="#616161"/><text x="1436" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff" style="stroke:none">AUTOMATED_ONLY</text>
+<text x="1520" y="58" text-anchor="end" font-size="12" fill="#333">journal row: none (no journal match)</text>
+<text x="40" y="86" font-size="10.5" fill="#777">real 5-minute candles (IST); markers sit at their exact 1-minute positions; synthetic NIFTY 50 index points, not a tradable price; every number comes from the verified Phase 5.5 ledger</text>
+<line x1="80" x2="1260" y1="600.0" y2="600.0" stroke="#eee"/><text x="6" y="604.0" fill="#555">26,215</text>
+<line x1="80" x2="1260" y1="519.3" y2="519.3" stroke="#eee"/><text x="6" y="523.3" fill="#555">26,241</text>
+<line x1="80" x2="1260" y1="438.7" y2="438.7" stroke="#eee"/><text x="6" y="442.7" fill="#555">26,267</text>
+<line x1="80" x2="1260" y1="358.0" y2="358.0" stroke="#eee"/><text x="6" y="362.0" fill="#555">26,294</text>
+<line x1="80" x2="1260" y1="277.3" y2="277.3" stroke="#eee"/><text x="6" y="281.3" fill="#555">26,320</text>
+<line x1="80" x2="1260" y1="196.7" y2="196.7" stroke="#eee"/><text x="6" y="200.7" fill="#555">26,346</text>
+<line x1="80" x2="1260" y1="116.0" y2="116.0" stroke="#eee"/><text x="6" y="120.0" fill="#555">26,372</text>
+<line x1="80.0" x2="80.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="66.0" y="616" fill="#555">09:15</text>
+<line x1="227.5" x2="227.5" y1="116" y2="600" stroke="#f1f1f1"/><text x="213.5" y="616" fill="#555">09:30</text>
+<line x1="375.0" x2="375.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="361.0" y="616" fill="#555">09:45</text>
+<line x1="522.5" x2="522.5" y1="116" y2="600" stroke="#f1f1f1"/><text x="508.5" y="616" fill="#555">10:00</text>
+<line x1="670.0" x2="670.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="656.0" y="616" fill="#555">10:15</text>
+<line x1="817.5" x2="817.5" y1="116" y2="600" stroke="#f1f1f1"/><text x="803.5" y="616" fill="#555">10:30</text>
+<line x1="965.0" x2="965.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="951.0" y="616" fill="#555">10:45</text>
+<line x1="1112.5" x2="1112.5" y1="116" y2="600" stroke="#f1f1f1"/><text x="1098.5" y="616" fill="#555">11:00</text>
+<line x1="1260.0" x2="1260.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="1246.0" y="616" fill="#555">11:15</text>
+<rect x="80" y="417.0" width="1180" height="20.4" fill="#1565c0" opacity="0.13"/>
+<line x1="104.6" x2="104.6" y1="258.2" y2="423.8" stroke="#c62828"/><rect x="87.9" y="258.2" width="33.4" height="125.2" fill="#c62828"/>
+<line x1="153.8" x2="153.8" y1="342.0" y2="402.3" stroke="#2e7d32"/><rect x="137.0" y="361.6" width="33.4" height="21.8" fill="#2e7d32"/>
+<line x1="202.9" x2="202.9" y1="340.9" y2="402.1" stroke="#c62828"/><rect x="186.2" y="361.2" width="33.4" height="26.1" fill="#c62828"/>
+<line x1="252.1" x2="252.1" y1="325.8" y2="385.8" stroke="#2e7d32"/><rect x="235.4" y="337.5" width="33.4" height="47.6" fill="#2e7d32"/>
+<line x1="301.2" x2="301.2" y1="299.3" y2="358.9" stroke="#2e7d32"/><rect x="284.5" y="304.0" width="33.4" height="30.6" fill="#2e7d32"/>
+<line x1="350.4" x2="350.4" y1="292.5" y2="396.1" stroke="#c62828"/><rect x="333.7" y="302.9" width="33.4" height="74.5" fill="#c62828"/>
+<line x1="399.6" x2="399.6" y1="345.2" y2="406.9" stroke="#2e7d32"/><rect x="382.9" y="351.0" width="33.4" height="28.6" fill="#2e7d32"/>
+<line x1="448.8" x2="448.8" y1="350.3" y2="430.1" stroke="#c62828"/><rect x="432.0" y="355.6" width="33.4" height="64.2" fill="#c62828"/>
+<line x1="497.9" x2="497.9" y1="406.9" y2="449.5" stroke="#c62828"/><rect x="481.2" y="418.8" width="33.4" height="29.5" fill="#c62828"/>
+<line x1="547.1" x2="547.1" y1="393.2" y2="447.9" stroke="#2e7d32"/><rect x="530.4" y="400.6" width="33.4" height="47.3" fill="#2e7d32"/>
+<line x1="596.2" x2="596.2" y1="366.3" y2="407.2" stroke="#2e7d32"/><rect x="579.5" y="383.1" width="33.4" height="17.5" fill="#2e7d32"/>
+<line x1="645.4" x2="645.4" y1="374.5" y2="401.8" stroke="#c62828"/><rect x="628.7" y="381.6" width="33.4" height="2.9" fill="#c62828"/>
+<line x1="694.6" x2="694.6" y1="372.9" y2="429.2" stroke="#c62828"/><rect x="677.9" y="388.5" width="33.4" height="11.9" fill="#c62828"/>
+<line x1="743.8" x2="743.8" y1="393.3" y2="415.3" stroke="#c62828"/><rect x="727.0" y="402.0" width="33.4" height="6.0" fill="#c62828"/>
+<line x1="792.9" x2="792.9" y1="391.9" y2="435.1" stroke="#2e7d32"/><rect x="776.2" y="396.4" width="33.4" height="7.3" fill="#2e7d32"/>
+<line x1="842.1" x2="842.1" y1="370.3" y2="415.4" stroke="#c62828"/><rect x="825.4" y="390.9" width="33.4" height="15.6" fill="#c62828"/>
+<line x1="891.2" x2="891.2" y1="391.8" y2="466.9" stroke="#c62828"/><rect x="874.5" y="407.2" width="33.4" height="56.3" fill="#c62828"/>
+<line x1="940.4" x2="940.4" y1="436.0" y2="467.6" stroke="#c62828"/><rect x="923.7" y="462.5" width="33.4" height="3.6" fill="#c62828"/>
+<line x1="989.6" x2="989.6" y1="462.8" y2="500.5" stroke="#c62828"/><rect x="972.9" y="463.4" width="33.4" height="31.1" fill="#c62828"/>
+<line x1="1038.8" x2="1038.8" y1="488.1" y2="556.5" stroke="#c62828"/><rect x="1022.0" y="489.8" width="33.4" height="65.7" fill="#c62828"/>
+<line x1="1087.9" x2="1087.9" y1="518.4" y2="554.9" stroke="#2e7d32"/><rect x="1071.2" y="526.8" width="33.4" height="26.1" fill="#2e7d32"/>
+<line x1="1137.1" x2="1137.1" y1="521.8" y2="571.3" stroke="#c62828"/><rect x="1120.4" y="525.1" width="33.4" height="36.2" fill="#c62828"/>
+<line x1="1186.2" x2="1186.2" y1="537.0" y2="570.7" stroke="#c62828"/><rect x="1169.5" y="559.9" width="33.4" height="7.6" fill="#c62828"/>
+<line x1="1235.4" x2="1235.4" y1="510.7" y2="568.5" stroke="#2e7d32"/><rect x="1218.7" y="516.1" width="33.4" height="52.3" fill="#2e7d32"/>
+<text x="104.6" y="254.2" text-anchor="middle" font-size="9" fill="#37474f" font-weight="bold">TEST</text>
+<text x="153.8" y="338.0" text-anchor="middle" font-size="9" fill="#37474f" font-weight="bold">CONFIRM</text>
+<line data-kind="ENTRY" data-price="26292.5" x1="178.3" x2="965.0" y1="361.2" y2="361.2" stroke="#000000" stroke-width="2"/>
+<line x1="965.0" x2="1260" y1="361.2" y2="361.2" stroke="#000000" stroke-width="1" stroke-dasharray="1,4" opacity="0.55"/>
+<line data-kind="SL" data-price="26257.5" x1="178.3" x2="965.0" y1="469.4" y2="469.4" stroke="#c62828" stroke-width="2" stroke-dasharray="6,3"/>
+<line x1="965.0" x2="1260" y1="469.4" y2="469.4" stroke="#c62828" stroke-width="1" stroke-dasharray="1,4" opacity="0.55"/>
+<line data-kind="T1" data-price="26319.5" x1="178.3" x2="965.0" y1="277.7" y2="277.7" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6,3"/>
+<line x1="965.0" x2="1260" y1="277.7" y2="277.7" stroke="#2e7d32" stroke-width="1" stroke-dasharray="1,4" opacity="0.55"/>
+<line data-kind="T2" data-price="26362.5" x1="178.3" x2="965.0" y1="144.7" y2="144.7" stroke="#00695c" stroke-width="2" stroke-dasharray="6,3"/>
+<line x1="965.0" x2="1260" y1="144.7" y2="144.7" stroke="#00695c" stroke-width="1" stroke-dasharray="1,4" opacity="0.55"/>
+<polygon data-kind="ENTRY_MARKER" data-price="26292.5" points="178.3,361.2 170.3,377.2 186.3,377.2" fill="#000" stroke="#fff"/>
+<circle data-kind="EXIT_FULL" data-price="26257.5" cx="965.0" cy="469.4" r="6.5" fill="#fff" stroke="#6a1b9a" stroke-width="2.2"/>
+<text x="1274.0" y="144.7" fill="#00695c" font-size="11.5" font-weight="bold" data-kind="LABEL_T2" data-price="26362.5">T2 @ 26,362.50</text>
+<text x="1274.0" y="277.7" fill="#2e7d32" font-size="11.5" font-weight="bold" data-kind="LABEL_T1" data-price="26319.5">T1 @ 26,319.50</text>
+<text x="1274.0" y="361.2" fill="#000000" font-size="11.5" font-weight="bold" data-kind="LABEL_ENTRY" data-price="26292.5">ENTRY @ 26,292.50</text>
+<text x="1274.0" y="427.2" fill="#1565c0" font-size="10">PDR zone [26,267.85, 26,274.45]</text>
+<text x="1274.0" y="469.4" fill="#c62828" font-size="11.5" font-weight="bold" data-kind="LABEL_SL" data-price="26257.5">SL @ 26,257.50</text>
+<text x="187.3" y="389.2" text-anchor="start" fill="#000" font-weight="bold" font-size="11.5" data-kind="ENTRY_LABEL">ENTRY 09:25 @ 26,292.50</text>
+<text x="974.0" y="469.4" text-anchor="start" fill="#6a1b9a" font-weight="bold" font-size="11.5" data-kind="EXIT_LABEL_FULL">FULL EXIT — Initial SL, 10:45 @ 26,257.50</text>
+<text x="40" y="638" fill="#000" font-size="11" font-weight="bold">▲▼ entry</text>
+<text x="114.8" y="638" fill="#c62828" font-size="11" font-weight="bold">- - initial stop (SL)</text>
+<text x="268.9" y="638" fill="#2e7d32" font-size="11" font-weight="bold">- - Target 1</text>
+<text x="368.09999999999997" y="638" fill="#00695c" font-size="11" font-weight="bold">- - Target 2</text>
+<text x="467.29999999999995" y="638" fill="#ef6c00" font-size="11" font-weight="bold">··· post-T1 stop (only after T1 is booked)</text>
+<text x="749.5" y="638" fill="#6a1b9a" font-size="11" font-weight="bold">● leg-1 exit   ■ leg-2 exit   ◉ full exit</text>
+<text x="1025.6" y="638" fill="#f9a825" font-size="11" font-weight="bold">EMA(200) of 5-min closes</text>
+<text x="1198.0" y="638" fill="#c2185b" font-size="11" font-weight="bold">journal entry (candle-start label; no price recorded)</text>
+<text x="40" y="674" font-size="12.5" font-weight="bold" fill="#111">ENTRY</text>
+<line x1="40" x2="400" y1="678" y2="678" stroke="#bbb"/>
+<text x="40" y="694" fill="#111" font-weight="bold">Entry timestamp: 2025-12-01 09:25</text>
+<text x="40" y="708" fill="#111">Entry price: 26,292.50   (open of the 1-minute bar that</text>
+<text x="40" y="722" fill="#111">starts when the signal candle ends; rule EXE-FILL-001)</text>
+<text x="40" y="736" fill="#111">Signal candle: 09:20-09:25 (5-min), confirmed 09:25</text>
+<text x="40" y="750" fill="#111">Fill candle (1-min bar 09:25): O 26,292.50  H 26,299.05  L</text>
+<text x="40" y="764" fill="#111">26,289.90  C 26,290.40</text>
+<text x="40" y="778" fill="#111" font-weight="bold">Trigger: PDR / PDR (LONG)</text>
+<text x="40" y="792" fill="#666">Reason: PDR LONG (body-based engine, A_HIGHEST_BODY_HIGH):</text>
+<text x="40" y="806" fill="#666">the session opened 122.85 points above the previous close</text>
+<text x="40" y="820" fill="#666">and 51.35 points above the previous-day highest BODY high</text>
+<text x="40" y="834" fill="#666">26,274.45 (zone [26,267.85, 26,274.45] from the 10:40</text>
+<text x="40" y="848" fill="#666">candle of 2025-11-28; the highest wick 26,280.20 is</text>
+<text x="40" y="862" fill="#666">ignored). The 09:15 candle (26,272.25 - 26,325.80) ...</text>
+<text x="412" y="674" font-size="12.5" font-weight="bold" fill="#111">LEVELS AND EXITS</text>
+<line x1="412" x2="772" y1="678" y2="678" stroke="#bbb"/>
+<text x="412" y="694" fill="#111">Initial stop (SL): 26,257.50   [35.0 pts]</text>
+<text x="412" y="708" fill="#111">Target 1 (T1): 26,319.50   [27.0 pts]</text>
+<text x="412" y="722" fill="#111">Target 2 (T2): 26,362.50   [70.0 pts]</text>
+<text x="412" y="736" fill="#666">Post-T1 stop: not active (Target 1 was not hit)</text>
+<text x="412" y="750" fill="#111" font-weight="bold">Leg 1 (195 units) EXIT: Initial SL - 10:45 @ 26,257.50</text>
+<text x="412" y="764" fill="#111" font-weight="bold">Leg 2 (195 units) EXIT: Initial SL - 10:45 @ 26,257.50</text>
+<text x="412" y="778" fill="#111">Automated exit class: INITIAL_FULL_STOP</text>
+<text x="784" y="674" font-size="12.5" font-weight="bold" fill="#111">P&amp;L (gross synthetic, then illustrative net)</text>
+<line x1="784" x2="1144" y1="678" y2="678" stroke="#bbb"/>
+<text x="784" y="694" fill="#111">Position: 3 + 3 lots (195 + 195 units; 6 x 65)</text>
+<text x="784" y="708" fill="#111">Leg 1: -35.00 pts x 195 = Rs -6,825</text>
+<text x="784" y="722" fill="#111">Leg 2: -35.00 pts x 195 = Rs -6,825</text>
+<text x="784" y="736" fill="#111" font-weight="bold">Gross: -35.000 pts (per-unit average) = Rs -13,650</text>
+<text x="784" y="750" fill="#111">Net, Rs 70/trade, no slippage (report headline): Rs -13,720</text>
+<text x="784" y="764" fill="#111">Net with slippage per side 0.25 / 0.5 / 1.0 pt: Rs -13,915</text>
+<text x="784" y="778" fill="#111">/ -14,110 / -14,500</text>
+<text x="784" y="792" fill="#666">SYNTHETIC index-point P&amp;L; not option P&amp;L. Rs 70 coverage</text>
+<text x="784" y="806" fill="#666">is unconfirmed.</text>
+<text x="1156" y="674" font-size="12.5" font-weight="bold" fill="#111">JOURNAL COMPARISON</text>
+<line x1="1156" x2="1516" y1="678" y2="678" stroke="#bbb"/>
+<text x="1156" y="694" fill="#b71c1c">Journal match: NO</text>
+<text x="1156" y="708" fill="#111" font-weight="bold">Match type: AUTOMATED_ONLY</text>
+<text x="1156" y="722" fill="#111">Root cause: UNRESOLVED_DISCRETIONARY_SELECTION</text>
+<text x="1156" y="736" fill="#666">Evidence: the journal records no trade this day; the</text>
+<text x="1156" y="750" fill="#666">automated system took PDR PDR LONG (candle 09:20)</text>
+<text x="1156" y="764" fill="#666">mechanically</text>
+<text x="1156" y="778" fill="#666">Other journal rows on this date: none</text>
+</svg>

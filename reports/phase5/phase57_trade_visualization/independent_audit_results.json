@@ -1,0 +1,117 @@
+{
+ "checks": {
+  "charts_all holds exactly one chart per executed trade of A, B and C, named <configuration>_<trade id>.svg (574 trades)": {
+   "pass": true,
+   "n": 574,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every chart parses as well-formed SVG": {
+   "pass": true,
+   "n": 574,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every chart's embedded data equals the ledger / config: entry price and time, initial stop, T1, T2, post-T1 stop (present only when T1 was booked), exits (leg, reason, time, price), outcome, gross P&L, strategy, method, direction": {
+   "pass": true,
+   "n": 574,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every VISIBLE label equals the ledger: 'ENTRY hh:mm @ price', 'SL @', 'T1 @', 'T2 @', 'POST-T1 STOP @' (only after T1), and each leg / full / forced exit label with its time and price": {
+   "pass": true,
+   "n": 574,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every drawn price line and marker (entry, SL, T1, T2, post-T1 stop, exits) sits at the vertical position that its price has on the chart's own scale": {
+   "pass": true,
+   "n": 4120,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every chart's header names the trade, the configuration and the match status": {
+   "pass": true,
+   "n": 574,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the exact / time-tolerant / date-and-strategy-only / automated-only counts shown on the charts equal the Phase 5.6 reconciliation AND the independent staged matcher recomputed from the original journal workbook": {
+   "pass": true,
+   "n": 3,
+   "detail": "A: strict 66 / tolerant 21 / date-only 18 / automated-only 91; B: strict 64 / tolerant 14 / date-only 17 / automated-only 93; C: strict 67 / tolerant 14 / date-only 17 / automated-only 92",
+   "failures": [],
+   "n_failures": 0
+  },
+  "exact_match_summary.csv equals the Phase 5.6 state file (counts, outcome agreement, strict by strategy, both percentages)": {
+   "pass": true,
+   "n": 3,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every subset folder (exact, time-tolerant, automated-only, date-and-strategy-only, ORB focus, handwritten dates, configuration differences) holds exactly the trades its definition selects, byte-identical to charts_all": {
+   "pass": true,
+   "n": 8,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "folder sizes: exact = strict total, time-tolerant = tolerant total, automated-only = Phase 5.6 automated-only total, date-only = date-and-strategy total": {
+   "pass": true,
+   "n": 4,
+   "detail": "{'charts_all': 574, 'charts_exact_matches': 197, 'charts_time_tolerant': 49, 'charts_automated_only': 276, 'charts_date_strategy_only': 52, 'charts_orb_focus': 176, 'charts_handwritten_dates': 109, 'charts_config_differences': 175}",
+   "failures": [],
+   "n_failures": 0
+  },
+  "a journal-day chart exists for every ORB journal date without a counted match (weekend rows excluded; they have no market data)": {
+   "pass": true,
+   "n": 50,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the visual index lists all 574 trades with an existing chart file and the same match-status counts as the charts": {
+   "pass": true,
+   "n": 574,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the verification workbook's trade sheet equals the ledger (entry, stop, T1, T2, both exits, reasons, gross P&L, exit class) and links to an existing chart": {
+   "pass": true,
+   "n": 574,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "the 'Exact matches only' sheet has exactly the strict matches of A + B + C": {
+   "pass": true,
+   "n": 197,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "every file of the Phase 3.6, 5.5 and 5.6 report folders is byte-identical to its hash recorded before the first Phase 5.7 write (no earlier chart, ledger or report was overwritten)": {
+   "pass": true,
+   "n": 1225,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  },
+  "no tracked file is modified or deleted (git status shows only new files; nothing committed)": {
+   "pass": true,
+   "n": 50,
+   "detail": "",
+   "failures": [],
+   "n_failures": 0
+  }
+ },
+ "all_pass": true
+}

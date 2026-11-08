@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="890" viewBox="0 0 1560 890" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<metadata id="phase57">{&quot;kind&quot;: &quot;DAY&quot;, &quot;date&quot;: &quot;2026-02-17&quot;, &quot;journal_rows&quot;: [&quot;83&quot;], &quot;title_kind&quot;: &quot;ORB&quot;, &quot;scale&quot;: {&quot;plot_top&quot;: 116, &quot;plot_bottom&quot;: 600, &quot;price_low&quot;: 25560.136000000002, &quot;price_high&quot;: 25740.663999999997, &quot;plot_left&quot;: 80, &quot;plot_right&quot;: 1260, &quot;t_open&quot;: 555, &quot;t_end&quot;: 675}}</metadata>
+<style>text{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}</style>
+<rect width="1560" height="890" fill="white"/>
+<text x="40" y="26" font-size="18" font-weight="bold" fill="#111">JOURNAL DAY 2026-02-17   ORB journal row(s) without a counted automated match</text>
+<text x="40" y="47" font-size="13" fill="#333">Date 2026-02-17   |   configurations A / B / C   |   no trade is drawn on this chart</text>
+<text x="40" y="66" font-size="12" fill="#444">Manual entries are drawn at the candle START of the journal label (the journal records no price).</text>
+<rect x="1216" y="10" width="304" height="30" rx="5" fill="#6a1b9a"/><text x="1368" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff" style="stroke:none">MANUAL-ONLY / NO TRADE DRAWN</text>
+<text x="40" y="86" font-size="10.5" fill="#777">real 5-minute candles (IST); synthetic NIFTY 50 index points; causes are quoted from the verified Phase 5.6 file mismatch_root_causes.csv</text>
+<text x="40" y="100" font-size="10.5" fill="#777">off the price scale (not drawn): prev-day low 25,376.05</text>
+<line x1="80" x2="1260" y1="600.0" y2="600.0" stroke="#eee"/><text x="6" y="604.0" fill="#555">25,560</text>
+<line x1="80" x2="1260" y1="519.3" y2="519.3" stroke="#eee"/><text x="6" y="523.3" fill="#555">25,590</text>
+<line x1="80" x2="1260" y1="438.7" y2="438.7" stroke="#eee"/><text x="6" y="442.7" fill="#555">25,620</text>
+<line x1="80" x2="1260" y1="358.0" y2="358.0" stroke="#eee"/><text x="6" y="362.0" fill="#555">25,650</text>
+<line x1="80" x2="1260" y1="277.3" y2="277.3" stroke="#eee"/><text x="6" y="281.3" fill="#555">25,680</text>
+<line x1="80" x2="1260" y1="196.7" y2="196.7" stroke="#eee"/><text x="6" y="200.7" fill="#555">25,711</text>
+<line x1="80" x2="1260" y1="116.0" y2="116.0" stroke="#eee"/><text x="6" y="120.0" fill="#555">25,741</text>
+<line x1="80.0" x2="80.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="66.0" y="616" fill="#555">09:15</text>
+<line x1="227.5" x2="227.5" y1="116" y2="600" stroke="#f1f1f1"/><text x="213.5" y="616" fill="#555">09:30</text>
+<line x1="375.0" x2="375.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="361.0" y="616" fill="#555">09:45</text>
+<line x1="522.5" x2="522.5" y1="116" y2="600" stroke="#f1f1f1"/><text x="508.5" y="616" fill="#555">10:00</text>
+<line x1="670.0" x2="670.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="656.0" y="616" fill="#555">10:15</text>
+<line x1="817.5" x2="817.5" y1="116" y2="600" stroke="#f1f1f1"/><text x="803.5" y="616" fill="#555">10:30</text>
+<line x1="965.0" x2="965.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="951.0" y="616" fill="#555">10:45</text>
+<line x1="1112.5" x2="1112.5" y1="116" y2="600" stroke="#f1f1f1"/><text x="1098.5" y="616" fill="#555">11:00</text>
+<line x1="1260.0" x2="1260.0" y1="116" y2="600" stroke="#f1f1f1"/><text x="1246.0" y="616" fill="#555">11:15</text>
+<line x1="80" x2="1260" y1="236.1" y2="236.1" stroke="#1b5e20" stroke-dasharray="6,4" stroke-width="1.1"/>
+<line x1="80" x2="1260" y1="373.8" y2="373.8" stroke="#6a1b9a" stroke-dasharray="6,4" stroke-width="1.1"/>
+<line x1="80" x2="1260" y1="515.4" y2="515.4" stroke="#6a1b9a" stroke-dasharray="6,4" stroke-width="1.1"/>
+<polyline points="104.6,414.1 153.8,415.4 202.9,416.4 252.1,416.8 301.2,417.2 350.4,416.8 399.6,416.4 448.8,415.5 497.9,414.6 547.1,413.7 596.2,412.8 645.4,411.5 694.6,409.8 743.8,408.1 792.9,405.7 842.1,403.6 891.2,402.0 940.4,401.3 989.6,400.7 1038.8,400.1 1087.9,399.2 1137.1,398.3 1186.2,397.4 1235.4,396.4" fill="none" stroke="#f9a825" stroke-width="1.6"/>
+<line x1="104.6" x2="104.6" y1="373.8" y2="515.4" stroke="#c62828"/><rect x="87.9" y="373.8" width="33.4" height="85.9" fill="#c62828"/>
+<line x1="153.8" x2="153.8" y1="465.1" y2="561.0" stroke="#c62828"/><rect x="137.0" y="465.1" width="33.4" height="82.4" fill="#c62828"/>
+<line x1="202.9" x2="202.9" y1="497.4" y2="571.7" stroke="#2e7d32"/><rect x="186.2" y="512.4" width="33.4" height="37.4" fill="#2e7d32"/>
+<line x1="252.1" x2="252.1" y1="448.9" y2="550.2" stroke="#2e7d32"/><rect x="235.4" y="459.9" width="33.4" height="51.7" fill="#2e7d32"/>
+<line x1="301.2" x2="301.2" y1="448.5" y2="535.9" stroke="#2e7d32"/><rect x="284.5" y="448.6" width="33.4" height="7.4" fill="#2e7d32"/>
+<line x1="350.4" x2="350.4" y1="373.1" y2="489.4" stroke="#2e7d32"/><rect x="333.7" y="378.0" width="33.4" height="74.8" fill="#2e7d32"/>
+<line x1="399.6" x2="399.6" y1="370.7" y2="406.3" stroke="#c62828"/><rect x="382.9" y="380.0" width="33.4" height="1.7" fill="#c62828"/>
+<line x1="448.8" x2="448.8" y1="320.5" y2="404.4" stroke="#2e7d32"/><rect x="432.0" y="326.1" width="33.4" height="56.6" fill="#2e7d32"/>
+<line x1="497.9" x2="497.9" y1="290.6" y2="351.3" stroke="#2e7d32"/><rect x="481.2" y="323.8" width="33.4" height="3.1" fill="#2e7d32"/>
+<line x1="547.1" x2="547.1" y1="312.4" y2="355.6" stroke="#2e7d32"/><rect x="530.4" y="326.2" width="33.4" height="1.0" fill="#2e7d32"/>
+<line x1="596.2" x2="596.2" y1="300.5" y2="340.4" stroke="#2e7d32"/><rect x="579.5" y="317.7" width="33.4" height="9.2" fill="#2e7d32"/>
+<line x1="645.4" x2="645.4" y1="274.9" y2="333.9" stroke="#2e7d32"/><rect x="628.7" y="280.7" width="33.4" height="36.1" fill="#2e7d32"/>
+<line x1="694.6" x2="694.6" y1="246.1" y2="315.8" stroke="#2e7d32"/><rect x="677.9" y="250.0" width="33.4" height="30.3" fill="#2e7d32"/>
+<line x1="743.8" x2="743.8" y1="230.5" y2="258.4" stroke="#2e7d32"/><rect x="727.0" y="237.5" width="33.4" height="13.1" fill="#2e7d32"/>
+<line x1="792.9" x2="792.9" y1="148.6" y2="246.3" stroke="#2e7d32"/><rect x="776.2" y="159.6" width="33.4" height="79.8" fill="#2e7d32"/>
+<line x1="842.1" x2="842.1" y1="144.3" y2="208.5" stroke="#c62828"/><rect x="825.4" y="160.4" width="33.4" height="36.5" fill="#c62828"/>
+<line x1="891.2" x2="891.2" y1="198.2" y2="246.6" stroke="#c62828"/><rect x="874.5" y="198.3" width="33.4" height="46.0" fill="#c62828"/>
+<line x1="940.4" x2="940.4" y1="232.1" y2="339.8" stroke="#c62828"/><rect x="923.7" y="245.3" width="33.4" height="83.5" fill="#c62828"/>
+<line x1="989.6" x2="989.6" y1="310.7" y2="378.5" stroke="#c62828"/><rect x="972.9" y="328.0" width="33.4" height="13.3" fill="#c62828"/>
+<line x1="1038.8" x2="1038.8" y1="337.2" y2="361.2" stroke="#c62828"/><rect x="1022.0" y="340.0" width="33.4" height="1.3" fill="#c62828"/>
+<line x1="1087.9" x2="1087.9" y1="307.7" y2="342.3" stroke="#2e7d32"/><rect x="1071.2" y="310.5" width="33.4" height="31.0" fill="#2e7d32"/>
+<line x1="1137.1" x2="1137.1" y1="299.8" y2="337.1" stroke="#c62828"/><rect x="1120.4" y="311.5" width="33.4" height="3.2" fill="#c62828"/>
+<line x1="1186.2" x2="1186.2" y1="292.2" y2="349.3" stroke="#2e7d32"/><rect x="1169.5" y="303.8" width="33.4" height="10.2" fill="#2e7d32"/>
+<line x1="1235.4" x2="1235.4" y1="292.2" y2="328.5" stroke="#2e7d32"/><rect x="1218.7" y="297.1" width="33.4" height="5.1" fill="#2e7d32"/>
+<text x="104.6" y="369.8" text-anchor="middle" font-size="9" fill="#37474f" font-weight="bold">C0</text>
+<line x1="104.6" x2="104.6" y1="116" y2="600" stroke="#c2185b" stroke-dasharray="2,3" stroke-width="1.1" opacity="0.85"/><text x="107.6" y="128" fill="#c2185b" font-size="10.5" data-kind="JOURNAL" data-journal-row="83">JOURNAL #83 ORB 09:15 BE</text>
+<text x="1274.0" y="236.1" fill="#1b5e20" font-size="10">prev-day high 25,695.85</text>
+<text x="1274.0" y="373.8" fill="#6a1b9a" font-size="10">first-candle high 25,644.50</text>
+<text x="1274.0" y="515.4" fill="#6a1b9a" font-size="10">first-candle low 25,591.70</text>
+<text x="40" y="638" fill="#f9a825" font-size="11" font-weight="bold">EMA(200) of 5-min closes</text>
+<text x="212.39999999999998" y="638" fill="#1b5e20" font-size="11" font-weight="bold">- - previous-day high / low</text>
+<text x="403.09999999999997" y="638" fill="#6a1b9a" font-size="11" font-weight="bold">- - first-candle high / low</text>
+<text x="593.8" y="638" fill="#c2185b" font-size="11" font-weight="bold">journal entry (candle-start label; no price recorded)</text>
+<text x="40" y="674" font-size="12.5" font-weight="bold" fill="#111">JOURNAL ROWS OF THE DAY</text>
+<line x1="40" x2="400" y1="678" y2="678" stroke="#bbb"/>
+<text x="40" y="694" fill="#111">83: ORB at 09:15 (outcome BE)</text>
+<text x="412" y="674" font-size="12.5" font-weight="bold" fill="#111">WHY NO COUNTED MATCH (Phase 5.6 causes)</text>
+<line x1="412" x2="772" y1="678" y2="678" stroke="#bbb"/>
+<text x="412" y="694" fill="#111" font-weight="bold">A: row #83 ORB - UNMATCHED_MANUAL - OPENING_GAP_MISMATCH</text>
+<text x="412" y="708" fill="#666">first candle RED O25644.5 H25644.5 L25591.7 C25612.45 (body</text>
+<text x="412" y="722" fill="#666">60.7%); direction ASSUMED from the colour (the journal has</text>
+<text x="412" y="736" fill="#666">no direction); closest method ...</text>
+<text x="412" y="750" fill="#111" font-weight="bold">B: row #83 ORB - UNMATCHED_MANUAL - OPENING_GAP_MISMATCH</text>
+<text x="412" y="764" fill="#666">first candle RED O25644.5 H25644.5 L25591.7 C25612.45 (body</text>
+<text x="412" y="778" fill="#666">60.7%); direction ASSUMED from the colour (the journal has</text>
+<text x="412" y="792" fill="#666">no direction); closest method ...</text>
+<text x="412" y="806" fill="#111" font-weight="bold">C: row #83 ORB - UNMATCHED_MANUAL -</text>
+<text x="412" y="820" fill="#111" font-weight="bold">CANDLE_STRENGTH_MISMATCH</text>
+<text x="412" y="834" fill="#666">first candle RED O25644.5 H25644.5 L25591.7 C25612.45 (body</text>
+<text x="412" y="848" fill="#666">60.7%); direction ASSUMED from the colour (the journal has</text>
+<text x="412" y="862" fill="#666">no direction); closest method ...</text>
+<text x="784" y="674" font-size="12.5" font-weight="bold" fill="#111">AUTOMATED TRADES THAT DAY</text>
+<line x1="784" x2="1144" y1="678" y2="678" stroke="#bbb"/>
+<text x="784" y="694" fill="#111">A: 20260217-1-IRF IRF Method 2B SHORT 10:45 @ 25,661.60 -&gt;</text>
+<text x="784" y="708" fill="#111">INITIAL_FULL_STOP</text>
+<text x="784" y="722" fill="#111">B: 20260217-1-IRF IRF Method 2A SHORT 10:40 @ 25,692.45 -&gt;</text>
+<text x="784" y="736" fill="#111">T1_THEN_BUFFER_STOP</text>
+<text x="784" y="750" fill="#111">C: 20260217-1-IRF IRF Method 2A SHORT 10:40 @ 25,692.45 -&gt;</text>
+<text x="784" y="764" fill="#111">T1_THEN_BUFFER_STOP</text>
+<text x="1156" y="674" font-size="12.5" font-weight="bold" fill="#111">HANDWRITTEN CORRECTIONS</text>
+<line x1="1156" x2="1516" y1="678" y2="678" stroke="#bbb"/>
+<text x="1156" y="694" fill="#111">No handwritten correction on this date</text>
+</svg>

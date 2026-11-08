@@ -1,0 +1,438 @@
+{
+ "journal_rows": 190,
+ "journal_by_strategy": {
+  "IRF": 73,
+  "PDR": 8,
+  "ORB": 89,
+  "RF": 17,
+  "PDS": 3
+ },
+ "journal_saturday_rows": [
+  "2025-10-11",
+  "2026-02-14",
+  "2026-08-15",
+  "2026-08-22",
+  "2026-08-29"
+ ],
+ "frozen_orb_confirmed": 53,
+ "frozen_orb_equals_phase36_table": true,
+ "registry": {
+  "EXPLICIT_DOCUMENT_RULE": 40,
+  "UNRESOLVED": 2,
+  "AUTHOR_CLARIFICATION": 2,
+  "OWNER_APPROVED": 1,
+  "CURRENT_ENGINE_ASSUMPTION": 2
+ },
+ "thirteen": {
+  "first_candle_colours": {
+   "GREEN": 12,
+   "RED": 1
+  },
+  "missing_Method_1": {
+   "level_broken": 9,
+   "candle_quality": 3,
+   "trend": 1
+  },
+  "missing_Method_2": {
+   "trendline": 4,
+   "inner_level_broken": 6,
+   "trend": 2,
+   "candle_quality": 1
+  },
+  "missing_Gap": {
+   "gap_in_direction": 6,
+   "gap_crosses_200_average": 6,
+   "candle_shape": 1
+  },
+  "frozen_orb_records_on_the_13": 15,
+  "frozen_orb_confirmed_on_the_13": 0
+ },
+ "gap_reading_differ_cases": [
+  {
+   "date": "2025-11-10",
+   "direction": "LONG",
+   "open_minus_average": -25.421
+  },
+  {
+   "date": "2025-12-31",
+   "direction": "LONG",
+   "open_minus_average": -0.083
+  },
+  {
+   "date": "2026-01-16",
+   "direction": "LONG",
+   "open_minus_average": -26.058
+  },
+  {
+   "date": "2026-02-17",
+   "direction": "SHORT",
+   "open_minus_average": -15.028
+  },
+  {
+   "date": "2026-02-25",
+   "direction": "LONG",
+   "open_minus_average": -26.146
+  },
+  {
+   "date": "2026-03-27",
+   "direction": "SHORT",
+   "open_minus_average": -32.317
+  },
+  {
+   "date": "2026-05-08",
+   "direction": "SHORT",
+   "open_minus_average": -0.142
+  },
+  {
+   "date": "2026-07-10",
+   "direction": "LONG",
+   "open_minus_average": -12.134
+  },
+  {
+   "date": "2026-07-15",
+   "direction": "LONG",
+   "open_minus_average": -40.911
+  },
+  {
+   "date": "2026-08-13",
+   "direction": "SHORT",
+   "open_minus_average": -18.697
+  }
+ ],
+ "gap_reading_population": {
+  "gap_in_direction_cases": 246,
+  "frozen_reading_cases": 40,
+  "candle_crossing_reading_cases": 50,
+  "cases_where_the_readings_differ": 10
+ },
+ "level_family_population": {
+  "M1_PREVIOUS_DAY_EXTREME": {
+   "sessions": 247,
+   "level_exists": 247,
+   "first_candle_breaks_and_closes_beyond": 69,
+   "pct_of_sessions_broken": 27.9,
+   "broken_and_strong_MODERATE_or_pin": 33,
+   "broken_and_strong_LOOSE_or_pin": 41,
+   "broken_and_trend_active": 49,
+   "broken_strong_and_trend (all gates but the trendline)": 24,
+   "broken_on_the_13_disputed_dates": 4,
+   "broken_on_dates_with_a_journal_orb_row (descriptive)": 48,
+   "broken_on_dates_with_no_journal_orb_row (descriptive)": 21
+  },
+  "M2_LATEST_FRACTAL_K2": {
+   "sessions": 247,
+   "level_exists": 247,
+   "first_candle_breaks_and_closes_beyond": 118,
+   "pct_of_sessions_broken": 47.8,
+   "broken_and_strong_MODERATE_or_pin": 56,
+   "broken_and_strong_LOOSE_or_pin": 65,
+   "broken_and_trend_active": 70,
+   "broken_strong_and_trend (all gates but the trendline)": 36,
+   "broken_on_the_13_disputed_dates": 7,
+   "broken_on_dates_with_a_journal_orb_row (descriptive)": 72,
+   "broken_on_dates_with_no_journal_orb_row (descriptive)": 46
+  },
+  "M2_HIGHEST_FRACTAL_K2": {
+   "sessions": 247,
+   "level_exists": 247,
+   "first_candle_breaks_and_closes_beyond": 84,
+   "pct_of_sessions_broken": 34.0,
+   "broken_and_strong_MODERATE_or_pin": 38,
+   "broken_and_strong_LOOSE_or_pin": 46,
+   "broken_and_trend_active": 57,
+   "broken_strong_and_trend (all gates but the trendline)": 28,
+   "broken_on_the_13_disputed_dates": 4,
+   "broken_on_dates_with_a_journal_orb_row (descriptive)": 56,
+   "broken_on_dates_with_no_journal_orb_row (descriptive)": 28
+  },
+  "M2_NEAREST_FRACTAL_FROM_OPEN_K2": {
+   "sessions": 247,
+   "level_exists": 191,
+   "first_candle_breaks_and_closes_beyond": 76,
+   "pct_of_sessions_broken": 30.8,
+   "broken_and_strong_MODERATE_or_pin": 38,
+   "broken_and_strong_LOOSE_or_pin": 44,
+   "broken_and_trend_active": 37,
+   "broken_strong_and_trend (all gates but the trendline)": 22,
+   "broken_on_the_13_disputed_dates": 8,
+   "broken_on_dates_with_a_journal_orb_row (descriptive)": 42,
+   "broken_on_dates_with_no_journal_orb_row (descriptive)": 34
+  },
+  "M2_HIGHEST_BROKEN_FRACTAL_K2": {
+   "sessions": 247,
+   "level_exists": 156,
+   "first_candle_breaks_and_closes_beyond": 156,
+   "pct_of_sessions_broken": 63.2,
+   "broken_and_strong_MODERATE_or_pin": 70,
+   "broken_and_strong_LOOSE_or_pin": 81,
+   "broken_and_trend_active": 94,
+   "broken_strong_and_trend (all gates but the trendline)": 47,
+   "broken_on_the_13_disputed_dates": 12,
+   "broken_on_dates_with_a_journal_orb_row (descriptive)": 82,
+   "broken_on_dates_with_no_journal_orb_row (descriptive)": 74
+  },
+  "MS_EXTREME_2_SESSIONS": {
+   "sessions": 246,
+   "level_exists": 246,
+   "first_candle_breaks_and_closes_beyond": 49,
+   "pct_of_sessions_broken": 19.9,
+   "broken_and_strong_MODERATE_or_pin": 23,
+   "broken_and_strong_LOOSE_or_pin": 31,
+   "broken_and_trend_active": 41,
+   "broken_strong_and_trend (all gates but the trendline)": 19,
+   "broken_on_the_13_disputed_dates": 3,
+   "broken_on_dates_with_a_journal_orb_row (descriptive)": 36,
+   "broken_on_dates_with_no_journal_orb_row (descriptive)": 13
+  },
+  "MS_EXTREME_3_SESSIONS": {
+   "sessions": 246,
+   "level_exists": 246,
+   "first_candle_breaks_and_closes_beyond": 41,
+   "pct_of_sessions_broken": 16.7,
+   "broken_and_strong_MODERATE_or_pin": 17,
+   "broken_and_strong_LOOSE_or_pin": 23,
+   "broken_and_trend_active": 35,
+   "broken_strong_and_trend (all gates but the trendline)": 15,
+   "broken_on_the_13_disputed_dates": 3,
+   "broken_on_dates_with_a_journal_orb_row (descriptive)": 28,
+   "broken_on_dates_with_no_journal_orb_row (descriptive)": 13
+  },
+  "MS_EXTREME_5_SESSIONS": {
+   "sessions": 246,
+   "level_exists": 246,
+   "first_candle_breaks_and_closes_beyond": 26,
+   "pct_of_sessions_broken": 10.6,
+   "broken_and_strong_MODERATE_or_pin": 11,
+   "broken_and_strong_LOOSE_or_pin": 15,
+   "broken_and_trend_active": 25,
+   "broken_strong_and_trend (all gates but the trendline)": 11,
+   "broken_on_the_13_disputed_dates": 2,
+   "broken_on_dates_with_a_journal_orb_row (descriptive)": 19,
+   "broken_on_dates_with_no_journal_orb_row (descriptive)": 7
+  },
+  "MS_SWING_NEAREST_FROM_OPEN_3_SESSIONS": {
+   "sessions": 246,
+   "level_exists": 216,
+   "first_candle_breaks_and_closes_beyond": 113,
+   "pct_of_sessions_broken": 45.9,
+   "broken_and_strong_MODERATE_or_pin": 52,
+   "broken_and_strong_LOOSE_or_pin": 59,
+   "broken_and_trend_active": 60,
+   "broken_strong_and_trend (all gates but the trendline)": 33,
+   "broken_on_the_13_disputed_dates": 9,
+   "broken_on_dates_with_a_journal_orb_row (descriptive)": 57,
+   "broken_on_dates_with_no_journal_orb_row (descriptive)": 56
+  }
+ },
+ "strength_population": {
+  "m1_level_broken_sessions": 69,
+  "m1_broken_strong_STRICT": 15,
+  "m1_broken_strong_MODERATE": 25,
+  "m1_broken_strong_LOOSE": 33,
+  "m1_broken_pin": 8
+ },
+ "journal_orb": {
+  "rows": 89,
+  "engine_orb_signal_on_journal_orb_date": 35,
+  "journal_orb_dates_without_engine_orb": 50,
+  "of_which_in_the_13": 11,
+  "irregular_dates_without_session": 4,
+  "first_candle_colour_of_missed": {
+   "GREEN": 30,
+   "RED": 20
+  },
+  "binding_predicate_of_missed": {
+   "level_broken": 15,
+   "candle_quality": 13,
+   "candle_shape": 9,
+   "2 predicates fail": 9,
+   "trend": 2,
+   "gap_crosses_200_average": 2
+  },
+  "journal_orb_dates_engine_signal_on_other_dates_total": 41,
+  "engine_orb_signal_dates_without_journal_orb": 6,
+  "journal_orb_on_the_13": 11
+ },
+ "variants": {
+  "orb-frozen": {
+   "authority": "ACTIVE_REFERENCE",
+   "confirmed_orb_signals": 53,
+   "sessions_with_a_signal": 41,
+   "by_method": "{'Method 2': 16, 'Method 1': 27, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 23, 'LONG': 30}",
+   "added_vs_frozen": 0,
+   "removed_vs_frozen": 0,
+   "disputed_dates_with_a_signal (of 13)": 0,
+   "disputed_dates_list": "",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 35,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 6,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 0,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20"
+  },
+  "orb-var-inner-highest-fractal": {
+   "authority": "RESEARCH_PROPOSAL_NOT_APPROVED",
+   "confirmed_orb_signals": 51,
+   "sessions_with_a_signal": 39,
+   "by_method": "{'Method 1': 27, 'Method 2': 14, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 21, 'LONG': 30}",
+   "added_vs_frozen": 0,
+   "removed_vs_frozen": 2,
+   "disputed_dates_with_a_signal (of 13)": 0,
+   "disputed_dates_list": "",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 33,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 6,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 0,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20"
+  },
+  "orb-var-inner-nearest-from-open": {
+   "authority": "RESEARCH_PROPOSAL_NOT_APPROVED",
+   "confirmed_orb_signals": 47,
+   "sessions_with_a_signal": 43,
+   "by_method": "{'Method 2': 10, 'Method 1': 27, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 21, 'LONG': 26}",
+   "added_vs_frozen": 2,
+   "removed_vs_frozen": 8,
+   "disputed_dates_with_a_signal (of 13)": 1,
+   "disputed_dates_list": "2025-12-24",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 37,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 6,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 0,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20"
+  },
+  "orb-var-inner-highest-broken": {
+   "authority": "DIAGNOSTIC_ONLY",
+   "confirmed_orb_signals": 58,
+   "sessions_with_a_signal": 46,
+   "by_method": "{'Method 2': 21, 'Method 1': 27, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 24, 'LONG': 34}",
+   "added_vs_frozen": 5,
+   "removed_vs_frozen": 0,
+   "disputed_dates_with_a_signal (of 13)": 1,
+   "disputed_dates_list": "2025-12-24",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 37,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 9,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 3,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20"
+  },
+  "orb-var-trendline-any-pair": {
+   "authority": "RESEARCH_PROPOSAL_NOT_APPROVED",
+   "confirmed_orb_signals": 69,
+   "sessions_with_a_signal": 47,
+   "by_method": "{'Method 2': 32, 'Method 1': 27, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 30, 'LONG': 39}",
+   "added_vs_frozen": 16,
+   "removed_vs_frozen": 0,
+   "disputed_dates_with_a_signal (of 13)": 1,
+   "disputed_dates_list": "2025-11-28",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 40,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 7,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 2,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20"
+  },
+  "orb-var-trendline-none": {
+   "authority": "DIAGNOSTIC_ONLY",
+   "confirmed_orb_signals": 77,
+   "sessions_with_a_signal": 50,
+   "by_method": "{'Method 2': 40, 'Method 1': 27, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 32, 'LONG': 45}",
+   "added_vs_frozen": 24,
+   "removed_vs_frozen": 0,
+   "disputed_dates_with_a_signal (of 13)": 2,
+   "disputed_dates_list": "2025-09-11,2025-11-28",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 43,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 7,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 4,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20; Method 2 LONG 09:20"
+  },
+  "orb-var-strength-strict": {
+   "authority": "DIAGNOSTIC_ONLY",
+   "confirmed_orb_signals": 38,
+   "sessions_with_a_signal": 29,
+   "by_method": "{'Method 2': 13, 'Method 1': 19, 'Gap/200DMA': 6}",
+   "by_direction": "{'SHORT': 16, 'LONG': 22}",
+   "added_vs_frozen": 0,
+   "removed_vs_frozen": 15,
+   "disputed_dates_with_a_signal (of 13)": 0,
+   "disputed_dates_list": "",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 24,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 5,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 0,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20"
+  },
+  "orb-var-strength-loose": {
+   "authority": "RESEARCH_PROPOSAL_NOT_APPROVED",
+   "confirmed_orb_signals": 66,
+   "sessions_with_a_signal": 49,
+   "by_method": "{'Method 2': 21, 'Method 1': 35, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 35, 'LONG': 31}",
+   "added_vs_frozen": 13,
+   "removed_vs_frozen": 0,
+   "disputed_dates_with_a_signal (of 13)": 2,
+   "disputed_dates_list": "2025-12-12,2025-12-30",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 43,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 6,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 0,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20"
+  },
+  "orb-var-trend-structure": {
+   "authority": "OWNER_VARIANT_NOT_ACTIVE",
+   "confirmed_orb_signals": 29,
+   "sessions_with_a_signal": 21,
+   "by_method": "{'Method 2': 10, 'Method 1': 9, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 12, 'LONG': 17}",
+   "added_vs_frozen": 0,
+   "removed_vs_frozen": 24,
+   "disputed_dates_with_a_signal (of 13)": 0,
+   "disputed_dates_list": "",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 18,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 3,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 0,
+   "ac27_2025-11-27_signal": "none"
+  },
+  "orb-var-trend-ema-basic": {
+   "authority": "DIAGNOSTIC_ONLY",
+   "confirmed_orb_signals": 66,
+   "sessions_with_a_signal": 43,
+   "by_method": "{'Method 2': 20, 'Method 1': 36, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 31, 'LONG': 35}",
+   "added_vs_frozen": 13,
+   "removed_vs_frozen": 0,
+   "disputed_dates_with_a_signal (of 13)": 0,
+   "disputed_dates_list": "",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 37,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 6,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 1,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20"
+  },
+  "orb-var-gap-candle-crossing": {
+   "authority": "RESEARCH_PROPOSAL_NOT_APPROVED",
+   "confirmed_orb_signals": 56,
+   "sessions_with_a_signal": 44,
+   "by_method": "{'Method 2': 16, 'Method 1': 27, 'Gap/200DMA': 13}",
+   "by_direction": "{'SHORT': 25, 'LONG': 31}",
+   "added_vs_frozen": 3,
+   "removed_vs_frozen": 0,
+   "disputed_dates_with_a_signal (of 13)": 0,
+   "disputed_dates_list": "",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 38,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 6,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 0,
+   "ac27_2025-11-27_signal": "Method 1 LONG 09:20"
+  },
+  "orb-var-colour": {
+   "authority": "CANDIDATE_NOT_APPROVED",
+   "confirmed_orb_signals": 50,
+   "sessions_with_a_signal": 38,
+   "by_method": "{'Method 2': 16, 'Method 1': 24, 'Gap/200DMA': 10}",
+   "by_direction": "{'SHORT': 22, 'LONG': 28}",
+   "added_vs_frozen": 0,
+   "removed_vs_frozen": 3,
+   "disputed_dates_with_a_signal (of 13)": 0,
+   "disputed_dates_list": "",
+   "date_overlap_with_journal_orb_rows (of 89, descriptive)": 35,
+   "signal_dates_with_no_journal_orb_row (descriptive)": 3,
+   "added_signal_dates_with_no_journal_orb_row (descriptive)": 0,
+   "ac27_2025-11-27_signal": "none"
+  }
+ }
+}

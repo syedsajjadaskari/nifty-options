@@ -1,0 +1,194 @@
+{
+  "checks": {
+    "the frozen configuration id FROZEN-PHASE36-42cea2600bd4 is recomputed from the stored hashes / parameters / costs and all 26 active implementation files match their frozen hashes": {
+      "pass": true,
+      "n": 26,
+      "detail": "FROZEN-PHASE36-42cea2600bd4",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the three configurations carry distinct identifiers (A = the frozen id; B and C are new hashes over the frozen files, the Phase 5 candidate files, the parameters and the provisional assumptions)": {
+      "pass": true,
+      "n": 3,
+      "detail": "{'A': 'FROZEN-PHASE36-42cea2600bd4', 'B': 'PHASE55-B-a3ca4d04dd11', 'C': 'PHASE55-C-144ceb6b28b1'}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every file of the Phase 5.5 baseline snapshot (source code, one-minute data, the manual journal, the source PDFs, Phase 3.0-5.4 reports) is byte-identical; only declared Phase 5.5 / 5.6 files were added": {
+      "pass": true,
+      "n": 15340,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the original manual journal workbook is unchanged (hash equals the manifest and the baseline snapshot)": {
+      "pass": true,
+      "n": 1,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every confirmed signal of A, B and C: the signal candle exists in the raw data, its close equals the reference close, the signal time is the candle's END (never before it completed) on the 5-minute grid and not before 09:20": {
+      "pass": true,
+      "n": 3304,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "signal totals: A = 1,083 (874 / 53 / 87 / 57 / 12), B = 1,109 (786 / 53 / 147 / 111 / 12), C = B plus exactly three ORB signals": {
+      "pass": true,
+      "n": 3304,
+      "detail": "{'A': 1083, 'B': 1109, 'C': 1112}",
+      "failures": [],
+      "n_failures": 0
+    },
+    "no duplicate signal (same configuration, date, time, strategy, method, direction)": {
+      "pass": true,
+      "n": 3304,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "configuration A's signals equal the delivered Phase 3.6 table and B's equal the delivered Phase 5.3 author-corrected signal table (two earlier, separately audited deliverables); C = B plus three ORB Gap / 200DMA signals": {
+      "pass": true,
+      "n": 1112,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every IRF signal of B and C has >= 28 points between the signal candle's high-low range and its own EMA(200) (independent EMA; inclusive boundary)": {
+      "pass": true,
+      "n": 1572,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the three ORB signals added by configuration C each satisfy the candle-crossing reading (previous close on the wrong side of its EMA, open NOT beyond the average, candle reaches it and closes beyond, strong candle) and fail the frozen open-beyond reading": {
+      "pass": true,
+      "n": 3,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "configuration A: the independently re-implemented controller selects exactly the same trades (date, trade number, strategy, direction, entry time) as the backtest": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "configuration A: every entry price (= the raw one-minute open at the signal candle's end), both exit prices, the exit class, the gross P&L and the five cost-scenario net P&Ls equal an independent recomputation from the raw candles": {
+      "pass": true,
+      "n": 196,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "configuration B: the independently re-implemented controller selects exactly the same trades (date, trade number, strategy, direction, entry time) as the backtest": {
+      "pass": true,
+      "n": 188,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "configuration B: every entry price (= the raw one-minute open at the signal candle's end), both exit prices, the exit class, the gross P&L and the five cost-scenario net P&Ls equal an independent recomputation from the raw candles": {
+      "pass": true,
+      "n": 188,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "configuration C: the independently re-implemented controller selects exactly the same trades (date, trade number, strategy, direction, entry time) as the backtest": {
+      "pass": true,
+      "n": 190,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "configuration C: every entry price (= the raw one-minute open at the signal candle's end), both exit prices, the exit class, the gross P&L and the five cost-scenario net P&Ls equal an independent recomputation from the raw candles": {
+      "pass": true,
+      "n": 190,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every simulated entry is the open of the raw one-minute bar that starts when the signal candle completed (no past price, no invented price) and no entry is later than 13:00": {
+      "pass": true,
+      "n": 574,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every trade carries the approved position rules: stop 30 (ORB) / 35, Target 1 = 27, Target 2 = 60 (IRF, ORB, RF) / 70 (PDR, PDS), post-T1 stop entry -/+ 6, 6 lots = 390 units in two legs of 195, a second trade only PDR / PDS": {
+      "pass": true,
+      "n": 574,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "at most two trades per day; a second trade exists only after the first trade's ORIGINAL full stop and its entry is after the first position closed": {
+      "pass": true,
+      "n": 540,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "intrabar ambiguity audit: the set of trades with a same-minute stop / target conflict recomputed from the raw bars equals the delivered list (and the number of outcomes that depend on the ordering convention is reported)": {
+      "pass": true,
+      "n": 0,
+      "detail": "0 ambiguous trades; the delivered list has 0",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the cost-sensitivity table (net P&L, win rate, profit factor, maximum drawdown for the five scenarios A-E) equals an independent recomputation for A, B and C": {
+      "pass": true,
+      "n": 15,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "strategy-wise results (trades, gross P&L, T1 / T2 hits, full stops, post-T1 stops, forced exits) equal an independent recomputation for every strategy of A, B and C": {
+      "pass": true,
+      "n": 15,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "slippage units: the entry slippage applies to the 390 entry units once and the exit slippage to each exited leg once (390 units when both legs exit, 195 for a single exit; nothing is charged twice) - checked on every trade": {
+      "pass": true,
+      "n": 574,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "robustness window 2022-09-01..2025-08-31 (A, B, C): every trade's entry, exit class, gross P&L and Rs 70 net P&L equals an independent recomputation from the Phase 4 one-minute partitions": {
+      "pass": true,
+      "n": 1808,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the frozen configuration A reproduces the delivered Phase 4 window-B backtest (609 trades, identical gross P&L)": {
+      "pass": true,
+      "n": 609,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "the old Rs 500 fixed-cost columns are not carried into the Phase 5.5 trade tables": {
+      "pass": true,
+      "n": 80,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    },
+    "every required Phase 5.5 deliverable exists": {
+      "pass": true,
+      "n": 17,
+      "detail": "",
+      "failures": [],
+      "n_failures": 0
+    }
+  },
+  "all_pass": true
+}

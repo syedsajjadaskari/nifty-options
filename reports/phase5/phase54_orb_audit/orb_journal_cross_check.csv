@@ -1,0 +1,90 @@
+journal_date,weekday,journal_entry_time,session_in_dataset,engine_orb_signal,first_candle_colour,Method_1_first_failing,Method_2_first_failing,Gap_first_failing,best_method,binding_predicate,in_the_13
+2025-09-03,Wed,09:15,True,Method 2 SHORT,RED,level_broken,NONE (all predicates pass),gap_in_direction,(engine signal),,False
+2025-09-05,Fri,09:15,True,none,GREEN,level_broken,trendline,gap_crosses_200_average,Method 1,level_broken,False
+2025-09-11,Thu,09:15,True,none,GREEN,level_broken,trendline,gap_in_direction,Method 1,level_broken,True
+2025-09-16,Tue,09:15,True,none,GREEN,level_broken,inner_level_broken,gap_crosses_200_average,Method 1,level_broken,True
+2025-09-24,Wed,09:15,True,Method 2 SHORT,RED,level_broken,NONE (all predicates pass),gap_crosses_200_average,(engine signal),,False
+2025-09-26,Fri,09:15,True,Method 1 SHORT; Method 2 SHORT,RED,NONE (all predicates pass),NONE (all predicates pass),gap_crosses_200_average,(engine signal),,False
+2025-10-01,Wed,09:15,True,none,RED,level_broken,inner_level_broken,gap_in_direction,Method 1,level_broken,False
+2025-10-08,Wed,09:15,True,none,GREEN,level_broken,inner_level_broken,gap_in_direction,Method 1,level_broken,True
+2025-10-10,Fri,09:15,True,Method 1 LONG; Method 2 LONG,GREEN,NONE (all predicates pass),NONE (all predicates pass),gap_in_direction,(engine signal),,False
+2025-10-11,Sat,09:15,False,NO SESSION IN THE DATASET (irregular journal date),,,,,,,False
+2025-10-15,Wed,09:15,True,Gap/200DMA LONG,GREEN,level_broken,trend,NONE (all predicates pass),(engine signal),,False
+2025-10-16,Thu,09:15,True,none,GREEN,candle_quality,trendline,gap_crosses_200_average,Method 1,candle_quality,True
+2025-10-20,Mon,09:15,True,Method 1 LONG,GREEN,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2025-10-24,Fri,09:15,True,Method 1 SHORT; Method 2 SHORT,RED,NONE (all predicates pass),NONE (all predicates pass),gap_in_direction,(engine signal),,False
+2025-10-27,Mon,09:15,True,none,GREEN,level_broken,trend,candle_shape,Gap/200DMA,candle_shape,True
+2025-11-07,Fri,09:15,True,none,RED,candle_quality,trendline,gap_crosses_200_average,Method 1,candle_quality,False
+2025-11-11,Tue,09:15,True,Method 2 SHORT,RED,level_broken,NONE (all predicates pass),gap_in_direction,(engine signal),,False
+2025-11-17,Mon,09:15,True,Method 1 LONG,GREEN,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2025-11-19,Wed,09:15,True,Method 1 SHORT,RED,NONE (all predicates pass),trendline,gap_in_direction,(engine signal),,False
+2025-11-28,Fri,09:15,True,none,GREEN,level_broken,trendline,gap_crosses_200_average,Method 1,level_broken,True
+2025-12-04,Thu,09:15,True,none,RED,level_broken,inner_level_broken,gap_crosses_200_average,Method 1,2 predicates fail,False
+2025-12-05,Fri,09:15,True,none,GREEN,level_broken,inner_level_broken,gap_in_direction,Method 1,2 predicates fail,True
+2025-12-09,Tue,09:15,True,Method 1 SHORT,RED,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2025-12-12,Fri,09:15,True,none,GREEN,candle_quality,trendline,gap_crosses_200_average,Method 1,candle_quality,True
+2025-12-19,Fri,09:15,True,Gap/200DMA LONG,GREEN,trend,trend,NONE (all predicates pass),(engine signal),,False
+2025-12-22,Mon,09:15,True,Method 1 LONG,GREEN,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2025-12-24,Wed,09:15,True,none,GREEN,level_broken,inner_level_broken,gap_crosses_200_average,Method 1,level_broken,True
+2025-12-30,Tue,09:15,True,none,RED,candle_quality,candle_quality,gap_in_direction,Method 1,candle_quality,True
+2025-12-31,Wed,09:15,True,none,GREEN,trend,trend,gap_crosses_200_average,Method 1,2 predicates fail,True
+2026-01-02,Fri,09:15,True,none,GREEN,level_broken,trendline,gap_crosses_200_average,Method 1,2 predicates fail,False
+2026-01-12,Mon,09:15,True,Method 1 SHORT,RED,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2026-01-16,Fri,09:15,True,none,GREEN,level_broken,trend,gap_crosses_200_average,Gap/200DMA,2 predicates fail,False
+2026-01-27,Tue,09:15,True,none,RED,candle_quality,candle_quality,gap_in_direction,Method 1,candle_quality,False
+2026-01-28,Wed,09:15,True,Method 1 LONG; Method 2 LONG,GREEN,NONE (all predicates pass),NONE (all predicates pass),gap_crosses_200_average,(engine signal),,False
+2026-02-12,Thu,09:15,True,Gap/200DMA SHORT,RED,trend,trend,NONE (all predicates pass),(engine signal),,False
+2026-02-17,Tue,09:15,True,none,RED,level_broken,inner_level_broken,gap_crosses_200_average,Gap/200DMA,2 predicates fail,False
+2026-02-23,Mon,09:15,True,none,GREEN,trend,trend,candle_shape,Gap/200DMA,candle_shape,False
+2026-02-24,Tue,09:15,True,Gap/200DMA SHORT,RED,trend,trend,NONE (all predicates pass),(engine signal),,False
+2026-02-25,Wed,09:15,True,none,GREEN,level_broken,trend,gap_crosses_200_average,Method 2,2 predicates fail,False
+2026-02-27,Fri,09:15,True,Method 1 SHORT; Method 2 SHORT,RED,NONE (all predicates pass),NONE (all predicates pass),gap_crosses_200_average,(engine signal),,False
+2026-03-06,Fri,09:15,True,Gap/200DMA SHORT,RED,level_broken,trend,NONE (all predicates pass),(engine signal),,False
+2026-03-09,Mon,09:15,True,none,RED,candle_quality,candle_quality,gap_crosses_200_average,Method 1,candle_quality,False
+2026-03-12,Thu,09:15,True,Method 1 SHORT,RED,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2026-03-18,Wed,09:15,True,Method 1 LONG,GREEN,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2026-03-23,Mon,09:15,True,none,RED,candle_quality,candle_quality,gap_crosses_200_average,Method 1,candle_quality,False
+2026-03-25,Wed,09:15,True,Method 1 LONG; Method 2 LONG,GREEN,NONE (all predicates pass),NONE (all predicates pass),gap_crosses_200_average,(engine signal),,False
+2026-03-27,Fri,09:15,True,none,RED,trend,trend,gap_crosses_200_average,Method 1,trend,False
+2026-04-02,Thu,09:15,True,Method 1 SHORT; Method 2 SHORT,RED,NONE (all predicates pass),NONE (all predicates pass),gap_crosses_200_average,(engine signal),,False
+2026-04-10,Fri,09:15,True,none,GREEN,level_broken,trendline,gap_crosses_200_average,Method 1,level_broken,False
+2026-04-13,Mon,09:15,True,none,RED,trend,trend,candle_shape,Gap/200DMA,candle_shape,False
+2026-04-16,Thu,09:15,True,Method 1 LONG; Method 2 LONG,GREEN,NONE (all predicates pass),NONE (all predicates pass),gap_crosses_200_average,(engine signal),,False
+2026-04-17,Fri,09:15,True,none,GREEN,level_broken,inner_level_broken,gap_in_direction,Method 1,2 predicates fail,False
+2026-04-21,Tue,09:15,True,none,GREEN,level_broken,trendline,gap_crosses_200_average,Method 1,level_broken,False
+2026-04-30,Thu,09:15,True,Gap/200DMA SHORT,RED,trend,trend,NONE (all predicates pass),(engine signal),,False
+2026-05-11,Mon,09:15,True,none,RED,candle_quality,candle_quality,gap_crosses_200_average,Method 1,candle_quality,False
+2026-05-18,Mon,09:15,True,none,RED,candle_quality,candle_quality,gap_crosses_200_average,Method 1,candle_quality,False
+2026-05-19,Tue,09:15,True,Method 1 LONG; Method 2 LONG,GREEN,NONE (all predicates pass),NONE (all predicates pass),gap_crosses_200_average,(engine signal),,False
+2026-05-22,Fri,09:15,True,none,GREEN,level_broken,inner_level_broken,candle_shape,Gap/200DMA,candle_shape,False
+2026-05-25,Mon,09:15,True,none,GREEN,candle_quality,trendline,candle_shape,Method 1,candle_quality,False
+2026-05-29,Fri,09:15,True,none,GREEN,level_broken,trend,candle_shape,Gap/200DMA,candle_shape,False
+2026-06-01,Mon,09:15,True,none,RED,level_broken,trendline,gap_in_direction,Method 1,level_broken,False
+2026-06-03,Wed,09:15,True,none,RED,level_broken,trendline,gap_crosses_200_average,Method 1,level_broken,False
+2026-06-10,Wed,09:15,True,Method 1 LONG,GREEN,NONE (all predicates pass),trendline,gap_in_direction,(engine signal),,False
+2026-06-12,Fri,09:15,True,none,GREEN,trend,trend,candle_shape,Gap/200DMA,candle_shape,False
+2026-06-16,Tue,09:15,True,none,GREEN,level_broken,inner_level_broken,gap_crosses_200_average,Method 1,level_broken,False
+2026-06-22,Mon,09:15,True,Method 1 LONG,GREEN,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2026-06-30,Tue,09:15,True,none,RED,level_broken,inner_level_broken,gap_in_direction,Method 1,level_broken,False
+2026-07-02,Thu,09:15,True,none,GREEN,trend,trend,gap_crosses_200_average,Method 1,trend,False
+2026-07-06,Mon,09:15,True,none,GREEN,level_broken,trendline,gap_crosses_200_average,Method 1,level_broken,False
+2026-07-10,Fri,09:15,True,none,GREEN,trend,trend,gap_crosses_200_average,Method 1,2 predicates fail,False
+2026-07-15,Wed,09:15,True,none,GREEN,level_broken,trend,gap_crosses_200_average,Gap/200DMA,gap_crosses_200_average,False
+2026-07-16,Thu,09:15,True,none,GREEN,level_broken,trend,candle_shape,Gap/200DMA,candle_shape,False
+2026-07-17,Fri,09:15,True,Gap/200DMA LONG,GREEN,trend,trend,NONE (all predicates pass),(engine signal),,False
+2026-07-21,Tue,09:15,True,Method 2 LONG,GREEN,level_broken,NONE (all predicates pass),gap_in_direction,(engine signal),,False
+2026-07-22,Wed,09:15,True,Method 1 SHORT,RED,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2026-07-28,Tue,09:15,True,Method 1 LONG; Method 2 LONG,GREEN,NONE (all predicates pass),NONE (all predicates pass),gap_in_direction,(engine signal),,False
+2026-07-29,Wed,09:15,True,Method 1 LONG,GREEN,NONE (all predicates pass),trendline,gap_crosses_200_average,(engine signal),,False
+2026-07-30,Thu,09:15,True,none,GREEN,level_broken,inner_level_broken,gap_crosses_200_average,Method 1,level_broken,False
+2026-08-10,Mon,09:15,True,none,GREEN,level_broken,trend,candle_shape,Gap/200DMA,candle_shape,False
+2026-08-11,Tue,09:15,True,Gap/200DMA SHORT,RED,trend,trend,NONE (all predicates pass),(engine signal),,False
+2026-08-12,Wed,09:15,True,none,RED,candle_quality,trendline,gap_in_direction,Method 1,candle_quality,False
+2026-08-13,Thu,09:15,True,none,RED,level_broken,inner_level_broken,gap_crosses_200_average,Gap/200DMA,gap_crosses_200_average,False
+2026-08-14,Fri,09:15,True,Gap/200DMA SHORT,RED,level_broken,trend,NONE (all predicates pass),(engine signal),,False
+2026-08-15,Sat,09:15,False,NO SESSION IN THE DATASET (irregular journal date),,,,,,,False
+2026-08-19,Wed,09:15,True,none,RED,candle_quality,trendline,gap_in_direction,Method 1,candle_quality,False
+2026-08-22,Sat,09:15,False,NO SESSION IN THE DATASET (irregular journal date),,,,,,,False
+2026-08-28,Fri,09:15,True,none,RED,level_broken,candle_quality,gap_in_direction,Method 2,candle_quality,False
+2026-08-29,Sat,09:15,False,NO SESSION IN THE DATASET (irregular journal date),,,,,,,False
+2026-08-31,Mon,09:15,True,none,RED,trend,trend,candle_shape,Gap/200DMA,candle_shape,False
