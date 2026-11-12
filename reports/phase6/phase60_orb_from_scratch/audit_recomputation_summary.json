@@ -1,0 +1,62 @@
+{
+ "A|ORB-V2-A": {
+  "sessions_checked": 247,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ },
+ "A|ORB-V2-B": {
+  "sessions_checked": 247,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ },
+ "A|ORB-V2-C": {
+  "sessions_checked": 247,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ },
+ "A|ORB-V2-D": {
+  "sessions_checked": 247,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ },
+ "A|DIAG-A-OLDSIDE": {
+  "sessions_checked": 247,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ },
+ "B|ORB-V2-A": {
+  "sessions_checked": 738,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ },
+ "B|ORB-V2-B": {
+  "sessions_checked": 738,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ },
+ "B|ORB-V2-C": {
+  "sessions_checked": 738,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ },
+ "B|ORB-V2-D": {
+  "sessions_checked": 738,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ },
+ "B|DIAG-A-OLDSIDE": {
+  "sessions_checked": 738,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ }
+}

@@ -1,0 +1,5 @@
+config_id,date,direction,entry_time,entry_price,exit_reason,gross_points,manual_strategies_that_day,frozen_A_orb_executed,irf_executed_A
+ORB-V2-A,2025-12-29,SELL,2025-12-29 09:20:00,26050.85,STOP,-30,NONE,False,False
+ORB-V2-B,2025-12-29,SELL,2025-12-29 09:20:00,26050.85,STOP,-30,NONE,False,False
+ORB-V2-C,2025-12-29,SELL,2025-12-29 09:20:00,26050.85,STOP,-30,NONE,False,False
+ORB-V2-D,2025-12-29,SELL,2025-12-29 09:20:00,26050.85,STOP,-30,NONE,False,False

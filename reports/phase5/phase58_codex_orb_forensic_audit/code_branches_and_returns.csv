@@ -1,0 +1,158 @@
+path,line,kind,expression
+src/nifty_trading/strategies/base.py,86,If,new not in _ALLOWED[self.state]
+src/nifty_trading/strategies/base.py,88,If,self._last_t is not None and t < self._last_t
+src/nifty_trading/strategies/base.py,96,Return,"return self.state in (State.SIGNAL_CONFIRMED, State.SETUP_INVALIDATED)"
+src/nifty_trading/strategies/base.py,127,Return,return asdict(self)
+src/nifty_trading/strategies/base.py,132,If,"any(RULE_BY_ID[r][""implementation_status""] == IMPL_R for r in list(satisfied) + list(unresolved))"
+src/nifty_trading/strategies/base.py,133,Return,return VerificationStatus.RESEARCH_VARIANT
+src/nifty_trading/strategies/base.py,134,If,unresolved
+src/nifty_trading/strategies/base.py,135,Return,return VerificationStatus.PROPOSAL_DEPENDENT
+src/nifty_trading/strategies/base.py,140,Return,return VerificationStatus.PROPOSAL_DEPENDENT if needs_proposal else VerificationStatus.VERIFIED
+src/nifty_trading/strategies/base.py,161,If,block
+src/nifty_trading/strategies/base.py,162,Return,"return [self._blocked(ctx, block)]"
+src/nifty_trading/strategies/base.py,164,If,not cs
+src/nifty_trading/strategies/base.py,165,Return,"return [self._blocked(ctx, ""NO_COMPLETE_5M_CANDLES"")]"
+src/nifty_trading/strategies/base.py,169,If,cutoff
+src/nifty_trading/strategies/base.py,173,Return,return out
+src/nifty_trading/strategies/base.py,181,If,not ctx.info.usable
+src/nifty_trading/strategies/base.py,182,Return,"return f""SESSION_NOT_EVALUABLE:{ctx.info.quality.value}:{ctx.info.status.value}"" + (                 f""({'; '.join(ctx.info.reasons)})"" if ctx.info.reasons else """")"
+src/nifty_trading/strategies/base.py,184,If,self.REQUIRES_PREVIOUS_SESSION
+src/nifty_trading/strategies/base.py,185,If,ctx.previous is None
+src/nifty_trading/strategies/base.py,186,Return,"return ""NO_PREVIOUS_SESSION_IN_DATASET"""
+src/nifty_trading/strategies/base.py,187,If,ctx.previous.gap_to_this_session_unverified and not self.p.allow_unverified_prev_session
+src/nifty_trading/strategies/base.py,189,Return,"return f""PREV_SESSION_UNVERIFIED({why})"""
+src/nifty_trading/strategies/base.py,190,Return,return None
+src/nifty_trading/strategies/base.py,197,Return,"return {             ""strategy"": st, ""method"": method, ""entry_rule_status"": status,             ""stop_distance"": t.stop_points(st), ""stop_variant"": t.stop_variant, ""stop_status"": t.stop_status(st) if t.stop_points(st) is not None else ""UNRESOLVED"",             ""target_1"": t.t1_points, ""target_2"": t.t2_points(st), ""target_2_status"": t.t2_status(st),             ""target_2_conflict"": T2_CONFLICTS.get(st),             ""proposal_config"": self.p.to_dict(),  # every PROPOSED_FOR_REVIEW setting in force: two signals under different settings are distinguishable             ""trade_config"": asdict(t),             ""trend_mode"": self.p.trend_mode if uses_trend else ""NOT_APPLICABLE"",             ""fill_convention"": ""NEXT_1M_BAR_OPEN_AFTER_SIGNAL_CANDLE (PROPOSED; the reference price is not a fill)"",             ""execution_status"": execution,         }"
+src/nifty_trading/strategies/base.py,210,If,signal_ts is None
+src/nifty_trading/strategies/base.py,211,Return,"return ""NOT_EVALUATED"""
+src/nifty_trading/strategies/base.py,212,Return,"return ""RESEARCH_ONLY"" if classify_bar(signal_ts).value == ""CONTINUOUS"" else ""ENTRY_BLOCKED_"" + classify_bar(signal_ts).value"
+src/nifty_trading/strategies/base.py,215,Return,"return SignalRecord(             strategy=self.STRATEGY, method=method, direction=self._default_direction(), signal_date=ctx.date,             signal_timestamp=None, signal_candle_start=None, signal_candle_open=None, signal_candle_high=None,             signal_candle_low=None, signal_candle_close=None, reference_levels={}, rule_ids_satisfied=[],             rule_ids_failed=[], signal_status=SignalStatus.NOT_EVALUATED.value, invalidation_reason=reason,             verification_status=VerificationStatus.NOT_READY.value, flags=list(ctx.data_flags),             execution_config=self.exec_config(method, VerificationStatus.NOT_READY.value, ""NOT_EVALUATED""),         )"
+src/nifty_trading/strategies/base.py,225,Return,return Direction.SHORT.value
+src/nifty_trading/strategies/base.py,234,If,status is SignalStatus.CONFIRMED
+src/nifty_trading/strategies/base.py,238,Return,"return SignalRecord(             strategy=self.STRATEGY, method=method, direction=direction.value, signal_date=ctx.date,             signal_timestamp=c.end, signal_candle_start=c.start, signal_candle_open=c.o, signal_candle_high=c.h,             signal_candle_low=c.l, signal_candle_close=c.c, reference_levels=_clean(levels),             rule_ids_satisfied=sat, rule_ids_failed=failed or [], signal_status=status.value,             invalidation_reason=why, verification_status=ver.value, rule_ids_unresolved=unresolved,             proposals_used=proposals or {}, state_trace=trace or [], flags=list(ctx.data_flags) + (flags or []),             execution_config=self.exec_config(                 method, ({""VERIFIED"": ""VERIFIED_EXPLICIT""}.get(ver.value, ver.value) if status is SignalStatus.CONFIRMED else ""NOT_A_CONFIRMED_SIGNAL""),                 self._execution_status(c.end) if status is SignalStatus.CONFIRMED else ""NOT_A_CONFIRMED_SIGNAL""),         )"
+src/nifty_trading/strategies/base.py,270,If,(minute_of_day - (9 * 60 + 15)) % 5 != 4
+src/nifty_trading/strategies/base.py,271,Return,return []
+src/nifty_trading/strategies/base.py,274,If,today not in ctxs
+src/nifty_trading/strategies/base.py,275,Return,return []
+src/nifty_trading/strategies/base.py,279,If,r.signal_status == SignalStatus.CONFIRMED.value and r.signal_timestamp == bar_end
+src/nifty_trading/strategies/base.py,285,Return,return out
+src/nifty_trading/strategies/base.py,289,Return,"return {k: (None if isinstance(v, float) and math.isnan(v) else v) for k, v in d.items()}"
+src/nifty_trading/strategies/orb.py,55,Return,"return ""BOTH"""
+src/nifty_trading/strategies/orb.py,63,If,r is not None
+src/nifty_trading/strategies/orb.py,65,Return,return out
+src/nifty_trading/strategies/orb.py,71,Return,"return {""entry_reference_price"": c.c, ""first_candle_high"": c.h, ""first_candle_low"": c.l,                 ""prev_day_high"": ph, ""prev_day_low"": pl, ""prev_close"": prev.close_official}"
+src/nifty_trading/strategies/orb.py,77,If,d is Direction.LONG
+src/nifty_trading/strategies/orb.py,78,Return,"return strong_bullish(c, self.p) or (self.p.orb_pin_bar_in_methods_1_2 and bullish_pin(c, self.p))"
+src/nifty_trading/strategies/orb.py,79,Return,"return strong_bearish(c, self.p) or (self.p.orb_pin_bar_in_methods_1_2 and bearish_pin(c, self.p))"
+src/nifty_trading/strategies/orb.py,84,If,"self.p.trend_mode in (""STRUCTURE_EMA_SWING2"", ""EMA_PREV_SESSION_CLOSE"")"
+src/nifty_trading/strategies/orb.py,85,Return,"return float(ctx.candles[""ema200_5m""].iloc[0])"
+src/nifty_trading/strategies/orb.py,86,Return,return t.ma_value
+src/nifty_trading/strategies/orb.py,92,If,t.ok is None
+src/nifty_trading/strategies/orb.py,94,Return,"return self._rec(ctx, c, method, d, levels, sat, [], [""ORB-TREND-001""], SignalStatus.NOT_EVALUATED, t.reason,                              fsm.trace, props), t"
+src/nifty_trading/strategies/orb.py,96,If,not t.ok
+src/nifty_trading/strategies/orb.py,98,Return,"return self._rec(ctx, c, method, d, levels, sat, [""ORB-TREND-001"", ""ORB-TREND-002""], [], SignalStatus.INVALIDATED,                              f""TREND:{t.reason}"", fsm.trace, props), t"
+src/nifty_trading/strategies/orb.py,100,Return,"return None, t"
+src/nifty_trading/strategies/orb.py,111,If,not broke
+src/nifty_trading/strategies/orb.py,112,Return,return None
+src/nifty_trading/strategies/orb.py,120,If,stop
+src/nifty_trading/strategies/orb.py,121,Return,return stop
+src/nifty_trading/strategies/orb.py,123,If,"not self._quality(c, d)"
+src/nifty_trading/strategies/orb.py,125,Return,"return self._rec(ctx, c, ""Method 1"", d, levels, sat, [f""{pre}-003""], [], SignalStatus.INVALIDATED,                              ""CANDLE_QUALITY(not a strong body / wick too large)"", fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,128,Return,"return self._rec(ctx, c, ""Method 1"", d, levels, sat + [f""{pre}-003""], [], [""ORB-MA-001""], SignalStatus.CONFIRMED, None,                          fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,144,If,long
+src/nifty_trading/strategies/orb.py,152,If,lvl is None
+src/nifty_trading/strategies/orb.py,153,Return,return None
+src/nifty_trading/strategies/orb.py,155,If,not broke
+src/nifty_trading/strategies/orb.py,156,Return,return None
+src/nifty_trading/strategies/orb.py,164,If,stop
+src/nifty_trading/strategies/orb.py,166,Return,return stop
+src/nifty_trading/strategies/orb.py,168,If,len(tl_idx) < 2
+src/nifty_trading/strategies/orb.py,170,Return,"return self._rec(ctx, c, ""Method 2"", d, levels, sat, [f""{pre}-001""], unresolved, SignalStatus.INVALIDATED,                              ""NO_TRENDLINE"", fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,179,If,not (ok_dir and on_side)
+src/nifty_trading/strategies/orb.py,181,Return,"return self._rec(ctx, c, ""Method 2"", d, levels, sat, [f""{pre}-001""], unresolved, SignalStatus.INVALIDATED,                              ""TRENDLINE_NOT_SUPPORTIVE"", fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,183,If,"not self._quality(c, d)"
+src/nifty_trading/strategies/orb.py,185,Return,"return self._rec(ctx, c, ""Method 2"", d, levels, sat, [f""{pre}-003""], unresolved, SignalStatus.INVALIDATED,                              ""CANDLE_QUALITY"", fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,188,If,not math.isnan(ema) and abs(c.c - ema) <= self.p.ma_near_band_points
+src/nifty_trading/strategies/orb.py,190,If,beyond < self.p.ma_close_margin_points
+src/nifty_trading/strategies/orb.py,192,Return,"return self._rec(ctx, c, ""Method 2"", d, levels, sat, [f""{pre}-004""], unresolved, SignalStatus.INVALIDATED,                                  ""NEAR_MA_NOT_CONVINCING"", fsm.trace, {**props, ""ma_near_band_points"": self.p.ma_near_band_points})"
+src/nifty_trading/strategies/orb.py,195,Return,"return self._rec(ctx, c, ""Method 2"", d, levels,                          sat + [f""{pre}-003"", f""{pre}-004"", ""ORB-TREND-001"", ""ORB-TREND-002"", f""{pre}-001""],                          [], unresolved + [""ORB-MA-001""], SignalStatus.CONFIRMED, None, fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,206,If,"not g.evaluable or g.direction != (""UP"" if long else ""DOWN"")"
+src/nifty_trading/strategies/orb.py,207,Return,return None
+src/nifty_trading/strategies/orb.py,217,If,math.isnan(ma) or math.isnan(ma_prev)
+src/nifty_trading/strategies/orb.py,220,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat, [], [f""{pre}-002""], SignalStatus.NOT_EVALUATED,                              f""MA_WARMUP({mode})"", fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,225,If,not crossed
+src/nifty_trading/strategies/orb.py,226,Return,return None
+src/nifty_trading/strategies/orb.py,229,If,not closed_beyond
+src/nifty_trading/strategies/orb.py,231,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat, [""ORB-GAP-LONG-003"" if long else f""{pre}-003""], [""ORB-MA-001""],                              SignalStatus.INVALIDATED, ""CLOSE_NOT_BEYOND_MA"", fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,233,If,long
+src/nifty_trading/strategies/orb.py,240,If,not shape_ok or rejected
+src/nifty_trading/strategies/orb.py,242,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat + [""ORB-GAP-LONG-003"" if long else f""{pre}-003""], [qid],                              [""ORB-MA-001""], SignalStatus.INVALIDATED, ""CANDLE_QUALITY_OR_REJECTION_WICK"", fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,245,If,self.p.gap_max_points is not None and abs(g.points) > self.p.gap_max_points
+src/nifty_trading/strategies/orb.py,247,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat, [ext_id], [""ORB-MA-001""], SignalStatus.INVALIDATED,                              ""GAP_EXCEEDS_PROPOSED_CAP"", fsm.trace, props)"
+src/nifty_trading/strategies/orb.py,251,If,self.p.gap_max_points is None
+src/nifty_trading/strategies/orb.py,253,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat + [""ORB-GAP-LONG-003"" if long else f""{pre}-003"", qid], [], unresolved,                          SignalStatus.CONFIRMED, None, fsm.trace, props)"
+src/nifty_trading/strategies/orb_candidates.py,52,If,long
+src/nifty_trading/strategies/orb_candidates.py,53,Return,"return [pcs[j].h for j in pivot_highs(pcs, 0, n, 2) if pcs[j].h < ph]"
+src/nifty_trading/strategies/orb_candidates.py,54,Return,"return [pcs[j].l for j in pivot_lows(pcs, 0, n, 2) if pcs[j].l > pl]"
+src/nifty_trading/strategies/orb_candidates.py,59,If,not levels
+src/nifty_trading/strategies/orb_candidates.py,60,Return,return None
+src/nifty_trading/strategies/orb_candidates.py,61,If,"definition == ""LATEST_FRACTAL_K2"""
+src/nifty_trading/strategies/orb_candidates.py,62,Return,return levels[-1]
+src/nifty_trading/strategies/orb_candidates.py,63,If,"definition == ""HIGHEST_FRACTAL_K2"""
+src/nifty_trading/strategies/orb_candidates.py,64,Return,return max(levels) if long else min(levels)
+src/nifty_trading/strategies/orb_candidates.py,65,If,"definition == ""NEAREST_FRACTAL_FROM_OPEN_K2"""
+src/nifty_trading/strategies/orb_candidates.py,67,Return,return (min(ahead) if long else max(ahead)) if ahead else None
+src/nifty_trading/strategies/orb_candidates.py,68,If,"definition == ""HIGHEST_BROKEN_FRACTAL_K2"""
+src/nifty_trading/strategies/orb_candidates.py,70,Return,return (max(broken) if long else min(broken)) if broken else None
+src/nifty_trading/strategies/orb_candidates.py,77,If,"definition == ""NONE"""
+src/nifty_trading/strategies/orb_candidates.py,78,Return,"return True, ""TRENDLINE_NOT_APPLIED(diagnostic)"", None"
+src/nifty_trading/strategies/orb_candidates.py,86,Return,"return bool(ok_dir and on_side), line_now"
+src/nifty_trading/strategies/orb_candidates.py,87,If,"definition == ""LAST_TWO_FRACTALS_K2"""
+src/nifty_trading/strategies/orb_candidates.py,88,If,len(tl_idx) < 2
+src/nifty_trading/strategies/orb_candidates.py,89,Return,"return False, ""NO_TRENDLINE"", None"
+src/nifty_trading/strategies/orb_candidates.py,91,Return,"return ok, ""TRENDLINE_SUPPORTIVE"" if ok else ""TRENDLINE_NOT_SUPPORTIVE"", line"
+src/nifty_trading/strategies/orb_candidates.py,92,If,"definition == ""ANY_RISING_PAIR_OF_LAST_THREE_K2"""
+src/nifty_trading/strategies/orb_candidates.py,94,If,len(last3) < 2
+src/nifty_trading/strategies/orb_candidates.py,95,Return,"return False, ""NO_TRENDLINE"", None"
+src/nifty_trading/strategies/orb_candidates.py,99,If,ok
+src/nifty_trading/strategies/orb_candidates.py,100,Return,"return True, ""TRENDLINE_SUPPORTIVE"", line"
+src/nifty_trading/strategies/orb_candidates.py,101,Return,"return False, ""TRENDLINE_NOT_SUPPORTIVE"", res[-1][1]"
+src/nifty_trading/strategies/orb_candidates.py,110,If,inner_level_def not in INNER_LEVEL_DEFS or trendline_def not in TRENDLINE_DEFS or gap_crossing_def not in GAP_CROSSING_DEFS
+src/nifty_trading/strategies/orb_candidates.py,127,If,lvl is None
+src/nifty_trading/strategies/orb_candidates.py,128,Return,return None
+src/nifty_trading/strategies/orb_candidates.py,130,If,not broke
+src/nifty_trading/strategies/orb_candidates.py,131,Return,return None
+src/nifty_trading/strategies/orb_candidates.py,134,If,not self._is_default
+src/nifty_trading/strategies/orb_candidates.py,141,If,stop
+src/nifty_trading/strategies/orb_candidates.py,143,Return,return stop
+src/nifty_trading/strategies/orb_candidates.py,145,If,line_now is not None
+src/nifty_trading/strategies/orb_candidates.py,147,If,not ok
+src/nifty_trading/strategies/orb_candidates.py,149,Return,"return self._rec(ctx, c, ""Method 2"", d, levels, sat, [f""{pre}-001""], unresolved, SignalStatus.INVALIDATED, reason, fsm.trace, props)"
+src/nifty_trading/strategies/orb_candidates.py,150,If,"not self._quality(c, d)"
+src/nifty_trading/strategies/orb_candidates.py,152,Return,"return self._rec(ctx, c, ""Method 2"", d, levels, sat, [f""{pre}-003""], unresolved, SignalStatus.INVALIDATED, ""CANDLE_QUALITY"", fsm.trace, props)"
+src/nifty_trading/strategies/orb_candidates.py,154,If,not math.isnan(ema) and abs(c.c - ema) <= self.p.ma_near_band_points
+src/nifty_trading/strategies/orb_candidates.py,156,If,beyond < self.p.ma_close_margin_points
+src/nifty_trading/strategies/orb_candidates.py,158,Return,"return self._rec(ctx, c, ""Method 2"", d, levels, sat, [f""{pre}-004""], unresolved, SignalStatus.INVALIDATED, ""NEAR_MA_NOT_CONVINCING"", fsm.trace,                                  {**props, ""ma_near_band_points"": self.p.ma_near_band_points})"
+src/nifty_trading/strategies/orb_candidates.py,161,Return,"return self._rec(ctx, c, ""Method 2"", d, levels, sat + [f""{pre}-003"", f""{pre}-004"", ""ORB-TREND-001"", ""ORB-TREND-002"", f""{pre}-001""], [], unresolved + [""ORB-MA-001""], SignalStatus.CONFIRMED, None, fsm.trace, props)"
+src/nifty_trading/strategies/orb_candidates.py,165,If,"self.gap_crossing_def == ""OPEN_BEYOND_AVERAGE"""
+src/nifty_trading/strategies/orb_candidates.py,166,Return,"return super()._gap_setup(ctx, c, d)"
+src/nifty_trading/strategies/orb_candidates.py,170,If,"not g.evaluable or g.direction != (""UP"" if long else ""DOWN"")"
+src/nifty_trading/strategies/orb_candidates.py,171,Return,return None
+src/nifty_trading/strategies/orb_candidates.py,180,If,math.isnan(ma) or math.isnan(ma_prev)
+src/nifty_trading/strategies/orb_candidates.py,183,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat, [], [f""{pre}-002""], SignalStatus.NOT_EVALUATED, f""MA_WARMUP({mode})"", fsm.trace, props)"
+src/nifty_trading/strategies/orb_candidates.py,190,If,not crossed
+src/nifty_trading/strategies/orb_candidates.py,191,Return,return None
+src/nifty_trading/strategies/orb_candidates.py,194,If,not closed_beyond
+src/nifty_trading/strategies/orb_candidates.py,196,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat, [""ORB-GAP-LONG-003"" if long else f""{pre}-003""], [""ORB-MA-001""], SignalStatus.INVALIDATED, ""CLOSE_NOT_BEYOND_MA"", fsm.trace, props)"
+src/nifty_trading/strategies/orb_candidates.py,197,If,long
+src/nifty_trading/strategies/orb_candidates.py,204,If,not shape_ok or rejected
+src/nifty_trading/strategies/orb_candidates.py,206,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat + [""ORB-GAP-LONG-003"" if long else f""{pre}-003""], [qid], [""ORB-MA-001""], SignalStatus.INVALIDATED, ""CANDLE_QUALITY_OR_REJECTION_WICK"", fsm.trace, props)"
+src/nifty_trading/strategies/orb_candidates.py,208,If,self.p.gap_max_points is not None and abs(g.points) > self.p.gap_max_points
+src/nifty_trading/strategies/orb_candidates.py,210,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat, [ext_id], [""ORB-MA-001""], SignalStatus.INVALIDATED, ""GAP_EXCEEDS_PROPOSED_CAP"", fsm.trace, props)"
+src/nifty_trading/strategies/orb_candidates.py,213,If,self.p.gap_max_points is None
+src/nifty_trading/strategies/orb_candidates.py,215,Return,"return self._rec(ctx, c, ""Gap/200DMA"", d, levels, sat + [""ORB-GAP-LONG-003"" if long else f""{pre}-003"", qid], [], unresolved, SignalStatus.CONFIRMED, None, fsm.trace, props)"
+src/nifty_trading/strategies/orb_colour.py,23,If,open_ is None or close is None
+src/nifty_trading/strategies/orb_colour.py,24,Return,return False
+src/nifty_trading/strategies/orb_colour.py,25,Return,return close > open_ if direction == Direction.LONG.value else close < open_
+src/nifty_trading/strategies/orb_colour.py,34,If,"r.signal_status == SignalStatus.CONFIRMED.value and not colour_ok(r.direction, r.signal_candle_open, r.signal_candle_close)"
+src/nifty_trading/strategies/orb_colour.py,41,Return,return out

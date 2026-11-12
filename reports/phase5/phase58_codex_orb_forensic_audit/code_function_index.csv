@@ -1,0 +1,13 @@
+function,path,line
+ORBStrategy._scan,src/nifty_trading/strategies/orb.py,57
+ORBStrategy._base_levels,src/nifty_trading/strategies/orb.py,68
+ORBStrategy._quality,src/nifty_trading/strategies/orb.py,74
+ORBStrategy._near_ma_value,src/nifty_trading/strategies/orb.py,81
+ORBStrategy._trend_gate,src/nifty_trading/strategies/orb.py,88
+ORBStrategy._method1,src/nifty_trading/strategies/orb.py,103
+ORBStrategy._method2,src/nifty_trading/strategies/orb.py,132
+ORBStrategy._gap_setup,src/nifty_trading/strategies/orb.py,200
+SignalEngine.evaluate_session,src/nifty_trading/strategies/base.py,158
+SignalEngine._precheck,src/nifty_trading/strategies/base.py,179
+SignalEngine._rec,src/nifty_trading/strategies/base.py,227
+SignalEngine.on_candle,src/nifty_trading/strategies/base.py,259

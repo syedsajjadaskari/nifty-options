@@ -1,0 +1,229 @@
+window,config_id,dimension,category,trades,win_rate_pct,total_points,profit_factor
+A,ORB-V2-A,level eligibility,INNER_ONLY,20,25,-150,0.667
+A,ORB-V2-A,level eligibility,MAJOR_AND_INNER,19,47.37,236.55,1.78
+A,ORB-V2-A,open beyond previous-day range,False,31,32.26,-30,0.952
+A,ORB-V2-A,open beyond previous-day range,True,8,50,116.55,1.944
+A,ORB-V2-A,EMA scenario,A_ALREADY_BEYOND_EMA,26,26.92,-153.45,0.732
+A,ORB-V2-A,EMA scenario,B_INTRABAR_CROSS_OF_EMA,8,37.5,30,1.2
+A,ORB-V2-A,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,5,80,210,8
+A,ORB-V2-A,direction,BUY,20,25,-150,0.667
+A,ORB-V2-A,direction,SELL,19,47.37,236.55,1.78
+A,ORB-V2-A,pattern route,engulfing,5,60,120,3
+A,ORB-V2-A,pattern route,engulfing+full_body,10,20,-120,0.5
+A,ORB-V2-A,pattern route,full_body,16,56.25,326.55,2.53
+A,ORB-V2-A,pattern route,pin_bar,8,0,-240,0
+A,ORB-V2-B,level eligibility,INNER_ONLY,20,25,-150,0.667
+A,ORB-V2-B,level eligibility,MAJOR_AND_INNER,19,47.37,236.55,1.78
+A,ORB-V2-B,open beyond previous-day range,False,31,32.26,-30,0.952
+A,ORB-V2-B,open beyond previous-day range,True,8,50,116.55,1.944
+A,ORB-V2-B,EMA scenario,A_ALREADY_BEYOND_EMA,26,26.92,-153.45,0.732
+A,ORB-V2-B,EMA scenario,B_INTRABAR_CROSS_OF_EMA,8,37.5,30,1.2
+A,ORB-V2-B,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,5,80,210,8
+A,ORB-V2-B,direction,BUY,20,25,-150,0.667
+A,ORB-V2-B,direction,SELL,19,47.37,236.55,1.78
+A,ORB-V2-B,pattern route,engulfing,5,60,120,3
+A,ORB-V2-B,pattern route,engulfing+full_body,10,20,-120,0.5
+A,ORB-V2-B,pattern route,full_body,16,56.25,326.55,2.53
+A,ORB-V2-B,pattern route,pin_bar,8,0,-240,0
+A,ORB-V2-C,level eligibility,INNER_ONLY,18,27.78,-90,0.769
+A,ORB-V2-C,level eligibility,MAJOR_AND_INNER,18,50,266.55,1.975
+A,ORB-V2-C,level eligibility,MAJOR_ONLY,1,0,-30,0
+A,ORB-V2-C,open beyond previous-day range,False,29,34.48,30,1.053
+A,ORB-V2-C,open beyond previous-day range,True,8,50,116.55,1.944
+A,ORB-V2-C,EMA scenario,A_ALREADY_BEYOND_EMA,25,28,-123.45,0.773
+A,ORB-V2-C,EMA scenario,B_INTRABAR_CROSS_OF_EMA,7,42.86,60,1.5
+A,ORB-V2-C,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,5,80,210,8
+A,ORB-V2-C,direction,BUY,19,26.32,-120,0.714
+A,ORB-V2-C,direction,SELL,18,50,266.55,1.975
+A,ORB-V2-C,pattern route,engulfing,4,75,150,6
+A,ORB-V2-C,pattern route,engulfing+full_body,9,22.22,-90,0.571
+A,ORB-V2-C,pattern route,full_body,16,56.25,326.55,2.53
+A,ORB-V2-C,pattern route,pin_bar,8,0,-240,0
+A,ORB-V2-D,level eligibility,INNER_ONLY,17,23.53,-150,0.615
+A,ORB-V2-D,level eligibility,MAJOR_AND_INNER,17,41.18,116.55,1.384
+A,ORB-V2-D,open beyond previous-day range,False,26,26.92,-150,0.737
+A,ORB-V2-D,open beyond previous-day range,True,8,50,116.55,1.944
+A,ORB-V2-D,EMA scenario,A_ALREADY_BEYOND_EMA,23,26.09,-153.45,0.701
+A,ORB-V2-D,EMA scenario,B_INTRABAR_CROSS_OF_EMA,6,16.67,-90,0.4
+A,ORB-V2-D,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,5,80,210,8
+A,ORB-V2-D,direction,BUY,17,23.53,-150,0.615
+A,ORB-V2-D,direction,SELL,17,41.18,116.55,1.384
+A,ORB-V2-D,pattern route,full_body,26,42.31,206.55,1.456
+A,ORB-V2-D,pattern route,pin_bar,8,0,-240,0
+A,DIAG-A-OLDSIDE,level eligibility,INNER_ONLY,16,31.25,-30,0.909
+A,DIAG-A-OLDSIDE,level eligibility,MAJOR_AND_INNER,8,62.5,210,3.333
+A,DIAG-A-OLDSIDE,level eligibility,MAJOR_ONLY,3,0,-90,0
+A,DIAG-A-OLDSIDE,open beyond previous-day range,False,27,37.04,90,1.176
+A,DIAG-A-OLDSIDE,EMA scenario,A_ALREADY_BEYOND_EMA,17,35.29,30,1.091
+A,DIAG-A-OLDSIDE,EMA scenario,B_INTRABAR_CROSS_OF_EMA,8,37.5,30,1.2
+A,DIAG-A-OLDSIDE,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,2,50,30,2
+A,DIAG-A-OLDSIDE,direction,BUY,13,23.08,-120,0.6
+A,DIAG-A-OLDSIDE,direction,SELL,14,50,210,2
+A,DIAG-A-OLDSIDE,pattern route,engulfing,5,60,120,3
+A,DIAG-A-OLDSIDE,pattern route,engulfing+full_body,10,20,-120,0.5
+A,DIAG-A-OLDSIDE,pattern route,full_body,10,50,150,2
+A,DIAG-A-OLDSIDE,pattern route,pin_bar,2,0,-60,0
+B,ORB-V2-A,level eligibility,INNER_ONLY,43,44.19,351,1.502
+B,ORB-V2-A,level eligibility,MAJOR_AND_INNER,50,46,570,1.704
+B,ORB-V2-A,open beyond previous-day range,False,68,48.53,861,1.837
+B,ORB-V2-A,open beyond previous-day range,True,25,36,60,1.125
+B,ORB-V2-A,EMA scenario,A_ALREADY_BEYOND_EMA,65,41.54,388.35,1.34
+B,ORB-V2-A,EMA scenario,B_INTRABAR_CROSS_OF_EMA,21,52.38,382.65,2.38
+B,ORB-V2-A,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,7,57.14,150,2.667
+B,ORB-V2-A,direction,BUY,40,47.5,420.05,1.667
+B,ORB-V2-A,direction,SELL,53,43.4,500.95,1.57
+B,ORB-V2-A,pattern route,engulfing,8,37.5,30,1.2
+B,ORB-V2-A,pattern route,engulfing+full_body,21,42.86,180,1.5
+B,ORB-V2-A,pattern route,full_body,50,48,636.25,1.84
+B,ORB-V2-A,pattern route,pin_bar,14,42.86,74.75,1.309
+B,ORB-V2-B,level eligibility,INNER_ONLY,44,45.45,411,1.588
+B,ORB-V2-B,level eligibility,MAJOR_AND_INNER,50,46,570,1.704
+B,ORB-V2-B,open beyond previous-day range,False,69,49.28,921,1.895
+B,ORB-V2-B,open beyond previous-day range,True,25,36,60,1.125
+B,ORB-V2-B,EMA scenario,A_ALREADY_BEYOND_EMA,65,41.54,388.35,1.34
+B,ORB-V2-B,EMA scenario,B_INTRABAR_CROSS_OF_EMA,22,54.55,442.65,2.596
+B,ORB-V2-B,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,7,57.14,150,2.667
+B,ORB-V2-B,direction,BUY,41,48.78,480.05,1.762
+B,ORB-V2-B,direction,SELL,53,43.4,500.95,1.57
+B,ORB-V2-B,pattern route,engulfing,8,37.5,30,1.2
+B,ORB-V2-B,pattern route,engulfing+full_body,21,42.86,180,1.5
+B,ORB-V2-B,pattern route,full_body,51,49.02,696.25,1.919
+B,ORB-V2-B,pattern route,pin_bar,14,42.86,74.75,1.309
+B,ORB-V2-C,level eligibility,INNER_ONLY,35,42.86,208.35,1.346
+B,ORB-V2-C,level eligibility,MAJOR_AND_INNER,50,46,570,1.704
+B,ORB-V2-C,open beyond previous-day range,False,60,48.33,718.35,1.771
+B,ORB-V2-C,open beyond previous-day range,True,25,36,60,1.125
+B,ORB-V2-C,EMA scenario,A_ALREADY_BEYOND_EMA,59,38.98,208.35,1.193
+B,ORB-V2-C,EMA scenario,B_INTRABAR_CROSS_OF_EMA,20,55,390,2.444
+B,ORB-V2-C,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,6,66.67,180,4
+B,ORB-V2-C,direction,BUY,39,46.15,360.05,1.571
+B,ORB-V2-C,direction,SELL,46,43.48,418.3,1.535
+B,ORB-V2-C,pattern route,engulfing,7,28.57,-30,0.8
+B,ORB-V2-C,pattern route,engulfing+full_body,18,38.89,90,1.273
+B,ORB-V2-C,pattern route,full_body,46,50,643.6,1.933
+B,ORB-V2-C,pattern route,pin_bar,14,42.86,74.75,1.309
+B,ORB-V2-D,level eligibility,INNER_ONLY,37,43.24,261,1.429
+B,ORB-V2-D,level eligibility,MAJOR_AND_INNER,48,47.92,630,1.84
+B,ORB-V2-D,open beyond previous-day range,False,60,50,831,1.945
+B,ORB-V2-D,open beyond previous-day range,True,25,36,60,1.125
+B,ORB-V2-D,EMA scenario,A_ALREADY_BEYOND_EMA,59,42.37,388.35,1.38
+B,ORB-V2-D,EMA scenario,B_INTRABAR_CROSS_OF_EMA,19,52.63,352.65,2.426
+B,ORB-V2-D,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,7,57.14,150,2.667
+B,ORB-V2-D,direction,BUY,36,47.22,360.05,1.632
+B,ORB-V2-D,direction,SELL,49,44.9,530.95,1.673
+B,ORB-V2-D,pattern route,full_body,71,46.48,816.25,1.73
+B,ORB-V2-D,pattern route,pin_bar,14,42.86,74.75,1.309
+B,DIAG-A-OLDSIDE,level eligibility,INNER_ONLY,34,47.06,352.7,1.682
+B,DIAG-A-OLDSIDE,level eligibility,MAJOR_AND_INNER,17,47.06,210,1.778
+B,DIAG-A-OLDSIDE,level eligibility,MAJOR_ONLY,8,75,300,6
+B,DIAG-A-OLDSIDE,open beyond previous-day range,False,59,50.85,862.7,2.018
+B,DIAG-A-OLDSIDE,EMA scenario,A_ALREADY_BEYOND_EMA,38,50,480.05,1.842
+B,DIAG-A-OLDSIDE,EMA scenario,B_INTRABAR_CROSS_OF_EMA,19,52.63,352.65,2.426
+B,DIAG-A-OLDSIDE,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,2,50,30,2
+B,DIAG-A-OLDSIDE,direction,BUY,20,50,210.05,1.7
+B,DIAG-A-OLDSIDE,direction,SELL,39,51.28,652.65,2.192
+B,DIAG-A-OLDSIDE,pattern route,engulfing,5,40,30,1.333
+B,DIAG-A-OLDSIDE,pattern route,engulfing+full_body,20,45,210,1.636
+B,DIAG-A-OLDSIDE,pattern route,full_body,33,54.55,606.25,2.418
+B,DIAG-A-OLDSIDE,pattern route,pin_bar,1,100,16.45,inf
+A_TV,ORB-V2-A,level eligibility,INNER_ONLY,15,33.33,0,1
+A_TV,ORB-V2-A,level eligibility,MAJOR_AND_INNER,16,43.75,146.55,1.536
+A_TV,ORB-V2-A,open beyond previous-day range,False,27,37.04,90,1.176
+A_TV,ORB-V2-A,open beyond previous-day range,True,4,50,56.55,1.891
+A_TV,ORB-V2-A,EMA scenario,A_ALREADY_BEYOND_EMA,22,31.82,-33.45,0.926
+A_TV,ORB-V2-A,EMA scenario,B_INTRABAR_CROSS_OF_EMA,7,42.86,60,1.5
+A_TV,ORB-V2-A,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,2,100,120,inf
+A_TV,ORB-V2-A,direction,BUY,16,37.5,60,1.2
+A_TV,ORB-V2-A,direction,SELL,15,40,86.55,1.317
+A_TV,ORB-V2-A,pattern route,engulfing,7,28.57,-30,0.8
+A_TV,ORB-V2-A,pattern route,engulfing+full_body,7,42.86,60,1.5
+A_TV,ORB-V2-A,pattern route,full_body,10,60,236.55,2.916
+A_TV,ORB-V2-A,pattern route,pin_bar,7,14.29,-120,0.333
+A_TV,ORB-V2-B,level eligibility,INNER_ONLY,15,33.33,0,1
+A_TV,ORB-V2-B,level eligibility,MAJOR_AND_INNER,17,41.18,116.55,1.384
+A_TV,ORB-V2-B,open beyond previous-day range,False,27,37.04,90,1.176
+A_TV,ORB-V2-B,open beyond previous-day range,True,5,40,26.55,1.284
+A_TV,ORB-V2-B,EMA scenario,A_ALREADY_BEYOND_EMA,23,30.43,-63.45,0.869
+A_TV,ORB-V2-B,EMA scenario,B_INTRABAR_CROSS_OF_EMA,7,42.86,60,1.5
+A_TV,ORB-V2-B,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,2,100,120,inf
+A_TV,ORB-V2-B,direction,BUY,16,37.5,60,1.2
+A_TV,ORB-V2-B,direction,SELL,16,37.5,56.55,1.186
+A_TV,ORB-V2-B,pattern route,engulfing,7,28.57,-30,0.8
+A_TV,ORB-V2-B,pattern route,engulfing+full_body,7,42.86,60,1.5
+A_TV,ORB-V2-B,pattern route,full_body,11,54.55,206.55,2.346
+A_TV,ORB-V2-B,pattern route,pin_bar,7,14.29,-120,0.333
+A_TV,ORB-V2-C,level eligibility,INNER_ONLY,13,38.46,60,1.25
+A_TV,ORB-V2-C,level eligibility,MAJOR_AND_INNER,15,46.67,176.55,1.725
+A_TV,ORB-V2-C,level eligibility,MAJOR_ONLY,1,0,-30,0
+A_TV,ORB-V2-C,open beyond previous-day range,False,25,40,150,1.333
+A_TV,ORB-V2-C,open beyond previous-day range,True,4,50,56.55,1.891
+A_TV,ORB-V2-C,EMA scenario,A_ALREADY_BEYOND_EMA,21,33.33,-3.45,0.992
+A_TV,ORB-V2-C,EMA scenario,B_INTRABAR_CROSS_OF_EMA,6,50,90,2
+A_TV,ORB-V2-C,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,2,100,120,inf
+A_TV,ORB-V2-C,direction,BUY,15,40,90,1.333
+A_TV,ORB-V2-C,direction,SELL,14,42.86,116.55,1.479
+A_TV,ORB-V2-C,pattern route,engulfing,6,33.33,0,1
+A_TV,ORB-V2-C,pattern route,engulfing+full_body,6,50,90,2
+A_TV,ORB-V2-C,pattern route,full_body,10,60,236.55,2.916
+A_TV,ORB-V2-C,pattern route,pin_bar,7,14.29,-120,0.333
+A_TV,ORB-V2-D,level eligibility,INNER_ONLY,10,40,60,1.333
+A_TV,ORB-V2-D,level eligibility,MAJOR_AND_INNER,14,42.86,116.55,1.479
+A_TV,ORB-V2-D,open beyond previous-day range,False,20,40,120,1.333
+A_TV,ORB-V2-D,open beyond previous-day range,True,4,50,56.55,1.891
+A_TV,ORB-V2-D,EMA scenario,A_ALREADY_BEYOND_EMA,18,38.89,86.55,1.26
+A_TV,ORB-V2-D,EMA scenario,B_INTRABAR_CROSS_OF_EMA,4,25,-30,0.667
+A_TV,ORB-V2-D,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,2,100,120,inf
+A_TV,ORB-V2-D,direction,BUY,12,41.67,90,1.429
+A_TV,ORB-V2-D,direction,SELL,12,41.67,86.55,1.405
+A_TV,ORB-V2-D,pattern route,full_body,17,52.94,296.55,2.218
+A_TV,ORB-V2-D,pattern route,pin_bar,7,14.29,-120,0.333
+B_TV,ORB-V2-A,level eligibility,INNER_ONLY,37,51.35,530.8,2.022
+B_TV,ORB-V2-A,level eligibility,MAJOR_AND_INNER,35,42.86,286.9,1.478
+B_TV,ORB-V2-A,open beyond previous-day range,False,58,51.72,877.7,2.071
+B_TV,ORB-V2-A,open beyond previous-day range,True,14,28.57,-60,0.8
+B_TV,ORB-V2-A,EMA scenario,A_ALREADY_BEYOND_EMA,48,41.67,270.1,1.322
+B_TV,ORB-V2-A,EMA scenario,B_INTRABAR_CROSS_OF_EMA,17,52.94,320.7,2.462
+B_TV,ORB-V2-A,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,7,71.43,226.9,4.782
+B_TV,ORB-V2-A,direction,BUY,32,50,377,1.785
+B_TV,ORB-V2-A,direction,SELL,40,45,440.7,1.689
+B_TV,ORB-V2-A,pattern route,engulfing,15,46.67,180,1.75
+B_TV,ORB-V2-A,pattern route,engulfing+full_body,17,47.06,210,1.778
+B_TV,ORB-V2-A,pattern route,full_body,31,48.39,381.25,1.83
+B_TV,ORB-V2-A,pattern route,pin_bar,9,44.44,46.45,1.31
+B_TV,ORB-V2-B,level eligibility,INNER_ONLY,38,52.63,590.8,2.138
+B_TV,ORB-V2-B,level eligibility,MAJOR_AND_INNER,35,42.86,286.9,1.478
+B_TV,ORB-V2-B,open beyond previous-day range,False,59,52.54,937.7,2.145
+B_TV,ORB-V2-B,open beyond previous-day range,True,14,28.57,-60,0.8
+B_TV,ORB-V2-B,EMA scenario,A_ALREADY_BEYOND_EMA,48,41.67,270.1,1.322
+B_TV,ORB-V2-B,EMA scenario,B_INTRABAR_CROSS_OF_EMA,18,55.56,380.7,2.736
+B_TV,ORB-V2-B,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,7,71.43,226.9,4.782
+B_TV,ORB-V2-B,direction,BUY,33,51.52,437,1.91
+B_TV,ORB-V2-B,direction,SELL,40,45,440.7,1.689
+B_TV,ORB-V2-B,pattern route,engulfing,15,46.67,180,1.75
+B_TV,ORB-V2-B,pattern route,engulfing+full_body,17,47.06,210,1.778
+B_TV,ORB-V2-B,pattern route,full_body,32,50,441.25,1.961
+B_TV,ORB-V2-B,pattern route,pin_bar,9,44.44,46.45,1.31
+B_TV,ORB-V2-C,level eligibility,INNER_ONLY,28,50,330.1,1.786
+B_TV,ORB-V2-C,level eligibility,MAJOR_AND_INNER,35,42.86,286.9,1.478
+B_TV,ORB-V2-C,open beyond previous-day range,False,49,51.02,677,1.94
+B_TV,ORB-V2-C,open beyond previous-day range,True,14,28.57,-60,0.8
+B_TV,ORB-V2-C,EMA scenario,A_ALREADY_BEYOND_EMA,40,37.5,60.1,1.08
+B_TV,ORB-V2-C,EMA scenario,B_INTRABAR_CROSS_OF_EMA,16,56.25,330,2.571
+B_TV,ORB-V2-C,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,7,71.43,226.9,4.782
+B_TV,ORB-V2-C,direction,BUY,30,46.67,257,1.535
+B_TV,ORB-V2-C,direction,SELL,33,45.45,360,1.667
+B_TV,ORB-V2-C,pattern route,engulfing,13,38.46,60,1.25
+B_TV,ORB-V2-C,pattern route,engulfing+full_body,15,46.67,180,1.75
+B_TV,ORB-V2-C,pattern route,full_body,27,48.15,300.55,1.716
+B_TV,ORB-V2-C,pattern route,pin_bar,8,50,76.45,1.637
+B_TV,ORB-V2-D,level eligibility,INNER_ONLY,26,50,320.8,1.869
+B_TV,ORB-V2-D,level eligibility,MAJOR_AND_INNER,31,45.16,316.9,1.621
+B_TV,ORB-V2-D,open beyond previous-day range,False,43,53.49,697.7,2.204
+B_TV,ORB-V2-D,open beyond previous-day range,True,14,28.57,-60,0.8
+B_TV,ORB-V2-D,EMA scenario,A_ALREADY_BEYOND_EMA,37,43.24,240.1,1.381
+B_TV,ORB-V2-D,EMA scenario,B_INTRABAR_CROSS_OF_EMA,13,46.15,170.7,1.902
+B_TV,ORB-V2-D,EMA scenario,C_OVERNIGHT_GAP_CROSSES_EMA,7,71.43,226.9,4.782
+B_TV,ORB-V2-D,direction,BUY,26,53.85,377,2.047
+B_TV,ORB-V2-D,direction,SELL,31,41.94,260.7,1.502
+B_TV,ORB-V2-D,pattern route,full_body,48,47.92,591.25,1.811
+B_TV,ORB-V2-D,pattern route,pin_bar,9,44.44,46.45,1.31

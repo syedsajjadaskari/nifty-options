@@ -1,0 +1,29 @@
+{
+  "records": [
+    {
+      "strategy": "ORB",
+      "method": "Method 1",
+      "signal_status": "INVALIDATED",
+      "execution_entry_status": "PROPOSAL_DEPENDENT",
+      "selection_is_valid": false,
+      "trace": [
+        "09:20 WAITING_FOR_SETUP->SETUP_DETECTED: 09:15 candle broke and closed beyond 115.0",
+        "09:20 SETUP_DETECTED->SIGNAL_CONFIRMED: level broken, trend ok, candle strong",
+        "09:15 SIGNAL_CONFIRMED->SETUP_INVALIDATED: AUTHOR_CLARIFICATION_PHASE51_AC27: ORB long needs a green close; short (mirror, ORB-GLOBAL-002) a red close"
+      ]
+    }
+  ],
+  "orb_engine_classes": {
+    "A": [
+      "ORBStrategy"
+    ],
+    "B": [
+      "ORBStrategy"
+    ],
+    "C": [
+      "ORBCandidateStrategy"
+    ]
+  },
+  "phase59_uses_signal_status_not_execution_entry_label": true,
+  "active_change": false
+}

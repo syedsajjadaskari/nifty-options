@@ -1,0 +1,31 @@
+method,direction,predicate,failed_dates,reached_failures,sole_failed_gate_dates,denominator
+Method 1,LONG,previous_level_close,42,42,11,50
+Method 1,LONG,trend,29,5,1,50
+Method 1,LONG,quality,36,3,3,50
+Method 1,SHORT,previous_level_close,38,38,4,50
+Method 1,SHORT,trend,21,3,1,50
+Method 1,SHORT,quality,44,9,9,50
+Method 2,LONG,inner_defined,0,0,0,50
+Method 2,LONG,inner_close,28,28,2,50
+Method 2,LONG,trend,29,12,0,50
+Method 2,LONG,trendline,42,10,6,50
+Method 2,LONG,quality,36,0,0,50
+Method 2,LONG,near_ma,0,0,0,50
+Method 2,SHORT,inner_defined,0,0,0,50
+Method 2,SHORT,inner_close,35,35,0,50
+Method 2,SHORT,trend,21,3,1,50
+Method 2,SHORT,trendline,41,5,2,50
+Method 2,SHORT,quality,44,7,7,50
+Method 2,SHORT,near_ma,1,0,0,50
+Gap/200DMA,LONG,gap_direction,16,16,0,50
+Gap/200DMA,LONG,ma_available,0,0,0,50
+Gap/200DMA,LONG,gap_crossing,42,26,11,50
+Gap/200DMA,LONG,ma_close,20,0,0,50
+Gap/200DMA,LONG,quality,36,8,8,50
+Gap/200DMA,LONG,gap_cap,0,0,0,50
+Gap/200DMA,SHORT,gap_direction,34,34,0,50
+Gap/200DMA,SHORT,ma_available,0,0,0,50
+Gap/200DMA,SHORT,gap_crossing,47,13,3,50
+Gap/200DMA,SHORT,ma_close,30,1,0,50
+Gap/200DMA,SHORT,quality,44,2,2,50
+Gap/200DMA,SHORT,gap_cap,0,0,0,50

@@ -1,0 +1,208 @@
+{
+  "checks": [
+    {
+      "check": "Requested evidence artifacts exist",
+      "passed": true,
+      "observed": [
+        "README.md",
+        "orb_original_source_rules.md",
+        "orb_source_to_code_mapping.csv",
+        "orb_implementation_line_by_line.md",
+        "orb_all_entry_predicates.csv",
+        "orb_13_handwritten_disputes.csv",
+        "orb_all_manual_journal_dates.csv",
+        "orb_vs_irf_selection_timeline.csv",
+        "orb_missing_trade_root_causes.csv",
+        "orb_level_construction_comparison.md",
+        "orb_moving_average_investigation.md",
+        "orb_candle_strength_investigation.md",
+        "orb_candidate_signal_differences.csv",
+        "orb_implementation_defects.md",
+        "orb_required_author_clarifications.md",
+        "ORB_Forensic_Verification.xlsx",
+        "charts",
+        "daily"
+      ]
+    },
+    {
+      "check": "Journal date rows 89 per configuration",
+      "passed": true,
+      "observed": 267
+    },
+    {
+      "check": "13 distinct handwritten dates per configuration",
+      "passed": true,
+      "observed": 39
+    },
+    {
+      "check": "No author direction or exact level invented",
+      "passed": true,
+      "observed": 267
+    },
+    {
+      "check": "Every focus date has daily page",
+      "passed": true,
+      "observed": 91
+    },
+    {
+      "check": "Every evaluable focus date has raw1m/5m/prior5/chart",
+      "passed": true,
+      "observed": 87
+    },
+    {
+      "check": "All SVGs parse",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "independent_signal_parity_failures",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "orb_prefix_failures",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "stored_signal_disagreements",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "ledger_signal_or_fill_failures",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "first_selection_failures",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "Nearest-inner reconstruction independently matches optional engine across all247 sessions",
+      "passed": true,
+      "observed": 247
+    },
+    {
+      "check": "Independent raw5m OHLC and EMA checks",
+      "passed": true,
+      "observed": {
+        "ohlc_candles_checked": 18525,
+        "ohlc_max_error": 0.0,
+        "ema_max_error": 1.6370904631912708e-10,
+        "failures": []
+      }
+    },
+    {
+      "check": "Frozen and candidate strategy files match original Phase5.5 manifest",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "Audited PDFs, journal, data and ledgers unchanged since measured",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "Chart ledger stop and T1/T2 arithmetic",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "Chart exit prices satisfy raw-bar range or documented conservative gap-target convention",
+      "passed": true,
+      "observed": {
+        "unexpected": [],
+        "conservative_target_fills": 6
+      }
+    },
+    {
+      "check": "Exported XLSX cached summary equals independent counts",
+      "passed": true,
+      "observed": {
+        "A": [
+          85,
+          35,
+          50,
+          35,
+          0,
+          34,
+          5,
+          16
+        ],
+        "B": [
+          85,
+          35,
+          50,
+          35,
+          0,
+          30,
+          5,
+          20
+        ],
+        "C": [
+          85,
+          38,
+          47,
+          38,
+          0,
+          29,
+          5,
+          18
+        ]
+      }
+    },
+    {
+      "check": "Exported XLSX retains COUNTIFS formulas",
+      "passed": true,
+      "observed": "B5:B7"
+    },
+    {
+      "check": "Exported XLSX Journal has all267 configuration/date rows",
+      "passed": true,
+      "observed": 271
+    },
+    {
+      "check": "Exported workbook includes every isolated candidate difference",
+      "passed": true,
+      "observed": {
+        "expected": 70,
+        "actual": 70
+      }
+    },
+    {
+      "check": "Exported XLSX has no error cells",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "Workbook table freezes retained",
+      "passed": true,
+      "observed": "C5"
+    },
+    {
+      "check": "Full pytest suite finished successfully",
+      "passed": true,
+      "observed": "781 passed, 1 skipped, 1 xfailed in 1475.28s (0:24:35)"
+    },
+    {
+      "check": "Full ruff check passes",
+      "passed": true,
+      "observed": "All checks passed!"
+    }
+  ],
+  "limitations": [
+    "The same investigator performed this independent reconstruction and self-review; no second human or agent review is claimed.",
+    "No exact author direction, level, trendline or entry price is recorded for the13 disputes or journal rows. No profitability-based choice or objectively proven missed author trade is asserted.",
+    "Gap figures support candle crossing, while part of wording supports open crossing; indicator identity and excessive extension remain unresolved.",
+    "A/B/C strategy signals and first-entry choice were freshly verified. Existing ledger exits were range/arithmetic checked; no new exit walk, P&L or second-trade outcome calculation was run.",
+    "The requested full pytest suite includes existing baseline historical-regression tests. No candidate profitability backtest or new profitability report was run.",
+    "Six ledger target fills (two ORB trades repeated in A/B/C) lie outside their exit minute's traded range because the existing model conservatively fills a gapped target at its level. These are model fills, not observed prices; ledger_target_gap_conventions.csv records the actual bars. Previous ledgers are preserved.",
+    "All13 PDF source pages and6 handwritten pages were visually inspected. All7 workbook sheets were rendered/reviewed; four representative historical charts were inspected at full size. All87 SVGs were parsed and structurally checked, not87 separate human chart interpretations.",
+    "Native Excel was not opened. Artifact-tool summary recalculation reacted to a changed Journal signal and was restored; exported cached counts/formulas were read back independently.",
+    "Historical contexts use offline full-session quality checks. Real-time adapter/broker timing is outside the verified path; no paper/live orders were placed.",
+    "Phase5.7 was concurrently developed by another process. This audit never writes its paths; changes by that other process are not attributed to this audit."
+  ],
+  "all_passed": true
+}

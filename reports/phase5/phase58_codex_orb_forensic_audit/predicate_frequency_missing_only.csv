@@ -1,0 +1,31 @@
+method,direction,predicate,failed_dates,missing_evaluable_dates,reached_and_failed_dates,interpretation
+Method 1,LONG,previous_level_close,42,50,42,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 1,LONG,trend,29,50,5,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 1,LONG,quality,36,50,3,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 1,SHORT,previous_level_close,38,50,38,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 1,SHORT,trend,21,50,3,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 1,SHORT,quality,44,50,9,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,LONG,inner_defined,0,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,LONG,inner_close,28,50,28,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,LONG,trend,29,50,12,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,LONG,trendline,42,50,10,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,LONG,quality,36,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,LONG,near_ma,0,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,SHORT,inner_defined,0,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,SHORT,inner_close,35,50,35,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,SHORT,trend,21,50,3,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,SHORT,trendline,41,50,5,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,SHORT,quality,44,50,7,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Method 2,SHORT,near_ma,1,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,LONG,gap_direction,16,50,16,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,LONG,ma_available,0,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,LONG,gap_crossing,42,50,26,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,LONG,ma_close,20,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,LONG,quality,36,50,8,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,LONG,gap_cap,0,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,SHORT,gap_direction,34,50,34,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,SHORT,ma_available,0,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,SHORT,gap_crossing,47,50,13,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,SHORT,ma_close,30,50,1,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,SHORT,quality,44,50,2,No frozen ORB signal in either direction; unknown author direction. Counts overlap.
+Gap/200DMA,SHORT,gap_cap,0,50,0,No frozen ORB signal in either direction; unknown author direction. Counts overlap.

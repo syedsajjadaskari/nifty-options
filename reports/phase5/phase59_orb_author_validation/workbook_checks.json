@@ -1,0 +1,28 @@
+{
+  "baseline_formulas_match": true,
+  "author_fields_blank": true,
+  "workflow_probe_restored": true,
+  "approval_does_not_follow_trade_confirmation": true,
+  "sheets": [
+    {
+      "name": "Overview",
+      "rows": 11
+    },
+    {
+      "name": "CaseReview",
+      "rows": 52
+    },
+    {
+      "name": "OriginalJournal",
+      "rows": 190
+    },
+    {
+      "name": "IRFExecutions",
+      "rows": 34
+    },
+    {
+      "name": "RuleQuestions",
+      "rows": 6
+    }
+  ]
+}

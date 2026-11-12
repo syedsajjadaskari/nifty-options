@@ -1,0 +1,42 @@
+{
+ "ema_vs_repo": [
+  {
+   "window": "A",
+   "candles": 21674,
+   "compared_after_600_candles": 21074,
+   "max_abs_diff_incl_warmup": 0.034283,
+   "candles_in_evaluated_window": 18525,
+   "max_abs_diff_in_evaluated_window": 0.0,
+   "mean_abs_diff_in_evaluated_window": 0.0,
+   "opening_candle_emas_checked": 247
+  },
+  {
+   "window": "B",
+   "candles": 56835,
+   "compared_after_600_candles": 56235,
+   "max_abs_diff_incl_warmup": 0.238764,
+   "candles_in_evaluated_window": 55338,
+   "max_abs_diff_in_evaluated_window": 3e-05,
+   "mean_abs_diff_in_evaluated_window": 6e-08,
+   "opening_candle_emas_checked": 738
+  }
+ ],
+ "chart_check": {
+  "unique_trade_charts_expected": 133,
+  "charts_with_all_four_annotations": 133,
+  "failures": []
+ },
+ "journal_recount": {
+  "journal_rows": 190,
+  "orb_rows": 89,
+  "orb_unique_dates": 89,
+  "strict_timing_recount_V2A": 38,
+  "reported": 38
+ },
+ "recomputation_total": {
+  "sessions_checked": 4925,
+  "signal_mismatches": 0,
+  "failed_condition_set_mismatches": 0,
+  "trade_mismatches": 0
+ }
+}

@@ -1,0 +1,31 @@
+method,direction,predicate,failed_dates,evaluated_dates,reached_and_failed_dates,sole_failed_gate_dates,interpretation
+Method 1,LONG,previous_level_close,62,85,62,12,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 1,LONG,trend,44,85,7,3,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 1,LONG,quality,54,85,3,3,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 1,SHORT,previous_level_close,60,85,60,7,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 1,SHORT,trend,41,85,7,5,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 1,SHORT,quality,61,85,9,9,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,LONG,inner_defined,0,85,0,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,LONG,inner_close,46,85,46,2,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,LONG,trend,44,85,15,1,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,LONG,trendline,69,85,17,13,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,LONG,quality,54,85,0,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,LONG,near_ma,0,85,0,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,SHORT,inner_defined,0,85,0,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,SHORT,inner_close,52,85,52,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,SHORT,trend,41,85,9,3,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,SHORT,trendline,67,85,10,7,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,SHORT,quality,61,85,7,7,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Method 2,SHORT,near_ma,1,85,0,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,LONG,gap_direction,34,85,34,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,LONG,ma_available,0,85,0,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,LONG,gap_crossing,72,85,38,21,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,LONG,ma_close,38,85,2,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,LONG,quality,54,85,8,8,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,LONG,gap_cap,0,85,0,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,SHORT,gap_direction,51,85,51,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,SHORT,ma_available,0,85,0,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,SHORT,gap_crossing,75,85,24,11,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,SHORT,ma_close,47,85,2,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,SHORT,quality,61,85,2,2,Direction is a diagnostic path; unknown author direction. Do not sum across paths.
+Gap/200DMA,SHORT,gap_cap,0,85,0,0,Direction is a diagnostic path; unknown author direction. Do not sum across paths.

@@ -1,0 +1,7 @@
+config,trade,date,leg,clock,ledger_price,bar_open,bar_high,bar_low,interpretation,source
+A,20251111-1-ORB,2025-11-11,2,10:33,25484.65,25481.65,25482.25,25470.1,Existing conservative target-at-level fill outside gap bar; not an observed traded price,core/exit_policy.py:229
+B,20251111-1-ORB,2025-11-11,2,10:33,25484.65,25481.65,25482.25,25470.1,Existing conservative target-at-level fill outside gap bar; not an observed traded price,core/exit_policy.py:229
+C,20251111-1-ORB,2025-11-11,2,10:33,25484.65,25481.65,25482.25,25470.1,Existing conservative target-at-level fill outside gap bar; not an observed traded price,core/exit_policy.py:229
+A,20251219-1-ORB,2025-12-19,1,09:30,25951.1,25951.25,25967.95,25951.15,Existing conservative target-at-level fill outside gap bar; not an observed traded price,core/exit_policy.py:229
+B,20251219-1-ORB,2025-12-19,1,09:30,25951.1,25951.25,25967.95,25951.15,Existing conservative target-at-level fill outside gap bar; not an observed traded price,core/exit_policy.py:229
+C,20251219-1-ORB,2025-12-19,1,09:30,25951.1,25951.25,25967.95,25951.15,Existing conservative target-at-level fill outside gap bar; not an observed traded price,core/exit_policy.py:229

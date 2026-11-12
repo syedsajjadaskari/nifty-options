@@ -1,0 +1,202 @@
+{
+  "pages": 34,
+  "manifest_pages": 34,
+  "embedded_chart_pages": 24,
+  "embedded_charts_match_latest_pngs": true,
+  "comparisons": [
+    {
+      "page": 3,
+      "date": "2025-12-24",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 4,
+      "date": "2025-12-24",
+      "kind": "opening_1m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 5,
+      "date": "2025-12-24",
+      "kind": "history_5m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 7,
+      "date": "2025-10-08",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 8,
+      "date": "2025-10-08",
+      "kind": "opening_1m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 9,
+      "date": "2025-10-08",
+      "kind": "history_5m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 11,
+      "date": "2025-11-28",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 12,
+      "date": "2025-11-28",
+      "kind": "opening_1m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 13,
+      "date": "2025-11-28",
+      "kind": "history_5m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 15,
+      "date": "2025-12-12",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 16,
+      "date": "2025-12-12",
+      "kind": "opening_1m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 17,
+      "date": "2025-12-12",
+      "kind": "history_5m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 19,
+      "date": "2025-12-05",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 20,
+      "date": "2025-12-05",
+      "kind": "opening_1m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 21,
+      "date": "2025-12-05",
+      "kind": "history_5m",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 23,
+      "date": "2025-09-11",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 24,
+      "date": "2025-09-16",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 25,
+      "date": "2025-10-16",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 26,
+      "date": "2025-10-17",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 27,
+      "date": "2025-10-27",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 28,
+      "date": "2025-11-21",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 29,
+      "date": "2025-12-30",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 30,
+      "date": "2025-12-31",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    },
+    {
+      "page": 31,
+      "date": "2026-07-15",
+      "kind": "overview",
+      "pixels_match_current_png": true,
+      "width_pixels": 3400,
+      "height_pixels": 2125
+    }
+  ],
+  "text_outside_page": [],
+  "sha256": "cd4a45ea5ee33deef092d5d58506a448c4e2280c4a7b00b46acefab4df553e58"
+}

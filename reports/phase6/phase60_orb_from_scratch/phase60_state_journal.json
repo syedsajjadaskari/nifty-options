@@ -1,0 +1,146 @@
+{
+ "reference": {
+  "journal_data_rows": 190,
+  "orb_rows": 89,
+  "orb_unique_dates": 89,
+  "orb_dates_evaluable_sessions": 85,
+  "orb_dates_not_evaluable": [
+   "2025-10-11",
+   "2026-08-15",
+   "2026-08-22",
+   "2026-08-29"
+  ],
+  "saturday_orb_rows": [
+   "2025-10-11",
+   "2026-08-15",
+   "2026-08-22",
+   "2026-08-29"
+  ],
+  "frozen_A_orb_signal_dates_on_journal_orb_dates": 35,
+  "frozen_A_orb_executed_dates_on_journal_orb_dates": 35,
+  "previously_missing_dates_A": 50,
+  "irf_executed_on_journal_orb_dates_A": 34,
+  "irf_executed_on_journal_orb_dates_B": 30,
+  "irf_executed_on_journal_orb_dates_C": 29,
+  "frozen_A_orb_signal_dates_total": 41,
+  "frozen_A_total_orb_trades": 41
+ },
+ "match_class_counts_by_config": {
+  "ORB-V2-A": {
+   "STRICT_TIMING": 38,
+   "MANUAL_ONLY": 51
+  },
+  "ORB-V2-B": {
+   "STRICT_TIMING": 38,
+   "MANUAL_ONLY": 51
+  },
+  "ORB-V2-C": {
+   "STRICT_TIMING": 36,
+   "MANUAL_ONLY": 53
+  },
+  "ORB-V2-D": {
+   "STRICT_TIMING": 33,
+   "MANUAL_ONLY": 56
+  }
+ },
+ "orb_manual_dates_with_v2A_signal": 38,
+ "attribution_among_50_missing_A": {
+  "any": 16,
+  "gap_beyond_prev_range": 1,
+  "inner_only_level": 13,
+  "ema_crossing_B_or_C": 5,
+  "engulfing_only_route": 2
+ },
+ "gap300_only_dates_among_50": [],
+ "missing50_with_signal_any_config": 16,
+ "missing50_with_signal_A": 16,
+ "handwritten13_with_signal_A": 4,
+ "handwritten13_with_signal_any": 4,
+ "v2A_before_irf_fill_on_orb_dates": 12,
+ "v2A_signal_dates_with_irf_executed": 12,
+ "root_cause_counts_A": {
+  "SOLE:NO_PATTERN": 20,
+  "SOLE:LEVEL_NOT_BROKEN": 1,
+  "SESSION_NOT_EVALUABLE_OR_NO_SESSION": 4,
+  "MULTIPLE": 23,
+  "SOLE:WRONG_SIDE_WICK": 2,
+  "SOLE:GAP_TOO_LARGE": 1
+ },
+ "automated_only_counts": {
+  "ORB-V2-A": 1,
+  "ORB-V2-B": 1,
+  "ORB-V2-C": 1,
+  "ORB-V2-D": 1
+ },
+ "secondary_vendor_match_class_counts": {
+  "ORB-V2-A": {
+   "STRICT_TIMING": 30,
+   "MANUAL_ONLY": 59
+  },
+  "ORB-V2-B": {
+   "STRICT_TIMING": 31,
+   "MANUAL_ONLY": 58
+  },
+  "ORB-V2-C": {
+   "STRICT_TIMING": 28,
+   "MANUAL_ONLY": 61
+  },
+  "ORB-V2-D": {
+   "MANUAL_ONLY": 66,
+   "STRICT_TIMING": 23
+  }
+ },
+ "rule_conformity": [
+  {
+   "feed": "5paisa",
+   "group": "manual ORB dates",
+   "sessions": 85,
+   "gap_ok_pct": 94.1,
+   "level_ok_pct": 96.5,
+   "colour_ok_pct": 100.0,
+   "pattern_ok_pct": 49.4,
+   "wick_ok_pct": 72.9,
+   "V2-A_signal_pct": 44.7
+  },
+  {
+   "feed": "5paisa",
+   "group": "all other sessions",
+   "sessions": 162,
+   "gap_ok_pct": 92.6,
+   "level_ok_pct": 85.8,
+   "colour_ok_pct": 37.0,
+   "pattern_ok_pct": 4.9,
+   "wick_ok_pct": 43.2,
+   "V2-A_signal_pct": 0.6
+  },
+  {
+   "feed": "secondary",
+   "group": "manual ORB dates",
+   "sessions": 85,
+   "gap_ok_pct": 94.1,
+   "level_ok_pct": 96.5,
+   "colour_ok_pct": 100.0,
+   "pattern_ok_pct": 41.2,
+   "wick_ok_pct": 70.6,
+   "V2-A_signal_pct": 35.3
+  },
+  {
+   "feed": "secondary",
+   "group": "all other sessions",
+   "sessions": 162,
+   "gap_ok_pct": 92.0,
+   "level_ok_pct": 85.8,
+   "colour_ok_pct": 35.2,
+   "pattern_ok_pct": 3.7,
+   "wick_ok_pct": 43.2,
+   "V2-A_signal_pct": 0.6
+  }
+ ],
+ "outcome_vs_journal_strict_A": {
+  "AGREES": 29,
+  "NO_COUNTERPART_IN_30_60": 9
+ },
+ "all_orb_time_labels": [
+  "09:15"
+ ]
+}

@@ -1,0 +1,298 @@
+{
+  "journal_total_rows": 190,
+  "journal_strategy_rows": {
+    "IRF": 73,
+    "PDR": 8,
+    "ORB": 89,
+    "RF": 17,
+    "PDS": 3
+  },
+  "journal_weekend_rows": [
+    {
+      "sheet_row": 26,
+      "serial": 23,
+      "date": "2025-10-11",
+      "weekday": "Saturday",
+      "manual_time_raw": "09:15",
+      "manual_strategy": "ORB",
+      "manual_outcome": "SL"
+    },
+    {
+      "sheet_row": 89,
+      "serial": 82,
+      "date": "2026-02-14",
+      "weekday": "Saturday",
+      "manual_time_raw": "09:40",
+      "manual_strategy": "IRF",
+      "manual_outcome": "BE"
+    },
+    {
+      "sheet_row": 194,
+      "serial": 181,
+      "date": "2026-08-15",
+      "weekday": "Saturday",
+      "manual_time_raw": "09:15:00",
+      "manual_strategy": "ORB",
+      "manual_outcome": "Target"
+    },
+    {
+      "sheet_row": 198,
+      "serial": 185,
+      "date": "2026-08-22",
+      "weekday": "Saturday",
+      "manual_time_raw": "09:15:00",
+      "manual_strategy": "ORB",
+      "manual_outcome": "SL"
+    },
+    {
+      "sheet_row": 202,
+      "serial": 189,
+      "date": "2026-08-29",
+      "weekday": "Saturday",
+      "manual_time_raw": "09:15:00",
+      "manual_strategy": "ORB",
+      "manual_outcome": "Target"
+    }
+  ],
+  "orb_journal_rows": 89,
+  "orb_unique_dates": 89,
+  "orb_evaluable_unique_dates": 85,
+  "orb_unevaluable_dates": [
+    "2025-10-11",
+    "2026-08-15",
+    "2026-08-22",
+    "2026-08-29"
+  ],
+  "handwritten_unique_disputes": 13,
+  "focus_unique_dates": 91,
+  "charts": 87,
+  "contexts": 247,
+  "session_infos": 248,
+  "independent_signal_parity_failures": [],
+  "orb_prefix_failures": [],
+  "stored_signal_disagreements": [],
+  "ledger_signal_or_fill_failures": [],
+  "first_selection_failures": [],
+  "data_verification": {
+    "ohlc_candles_checked": 18525,
+    "ohlc_max_error": 0.0,
+    "ema_max_error": 1.6370904631912708e-10,
+    "failures": []
+  },
+  "configurations": {
+    "A": {
+      "evaluable_journal_dates": 85,
+      "orb_signal_dates": 35,
+      "no_orb_signal_evaluable_dates": 50,
+      "no_orb_signal_including_no_session": 54,
+      "orb_executed_dates": 35,
+      "orb_signal_no_orb_execution": 0,
+      "irf_executed_dates": 34,
+      "another_strategy_executed_dates": 5,
+      "no_automated_trade_dates": 16,
+      "first_executed_strategy_counts": {
+        "ORB": 35,
+        "RF": 1,
+        "IRF": 34,
+        "NONE": 16,
+        "PDR": 3
+      },
+      "fresh_all_orb_method_signals": 53,
+      "fresh_all_orb_unique_signal_dates": 41,
+      "handwritten_orb_signal_dates": []
+    },
+    "B": {
+      "evaluable_journal_dates": 85,
+      "orb_signal_dates": 35,
+      "no_orb_signal_evaluable_dates": 50,
+      "no_orb_signal_including_no_session": 54,
+      "orb_executed_dates": 35,
+      "orb_signal_no_orb_execution": 0,
+      "irf_executed_dates": 30,
+      "another_strategy_executed_dates": 5,
+      "no_automated_trade_dates": 20,
+      "first_executed_strategy_counts": {
+        "ORB": 35,
+        "RF": 1,
+        "IRF": 30,
+        "NONE": 20,
+        "PDR": 3
+      },
+      "fresh_all_orb_method_signals": 53,
+      "fresh_all_orb_unique_signal_dates": 41,
+      "handwritten_orb_signal_dates": []
+    },
+    "C": {
+      "evaluable_journal_dates": 85,
+      "orb_signal_dates": 38,
+      "no_orb_signal_evaluable_dates": 47,
+      "no_orb_signal_including_no_session": 51,
+      "orb_executed_dates": 38,
+      "orb_signal_no_orb_execution": 0,
+      "irf_executed_dates": 29,
+      "another_strategy_executed_dates": 5,
+      "no_automated_trade_dates": 18,
+      "first_executed_strategy_counts": {
+        "ORB": 38,
+        "RF": 1,
+        "IRF": 29,
+        "NONE": 18,
+        "PDR": 3
+      },
+      "fresh_all_orb_method_signals": 56,
+      "fresh_all_orb_unique_signal_dates": 44,
+      "handwritten_orb_signal_dates": []
+    }
+  },
+  "candidate_impact": [
+    {
+      "variant": "gap_candle",
+      "added_method_direction_signals": 3,
+      "removed_method_direction_signals": 0,
+      "changed_unique_dates": 3,
+      "changed_handwritten_dates": [],
+      "changed_manual_orb_dates": [
+        "2026-03-27",
+        "2026-07-15",
+        "2026-08-13"
+      ],
+      "authority": "SOURCE_SUPPORTED_CONFLICTING_TEXT",
+      "rationale": "PDF pp.8-9 schematics and p.12 lower chart: first candle crosses MA; retain gap direction and prior-close side"
+    },
+    {
+      "variant": "strength_loose",
+      "added_method_direction_signals": 13,
+      "removed_method_direction_signals": 0,
+      "changed_unique_dates": 8,
+      "changed_handwritten_dates": [
+        "2025-12-12",
+        "2025-12-30"
+      ],
+      "changed_manual_orb_dates": [
+        "2025-12-12",
+        "2025-12-30",
+        "2026-01-27",
+        "2026-03-23",
+        "2026-05-11",
+        "2026-05-18",
+        "2026-08-12",
+        "2026-08-19"
+      ],
+      "authority": "NUMERIC_SENSITIVITY_ONLY",
+      "rationale": "PDF p.10 qualitative big body/small wick; 50%/25% illustrative replacement for 60%/20%"
+    },
+    {
+      "variant": "trend_current",
+      "added_method_direction_signals": 13,
+      "removed_method_direction_signals": 0,
+      "changed_unique_dates": 11,
+      "changed_handwritten_dates": [],
+      "changed_manual_orb_dates": [
+        "2025-10-15",
+        "2025-12-19",
+        "2026-02-12",
+        "2026-02-24",
+        "2026-03-27",
+        "2026-04-30",
+        "2026-07-02",
+        "2026-07-17",
+        "2026-08-11",
+        "2026-08-14"
+      ],
+      "authority": "BASIC_FILTER_ONLY_STRUCTURE_UNRESOLVED",
+      "rationale": "PDF pp.3-7 price above/below EMA; current 09:20 close instead of prior-session location"
+    },
+    {
+      "variant": "inner_extreme",
+      "added_method_direction_signals": 0,
+      "removed_method_direction_signals": 2,
+      "changed_unique_dates": 2,
+      "changed_handwritten_dates": [],
+      "changed_manual_orb_dates": [
+        "2025-09-03",
+        "2025-09-24"
+      ],
+      "authority": "LEVEL_SELECTION_PROPOSAL",
+      "rationale": "PDF p.4 minor swing high/consolidation top: most extreme confirmed inner fractal instead of latest"
+    },
+    {
+      "variant": "trendline_any3",
+      "added_method_direction_signals": 16,
+      "removed_method_direction_signals": 0,
+      "changed_unique_dates": 16,
+      "changed_handwritten_dates": [
+        "2025-11-28"
+      ],
+      "changed_manual_orb_dates": [
+        "2025-09-05",
+        "2025-10-20",
+        "2025-11-17",
+        "2025-11-28",
+        "2025-12-22",
+        "2026-01-12",
+        "2026-03-12",
+        "2026-03-18",
+        "2026-04-21",
+        "2026-06-01",
+        "2026-06-03",
+        "2026-06-10",
+        "2026-06-22",
+        "2026-07-22"
+      ],
+      "authority": "CONSTRUCTION_PROPOSAL",
+      "rationale": "PDF p.5 relevant swing lows: any pair among last three confirmed pivots, retaining supportive slope/side"
+    },
+    {
+      "variant": "colour",
+      "added_method_direction_signals": 0,
+      "removed_method_direction_signals": 3,
+      "changed_unique_dates": 3,
+      "changed_handwritten_dates": [],
+      "changed_manual_orb_dates": [],
+      "authority": "AUTHOR_CLARIFIED_LONG_MIRRORED_SHORT",
+      "rationale": "Handwritten p.5 20251127-1: ORB long must close green; PDF p.1 short mirror"
+    },
+    {
+      "variant": "gap_daily_sma",
+      "added_method_direction_signals": 0,
+      "removed_method_direction_signals": 10,
+      "changed_unique_dates": 10,
+      "changed_handwritten_dates": [],
+      "changed_manual_orb_dates": [
+        "2025-10-15",
+        "2025-12-19",
+        "2026-02-12",
+        "2026-02-24",
+        "2026-03-06",
+        "2026-04-30",
+        "2026-07-17",
+        "2026-08-11",
+        "2026-08-14"
+      ],
+      "authority": "INDICATOR_SENSITIVITY_NOT_CORRECTION",
+      "rationale": "PDF pp.8-9 term 200 DMA: literal daily SMA, kept separate; not confirmed author intent"
+    },
+    {
+      "variant": "inner_nearest",
+      "added_method_direction_signals": 2,
+      "removed_method_direction_signals": 8,
+      "changed_unique_dates": 10,
+      "changed_handwritten_dates": [
+        "2025-12-24"
+      ],
+      "changed_manual_orb_dates": [
+        "2025-09-26",
+        "2025-12-24",
+        "2026-01-28",
+        "2026-03-25",
+        "2026-04-02",
+        "2026-04-16",
+        "2026-05-19",
+        "2026-07-30"
+      ],
+      "authority": "LEVEL_SELECTION_PROPOSAL",
+      "rationale": "PDF pp.4-7 smaller inner resistance/support: nearest previous-session confirmed inner level ahead of opening price; chosen before first close, not by which level breaks"
+    }
+  ],
+  "nearest_inner_independent_parity_sessions": 247
+}

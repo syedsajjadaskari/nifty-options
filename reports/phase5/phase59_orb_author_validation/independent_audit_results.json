@@ -1,0 +1,23 @@
+{
+  "original_files_verified_unchanged": 12123,
+  "data_hash_manifest_entries_verified": 352,
+  "referenced_minute_partitions": 14,
+  "incomplete_buckets_excluded": 1,
+  "independent_baseline": [
+    89,
+    85,
+    35,
+    50,
+    34
+  ],
+  "case_union": 52,
+  "case_candle_comparisons": 46852,
+  "case_ema_comparisons": 27300,
+  "ledger_trades_verified": 41,
+  "charts_verified": 62,
+  "svg_candles_verified": 7016,
+  "ledger_markers_verified": 132,
+  "blank_case_author_cells": 468,
+  "pdf_pages": 34,
+  "all_checks_passed": true
+}

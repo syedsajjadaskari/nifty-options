@@ -1,0 +1,11 @@
+# Level and trendline construction
+
+Method1 previous-day max wick high/min wick low is supported by p.4 top/bottom table. Replacing this with an arbitrary multiday resistance would conflate methods. Method2 already breaks an inner level without needing PDH/PDL; the code does not omit all inner breakouts.
+
+The discrepancy is the construction. The PDF names a minor swing or consolidation top, and relevant trendline anchors; code selects the latest confirmed non-strict k2 pivot of the previous session, then uses the last two opposite pivots. Its line extrapolates in candle-index space. These are engineering choices. Equality pivots can create multiple plateau anchors and zero slope (rejected); latest-pair rejection does not imply no discretionary supportive line exists. All anchors used are confirmed before today's open, so the construction itself has no future-pivot leak. The line's current-close side test is causal at09:20.
+
+Real screenshots pp.12-13 use horizontal bands and multi-session context. They do not specify boundaries, number of touches, body versus wick priority, zone merging, lookback, session inclusion or anchor ranking. P.7 inner line is explicitly approximate. A band is not safely interchangeable with one latest fractal. The audit preserves the prior five actual sessions for each date so the missing choices can be drawn by the author. It does not fabricate a multiday-zone signal candidate.
+
+Three isolated level/line sensitivities are measured: most extreme previous-session inner fractal instead of latest; nearest confirmed inner level ahead of the opening price (chosen without seeing the first close); any supportive pair among last three confirmed pivots instead of last two. Each retains trend, quality and timing. None is an author-confirmed replacement. Numerical raw levels, anchors, slope, projection, signed breakout distances and all gates are in `orb_method_paths.csv`, `orb_predicate_observations.csv` and daily files. Do not rank an author's likely method by the fewest failed predicates: that is not evidence of the intended setup.
+
+No future swing is fitted. Prior five sessions are supplied for human review only, not used to select additional trades. Body/wick reference comparison remains an unresolved level-definition question, not proof that an unbroken PDH should have been broken under Method1.

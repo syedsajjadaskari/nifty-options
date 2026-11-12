@@ -1,0 +1,639 @@
+{
+ "funnel": [
+  {
+   "window": "A",
+   "step": 0,
+   "condition (cumulative, in rulebook order)": "evaluable sessions",
+   "sessions_remaining": 247
+  },
+  {
+   "window": "A",
+   "step": 1,
+   "condition (cumulative, in rulebook order)": "close not on the EMA (direction defined)",
+   "sessions_remaining": 247
+  },
+  {
+   "window": "A",
+   "step": 2,
+   "condition (cumulative, in rulebook order)": "gap within limit",
+   "sessions_remaining": 230
+  },
+  {
+   "window": "A",
+   "step": 3,
+   "condition (cumulative, in rulebook order)": "previous-day level broken",
+   "sessions_remaining": 206
+  },
+  {
+   "window": "A",
+   "step": 4,
+   "condition (cumulative, in rulebook order)": "candle colour matches",
+   "sessions_remaining": 120
+  },
+  {
+   "window": "A",
+   "step": 5,
+   "condition (cumulative, in rulebook order)": "at least one pattern",
+   "sessions_remaining": 44
+  },
+  {
+   "window": "A",
+   "step": 6,
+   "condition (cumulative, in rulebook order)": "wrong-side wick <= 20%",
+   "sessions_remaining": 39
+  },
+  {
+   "window": "B",
+   "step": 0,
+   "condition (cumulative, in rulebook order)": "evaluable sessions",
+   "sessions_remaining": 738
+  },
+  {
+   "window": "B",
+   "step": 1,
+   "condition (cumulative, in rulebook order)": "close not on the EMA (direction defined)",
+   "sessions_remaining": 738
+  },
+  {
+   "window": "B",
+   "step": 2,
+   "condition (cumulative, in rulebook order)": "gap within limit",
+   "sessions_remaining": 718
+  },
+  {
+   "window": "B",
+   "step": 3,
+   "condition (cumulative, in rulebook order)": "previous-day level broken",
+   "sessions_remaining": 630
+  },
+  {
+   "window": "B",
+   "step": 4,
+   "condition (cumulative, in rulebook order)": "candle colour matches",
+   "sessions_remaining": 326
+  },
+  {
+   "window": "B",
+   "step": 5,
+   "condition (cumulative, in rulebook order)": "at least one pattern",
+   "sessions_remaining": 100
+  },
+  {
+   "window": "B",
+   "step": 6,
+   "condition (cumulative, in rulebook order)": "wrong-side wick <= 20%",
+   "sessions_remaining": 93
+  },
+  {
+   "window": "A_TV",
+   "step": 0,
+   "condition (cumulative, in rulebook order)": "evaluable sessions",
+   "sessions_remaining": 247
+  },
+  {
+   "window": "A_TV",
+   "step": 1,
+   "condition (cumulative, in rulebook order)": "close not on the EMA (direction defined)",
+   "sessions_remaining": 247
+  },
+  {
+   "window": "A_TV",
+   "step": 2,
+   "condition (cumulative, in rulebook order)": "gap within limit",
+   "sessions_remaining": 229
+  },
+  {
+   "window": "A_TV",
+   "step": 3,
+   "condition (cumulative, in rulebook order)": "previous-day level broken",
+   "sessions_remaining": 205
+  },
+  {
+   "window": "A_TV",
+   "step": 4,
+   "condition (cumulative, in rulebook order)": "candle colour matches",
+   "sessions_remaining": 116
+  },
+  {
+   "window": "A_TV",
+   "step": 5,
+   "condition (cumulative, in rulebook order)": "at least one pattern",
+   "sessions_remaining": 37
+  },
+  {
+   "window": "A_TV",
+   "step": 6,
+   "condition (cumulative, in rulebook order)": "wrong-side wick <= 20%",
+   "sessions_remaining": 31
+  },
+  {
+   "window": "B_TV",
+   "step": 0,
+   "condition (cumulative, in rulebook order)": "evaluable sessions",
+   "sessions_remaining": 739
+  },
+  {
+   "window": "B_TV",
+   "step": 1,
+   "condition (cumulative, in rulebook order)": "close not on the EMA (direction defined)",
+   "sessions_remaining": 739
+  },
+  {
+   "window": "B_TV",
+   "step": 2,
+   "condition (cumulative, in rulebook order)": "gap within limit",
+   "sessions_remaining": 718
+  },
+  {
+   "window": "B_TV",
+   "step": 3,
+   "condition (cumulative, in rulebook order)": "previous-day level broken",
+   "sessions_remaining": 631
+  },
+  {
+   "window": "B_TV",
+   "step": 4,
+   "condition (cumulative, in rulebook order)": "candle colour matches",
+   "sessions_remaining": 308
+  },
+  {
+   "window": "B_TV",
+   "step": 5,
+   "condition (cumulative, in rulebook order)": "at least one pattern",
+   "sessions_remaining": 79
+  },
+  {
+   "window": "B_TV",
+   "step": 6,
+   "condition (cumulative, in rulebook order)": "wrong-side wick <= 20%",
+   "sessions_remaining": 72
+  }
+ ],
+ "single_gate": [
+  {
+   "window": "A",
+   "GAP_TOO_LARGE": 2,
+   "LEVEL_NOT_BROKEN": 3,
+   "COLOUR_MISMATCH": 0,
+   "NO_PATTERN": 26,
+   "WRONG_SIDE_WICK": 5,
+   "signals": 39
+  },
+  {
+   "window": "B",
+   "GAP_TOO_LARGE": 2,
+   "LEVEL_NOT_BROKEN": 10,
+   "COLOUR_MISMATCH": 0,
+   "NO_PATTERN": 89,
+   "WRONG_SIDE_WICK": 7,
+   "signals": 93
+  },
+  {
+   "window": "A_TV",
+   "GAP_TOO_LARGE": 1,
+   "LEVEL_NOT_BROKEN": 2,
+   "COLOUR_MISMATCH": 0,
+   "NO_PATTERN": 31,
+   "WRONG_SIDE_WICK": 6,
+   "signals": 31
+  },
+  {
+   "window": "B_TV",
+   "GAP_TOO_LARGE": 1,
+   "LEVEL_NOT_BROKEN": 5,
+   "COLOUR_MISMATCH": 0,
+   "NO_PATTERN": 97,
+   "WRONG_SIDE_WICK": 7,
+   "signals": 72
+  }
+ ],
+ "ema": [
+  {
+   "window": "A",
+   "direction": "BUY",
+   "scenario": "A_ALREADY_BEYOND_EMA",
+   "sessions": 100,
+   "signals": 16
+  },
+  {
+   "window": "A",
+   "direction": "BUY",
+   "scenario": "B_INTRABAR_CROSS_OF_EMA",
+   "sessions": 11,
+   "signals": 3
+  },
+  {
+   "window": "A",
+   "direction": "BUY",
+   "scenario": "C_OVERNIGHT_GAP_CROSSES_EMA",
+   "sessions": 20,
+   "signals": 1
+  },
+  {
+   "window": "A",
+   "direction": "SELL",
+   "scenario": "A_ALREADY_BEYOND_EMA",
+   "sessions": 87,
+   "signals": 10
+  },
+  {
+   "window": "A",
+   "direction": "SELL",
+   "scenario": "B_INTRABAR_CROSS_OF_EMA",
+   "sessions": 11,
+   "signals": 5
+  },
+  {
+   "window": "A",
+   "direction": "SELL",
+   "scenario": "C_OVERNIGHT_GAP_CROSSES_EMA",
+   "sessions": 18,
+   "signals": 4
+  },
+  {
+   "window": "B",
+   "direction": "BUY",
+   "scenario": "A_ALREADY_BEYOND_EMA",
+   "sessions": 360,
+   "signals": 30
+  },
+  {
+   "window": "B",
+   "direction": "BUY",
+   "scenario": "B_INTRABAR_CROSS_OF_EMA",
+   "sessions": 21,
+   "signals": 6
+  },
+  {
+   "window": "B",
+   "direction": "BUY",
+   "scenario": "C_OVERNIGHT_GAP_CROSSES_EMA",
+   "sessions": 64,
+   "signals": 4
+  },
+  {
+   "window": "B",
+   "direction": "SELL",
+   "scenario": "A_ALREADY_BEYOND_EMA",
+   "sessions": 224,
+   "signals": 35
+  },
+  {
+   "window": "B",
+   "direction": "SELL",
+   "scenario": "B_INTRABAR_CROSS_OF_EMA",
+   "sessions": 31,
+   "signals": 15
+  },
+  {
+   "window": "B",
+   "direction": "SELL",
+   "scenario": "C_OVERNIGHT_GAP_CROSSES_EMA",
+   "sessions": 38,
+   "signals": 3
+  }
+ ],
+ "gap": [
+  {
+   "window": "A",
+   "sessions": 247,
+   "abs_gap>250": 17,
+   "abs_gap>300": 12,
+   "250<abs_gap<=300": 5,
+   "max_abs_gap": 1176.5,
+   "gap_up_above_prev_high": 62,
+   "gap_down_below_prev_low": 46
+  },
+  {
+   "window": "B",
+   "sessions": 738,
+   "abs_gap>250": 20,
+   "abs_gap>300": 12,
+   "250<abs_gap<=300": 8,
+   "max_abs_gap": 1096.7,
+   "gap_up_above_prev_high": 201,
+   "gap_down_below_prev_low": 101
+  }
+ ],
+ "gap_diff": [
+  {
+   "window": "B",
+   "date": "2022-09-01",
+   "gap_points": -273.6,
+   "A(250)": "-",
+   "B(300)": "BUY"
+  }
+ ],
+ "levels": [
+  {
+   "window": "A",
+   "config": "ORB-V2-A",
+   "sessions_with_direction": 247,
+   "level_test_passed": 221,
+   "pass_rate_pct": 89.5,
+   "MAJOR_ONLY": 0,
+   "INNER_ONLY": 113,
+   "MAJOR_AND_INNER": 108,
+   "avg_levels_per_side": 9.6,
+   "sole_failed_gate_is_LEVEL": 3,
+   "signals": 39
+  },
+  {
+   "window": "A",
+   "config": "ORB-V2-B",
+   "sessions_with_direction": 247,
+   "level_test_passed": 221,
+   "pass_rate_pct": 89.5,
+   "MAJOR_ONLY": 0,
+   "INNER_ONLY": 113,
+   "MAJOR_AND_INNER": 108,
+   "avg_levels_per_side": 9.6,
+   "sole_failed_gate_is_LEVEL": 4,
+   "signals": 39
+  },
+  {
+   "window": "A",
+   "config": "ORB-V2-C",
+   "sessions_with_direction": 247,
+   "level_test_passed": 201,
+   "pass_rate_pct": 81.4,
+   "MAJOR_ONLY": 2,
+   "INNER_ONLY": 93,
+   "MAJOR_AND_INNER": 106,
+   "avg_levels_per_side": 3.3,
+   "sole_failed_gate_is_LEVEL": 5,
+   "signals": 37
+  },
+  {
+   "window": "A",
+   "config": "ORB-V2-D",
+   "sessions_with_direction": 247,
+   "level_test_passed": 221,
+   "pass_rate_pct": 89.5,
+   "MAJOR_ONLY": 0,
+   "INNER_ONLY": 113,
+   "MAJOR_AND_INNER": 108,
+   "avg_levels_per_side": 9.6,
+   "sole_failed_gate_is_LEVEL": 3,
+   "signals": 34
+  },
+  {
+   "window": "A",
+   "config": "DIAG-A-OLDSIDE",
+   "sessions_with_direction": 247,
+   "level_test_passed": 61,
+   "pass_rate_pct": 24.7,
+   "MAJOR_ONLY": 7,
+   "INNER_ONLY": 38,
+   "MAJOR_AND_INNER": 16,
+   "avg_levels_per_side": 9.6,
+   "sole_failed_gate_is_LEVEL": 15,
+   "signals": 27
+  },
+  {
+   "window": "B",
+   "config": "ORB-V2-A",
+   "sessions_with_direction": 738,
+   "level_test_passed": 649,
+   "pass_rate_pct": 87.9,
+   "MAJOR_ONLY": 0,
+   "INNER_ONLY": 353,
+   "MAJOR_AND_INNER": 296,
+   "avg_levels_per_side": 9.8,
+   "sole_failed_gate_is_LEVEL": 10,
+   "signals": 93
+  },
+  {
+   "window": "B",
+   "config": "ORB-V2-B",
+   "sessions_with_direction": 738,
+   "level_test_passed": 649,
+   "pass_rate_pct": 87.9,
+   "MAJOR_ONLY": 0,
+   "INNER_ONLY": 353,
+   "MAJOR_AND_INNER": 296,
+   "avg_levels_per_side": 9.8,
+   "sole_failed_gate_is_LEVEL": 10,
+   "signals": 94
+  },
+  {
+   "window": "B",
+   "config": "ORB-V2-C",
+   "sessions_with_direction": 738,
+   "level_test_passed": 568,
+   "pass_rate_pct": 77.0,
+   "MAJOR_ONLY": 1,
+   "INNER_ONLY": 272,
+   "MAJOR_AND_INNER": 295,
+   "avg_levels_per_side": 3.4,
+   "sole_failed_gate_is_LEVEL": 18,
+   "signals": 85
+  },
+  {
+   "window": "B",
+   "config": "ORB-V2-D",
+   "sessions_with_direction": 738,
+   "level_test_passed": 649,
+   "pass_rate_pct": 87.9,
+   "MAJOR_ONLY": 0,
+   "INNER_ONLY": 353,
+   "MAJOR_AND_INNER": 296,
+   "avg_levels_per_side": 9.8,
+   "sole_failed_gate_is_LEVEL": 10,
+   "signals": 85
+  },
+  {
+   "window": "B",
+   "config": "DIAG-A-OLDSIDE",
+   "sessions_with_direction": 738,
+   "level_test_passed": 158,
+   "pass_rate_pct": 21.4,
+   "MAJOR_ONLY": 22,
+   "INNER_ONLY": 112,
+   "MAJOR_AND_INNER": 24,
+   "avg_levels_per_side": 9.8,
+   "sole_failed_gate_is_LEVEL": 44,
+   "signals": 59
+  }
+ ],
+ "config_diffs": [
+  {
+   "window": "A",
+   "versus_A": "ORB-V2-B",
+   "signals_only_in_A": 0,
+   "signals_only_in_other": 0,
+   "dates_only_in_A": "",
+   "dates_only_in_other": ""
+  },
+  {
+   "window": "A",
+   "versus_A": "ORB-V2-C",
+   "signals_only_in_A": 2,
+   "signals_only_in_other": 0,
+   "dates_only_in_A": "2026-04-17, 2026-08-13",
+   "dates_only_in_other": ""
+  },
+  {
+   "window": "A",
+   "versus_A": "ORB-V2-D",
+   "signals_only_in_A": 5,
+   "signals_only_in_other": 0,
+   "dates_only_in_A": "2025-11-11, 2026-01-27, 2026-04-17, 2026-06-10, 2026-07-21",
+   "dates_only_in_other": ""
+  },
+  {
+   "window": "A",
+   "versus_A": "DIAG-A-OLDSIDE",
+   "signals_only_in_A": 12,
+   "signals_only_in_other": 0,
+   "dates_only_in_A": "2025-09-05, 2025-10-01, 2025-11-17, 2025-11-28, 2025-12-29, 2026-01-28, 2026-02-12, 2026-03-12, 2026-03-25, 2026-04-16, 2026-04-30, 2026-07-02",
+   "dates_only_in_other": ""
+  },
+  {
+   "window": "B",
+   "versus_A": "ORB-V2-B",
+   "signals_only_in_A": 0,
+   "signals_only_in_other": 1,
+   "dates_only_in_A": "",
+   "dates_only_in_other": "2022-09-01"
+  },
+  {
+   "window": "B",
+   "versus_A": "ORB-V2-C",
+   "signals_only_in_A": 8,
+   "signals_only_in_other": 0,
+   "dates_only_in_A": "2023-08-29, 2023-10-16, 2024-03-14, 2024-06-05, 2024-08-08, 2024-11-18, 2025-03-10, 2025-07-21",
+   "dates_only_in_other": ""
+  },
+  {
+   "window": "B",
+   "versus_A": "ORB-V2-D",
+   "signals_only_in_A": 8,
+   "signals_only_in_other": 0,
+   "dates_only_in_A": "2022-10-28, 2023-01-02, 2023-01-06, 2024-09-26, 2025-02-07, 2025-03-07, 2025-03-10, 2025-05-15",
+   "dates_only_in_other": ""
+  },
+  {
+   "window": "B",
+   "versus_A": "DIAG-A-OLDSIDE",
+   "signals_only_in_A": 34,
+   "signals_only_in_other": 0,
+   "dates_only_in_A": "2022-09-20, 2022-09-28, 2022-10-31, 2022-12-01, 2023-01-02, 2023-01-06, 2023-01-09, 2023-02-07, 2023-03-06, 2023-05-23, 2023-07-03, 2023-07-27 ...",
+   "dates_only_in_other": ""
+  }
+ ],
+ "patterns": [
+  {
+   "window": "A",
+   "colour_ok_sessions": 145,
+   "full_body": 30,
+   "pin_bar": 10,
+   "engulfing": 21,
+   "none_of_the_three": 95,
+   "wrong_side_wick_fail_among_colour_ok": 67,
+   "signals": 39,
+   "signal_route_full_body_only": 16,
+   "signal_route_engulfing_only": 5,
+   "signal_route_pin_only": 8,
+   "signal_multiple_patterns": 10
+  },
+  {
+   "window": "B",
+   "colour_ok_sessions": 368,
+   "full_body": 82,
+   "pin_bar": 15,
+   "engulfing": 41,
+   "none_of_the_three": 255,
+   "wrong_side_wick_fail_among_colour_ok": 166,
+   "signals": 93,
+   "signal_route_full_body_only": 50,
+   "signal_route_engulfing_only": 8,
+   "signal_route_pin_only": 14,
+   "signal_multiple_patterns": 21
+  },
+  {
+   "window": "A_TV",
+   "colour_ok_sessions": 142,
+   "full_body": 20,
+   "pin_bar": 8,
+   "engulfing": 21,
+   "none_of_the_three": 101,
+   "wrong_side_wick_fail_among_colour_ok": 70,
+   "signals": 31,
+   "signal_route_full_body_only": 10,
+   "signal_route_engulfing_only": 7,
+   "signal_route_pin_only": 7,
+   "signal_multiple_patterns": 7
+  },
+  {
+   "window": "B_TV",
+   "colour_ok_sessions": 350,
+   "full_body": 52,
+   "pin_bar": 9,
+   "engulfing": 45,
+   "none_of_the_three": 263,
+   "wrong_side_wick_fail_among_colour_ok": 162,
+   "signals": 72,
+   "signal_route_full_body_only": 31,
+   "signal_route_engulfing_only": 15,
+   "signal_route_pin_only": 9,
+   "signal_multiple_patterns": 17
+  }
+ ],
+ "wick_dist": [
+  {
+   "window": "A",
+   "n": 145,
+   "<=10%": 50,
+   "10-20%": 28,
+   "20-25%": 12,
+   "25-30%": 10,
+   ">30%": 45,
+   "zero_range_sessions": 0
+  },
+  {
+   "window": "B",
+   "n": 368,
+   "<=10%": 107,
+   "10-20%": 95,
+   "20-25%": 25,
+   "25-30%": 24,
+   ">30%": 117,
+   "zero_range_sessions": 0
+  }
+ ],
+ "pattern_route": [
+  {
+   "window": "A",
+   "pattern basis": "explicit full-body rule matched (alone or with others)",
+   "trades": 26,
+   "win_rate_pct": 42.31,
+   "total_points": 206.55,
+   "profit_factor": 1.456
+  },
+  {
+   "window": "A",
+   "pattern basis": "provisional-only: hammer/shooting-star and/or engulfing, no full-body",
+   "trades": 13,
+   "win_rate_pct": 23.08,
+   "total_points": -120.0,
+   "profit_factor": 0.6
+  },
+  {
+   "window": "B",
+   "pattern basis": "explicit full-body rule matched (alone or with others)",
+   "trades": 71,
+   "win_rate_pct": 46.48,
+   "total_points": 816.25,
+   "profit_factor": 1.73
+  },
+  {
+   "window": "B",
+   "pattern basis": "provisional-only: hammer/shooting-star and/or engulfing, no full-body",
+   "trades": 22,
+   "win_rate_pct": 40.91,
+   "total_points": 104.75,
+   "profit_factor": 1.267
+  }
+ ]
+}

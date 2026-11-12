@@ -1,0 +1,35 @@
+{
+  "formula_counts_match_independent_summary": true,
+  "recalculation_probe_restored": true,
+  "sheets": [
+    {
+      "name": "Overview",
+      "rows": 3
+    },
+    {
+      "name": "Journal",
+      "rows": 267
+    },
+    {
+      "name": "Disputes",
+      "rows": 39
+    },
+    {
+      "name": "Chronology",
+      "rows": 273
+    },
+    {
+      "name": "Predicates",
+      "rows": 2610
+    },
+    {
+      "name": "Sources",
+      "rows": 33
+    },
+    {
+      "name": "Candidates",
+      "rows": 70
+    }
+  ],
+  "limitations": "Analysis workbook; authority and manual direction are not inferred. Native Excel recalculation not separately opened."
+}

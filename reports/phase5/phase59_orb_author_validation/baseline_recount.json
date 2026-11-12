@@ -1,0 +1,73 @@
+{
+  "journal_rows": 190,
+  "orb_journal_rows": 89,
+  "orb_unique_dates": 89,
+  "evaluable_orb_dates": 85,
+  "orb_signal_dates": 35,
+  "orb_executed_dates": 35,
+  "missing_orb_dates": 50,
+  "irf_executed_dates": 34,
+  "handwritten_unique_dates": 13,
+  "signal_but_no_orb_execution": [],
+  "journal_no_session_dates": [
+    "2025-10-11",
+    "2026-08-15",
+    "2026-08-22",
+    "2026-08-29"
+  ],
+  "irf_and_orb_execution_overlap": [],
+  "irf_is_subset_of_missing": true,
+  "phase58_workbook_summary": [
+    [
+      "A",
+      85,
+      35,
+      50,
+      35,
+      0,
+      34,
+      5,
+      16
+    ],
+    [
+      "B",
+      85,
+      35,
+      50,
+      35,
+      0,
+      30,
+      5,
+      20
+    ],
+    [
+      "C",
+      85,
+      38,
+      47,
+      38,
+      0,
+      29,
+      5,
+      18
+    ]
+  ],
+  "case_union_dates": 52,
+  "handwritten_in_missing_journal": 11,
+  "handwritten_outside_orb_journal": [
+    "2025-10-17",
+    "2025-11-21"
+  ],
+  "no_trade_missing_dates": 12,
+  "other_strategy_missing_dates": 5,
+  "other_and_irf_missing_overlap": [
+    "2025-11-07"
+  ],
+  "original_source_hashes": {
+    "docs/trading journal/Trading_Journal_Sep2025_Aug2026 REPORT.xlsx": "97a9ad4dfb5520619bb979770115d7b6f4e3e37e649af255c543f5fce9694781",
+    "docs/strategy_docs/ORB_Strategy_Rulebook-2.pdf": "bf30b8da4ba9bb4bef11f2f0fdf0766c9ac17b83852f4871a82d95ea9468fdd5",
+    "docs/strategy_docs/corrected/Adobe Scan Nov 05, 2026.pdf": "601711a505e4c7f82a5aa538136e9e7e15cb92b722fcd1d75bbbb46a2ec8f27a",
+    "reports/phase5/phase55_combined_backtest/all_executed_trades.csv": "d04cf34e36d59e701bda936ea3049986fc1c9a9bc8d876df11250abe3c7bb184",
+    "reports/phase5/phase55_combined_backtest/all_confirmed_signals.csv": "d3dbe6c390128da05070fe0aadcd205c51f10b6daa39095d1fa0441faf37f310"
+  }
+}

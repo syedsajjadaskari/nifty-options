@@ -1,0 +1,50 @@
+[
+  {
+    "id": "Q1",
+    "topic": "Inner level and multi-session zone",
+    "question": "Which exact resistance/support price or zone should the opening candle break? Mark its boundaries and establishing candles, say bodies/wicks/both, and define the current/previous/multi-session lookback and selection when several levels exist.",
+    "source": "ORB PDF pp.4-7; reference bands pp.12-13",
+    "current": "Latest non-strict k=2 previous-session inner pivot; a single price. Method 1 separately uses the previous day's wick extreme.",
+    "candidate": "Existing nearest-inner/extreme-inner diagnostics only. No multi-session zone algorithm is attributed to the author."
+  },
+  {
+    "id": "Q2",
+    "topic": "Candle strength and colour",
+    "question": "What makes an opening candle sufficiently strong? State whether a minimum body or maximum adverse wick is required, how a conditional pin qualifies, and confirm directional colour. Please mark an acceptable and unacceptable example rather than choosing a percentage to match the journal.",
+    "source": "ORB PDF pp.3-7,9-10; handwritten p.5 green-long clarification",
+    "current": "Body >=60% and opposite wick <=20%, or owner-style pin (wick >=2x body, favourable close30%). Gap rejection flag33%. Numbers are proposals.",
+    "candidate": "Existing LOOSE50%/25% sensitivity and colour wrapper, both disabled. They do not establish the intended author rule."
+  },
+  {
+    "id": "Q3",
+    "topic": "Trendline anchors and qualification",
+    "question": "When is a trendline required? Identify two or more exact candle anchors that were known before entry. Define pivot confirmation, permitted sessions, intervening price crossings, and whether price must break or remain on a side with a completed close.",
+    "source": "ORB PDF pp.5-7",
+    "current": "Last two confirmed previous-session k=2 lows/highs; projected in candle-index space. Rising/falling slope and opening-close side are mandatory.",
+    "candidate": "Existing any-pair-of-last-three diagnostic only; relevant anchors must be supplied by the author."
+  },
+  {
+    "id": "Q4",
+    "topic": "Moving average and gap crossing",
+    "question": "What exact average, timeframe and input do you use? Does 200 DMA mean a 200-day SMA or the average on a five-minute chart? Can the first candle open on one side and close on the other? Is a directional overnight gap/prior-close-side test mandatory, and is the average an entry condition or only a trend filter?",
+    "source": "ORB PDF pp.2-3,5,7-9,12; gap figures differ from some wording",
+    "current": "EMA200 of completed five-minute closes. Gap setup requires directional gap, prior official close on the old side, open already beyond current EMA and first close beyond.",
+    "candidate": "Existing first-candle-crossing interpretation only. A generic EMA cross without the specified directional gap is not silently accepted."
+  },
+  {
+    "id": "Q5",
+    "topic": "Established trend",
+    "question": "What evidence establishes trend before a Method 1/2 trade? Must it pre-exist in the previous session, can the opening move establish it, and what bullish/bearish structure is required in addition to the EMA location?",
+    "source": "ORB PDF pp.1,3-7,12",
+    "current": "Frozen research reference uses previous-session last5m close versus its EMA; no additional current-close/structure condition.",
+    "candidate": "Existing current-close EMA diagnostic remains a basic proxy, not a complete source-defined trend."
+  },
+  {
+    "id": "Q6",
+    "topic": "Method, timestamp and rejection",
+    "question": "For each marked trade, identify Method 1, Method 2, gap, or another method with its PDF page. Mark candle start/end, BUY/SELL, decision and intended execution time; confirm wick versus close and any second confirmation. What exact condition would make you ignore this ORB trade?",
+    "source": "ORB PDF pp.1-3,11; handwritten ORB comments have no exact entry",
+    "current": "Opening09:15-09:20 candle only; decision at09:20. Journal09:15 is a label, not proof of an executable09:15 fill.",
+    "candidate": "No later-candle variant or guessed author entry is introduced."
+  }
+]
