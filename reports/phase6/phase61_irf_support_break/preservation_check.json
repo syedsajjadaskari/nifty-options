@@ -1,0 +1,28 @@
+{
+ "files_before": 19278,
+ "files_now": 19294,
+ "changed": [],
+ "own_phase61_63_files_edited_after_snapshot": [
+  "scripts/phase61_snapshot.py"
+ ],
+ "removed": [],
+ "added_total": 16,
+ "added_outside_phase60": [],
+ "added_phase60_by_prefix": {
+  "reports/phase6/phase61_irf_support_break/": 0,
+  "reports/phase6/phase62_combined_backtest/": 0,
+  "reports/phase6/phase63_manual_reconciliation/": 0,
+  "reports/phase6/PHASE61_63": 0,
+  "src/nifty_trading/research/irf_v2": 1,
+  "src/nifty_trading/strategies/irf_v2.py": 1,
+  "src/nifty_trading/strategies/orb_v2_adapter.py": 1,
+  "src/nifty_trading/research/phase6": 1,
+  "tests/test_phase61_": 1,
+  "tests/test_phase62_": 1,
+  "tests/test_phase63_": 1,
+  "scripts/phase61_": 2,
+  "scripts/phase62_": 5,
+  "scripts/phase63_": 2
+ },
+ "preserved": true
+}

@@ -1,0 +1,272 @@
+{
+ "phase": "6.2",
+ "synthetic_pnl_only": true,
+ "git_head_at_run": "ea3d8da308ad93442e108e97233ebfa0366804cd",
+ "configurations": {
+  "A": {
+   "title": "A - Phase 3.6 frozen",
+   "engines": [
+    "IRFStrategy",
+    "ORBStrategy",
+    "PDRBodyStrategy",
+    "PDSStrategy",
+    "RFStrategy"
+   ]
+  },
+  "B": {
+   "title": "B - Phase 5.3 author-corrected (legacy ORB)",
+   "engines": [
+    "IRFPhase53Strategy",
+    "ORBStrategy",
+    "PDRFirstEligibleStrategy",
+    "PDSFirstEligibleStrategy",
+    "RFStrategy"
+   ]
+  },
+  "C": {
+   "title": "C - IRF V2 + ORB V2 + PDR/PDS (Phase 5.3 first-eligible) + RF",
+   "engines": [
+    "IRFV2SupportBreakStrategy",
+    "ORBV2Strategy",
+    "PDRFirstEligibleStrategy",
+    "PDSFirstEligibleStrategy",
+    "RFStrategy"
+   ]
+  },
+  "D1": {
+   "title": "D1 - IRF V2 + legacy ORB (attribution of the IRF change)",
+   "engines": [
+    "IRFV2SupportBreakStrategy",
+    "ORBStrategy",
+    "PDRFirstEligibleStrategy",
+    "PDSFirstEligibleStrategy",
+    "RFStrategy"
+   ]
+  },
+  "D2": {
+   "title": "D2 - frozen IRF + ORB V2 (attribution of the ORB change)",
+   "engines": [
+    "IRFStrategy",
+    "ORBV2Strategy",
+    "PDRFirstEligibleStrategy",
+    "PDSFirstEligibleStrategy",
+    "RFStrategy"
+   ]
+  }
+ },
+ "new_combined_configuration_id": "phase62-irfv2-orbv2-combined",
+ "orb_v2": {
+  "config_id": "ORB-V2-A",
+  "selection": "PROVISIONAL REFERENCE: no owner-selected ORB V2 variant exists; B/C/D were not selected and no relaxed variants were combined",
+  "manifest": {
+   "settings": {
+    "config_id": "ORB-V2-A",
+    "title": "Written-rule reference: explicit rulebook rules plus labelled provisional conventions (250-point gap limit)",
+    "ema_period": 200,
+    "max_gap_points": 250.0,
+    "break_mode": "CLOSE_BEYOND",
+    "boundary": "STRICT",
+    "inner_method": "SWING_FRACTAL_WICK_ZONE",
+    "swing_k": 2,
+    "cluster_tol_points": 10.0,
+    "cluster_min_members": 2,
+    "max_bad_wick_pct": 0.2,
+    "full_body_max_total_wick_pct": 0.2,
+    "hammer_min_pin_wick_to_body": 2.0,
+    "hammer_max_opposite_wick_pct": 0.1,
+    "engulf_reference": "PREV_SESSION_LAST_CONTINUOUS_5M",
+    "engulf_requires_opposite_colour": false,
+    "stop_points": 30.0,
+    "target_points": 60.0,
+    "entry_convention": "OPEN_OF_0920_1M_BAR",
+    "same_bar_policy": "STOP_FIRST",
+    "forced_exit_clock": "15:14",
+    "quantity": 75
+   },
+   "authority": {
+    "ema_period": "EXPLICIT_LATEST_RULEBOOK",
+    "max_gap_points": "TO_CONFIRM",
+    "break_mode": "SOURCE_CONFLICT",
+    "boundary": "TO_CONFIRM",
+    "inner_method": "PROVISIONAL_MECHANICAL_CONVENTION",
+    "swing_k": "PROVISIONAL_MECHANICAL_CONVENTION",
+    "cluster_tol_points": "PROVISIONAL_MECHANICAL_CONVENTION",
+    "cluster_min_members": "PROVISIONAL_MECHANICAL_CONVENTION",
+    "max_bad_wick_pct": "EXPLICIT_LATEST_RULEBOOK",
+    "full_body_max_total_wick_pct": "EXPLICIT_LATEST_RULEBOOK",
+    "hammer_min_pin_wick_to_body": "PROVISIONAL_MECHANICAL_CONVENTION",
+    "hammer_max_opposite_wick_pct": "PROVISIONAL_MECHANICAL_CONVENTION",
+    "engulf_reference": "TO_CONFIRM",
+    "engulf_requires_opposite_colour": "PROVISIONAL_MECHANICAL_CONVENTION",
+    "stop_points": "EXPLICIT_LATEST_RULEBOOK",
+    "target_points": "EXPLICIT_LATEST_RULEBOOK",
+    "entry_convention": "TO_CONFIRM",
+    "same_bar_policy": "TO_CONFIRM",
+    "forced_exit_clock": "PROVISIONAL_MECHANICAL_CONVENTION",
+    "quantity": "PROVISIONAL_MECHANICAL_CONVENTION"
+   },
+   "config_sha256": "5ac4d7b1fae8e734fad5680b318496873a7da6ab1acb9c98da13961da09958f5"
+  },
+  "unresolved_assumptions": [
+   "OD-1 data feed (5paisa vs secondary)",
+   "OD-2 break definition (close beyond vs candle crosses)",
+   "OD-3 inner-level construction / meaning of 'major'",
+   "OD-4 hammer / shooting-star proportions and engulfing reference at 09:20",
+   "OD-5 wick rule vs rulebook Examples 2/3",
+   "OD-6 gap limit 250 vs 300",
+   "OD-7 entry price (rulebook: close of the 9:15 candle; used: first executable fill)",
+   "OD-15 gap reference close"
+  ],
+  "import_scope": "entry signals only; the standalone 30/60 ledger is not used"
+ },
+ "irf_v2": {
+  "version": "IRF-V2-SUPPORT-BREAK",
+  "rule": "OWNER_APPROVED first red candle wick low, strict close below, no retest; search start AFTER_EXTENSION (PROVISIONAL); 28-pt EMA range clearance (PROVISIONAL measure), all methods; day's-low restriction NOT applied"
+ },
+ "pdr_pds": "Phase 5.3 first-eligible engines (PROVISIONAL conventions), unchanged; RF unchanged frozen",
+ "frozen_identity_phase4": {},
+ "controller": {
+  "entry_cutoff": "13:00:00",
+  "max_entries": 2,
+  "second_trade_strategies": [
+   "PDR",
+   "PDS"
+  ],
+  "tie_break": null,
+  "collision_policy": "MARK_DAY_UNRESOLVED"
+ },
+ "entry_cutoff_ist": "13:00",
+ "forced_exit_limit": "15:15:00",
+ "position": {
+  "lots": 6,
+  "units_per_lot": 65,
+  "total_units": 390,
+  "legs": "3 + 3 lots (195 + 195)"
+ },
+ "exit_rules": {
+  "stops": {
+   "IRF": 35.0,
+   "ORB": 30.0,
+   "PDR": 35.0,
+   "PDS": 35.0,
+   "RF": 35.0
+  },
+  "target_1_points": 27.0,
+  "targets_2": {
+   "IRF": 60.0,
+   "ORB": 60.0,
+   "PDR": 70.0,
+   "PDS": 70.0,
+   "RF": 60.0
+  },
+  "post_t1_stop": "entry -/+ 6 points; no trailing",
+  "forced_exit": "open of the 15:14 one-minute bar (provisional); never at/after 15:15; no closing-auction fills",
+  "intrabar": "stop before target inside a 1-minute bar; flagged"
+ },
+ "cost_scenarios": [
+  {
+   "id": "GROSS",
+   "label": "Gross synthetic index P&L (no cost)",
+   "fixed_rs": 0.0,
+   "slip_pts_per_side": 0.0,
+   "per_fill": false
+  },
+  {
+   "id": "C70_TRADE",
+   "label": "Rs 70 per completed trade",
+   "fixed_rs": 70.0,
+   "slip_pts_per_side": 0.0,
+   "per_fill": false
+  },
+  {
+   "id": "C70_FILL",
+   "label": "Rs 70 per order fill (entry + each exit leg)",
+   "fixed_rs": 70.0,
+   "slip_pts_per_side": 0.0,
+   "per_fill": true
+  },
+  {
+   "id": "C70_S025",
+   "label": "Rs 70 per trade + 0.25 pt slippage per side",
+   "fixed_rs": 70.0,
+   "slip_pts_per_side": 0.25,
+   "per_fill": false
+  },
+  {
+   "id": "C70_S05",
+   "label": "Rs 70 per trade + 0.5 pt slippage per side",
+   "fixed_rs": 70.0,
+   "slip_pts_per_side": 0.5,
+   "per_fill": false
+  },
+  {
+   "id": "C70_S1",
+   "label": "Rs 70 per trade + 1 pt slippage per side",
+   "fixed_rs": 70.0,
+   "slip_pts_per_side": 1.0,
+   "per_fill": false
+  }
+ ],
+ "old_fixed_500_assumption": "NOT USED",
+ "data": {
+  "primary": {
+   "source": "data/processed/nifty50 + nifty50_warmup + nifty50_daily",
+   "rows_total": 108770,
+   "rows_in_window": 92981,
+   "warmup_rows": 15789,
+   "sessions_with_rows_in_window": 248,
+   "first_row": "2025-07-01 09:15:00+05:30",
+   "last_row": "2026-08-31 15:30:00+05:30"
+  },
+  "robustness": {
+   "source": "data/phase4/processed/FIVEPAISA_1M_PHASE4 + FIVEPAISA_1D_PHASE4",
+   "rows_total": 285813,
+   "rows_in_window": 278298,
+   "warmup_rows": 7515,
+   "sessions_with_rows_in_window": 743,
+   "first_row": "2022-08-01 09:15:00+05:30",
+   "last_row": "2025-08-29 15:30:00+05:30"
+  }
+ },
+ "reproduction_checks": {
+  "A": {
+   "phase55_trades": 196,
+   "reproduced_trades": 196,
+   "mismatches": 0,
+   "gross_phase55": 297765.0,
+   "gross_now": 297765.0
+  },
+  "B": {
+   "phase55_trades": 188,
+   "reproduced_trades": 188,
+   "mismatches": 0,
+   "gross_phase55": 258550.5,
+   "gross_now": 258550.5
+  },
+  "window_B_A_vs_phase4": {
+   "phase4_trades": 609,
+   "now": 609,
+   "same_ids": true,
+   "gross_equal": true
+  },
+  "D1_equals_B_A": true,
+  "D1_equals_B_B": true
+ },
+ "environment": {
+  "python": "3.12.10",
+  "packages": {
+   "pandas": "3.1.0",
+   "numpy": "2.5.4",
+   "openpyxl": "3.1.5",
+   "pytest": "9.2.0",
+   "ruff": "0.17.3"
+  }
+ },
+ "file_hashes": {
+  "src/nifty_trading/strategies/irf_v2.py": "080427fecea315a8f750bf3968e07944c6b0bcc27439b8c1026b07cce5aa0934",
+  "src/nifty_trading/strategies/orb_v2_adapter.py": "8b96079366b771cdb4804471c88bcfabc156db14623d1bc91c3ea93b89748b71",
+  "src/nifty_trading/research/phase62.py": "32fab6d480142fbb67a3d41825eec1ee7120a2edd9266ce1d877c23526862f7a",
+  "src/nifty_trading/strategies/trading_day.py": "c8ffc42771edac4df9ece5155c4b4c39a3d3e67c27f03b89b979daffd70e775b",
+  "src/nifty_trading/core/exit_policy.py": "f98d9ff3ee84ef6eaac7206371b70e73345885d633ba43726f40e33d4636b872"
+ }
+}

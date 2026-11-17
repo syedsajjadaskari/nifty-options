@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800" font-family="Helvetica,Arial,sans-serif" font-size="11"><rect width="1500" height="800" fill="#fff"/>
+<text x="70" y="20" font-size="16" font-weight="bold">20251127-1-PDR | config C | PDR PDR LONG</text>
+<text x="70" y="38" fill="#333">2025-11-27 | configuration C (PDR / PDR) | trade 1 of the day | journal status: AUTOMATED_ONLY</text>
+<text x="70" y="52" fill="#333">Yellow = 09:15 candle; blue = EMA(200); dark markers = entry and the two leg exits; dashed lines = stop / T1 / T2 / post-T1 stop.</text>
+<line x1="70" y1="715.0" x2="860" y2="715.0" stroke="#eee"/><text x="64" y="719.0" text-anchor="end" fill="#888">25,900</text>
+<line x1="70" y1="582.7" x2="860" y2="582.7" stroke="#eee"/><text x="64" y="586.7" text-anchor="end" fill="#888">26,000</text>
+<line x1="70" y1="450.3" x2="860" y2="450.3" stroke="#eee"/><text x="64" y="454.3" text-anchor="end" fill="#888">26,100</text>
+<line x1="70" y1="317.9" x2="860" y2="317.9" stroke="#eee"/><text x="64" y="321.9" text-anchor="end" fill="#888">26,200</text>
+<line x1="70" y1="185.6" x2="860" y2="185.6" stroke="#eee"/><text x="64" y="189.6" text-anchor="end" fill="#888">26,300</text>
+<rect x="70.0" y="95" width="52.7" height="665" fill="#ffd54f" opacity="0.35"/>
+<line x1="70" y1="301.3" x2="860" y2="301.3" stroke="#e67e22" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="298.4" x2="860" y2="298.4" stroke="#e67e22" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="301.3" x2="860" y2="301.3" stroke="#e67e22" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="298.4" x2="860" y2="298.4" stroke="#e67e22" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="298.4" x2="860" y2="298.4" stroke="#777" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="728.6" x2="860" y2="728.6" stroke="#777" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="96.3" y1="236.9" x2="96.3" y2="303.6" stroke="#d9534f"/>
+<rect x="77.9" y="236.9" width="36.9" height="10.1" fill="#d9534f"/>
+<line x1="149.0" y1="199.4" x2="149.0" y2="253.6" stroke="#17a37a"/>
+<rect x="130.6" y="219.5" width="36.9" height="29.7" fill="#17a37a"/>
+<line x1="201.7" y1="199.8" x2="201.7" y2="240.3" stroke="#17a37a"/>
+<rect x="183.2" y="207.0" width="36.9" height="12.0" fill="#17a37a"/>
+<line x1="254.3" y1="203.3" x2="254.3" y2="224.0" stroke="#d9534f"/>
+<rect x="235.9" y="205.2" width="36.9" height="7.3" fill="#d9534f"/>
+<line x1="307.0" y1="210.1" x2="307.0" y2="249.7" stroke="#d9534f"/>
+<rect x="288.6" y="212.1" width="36.9" height="37.6" fill="#d9534f"/>
+<line x1="359.7" y1="245.5" x2="359.7" y2="284.6" stroke="#d9534f"/>
+<rect x="341.2" y="252.4" width="36.9" height="17.1" fill="#d9534f"/>
+<line x1="412.3" y1="250.2" x2="412.3" y2="286.6" stroke="#17a37a"/>
+<rect x="393.9" y="252.1" width="36.9" height="18.0" fill="#17a37a"/>
+<line x1="465.0" y1="229.0" x2="465.0" y2="261.8" stroke="#17a37a"/>
+<rect x="446.6" y="239.7" width="36.9" height="12.2" fill="#17a37a"/>
+<line x1="517.7" y1="201.8" x2="517.7" y2="240.3" stroke="#17a37a"/>
+<rect x="499.2" y="206.9" width="36.9" height="33.4" fill="#17a37a"/>
+<line x1="570.3" y1="191.7" x2="570.3" y2="216.0" stroke="#17a37a"/>
+<rect x="551.9" y="200.6" width="36.9" height="6.9" fill="#17a37a"/>
+<line x1="623.0" y1="180.1" x2="623.0" y2="201.8" stroke="#17a37a"/>
+<rect x="604.6" y="197.9" width="36.9" height="3.9" fill="#17a37a"/>
+<line x1="675.7" y1="197.0" x2="675.7" y2="226.0" stroke="#d9534f"/>
+<rect x="657.2" y="197.6" width="36.9" height="10.9" fill="#d9534f"/>
+<line x1="728.3" y1="205.7" x2="728.3" y2="220.1" stroke="#d9534f"/>
+<rect x="709.9" y="206.9" width="36.9" height="3.6" fill="#d9534f"/>
+<line x1="781.0" y1="202.0" x2="781.0" y2="221.2" stroke="#d9534f"/>
+<rect x="762.6" y="209.7" width="36.9" height="7.8" fill="#d9534f"/>
+<line x1="833.7" y1="212.3" x2="833.7" y2="231.1" stroke="#17a37a"/>
+<rect x="815.2" y="213.1" width="36.9" height="3.0" fill="#17a37a"/>
+<polyline points="96.3,463.6 149.0,461.2 201.7,458.6 254.3,456.2 307.0,454.1 359.7,452.3 412.3,450.3 465.0,448.2 517.7,445.8 570.3,443.4 623.0,440.9 675.7,438.6 728.3,436.3 781.0,434.2 833.7,432.0" fill="none" stroke="#2f80ed" stroke-width="1.6"/>
+<line x1="201.7" y1="126.4" x2="359.7" y2="126.4" stroke="#17a37a" stroke-width="1.5" stroke-dasharray="6 3"/>
+<line x1="201.7" y1="183.3" x2="359.7" y2="183.3" stroke="#17a37a" stroke-width="1.5" stroke-dasharray="2 3"/>
+<line x1="201.7" y1="265.4" x2="359.7" y2="265.4" stroke="#d9534f" stroke-width="1.5" stroke-dasharray="6 3"/>
+<polygon points="201.7,210.1 195.7,219.1 207.7,219.1" fill="#111"/><line x1="70" y1="219.1" x2="860" y2="219.1" stroke="#111" stroke-width="0.7" stroke-dasharray="2 3"/>
+<circle cx="359.7" cy="265.4" r="6" fill="none" stroke="#111" stroke-width="2"/>
+<line x1="354.7" y1="260.4" x2="364.7" y2="270.4" stroke="#111" stroke-width="2.4"/><line x1="354.7" y1="270.4" x2="364.7" y2="260.4" stroke="#111" stroke-width="2.4"/>
+<line x1="860.0" y1="126.4" x2="866.0" y2="126.4" stroke="#17a37a" stroke-width="0.6"/><text x="868.0" y="129.4" fill="#17a37a" font-size="10">T2 26344.70</text>
+<line x1="860.0" y1="183.3" x2="866.0" y2="183.3" stroke="#17a37a" stroke-width="0.6"/><text x="868.0" y="186.3" fill="#17a37a" font-size="10">T1 26301.70</text>
+<line x1="860.0" y1="219.1" x2="866.0" y2="219.1" stroke="#111" stroke-width="0.6"/><text x="868.0" y="222.1" fill="#111" font-size="10">ENTRY LONG 26274.70 @09:25</text>
+<line x1="860.0" y1="265.4" x2="866.0" y2="265.4" stroke="#d9534f" stroke-width="0.6"/><text x="868.0" y="268.4" fill="#d9534f" font-size="10">STOP 26239.70</text>
+<line x1="860.0" y1="265.4" x2="866.0" y2="277.9" stroke="#111" stroke-width="0.6"/><text x="868.0" y="280.9" fill="#111" font-size="10">LEG 1 EXIT STOP 26239.70 @09:40</text>
+<line x1="860.0" y1="265.4" x2="866.0" y2="290.4" stroke="#111" stroke-width="0.6"/><text x="868.0" y="293.4" fill="#111" font-size="10">LEG 2 EXIT STOP 26239.70 @09:40</text>
+<line x1="860.0" y1="298.4" x2="866.0" y2="302.9" stroke="#e67e22" stroke-width="0.6"/><text x="868.0" y="305.9" fill="#e67e22" font-size="10">zone_ceiling 26214.80</text>
+<line x1="860.0" y1="298.4" x2="866.0" y2="315.4" stroke="#e67e22" stroke-width="0.6"/><text x="868.0" y="318.4" fill="#e67e22" font-size="10">zone_high 26214.80</text>
+<line x1="860.0" y1="298.4" x2="866.0" y2="327.9" stroke="#777" stroke-width="0.6"/><text x="868.0" y="330.9" fill="#777" font-size="10">prev-day high 26214.80</text>
+<line x1="860.0" y1="301.3" x2="866.0" y2="340.4" stroke="#e67e22" stroke-width="0.6"/><text x="868.0" y="343.4" fill="#e67e22" font-size="10">zone_floor 26212.60</text>
+<line x1="860.0" y1="301.3" x2="866.0" y2="352.9" stroke="#e67e22" stroke-width="0.6"/><text x="868.0" y="355.9" fill="#e67e22" font-size="10">zone_low 26212.60</text>
+<line x1="860.0" y1="432.0" x2="866.0" y2="432.0" stroke="#2f80ed" stroke-width="0.6"/><text x="868.0" y="435.0" fill="#2f80ed" font-size="10">EMA(200) 26113.9</text>
+<line x1="860.0" y1="728.6" x2="866.0" y2="728.6" stroke="#777" stroke-width="0.6"/><text x="868.0" y="731.6" fill="#777" font-size="10">prev-day low 25889.75</text>
+<rect x="1162" y="95" width="328" height="665" fill="#fafafa" stroke="#ddd"/>
+<text x="1170" y="110" fill="#222" font-size="10">PDR PDR LONG | signal 09:25 (candle end) | entry</text>
+<text x="1170" y="122.5" fill="#222" font-size="10">09:25 @ 26274.7</text>
+<text x="1170" y="138.0" fill="#222" font-size="10">Reason for entry: 09:20</text>
+<text x="1170" y="150.5" fill="#222" font-size="10">WAITING_FOR_SETUP-&gt;SETUP_DETECTED: range [26210.85,</text>
+<text x="1170" y="163.0" fill="#222" font-size="10">26261.25] intersects zone [26212.6, 26214.8] (+/-</text>
+<text x="1170" y="175.5" fill="#222" font-size="10">0.0); 09:20</text>
+<text x="1170" y="188.0" fill="#222" font-size="10">SETUP_DETECTED-&gt;WAITING_FOR_CONFIRMATION: waiting</text>
+<text x="1170" y="200.5" fill="#222" font-size="10">for a confirmation candle that closes above the</text>
+<text x="1170" y="213.0" fill="#222" font-size="10">zone; 09:25</text>
+<text x="1170" y="225.5" fill="#222" font-size="10">WAITING_FOR_CONFIRMATION-&gt;SIGNAL_CONFIRMED: patterns</text>
+<text x="1170" y="238.0" fill="#222" font-size="10">[&#x27;GOOD_GREEN_BODY&#x27;] and close 26274.4 &gt; zone ceiling</text>
+<text x="1170" y="250.5" fill="#222" font-size="10">26214.8 (test candle 09:20)</text>
+<text x="1170" y="266.0" fill="#222" font-size="10">Evidence: zone_candidate=A_HIGHEST_BODY_HIGH,</text>
+<text x="1170" y="278.5" fill="#222" font-size="10">zone_kind=HIGHEST_BODY_HIGH_CANDLE,</text>
+<text x="1170" y="291.0" fill="#222" font-size="10">zone_floor=26212.60, zone_ceiling=26214.80,</text>
+<text x="1170" y="303.5" fill="#222" font-size="10">zone_low=26212.60, zone_high=26214.80,</text>
+<text x="1170" y="316.0" fill="#222" font-size="10">zone_width=2.20,</text>
+<text x="1170" y="328.5" fill="#222" font-size="10">zone_member_candle_starts=[&#x27;2025-11-26 15:10&#x27;],</text>
+<text x="1170" y="341.0" fill="#222" font-size="10">zone_flags=[], gap_points=55.95,</text>
+<text x="1170" y="353.5" fill="#222" font-size="10">session_open=26261.25, prev_close=26205.30,</text>
+<text x="1170" y="366.0" fill="#222" font-size="10">config_id=PDRBODY-A-RESEARCH_DEFAULT-490ce5a6,</text>
+<text x="1170" y="378.5" fill="#222" font-size="10">pattern_profile=PHASE53_MINIMAL_CONFIRMATION</text>
+<text x="1170" y="394.0" fill="#222" font-size="10">Levels: stop 26239.7 | T1 26301.7 (3 lots / 195) |</text>
+<text x="1170" y="406.5" fill="#222" font-size="10">T2 26344.7 (3 lots / 195) | post-T1 stop None</text>
+<text x="1170" y="422.0" fill="#222" font-size="10">Leg 1 exit 09:40 @ 26239.7 (STOP); Leg 2 exit 09:40</text>
+<text x="1170" y="434.5" fill="#222" font-size="10">@ 26239.7 (STOP)</text>
+<text x="1170" y="450.0" fill="#222" font-size="10">Outcome INITIAL_FULL_STOP (ORIGINAL_STOP_BEFORE_T1);</text>
+<text x="1170" y="462.5" fill="#222" font-size="10">gross -35.00 weighted index points = Rs -13,650 on</text>
+<text x="1170" y="475.0" fill="#222" font-size="10">390 units; net Rs -13,720 after the indicative Rs</text>
+<text x="1170" y="487.5" fill="#222" font-size="10">70/trade (synthetic index P&amp;L, not option P&amp;L)</text>
+<text x="1170" y="503.0" fill="#222" font-size="10">JOURNAL: AUTOMATED_ONLY (no qualifying journal row;</text>
+<text x="1170" y="515.5" fill="#222" font-size="10">manual rows that day: IRF@09:35 SL)</text>
+<text x="1170" y="531.0" fill="#222" font-size="10">Day state: SECOND_TRADE_ELIGIBLE</text>
+</svg>

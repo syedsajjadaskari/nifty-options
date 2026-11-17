@@ -1,0 +1,13 @@
+# IRF-V2-SUPPORT-BREAK: the approved rule and its state machine
+
+**Owner-approved:** identify the first qualifying red candle that establishes support; its lowest wick price is the support; SELL after a SUBSEQUENT completed candle closes strictly below it; no retest required; the signal exists at the breaking candle's close and the earliest fill is afterwards.
+
+States (`SupportBreakMachine`, one per Method 2 attempt): AWAIT_EXTENSION -> AWAIT_RED_CANDLE -> SUPPORT_SET -> SUPPORT_BROKEN. Recorded: the attempt's activation (breakout close above IRH), the extension candle, the search start, the reference candle (time and OHLC), its wick-low support, every later completed candle's close versus the support, the first valid close strictly below, the confirmation time and the earliest executable fill (the open of the next one-minute bar). Every Method 2 attempt - including those that never signal - is in `irf_reference_candle_audit.csv`.
+
+Enforced (and unit-tested): no entry on a red candle alone; none before support exists; none on a wick-only break (the close decides); the reference candle can never be its own breaking candle; the first reference candle is never replaced by a later one; no retest is awaited; support comes only from the reference candle's own OHLC (never a later candle).
+
+Layers kept separate: OWNER_APPROVED (first red candle low, strict close, no retest, the number 28); SOURCE (breakout above IRH, extension, red candle, Methods 1/2B/3 as written); PROVISIONAL (the search start = AFTER the extension candle - the alternative AFTER_BREAKOUT is selectable but not active; the 28-point measure = nearest point of the signal candle's range to the EMA(200), inclusive; scope = all methods); UNRESOLVED (the day's-low restriction).
+
+Regression example from the brief (a unit test, not a historical trade): reference red candle O25150 H25162 L25110 C25125 -> support 25110; the next candle closing 25118 does NOT trigger; the following candle closing 25102 confirms; SELL signal at that candle's completion.
+
+Relation to Phase 5.3: Phase 5.3 already contained this rule for Method 2A as `IRFPhase53Strategy(support_ref='FIRST_RED_LOW')`; IRF V2 re-implements Method 2A as an explicit state machine with full audit output and is verified by an independent re-derivation. **On both windows IRF V2 emits exactly the same confirmed signals as the Phase 5.3 IRF** (primary 786 vs 786; 2022-25 2182 vs 2182); the change relative to the frozen Phase 3.6 IRF is therefore the Phase 5.3 change.

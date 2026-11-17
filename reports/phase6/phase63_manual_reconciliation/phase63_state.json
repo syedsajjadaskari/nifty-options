@@ -1,0 +1,448 @@
+{
+ "journal": {
+  "rows": 190,
+  "by_strategy": {
+   "IRF": 73,
+   "PDR": 8,
+   "ORB": 89,
+   "RF": 17,
+   "PDS": 3
+  },
+  "weekend_rows": 5,
+  "summary_total": 189,
+  "sha256": "97a9ad4dfb5520619bb979770115d7b6f4e3e37e649af255c543f5fce9694781"
+ },
+ "summary": [
+  {
+   "config": "A",
+   "automated_trades": 196,
+   "IRF_trades": 109,
+   "ORB_trades": 41,
+   "PDR_trades": 25,
+   "PDS_trades": 11,
+   "RF_trades": 10,
+   "verified_exact_trade_matches": 0,
+   "strict_matches": 66,
+   "time_tolerant_additional": 21,
+   "date_strategy_only": 18,
+   "manual_only_rows": 85,
+   "manual_only_weekend": 5,
+   "automated_only_trades": 91,
+   "wrong_strategy_dates": 61,
+   "outcome_label_agreements": 80,
+   "outcome_label_denominator": 87,
+   "journal_rows": 190,
+   "journal_rows_non_weekend": 185
+  },
+  {
+   "config": "B",
+   "automated_trades": 188,
+   "IRF_trades": 90,
+   "ORB_trades": 41,
+   "PDR_trades": 28,
+   "PDS_trades": 19,
+   "RF_trades": 10,
+   "verified_exact_trade_matches": 0,
+   "strict_matches": 64,
+   "time_tolerant_additional": 14,
+   "date_strategy_only": 17,
+   "manual_only_rows": 95,
+   "manual_only_weekend": 5,
+   "automated_only_trades": 93,
+   "wrong_strategy_dates": 61,
+   "outcome_label_agreements": 71,
+   "outcome_label_denominator": 78,
+   "journal_rows": 190,
+   "journal_rows_non_weekend": 185
+  },
+  {
+   "config": "C",
+   "automated_trades": 183,
+   "IRF_trades": 85,
+   "ORB_trades": 39,
+   "PDR_trades": 31,
+   "PDS_trades": 19,
+   "RF_trades": 9,
+   "verified_exact_trade_matches": 0,
+   "strict_matches": 67,
+   "time_tolerant_additional": 15,
+   "date_strategy_only": 17,
+   "manual_only_rows": 91,
+   "manual_only_weekend": 5,
+   "automated_only_trades": 84,
+   "wrong_strategy_dates": 53,
+   "outcome_label_agreements": 74,
+   "outcome_label_denominator": 82,
+   "journal_rows": 190,
+   "journal_rows_non_weekend": 185
+  }
+ ],
+ "by_strategy": [
+  {
+   "config": "A",
+   "strategy": "IRF",
+   "manual_rows": 73,
+   "automated_trades": 109,
+   "strict": 26,
+   "time_tolerant": 15,
+   "date_strategy_only": 14,
+   "manual_only": 18,
+   "automated_only": 54,
+   "strict_of_manual_pct": 35.6,
+   "outcome_agree_among_strict_tolerant": 37,
+   "strict_tolerant_total": 41
+  },
+  {
+   "config": "A",
+   "strategy": "ORB",
+   "manual_rows": 89,
+   "automated_trades": 41,
+   "strict": 35,
+   "time_tolerant": 0,
+   "date_strategy_only": 0,
+   "manual_only": 54,
+   "automated_only": 6,
+   "strict_of_manual_pct": 39.3,
+   "outcome_agree_among_strict_tolerant": 34,
+   "strict_tolerant_total": 35
+  },
+  {
+   "config": "A",
+   "strategy": "PDR",
+   "manual_rows": 8,
+   "automated_trades": 25,
+   "strict": 0,
+   "time_tolerant": 3,
+   "date_strategy_only": 3,
+   "manual_only": 2,
+   "automated_only": 19,
+   "strict_of_manual_pct": 0.0,
+   "outcome_agree_among_strict_tolerant": 3,
+   "strict_tolerant_total": 3
+  },
+  {
+   "config": "A",
+   "strategy": "PDS",
+   "manual_rows": 3,
+   "automated_trades": 11,
+   "strict": 1,
+   "time_tolerant": 0,
+   "date_strategy_only": 1,
+   "manual_only": 1,
+   "automated_only": 9,
+   "strict_of_manual_pct": 33.3,
+   "outcome_agree_among_strict_tolerant": 1,
+   "strict_tolerant_total": 1
+  },
+  {
+   "config": "A",
+   "strategy": "RF",
+   "manual_rows": 17,
+   "automated_trades": 10,
+   "strict": 4,
+   "time_tolerant": 3,
+   "date_strategy_only": 0,
+   "manual_only": 10,
+   "automated_only": 3,
+   "strict_of_manual_pct": 23.5,
+   "outcome_agree_among_strict_tolerant": 5,
+   "strict_tolerant_total": 7
+  },
+  {
+   "config": "B",
+   "strategy": "IRF",
+   "manual_rows": 73,
+   "automated_trades": 90,
+   "strict": 20,
+   "time_tolerant": 10,
+   "date_strategy_only": 15,
+   "manual_only": 28,
+   "automated_only": 45,
+   "strict_of_manual_pct": 27.4,
+   "outcome_agree_among_strict_tolerant": 27,
+   "strict_tolerant_total": 30
+  },
+  {
+   "config": "B",
+   "strategy": "ORB",
+   "manual_rows": 89,
+   "automated_trades": 41,
+   "strict": 35,
+   "time_tolerant": 0,
+   "date_strategy_only": 0,
+   "manual_only": 54,
+   "automated_only": 6,
+   "strict_of_manual_pct": 39.3,
+   "outcome_agree_among_strict_tolerant": 34,
+   "strict_tolerant_total": 35
+  },
+  {
+   "config": "B",
+   "strategy": "PDR",
+   "manual_rows": 8,
+   "automated_trades": 28,
+   "strict": 4,
+   "time_tolerant": 1,
+   "date_strategy_only": 1,
+   "manual_only": 2,
+   "automated_only": 22,
+   "strict_of_manual_pct": 50.0,
+   "outcome_agree_among_strict_tolerant": 4,
+   "strict_tolerant_total": 5
+  },
+  {
+   "config": "B",
+   "strategy": "PDS",
+   "manual_rows": 3,
+   "automated_trades": 19,
+   "strict": 1,
+   "time_tolerant": 0,
+   "date_strategy_only": 1,
+   "manual_only": 1,
+   "automated_only": 17,
+   "strict_of_manual_pct": 33.3,
+   "outcome_agree_among_strict_tolerant": 1,
+   "strict_tolerant_total": 1
+  },
+  {
+   "config": "B",
+   "strategy": "RF",
+   "manual_rows": 17,
+   "automated_trades": 10,
+   "strict": 4,
+   "time_tolerant": 3,
+   "date_strategy_only": 0,
+   "manual_only": 10,
+   "automated_only": 3,
+   "strict_of_manual_pct": 23.5,
+   "outcome_agree_among_strict_tolerant": 5,
+   "strict_tolerant_total": 7
+  },
+  {
+   "config": "C",
+   "strategy": "IRF",
+   "manual_rows": 73,
+   "automated_trades": 85,
+   "strict": 20,
+   "time_tolerant": 11,
+   "date_strategy_only": 15,
+   "manual_only": 27,
+   "automated_only": 39,
+   "strict_of_manual_pct": 27.4,
+   "outcome_agree_among_strict_tolerant": 27,
+   "strict_tolerant_total": 31
+  },
+  {
+   "config": "C",
+   "strategy": "ORB",
+   "manual_rows": 89,
+   "automated_trades": 39,
+   "strict": 38,
+   "time_tolerant": 0,
+   "date_strategy_only": 0,
+   "manual_only": 51,
+   "automated_only": 1,
+   "strict_of_manual_pct": 42.7,
+   "outcome_agree_among_strict_tolerant": 37,
+   "strict_tolerant_total": 38
+  },
+  {
+   "config": "C",
+   "strategy": "PDR",
+   "manual_rows": 8,
+   "automated_trades": 31,
+   "strict": 4,
+   "time_tolerant": 1,
+   "date_strategy_only": 1,
+   "manual_only": 2,
+   "automated_only": 25,
+   "strict_of_manual_pct": 50.0,
+   "outcome_agree_among_strict_tolerant": 4,
+   "strict_tolerant_total": 5
+  },
+  {
+   "config": "C",
+   "strategy": "PDS",
+   "manual_rows": 3,
+   "automated_trades": 19,
+   "strict": 1,
+   "time_tolerant": 0,
+   "date_strategy_only": 1,
+   "manual_only": 1,
+   "automated_only": 17,
+   "strict_of_manual_pct": 33.3,
+   "outcome_agree_among_strict_tolerant": 1,
+   "strict_tolerant_total": 1
+  },
+  {
+   "config": "C",
+   "strategy": "RF",
+   "manual_rows": 17,
+   "automated_trades": 9,
+   "strict": 4,
+   "time_tolerant": 3,
+   "date_strategy_only": 0,
+   "manual_only": 10,
+   "automated_only": 2,
+   "strict_of_manual_pct": 23.5,
+   "outcome_agree_among_strict_tolerant": 5,
+   "strict_tolerant_total": 7
+  }
+ ],
+ "orb_vs_irf": {
+  "all_orb_rows": 89,
+  "classes_all": {
+   "ORB NOW SELECTED": 38,
+   "SOURCE RULE UNRESOLVED": 23,
+   "NO ELIGIBLE TRADE (non-session journal date)": 4,
+   "IRF STILL SELECTED": 13,
+   "SAME-MINUTE CONFLICT": 1,
+   "ORB SIGNAL REJECTED": 10
+  },
+  "previously_irf_executed_dates": 34,
+  "classes_previously_irf": {
+   "ORB NOW SELECTED": 12,
+   "SOURCE RULE UNRESOLVED": 9,
+   "IRF STILL SELECTED": 12,
+   "ORB SIGNAL REJECTED": 1
+  },
+  "orb_now_selected_on_previously_irf_dates": 12,
+  "orb_now_selected_dates_all": 38
+ },
+ "wrong_strategy": {
+  "A": 61,
+  "B": 61,
+  "C": 53
+ },
+ "root_causes": {
+  "A|ORB|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 38,
+   "MANUAL_JOURNAL_INCONSISTENCY": 4,
+   "MISSING_STRATEGY_SIGNAL": 12
+  },
+  "A|IRF|MANUAL_ONLY": {
+   "MISSING_STRATEGY_SIGNAL": 2,
+   "DIFFERENT_STRATEGY_SELECTED": 13,
+   "MANUAL_JOURNAL_INCONSISTENCY": 1,
+   "PORTFOLIO_CONTROLLER_CONSTRAINT": 2
+  },
+  "A|PDR|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 2
+  },
+  "A|RF|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 7,
+   "MISSING_STRATEGY_SIGNAL": 3
+  },
+  "A|PDS|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 1
+  },
+  "A|RF|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 1,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 2
+  },
+  "A|IRF|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 36,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 18
+  },
+  "A|PDS|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 8,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 1
+  },
+  "A|ORB|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 4,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 2
+  },
+  "A|PDR|AUTOMATED_ONLY": {
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 6,
+   "DIFFERENT_STRATEGY_SELECTED": 13
+  },
+  "B|ORB|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 34,
+   "MISSING_STRATEGY_SIGNAL": 16,
+   "MANUAL_JOURNAL_INCONSISTENCY": 4
+  },
+  "B|IRF|MANUAL_ONLY": {
+   "MISSING_STRATEGY_SIGNAL": 7,
+   "DIFFERENT_STRATEGY_SELECTED": 17,
+   "PORTFOLIO_CONTROLLER_CONSTRAINT": 3,
+   "MANUAL_JOURNAL_INCONSISTENCY": 1
+  },
+  "B|PDR|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 2
+  },
+  "B|RF|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 7,
+   "MISSING_STRATEGY_SIGNAL": 3
+  },
+  "B|PDS|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 1
+  },
+  "B|RF|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 1,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 2
+  },
+  "B|IRF|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 32,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 13
+  },
+  "B|PDS|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 14,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 3
+  },
+  "B|ORB|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 4,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 2
+  },
+  "B|PDR|AUTOMATED_ONLY": {
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 6,
+   "DIFFERENT_STRATEGY_SELECTED": 15,
+   "ENTRY_TIME_MISMATCH": 1
+  },
+  "C|ORB|MANUAL_ONLY": {
+   "MISSING_STRATEGY_SIGNAL": 20,
+   "DIFFERENT_STRATEGY_SELECTED": 27,
+   "MANUAL_JOURNAL_INCONSISTENCY": 4
+  },
+  "C|IRF|MANUAL_ONLY": {
+   "MISSING_STRATEGY_SIGNAL": 7,
+   "DIFFERENT_STRATEGY_SELECTED": 16,
+   "PORTFOLIO_CONTROLLER_CONSTRAINT": 3,
+   "MANUAL_JOURNAL_INCONSISTENCY": 1
+  },
+  "C|PDR|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 2
+  },
+  "C|RF|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 7,
+   "MISSING_STRATEGY_SIGNAL": 3
+  },
+  "C|PDS|MANUAL_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 1
+  },
+  "C|IRF|AUTOMATED_ONLY": {
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 14,
+   "DIFFERENT_STRATEGY_SELECTED": 25
+  },
+  "C|PDS|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 14,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 3
+  },
+  "C|PDR|AUTOMATED_ONLY": {
+   "DIFFERENT_STRATEGY_SELECTED": 18,
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 6,
+   "ENTRY_TIME_MISMATCH": 1
+  },
+  "C|ORB|AUTOMATED_ONLY": {
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 1
+  },
+  "C|RF|AUTOMATED_ONLY": {
+   "UNRESOLVED_DISCRETIONARY_SELECTION": 2
+  }
+ },
+ "handwritten": {
+  "C_TRADES_EQUAL_B": 26,
+  "ORB_NOW_TRADED_DIRECTION_UNVERIFIED": 4,
+  "ORB_STILL_NOT_TRADED": 10
+ },
+ "irf_rows": 73
+}

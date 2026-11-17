@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800" font-family="Helvetica,Arial,sans-serif" font-size="11"><rect width="1500" height="800" fill="#fff"/>
+<text x="70" y="20" font-size="16" font-weight="bold">20260204-1-IRF | config C | IRF Method 1 SHORT</text>
+<text x="70" y="38" fill="#333">2026-02-04 | configuration C (IRF / Method 1) | trade 1 of the day | journal status: AUTOMATED_ONLY</text>
+<text x="70" y="52" fill="#333">Yellow = 09:15 candle; blue = EMA(200); dark markers = entry and the two leg exits; dashed lines = stop / T1 / T2 / post-T1 stop.</text>
+<line x1="70" y1="755.2" x2="860" y2="755.2" stroke="#eee"/><text x="64" y="759.2" text-anchor="end" fill="#888">25,400</text>
+<line x1="70" y1="613.8" x2="860" y2="613.8" stroke="#eee"/><text x="64" y="617.8" text-anchor="end" fill="#888">25,600</text>
+<line x1="70" y1="472.4" x2="860" y2="472.4" stroke="#eee"/><text x="64" y="476.4" text-anchor="end" fill="#888">25,800</text>
+<line x1="70" y1="331.0" x2="860" y2="331.0" stroke="#eee"/><text x="64" y="335.0" text-anchor="end" fill="#888">26,000</text>
+<line x1="70" y1="189.6" x2="860" y2="189.6" stroke="#eee"/><text x="64" y="193.6" text-anchor="end" fill="#888">26,200</text>
+<rect x="70.0" y="95" width="52.7" height="665" fill="#ffd54f" opacity="0.35"/>
+<line x1="70" y1="513.4" x2="860" y2="513.4" stroke="#555" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="633.4" x2="860" y2="633.4" stroke="#8e44ad" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="125.9" x2="860" y2="125.9" stroke="#777" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="583.8" x2="860" y2="583.8" stroke="#777" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="96.3" y1="513.4" x2="96.3" y2="633.4" stroke="#17a37a"/>
+<rect x="77.9" y="535.5" width="36.9" height="35.9" fill="#17a37a"/>
+<line x1="149.0" y1="499.9" x2="149.0" y2="537.2" stroke="#17a37a"/>
+<rect x="130.6" y="504.8" width="36.9" height="29.4" fill="#17a37a"/>
+<line x1="201.7" y1="481.0" x2="201.7" y2="508.0" stroke="#d9534f"/>
+<rect x="183.2" y="504.3" width="36.9" height="1.5" fill="#d9534f"/>
+<line x1="254.3" y1="479.8" x2="254.3" y2="505.9" stroke="#17a37a"/>
+<rect x="235.9" y="499.1" width="36.9" height="6.8" fill="#17a37a"/>
+<line x1="307.0" y1="497.7" x2="307.0" y2="523.1" stroke="#d9534f"/>
+<rect x="288.6" y="499.3" width="36.9" height="22.8" fill="#d9534f"/>
+<line x1="359.7" y1="478.7" x2="359.7" y2="522.1" stroke="#17a37a"/>
+<rect x="341.2" y="480.4" width="36.9" height="41.7" fill="#17a37a"/>
+<line x1="412.3" y1="476.6" x2="412.3" y2="486.6" stroke="#d9534f"/>
+<rect x="393.9" y="480.8" width="36.9" height="1.1" fill="#d9534f"/>
+<line x1="465.0" y1="481.6" x2="465.0" y2="509.1" stroke="#d9534f"/>
+<rect x="446.6" y="482.1" width="36.9" height="16.7" fill="#d9534f"/>
+<line x1="517.7" y1="485.1" x2="517.7" y2="503.4" stroke="#17a37a"/>
+<rect x="499.2" y="485.5" width="36.9" height="13.0" fill="#17a37a"/>
+<line x1="570.3" y1="482.7" x2="570.3" y2="492.0" stroke="#d9534f"/>
+<rect x="551.9" y="486.8" width="36.9" height="2.4" fill="#d9534f"/>
+<line x1="623.0" y1="472.4" x2="623.0" y2="492.7" stroke="#17a37a"/>
+<rect x="604.6" y="475.2" width="36.9" height="14.4" fill="#17a37a"/>
+<line x1="675.7" y1="471.1" x2="675.7" y2="490.1" stroke="#d9534f"/>
+<rect x="657.2" y="475.3" width="36.9" height="9.6" fill="#d9534f"/>
+<line x1="728.3" y1="481.5" x2="728.3" y2="502.5" stroke="#d9534f"/>
+<rect x="709.9" y="484.7" width="36.9" height="17.8" fill="#d9534f"/>
+<line x1="781.0" y1="493.9" x2="781.0" y2="516.5" stroke="#d9534f"/>
+<rect x="762.6" y="502.6" width="36.9" height="8.8" fill="#d9534f"/>
+<line x1="833.7" y1="505.1" x2="833.7" y2="517.7" stroke="#d9534f"/>
+<rect x="815.2" y="511.4" width="36.9" height="1.1" fill="#d9534f"/>
+<polyline points="96.3,729.1 149.0,726.9 201.7,724.7 254.3,722.5 307.0,720.5 359.7,718.1 412.3,715.7 465.0,713.6 517.7,711.3 570.3,709.1 623.0,706.8 675.7,704.5 728.3,702.5 781.0,700.6 833.7,698.8" fill="none" stroke="#2f80ed" stroke-width="1.6"/>
+<line x1="359.7" y1="564.5" x2="389.7" y2="564.5" stroke="#17a37a" stroke-width="1.5" stroke-dasharray="6 3"/>
+<line x1="359.7" y1="541.2" x2="389.7" y2="541.2" stroke="#17a37a" stroke-width="1.5" stroke-dasharray="2 3"/>
+<line x1="359.7" y1="497.3" x2="389.7" y2="497.3" stroke="#d9534f" stroke-width="1.5" stroke-dasharray="6 3"/>
+<polygon points="359.7,531.1 353.7,522.1 365.7,522.1" fill="#111"/><line x1="70" y1="522.1" x2="860" y2="522.1" stroke="#111" stroke-width="0.7" stroke-dasharray="2 3"/>
+<circle cx="359.7" cy="497.3" r="6" fill="none" stroke="#111" stroke-width="2"/>
+<line x1="354.7" y1="492.3" x2="364.7" y2="502.3" stroke="#111" stroke-width="2.4"/><line x1="354.7" y1="502.3" x2="364.7" y2="492.3" stroke="#111" stroke-width="2.4"/>
+<line x1="860.0" y1="125.9" x2="866.0" y2="125.9" stroke="#777" stroke-width="0.6"/><text x="868.0" y="128.9" fill="#777" font-size="10">prev-day high 26290.20</text>
+<line x1="860.0" y1="497.3" x2="866.0" y2="497.3" stroke="#d9534f" stroke-width="0.6"/><text x="868.0" y="500.3" fill="#d9534f" font-size="10">STOP 25764.70</text>
+<line x1="860.0" y1="497.3" x2="866.0" y2="509.8" stroke="#111" stroke-width="0.6"/><text x="868.0" y="512.8" fill="#111" font-size="10">LEG 1 EXIT STOP 25764.70 @09:41</text>
+<line x1="860.0" y1="497.3" x2="866.0" y2="522.3" stroke="#111" stroke-width="0.6"/><text x="868.0" y="525.3" fill="#111" font-size="10">LEG 2 EXIT STOP 25764.70 @09:41</text>
+<line x1="860.0" y1="513.4" x2="866.0" y2="534.8" stroke="#555" stroke-width="0.6"/><text x="868.0" y="537.8" fill="#555" font-size="10">IRH 25742.00</text>
+<line x1="860.0" y1="522.1" x2="866.0" y2="547.3" stroke="#111" stroke-width="0.6"/><text x="868.0" y="550.3" fill="#111" font-size="10">ENTRY SHORT 25729.70 @09:40</text>
+<line x1="860.0" y1="541.2" x2="866.0" y2="559.8" stroke="#17a37a" stroke-width="0.6"/><text x="868.0" y="562.8" fill="#17a37a" font-size="10">T1 25702.70</text>
+<line x1="860.0" y1="564.5" x2="866.0" y2="572.3" stroke="#17a37a" stroke-width="0.6"/><text x="868.0" y="575.3" fill="#17a37a" font-size="10">T2 25669.70</text>
+<line x1="860.0" y1="583.8" x2="866.0" y2="584.8" stroke="#777" stroke-width="0.6"/><text x="868.0" y="587.8" fill="#777" font-size="10">prev-day low 25642.35</text>
+<line x1="860.0" y1="633.4" x2="866.0" y2="633.4" stroke="#8e44ad" stroke-width="0.6"/><text x="868.0" y="636.4" fill="#8e44ad" font-size="10">IRL 25572.30</text>
+<line x1="860.0" y1="698.8" x2="866.0" y2="698.8" stroke="#2f80ed" stroke-width="0.6"/><text x="868.0" y="701.8" fill="#2f80ed" font-size="10">EMA(200) 25479.8</text>
+<rect x="1162" y="95" width="328" height="665" fill="#fafafa" stroke="#ddd"/>
+<text x="1170" y="110" fill="#222" font-size="10">IRF Method 1 SHORT | signal 09:40 (candle end) |</text>
+<text x="1170" y="122.5" fill="#222" font-size="10">entry 09:40 @ 25729.7</text>
+<text x="1170" y="138.0" fill="#222" font-size="10">Reason for entry: 09:35</text>
+<text x="1170" y="150.5" fill="#222" font-size="10">WAITING_FOR_SETUP-&gt;SETUP_DETECTED: close 25762.25 &gt;</text>
+<text x="1170" y="163.0" fill="#222" font-size="10">IRH 25742.0; 09:40 SETUP_DETECTED-&gt;SIGNAL_CONFIRMED:</text>
+<text x="1170" y="175.5" fill="#222" font-size="10">candle +1 closes 25729.75 back inside</text>
+<text x="1170" y="188.0" fill="#222" font-size="10">[25572.3,25742.0)</text>
+<text x="1170" y="203.5" fill="#222" font-size="10">Evidence: IRH=25742.00, IRL=25572.30,</text>
+<text x="1170" y="216.0" fill="#222" font-size="10">entry_reference_price=25729.75,</text>
+<text x="1170" y="228.5" fill="#222" font-size="10">recent_green_high=25789.55,</text>
+<text x="1170" y="241.0" fill="#222" font-size="10">recent_green_close=25762.25,</text>
+<text x="1170" y="253.5" fill="#222" font-size="10">setup_green_high=25789.55, breakout_close=25762.25,</text>
+<text x="1170" y="266.0" fill="#222" font-size="10">breakout_candle_start=2026-02-04 09:30:00+05:30,</text>
+<text x="1170" y="278.5" fill="#222" font-size="10">irf_version=IRF-V2-SUPPORT-BREAK,</text>
+<text x="1170" y="291.0" fill="#222" font-size="10">ema_at_confirmation=25449.08,</text>
+<text x="1170" y="303.5" fill="#222" font-size="10">ema_relation_to_confirmation_candle=EMA_BELOW_CANDLE,</text>
+<text x="1170" y="316.0" fill="#222" font-size="10">ema_range_clearance=279.12,</text>
+<text x="1170" y="328.5" fill="#222" font-size="10">ema_close_distance=280.67, target1_level=25702.75</text>
+<text x="1170" y="344.0" fill="#222" font-size="10">Levels: stop 25764.7 | T1 25702.7 (3 lots / 195) |</text>
+<text x="1170" y="356.5" fill="#222" font-size="10">T2 25669.7 (3 lots / 195) | post-T1 stop None</text>
+<text x="1170" y="372.0" fill="#222" font-size="10">Leg 1 exit 09:41 @ 25764.7 (STOP); Leg 2 exit 09:41</text>
+<text x="1170" y="384.5" fill="#222" font-size="10">@ 25764.7 (STOP)</text>
+<text x="1170" y="400.0" fill="#222" font-size="10">Outcome INITIAL_FULL_STOP (ORIGINAL_STOP_BEFORE_T1);</text>
+<text x="1170" y="412.5" fill="#222" font-size="10">gross -35.00 weighted index points = Rs -13,650 on</text>
+<text x="1170" y="425.0" fill="#222" font-size="10">390 units; net Rs -13,720 after the indicative Rs</text>
+<text x="1170" y="437.5" fill="#222" font-size="10">70/trade (synthetic index P&amp;L, not option P&amp;L)</text>
+<text x="1170" y="453.0" fill="#222" font-size="10">JOURNAL: AUTOMATED_ONLY (no qualifying journal row;</text>
+<text x="1170" y="465.5" fill="#222" font-size="10">manual rows that day: none)</text>
+<text x="1170" y="481.0" fill="#222" font-size="10">Day state: SECOND_TRADE_ELIGIBLE</text>
+</svg>

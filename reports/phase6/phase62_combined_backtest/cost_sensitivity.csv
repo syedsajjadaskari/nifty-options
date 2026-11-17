@@ -1,0 +1,61 @@
+window,config,scenario,label,trades,win_rate_pct,net_pnl_rs,profit_factor,max_drawdown_rs
+A,A,GROSS,Gross synthetic index P&L (no cost),196,59.69,297765,1.284,130650
+A,A,C70_TRADE,Rs 70 per completed trade,196,59.69,284045,1.269,133450
+A,A,C70_FILL,Rs 70 per order fill (entry + each exit leg),196,59.69,256605,1.241,139050
+A,A,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,196,59.69,245825,1.23,141250
+A,A,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,196,59.69,207605,1.191,149050
+A,A,C70_S1,Rs 70 per trade + 1 pt slippage per side,196,59.69,131165,1.118,175700.5
+A,B,GROSS,Gross synthetic index P&L (no cost),188,58.51,258550.5,1.25,204145.5
+A,B,C70_TRADE,Rs 70 per completed trade,188,58.51,245390.5,1.236,207785.5
+A,B,C70_FILL,Rs 70 per order fill (entry + each exit leg),188,58.51,219070.5,1.209,215065.5
+A,B,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,188,58.51,208730.5,1.198,217925.5
+A,B,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,188,58.51,172070.5,1.161,228065.5
+A,B,C70_S1,Rs 70 per trade + 1 pt slippage per side,188,58.51,98750.5,1.09,248345.5
+A,C,GROSS,Gross synthetic index P&L (no cost),183,53.55,37420.5,1.033,239830.5
+A,C,C70_TRADE,Rs 70 per completed trade,183,53.55,24610.5,1.022,243400.5
+A,C,C70_FILL,Rs 70 per order fill (entry + each exit leg),183,53.55,-1009.5,0.999,250540.5
+A,C,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,183,53.55,-11074.5,0.99,253345.5
+A,C,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,183,53.55,-46759.5,0.96,263290.5
+A,C,C70_S1,Rs 70 per trade + 1 pt slippage per side,183,53.55,-118129.5,0.901,283180.5
+A,D1,GROSS,Gross synthetic index P&L (no cost),188,58.51,258550.5,1.25,204145.5
+A,D1,C70_TRADE,Rs 70 per completed trade,188,58.51,245390.5,1.236,207785.5
+A,D1,C70_FILL,Rs 70 per order fill (entry + each exit leg),188,58.51,219070.5,1.209,215065.5
+A,D1,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,188,58.51,208730.5,1.198,217925.5
+A,D1,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,188,58.51,172070.5,1.161,228065.5
+A,D1,C70_S1,Rs 70 per trade + 1 pt slippage per side,188,58.51,98750.5,1.09,248345.5
+A,D2,GROSS,Gross synthetic index P&L (no cost),200,54.5,77814.75,1.065,167680.5
+A,D2,C70_TRADE,Rs 70 per completed trade,200,54.5,63814.75,1.053,172510.5
+A,D2,C70_FILL,Rs 70 per order fill (entry + each exit leg),200,54.5,35814.75,1.029,182170.5
+A,D2,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,200,54.5,24814.75,1.02,185965.5
+A,D2,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,200,54.5,-14185.25,0.989,199420.5
+A,D2,C70_S1,Rs 70 per trade + 1 pt slippage per side,200,54.5,-92185.25,0.928,226330.5
+B,A,GROSS,Gross synthetic index P&L (no cost),609,57.8,509398.5,1.149,188340.75
+B,A,C70_TRADE,Rs 70 per completed trade,609,57.8,466768.5,1.136,194502.75
+B,A,C70_FILL,Rs 70 per order fill (entry + each exit leg),609,57.8,381508.5,1.11,211674.75
+B,A,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,609,57.8,348013.5,1.1,218439.75
+B,A,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,609,57.8,229258.5,1.065,265959.25
+B,A,C70_S1,Rs 70 per trade + 1 pt slippage per side,609,57.8,-8251.5,0.998,378669.25
+B,B,GROSS,Gross synthetic index P&L (no cost),598,56.86,152538.75,1.044,282798.75
+B,B,C70_TRADE,Rs 70 per completed trade,598,56.86,110678.75,1.032,289588.75
+B,B,C70_FILL,Rs 70 per order fill (entry + each exit leg),598,56.86,26958.75,1.008,303168.75
+B,B,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,598,56.86,-5931.25,0.998,308503.75
+B,B,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,598,56.69,-122541.25,0.965,362634
+B,B,C70_S1,Rs 70 per trade + 1 pt slippage per side,598,56.69,-355761.25,0.903,536491.25
+B,C,GROSS,Gross synthetic index P&L (no cost),603,57.21,281394.75,1.082,283793.25
+B,C,C70_TRADE,Rs 70 per completed trade,603,57.21,239184.75,1.069,291703.25
+B,C,C70_FILL,Rs 70 per order fill (entry + each exit leg),603,57.21,154764.75,1.044,307523.25
+B,C,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,603,57.21,121599.75,1.035,323818
+B,C,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,603,57.05,4014.75,1.001,391288
+B,C,C70_S1,Rs 70 per trade + 1 pt slippage per side,603,57.05,-231155.25,0.937,526228
+B,D1,GROSS,Gross synthetic index P&L (no cost),598,56.86,152538.75,1.044,282798.75
+B,D1,C70_TRADE,Rs 70 per completed trade,598,56.86,110678.75,1.032,289588.75
+B,D1,C70_FILL,Rs 70 per order fill (entry + each exit leg),598,56.86,26958.75,1.008,303168.75
+B,D1,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,598,56.86,-5931.25,0.998,308503.75
+B,D1,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,598,56.69,-122541.25,0.965,362634
+B,D1,C70_S1,Rs 70 per trade + 1 pt slippage per side,598,56.69,-355761.25,0.903,536491.25
+B,D2,GROSS,Gross synthetic index P&L (no cost),633,57.82,550036.5,1.155,215494.5
+B,D2,C70_TRADE,Rs 70 per completed trade,633,57.82,505726.5,1.142,223264.5
+B,D2,C70_FILL,Rs 70 per order fill (entry + each exit leg),633,57.82,417106.5,1.116,242030.25
+B,D2,C70_S025,Rs 70 per trade + 0.25 pt slippage per side,633,57.82,382291.5,1.105,250060.25
+B,D2,C70_S05,Rs 70 per trade + 0.5 pt slippage per side,633,57.82,258856.5,1.07,278530.25
+B,D2,C70_S1,Rs 70 per trade + 1 pt slippage per side,633,57.82,11986.5,1.003,335470.25

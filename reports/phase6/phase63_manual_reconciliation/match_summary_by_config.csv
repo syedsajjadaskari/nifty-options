@@ -1,0 +1,4 @@
+config,automated_trades,IRF_trades,ORB_trades,PDR_trades,PDS_trades,RF_trades,verified_exact_trade_matches,strict_matches,time_tolerant_additional,date_strategy_only,manual_only_rows,manual_only_weekend,automated_only_trades,wrong_strategy_dates,outcome_label_agreements,outcome_label_denominator,journal_rows,journal_rows_non_weekend
+A,196,109,41,25,11,10,0,66,21,18,85,5,91,61,80,87,190,185
+B,188,90,41,28,19,10,0,64,14,17,95,5,93,61,71,78,190,185
+C,183,85,39,31,19,9,0,67,15,17,91,5,84,53,74,82,190,185

@@ -1,0 +1,5 @@
+# Phase 6.3 - reconciliation with the original manual journal
+
+**Written for:** the strategy owner. Read `exact_match_summary.md` first. The journal records only date, entry-time label, strategy and outcome, so no verified exact trade match is possible; strict / time-tolerant / date-only / manual-only / automated-only are reported separately for A, B, C and per strategy (Phase 5.6 matcher and tolerances, unchanged; one-to-one).
+
+Files: `manual_journal_source_audit.md`, `exact_match_summary.md`, `match_summary_by_strategy.csv`, `match_summary_by_config.csv`, `manual_vs_automated_matching.csv`, `strict_matches.csv`, `time_tolerant_matches.csv`, `date_only_matches.csv`, `manual_only.csv`, `automated_only.csv`, `wrong_strategy_dates.csv`, `orb_vs_irf_comparison.csv`, `irf_support_break_reconciliation.csv`, `handwritten_corrections_comparison.csv`, `mismatch_root_causes.csv`, `Manual_vs_Automated_Verification.xlsx`, `daily/` (every journal date), `charts/` (manual_only, orb_vs_irf, handwritten, changed_days, trade_links).

@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800" font-family="Helvetica,Arial,sans-serif" font-size="11"><rect width="1500" height="800" fill="#fff"/>
+<text x="70" y="20" font-size="16" font-weight="bold">20251201-1-PDR | config C | PDR PDR LONG</text>
+<text x="70" y="38" fill="#333">2025-12-01 | configuration C (PDR / PDR) | trade 1 of the day | journal status: AUTOMATED_ONLY</text>
+<text x="70" y="52" fill="#333">Yellow = 09:15 candle; blue = EMA(200); dark markers = entry and the two leg exits; dashed lines = stop / T1 / T2 / post-T1 stop.</text>
+<line x1="70" y1="641.3" x2="860" y2="641.3" stroke="#eee"/><text x="64" y="645.3" text-anchor="end" fill="#888">26,200</text>
+<line x1="70" y1="483.4" x2="860" y2="483.4" stroke="#eee"/><text x="64" y="487.4" text-anchor="end" fill="#888">26,250</text>
+<line x1="70" y1="325.5" x2="860" y2="325.5" stroke="#eee"/><text x="64" y="329.5" text-anchor="end" fill="#888">26,300</text>
+<line x1="70" y1="167.6" x2="860" y2="167.6" stroke="#eee"/><text x="64" y="171.6" text-anchor="end" fill="#888">26,350</text>
+<text x="676.6" y="774" text-anchor="middle" fill="#888">11:00</text>
+<rect x="70.0" y="95" width="28.2" height="665" fill="#ffd54f" opacity="0.35"/>
+<line x1="70" y1="427.0" x2="860" y2="427.0" stroke="#e67e22" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="406.2" x2="860" y2="406.2" stroke="#e67e22" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="427.0" x2="860" y2="427.0" stroke="#e67e22" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="406.2" x2="860" y2="406.2" stroke="#e67e22" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="388.0" x2="860" y2="388.0" stroke="#777" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="70" y1="726.9" x2="860" y2="726.9" stroke="#777" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+<line x1="84.1" y1="244.0" x2="84.1" y2="413.1" stroke="#d9534f"/>
+<rect x="74.2" y="244.0" width="19.8" height="127.9" fill="#d9534f"/>
+<line x1="112.3" y1="329.6" x2="112.3" y2="391.2" stroke="#17a37a"/>
+<rect x="102.4" y="349.6" width="19.8" height="22.3" fill="#17a37a"/>
+<line x1="140.5" y1="328.5" x2="140.5" y2="391.0" stroke="#d9534f"/>
+<rect x="130.7" y="349.2" width="19.8" height="26.7" fill="#d9534f"/>
+<line x1="168.8" y1="313.0" x2="168.8" y2="374.3" stroke="#17a37a"/>
+<rect x="158.9" y="325.0" width="19.8" height="48.6" fill="#17a37a"/>
+<line x1="197.0" y1="286.0" x2="197.0" y2="346.8" stroke="#17a37a"/>
+<rect x="187.1" y="290.7" width="19.8" height="31.3" fill="#17a37a"/>
+<line x1="225.2" y1="279.1" x2="225.2" y2="384.9" stroke="#d9534f"/>
+<rect x="215.3" y="289.6" width="19.8" height="76.1" fill="#d9534f"/>
+<line x1="253.4" y1="332.9" x2="253.4" y2="395.9" stroke="#17a37a"/>
+<rect x="243.5" y="338.8" width="19.8" height="29.2" fill="#17a37a"/>
+<line x1="281.6" y1="338.1" x2="281.6" y2="419.6" stroke="#d9534f"/>
+<rect x="271.7" y="343.5" width="19.8" height="65.5" fill="#d9534f"/>
+<line x1="309.8" y1="395.9" x2="309.8" y2="439.3" stroke="#d9534f"/>
+<rect x="299.9" y="408.1" width="19.8" height="30.2" fill="#d9534f"/>
+<line x1="338.0" y1="381.9" x2="338.0" y2="437.8" stroke="#17a37a"/>
+<rect x="328.2" y="389.4" width="19.8" height="48.3" fill="#17a37a"/>
+<line x1="366.2" y1="354.4" x2="366.2" y2="396.2" stroke="#17a37a"/>
+<rect x="356.4" y="371.6" width="19.8" height="17.8" fill="#17a37a"/>
+<line x1="394.5" y1="362.8" x2="394.5" y2="390.7" stroke="#d9534f"/>
+<rect x="384.6" y="370.0" width="19.8" height="3.0" fill="#d9534f"/>
+<line x1="422.7" y1="361.2" x2="422.7" y2="418.7" stroke="#d9534f"/>
+<rect x="412.8" y="377.1" width="19.8" height="12.2" fill="#d9534f"/>
+<line x1="450.9" y1="382.0" x2="450.9" y2="404.4" stroke="#d9534f"/>
+<rect x="441.0" y="390.9" width="19.8" height="6.2" fill="#d9534f"/>
+<line x1="479.1" y1="380.6" x2="479.1" y2="424.7" stroke="#17a37a"/>
+<rect x="469.2" y="385.2" width="19.8" height="7.4" fill="#17a37a"/>
+<line x1="507.3" y1="358.5" x2="507.3" y2="404.6" stroke="#d9534f"/>
+<rect x="497.4" y="379.5" width="19.8" height="15.9" fill="#d9534f"/>
+<line x1="535.5" y1="380.4" x2="535.5" y2="457.2" stroke="#d9534f"/>
+<rect x="525.7" y="396.2" width="19.8" height="57.5" fill="#d9534f"/>
+<line x1="563.8" y1="425.6" x2="563.8" y2="457.8" stroke="#d9534f"/>
+<rect x="553.9" y="452.6" width="19.8" height="3.6" fill="#d9534f"/>
+<line x1="592.0" y1="452.9" x2="592.0" y2="491.5" stroke="#d9534f"/>
+<rect x="582.1" y="453.6" width="19.8" height="31.7" fill="#d9534f"/>
+<line x1="620.2" y1="478.8" x2="620.2" y2="548.6" stroke="#d9534f"/>
+<rect x="610.3" y="480.6" width="19.8" height="67.1" fill="#d9534f"/>
+<line x1="648.4" y1="509.8" x2="648.4" y2="547.0" stroke="#17a37a"/>
+<rect x="638.5" y="518.3" width="19.8" height="26.7" fill="#17a37a"/>
+<line x1="676.6" y1="513.2" x2="676.6" y2="563.8" stroke="#d9534f"/>
+<rect x="666.7" y="516.6" width="19.8" height="37.0" fill="#d9534f"/>
+<line x1="704.8" y1="528.7" x2="704.8" y2="563.1" stroke="#d9534f"/>
+<rect x="694.9" y="552.1" width="19.8" height="7.7" fill="#d9534f"/>
+<line x1="733.0" y1="501.9" x2="733.0" y2="560.9" stroke="#17a37a"/>
+<rect x="723.2" y="507.4" width="19.8" height="53.4" fill="#17a37a"/>
+<line x1="761.2" y1="492.6" x2="761.2" y2="525.2" stroke="#d9534f"/>
+<rect x="751.4" y="506.8" width="19.8" height="14.4" fill="#d9534f"/>
+<line x1="789.5" y1="485.9" x2="789.5" y2="523.0" stroke="#17a37a"/>
+<rect x="779.6" y="495.6" width="19.8" height="24.0" fill="#17a37a"/>
+<line x1="817.7" y1="480.4" x2="817.7" y2="509.8" stroke="#17a37a"/>
+<rect x="807.8" y="491.3" width="19.8" height="3.2" fill="#17a37a"/>
+<line x1="845.9" y1="445.8" x2="845.9" y2="497.1" stroke="#17a37a"/>
+<rect x="836.0" y="454.2" width="19.8" height="34.4" fill="#17a37a"/>
+<polyline points="84.1,650.6 112.3,647.6 140.5,644.9 168.8,641.7 197.0,638.2 225.2,635.5 253.4,632.6 281.6,630.3 309.8,628.4 338.0,626.0 366.2,623.5 394.5,621.0 422.7,618.7 450.9,616.5 479.1,614.2 507.3,612.0 535.5,610.5 563.8,608.9 592.0,607.7 620.2,607.1 648.4,606.2 676.6,605.7 704.8,605.2 733.0,604.3 761.2,603.4 789.5,602.4 817.7,601.3 845.9,599.8" fill="none" stroke="#2f80ed" stroke-width="1.6"/>
+<line x1="140.5" y1="128.1" x2="592.0" y2="128.1" stroke="#17a37a" stroke-width="1.5" stroke-dasharray="6 3"/>
+<line x1="140.5" y1="263.9" x2="592.0" y2="263.9" stroke="#17a37a" stroke-width="1.5" stroke-dasharray="2 3"/>
+<line x1="140.5" y1="459.7" x2="592.0" y2="459.7" stroke="#d9534f" stroke-width="1.5" stroke-dasharray="6 3"/>
+<polygon points="140.5,340.2 134.5,349.2 146.5,349.2" fill="#111"/><line x1="70" y1="349.2" x2="860" y2="349.2" stroke="#111" stroke-width="0.7" stroke-dasharray="2 3"/>
+<circle cx="592.0" cy="459.7" r="6" fill="none" stroke="#111" stroke-width="2"/>
+<line x1="587.0" y1="454.7" x2="597.0" y2="464.7" stroke="#111" stroke-width="2.4"/><line x1="587.0" y1="464.7" x2="597.0" y2="454.7" stroke="#111" stroke-width="2.4"/>
+<line x1="860.0" y1="128.1" x2="866.0" y2="128.1" stroke="#17a37a" stroke-width="0.6"/><text x="868.0" y="131.1" fill="#17a37a" font-size="10">T2 26362.50</text>
+<line x1="860.0" y1="263.9" x2="866.0" y2="263.9" stroke="#17a37a" stroke-width="0.6"/><text x="868.0" y="266.9" fill="#17a37a" font-size="10">T1 26319.50</text>
+<line x1="860.0" y1="349.2" x2="866.0" y2="349.2" stroke="#111" stroke-width="0.6"/><text x="868.0" y="352.2" fill="#111" font-size="10">ENTRY LONG 26292.50 @09:25</text>
+<line x1="860.0" y1="388.0" x2="866.0" y2="388.0" stroke="#777" stroke-width="0.6"/><text x="868.0" y="391.0" fill="#777" font-size="10">prev-day high 26280.20</text>
+<line x1="860.0" y1="406.2" x2="866.0" y2="406.2" stroke="#e67e22" stroke-width="0.6"/><text x="868.0" y="409.2" fill="#e67e22" font-size="10">zone_ceiling 26274.45</text>
+<line x1="860.0" y1="406.2" x2="866.0" y2="418.7" stroke="#e67e22" stroke-width="0.6"/><text x="868.0" y="421.7" fill="#e67e22" font-size="10">zone_high 26274.45</text>
+<line x1="860.0" y1="427.0" x2="866.0" y2="431.2" stroke="#e67e22" stroke-width="0.6"/><text x="868.0" y="434.2" fill="#e67e22" font-size="10">zone_floor 26267.85</text>
+<line x1="860.0" y1="427.0" x2="866.0" y2="443.7" stroke="#e67e22" stroke-width="0.6"/><text x="868.0" y="446.7" fill="#e67e22" font-size="10">zone_low 26267.85</text>
+<line x1="860.0" y1="459.7" x2="866.0" y2="459.7" stroke="#d9534f" stroke-width="0.6"/><text x="868.0" y="462.7" fill="#d9534f" font-size="10">STOP 26257.50</text>
+<line x1="860.0" y1="459.7" x2="866.0" y2="472.2" stroke="#111" stroke-width="0.6"/><text x="868.0" y="475.2" fill="#111" font-size="10">LEG 1 EXIT STOP 26257.50 @10:45</text>
+<line x1="860.0" y1="459.7" x2="866.0" y2="484.7" stroke="#111" stroke-width="0.6"/><text x="868.0" y="487.7" fill="#111" font-size="10">LEG 2 EXIT STOP 26257.50 @10:45</text>
+<line x1="860.0" y1="599.8" x2="866.0" y2="599.8" stroke="#2f80ed" stroke-width="0.6"/><text x="868.0" y="602.8" fill="#2f80ed" font-size="10">EMA(200) 26213.1</text>
+<line x1="860.0" y1="726.9" x2="866.0" y2="726.9" stroke="#777" stroke-width="0.6"/><text x="868.0" y="729.9" fill="#777" font-size="10">prev-day low 26172.90</text>
+<rect x="1162" y="95" width="328" height="665" fill="#fafafa" stroke="#ddd"/>
+<text x="1170" y="110" fill="#222" font-size="10">PDR PDR LONG | signal 09:25 (candle end) | entry</text>
+<text x="1170" y="122.5" fill="#222" font-size="10">09:25 @ 26292.5</text>
+<text x="1170" y="138.0" fill="#222" font-size="10">Reason for entry: 09:20</text>
+<text x="1170" y="150.5" fill="#222" font-size="10">WAITING_FOR_SETUP-&gt;SETUP_DETECTED: range [26272.25,</text>
+<text x="1170" y="163.0" fill="#222" font-size="10">26325.8] intersects zone [26267.85, 26274.45] (+/-</text>
+<text x="1170" y="175.5" fill="#222" font-size="10">0.0); 09:20</text>
+<text x="1170" y="188.0" fill="#222" font-size="10">SETUP_DETECTED-&gt;WAITING_FOR_CONFIRMATION: waiting</text>
+<text x="1170" y="200.5" fill="#222" font-size="10">for a confirmation candle that closes above the</text>
+<text x="1170" y="213.0" fill="#222" font-size="10">zone; 09:25</text>
+<text x="1170" y="225.5" fill="#222" font-size="10">WAITING_FOR_CONFIRMATION-&gt;SIGNAL_CONFIRMED: patterns</text>
+<text x="1170" y="238.0" fill="#222" font-size="10">[&#x27;GOOD_GREEN_BODY&#x27;] and close 26292.35 &gt; zone</text>
+<text x="1170" y="250.5" fill="#222" font-size="10">ceiling 26274.45 (test candle 09:20)</text>
+<text x="1170" y="266.0" fill="#222" font-size="10">Evidence: zone_candidate=A_HIGHEST_BODY_HIGH,</text>
+<text x="1170" y="278.5" fill="#222" font-size="10">zone_kind=HIGHEST_BODY_HIGH_CANDLE,</text>
+<text x="1170" y="291.0" fill="#222" font-size="10">zone_floor=26267.85, zone_ceiling=26274.45,</text>
+<text x="1170" y="303.5" fill="#222" font-size="10">zone_low=26267.85, zone_high=26274.45,</text>
+<text x="1170" y="316.0" fill="#222" font-size="10">zone_width=6.60,</text>
+<text x="1170" y="328.5" fill="#222" font-size="10">zone_member_candle_starts=[&#x27;2025-11-28 10:40&#x27;],</text>
+<text x="1170" y="341.0" fill="#222" font-size="10">zone_flags=[&#x27;CEILING_BELOW_WICK_HIGH&#x27;],</text>
+<text x="1170" y="353.5" fill="#222" font-size="10">gap_points=122.85, session_open=26325.80,</text>
+<text x="1170" y="366.0" fill="#222" font-size="10">prev_close=26202.95,</text>
+<text x="1170" y="378.5" fill="#222" font-size="10">config_id=PDRBODY-A-RESEARCH_DEFAULT-490ce5a6,</text>
+<text x="1170" y="391.0" fill="#222" font-size="10">pattern_profile=PHASE53_MINIMAL_CONFIRMATION</text>
+<text x="1170" y="406.5" fill="#222" font-size="10">Levels: stop 26257.5 | T1 26319.5 (3 lots / 195) |</text>
+<text x="1170" y="419.0" fill="#222" font-size="10">T2 26362.5 (3 lots / 195) | post-T1 stop None</text>
+<text x="1170" y="434.5" fill="#222" font-size="10">Leg 1 exit 10:45 @ 26257.5 (STOP); Leg 2 exit 10:45</text>
+<text x="1170" y="447.0" fill="#222" font-size="10">@ 26257.5 (STOP)</text>
+<text x="1170" y="462.5" fill="#222" font-size="10">Outcome INITIAL_FULL_STOP (ORIGINAL_STOP_BEFORE_T1);</text>
+<text x="1170" y="475.0" fill="#222" font-size="10">gross -35.00 weighted index points = Rs -13,650 on</text>
+<text x="1170" y="487.5" fill="#222" font-size="10">390 units; net Rs -13,720 after the indicative Rs</text>
+<text x="1170" y="500.0" fill="#222" font-size="10">70/trade (synthetic index P&amp;L, not option P&amp;L)</text>
+<text x="1170" y="515.5" fill="#222" font-size="10">JOURNAL: AUTOMATED_ONLY (no qualifying journal row;</text>
+<text x="1170" y="528.0" fill="#222" font-size="10">manual rows that day: none)</text>
+<text x="1170" y="543.5" fill="#222" font-size="10">Day state: SECOND_TRADE_ELIGIBLE</text>
+</svg>

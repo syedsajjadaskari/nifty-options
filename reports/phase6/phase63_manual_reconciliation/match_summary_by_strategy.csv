@@ -1,0 +1,16 @@
+config,strategy,manual_rows,automated_trades,strict,time_tolerant,date_strategy_only,manual_only,automated_only,strict_of_manual_pct,outcome_agree_among_strict_tolerant,strict_tolerant_total
+A,IRF,73,109,26,15,14,18,54,35.6,37,41
+A,ORB,89,41,35,0,0,54,6,39.3,34,35
+A,PDR,8,25,0,3,3,2,19,0,3,3
+A,PDS,3,11,1,0,1,1,9,33.3,1,1
+A,RF,17,10,4,3,0,10,3,23.5,5,7
+B,IRF,73,90,20,10,15,28,45,27.4,27,30
+B,ORB,89,41,35,0,0,54,6,39.3,34,35
+B,PDR,8,28,4,1,1,2,22,50,4,5
+B,PDS,3,19,1,0,1,1,17,33.3,1,1
+B,RF,17,10,4,3,0,10,3,23.5,5,7
+C,IRF,73,85,20,11,15,27,39,27.4,27,31
+C,ORB,89,39,38,0,0,51,1,42.7,37,38
+C,PDR,8,31,4,1,1,2,25,50,4,5
+C,PDS,3,19,1,0,1,1,17,33.3,1,1
+C,RF,17,9,4,3,0,10,2,23.5,5,7

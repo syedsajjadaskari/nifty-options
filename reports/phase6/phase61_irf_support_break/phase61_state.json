@@ -1,0 +1,87 @@
+{
+ "signal_comparison": {
+  "A": {
+   "frozen": 874,
+   "p53": 786,
+   "v2": 786
+  },
+  "B": {
+   "frozen": 2487,
+   "p53": 2182,
+   "v2": 2182
+  },
+  "v2_equals_phase53_A": true,
+  "v2_equals_phase53_B": true,
+  "changes_frozen_to_v2": {
+   "UNCHANGED": 447,
+   "ADDED": 303,
+   "REMOVED": 391,
+   "SUPPORT_LEVEL_CHANGED_SAME_TIME": 36
+  },
+  "removed_causes": {
+   "SUPPORT_REFERENCE_CHANGED (first red candle low)": 127,
+   "EMA_28_CLEARANCE_REJECTED": 126,
+   "ATTEMPT_LIFECYCLE / DOWNSTREAM": 138
+  },
+  "added_causes": {
+   "SUPPORT_REFERENCE_CHANGED": 228,
+   "ATTEMPT_LIFECYCLE / DOWNSTREAM": 75
+  },
+  "by_method_frozen": {
+   "Method 2B": 310,
+   "Method 1": 349,
+   "Method 2A": 215
+  },
+  "by_method_v2": {
+   "Method 2B": 248,
+   "Method 2A": 271,
+   "Method 1": 267
+  },
+  "method2a_shifts": {
+   "EARLIER": 243,
+   "LATER": 59
+  },
+  "support_level_changed_same_time": 36,
+  "ema_rejections": 514,
+  "ema_rejections_by_method": {
+   "Method 1": 82,
+   "Method 2A": 265,
+   "Method 2B": 167
+  },
+  "within_13_00": {
+   "frozen": 557,
+   "p53": 510,
+   "v2": 510
+  }
+ },
+ "ema_diag_A": {
+  "confirmed": 786,
+  "ema_between_entry_and_t1": 0,
+  "relation": {
+   "EMA_ABOVE_CANDLE": 249,
+   "EMA_BELOW_CANDLE": 537
+  },
+  "rejected": 514,
+  "close_below_prior_running_low": 3
+ },
+ "independent_audit": {
+  "A": {
+   "sessions": 247,
+   "independent_method2a_signals": 168,
+   "engine_method2a_signals": 168,
+   "sessions_with_mismatch": 0
+  },
+  "B": {
+   "sessions": 738,
+   "independent_method2a_signals": 477,
+   "engine_method2a_signals": 477,
+   "sessions_with_mismatch": 0
+  }
+ },
+ "handwritten": {
+  "cases": 12,
+  "first_entry_changed_by_v2": 6,
+  "out_of_scope_2b": 5
+ },
+ "charts": 142
+}
