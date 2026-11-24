@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="550" viewBox="0 0 1180 550" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="550" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">Journal manual-only 2026-05-29: ORB @ 09:15 (SL)</text>
+<text x="10" y="38" fill="#8a8f98">2026-05-29</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">23,866.1</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">23,893.6</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">23,921.2</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">23,948.7</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">23,976.3</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">24,003.8</text>
+<line x1="316.9" x2="316.9" y1="54" y2="480" stroke="#eee"/><text x="316.9" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="806.7" x2="806.7" y1="54" y2="480" stroke="#eee"/><text x="806.7" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<polyline points="112.8,304.1 194.5,303.8 276.1,304.7 357.7,305.4 439.4,305.4 521.0,306.9 602.6,307.2 684.3,307.7 765.9,308.2 847.5,308.0 929.2,307.3" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="311.3" fill="#c9a400">EMA(200) 5m</text>
+<line x1="112.8" x2="112.8" y1="69.8" y2="275.8" stroke="#1f8a5b"/>
+<rect x="88.3" y="179.3" width="49.0" height="29.9" fill="#1f8a5b"/>
+<line x1="194.5" x2="194.5" y1="139.5" y2="274.9" stroke="#c0392b"/>
+<rect x="170.0" y="183.2" width="49.0" height="89.6" fill="#c0392b"/>
+<line x1="276.1" x2="276.1" y1="256.5" y2="407.8" stroke="#c0392b"/>
+<rect x="251.6" y="275.2" width="49.0" height="120.3" fill="#c0392b"/>
+<line x1="357.7" x2="357.7" y1="327.0" y2="419.7" stroke="#1f8a5b"/>
+<rect x="333.2" y="381.0" width="49.0" height="18.3" fill="#1f8a5b"/>
+<line x1="439.4" x2="439.4" y1="270.4" y2="380.4" stroke="#1f8a5b"/>
+<rect x="414.9" y="305.1" width="49.0" height="74.2" fill="#1f8a5b"/>
+<line x1="521.0" x2="521.0" y1="273.0" y2="459.0" stroke="#c0392b"/>
+<rect x="496.5" y="302.7" width="49.0" height="147.4" fill="#c0392b"/>
+<line x1="602.6" x2="602.6" y1="333.1" y2="464.2" stroke="#1f8a5b"/>
+<rect x="578.1" y="338.0" width="49.0" height="112.0" fill="#1f8a5b"/>
+<line x1="684.3" x2="684.3" y1="304.6" y2="365.7" stroke="#c0392b"/>
+<rect x="659.8" y="340.5" width="49.0" height="22.1" fill="#c0392b"/>
+<line x1="765.9" x2="765.9" y1="351.3" y2="414.1" stroke="#1f8a5b"/>
+<rect x="741.4" y="352.1" width="49.0" height="11.1" fill="#1f8a5b"/>
+<line x1="847.5" x2="847.5" y1="278.1" y2="391.4" stroke="#1f8a5b"/>
+<rect x="823.1" y="287.1" width="49.0" height="65.0" fill="#1f8a5b"/>
+<line x1="929.2" x2="929.2" y1="206.5" y2="288.2" stroke="#1f8a5b"/>
+<rect x="904.7" y="241.5" width="49.0" height="46.4" fill="#1f8a5b"/>
+<text x="10" y="524" fill="#222">No automated ORB trade matched this row. Automated trades that day: nan. Journal has no price / direction.</text>
+</svg>

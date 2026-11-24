@@ -1,0 +1,14 @@
+{
+ "delayed_cases": 215,
+ "by_window": {
+  "B": 170,
+  "A": 45
+ },
+ "delay_category": {
+  "A_EARLIER_GREEN_CLOSES_BELOW_OR_WITHIN_THE_ZONE": 195,
+  "C_EARLIER_GREEN_IS_THE_RETEST_CANDLE": 20
+ },
+ "first_green_closes_above_ceiling_true": 0,
+ "retest_candle_green_and_above_ceiling_true": 20,
+ "audit_classification_defects": 0
+}

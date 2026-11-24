@@ -1,0 +1,74 @@
+{
+ "b_ceiling_bypass_unique_cycles": 205,
+ "variant_changes_attributable_to_dropped_rejection_route": {
+  "PDR_B1": {
+   "SAME": 0,
+   "EARLIER": 0,
+   "LATER": 27,
+   "REMOVED_BY_VARIANT": 5
+  },
+  "PDR_B2": {
+   "SAME": 0,
+   "EARLIER": 12,
+   "LATER": 18,
+   "REMOVED_BY_VARIANT": 2
+  },
+  "PDR_C": {
+   "SAME": 0,
+   "EARLIER": 12,
+   "LATER": 16,
+   "REMOVED_BY_VARIANT": 4
+  }
+ },
+ "tradable_before_cutoff": {
+  "engine_signals_total": 600,
+  "engine_signals_tradable": 404,
+  "delayed_total": 215,
+  "delayed_tradable": 133
+ },
+ "cycles_total": 600,
+ "confirmed_cycles": 600,
+ "delayed_cycles": 215,
+ "delay_categories": {
+  "A": 195,
+  "C": 20
+ },
+ "pdr_charts": 215,
+ "pds_charts": 104,
+ "variant_relations": {
+  "PDR_B1": {
+   "SAME": 312,
+   "EARLIER": 188,
+   "REMOVED_BY_VARIANT": 73,
+   "LATER": 27,
+   "NEW_SIGNAL": 714
+  },
+  "PDR_B2": {
+   "EARLIER": 331,
+   "SAME": 233,
+   "LATER": 18,
+   "REMOVED_BY_VARIANT": 18,
+   "NEW_SIGNAL": 1051
+  },
+  "PDR_C": {
+   "EARLIER": 140,
+   "SAME": 424,
+   "LATER": 16,
+   "REMOVED_BY_VARIANT": 20,
+   "NEW_SIGNAL": 70
+  },
+  "PDR_D": {
+   "LATER": 378,
+   "REMOVED_BY_VARIANT": 222,
+   "NEW_SIGNAL": 41
+  }
+ },
+ "pds_second": {
+  "A": {
+   "second_signals": 29
+  },
+  "B": {
+   "second_signals": 75
+  }
+ }
+}

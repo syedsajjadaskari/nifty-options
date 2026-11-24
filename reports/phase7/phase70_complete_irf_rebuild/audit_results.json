@@ -1,0 +1,114 @@
+{
+ "A/SL40_T60": {
+  "signal_comparisons": 492,
+  "trade_comparisons": 266,
+  "mismatches": 0,
+  "first": []
+ },
+ "A/SL35_T60": {
+  "signal_comparisons": 492,
+  "trade_comparisons": 266,
+  "mismatches": 0,
+  "first": []
+ },
+ "A/SL40_ENTRY_SIGNAL_CLOSE": {
+  "signal_comparisons": 492,
+  "trade_comparisons": 266,
+  "mismatches": 0,
+  "first": []
+ },
+ "A/SL40_TIE_MINUTE_ORDER": {
+  "signal_comparisons": 492,
+  "trade_comparisons": 266,
+  "mismatches": 0,
+  "first": []
+ },
+ "A/SL40_FORCED_EXIT_1300": {
+  "signal_comparisons": 492,
+  "trade_comparisons": 266,
+  "mismatches": 0,
+  "first": []
+ },
+ "A/SL35_FORCED_EXIT_1300": {
+  "signal_comparisons": 492,
+  "trade_comparisons": 266,
+  "mismatches": 0,
+  "first": []
+ },
+ "A/SL40_CUTOFF_EXCLUSIVE": {
+  "signal_comparisons": 492,
+  "trade_comparisons": 266,
+  "mismatches": 0,
+  "first": []
+ },
+ "A/SL40_M2_INVALIDATE_BELOW_A": {
+  "signal_comparisons": 492,
+  "trade_comparisons": 232,
+  "mismatches": 0,
+  "first": []
+ },
+ "A/SL40_T60__M2_ALT_BREAKOUT_RED": {
+  "signal_comparisons": 492,
+  "trade_comparisons": 266,
+  "mismatches": 0,
+  "first": []
+ },
+ "B/SL40_T60": {
+  "signal_comparisons": 1472,
+  "trade_comparisons": 765,
+  "mismatches": 0,
+  "first": []
+ },
+ "B/SL35_T60": {
+  "signal_comparisons": 1472,
+  "trade_comparisons": 765,
+  "mismatches": 0,
+  "first": []
+ },
+ "B/SL40_ENTRY_SIGNAL_CLOSE": {
+  "signal_comparisons": 1472,
+  "trade_comparisons": 765,
+  "mismatches": 0,
+  "first": []
+ },
+ "B/SL40_TIE_MINUTE_ORDER": {
+  "signal_comparisons": 1472,
+  "trade_comparisons": 765,
+  "mismatches": 0,
+  "first": []
+ },
+ "B/SL40_FORCED_EXIT_1300": {
+  "signal_comparisons": 1472,
+  "trade_comparisons": 765,
+  "mismatches": 0,
+  "first": []
+ },
+ "B/SL35_FORCED_EXIT_1300": {
+  "signal_comparisons": 1472,
+  "trade_comparisons": 765,
+  "mismatches": 0,
+  "first": []
+ },
+ "B/SL40_CUTOFF_EXCLUSIVE": {
+  "signal_comparisons": 1472,
+  "trade_comparisons": 765,
+  "mismatches": 0,
+  "first": []
+ },
+ "B/SL40_M2_INVALIDATE_BELOW_A": {
+  "signal_comparisons": 1472,
+  "trade_comparisons": 679,
+  "mismatches": 0,
+  "first": []
+ },
+ "B/SL40_T60__M2_ALT_BREAKOUT_RED": {
+  "signal_comparisons": 1472,
+  "trade_comparisons": 764,
+  "mismatches": 0,
+  "first": []
+ },
+ "causality": {
+  "signals_checked": 1031,
+  "failures": []
+ }
+}

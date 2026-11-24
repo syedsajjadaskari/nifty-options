@@ -1,0 +1,75 @@
+{
+ "phase": "7.1",
+ "head": "9d7f5af87148a4db7d6c502c2a73295a5bcdd0c6",
+ "configurations": {
+  "A": "A - existing frozen combined configuration (Phase 3.6 frozen engines; Phase 6.2 key A)",
+  "B": "B - IRF V3 (Method 1 + Method 2, Phase 7.0) + ORB V2-A + PDR/PDS first-eligible + RF; no universal EMA rule",
+  "C": "C - B with Method 2 invalidated permanently by a close below Level A before the sequence completes (M2-B)",
+  "C2": "C2 - B with Method 2 invalidation that RE-ARMS (a new rally breakout may start a new setup)",
+  "D": "D - B + universal EMA-1: minimum 27-point |close - EMA| (all five strategies)",
+  "E": "E - B + universal EMA-2: minimum 27-point candle-range clearance (all five strategies)",
+  "F": "F - B + universal EMA-3: maximum 27-point |close - EMA| proximity (all five strategies)",
+  "K": "K - B + EMA-4: 28-point candle-range clearance (Phase 5.3 historical convention, comparator; all five strategies)",
+  "L": "L - B + EMA-5: target-side (EMA not within 27 points in the trade's path; handwritten AC13/AC18 reading; all five strategies)",
+  "G1": "G1 - B with PDR-B1 (first green candle after the retest, no ceiling requirement; owner confirmation required)",
+  "G2": "G2 - B with PDR-B2 (first green candle, retest candle may confirm, no ceiling requirement)",
+  "G3": "G3 - B with PDR-C (first green candle closing above the zone ceiling, retest candle may confirm)",
+  "H": "H - B with PDR-D (second eligible confirmation)",
+  "I1": "I1 - B with the frozen numeric-threshold PDS (source-consistent reference)",
+  "I2": "I2 - B with PDS second confirmation (Methods 1/2 only)",
+  "J60": "J60 - B + candle-strength gate 60% body (Phase 6.5 variant B)",
+  "J70": "J70 - B + candle-strength gate 70% body (Phase 6.5 variant C)",
+  "JD": "JD - B + pattern-aware candle-strength gate (Phase 6.5 variant D)"
+ },
+ "windows": {
+  "A": "2025-09-01..2026-08-31 (5paisa, Phase 1/2 store)",
+  "B": "2022-09-01..2025-08-31 (5paisa, Phase 4 store)"
+ },
+ "controller_and_exit": "frozen portfolio controller; 6 lots x 65 = 390 units; T1 +27 on 3 lots; T2 +60 (IRF/ORB/RF) / +70 (PDR/PDS) on 3 lots; stops ORB 30, others 35; post-T1 stop entry +/-6; entry cutoff 13:00; forced exit before 15:15; first valid signal of the day; max two trades; second trade only PDR/PDS after a full initial stop",
+ "irf_v3_inputs": "Phase 7.0 method definitions (entry decision only) through research/phase71/irf_cycles.py (first cycle parity with irf_v3 on all 1964 session-methods) and irf_engine.py",
+ "orb": "ORB V2-A provisional (Phase 6.2 adapter)",
+ "pdr_pds_rf_base": "Phase 5.3 first-eligible PDR/PDS + frozen RF (Phase 6.2 configuration C slots)",
+ "ema_configs": {
+  "D": "minimum 27-point |close - EMA|",
+  "E": "minimum 27-point candle-range clearance",
+  "F": "maximum 27-point |close - EMA| proximity",
+  "K": "28-point candle-range clearance (Phase 5.3 historical convention, comparator)",
+  "L": "target-side: EMA not within 27 points in the trade's path (handwritten AC13/AC18 reading)"
+ },
+ "sha256": {
+  "src/nifty_trading/strategies/irf.py": "1 files 77420d00be84c37c6fd7df97fa63a06277079d5ac45c339d180037c4ec9eed7d",
+  "src/nifty_trading/strategies/irf_v2.py": "1 files 57c5a5f93b3405daed604ddedb1a857c798f317d3bf81dde8b5a2b1fed433d3f",
+  "src/nifty_trading/strategies/irf_phase53.py": "1 files fe0f034bed5c00f36cfbae9d1029d12a78cca75862ed808d94ed3f0c6a19ca29",
+  "src/nifty_trading/strategies/orb.py": "1 files c7fc14d1b40f19cf32479ce154380ae8fa6c21a163b4c2c9493e0871bb7210ed",
+  "src/nifty_trading/strategies/pdr.py": "1 files afe0ca1c7ac2900f6006d64a6ecbe1ef3b13d6ecd72fb2cce1e747b423de8071",
+  "src/nifty_trading/strategies/pds.py": "1 files 06118b633b2e3e2ae09a454632de24e45b8f336d8d0b056f32c32ac124b2d7bf",
+  "src/nifty_trading/strategies/rf.py": "1 files d26b1aa61f4118d0caabd5717c695b40c9e8762996a14479d51bc701766da005",
+  "src/nifty_trading/strategies/runner.py": "1 files bcdbf0ae3ec523e088b5e642ed982a62a7150653136188c88f11e1f620216f28",
+  "src/nifty_trading/strategies/selection.py": "1 files 6ff45af98743b5e5beeabcd5480fb932d6e76d593ace7ee3bd8332563484be05",
+  "src/nifty_trading/core": "9 files 749b8f0732448edfadbc2878440ec46bb0871d1021a9d7914010f2f986e5fd82",
+  "src/nifty_trading/research/orb_v2": "16 files d92dae3168c3c6a7f0a2a6e22508371ff6e656d9dffe7404201e9fadb688a242",
+  "src/nifty_trading/research/irf_v3": "14 files 0f8c01a7db3d87b11ce2eb5c0dcd6449d8d2f38a81c3455a6c6bd534010dadb7",
+  "src/nifty_trading/research/phase71": "7 files ae482b3ad1570056fbdd67af664ac254b8c2afcba85a0c6173195a26736b88b7",
+  "data/processed": "352 files 464a7b3261acdb54d3520e037329fdcc8fe6ebec3d601aff19203e71d9298d2f",
+  "data/phase4": "144 files f0631e6952bf41f3a899dc73b692c49ded2419d412194fa1efaa6977f7267f60",
+  "data/phase71/processed": "3 files 9d85e7575c41d59a1a0baa4025482650000b83107baaaeab53bad7b685e07d75",
+  "data/raw/phase71_5paisa_nov2026": "3 files 484233d5c6e9f7c9a87617779370edf8eedcecd6915905cca6a9466868000d71",
+  "docs/trading journal": "2 files 92c21a928a82ce1010cb17da7ca587848f1d9ccfe0158786bd5fd66850249aaa"
+ },
+ "journal_sha256": "97a9ad4dfb5520619bb979770115d7b6f4e3e37e649af255c543f5fce9694781",
+ "source_pdfs": {
+  "IRF_Inverse_Retest_Failure_Rulebook.pdf": "39b9dd226c5dabd321a57855e23317e101f49e5a76f56ee4a5180ec10a69cec2",
+  "IRF_Method2_First_Red_Candle_Rulebook.pdf": "5ad283df82c81eefaf2bef7277318ad38cafa7d4d5e8ad5147fbf98ec8276dc4"
+ },
+ "phase65_inputs_read_only": [
+  "pdr_215_delayed_cycles.csv",
+  "pdr_first_eligible_audit.csv",
+  "pdr_setup_audit.csv",
+  "pdr_variant_B_signals.csv",
+  "pdr_variant_C_signals.csv",
+  "pdr_variant_D_signals.csv",
+  "pds_confirmation_variants.csv",
+  "candle_strength_variants_performance.csv"
+ ],
+ "promotion": "NONE - no configuration is selected or promoted to paper trading"
+}

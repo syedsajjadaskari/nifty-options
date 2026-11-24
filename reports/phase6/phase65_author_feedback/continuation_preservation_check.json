@@ -1,0 +1,34 @@
+{
+ "git_head_start": "9d7f5af87148a4db7d6c502c2a73295a5bcdd0c6",
+ "git_head_now": "9d7f5af87148a4db7d6c502c2a73295a5bcdd0c6",
+ "files_before": 21956,
+ "files_now": 23965,
+ "1_tracked_files_modified_by_this_work": [],
+ "2_tracked_files_modified_by_another_process_or_unattributed": [],
+ "frozen_files_changed": [],
+ "frozen_files_removed": [],
+ "3_new_phase65_files": 488,
+ "3b_phase65_files_edited_after_snapshot": 2,
+ "4_external_phase70_files": {
+  "present": 2913,
+  "new_since_snapshot": 1498,
+  "changed_since_snapshot": 1,
+  "removed_since_snapshot": 0,
+  "note": "owned by another process; Phase 6.5 never writes there, so any change/addition is that process's own activity (attribution is by ownership, not by observation)"
+ },
+ "4b_external_phase71_files": {
+  "present": 23,
+  "new_since_snapshot": 23,
+  "changed_since_snapshot": 0,
+  "removed_since_snapshot": 0,
+  "note": "a further externally owned effort (Phase 7.1: data/phase71/, scripts/phase71_*, research/phase71/, tests/test_phase71_*) that appeared during this run. Attributed by naming and by exclusion from Phase 6.5's own created files, not observed directly; never read, written or run by Phase 6.5"
+ },
+ "5_untracked_source_documents": [
+  "docs/strategy_docs/IRF_Inverse_Retest_Failure_Rulebook.pdf",
+  "docs/strategy_docs/IRF_Method2_First_Red_Candle_Rulebook.pdf"
+ ],
+ "6_genuinely_deleted_original_files": [],
+ "other_new_files_outside_known_owners": [],
+ "frozen_baseline_intact": true,
+ "limitation": "externally owned Phase 7.0 files changed during this run (1 changed, 1498 new); Phase 6.5 only read their metadata, parsed source text and published outputs; a further externally owned Phase 7.1 effort appeared during this run (23 files); Phase 6.5 never read, wrote or ran them. Those files are excluded from the frozen-baseline verdict, so no hash comparison of them against the start snapshot is possible."
+}

@@ -1,0 +1,21 @@
+{
+ "journal_sha256": "97a9ad4dfb5520619bb979770115d7b6f4e3e37e649af255c543f5fce9694781",
+ "data_rows": 190,
+ "summary_total_trades": 189,
+ "weekend_rows": 5,
+ "weekend_rows_list": [
+  "2025-10-11 ORB",
+  "2026-02-14 IRF",
+  "2026-08-15 ORB",
+  "2026-08-22 ORB",
+  "2026-08-29 ORB"
+ ],
+ "by_strategy": {
+  "IRF": 73,
+  "PDR": 8,
+  "ORB": 89,
+  "RF": 17,
+  "PDS": 3
+ },
+ "columns_available": "sl no, date, entry-time label, strategy, outcome (no direction / price / exit time)"
+}

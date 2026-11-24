@@ -1,0 +1,25 @@
+{
+ "source": "data/raw/phase71_5paisa_nov2026/1m_2026-11-02_2026-11-18.csv",
+ "raw_sha256": "e3207f05fc765a499705d3403cdd160090f08fd99a5fbf8f5e717a56de13d00b",
+ "provider": "5paisa (project BrokerClient, read-only)",
+ "timezone": "exchange stamps are naive IST in the provider response; localised to Asia/Kolkata here",
+ "rows_raw": 4612,
+ "rows_in_session": 4570,
+ "sessions": [
+  "2026-11-02",
+  "2026-11-03",
+  "2026-11-04",
+  "2026-11-05",
+  "2026-11-06",
+  "2026-11-08",
+  "2026-11-09",
+  "2026-11-11",
+  "2026-11-12",
+  "2026-11-13",
+  "2026-11-16",
+  "2026-11-17",
+  "2026-11-18"
+ ],
+ "rows_outside_session_dropped": 42,
+ "processed": "data/phase71/processed/FIVEPAISA_1M_NOV2026/candles.parquet"
+}

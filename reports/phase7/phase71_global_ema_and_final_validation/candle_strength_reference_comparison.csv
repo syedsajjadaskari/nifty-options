@@ -1,0 +1,57 @@
+section,variant,window,scope,trades,win_rate_pct,profit_factor,gross_rs,max_dd_rs
+PHASE 7.1 (IRF V3 base),none (baseline),A,ALL,190,58.42,1.212,231855.0,107866.0
+PHASE 7.1 (IRF V3 base),none (baseline),A,IRF,93,58.06,1.095,56833.0,
+PHASE 7.1 (IRF V3 base),none (baseline),A,ORB,39,48.72,0.921,-15971.0,
+PHASE 7.1 (IRF V3 base),none (baseline),A,PDR,31,67.74,1.879,117975.0,
+PHASE 7.1 (IRF V3 base),none (baseline),A,PDS,18,61.11,1.649,63658.0,
+PHASE 7.1 (IRF V3 base),none (baseline),A,RF,9,66.67,1.212,9360.0,
+PHASE 7.1 (IRF V3 base),none (baseline),B,ALL,614,57.98,1.151,565178.0,316898.0
+PHASE 7.1 (IRF V3 base),none (baseline),B,IRF,293,60.07,1.27,450499.0,
+PHASE 7.1 (IRF V3 base),none (baseline),B,ORB,92,60.87,1.511,218683.0,
+PHASE 7.1 (IRF V3 base),none (baseline),B,PDR,129,49.61,0.802,-168578.0,
+PHASE 7.1 (IRF V3 base),none (baseline),B,PDS,58,56.9,1.001,4319.0,
+PHASE 7.1 (IRF V3 base),none (baseline),B,RF,42,64.29,1.278,60255.0,
+PHASE 7.1 (IRF V3 base),60% body,A,ALL,164,60.98,1.395,341815.0,111891.0
+PHASE 7.1 (IRF V3 base),60% body,A,IRF,81,62.96,1.343,146718.0,
+PHASE 7.1 (IRF V3 base),60% body,A,ORB,39,48.72,0.921,-15971.0,
+PHASE 7.1 (IRF V3 base),60% body,A,PDR,25,68.0,2.04,112183.0,
+PHASE 7.1 (IRF V3 base),60% body,A,PDS,17,70.59,2.559,108439.0,
+PHASE 7.1 (IRF V3 base),60% body,A,RF,2,50.0,0.293,-9555.0,
+PHASE 7.1 (IRF V3 base),60% body,B,ALL,547,56.86,1.123,425002.0,310961.0
+PHASE 7.1 (IRF V3 base),60% body,B,IRF,263,58.94,1.222,342586.0,
+PHASE 7.1 (IRF V3 base),60% body,B,ORB,92,60.87,1.511,218683.0,
+PHASE 7.1 (IRF V3 base),60% body,B,PDR,109,45.87,0.724,-216918.0,
+PHASE 7.1 (IRF V3 base),60% body,B,PDS,49,55.1,0.972,-4953.0,
+PHASE 7.1 (IRF V3 base),60% body,B,RF,34,67.65,1.551,85605.0,
+PHASE 7.1 (IRF V3 base),70% body,A,ALL,154,57.14,1.173,160348.0,130466.0
+PHASE 7.1 (IRF V3 base),70% body,A,IRF,75,54.67,0.905,-39039.0,
+PHASE 7.1 (IRF V3 base),70% body,A,ORB,39,48.72,0.921,-15971.0,
+PHASE 7.1 (IRF V3 base),70% body,A,PDR,23,69.57,2.139,106918.0,
+PHASE 7.1 (IRF V3 base),70% body,A,PDS,17,70.59,2.559,108439.0,
+PHASE 7.1 (IRF V3 base),70% body,A,RF,0,,,0.0,
+PHASE 7.1 (IRF V3 base),70% body,B,ALL,486,56.17,1.054,186332.0,347774.0
+PHASE 7.1 (IRF V3 base),70% body,B,IRF,230,59.13,1.17,233756.0,
+PHASE 7.1 (IRF V3 base),70% body,B,ORB,92,60.87,1.511,218683.0,
+PHASE 7.1 (IRF V3 base),70% body,B,PDR,101,45.54,0.66,-246724.0,
+PHASE 7.1 (IRF V3 base),70% body,B,PDS,45,51.11,0.821,-50973.0,
+PHASE 7.1 (IRF V3 base),70% body,B,RF,18,66.67,1.368,31590.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,A,ALL,189,59.26,1.258,272737.0,107866.0
+PHASE 7.1 (IRF V3 base),pattern-aware,A,IRF,96,59.38,1.167,94858.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,A,ORB,39,48.72,0.921,-15971.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,A,PDR,31,67.74,1.879,117975.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,A,PDS,14,64.29,1.953,66514.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,A,RF,9,66.67,1.212,9360.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,B,ALL,611,57.61,1.136,514995.0,316722.0
+PHASE 7.1 (IRF V3 base),pattern-aware,B,IRF,300,59.33,1.23,403309.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,B,ORB,92,60.87,1.511,218683.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,B,PDR,129,49.61,0.802,-168578.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,B,PDS,48,56.25,0.993,1326.0,
+PHASE 7.1 (IRF V3 base),pattern-aware,B,RF,42,64.29,1.278,60255.0,
+"PHASE 6.5 reference (IRF V2 base; completed earlier, read-only)",none,A,ALL,183,53.55,1.033,37420.0,239831.0
+"PHASE 6.5 reference (IRF V2 base; completed earlier, read-only)",60% body,A,ALL,159,55.35,1.133,123844.0,159491.0
+"PHASE 6.5 reference (IRF V2 base; completed earlier, read-only)",70% body,A,ALL,149,53.69,1.058,51967.0,152880.0
+"PHASE 6.5 reference (IRF V2 base; completed earlier, read-only)",pattern-aware,A,ALL,182,54.4,1.062,67382.0,239831.0
+"PHASE 6.5 reference (IRF V2 base; completed earlier, read-only)",none,B,ALL,603,57.21,1.082,281395.0,283793.0
+"PHASE 6.5 reference (IRF V2 base; completed earlier, read-only)",60% body,B,ALL,535,57.76,1.172,513142.0,218468.0
+"PHASE 6.5 reference (IRF V2 base; completed earlier, read-only)",70% body,B,ALL,468,57.91,1.13,336658.0,187766.0
+"PHASE 6.5 reference (IRF V2 base; completed earlier, read-only)",pattern-aware,B,ALL,600,57.17,1.082,279571.0,283618.0

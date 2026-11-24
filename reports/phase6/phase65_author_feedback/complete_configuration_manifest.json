@@ -1,0 +1,134 @@
+{
+ "phase": "6.5 continuation",
+ "synthetic_index_pnl_only": true,
+ "configs": {
+  "BASE": {
+   "label": "Phase 6.2 configuration C"
+  },
+  "S60": {
+   "label": "60% body gate (checkpoint B)"
+  },
+  "S70": {
+   "label": "70% body gate (checkpoint C)"
+  },
+  "SD": {
+   "label": "pattern-aware 60% (checkpoint D)"
+  },
+  "PDR_B1": {
+   "label": "first green after retest, no ceiling"
+  },
+  "PDR_B2": {
+   "label": "first green, retest may confirm, no ceiling"
+  },
+  "PDR_C": {
+   "label": "first green above ceiling, retest may confirm"
+  },
+  "PDR_D": {
+   "label": "second eligible confirmation"
+  },
+  "PDS_FROZEN": {
+   "label": "frozen numeric PDS"
+  },
+  "PDS_SECOND": {
+   "label": "PDS second eligible (Methods 1/2)"
+  }
+ },
+ "each_config_changes": "S60 / S70 / SD one dimension (body gate); PDR_D one (second eligible confirmation); PDS_FROZEN / PDS_SECOND one (PDS quality test / confirmation); PDR_B1 / B2 / C TWO (green-only confirmation, which also drops the lower-price-rejection route, plus the ceiling / retest-candle change); PDS first-eligible == BASE",
+ "validation": {
+  "BASE|A": {
+   "saved_trades": 183,
+   "rerun_trades": 183,
+   "identical": true
+  },
+  "BASE|B": {
+   "saved_trades": 603,
+   "rerun_trades": 603,
+   "identical": true
+  },
+  "S60|A": {
+   "saved_trades": 159,
+   "rerun_trades": 159,
+   "identical": true
+  },
+  "S60|B": {
+   "saved_trades": 535,
+   "rerun_trades": 535,
+   "identical": true
+  },
+  "S70|A": {
+   "saved_trades": 149,
+   "rerun_trades": 149,
+   "identical": true
+  },
+  "S70|B": {
+   "saved_trades": 468,
+   "rerun_trades": 468,
+   "identical": true
+  },
+  "SD|A": {
+   "saved_trades": 182,
+   "rerun_trades": 182,
+   "identical": true
+  },
+  "SD|B": {
+   "saved_trades": 600,
+   "rerun_trades": 600,
+   "identical": true
+  }
+ },
+ "model": {
+  "lots": 6,
+  "units": 65,
+  "legs": "3+3",
+  "stops": {
+   "ORB": 30,
+   "others": 35
+  },
+  "t1": 27,
+  "t2": {
+   "IRF": 60,
+   "ORB": 60,
+   "RF": 60,
+   "PDR": 70,
+   "PDS": 70
+  },
+  "post_t1_stop": "entry -/+ 6",
+  "forced_exit": "15:14 open",
+  "cutoff": "13:00"
+ },
+ "costs": [
+  "gross",
+  "Rs70/trade",
+  "Rs70/fill",
+  "Rs70+0.25",
+  "Rs70+0.5",
+  "Rs70+1.0 slippage per side"
+ ],
+ "data": "5paisa one-minute (primary 2025-09..2026-08; robustness 2022-09..2025-08); vendors not mixed",
+ "orb": "ORB-V2-A provisional reference",
+ "irf": "IRF-V2-SUPPORT-BREAK (== Phase 5.3 IRF signals)",
+ "code_sha256": {
+  "src/nifty_trading/strategies/pdr_variants.py": "13631d79039d7682",
+  "src/nifty_trading/strategies/pds_variants.py": "6e21a2b5c933183a",
+  "src/nifty_trading/strategies/strength_gate.py": "4722f1bb9b63c5f7",
+  "src/nifty_trading/research/phase65.py": "b9b99a3e7830d4bf",
+  "scripts/phase65b_run.py": "ecc3d878db8c2b6d",
+  "scripts/phase65b_pdr.py": "c7fd821ae8fedb4c"
+ },
+ "source_sha256": {
+  "IRF_Strategy_Guide Updated.pdf": "5106469ebc0f53ac",
+  "IRF_Inverse_Retest_Failure_Rulebook.pdf": "39b9dd226c5dabd3",
+  "IRF_Method2_First_Red_Candle_Rulebook.pdf": "5ad283df82c81eef",
+  "PDR_Strategy_Guide.pdf": "c68665564e2ca6ce",
+  "PDS strategy.pdf": "1288146e3fca6559",
+  "RF strategy.pdf": "5e94263800e73f3c"
+ },
+ "reproduce": [
+  "python scripts/phase65b_snapshot.py before",
+  "python scripts/phase65b_run.py",
+  "python scripts/phase65b_pdr.py",
+  "python scripts/phase65b_charts.py",
+  "python scripts/phase65b_audit.py",
+  "python scripts/phase65b_docs.py"
+ ]
+}

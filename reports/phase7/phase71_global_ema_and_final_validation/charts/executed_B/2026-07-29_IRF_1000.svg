@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="566" viewBox="0 0 1180 566" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="566" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">B executed: 2026-07-29 IRF (V3-M1)</text>
+<text x="10" y="38" fill="#8a8f98">signal 10:00, entry 10:00 @ 24186.30</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">23,949.1</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">24,009.2</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">24,069.2</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">24,129.3</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">24,189.4</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">24,249.4</text>
+<line x1="230.5" x2="230.5" y1="54" y2="480" stroke="#eee"/><text x="230.5" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="547.4" x2="547.4" y1="54" y2="480" stroke="#eee"/><text x="547.4" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<line x1="864.4" x2="864.4" y1="54" y2="480" stroke="#eee"/><text x="864.4" y="494" text-anchor="middle" fill="#8a8f98">10:30</text>
+<rect x="547.4" y="93.9" width="84.5" height="49.6" fill="#c0392b" fill-opacity="0.11" stroke="#c0392b" stroke-opacity="0.4"/>
+<rect x="547.4" y="143.5" width="84.5" height="85.1" fill="#1f8a5b" fill-opacity="0.11" stroke="#1f8a5b" stroke-opacity="0.4"/>
+<polyline points="98.4,464.2 151.2,461.2 204.1,458.1 256.9,455.0 309.7,451.5 362.5,448.1 415.4,444.6 468.2,441.4 521.0,438.4 573.8,435.2 626.6,431.8 679.5,428.5 732.3,425.1 785.1,421.7 837.9,418.4 890.8,415.0 943.6,411.7" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="415.7" fill="#c9a400">EMA(200) 5m</text>
+<line x1="72" x2="970" y1="143.5" y2="143.5" stroke="#222" stroke-width="1.1"/><text x="974" y="141.5" fill="#222">entry 24186.30</text>
+<line x1="72" x2="970" y1="93.9" y2="93.9" stroke="#c0392b" stroke-width="1.1"/><text x="974" y="91.9" fill="#c0392b">initial stop 24221.30</text>
+<line x1="72" x2="970" y1="181.8" y2="181.8" stroke="#1f8a5b" stroke-width="1.1" stroke-dasharray="6,4"/><text x="974" y="179.8" fill="#1f8a5b">T1 24159.30</text>
+<line x1="72" x2="970" y1="228.7" y2="228.7" stroke="#1f8a5b" stroke-width="1.1"/><text x="974" y="226.7" fill="#1f8a5b">T2 24126.30</text>
+<line x1="98.4" x2="98.4" y1="130.5" y2="206.7" stroke="#1f8a5b"/>
+<rect x="82.6" y="142.4" width="31.7" height="14.8" fill="#1f8a5b"/>
+<line x1="151.2" x2="151.2" y1="136.1" y2="178.0" stroke="#c0392b"/>
+<rect x="135.4" y="142.3" width="31.7" height="13.9" fill="#c0392b"/>
+<line x1="204.1" x2="204.1" y1="129.5" y2="165.4" stroke="#1f8a5b"/>
+<rect x="188.2" y="154.6" width="31.7" height="1.0" fill="#1f8a5b"/>
+<line x1="256.9" x2="256.9" y1="133.4" y2="158.7" stroke="#1f8a5b"/>
+<rect x="241.0" y="140.9" width="31.7" height="17.8" fill="#1f8a5b"/>
+<line x1="309.7" x2="309.7" y1="108.9" y2="144.0" stroke="#1f8a5b"/>
+<rect x="293.9" y="112.3" width="31.7" height="28.9" fill="#1f8a5b"/>
+<line x1="362.5" x2="362.5" y1="99.1" y2="125.5" stroke="#1f8a5b"/>
+<rect x="346.7" y="106.8" width="31.7" height="5.2" fill="#1f8a5b"/>
+<line x1="415.4" x2="415.4" y1="98.0" y2="118.4" stroke="#1f8a5b"/>
+<rect x="399.5" y="98.6" width="31.7" height="8.7" fill="#1f8a5b"/>
+<line x1="468.2" x2="468.2" y1="93.5" y2="128.1" stroke="#c0392b"/>
+<rect x="452.3" y="98.6" width="31.7" height="18.4" fill="#c0392b"/>
+<line x1="521.0" x2="521.0" y1="111.1" y2="145.5" stroke="#c0392b"/>
+<rect x="505.2" y="116.2" width="31.7" height="25.4" fill="#c0392b"/>
+<line x1="573.8" x2="573.8" y1="114.2" y2="143.5" stroke="#1f8a5b"/>
+<rect x="558.0" y="117.5" width="31.7" height="26.0" fill="#1f8a5b"/>
+<line x1="626.6" x2="626.6" y1="90.9" y2="118.6" stroke="#1f8a5b"/>
+<rect x="610.8" y="94.9" width="31.7" height="23.0" fill="#1f8a5b"/>
+<line x1="679.5" x2="679.5" y1="90.4" y2="105.5" stroke="#1f8a5b"/>
+<rect x="663.6" y="93.9" width="31.7" height="2.3" fill="#1f8a5b"/>
+<line x1="732.3" x2="732.3" y1="82.8" y2="104.2" stroke="#c0392b"/>
+<rect x="716.4" y="94.5" width="31.7" height="1.2" fill="#c0392b"/>
+<line x1="785.1" x2="785.1" y1="77.7" y2="96.4" stroke="#1f8a5b"/>
+<rect x="769.3" y="83.1" width="31.7" height="13.3" fill="#1f8a5b"/>
+<line x1="837.9" x2="837.9" y1="74.0" y2="88.9" stroke="#c0392b"/>
+<rect x="822.1" y="79.7" width="31.7" height="8.5" fill="#c0392b"/>
+<line x1="890.8" x2="890.8" y1="72.3" y2="93.3" stroke="#1f8a5b"/>
+<rect x="874.9" y="75.6" width="31.7" height="13.4" fill="#1f8a5b"/>
+<line x1="943.6" x2="943.6" y1="69.8" y2="82.5" stroke="#c0392b"/>
+<rect x="927.7" y="75.7" width="31.7" height="4.3" fill="#c0392b"/>
+<circle cx="547.4" cy="143.5" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="553.4" y="136.5" fill="#2b6cb0" font-weight="bold">signal 10:00</text>
+<circle cx="547.4" cy="143.5" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="553.4" y="136.5" fill="#222" font-weight="bold">entry</text>
+<circle cx="631.9" cy="93.9" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="637.9" y="86.9" fill="#222" font-weight="bold">leg1 exit 24221.30</text>
+<circle cx="631.9" cy="93.9" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="637.9" y="86.9" fill="#222" font-weight="bold">leg2 exit 24221.30</text>
+<text x="10" y="524" fill="#222">IRF V3-M1 SHORT; outcome INITIAL_FULL_STOP; gross -35.00 weighted index points = Rs -13,650 (synthetic, 390 units); journal: AUTOMATED_ONLY</text>
+<text x="10" y="540" fill="#222">EMA(200) at the confirmation candle 23978.44: |close-EMA| 209.21, signed +209.21, candle-range clearance 206.51 (EMA below the candle)</text>
+</svg>

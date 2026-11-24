@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="628" viewBox="0 0 1180 628" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="628" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">2025-10-28 combined IRF V3 - ONLY_IRF_V3_METHOD_1</text>
+<text x="10" y="38" font-size="11" fill="#8a8f98">selected M1; SL35 scenario: TARGET 60.0</text>
+
+<rect x="70" y="54" width="920" height="462" fill="#fafafa" stroke="#ddd"/>
+<line x1="70" x2="990" y1="516.0" y2="516.0" stroke="#eee"/><text x="64" y="520.0" text-anchor="end" fill="#8a8f98">25,859.8</text>
+<line x1="70" x2="990" y1="423.6" y2="423.6" stroke="#eee"/><text x="64" y="427.6" text-anchor="end" fill="#8a8f98">25,897.4</text>
+<line x1="70" x2="990" y1="331.2" y2="331.2" stroke="#eee"/><text x="64" y="335.2" text-anchor="end" fill="#8a8f98">25,935.0</text>
+<line x1="70" x2="990" y1="238.8" y2="238.8" stroke="#eee"/><text x="64" y="242.8" text-anchor="end" fill="#8a8f98">25,972.7</text>
+<line x1="70" x2="990" y1="146.4" y2="146.4" stroke="#eee"/><text x="64" y="150.4" text-anchor="end" fill="#8a8f98">26,010.3</text>
+<line x1="70" x2="990" y1="54.0" y2="54.0" stroke="#eee"/><text x="64" y="58.0" text-anchor="end" fill="#8a8f98">26,047.9</text>
+<line x1="232.4" x2="232.4" y1="54" y2="516" stroke="#eee"/><text x="232.4" y="530" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="557.1" x2="557.1" y1="54" y2="516" stroke="#eee"/><text x="557.1" y="530" text-anchor="middle" fill="#8a8f98">10:00</text>
+<line x1="881.8" x2="881.8" y1="54" y2="516" stroke="#eee"/><text x="881.8" y="530" text-anchor="middle" fill="#8a8f98">10:30</text>
+<rect x="502.9" y="138.7" width="108.2" height="98.3" fill="#c0392b" fill-opacity="0.13" stroke="#c0392b" stroke-opacity="0.4"/>
+<rect x="502.9" y="237.0" width="108.2" height="147.4" fill="#1f8a5b" fill-opacity="0.13" stroke="#1f8a5b" stroke-opacity="0.4"/>
+<line x1="70" x2="990" y1="161.7" y2="161.7" stroke="#6b46c1" stroke-width="1.2" stroke-dasharray="6,4"/><text x="994" y="165.7" fill="#6b46c1">Level A / marked level 26004.05</text>
+<line x1="70" x2="990" y1="101.2" y2="101.2" stroke="#d9822b" stroke-width="1.2" stroke-dasharray="6,4"/><text x="994" y="105.2" fill="#d9822b">Level B 26028.65</text>
+<line x1="70" x2="990" y1="237.0" y2="237.0" stroke="#222" stroke-width="1.2"/><text x="994" y="241.0" fill="#222">entry 25973.40</text>
+<line x1="70" x2="990" y1="138.7" y2="138.7" stroke="#c0392b" stroke-width="1.2"/><text x="994" y="142.7" fill="#c0392b">stop 26013.40</text>
+<line x1="70" x2="990" y1="384.4" y2="384.4" stroke="#1f8a5b" stroke-width="1.2"/><text x="994" y="388.4" fill="#1f8a5b">target 25913.40</text>
+<line x1="97.1" x2="97.1" y1="161.7" y2="326.2" stroke="#1f8a5b"/>
+<rect x="80.8" y="250.0" width="32.5" height="76.2" fill="#1f8a5b"/>
+<line x1="151.2" x2="151.2" y1="173.6" y2="288.1" stroke="#1f8a5b"/>
+<rect x="134.9" y="242.0" width="32.5" height="8.1" fill="#1f8a5b"/>
+<line x1="205.3" x2="205.3" y1="199.0" y2="279.5" stroke="#1f8a5b"/>
+<rect x="189.1" y="199.0" width="32.5" height="41.8" fill="#1f8a5b"/>
+<line x1="259.4" x2="259.4" y1="91.3" y2="225.4" stroke="#1f8a5b"/>
+<rect x="243.2" y="100.8" width="32.5" height="101.6" fill="#1f8a5b"/>
+<line x1="313.5" x2="313.5" y1="75.2" y2="111.7" stroke="#c0392b"/>
+<rect x="297.3" y="101.2" width="32.5" height="10.4" fill="#c0392b"/>
+<line x1="367.6" x2="367.6" y1="71.1" y2="153.1" stroke="#c0392b"/>
+<rect x="351.4" y="110.5" width="32.5" height="13.1" fill="#c0392b"/>
+<line x1="421.8" x2="421.8" y1="104.5" y2="158.8" stroke="#c0392b"/>
+<rect x="405.5" y="123.4" width="32.5" height="24.8" fill="#c0392b"/>
+<line x1="475.9" x2="475.9" y1="138.9" y2="270.3" stroke="#c0392b"/>
+<rect x="459.6" y="146.8" width="32.5" height="95.0" fill="#c0392b"/>
+<line x1="530.0" x2="530.0" y1="216.1" y2="279.6" stroke="#c0392b"/>
+<rect x="513.8" y="237.0" width="32.5" height="7.6" fill="#c0392b"/>
+<line x1="584.1" x2="584.1" y1="245.2" y2="349.9" stroke="#c0392b"/>
+<rect x="567.9" y="246.5" width="32.5" height="100.4" fill="#c0392b"/>
+<line x1="638.2" x2="638.2" y1="337.8" y2="428.2" stroke="#c0392b"/>
+<rect x="622.0" y="346.9" width="32.5" height="52.7" fill="#c0392b"/>
+<line x1="692.4" x2="692.4" y1="397.9" y2="450.4" stroke="#c0392b"/>
+<rect x="676.1" y="398.8" width="32.5" height="5.7" fill="#c0392b"/>
+<line x1="746.5" x2="746.5" y1="386.6" y2="434.4" stroke="#c0392b"/>
+<rect x="730.2" y="404.8" width="32.5" height="9.2" fill="#c0392b"/>
+<line x1="800.6" x2="800.6" y1="392.4" y2="449.5" stroke="#c0392b"/>
+<rect x="784.4" y="414.6" width="32.5" height="6.6" fill="#c0392b"/>
+<line x1="854.7" x2="854.7" y1="396.8" y2="447.0" stroke="#1f8a5b"/>
+<rect x="838.5" y="413.6" width="32.5" height="5.5" fill="#1f8a5b"/>
+<line x1="908.8" x2="908.8" y1="411.2" y2="487.6" stroke="#c0392b"/>
+<rect x="892.6" y="414.5" width="32.5" height="50.0" fill="#c0392b"/>
+<line x1="962.9" x2="962.9" y1="452.8" y2="498.9" stroke="#c0392b"/>
+<rect x="946.7" y="464.2" width="32.5" height="25.2" fill="#c0392b"/>
+<circle cx="70.0" cy="161.7" r="4.5" fill="none" stroke="#6b46c1" stroke-width="2"/><text x="76.0" y="154.7" fill="#6b46c1" font-weight="bold">first candle</text>
+<circle cx="232.4" cy="91.3" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="238.4" y="84.3" fill="#2b6cb0" font-weight="bold">M1 breakout</text>
+<circle cx="448.8" cy="270.3" r="4.5" fill="none" stroke="#c0392b" stroke-width="2"/><text x="454.8" y="263.3" fill="#c0392b" font-weight="bold">M1 failure -&gt; signal 09:55</text>
+<circle cx="286.5" cy="101.2" r="4.5" fill="none" stroke="#d9822b" stroke-width="2"/><text x="292.5" y="94.2" fill="#d9822b" font-weight="bold">first red (B)</text>
+<circle cx="232.4" cy="91.3" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="238.4" y="84.3" fill="#2b6cb0" font-weight="bold">M2 breakout</text>
+<circle cx="611.2" cy="384.4" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="617.2" y="377.4" fill="#222" font-weight="bold">exit TARGET +60.00</text>
+<text x="10" y="564" fill="#222">M1: 09:30 close 25988.85 &lt; level without an earlier breakout close: ignored (R06) -&gt; 09:35 close 26028.80 &gt; level: breakout recorded, no entry -&gt; 09:55 close 25971.45 &lt; level after a</text>
+<text x="10" y="580" fill="#222">breakout: failure confirmed -&gt; SHORT signal</text>
+<text x="10" y="596" fill="#222">M2: 09:20 first candle closed; Level A = its high 26004.05 -&gt; 09:35 close 26028.80 &gt; Level A: rally breakout -&gt; 09:40 first red candle of the rally: Level B = body top (open) 26028.65</text>
+</svg>

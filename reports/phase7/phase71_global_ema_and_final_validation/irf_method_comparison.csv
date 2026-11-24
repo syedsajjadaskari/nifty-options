@@ -1,0 +1,109 @@
+window,scenario,variant,book,trades,win_rate_pct,profit_factor,gross_points,max_dd_points,journal_strict,journal_time_tolerant,journal_date_only
+A,SL40_T60,M2-A (persistent; Phase 7.0 headline),M1,125,44.0,1.142,397.8,400.0,27.0,16.0,18.0
+A,SL40_T60,M2-A (persistent; Phase 7.0 headline),M2,86,38.37,0.9,-202.45,592.9,14.0,9.0,17.0
+A,SL40_T60,M2-A (persistent; Phase 7.0 headline),COMBINED,139,41.73,1.032,103.2,501.2,34.0,19.0,14.0
+A,SL40_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),M1,125,44.0,1.142,397.8,400.0,27.0,16.0,18.0
+A,SL40_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),M2,62,35.48,0.806,-304.2,720.0,11.0,8.0,14.0
+A,SL40_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),COMBINED,139,41.73,1.032,103.2,501.2,34.0,19.0,14.0
+A,SL40_T60,M2-B (close below A before the sequence completes; permanent),M1,125,44.0,1.142,397.8,400.0,27.0,16.0,18.0
+A,SL40_T60,M2-B (close below A before the sequence completes; permanent),M2,43,32.56,0.688,-354.6,654.95,11.0,5.0,6.0
+A,SL40_T60,M2-B (close below A before the sequence completes; permanent),COMBINED,139,41.73,1.032,103.2,501.2,34.0,19.0,14.0
+A,SL40_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",M1,125,44.0,1.142,397.8,400.0,27.0,16.0,18.0
+A,SL40_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",M2,87,37.93,0.859,-299.1,660.6,12.0,5.0,23.0
+A,SL40_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",COMBINED,139,41.73,1.032,103.2,501.2,34.0,19.0,14.0
+A,SL40_T60,CAND margin>=1pt below B,M1,125,44.0,1.142,397.8,400.0,27.0,16.0,18.0
+A,SL40_T60,CAND margin>=1pt below B,M2,86,37.21,0.868,-268.7,592.9,14.0,9.0,17.0
+A,SL40_T60,CAND margin>=1pt below B,COMBINED,139,41.73,1.032,103.2,501.2,34.0,19.0,14.0
+A,SL40_T60,CAND margin>=2pt below B,M1,125,44.0,1.142,397.8,400.0,27.0,16.0,18.0
+A,SL40_T60,CAND margin>=2pt below B,M2,86,36.05,0.864,-278.35,596.7,15.0,7.0,18.0
+A,SL40_T60,CAND margin>=2pt below B,COMBINED,139,41.01,1.029,93.55,501.2,35.0,17.0,15.0
+A,SL40_T60,CAND margin>=5pt below B,M1,125,44.0,1.142,397.8,400.0,27.0,16.0,18.0
+A,SL40_T60,CAND margin>=5pt below B,M2,80,38.75,0.937,-117.05,580.8,14.0,8.0,18.0
+A,SL40_T60,CAND margin>=5pt below B,COMBINED,136,41.91,1.069,213.55,501.2,34.0,19.0,14.0
+A,SL40_T60,CAND failure candle must be red,M1,125,44.0,1.142,397.8,400.0,27.0,16.0,18.0
+A,SL40_T60,CAND failure candle must be red,M2,86,38.37,0.9,-202.45,592.9,14.0,9.0,17.0
+A,SL40_T60,CAND failure candle must be red,COMBINED,139,41.73,1.032,103.2,501.2,34.0,19.0,14.0
+A,SL40_T60,CAND extra confirming candle below B,M1,125,44.0,1.142,397.8,400.0,27.0,16.0,18.0
+A,SL40_T60,CAND extra confirming candle below B,M2,77,37.66,0.915,-153.45,534.8,3.0,14.0,21.0
+A,SL40_T60,CAND extra confirming candle below B,COMBINED,136,43.38,1.137,415.55,501.2,29.0,23.0,15.0
+A,SL35_T60,M2-A (persistent; Phase 7.0 headline),M1,125,38.4,1.05,135.55,410.0,,,
+A,SL35_T60,M2-A (persistent; Phase 7.0 headline),M2,86,37.21,0.967,-61.3,448.55,,,
+A,SL35_T60,M2-A (persistent; Phase 7.0 headline),COMBINED,139,37.41,0.995,-14.35,440.0,,,
+A,SL35_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),M1,125,38.4,1.05,135.55,410.0,,,
+A,SL35_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),M2,62,35.48,0.916,-115.15,600.65,,,
+A,SL35_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),COMBINED,139,37.41,0.995,-14.35,440.0,,,
+A,SL35_T60,M2-B (close below A before the sequence completes; permanent),M1,125,38.4,1.05,135.55,410.0,,,
+A,SL35_T60,M2-B (close below A before the sequence completes; permanent),M2,43,32.56,0.784,-214.9,529.95,,,
+A,SL35_T60,M2-B (close below A before the sequence completes; permanent),COMBINED,139,37.41,0.995,-14.35,440.0,,,
+A,SL35_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",M1,125,38.4,1.05,135.55,410.0,,,
+A,SL35_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",M2,87,35.63,0.884,-224.55,599.45,,,
+A,SL35_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",COMBINED,139,37.41,0.995,-14.35,440.0,,,
+A,SL35_T60,CAND margin>=1pt below B,M1,125,38.4,1.05,135.55,410.0,,,
+A,SL35_T60,CAND margin>=1pt below B,M2,86,36.05,0.931,-127.55,448.55,,,
+A,SL35_T60,CAND margin>=1pt below B,COMBINED,139,37.41,0.995,-14.35,440.0,,,
+A,SL35_T60,CAND margin>=2pt below B,M1,125,38.4,1.05,135.55,410.0,,,
+A,SL35_T60,CAND margin>=2pt below B,M2,86,34.88,0.919,-151.75,452.35,,,
+A,SL35_T60,CAND margin>=2pt below B,COMBINED,139,36.69,0.987,-38.55,440.0,,,
+A,SL35_T60,CAND margin>=5pt below B,M1,125,38.4,1.05,135.55,410.0,,,
+A,SL35_T60,CAND margin>=5pt below B,M2,80,36.25,0.955,-78.6,541.45,,,
+A,SL35_T60,CAND margin>=5pt below B,COMBINED,136,36.76,0.99,-28.55,515.0,,,
+A,SL35_T60,CAND failure candle must be red,M1,125,38.4,1.05,135.55,410.0,,,
+A,SL35_T60,CAND failure candle must be red,M2,86,37.21,0.967,-61.3,448.55,,,
+A,SL35_T60,CAND failure candle must be red,COMBINED,139,37.41,0.995,-14.35,440.0,,,
+A,SL35_T60,CAND extra confirming candle below B,M1,125,38.4,1.05,135.55,410.0,,,
+A,SL35_T60,CAND extra confirming candle below B,M2,77,36.36,0.957,-72.15,499.8,,,
+A,SL35_T60,CAND extra confirming candle below B,COMBINED,136,38.24,1.056,161.75,515.0,,,
+B,SL40_T60,M2-A (persistent; Phase 7.0 headline),M1,376,44.68,1.159,1248.9,803.6,,,
+B,SL40_T60,M2-A (persistent; Phase 7.0 headline),M2,268,44.4,1.123,684.9,735.95,,,
+B,SL40_T60,M2-A (persistent; Phase 7.0 headline),COMBINED,440,45.23,1.173,1580.85,567.95,,,
+B,SL40_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),M1,376,44.68,1.159,1248.9,803.6,,,
+B,SL40_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),M2,203,42.86,1.044,190.75,695.95,,,
+B,SL40_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),COMBINED,440,45.23,1.173,1580.85,567.95,,,
+B,SL40_T60,M2-B (close below A before the sequence completes; permanent),M1,376,44.68,1.159,1248.9,803.6,,,
+B,SL40_T60,M2-B (close below A before the sequence completes; permanent),M2,154,45.45,1.135,433.7,610.95,,,
+B,SL40_T60,M2-B (close below A before the sequence completes; permanent),COMBINED,440,45.23,1.173,1580.85,567.95,,,
+B,SL40_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",M1,376,44.68,1.159,1248.9,803.6,,,
+B,SL40_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",M2,263,44.87,1.083,464.15,641.1,,,
+B,SL40_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",COMBINED,440,45.23,1.173,1580.85,567.95,,,
+B,SL40_T60,CAND margin>=1pt below B,M1,376,44.68,1.159,1248.9,803.6,,,
+B,SL40_T60,CAND margin>=1pt below B,M2,264,44.7,1.132,717.45,695.95,,,
+B,SL40_T60,CAND margin>=1pt below B,COMBINED,440,45.0,1.159,1461.4,567.95,,,
+B,SL40_T60,CAND margin>=2pt below B,M1,376,44.68,1.159,1248.9,803.6,,,
+B,SL40_T60,CAND margin>=2pt below B,M2,256,44.53,1.129,687.15,715.95,,,
+B,SL40_T60,CAND margin>=2pt below B,COMBINED,436,44.95,1.15,1370.6,587.95,,,
+B,SL40_T60,CAND margin>=5pt below B,M1,376,44.68,1.159,1248.9,803.6,,,
+B,SL40_T60,CAND margin>=5pt below B,M2,237,46.41,1.191,922.5,732.25,,,
+B,SL40_T60,CAND margin>=5pt below B,COMBINED,426,45.54,1.172,1523.5,650.9,,,
+B,SL40_T60,CAND failure candle must be red,M1,376,44.68,1.159,1248.9,803.6,,,
+B,SL40_T60,CAND failure candle must be red,M2,268,44.4,1.123,684.9,735.95,,,
+B,SL40_T60,CAND failure candle must be red,COMBINED,440,45.23,1.173,1580.85,567.95,,,
+B,SL40_T60,CAND extra confirming candle below B,M1,376,44.68,1.159,1248.9,803.6,,,
+B,SL40_T60,CAND extra confirming candle below B,M2,232,43.97,1.131,631.8,799.15,,,
+B,SL40_T60,CAND extra confirming candle below B,COMBINED,420,45.0,1.149,1311.05,802.05,,,
+B,SL35_T60,M2-A (persistent; Phase 7.0 headline),M1,376,40.43,1.105,789.0,610.35,,,
+B,SL35_T60,M2-A (persistent; Phase 7.0 headline),M2,268,42.16,1.174,896.15,738.75,,,
+B,SL35_T60,M2-A (persistent; Phase 7.0 headline),COMBINED,440,41.82,1.152,1317.75,480.0,,,
+B,SL35_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),M1,376,40.43,1.105,789.0,610.35,,,
+B,SL35_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),M2,203,41.38,1.115,459.7,623.75,,,
+B,SL35_T60,M2-B0 (Phase 7.0 sensitivity: close below A before Level B is marked; permanent),COMBINED,440,41.82,1.152,1317.75,480.0,,,
+B,SL35_T60,M2-B (close below A before the sequence completes; permanent),M1,376,40.43,1.105,789.0,610.35,,,
+B,SL35_T60,M2-B (close below A before the sequence completes; permanent),M2,154,44.16,1.235,684.95,558.75,,,
+B,SL35_T60,M2-B (close below A before the sequence completes; permanent),COMBINED,440,41.82,1.152,1317.75,480.0,,,
+B,SL35_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",M1,376,40.43,1.105,789.0,610.35,,,
+B,SL35_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",M2,263,43.35,1.17,865.25,560.8,,,
+B,SL35_T60,"M2-B-REARM (same, a new rally breakout may start a new setup)",COMBINED,440,41.82,1.152,1317.75,480.0,,,
+B,SL35_T60,CAND margin>=1pt below B,M1,376,40.43,1.105,789.0,610.35,,,
+B,SL35_T60,CAND margin>=1pt below B,M2,264,42.05,1.17,865.85,703.75,,,
+B,SL35_T60,CAND margin>=1pt below B,COMBINED,440,41.36,1.132,1155.45,480.0,,,
+B,SL35_T60,CAND margin>=2pt below B,M1,376,40.43,1.105,789.0,610.35,,,
+B,SL35_T60,CAND margin>=2pt below B,M2,256,42.19,1.18,888.6,728.75,,,
+B,SL35_T60,CAND margin>=2pt below B,COMBINED,436,41.28,1.124,1074.5,504.6,,,
+B,SL35_T60,CAND margin>=5pt below B,M1,376,40.43,1.105,789.0,610.35,,,
+B,SL35_T60,CAND margin>=5pt below B,M2,237,43.46,1.227,1014.95,745.0,,,
+B,SL35_T60,CAND margin>=5pt below B,COMBINED,426,41.78,1.144,1212.1,534.65,,,
+B,SL35_T60,CAND failure candle must be red,M1,376,40.43,1.105,789.0,610.35,,,
+B,SL35_T60,CAND failure candle must be red,M2,268,42.16,1.174,896.15,738.75,,,
+B,SL35_T60,CAND failure candle must be red,COMBINED,440,41.82,1.152,1317.75,480.0,,,
+B,SL35_T60,CAND extra confirming candle below B,M1,376,40.43,1.105,789.0,610.35,,,
+B,SL35_T60,CAND extra confirming candle below B,M2,232,39.66,1.077,356.65,981.55,,,
+B,SL35_T60,CAND extra confirming candle below B,COMBINED,420,41.43,1.121,1007.65,642.55,,,

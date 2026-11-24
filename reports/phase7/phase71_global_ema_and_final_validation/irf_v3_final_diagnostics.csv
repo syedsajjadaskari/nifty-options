@@ -1,0 +1,13 @@
+book,window,scenario,trades_recounted,wins,win_rate_pct_recounted,gross_points_recounted,profit_factor_recounted,duplicate_dates,strict_matches_recounted,time_tolerant,date_only,manual_only
+Method 1,A,SL40_T60,125.0,55.0,44.0,397.8,1.142,0.0,,,,
+Method 1,A,SL35_T60,125.0,48.0,38.4,135.55,1.05,0.0,,,,
+Method 1,B,SL40_T60,376.0,168.0,44.68,1248.9,1.159,0.0,,,,
+Method 2,A,SL40_T60,86.0,33.0,38.37,-202.45,0.9,0.0,,,,
+Method 2,A,SL35_T60,86.0,32.0,37.21,-61.3,0.967,0.0,,,,
+Method 2,B,SL40_T60,268.0,119.0,44.4,684.9,1.123,0.0,,,,
+Combined,A,SL40_T60,139.0,58.0,41.73,103.2,1.032,0.0,,,,
+Combined,A,SL35_T60,139.0,52.0,37.41,-14.35,0.995,0.0,,,,
+Combined,B,SL40_T60,440.0,199.0,45.23,1580.85,1.173,0.0,,,,
+Method 1,A,journal,,,,,,,27.0,16.0,18.0,12.0
+Method 2,A,journal,,,,,,,14.0,9.0,17.0,33.0
+Combined,A,journal,,,,,,,34.0,19.0,14.0,6.0

@@ -1,0 +1,11 @@
+config,date_strategy_only,note
+BASE,17,NOT a match; same date and strategy but the time is outside the 15-minute tolerance
+S60,17,NOT a match; same date and strategy but the time is outside the 15-minute tolerance
+S70,17,NOT a match; same date and strategy but the time is outside the 15-minute tolerance
+SD,17,NOT a match; same date and strategy but the time is outside the 15-minute tolerance
+PDR_B1,17,NOT a match; same date and strategy but the time is outside the 15-minute tolerance
+PDR_B2,17,NOT a match; same date and strategy but the time is outside the 15-minute tolerance
+PDR_C,17,NOT a match; same date and strategy but the time is outside the 15-minute tolerance
+PDR_D,17,NOT a match; same date and strategy but the time is outside the 15-minute tolerance
+PDS_FROZEN,18,NOT a match; same date and strategy but the time is outside the 15-minute tolerance
+PDS_SECOND,19,NOT a match; same date and strategy but the time is outside the 15-minute tolerance

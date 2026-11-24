@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="582" viewBox="0 0 1180 582" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="582" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">ORB LONG 2026-04-17: opening candle vs EMA(200)</text>
+<text x="10" y="38" fill="#8a8f98">scenario A_ALREADY_BEYOND_EMA</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">24,101.7</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">24,143.7</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">24,185.7</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">24,227.6</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">24,269.6</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">24,311.6</text>
+<line x1="240.4" x2="240.4" y1="54" y2="480" stroke="#eee"/><text x="240.4" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="577.1" x2="577.1" y1="54" y2="480" stroke="#eee"/><text x="577.1" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<line x1="913.9" x2="913.9" y1="54" y2="480" stroke="#eee"/><text x="913.9" y="494" text-anchor="middle" fill="#8a8f98">10:30</text>
+<polyline points="100.1,427.0 156.2,425.6 212.3,423.5 268.4,422.1 324.6,420.5 380.7,419.3 436.8,417.5 492.9,415.6 549.1,413.7 605.2,411.2 661.3,408.6 717.4,405.9 773.6,403.0 829.7,400.0 885.8,397.1 941.9,394.7" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="398.7" fill="#c9a400">EMA(200) 5m</text>
+<line x1="72" x2="970" y1="427.0" y2="427.0" stroke="#c9a400" stroke-width="1.1"/><text x="974" y="425.0" fill="#c9a400">EMA 24127.80</text>
+<line x1="100.1" x2="100.1" y1="234.6" y2="464.2" stroke="#1f8a5b"/>
+<rect x="83.2" y="265.2" width="33.7" height="68.9" fill="#1f8a5b"/>
+<line x1="156.2" x2="156.2" y1="213.6" y2="290.4" stroke="#c0392b"/>
+<rect x="139.3" y="259.1" width="33.7" height="27.7" fill="#c0392b"/>
+<line x1="212.3" x2="212.3" y1="211.2" y2="287.7" stroke="#1f8a5b"/>
+<rect x="195.5" y="212.8" width="33.7" height="74.2" fill="#1f8a5b"/>
+<line x1="268.4" x2="268.4" y1="210.0" y2="295.7" stroke="#c0392b"/>
+<rect x="251.6" y="214.3" width="33.7" height="73.1" fill="#c0392b"/>
+<line x1="324.6" x2="324.6" y1="235.9" y2="347.7" stroke="#1f8a5b"/>
+<rect x="307.7" y="256.4" width="33.7" height="34.1" fill="#1f8a5b"/>
+<line x1="380.7" x2="380.7" y1="232.9" y2="323.7" stroke="#c0392b"/>
+<rect x="363.9" y="257.5" width="33.7" height="40.6" fill="#c0392b"/>
+<line x1="436.8" x2="436.8" y1="239.2" y2="300.8" stroke="#1f8a5b"/>
+<rect x="420.0" y="240.1" width="33.7" height="55.1" fill="#1f8a5b"/>
+<line x1="492.9" x2="492.9" y1="215.7" y2="241.5" stroke="#1f8a5b"/>
+<rect x="476.1" y="233.8" width="33.7" height="6.2" fill="#1f8a5b"/>
+<line x1="549.1" x2="549.1" y1="203.9" y2="250.8" stroke="#1f8a5b"/>
+<rect x="532.2" y="215.4" width="33.7" height="17.0" fill="#1f8a5b"/>
+<line x1="605.2" x2="605.2" y1="168.3" y2="269.5" stroke="#1f8a5b"/>
+<rect x="588.4" y="168.3" width="33.7" height="48.5" fill="#1f8a5b"/>
+<line x1="661.3" x2="661.3" y1="119.4" y2="167.6" stroke="#1f8a5b"/>
+<rect x="644.5" y="152.1" width="33.7" height="15.5" fill="#1f8a5b"/>
+<line x1="717.4" x2="717.4" y1="130.1" y2="168.6" stroke="#1f8a5b"/>
+<rect x="700.6" y="132.5" width="33.7" height="16.9" fill="#1f8a5b"/>
+<line x1="773.6" x2="773.6" y1="99.6" y2="131.5" stroke="#1f8a5b"/>
+<rect x="756.7" y="117.3" width="33.7" height="14.2" fill="#1f8a5b"/>
+<line x1="829.7" x2="829.7" y1="95.0" y2="118.2" stroke="#1f8a5b"/>
+<rect x="812.9" y="104.8" width="33.7" height="13.4" fill="#1f8a5b"/>
+<line x1="885.8" x2="885.8" y1="69.8" y2="106.4" stroke="#c0392b"/>
+<rect x="869.0" y="105.1" width="33.7" height="1.2" fill="#c0392b"/>
+<line x1="941.9" x2="941.9" y1="85.1" y2="158.6" stroke="#c0392b"/>
+<rect x="925.1" y="106.2" width="33.7" height="42.4" fill="#c0392b"/>
+<circle cx="72.0" cy="265.2" r="4.5" fill="none" stroke="#6b46c1" stroke-width="2"/><text x="78.0" y="258.2" fill="#6b46c1" font-weight="bold">09:15 opening candle (ORB signal at 09:20)</text>
+<text x="10" y="524" fill="#222">|close-EMA| 79.75; range clearance 0.00 (EMA_INSIDE_CANDLE); candle crosses/touches EMA: True</text>
+<text x="10" y="540" fill="#222">Rejected by: EMA-2_MIN_RANGE_27, EMA-3_MAX_CLOSE_27, EMA-4_MIN_RANGE_28</text>
+<text x="10" y="556" fill="#222">Source conflict: ORB V2 permits a fresh EMA cross; a minimum-distance rule would reject it.</text>
+</svg>

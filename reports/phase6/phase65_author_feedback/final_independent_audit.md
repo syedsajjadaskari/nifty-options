@@ -1,0 +1,50 @@
+# Final independent audit (Phase 6.5)
+
+1. **PDR variants (B1, B2, C, D) and PDS second-confirmation signals re-derived from raw five-minute candles** (independent selection loops; shared inputs: the repository's zone construction and gap qualification):
+
+| window | variant | engine_signals | independent_signals | symmetric_difference |
+|---|---|---|---|---|
+| A | B1 | 276 | 276 | 0 |
+| A | B2 | 359 | 359 | 0 |
+| A | C | 159 | 159 | 0 |
+| A | D | 102 | 102 | 0 |
+| A | PDS_SECOND | 29 | 29 | 0 |
+| B | B1 | 965 | 965 | 0 |
+| B | B2 | 1274 | 1274 | 0 |
+| B | C | 491 | 491 | 0 |
+| B | D | 317 | 317 | 0 |
+| B | PDS_SECOND | 75 | 75 | 0 |
+
+
+2. **Execution reconstructed from raw one-minute bars for every ledger of every configuration:** 7623 of 7623 trades verified (problems: none).
+3. **Journal strict counts recounted with a multiset method (independent versus reported):** BASE 67/67, S60 58/58, S70 55/55, SD 67/67, PDR_B1 67/67, PDR_B2 66/66, PDR_C 66/66, PDR_D 63/63, PDS_FROZEN 68/68, PDS_SECOND 67/67.
+4. **Trade-set reconciliation (baseline - removed + added = variant):** all reconcile: True.
+5. **Look-ahead (prefix truncation at 15 / 30 / 45 / 60 candles, every fourth session, all new engines):** 1488 session prefixes, 0 violations.
+6. **Strength-variant ledgers re-run and compared with the checkpoint's saved ledgers** (identical trade sets and P&L): 8 of 8 window-configurations identical.
+7. **Declared shared inputs of the independent recomputation:** the repository's zone construction, gap qualification and the Method 3 trigger candles of the (unchanged) PDS Method 3, which end a PDS cycle. A first comparison without that last input produced 8 (window A) and 13 (window B) differences, all on days with an earlier Method 3 entry; the gap was in the audit code, not in the engine, and is closed. The audit shares the rule interpretations with the engine, so agreement shows two implementations of the same reading agree, not that the reading is the author's.
+8. **Test and lint results:** `pytest -q` on the whole repository after the reviewer fixes and the final regeneration of all outputs: **945 passed, 1 skipped, 1 xfailed, 0 failed** (the skip and the xfail are pre-existing; the 21 tests of `tests/test_phase65b_continuation.py` ran and passed, none skipped). The suite includes the externally owned Phase 7.0 test file, which was executed but not edited. `ruff check .` over the whole repository: **All checks passed** (including the untracked Phase 7.0 files, which were linted but not edited).
+
+
+## Fresh read-only reviewer
+
+A fresh read-only reviewer (no prior context; instructed not to edit anything and not to touch the Phase 7.0 files) reviewed the continuation package. It independently rebuilt all 20 window-configuration ledgers from `day_by_day_comparison.csv` (trades, winners, losers and gross P&L match; the 100 per-strategy rows match and sum to the portfolio rows), checked all 120 report matrix cells and the journal strings against the CSVs, confirmed attribution reconciles for every row, re-derived five delayed cycles from raw candles (two C, three A) and found no look-ahead, no bypass of the PDS Method 3 support break, no text that calls date-only agreement a match, and no selection or recommendation on profitability. Findings and dispositions:
+
+| # | severity | finding | disposition |
+|---|---|---|---|
+| 1 | HIGH | The "net" columns (net Rs, profit factor, max drawdown, per-strategy net, monthly net) used cost 0, so they equalled gross; the report called them Rs 70 per trade | ACCEPTED and fixed at the source: `metrics()` now defaults to the Rs 70 per trade scenario; tables regenerated from the cached ledgers (`--reuse`, no re-simulation; trades, gross P&L and signals identical to before); matrix columns relabelled "(net)"; e.g. BASE window A is now +24,610 net, PF 1.022 (gross +37,420, PF 1.033) |
+| 2 | MEDIUM | "Method 3 unchanged" was false (19 to 18 and 43 to 41) and the second-confirmation count (47 / 116) included Method 3 signals; 59 Method 3 rows and their charts were labelled as second confirmations | ACCEPTED. Method 3 rows removed from the second-confirmation table and charts (second signals are 29 and 75, matching the audit); Method 3 displacement counts reported; Q23 and the PDS audit reworded: the support break is never bypassed, but a second-confirmation cycle can consume a day the baseline used for Method 3 |
+| 3 | MEDIUM | "Each configuration changes exactly one dimension" is false for B1 / B2 / C (green-only also drops the lower-price-rejection route) | ACCEPTED. Docstring, manifest and report corrected; `baseline_confirmation_route` added to the variant CSVs; counts of changes attributable to the dropped route reported (B1 later 27 / removed 5; B2 earlier 12 / later 18 / removed 2; C earlier 12 / later 16 / removed 4); a variant that keeps the rejection route is listed as an open decision, not run |
+| 4 | MEDIUM | About a third of PDR cycles are after the 13:00 cutoff and can never trade | ACCEPTED. `engine_signal_tradable_before_13_00_cutoff` / `retest_before_13_00` / `variant_signal_tradable_before_13_00_cutoff` columns added; tradable counts stated (404 of 600 cycles; 133 of the 215 delayed) |
+| 5 | MEDIUM | Delay counts inconsistent (195 vs 215; the "379" figure counted variant-cycle pairs from a substring) | ACCEPTED. All 215 delayed cycles had a first green candle at or below the ceiling; 20 of them also had a green-above-ceiling retest candle; the unique-cycle count (205) replaces "379"; Q18 / Q19 / Q34 corrected |
+| 6 | MEDIUM | Weak tests (journal test would pass if date-only matches were counted; no tests for the gap reset, PDS abandonment, Method 1 to Method 2 mix, the weak-red interplay; fragile Phase 7.0 write guard) | ACCEPTED. Tests added / strengthened (see `tests/test_phase65b_continuation.py`); the write guard now checks every line mentioning a Phase 7.0 path |
+| 6b | (found while handling 6) | In PDS-SECOND a later weak red candle ends the Methods 1/2 path of the cycle (frozen branch kept) | DISCLOSED as an open convention: skipping such candles instead would give 39 / 90 second signals (as implemented 29 / 75); measured in `pds_second_weak_red_interplay.json`; PDS-SECOND results are for the as-implemented reading |
+| 7 | MEDIUM | Phase 7.0 wording inconsistent (the overlap script parses source text and reads published outputs) | ACCEPTED. Wording unified everywhere: file metadata, source text parsed (never executed or imported) and published Markdown / CSV / JSON were read; nothing was written; preservation counts regenerated after the final edits |
+| 8 | LOW | README stale (scope note, 885 passed / 3 errors, 702 vs 600 cycles) | ACCEPTED. README status and verification block updated; 702 = all audited setup cycles of the checkpoint, 600 = the cycles confirmed in the continuation run |
+| 9 | LOW | `delay_category` C on 127 non-delayed cycles | ACCEPTED. Blank for non-delayed cycles |
+| 10 | LOW | Hard-coded numbers; the journal summary tab says 189 trades vs 190 data rows | ACCEPTED. Computed from the result files; 189 / 190 now disclosed |
+| 11 | LOW | "Strict" in Q12 read as a trade match | ACCEPTED. Relabelled "strict time-label agreement (not verified trade matches)" |
+| 12 | LOW | "mostly the product of re-sequencing" unsupported | ACCEPTED. Replaced by measured removed / added P&L and the direct / portfolio split |
+| 13 | LOW | The independent audit mirrors the engine's loop structure; "0 defects" circular | ACCEPTED. Q14 and the audit document state that the recomputation shares the coded conventions |
+| 14 | LOW | Audit document said the reviewer report was pending | ACCEPTED. This record is embedded |
+
+**Not verified by the reviewer:** the 7,623 execution reconstructions, the full-suite pass count and ruff (re-run by this work after the fixes, see the audit document), charts and the workbook, and the checkpoint ORB / IRF / candle-strength claims.

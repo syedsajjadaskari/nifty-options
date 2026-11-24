@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="582" viewBox="0 0 1180 582" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="582" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">F REJECTED (hypothetical B trade): 2026-02-24 ORB (ORB-V2)</text>
+<text x="10" y="38" fill="#8a8f98">signal 09:20, entry 09:20 @ 25571.25</text>
+<rect x="72" y="54" width="898" height="426" fill="#fff7f2" stroke="#ddd"/>
+<text x="80" y="72" font-size="16" font-weight="bold" fill="#c0392b" fill-opacity="0.55">NOT EXECUTED - hypothetical / rejected signal</text>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">25,477.0</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">25,512.5</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">25,547.9</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">25,583.4</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">25,618.8</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">25,654.3</text>
+<line x1="341.4" x2="341.4" y1="54" y2="480" stroke="#eee"/><text x="341.4" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="880.2" x2="880.2" y1="54" y2="480" stroke="#eee"/><text x="880.2" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<rect x="161.8" y="181.5" width="233.5" height="72.1" fill="#c0392b" fill-opacity="0.11" stroke="#c0392b" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+<rect x="161.8" y="253.6" width="233.5" height="144.2" fill="#1f8a5b" fill-opacity="0.11" stroke="#1f8a5b" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+<polyline points="116.9,69.8 206.7,71.9 296.5,74.2 386.3,77.4 476.1,80.6 565.9,84.1 655.7,86.9 745.5,89.9 835.3,92.9 925.1,95.9" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="99.9" fill="#c9a400">EMA(200) 5m</text>
+<line x1="72" x2="970" y1="253.6" y2="253.6" stroke="#222" stroke-width="1.1"/><text x="974" y="251.6" fill="#222">entry 25571.25</text>
+<line x1="72" x2="970" y1="181.5" y2="181.5" stroke="#c0392b" stroke-width="1.1"/><text x="974" y="179.5" fill="#c0392b">initial stop 25601.25</text>
+<line x1="72" x2="970" y1="318.5" y2="318.5" stroke="#1f8a5b" stroke-width="1.1" stroke-dasharray="6,4"/><text x="974" y="316.5" fill="#1f8a5b">T1 25544.25</text>
+<line x1="72" x2="970" y1="397.8" y2="397.8" stroke="#1f8a5b" stroke-width="1.1"/><text x="974" y="395.8" fill="#1f8a5b">T2 25511.25</text>
+<line x1="72" x2="970" y1="239.2" y2="239.2" stroke="#d9822b" stroke-width="1.1" stroke-dasharray="6,4"/><text x="974" y="237.2" fill="#d9822b">post-T1 stop 25577.25</text>
+<line x1="116.9" x2="116.9" y1="84.0" y2="254.5" stroke="#c0392b"/>
+<rect x="90.0" y="84.0" width="53.9" height="169.1" fill="#c0392b" fill-opacity="0.55"/>
+<line x1="206.7" x2="206.7" y1="229.2" y2="305.7" stroke="#c0392b"/>
+<rect x="179.8" y="253.6" width="53.9" height="27.0" fill="#c0392b" fill-opacity="0.55"/>
+<line x1="296.5" x2="296.5" y1="255.4" y2="309.6" stroke="#c0392b"/>
+<rect x="269.6" y="282.1" width="53.9" height="25.8" fill="#c0392b" fill-opacity="0.55"/>
+<line x1="386.3" x2="386.3" y1="305.3" y2="402.7" stroke="#c0392b"/>
+<rect x="359.4" y="308.0" width="53.9" height="83.4" fill="#c0392b" fill-opacity="0.55"/>
+<line x1="476.1" x2="476.1" y1="356.4" y2="408.3" stroke="#c0392b"/>
+<rect x="449.2" y="394.0" width="53.9" height="11.2" fill="#c0392b" fill-opacity="0.55"/>
+<line x1="565.9" x2="565.9" y1="389.8" y2="464.2" stroke="#c0392b"/>
+<rect x="539.0" y="406.4" width="53.9" height="19.7" fill="#c0392b" fill-opacity="0.55"/>
+<line x1="655.7" x2="655.7" y1="339.3" y2="431.2" stroke="#1f8a5b"/>
+<rect x="628.8" y="363.9" width="53.9" height="60.2" fill="#1f8a5b" fill-opacity="0.55"/>
+<line x1="745.5" x2="745.5" y1="361.6" y2="436.9" stroke="#c0392b"/>
+<rect x="718.6" y="364.1" width="53.9" height="32.8" fill="#c0392b" fill-opacity="0.55"/>
+<line x1="835.3" x2="835.3" y1="375.8" y2="400.5" stroke="#1f8a5b"/>
+<rect x="808.4" y="385.5" width="53.9" height="11.3" fill="#1f8a5b" fill-opacity="0.55"/>
+<line x1="925.1" x2="925.1" y1="364.0" y2="408.3" stroke="#c0392b"/>
+<rect x="898.2" y="385.2" width="53.9" height="5.9" fill="#c0392b" fill-opacity="0.55"/>
+<circle cx="161.8" cy="253.6" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="167.8" y="246.6" fill="#2b6cb0" font-weight="bold">signal 09:20</text>
+<circle cx="161.8" cy="253.6" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="167.8" y="246.6" fill="#222" font-weight="bold">entry</text>
+<circle cx="341.4" cy="318.5" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="347.4" y="311.5" fill="#222" font-weight="bold">leg1 exit 25544.25</text>
+<circle cx="395.3" cy="397.8" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="401.3" y="390.8" fill="#222" font-weight="bold">leg2 exit 25511.25</text>
+<text x="10" y="524" fill="#222">ORB ORB-V2 SHORT; outcome TARGET; gross +43.50 weighted index points = Rs +16,965 (synthetic, 390 units); journal: n/a</text>
+<text x="10" y="540" fill="#222">EMA(200) at the confirmation candle 25647.73: |close-EMA| 76.28, signed -76.28, candle-range clearance 5.93 (EMA above the candle)</text>
+<text x="10" y="556" fill="#222">Removed under F: the rule rejected this signal (|close-EMA| 76.28 &gt; 27)</text>
+</svg>

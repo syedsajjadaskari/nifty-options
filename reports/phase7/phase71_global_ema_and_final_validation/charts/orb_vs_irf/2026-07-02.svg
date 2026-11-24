@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="550" viewBox="0 0 1180 550" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="550" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">ORB vs IRF 2026-07-02: baseline executed ORB@09:20</text>
+<text x="10" y="38" fill="#8a8f98">2026-07-02</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">23,986.1</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">24,022.0</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">24,058.0</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">24,093.9</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">24,129.9</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">24,165.9</text>
+<line x1="194.5" x2="194.5" y1="54" y2="480" stroke="#eee"/><text x="194.5" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="439.4" x2="439.4" y1="54" y2="480" stroke="#eee"/><text x="439.4" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<line x1="684.3" x2="684.3" y1="54" y2="480" stroke="#eee"/><text x="684.3" y="494" text-anchor="middle" fill="#8a8f98">10:30</text>
+<line x1="929.2" x2="929.2" y1="54" y2="480" stroke="#eee"/><text x="929.2" y="494" text-anchor="middle" fill="#8a8f98">11:00</text>
+<polyline points="92.4,464.2 133.2,461.2 174.0,458.4 214.9,455.4 255.7,451.8 296.5,448.2 337.3,444.7 378.1,441.5 419.0,438.5 459.8,435.9 500.6,433.6 541.4,432.0 582.2,430.0 623.0,427.8 663.9,425.5 704.7,423.5 745.5,421.0 786.3,418.7 827.1,416.4 868.0,414.2 908.8,411.9 949.6,409.7" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="413.7" fill="#c9a400">EMA(200) 5m</text>
+<line x1="92.4" x2="92.4" y1="217.2" y2="299.6" stroke="#1f8a5b"/>
+<rect x="80.2" y="226.2" width="24.5" height="73.4" fill="#1f8a5b"/>
+<line x1="133.2" x2="133.2" y1="145.8" y2="227.0" stroke="#1f8a5b"/>
+<rect x="121.0" y="156.0" width="24.5" height="67.6" fill="#1f8a5b"/>
+<line x1="174.0" x2="174.0" y1="145.5" y2="187.9" stroke="#c0392b"/>
+<rect x="161.8" y="154.4" width="24.5" height="28.1" fill="#c0392b"/>
+<line x1="214.9" x2="214.9" y1="133.4" y2="190.9" stroke="#1f8a5b"/>
+<rect x="202.6" y="153.7" width="24.5" height="32.5" fill="#1f8a5b"/>
+<line x1="255.7" x2="255.7" y1="91.2" y2="153.7" stroke="#1f8a5b"/>
+<rect x="243.4" y="96.8" width="24.5" height="54.3" fill="#1f8a5b"/>
+<line x1="296.5" x2="296.5" y1="69.8" y2="113.8" stroke="#1f8a5b"/>
+<rect x="284.3" y="94.2" width="24.5" height="1.5" fill="#1f8a5b"/>
+<line x1="337.3" x2="337.3" y1="78.7" y2="112.3" stroke="#c0392b"/>
+<rect x="325.1" y="96.2" width="24.5" height="2.6" fill="#c0392b"/>
+<line x1="378.1" x2="378.1" y1="91.8" y2="127.5" stroke="#c0392b"/>
+<rect x="365.9" y="97.6" width="24.5" height="25.4" fill="#c0392b"/>
+<line x1="419.0" x2="419.0" y1="118.5" y2="152.6" stroke="#c0392b"/>
+<rect x="406.7" y="124.4" width="24.5" height="15.3" fill="#c0392b"/>
+<line x1="459.8" x2="459.8" y1="137.1" y2="195.4" stroke="#c0392b"/>
+<rect x="447.5" y="140.3" width="24.5" height="29.4" fill="#c0392b"/>
+<line x1="500.6" x2="500.6" y1="160.2" y2="256.1" stroke="#c0392b"/>
+<rect x="488.3" y="169.1" width="24.5" height="41.6" fill="#c0392b"/>
+<line x1="541.4" x2="541.4" y1="180.5" y2="268.0" stroke="#c0392b"/>
+<rect x="529.2" y="210.5" width="24.5" height="56.9" fill="#c0392b"/>
+<line x1="582.2" x2="582.2" y1="234.7" y2="280.4" stroke="#1f8a5b"/>
+<rect x="570.0" y="236.5" width="24.5" height="32.1" fill="#1f8a5b"/>
+<line x1="623.0" x2="623.0" y1="206.5" y2="240.3" stroke="#1f8a5b"/>
+<rect x="610.8" y="210.8" width="24.5" height="25.6" fill="#1f8a5b"/>
+<line x1="663.9" x2="663.9" y1="172.4" y2="225.9" stroke="#1f8a5b"/>
+<rect x="651.6" y="192.5" width="24.5" height="18.8" fill="#1f8a5b"/>
+<line x1="704.7" x2="704.7" y1="184.5" y2="236.3" stroke="#c0392b"/>
+<rect x="692.4" y="193.2" width="24.5" height="30.4" fill="#c0392b"/>
+<line x1="745.5" x2="745.5" y1="177.0" y2="231.5" stroke="#1f8a5b"/>
+<rect x="733.3" y="177.5" width="24.5" height="50.6" fill="#1f8a5b"/>
+<line x1="786.3" x2="786.3" y1="172.1" y2="199.6" stroke="#c0392b"/>
+<rect x="774.1" y="179.2" width="24.5" height="6.5" fill="#c0392b"/>
+<line x1="827.1" x2="827.1" y1="170.2" y2="204.0" stroke="#c0392b"/>
+<rect x="814.9" y="185.0" width="24.5" height="5.2" fill="#c0392b"/>
+<line x1="868.0" x2="868.0" y1="177.5" y2="205.8" stroke="#c0392b"/>
+<rect x="855.7" y="189.3" width="24.5" height="7.2" fill="#c0392b"/>
+<line x1="908.8" x2="908.8" y1="178.2" y2="205.4" stroke="#1f8a5b"/>
+<rect x="896.5" y="183.5" width="24.5" height="10.8" fill="#1f8a5b"/>
+<line x1="949.6" x2="949.6" y1="172.6" y2="207.1" stroke="#c0392b"/>
+<rect x="937.3" y="183.9" width="24.5" height="6.6" fill="#c0392b"/>
+<circle cx="521.0" cy="267.4" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="527.0" y="260.4" fill="#2b6cb0" font-weight="bold">IRF V3-M1 10:15</text>
+<circle cx="439.4" cy="169.6" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="445.4" y="162.6" fill="#2b6cb0" font-weight="bold">IRF V3-M2 10:05</text>
+<circle cx="72.0" cy="226.2" r="4.5" fill="none" stroke="#6b46c1" stroke-width="2"/><text x="78.0" y="219.2" fill="#6b46c1" font-weight="bold">ORB ORB-V2 09:20</text>
+<text x="10" y="524" fill="#222">Both strategies confirmed a signal this day; the frozen controller takes the first valid signal (no ORB/IRF priority).</text>
+</svg>

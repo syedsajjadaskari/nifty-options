@@ -1,0 +1,5 @@
+variant,trades,strict,time_tolerant,date_strategy_only,manual_only,automated_only,strict_IRF,strict_ORB,strict_PDR,strict_PDS,strict_RF,tolerant_IRF,tolerant_ORB,tolerant_PDR,tolerant_PDS,tolerant_RF,outcome_label_agree_strict_tolerant
+A,183,67,15,17,91,84,20,38,4,1,4,11,0,1,0,3,74
+B,159,58,9,17,106,75,16,38,2,1,1,8,0,1,0,0,64
+C,149,55,8,17,110,69,14,38,1,2,0,7,0,1,0,0,58
+D,182,67,15,17,91,83,20,38,4,1,4,11,0,1,0,3,74

@@ -1,0 +1,30 @@
+{
+ "m2_variants": {
+  "sessions": 982,
+  "mismatches": {
+   "A": 0,
+   "B0": 0,
+   "B": 0,
+   "B_REARM": 0,
+   "M1": 0,
+   "M2": 0,
+   "M5": 0,
+   "BEAR": 0,
+   "EXTRA": 0
+  },
+  "examples": {}
+ },
+ "ema_independent": {
+  "signals_compared": 942,
+  "max_abs_ema_diff_points": 17.566220824723132,
+  "mean_abs_ema_diff_points": 0.15635089887898257,
+  "geometry_recomputation_mismatches": 0,
+  "decision_flips_if_the_independent_recursive_EMA_were_used (27pt)": {
+   "MIN_CLOSE": 1,
+   "MIN_RANGE": 0,
+   "MAX_CLOSE": 1,
+   "TARGET_SIDE": 0
+  },
+  "note": "frozen EMA = SMA-seeded standard EMA over the concatenated sessions (warm-up from 2025-07-01); independent EMA = recursive ewm(span=200, adjust=False) over the same warm-up + window; differences are seed effects"
+ }
+}

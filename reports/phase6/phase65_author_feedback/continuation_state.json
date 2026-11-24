@@ -1,0 +1,47 @@
+{
+ "validation": {
+  "BASE|A": {
+   "saved_trades": 183,
+   "rerun_trades": 183,
+   "identical": true
+  },
+  "BASE|B": {
+   "saved_trades": 603,
+   "rerun_trades": 603,
+   "identical": true
+  },
+  "S60|A": {
+   "saved_trades": 159,
+   "rerun_trades": 159,
+   "identical": true
+  },
+  "S60|B": {
+   "saved_trades": 535,
+   "rerun_trades": 535,
+   "identical": true
+  },
+  "S70|A": {
+   "saved_trades": 149,
+   "rerun_trades": 149,
+   "identical": true
+  },
+  "S70|B": {
+   "saved_trades": 468,
+   "rerun_trades": 468,
+   "identical": true
+  },
+  "SD|A": {
+   "saved_trades": 182,
+   "rerun_trades": 182,
+   "identical": true
+  },
+  "SD|B": {
+   "saved_trades": 600,
+   "rerun_trades": 600,
+   "identical": true
+  }
+ },
+ "journal_rows": 190,
+ "journal_summary_total": 189,
+ "weekend_rows": 5
+}

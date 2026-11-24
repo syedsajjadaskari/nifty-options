@@ -1,0 +1,14 @@
+{
+ "A": {
+  "sessions_with_rally_breakout": 175,
+  "sessions_with_level_b_marked": 175,
+  "first_red_candle_closed_below_level_A": 56,
+  "breakout_candle_itself_red": 1
+ },
+ "B": {
+  "sessions_with_rally_breakout": 539,
+  "sessions_with_level_b_marked": 539,
+  "first_red_candle_closed_below_level_A": 169,
+  "breakout_candle_itself_red": 2
+ }
+}

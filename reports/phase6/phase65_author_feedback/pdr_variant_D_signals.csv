@@ -1,0 +1,642 @@
+window,date,retest_candle,variant_signal_candle,baseline_signal_candle,relation_to_baseline,variant_entry_reference_close,baseline_entry_reference_close,baseline_confirmation_route,variant_signal_tradable_before_13_00_cutoff,body_pct,upper_wick_pct,lower_wick_pct,green_is_retest_candle,close_above_ceiling,reason,approval_status
+A,2025-09-02,09:25,09:35,09:30,LATER,24687.55,24676.6,GOOD_GREEN_BODY,True,61.031519,29.226361,9.74212,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+A,2025-09-04,14:20,14:40,14:30,LATER,24771.3,24751.3,GOOD_GREEN_BODY,False,79.800995,16.41791,3.781095,False,True,second independently eligible candle (first eligible 14:30),MECHANICAL_RESEARCH_CONVENTION
+A,2025-09-04,14:50,15:05,14:55,LATER,24736.25,24744.45,GOOD_GREEN_BODY,False,8.611111,58.611111,32.777778,False,True,second independently eligible candle (first eligible 14:55),MECHANICAL_RESEARCH_CONVENTION
+A,2025-09-04,15:10,,15:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2025-09-18,14:20,14:35,14:25,LATER,25344.55,25346.8,GOOD_GREEN_BODY,False,22.982885,31.051345,45.96577,False,True,second independently eligible candle (first eligible 14:25),MECHANICAL_RESEARCH_CONVENTION
+A,2025-09-18,14:30,,14:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+A,2025-09-18,14:40,14:50,14:45,LATER,25388.85,25387.55,GOOD_GREEN_BODY,False,5.045872,27.522936,67.431193,False,True,second independently eligible candle (first eligible 14:45),MECHANICAL_RESEARCH_CONVENTION
+A,2025-10-06,09:20,09:35,09:30,LATER,24926.85,24910.8,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,66.262626,16.969697,16.767677,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+A,2025-10-07,09:15,09:25,09:20,LATER,25119.05,25111.15,GOOD_GREEN_BODY,True,32.43762,7.293666,60.268714,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2025-11-17,09:15,09:35,09:25,LATER,25961.15,25964.55,GOOD_GREEN_BODY,True,3.806228,82.00692,14.186851,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+A,2025-11-17,10:25,10:45,10:30,LATER,25940.25,25947.55,GOOD_GREEN_BODY,True,37.837838,37.387387,24.774775,False,True,second independently eligible candle (first eligible 10:30),MECHANICAL_RESEARCH_CONVENTION
+A,2025-11-17,10:35,,10:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2025-11-17,10:50,11:00,10:55,LATER,25948.65,25943.2,GOOD_GREEN_BODY,True,52.765957,47.234043,0,False,True,second independently eligible candle (first eligible 10:55),MECHANICAL_RESEARCH_CONVENTION
+A,2025-11-17,11:05,11:40,11:20,LATER,25943.15,25941.35,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,82.706767,1.503759,15.789474,False,True,second independently eligible candle (first eligible 11:20),MECHANICAL_RESEARCH_CONVENTION
+A,2025-11-17,11:25,,11:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2025-11-17,11:45,11:55,11:50,LATER,25965.3,25956,GOOD_GREEN_BODY,True,59.627329,35.403727,4.968944,False,True,second independently eligible candle (first eligible 11:50),MECHANICAL_RESEARCH_CONVENTION
+A,2025-11-27,09:15,09:25,09:20,LATER,26283.8,26274.4,GOOD_GREEN_BODY,True,29.738562,17.810458,52.45098,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2025-11-27,13:10,15:15,14:35,LATER,26223.25,26218.4,GOOD_GREEN_BODY,False,55.936675,17.414248,26.649077,False,True,second independently eligible candle (first eligible 14:35),MECHANICAL_RESEARCH_CONVENTION
+A,2025-11-27,14:40,,15:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2025-11-27,15:20,,15:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2025-12-01,09:15,09:30,09:20,LATER,26300.15,26292.35,GOOD_GREEN_BODY,True,79.381443,19.587629,1.030928,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-01,09:50,10:05,10:00,LATER,26285.4,26279.75,GOOD_GREEN_BODY,True,42.641509,41.132075,16.226415,False,True,second independently eligible candle (first eligible 10:00),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-01,10:15,,10:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+A,2025-12-19,09:15,09:25,09:20,LATER,25950.3,25944.3,GOOD_GREEN_BODY,True,31.395349,1.453488,67.151163,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-23,09:15,10:05,10:00,LATER,26186.75,26180.95,GOOD_GREEN_BODY,True,53.403141,15.706806,30.890052,False,True,second independently eligible candle (first eligible 10:00),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-23,10:15,10:50,10:40,LATER,26181.35,26181.75,GOOD_GREEN_BODY,True,6.451613,66.359447,27.18894,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-23,11:00,11:10,11:05,LATER,26189.75,26187.3,GOOD_GREEN_BODY,True,22.702703,61.621622,15.675676,False,True,second independently eligible candle (first eligible 11:05),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-23,11:35,12:00,11:50,LATER,26187.1,26178.95,GOOD_GREEN_BODY,True,88.834951,7.281553,3.883495,False,True,second independently eligible candle (first eligible 11:50),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-23,11:55,,12:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2025-12-23,12:25,12:50,12:45,LATER,26186.65,26186.8,GOOD_GREEN_BODY,True,1.058201,70.899471,28.042328,False,True,second independently eligible candle (first eligible 12:45),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-23,14:40,14:50,14:45,LATER,26182.85,26180.15,GOOD_GREEN_BODY,False,9.411765,34.509804,56.078431,False,True,second independently eligible candle (first eligible 14:45),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-23,14:50,,14:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+A,2025-12-23,15:00,,15:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2025-12-31,09:40,09:50,09:45,LATER,25984.15,25982.8,GOOD_GREEN_BODY,True,17.647059,57.219251,25.13369,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-31,10:05,10:15,10:10,LATER,26007.45,25997,GOOD_GREEN_BODY,True,75.833333,24.166667,0,False,True,second independently eligible candle (first eligible 10:10),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-05,09:15,10:15,10:10,LATER,26357.3,26339.15,GOOD_GREEN_BODY,True,77.61194,13.432836,8.955224,False,True,second independently eligible candle (first eligible 10:10),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-05,10:40,10:50,10:45,LATER,26356.45,26352.15,GOOD_GREEN_BODY,True,50,47.115385,2.884615,False,True,second independently eligible candle (first eligible 10:45),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-05,11:20,11:45,11:40,LATER,26336.95,26338.7,GOOD_GREEN_BODY,True,15.555556,21.777778,62.666667,False,True,second independently eligible candle (first eligible 11:40),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-05,11:45,,12:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-01-05,12:20,,12:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-01-22,10:30,14:45,10:40,LATER,25298.45,25295.35,GOOD_GREEN_BODY,False,42.082111,57.917889,0,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-22,10:45,,14:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-01-22,14:50,15:10,14:55,LATER,25288.55,25297,GOOD_GREEN_BODY,False,36.130536,62.703963,1.165501,False,True,second independently eligible candle (first eligible 14:55),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-22,15:00,,15:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-01-28,09:15,09:35,09:20,LATER,25311.1,25358.75,GOOD_GREEN_BODY,True,2.453988,24.539877,73.006135,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-28,10:10,10:20,10:15,LATER,25274.85,25260.4,GOOD_GREEN_BODY,True,60.796646,13.626834,25.57652,False,True,second independently eligible candle (first eligible 10:15),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-28,10:30,10:50,10:35,LATER,25296.3,25301.6,GOOD_GREEN_BODY,True,86.111111,12.777778,1.111111,False,True,second independently eligible candle (first eligible 10:35),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-28,13:20,14:25,14:00,LATER,25235.15,25235.5,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,66.021505,19.139785,14.83871,False,True,second independently eligible candle (first eligible 14:00),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-28,14:05,,14:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-01-28,14:30,14:40,14:35,LATER,25251.55,25236.75,GOOD_GREEN_BODY,False,68.137255,8.088235,23.77451,False,True,second independently eligible candle (first eligible 14:35),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-28,14:40,,14:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-02-10,09:15,09:25,09:20,LATER,25917.6,25915.55,LOWER_PRICE_REJECTION,True,15.835777,41.935484,42.228739,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-10,14:00,14:10,14:05,LATER,25918.7,25911.75,GOOD_GREEN_BODY,False,47.506562,0,52.493438,False,True,second independently eligible candle (first eligible 14:05),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-10,14:10,,14:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-02-23,09:15,09:25,09:20,LATER,25759.05,25736.3,GOOD_GREEN_BODY,True,71.533923,21.828909,6.637168,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-23,10:45,11:00,10:50,LATER,25683.15,25671.8,GOOD_GREEN_BODY,True,56.831683,35.049505,8.118812,False,True,second independently eligible candle (first eligible 10:50),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-23,11:05,11:25,11:10,LATER,25662,25696.1,GOOD_GREEN_BODY,True,12.962963,16.666667,70.37037,False,True,second independently eligible candle (first eligible 11:10),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-23,11:25,,11:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-02-23,11:45,,11:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+A,2026-02-23,11:55,,12:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-02-23,12:10,12:30,12:15,LATER,25653.85,25669.95,GOOD_GREEN_BODY,True,6.788512,8.877285,84.334204,False,True,second independently eligible candle (first eligible 12:15),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-23,12:20,,12:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+A,2026-02-23,12:35,12:50,12:40,LATER,25655.75,25685,GOOD_GREEN_BODY,True,32.086614,19.88189,48.031496,False,True,second independently eligible candle (first eligible 12:40),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-23,12:50,,13:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-02-23,13:25,,13:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-02-23,13:45,,14:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-03-05,09:15,09:40,09:20,LATER,24596.2,24607.2,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,91.291727,4.934688,3.773585,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-05,09:25,,09:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-03-05,09:45,10:05,09:50,LATER,24628.6,24648.9,GOOD_GREEN_BODY,True,24.313725,75.686275,0,False,True,second independently eligible candle (first eligible 09:50),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-05,10:20,10:40,10:35,LATER,24650.95,24627.7,GOOD_GREEN_BODY,True,82.206406,10.676157,7.117438,False,True,second independently eligible candle (first eligible 10:35),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-05,11:45,12:00,11:50,LATER,24590.15,24594.6,GOOD_GREEN_BODY,True,55.277778,32.777778,11.944444,False,True,second independently eligible candle (first eligible 11:50),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-05,11:55,,12:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-03-05,12:05,12:20,12:10,LATER,24619.15,24615.5,GOOD_GREEN_BODY,True,47.969925,49.62406,2.406015,False,True,second independently eligible candle (first eligible 12:10),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-05,13:55,14:25,14:20,LATER,24611.25,24590.95,GOOD_GREEN_BODY,False,49.753086,15.185185,35.061728,False,True,second independently eligible candle (first eligible 14:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-05,14:25,,14:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-03-17,09:15,09:50,09:45,LATER,23483,23484.5,GOOD_GREEN_BODY,True,4.388715,12.225705,83.38558,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-17,09:50,,09:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-03-17,10:35,10:45,10:40,LATER,23522.65,23483.9,LOWER_PRICE_REJECTION,True,79.748164,1.049318,19.202518,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-17,11:15,12:55,12:45,LATER,23477.55,23488.15,GOOD_GREEN_BODY,True,49.512671,19.688109,30.79922,False,True,second independently eligible candle (first eligible 12:45),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-17,12:50,,12:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-03-24,09:15,12:20,09:25,LATER,22881.5,22839.9,GOOD_GREEN_BODY,True,97.244094,1.496063,1.259843,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-24,09:30,,12:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-03-24,12:25,12:35,12:30,LATER,22951,22922.8,GOOD_GREEN_BODY,True,77.98913,4.619565,17.391304,False,True,second independently eligible candle (first eligible 12:30),MECHANICAL_RESEARCH_CONVENTION
+A,2026-04-01,13:40,13:55,13:45,LATER,22703.65,22703.2,GOOD_GREEN_BODY,False,17.231638,62.853107,19.915254,False,True,second independently eligible candle (first eligible 13:45),MECHANICAL_RESEARCH_CONVENTION
+A,2026-04-01,14:35,,15:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-04-06,09:15,12:55,12:50,LATER,22802.45,22775.25,GOOD_GREEN_BODY,True,89.455782,4.251701,6.292517,False,True,second independently eligible candle (first eligible 12:50),MECHANICAL_RESEARCH_CONVENTION
+A,2026-04-06,13:00,13:10,13:05,LATER,22860.7,22806,GOOD_GREEN_BODY,False,91.133845,7.075874,1.790281,False,True,second independently eligible candle (first eligible 13:05),MECHANICAL_RESEARCH_CONVENTION
+A,2026-04-20,09:15,10:05,09:20,LATER,24386.85,24395.85,GOOD_GREEN_BODY,True,91.691843,4.380665,3.927492,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-04-20,09:30,,10:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-04-20,10:10,10:20,10:15,LATER,24403,24389.85,GOOD_GREEN_BODY,True,45.317726,5.351171,49.331104,False,True,second independently eligible candle (first eligible 10:15),MECHANICAL_RESEARCH_CONVENTION
+A,2026-04-20,13:25,13:40,13:30,LATER,24396.35,24396.3,GOOD_GREEN_BODY,False,65.038168,25.801527,9.160305,False,True,second independently eligible candle (first eligible 13:30),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-04,13:20,13:45,13:40,LATER,24094.95,24086.8,GOOD_GREEN_BODY,False,41.842105,23.421053,34.736842,False,True,second independently eligible candle (first eligible 13:40),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-04,13:55,14:15,14:10,LATER,24139,24103.75,GOOD_GREEN_BODY,False,75.138122,19.779006,5.082873,False,True,second independently eligible candle (first eligible 14:10),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-04,14:40,15:00,14:50,LATER,24098,24096.7,GOOD_GREEN_BODY,False,22.292994,26.592357,51.11465,False,True,second independently eligible candle (first eligible 14:50),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-04,15:00,,15:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-05-06,12:15,13:30,13:20,LATER,24086.35,24081.1,GOOD_GREEN_BODY,False,53.133515,36.239782,10.626703,False,True,second independently eligible candle (first eligible 13:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,09:15,09:40,09:30,LATER,24397.35,24356.7,GOOD_GREEN_BODY,True,89.862724,10.137276,0,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,09:35,,09:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-05-07,09:50,10:20,10:00,LATER,24353.15,24370.25,GOOD_GREEN_BODY,True,34.090909,25.454545,40.454545,False,True,second independently eligible candle (first eligible 10:00),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,10:05,,10:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+A,2026-05-07,10:25,10:40,10:30,LATER,24373.45,24367.3,GOOD_GREEN_BODY,True,53.869969,8.668731,37.4613,False,True,second independently eligible candle (first eligible 10:30),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,10:50,12:05,12:00,LATER,24360.25,24355,GOOD_GREEN_BODY,True,33.559322,50.169492,16.271186,False,True,second independently eligible candle (first eligible 12:00),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,12:30,12:40,12:35,LATER,24463.15,24436.65,GOOD_GREEN_BODY,True,58.361019,41.638981,0,False,True,second independently eligible candle (first eligible 12:35),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,13:15,13:30,13:25,LATER,24357.8,24353.35,GOOD_GREEN_BODY,False,21.039604,31.683168,47.277228,False,True,second independently eligible candle (first eligible 13:25),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,13:30,,13:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-05-07,13:45,,13:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+A,2026-05-07,14:00,,14:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-05-07,14:15,14:25,14:20,LATER,24376.9,24364.3,GOOD_GREEN_BODY,False,54.291845,18.025751,27.682403,False,True,second independently eligible candle (first eligible 14:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,14:40,,14:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-05-19,09:35,10:00,09:40,LATER,23698.55,23749.6,GOOD_GREEN_BODY,True,47.607935,52.392065,0,False,True,second independently eligible candle (first eligible 09:40),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-21,11:15,11:25,11:20,LATER,23742.95,23713.8,GOOD_GREEN_BODY,True,73.929471,8.816121,17.254408,False,True,second independently eligible candle (first eligible 11:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-21,12:25,,14:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-06-05,09:15,09:35,09:25,LATER,23463.75,23460,GOOD_GREEN_BODY,True,6.463415,56.585366,36.95122,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+A,2026-06-05,09:35,,09:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-06-05,09:45,,09:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-06-05,09:55,,10:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-06-05,10:05,10:20,10:15,LATER,23490,23478.5,GOOD_GREEN_BODY,True,43.726937,10.332103,45.940959,False,True,second independently eligible candle (first eligible 10:15),MECHANICAL_RESEARCH_CONVENTION
+A,2026-06-05,10:30,11:05,11:00,LATER,23470.2,23453.9,GOOD_GREEN_BODY,True,35.824176,54.065934,10.10989,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+A,2026-06-12,12:40,12:55,12:50,LATER,23325.3,23327.55,GOOD_GREEN_BODY,True,27.586207,17.73399,54.679803,False,True,second independently eligible candle (first eligible 12:50),MECHANICAL_RESEARCH_CONVENTION
+A,2026-06-12,12:55,,13:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-06-12,13:25,13:35,13:30,LATER,23461.7,23424.85,GOOD_GREEN_BODY,False,89.668367,4.719388,5.612245,False,True,second independently eligible candle (first eligible 13:30),MECHANICAL_RESEARCH_CONVENTION
+A,2026-06-17,09:15,09:30,09:25,LATER,24032.1,24020.9,GOOD_GREEN_BODY,True,44.53125,43.75,11.71875,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+A,2026-06-25,14:40,,14:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-07-07,09:15,09:40,09:25,LATER,24459.2,24455.85,LOWER_PRICE_REJECTION,True,84.53159,15.250545,0.217865,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+A,2026-07-07,09:30,,09:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-07-07,09:45,10:00,09:55,LATER,24479,24474.35,GOOD_GREEN_BODY,True,26.537217,53.398058,20.064725,False,True,second independently eligible candle (first eligible 09:55),MECHANICAL_RESEARCH_CONVENTION
+A,2026-07-07,12:35,12:55,12:40,LATER,24468.55,24472.4,GOOD_GREEN_BODY,True,26.713948,5.200946,68.085106,False,True,second independently eligible candle (first eligible 12:40),MECHANICAL_RESEARCH_CONVENTION
+A,2026-07-07,12:55,,14:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+A,2026-07-07,14:05,,14:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-07-31,09:15,09:40,09:20,LATER,24349.3,24353.15,GOOD_GREEN_BODY,True,89.041096,8.219178,2.739726,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-07-31,09:30,,09:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-07-31,09:45,10:10,09:55,LATER,24346.05,24357.55,GOOD_GREEN_BODY,True,36.679537,51.351351,11.969112,False,True,second independently eligible candle (first eligible 09:55),MECHANICAL_RESEARCH_CONVENTION
+A,2026-07-31,10:05,,10:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-07-31,10:15,10:35,10:20,LATER,24357.7,24353.85,GOOD_GREEN_BODY,True,69.277108,13.453815,17.269076,False,True,second independently eligible candle (first eligible 10:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-07-31,10:35,,10:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-07-31,11:05,11:15,11:10,LATER,24362.9,24357.75,GOOD_GREEN_BODY,True,53.367876,25.388601,21.243523,False,True,second independently eligible candle (first eligible 11:10),MECHANICAL_RESEARCH_CONVENTION
+A,2026-08-21,09:15,10:25,09:50,LATER,24255,24250.5,GOOD_GREEN_BODY,True,79.858657,13.074205,7.067138,False,True,second independently eligible candle (first eligible 09:50),MECHANICAL_RESEARCH_CONVENTION
+A,2026-08-21,09:55,,10:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-08-21,10:30,10:45,10:40,LATER,24253.5,24253.2,GOOD_GREEN_BODY,True,1.357466,49.773756,48.868778,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+A,2026-08-21,10:45,,10:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-08-21,11:20,11:30,11:25,LATER,24258.7,24256.6,GOOD_GREEN_BODY,True,24,40.666667,35.333333,False,True,second independently eligible candle (first eligible 11:25),MECHANICAL_RESEARCH_CONVENTION
+A,2026-08-21,11:40,13:05,11:45,LATER,24250.35,24254.35,GOOD_GREEN_BODY,False,70.188679,20.754717,9.056604,False,True,second independently eligible candle (first eligible 11:45),MECHANICAL_RESEARCH_CONVENTION
+A,2026-08-21,11:50,,13:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-08-21,13:10,,15:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-08-24,09:15,09:35,09:20,LATER,24283.1,24303.15,GOOD_GREEN_BODY,True,42.105263,36.184211,21.710526,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2026-08-24,09:30,,09:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+A,2026-08-26,09:15,09:35,09:20,LATER,24356.05,24354,GOOD_GREEN_BODY,True,89.883268,0.77821,9.338521,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+A,2025-12-23,14:55,15:10,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),26183.5,,,,66.060606,11.212121,22.727273,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-01-05,11:50,12:20,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),26337.4,,,,10.108303,42.960289,46.931408,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-23,11:35,12:00,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),25660.5,,,,56.40327,21.253406,22.343324,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-23,12:55,13:25,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),25667.45,,,,73.101266,6.329114,20.56962,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-02-23,13:30,14:25,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),25673.65,,,,78.923077,0.923077,20.153846,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-03-05,14:30,14:40,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24726.8,,,,60.624651,36.419409,2.95594,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,13:35,13:45,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24356.55,,,,37.5,12.028302,50.471698,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-05-07,13:50,14:05,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24372.65,,,,53.523035,3.658537,42.818428,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-06-05,09:40,10:00,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),23469.15,,,,42.5,25.166667,32.333333,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-07-07,13:05,14:05,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24463.65,,,,67.936508,7.936508,24.126984,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+A,2026-07-07,14:15,14:30,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24459,,,,52.849741,47.150259,0,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2022-09-06,09:35,09:55,09:45,LATER,17678.5,17679.2,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,45.319149,1.702128,52.978723,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+B,2022-09-06,09:50,,09:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2022-09-06,10:00,12:00,11:55,LATER,17693.15,17690.55,GOOD_GREEN_BODY,True,13.877551,29.795918,56.326531,False,True,second independently eligible candle (first eligible 11:55),MECHANICAL_RESEARCH_CONVENTION
+B,2022-09-06,13:45,13:55,13:50,LATER,17696.25,17683.75,GOOD_GREEN_BODY,False,72.282609,14.945652,12.771739,False,True,second independently eligible candle (first eligible 13:50),MECHANICAL_RESEARCH_CONVENTION
+B,2022-09-09,13:20,13:30,13:25,LATER,17817.15,17812.2,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,42.194093,9.704641,48.101266,False,True,second independently eligible candle (first eligible 13:25),MECHANICAL_RESEARCH_CONVENTION
+B,2022-10-19,12:45,13:20,12:55,LATER,17547.25,17530.25,GOOD_GREEN_BODY,False,89.878543,8.097166,2.024291,False,True,second independently eligible candle (first eligible 12:55),MECHANICAL_RESEARCH_CONVENTION
+B,2022-10-19,13:00,,13:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-10-19,13:55,14:10,14:05,LATER,17546.7,17520.1,GOOD_GREEN_BODY,False,91.578947,3.859649,4.561404,False,True,second independently eligible candle (first eligible 14:05),MECHANICAL_RESEARCH_CONVENTION
+B,2022-10-19,14:45,,15:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-10-21,14:00,15:20,14:15,LATER,17594.75,17582.15,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,82.926829,2.439024,14.634146,False,True,second independently eligible candle (first eligible 14:15),MECHANICAL_RESEARCH_CONVENTION
+B,2022-10-21,14:20,,15:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-11-07,10:45,11:05,11:00,LATER,18143.05,18132.25,GOOD_GREEN_BODY,True,73.051948,11.363636,15.584416,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+B,2022-11-07,12:30,14:05,12:45,LATER,18130.25,18128.75,GOOD_GREEN_BODY,False,31.690141,17.605634,50.704225,False,True,second independently eligible candle (first eligible 12:45),MECHANICAL_RESEARCH_CONVENTION
+B,2022-11-07,12:50,,14:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2022-11-07,14:10,14:20,14:15,LATER,18142.45,18138.8,GOOD_GREEN_BODY,False,30.125523,16.317992,53.556485,False,True,second independently eligible candle (first eligible 14:15),MECHANICAL_RESEARCH_CONVENTION
+B,2022-11-09,09:55,10:10,10:00,LATER,18223.5,18223.6,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,50.617284,0,49.382716,False,True,second independently eligible candle (first eligible 10:00),MECHANICAL_RESEARCH_CONVENTION
+B,2022-11-09,10:05,,10:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-11-09,10:15,,10:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2022-11-14,09:15,09:35,09:20,LATER,18383.4,18387.6,GOOD_GREEN_BODY,True,55.860349,9.476309,34.663342,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2022-11-14,09:50,10:50,09:55,LATER,18360.65,18366.6,GOOD_GREEN_BODY,True,20.869565,62.173913,16.956522,False,True,second independently eligible candle (first eligible 09:55),MECHANICAL_RESEARCH_CONVENTION
+B,2022-11-14,10:00,,10:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-11-14,10:55,13:35,11:00,LATER,18360.2,18362.25,GOOD_GREEN_BODY,False,22.093023,9.302326,68.604651,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+B,2022-11-14,11:05,,13:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2022-11-14,13:40,14:10,14:05,LATER,18372.8,18362,GOOD_GREEN_BODY,False,72.607261,14.851485,12.541254,False,True,second independently eligible candle (first eligible 14:05),MECHANICAL_RESEARCH_CONVENTION
+B,2022-11-14,14:10,,14:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-11-23,10:25,10:35,10:30,LATER,18270,18262.9,GOOD_GREEN_BODY,True,69.84127,26.455026,3.703704,False,True,second independently eligible candle (first eligible 10:30),MECHANICAL_RESEARCH_CONVENTION
+B,2022-11-23,15:15,,15:20,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2022-11-25,09:15,15:10,15:05,LATER,18525.7,18522.2,GOOD_GREEN_BODY,False,19.310345,62.068966,18.62069,False,True,second independently eligible candle (first eligible 15:05),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-01,13:25,13:40,13:35,LATER,18808.4,18803.55,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,33.449477,66.550523,0,False,True,second independently eligible candle (first eligible 13:35),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-01,13:45,14:10,14:00,LATER,18823.6,18813.45,GOOD_GREEN_BODY,False,64.095745,32.446809,3.457447,False,True,second independently eligible candle (first eligible 14:00),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-01,15:10,,15:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-12-09,09:30,09:40,09:35,LATER,18625.65,18625.45,GOOD_GREEN_BODY,True,2.006689,39.130435,58.862876,False,True,second independently eligible candle (first eligible 09:35),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-09,09:40,,09:45,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2022-12-09,09:50,,09:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-12-13,09:15,09:25,09:20,LATER,18534.05,18527.5,LOWER_PRICE_REJECTION,True,29.639889,32.409972,37.950139,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-13,09:30,10:05,09:40,LATER,18524.15,18526.05,GOOD_GREEN_BODY,True,58.477509,15.570934,25.951557,False,True,second independently eligible candle (first eligible 09:40),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-13,09:55,,10:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-12-21,09:40,,09:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-12-27,09:15,13:45,09:20,LATER,18092.65,18111.55,GOOD_GREEN_BODY,False,79.746835,11.075949,9.177215,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-27,09:25,,13:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-12-27,14:25,14:35,14:30,LATER,18100.2,18087.1,GOOD_GREEN_BODY,False,81.528662,11.783439,6.687898,False,True,second independently eligible candle (first eligible 14:30),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-30,11:30,12:15,12:05,LATER,18216.05,18212.15,GOOD_GREEN_BODY,True,86.016949,2.118644,11.864407,False,True,second independently eligible candle (first eligible 12:05),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-30,12:10,,12:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2022-12-30,12:20,12:40,12:35,LATER,18232.4,18228.5,GOOD_GREEN_BODY,True,47.54902,12.254902,40.196078,False,True,second independently eligible candle (first eligible 12:35),MECHANICAL_RESEARCH_CONVENTION
+B,2022-12-30,13:00,13:30,13:25,LATER,18211.65,18216.85,GOOD_GREEN_BODY,False,26.870748,19.047619,54.081633,False,True,second independently eligible candle (first eligible 13:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-01-16,09:20,,09:25,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-01-18,09:15,09:35,09:25,LATER,18078.95,18068.1,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,97.601918,2.398082,0,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-01-18,09:30,,09:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-01-24,09:15,09:30,09:20,LATER,18190.8,18181.15,GOOD_GREEN_BODY,True,76.62037,23.37963,0,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-01-24,09:50,10:55,10:40,LATER,18165.65,18167.9,GOOD_GREEN_BODY,True,88.846154,5,6.153846,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-01-24,10:50,,10:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-02-01,13:35,,13:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-02-03,09:35,09:45,09:40,LATER,17674.55,17658.85,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,77.912621,0,22.087379,False,True,second independently eligible candle (first eligible 09:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-02-03,09:50,10:10,09:55,LATER,17676.75,17685.9,GOOD_GREEN_BODY,True,86.414254,8.463252,5.122494,False,True,second independently eligible candle (first eligible 09:55),MECHANICAL_RESEARCH_CONVENTION
+B,2023-02-03,10:20,11:45,10:50,LATER,17655.95,17653.95,GOOD_GREEN_BODY,True,65.19945,17.606602,17.193948,False,True,second independently eligible candle (first eligible 10:50),MECHANICAL_RESEARCH_CONVENTION
+B,2023-02-03,10:55,,11:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-02-03,12:00,12:10,12:05,LATER,17677.25,17670.05,GOOD_GREEN_BODY,True,34.669811,8.018868,57.311321,False,True,second independently eligible candle (first eligible 12:05),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-03,09:15,09:35,09:20,LATER,17473.65,17476,GOOD_GREEN_BODY,True,45.708583,18.762475,35.528942,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-17,09:55,10:05,10:00,LATER,17069.25,17066.4,GOOD_GREEN_BODY,True,8.852459,24.590164,66.557377,False,True,second independently eligible candle (first eligible 10:00),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-17,10:45,13:50,10:55,LATER,17064.95,17059.85,GOOD_GREEN_BODY,False,88.164894,11.303191,0.531915,False,True,second independently eligible candle (first eligible 10:55),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-17,11:00,,13:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-03-17,14:10,14:40,14:30,LATER,17065.5,17070.25,GOOD_GREEN_BODY,False,13.569322,34.513274,51.917404,False,True,second independently eligible candle (first eligible 14:30),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-17,14:40,,14:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-03-21,09:15,10:10,09:25,LATER,17065.8,17077.7,GOOD_GREEN_BODY,True,71.428571,21.674877,6.896552,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-21,09:35,,10:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-03-21,10:35,10:45,10:40,LATER,17074.1,17072.75,GOOD_GREEN_BODY,True,21.126761,32.86385,46.00939,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-21,11:00,11:10,11:05,LATER,17065.4,17062.7,GOOD_GREEN_BODY,True,19.169329,14.696486,66.134185,False,True,second independently eligible candle (first eligible 11:05),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-21,11:10,,11:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-03-21,11:35,12:45,11:40,LATER,17069.05,17058.2,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,82.599119,16.960352,0.440529,False,True,second independently eligible candle (first eligible 11:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-21,11:45,,12:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-03-22,11:00,11:10,11:05,LATER,17129.9,17122.35,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,63.636364,32.231405,4.132231,False,True,second independently eligible candle (first eligible 11:05),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-22,11:10,,11:15,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-03-22,11:20,,11:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-03-22,13:15,13:25,13:20,LATER,17130.95,17130.55,GOOD_GREEN_BODY,False,2.678571,76.785714,20.535714,False,True,second independently eligible candle (first eligible 13:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-22,13:50,14:00,13:55,LATER,17145.15,17135.7,GOOD_GREEN_BODY,False,49.834983,7.920792,42.244224,False,True,second independently eligible candle (first eligible 13:55),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-22,14:35,14:50,14:45,LATER,17131.55,17126.7,GOOD_GREEN_BODY,False,58.682635,8.383234,32.934132,False,True,second independently eligible candle (first eligible 14:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-03,09:20,14:35,09:45,LATER,17379.55,17378.25,GOOD_GREEN_BODY,False,32.227488,21.800948,45.971564,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-03,09:50,,14:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-04-03,14:40,15:00,14:45,LATER,17391.8,17392.05,GOOD_GREEN_BODY,False,60.629921,20.866142,18.503937,False,True,second independently eligible candle (first eligible 14:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-05,09:15,09:25,09:20,LATER,17464.7,17458,GOOD_GREEN_BODY,True,48.616601,12.648221,38.735178,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-11,09:15,09:30,09:20,LATER,17707.8,17703.8,GOOD_GREEN_BODY,True,74.545455,25.454545,0,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-11,11:20,11:35,11:25,LATER,17691.1,17704.1,GOOD_GREEN_BODY,True,3.745318,67.041199,29.213483,False,True,second independently eligible candle (first eligible 11:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-11,11:30,,11:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-04-11,11:40,13:30,11:50,LATER,17691,17692.4,GOOD_GREEN_BODY,False,59.17603,34.831461,5.992509,False,True,second independently eligible candle (first eligible 11:50),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-11,11:55,,13:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-04-11,13:35,13:45,13:40,LATER,17698.95,17693.65,GOOD_GREEN_BODY,False,44.545455,40.454545,15,False,True,second independently eligible candle (first eligible 13:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-12,09:15,09:25,09:20,LATER,17764.35,17751.7,GOOD_GREEN_BODY,True,48.692153,44.466801,6.841046,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-12,10:15,10:40,10:30,LATER,17744.25,17750.2,GOOD_GREEN_BODY,True,29.292929,8.585859,62.121212,False,True,second independently eligible candle (first eligible 10:30),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-12,10:35,,10:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-04-12,10:45,10:55,10:50,LATER,17754.05,17753.6,GOOD_GREEN_BODY,True,7.33945,24.770642,67.889908,False,True,second independently eligible candle (first eligible 10:50),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-24,09:15,12:45,09:20,LATER,17669.65,17670,LOWER_PRICE_REJECTION,True,89.273356,10.726644,0,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-24,09:25,,12:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-04-25,09:15,10:15,10:10,LATER,17761.2,17754.65,GOOD_GREEN_BODY,True,60.176991,19.026549,20.79646,False,True,second independently eligible candle (first eligible 10:10),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-25,12:35,12:55,12:45,LATER,17770.7,17765.1,GOOD_GREEN_BODY,True,77.981651,17.889908,4.12844,False,True,second independently eligible candle (first eligible 12:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-04-28,09:15,11:00,10:55,LATER,17935.85,17931.7,GOOD_GREEN_BODY,True,55.782313,31.292517,12.92517,False,True,second independently eligible candle (first eligible 10:55),MECHANICAL_RESEARCH_CONVENTION
+B,2023-05-09,09:30,09:40,09:35,LATER,18316.35,18287,GOOD_GREEN_BODY,True,97.875817,0,2.124183,False,True,second independently eligible candle (first eligible 09:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-05-09,13:25,,13:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-05-11,09:20,10:15,10:10,LATER,18332.5,18323.2,GOOD_GREEN_BODY,True,34.631148,14.344262,51.02459,False,True,second independently eligible candle (first eligible 10:10),MECHANICAL_RESEARCH_CONVENTION
+B,2023-05-11,10:15,,10:20,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-05-11,10:25,,10:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-05-11,11:40,12:30,12:25,LATER,18325.9,18323.95,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,38.518519,50.37037,11.111111,False,True,second independently eligible candle (first eligible 12:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-05-11,12:35,13:30,13:05,LATER,18323.25,18326.65,GOOD_GREEN_BODY,False,24.444444,30.555556,45,False,True,second independently eligible candle (first eligible 13:05),MECHANICAL_RESEARCH_CONVENTION
+B,2023-05-11,13:10,,13:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-05-11,13:35,13:50,13:45,LATER,18323.1,18323.45,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,3.389831,38.983051,57.627119,False,True,second independently eligible candle (first eligible 13:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-05-11,13:50,,14:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-05-11,14:15,,14:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-05-23,15:20,,15:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-05-26,09:20,09:35,09:25,LATER,18371.1,18362.35,GOOD_GREEN_BODY,True,42.557652,0.838574,56.603774,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-06-14,09:20,10:50,10:45,LATER,18739.4,18732,GOOD_GREEN_BODY,True,80.19802,19.306931,0.49505,False,True,second independently eligible candle (first eligible 10:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-06-14,11:05,11:15,11:10,LATER,18727.1,18727.1,GOOD_GREEN_BODY,True,9.917355,53.719008,36.363636,False,True,second independently eligible candle (first eligible 11:10),MECHANICAL_RESEARCH_CONVENTION
+B,2023-06-14,11:40,11:50,11:45,LATER,18730.4,18730.45,GOOD_GREEN_BODY,True,7.368421,46.315789,46.315789,False,True,second independently eligible candle (first eligible 11:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-06-15,09:15,09:55,09:50,LATER,18771.05,18767.75,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,28.099174,50,21.900826,False,True,second independently eligible candle (first eligible 09:50),MECHANICAL_RESEARCH_CONVENTION
+B,2023-06-15,09:55,,10:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-06-19,09:15,,09:25,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-06-21,09:15,09:25,09:20,LATER,18855.9,18853.05,GOOD_GREEN_BODY,True,23.046875,16.796875,60.15625,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-06-21,10:40,12:45,12:40,LATER,18845.2,18842.8,GOOD_GREEN_BODY,True,37.795276,43.307087,18.897638,False,True,second independently eligible candle (first eligible 12:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-06-21,14:30,14:40,14:35,LATER,18841.75,18838.15,GOOD_GREEN_BODY,False,14.903846,56.490385,28.605769,False,True,second independently eligible candle (first eligible 14:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-06-21,14:40,,14:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-06-27,10:40,10:55,10:45,LATER,18719.95,18724.85,GOOD_GREEN_BODY,True,11.258278,53.642384,35.099338,False,True,second independently eligible candle (first eligible 10:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-06-27,10:55,,11:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-06-27,11:05,11:15,11:10,LATER,18726.35,18722.3,GOOD_GREEN_BODY,True,71.538462,20,8.461538,False,True,second independently eligible candle (first eligible 11:10),MECHANICAL_RESEARCH_CONVENTION
+B,2023-07-04,09:50,10:45,10:40,LATER,19347.1,19343.3,GOOD_GREEN_BODY,True,44.897959,34.013605,21.088435,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-07-04,10:50,11:15,11:05,LATER,19347.5,19343.05,GOOD_GREEN_BODY,True,79.194631,18.120805,2.684564,False,True,second independently eligible candle (first eligible 11:05),MECHANICAL_RESEARCH_CONVENTION
+B,2023-07-04,11:30,11:40,11:35,LATER,19349.5,19339.15,GOOD_GREEN_BODY,True,83.805668,7.692308,8.502024,False,True,second independently eligible candle (first eligible 11:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-07-18,11:40,12:35,12:30,LATER,19748.45,19742.2,GOOD_GREEN_BODY,True,28.571429,45.896657,25.531915,False,True,second independently eligible candle (first eligible 12:30),MECHANICAL_RESEARCH_CONVENTION
+B,2023-07-18,12:55,13:30,13:20,LATER,19731.25,19740.65,GOOD_GREEN_BODY,False,30.607966,17.610063,51.781971,False,True,second independently eligible candle (first eligible 13:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-07-18,13:25,,13:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-07-18,13:35,13:45,13:40,LATER,19747.65,19738.65,GOOD_GREEN_BODY,False,47.761194,39.104478,13.134328,False,True,second independently eligible candle (first eligible 13:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-07-18,14:15,14:35,14:25,LATER,19757.7,19745.95,GOOD_GREEN_BODY,False,84.574468,1.06383,14.361702,False,True,second independently eligible candle (first eligible 14:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-07-18,14:30,,14:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-07-18,14:45,15:00,14:55,LATER,19747,19732.75,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,46.956522,53.043478,0,False,True,second independently eligible candle (first eligible 14:55),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-01,09:15,09:25,09:20,LATER,19769.65,19766.95,LOWER_PRICE_REJECTION,True,14.438503,18.181818,67.379679,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-01,09:40,09:50,09:45,LATER,19783.1,19781.15,GOOD_GREEN_BODY,True,23.566879,61.146497,15.286624,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-01,10:20,,13:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-08-07,09:30,09:45,09:35,LATER,19559.65,19561.95,GOOD_GREEN_BODY,True,7.46888,22.614108,69.917012,False,True,second independently eligible candle (first eligible 09:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-07,11:10,11:20,11:15,LATER,19551.75,19541.55,GOOD_GREEN_BODY,True,67.407407,21.111111,11.481481,False,True,second independently eligible candle (first eligible 11:15),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-07,11:30,11:40,11:35,LATER,19546.8,19535.3,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,74.834437,17.880795,7.284768,False,True,second independently eligible candle (first eligible 11:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-07,12:15,12:25,12:20,LATER,19561.5,19560.2,GOOD_GREEN_BODY,True,26,0,74,False,True,second independently eligible candle (first eligible 12:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-23,09:15,12:35,12:25,LATER,19451.45,19441.55,GOOD_GREEN_BODY,True,72.235872,6.633907,21.130221,False,True,second independently eligible candle (first eligible 12:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-23,12:30,,12:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-08-23,13:05,13:20,13:15,LATER,19449.3,19444.05,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,50.26455,49.73545,0,False,True,second independently eligible candle (first eligible 13:15),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-23,13:30,13:40,13:35,LATER,19452.8,19449.45,GOOD_GREEN_BODY,False,34.693878,37.244898,28.061224,False,True,second independently eligible candle (first eligible 13:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-23,15:10,,15:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-08-24,11:20,11:30,11:25,LATER,19475.45,19472.35,GOOD_GREEN_BODY,True,33.783784,8.108108,58.108108,False,True,second independently eligible candle (first eligible 11:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-08-24,11:55,12:40,12:35,LATER,19465.4,19467.8,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,25.142857,18.857143,56,False,True,second independently eligible candle (first eligible 12:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-04,10:15,10:30,10:20,LATER,19454.9,19462.55,GOOD_GREEN_BODY,True,8.745247,7.604563,83.65019,False,True,second independently eligible candle (first eligible 10:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-04,10:30,,10:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-04,10:55,,11:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-05,09:15,09:25,09:20,LATER,19550.3,19540,GOOD_GREEN_BODY,True,62.797619,14.880952,22.321429,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-05,09:25,,09:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-05,12:40,12:50,12:45,LATER,19544.9,19540.05,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,47.368421,51.052632,1.578947,False,True,second independently eligible candle (first eligible 12:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-05,13:20,13:45,13:35,LATER,19552.95,19545.9,GOOD_GREEN_BODY,False,71.428571,23.308271,5.263158,False,True,second independently eligible candle (first eligible 13:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-06,09:15,15:00,09:35,LATER,19594.75,19594.3,GOOD_GREEN_BODY,False,91.09462,8.90538,0,False,True,second independently eligible candle (first eligible 09:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-06,09:50,,15:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-08,10:30,10:45,10:40,LATER,19763.45,19741.9,GOOD_GREEN_BODY,True,87.010309,10.721649,2.268041,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-12,09:45,11:20,10:05,LATER,20010.6,20014.15,GOOD_GREEN_BODY,True,55.932203,44.067797,0,False,True,second independently eligible candle (first eligible 10:05),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-12,10:10,,11:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-12,11:35,11:50,11:40,LATER,20031.75,20037.5,GOOD_GREEN_BODY,True,87.837838,5.855856,6.306306,False,True,second independently eligible candle (first eligible 11:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-12,12:05,14:10,13:20,LATER,20011.7,20007.8,GOOD_GREEN_BODY,False,77.955272,14.376997,7.667732,False,True,second independently eligible candle (first eligible 13:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-12,13:25,,14:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-12,14:15,14:30,14:20,LATER,20013.75,20014.75,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,71.717172,26.262626,2.020202,False,True,second independently eligible candle (first eligible 14:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-12,14:25,,14:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-14,10:15,11:10,11:00,LATER,20097,20104.3,GOOD_GREEN_BODY,True,30.645161,15.322581,54.032258,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-14,11:10,,11:15,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-14,11:25,,11:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-14,11:35,12:10,12:05,LATER,20098.35,20095.7,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,27.380952,10.119048,62.5,False,True,second independently eligible candle (first eligible 12:05),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-14,12:10,,13:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-14,13:25,,13:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-14,13:35,15:00,14:55,LATER,20102.5,20096.3,GOOD_GREEN_BODY,False,16.59751,50.622407,32.780083,False,True,second independently eligible candle (first eligible 14:55),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-14,15:00,,15:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-09-28,09:25,10:10,09:30,LATER,19732.2,19731.9,LOWER_PRICE_REJECTION,True,22.994652,31.550802,45.454545,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-28,09:35,,10:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-10-31,09:20,09:35,09:25,LATER,19163,19157.75,LOWER_PRICE_REJECTION,True,92.778458,6.854345,0.367197,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-10-31,09:30,,09:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-11-02,11:40,12:25,12:20,LATER,19094.6,19094.95,GOOD_GREEN_BODY,True,4.347826,60.869565,34.782609,False,True,second independently eligible candle (first eligible 12:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-02,12:30,12:50,12:40,LATER,19097.8,19098.15,GOOD_GREEN_BODY,True,22.147651,55.033557,22.818792,False,True,second independently eligible candle (first eligible 12:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-08,09:15,09:25,09:20,LATER,19434.25,19422.7,GOOD_GREEN_BODY,True,66.384181,12.711864,20.903955,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-08,09:30,09:40,09:35,LATER,19425.95,19418.9,LOWER_PRICE_REJECTION,True,67.567568,23.423423,9.009009,False,True,second independently eligible candle (first eligible 09:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-08,09:40,,09:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-11-08,10:30,10:45,10:35,LATER,19435.85,19435.55,GOOD_GREEN_BODY,True,24.770642,15.59633,59.633028,False,True,second independently eligible candle (first eligible 10:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-08,11:10,11:25,11:20,LATER,19432.15,19422.7,GOOD_GREEN_BODY,True,72.118959,1.858736,26.022305,False,True,second independently eligible candle (first eligible 11:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-08,14:30,14:50,14:35,LATER,19431,19427.4,GOOD_GREEN_BODY,False,65.800866,27.705628,6.493506,False,True,second independently eligible candle (first eligible 14:35),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-21,09:15,09:25,09:20,LATER,19776.8,19772.7,GOOD_GREEN_BODY,True,30.534351,65.267176,4.198473,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-23,10:15,12:25,10:25,LATER,19829.2,19832.65,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,90.374332,1.336898,8.28877,False,True,second independently eligible candle (first eligible 10:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-23,10:30,,12:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-11-28,09:15,12:05,09:20,LATER,19834.85,19832.15,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,86.915888,11.682243,1.401869,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-28,09:25,,12:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-11-28,12:15,12:35,12:25,LATER,19834.85,19834.1,GOOD_GREEN_BODY,True,22.54902,46.078431,31.372549,False,True,second independently eligible candle (first eligible 12:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-28,12:50,14:20,14:15,LATER,19865.8,19836.2,GOOD_GREEN_BODY,False,91.419657,0,8.580343,False,True,second independently eligible candle (first eligible 14:15),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-30,09:20,09:35,09:30,LATER,20122.3,20115.55,GOOD_GREEN_BODY,True,20.229555,14.634146,65.136298,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-30,09:35,,13:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-11-30,13:45,,14:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-11-30,15:00,15:10,15:05,LATER,20135.2,20131.7,GOOD_GREEN_BODY,False,43.157895,5.263158,51.578947,False,True,second independently eligible candle (first eligible 15:05),MECHANICAL_RESEARCH_CONVENTION
+B,2023-12-06,13:20,13:30,13:25,LATER,20899,20870.85,GOOD_GREEN_BODY,False,95.925297,0,4.074703,False,True,second independently eligible candle (first eligible 13:25),MECHANICAL_RESEARCH_CONVENTION
+B,2023-12-08,11:05,11:15,11:10,LATER,20967,20955.7,GOOD_GREEN_BODY,True,66.881029,12.21865,20.900322,False,True,second independently eligible candle (first eligible 11:10),MECHANICAL_RESEARCH_CONVENTION
+B,2023-12-08,12:40,14:45,14:40,LATER,20934.35,20936.55,GOOD_GREEN_BODY,False,2.816901,74.178404,23.004695,False,True,second independently eligible candle (first eligible 14:40),MECHANICAL_RESEARCH_CONVENTION
+B,2023-12-08,14:45,,14:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2023-12-08,14:55,,15:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2023-12-20,11:50,12:00,11:55,LATER,21527.9,21525.15,GOOD_GREEN_BODY,True,18.037975,28.164557,53.797468,False,True,second independently eligible candle (first eligible 11:55),MECHANICAL_RESEARCH_CONVENTION
+B,2023-12-22,09:15,09:50,09:45,LATER,21333.9,21332.05,GOOD_GREEN_BODY,True,20.5,55.5,24,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+B,2023-12-22,13:40,14:10,14:05,LATER,21309.1,21309.45,GOOD_GREEN_BODY,False,2.432432,37.297297,60.27027,False,True,second independently eligible candle (first eligible 14:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-05,11:15,11:25,11:20,LATER,21686.15,21685.7,GOOD_GREEN_BODY,True,12.230216,40.28777,47.482014,False,True,second independently eligible candle (first eligible 11:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-05,11:45,12:00,11:50,LATER,21687.5,21681.45,GOOD_GREEN_BODY,True,70.588235,19.251337,10.160428,False,True,second independently eligible candle (first eligible 11:50),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-05,13:40,14:40,13:55,LATER,21679.1,21678.75,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,67.218543,6.953642,25.827815,False,True,second independently eligible candle (first eligible 13:55),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-05,14:00,,14:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-01-11,10:55,11:10,11:05,LATER,21655.3,21654.3,GOOD_GREEN_BODY,True,3.389831,0.564972,96.045198,False,True,second independently eligible candle (first eligible 11:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-11,14:05,14:35,14:25,LATER,21646.85,21652.2,GOOD_GREEN_BODY,False,26.612903,11.021505,62.365591,False,True,second independently eligible candle (first eligible 14:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-11,14:35,,14:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-01-11,15:00,15:10,15:05,LATER,21646.45,21648.8,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,36.206897,8.62069,55.172414,False,True,second independently eligible candle (first eligible 15:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-11,15:10,,15:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-01-12,09:15,09:35,09:25,LATER,21725.75,21734.25,GOOD_GREEN_BODY,True,11.808118,36.900369,51.291513,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-12,09:30,,09:35,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-01-20,09:30,10:35,10:30,LATER,21665.8,21670.45,GOOD_GREEN_BODY,True,30.541872,25.615764,43.842365,False,True,second independently eligible candle (first eligible 10:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-20,10:35,,10:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-01-20,10:55,11:05,11:00,LATER,21675.5,21670.15,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,55.154639,19.072165,25.773196,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-23,09:30,09:50,09:40,LATER,21725.55,21723.45,GOOD_GREEN_BODY,True,66.893424,26.984127,6.122449,False,True,second independently eligible candle (first eligible 09:40),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-30,09:20,10:00,09:40,LATER,21768.8,21761.05,GOOD_GREEN_BODY,True,85.75804,0.612557,13.629403,False,True,second independently eligible candle (first eligible 09:40),MECHANICAL_RESEARCH_CONVENTION
+B,2024-01-30,09:45,,10:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-01-30,10:05,,10:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-01,09:15,09:40,09:30,LATER,21738.95,21748.95,GOOD_GREEN_BODY,True,89.030884,10.969116,0,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-01,09:35,,09:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-01,10:00,10:10,10:05,LATER,21783.9,21781.65,GOOD_GREEN_BODY,True,15.280899,59.325843,25.393258,False,True,second independently eligible candle (first eligible 10:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-01,11:15,11:25,11:20,LATER,21747.15,21735.2,GOOD_GREEN_BODY,True,29.448622,31.328321,39.223058,False,True,second independently eligible candle (first eligible 11:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-01,11:25,,11:30,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-01,11:35,,11:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-01,11:55,12:45,12:05,LATER,21759.6,21752,GOOD_GREEN_BODY,True,97.099448,0,2.900552,False,True,second independently eligible candle (first eligible 12:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-01,12:10,,12:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-01,13:00,,13:05,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-02,13:25,13:50,13:35,LATER,21865.5,21872.15,GOOD_GREEN_BODY,False,49.384886,10.896309,39.718805,False,True,second independently eligible candle (first eligible 13:35),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-07,10:40,10:50,10:45,LATER,21981.65,21976.05,GOOD_GREEN_BODY,True,45.495495,0,54.504505,False,True,second independently eligible candle (first eligible 10:45),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-07,11:05,14:05,11:10,LATER,21951,21963.1,GOOD_GREEN_BODY,False,43.305439,27.824268,28.870293,False,True,second independently eligible candle (first eligible 11:10),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-07,11:20,,14:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-07,14:30,15:25,14:50,LATER,21949.8,21949.15,GOOD_GREEN_BODY,False,73.513514,25.945946,0.540541,False,True,second independently eligible candle (first eligible 14:50),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-07,14:55,,15:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-12,09:15,09:30,09:25,LATER,21800.5,21800.95,GOOD_GREEN_BODY,True,1.986755,42.384106,55.629139,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-15,09:30,10:05,09:45,LATER,21862.8,21875.4,GOOD_GREEN_BODY,True,69.712016,30.287984,0,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-15,09:50,,10:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-15,10:55,11:10,11:05,LATER,21868.3,21860.35,GOOD_GREEN_BODY,True,31.081081,52.027027,16.891892,False,True,second independently eligible candle (first eligible 11:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-15,11:25,11:35,11:30,LATER,21861.1,21854.25,LOWER_PRICE_REJECTION,True,47.575758,11.818182,40.606061,False,True,second independently eligible candle (first eligible 11:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-15,11:35,,11:40,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-15,12:00,12:10,12:05,LATER,21857.95,21854.4,GOOD_GREEN_BODY,True,30.888031,33.590734,35.521236,False,True,second independently eligible candle (first eligible 12:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-15,12:10,,12:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-15,12:30,,12:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-15,13:00,13:20,13:10,LATER,21860.95,21861.85,GOOD_GREEN_BODY,False,42.587601,39.892183,17.520216,False,True,second independently eligible candle (first eligible 13:10),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-15,13:15,,13:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-15,13:25,13:40,13:35,LATER,21942.65,21916.85,GOOD_GREEN_BODY,False,59.20398,13.557214,27.238806,False,True,second independently eligible candle (first eligible 13:35),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-19,09:30,10:15,10:10,LATER,22067.25,22065.25,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,17.372881,80.084746,2.542373,False,True,second independently eligible candle (first eligible 10:10),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-21,09:15,09:40,09:35,LATER,22232.8,22232.4,GOOD_GREEN_BODY,True,3.560831,15.430267,81.008902,False,True,second independently eligible candle (first eligible 09:35),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-21,10:10,11:50,11:40,LATER,22213.7,22213.05,GOOD_GREEN_BODY,True,39.208633,18.345324,42.446043,False,True,second independently eligible candle (first eligible 11:40),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-21,11:45,,11:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-21,11:55,12:30,12:15,LATER,22223.15,22221.7,GOOD_GREEN_BODY,True,91.845494,7.296137,0.858369,False,True,second independently eligible candle (first eligible 12:15),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-21,12:25,,12:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-21,12:40,12:50,12:45,LATER,22235.95,22229.9,GOOD_GREEN_BODY,True,31.367292,11.52815,57.104558,False,True,second independently eligible candle (first eligible 12:45),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-21,13:05,13:35,13:10,LATER,22219.8,22219.9,GOOD_GREEN_BODY,False,91.84953,7.210031,0.940439,False,True,second independently eligible candle (first eligible 13:10),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-21,13:20,,13:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-23,09:25,09:55,09:35,LATER,22254.85,22258.25,GOOD_GREEN_BODY,True,36.525612,8.463252,55.011136,False,True,second independently eligible candle (first eligible 09:35),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-23,09:50,,09:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-23,10:20,11:15,11:00,LATER,22242.55,22248.85,GOOD_GREEN_BODY,True,50.643777,7.296137,42.060086,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-23,11:10,,11:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-23,11:20,11:35,11:30,LATER,22253.7,22252.65,GOOD_GREEN_BODY,True,18.579235,16.939891,64.480874,False,True,second independently eligible candle (first eligible 11:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-23,11:50,12:25,12:20,LATER,22256.35,22250.25,GOOD_GREEN_BODY,True,42.801556,21.011673,36.18677,False,True,second independently eligible candle (first eligible 12:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-23,13:20,13:35,13:30,LATER,22244.55,22245.3,GOOD_GREEN_BODY,False,2.380952,27.777778,69.84127,False,True,second independently eligible candle (first eligible 13:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-23,13:35,,14:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-23,14:05,,14:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-23,14:40,,14:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-02-28,09:15,10:10,10:05,LATER,22219,22224.15,GOOD_GREEN_BODY,True,30.54755,23.919308,45.533141,False,True,second independently eligible candle (first eligible 10:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-28,10:10,,10:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-03-07,09:20,10:00,09:30,LATER,22490.6,22482.65,LOWER_PRICE_REJECTION,True,60.561056,20.132013,19.306931,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-03-07,09:35,,10:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-03-07,10:15,10:25,10:20,LATER,22483.1,22488.6,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,20.233463,26.459144,53.307393,False,True,second independently eligible candle (first eligible 10:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-03-07,10:25,,11:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-03-07,11:40,11:55,11:50,LATER,22490.2,22489.9,GOOD_GREEN_BODY,True,3.355705,85.90604,10.738255,False,True,second independently eligible candle (first eligible 11:50),MECHANICAL_RESEARCH_CONVENTION
+B,2024-03-07,12:25,12:40,12:35,LATER,22496.35,22493.3,GOOD_GREEN_BODY,True,47.590361,19.277108,33.13253,False,True,second independently eligible candle (first eligible 12:35),MECHANICAL_RESEARCH_CONVENTION
+B,2024-03-07,15:00,15:25,15:20,LATER,22483.5,22483.1,LOWER_PRICE_REJECTION,False,8.496732,39.869281,51.633987,False,True,second independently eligible candle (first eligible 15:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-04,09:30,13:25,13:20,LATER,22544.8,22520,GOOD_GREEN_BODY,False,67.723343,20.605187,11.67147,False,True,second independently eligible candle (first eligible 13:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-04,13:50,14:00,13:55,LATER,22541,22516.85,GOOD_GREEN_BODY,False,68.157182,31.842818,0,False,True,second independently eligible candle (first eligible 13:55),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-04,15:00,15:20,15:15,LATER,22547.15,22526.65,GOOD_GREEN_BODY,False,73.69403,1.492537,24.813433,False,True,second independently eligible candle (first eligible 15:15),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-09,09:20,09:30,09:25,LATER,22713.2,22705.4,GOOD_GREEN_BODY,True,55.871886,39.501779,4.626335,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-09,12:30,13:00,12:55,LATER,22699.05,22697.75,GOOD_GREEN_BODY,False,7.224335,7.224335,85.551331,False,True,second independently eligible candle (first eligible 12:55),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-18,09:35,11:00,10:00,LATER,22215.7,22215.55,GOOD_GREEN_BODY,True,83.011583,3.667954,13.320463,False,True,second independently eligible candle (first eligible 10:00),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-18,10:05,,11:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-04-18,13:25,,13:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-04-23,10:45,10:55,10:50,LATER,22381.55,22369.5,GOOD_GREEN_BODY,True,73.030303,23.030303,3.939394,False,True,second independently eligible candle (first eligible 10:50),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-23,11:00,11:10,11:05,LATER,22381.4,22376.55,GOOD_GREEN_BODY,True,37.048193,26.204819,36.746988,False,True,second independently eligible candle (first eligible 11:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-23,13:15,13:25,13:20,LATER,22387.85,22375.15,GOOD_GREEN_BODY,False,73.353293,14.371257,12.275449,False,True,second independently eligible candle (first eligible 13:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-04-23,15:05,,15:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-04-24,09:15,09:50,09:45,LATER,22440.8,22427.9,GOOD_GREEN_BODY,True,64.26799,18.858561,16.873449,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+B,2024-05-14,09:15,09:35,09:25,LATER,22145.65,22129.9,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,70.05988,7.634731,22.305389,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-05-14,09:30,,09:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-05-14,09:45,10:25,09:55,LATER,22137.2,22141.9,GOOD_GREEN_BODY,True,79.023747,7.255937,13.720317,False,True,second independently eligible candle (first eligible 09:55),MECHANICAL_RESEARCH_CONVENTION
+B,2024-05-14,10:00,,10:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-05-14,10:30,10:40,10:35,LATER,22155.35,22141.95,GOOD_GREEN_BODY,True,64.634146,0,35.365854,False,True,second independently eligible candle (first eligible 10:35),MECHANICAL_RESEARCH_CONVENTION
+B,2024-05-16,09:15,14:50,09:20,LATER,22325.85,22317.75,GOOD_GREEN_BODY,False,98.275862,0.5997,1.124438,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-05-16,09:30,,14:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-05-17,09:15,10:30,10:25,LATER,22442.95,22429.35,GOOD_GREEN_BODY,True,54.870775,28.628231,16.500994,False,True,second independently eligible candle (first eligible 10:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-05-27,09:15,11:45,11:40,LATER,23024.9,23018.85,GOOD_GREEN_BODY,True,45.205479,0.456621,54.3379,False,True,second independently eligible candle (first eligible 11:40),MECHANICAL_RESEARCH_CONVENTION
+B,2024-05-27,11:45,,11:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-06-06,09:20,09:30,09:25,LATER,22767.15,22717.7,GOOD_GREEN_BODY,True,71.980337,6.601124,21.418539,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-06,13:05,13:15,13:10,LATER,22719.6,22699.3,GOOD_GREEN_BODY,False,41.645022,57.316017,1.038961,False,True,second independently eligible candle (first eligible 13:10),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-10,09:35,10:10,09:40,LATER,23314.75,23325.9,GOOD_GREEN_BODY,True,22.664016,51.292247,26.043738,False,True,second independently eligible candle (first eligible 09:40),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-10,09:45,,10:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-06-10,10:15,10:25,10:20,LATER,23350.05,23347.75,GOOD_GREEN_BODY,True,6.923077,65.641026,27.435897,False,True,second independently eligible candle (first eligible 10:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-10,10:35,10:45,10:40,LATER,23330.85,23326.45,GOOD_GREEN_BODY,True,12.075472,29.937107,57.987421,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-10,10:45,,10:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-06-10,12:05,12:20,12:15,LATER,23324.4,23320.55,GOOD_GREEN_BODY,True,28.374656,14.049587,57.575758,False,True,second independently eligible candle (first eligible 12:15),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-10,12:20,,12:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-06-19,09:20,09:40,09:30,LATER,23580.3,23600.15,GOOD_GREEN_BODY,True,1.353383,7.368421,91.278195,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-19,09:40,,09:45,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-06-19,09:50,,14:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-06-21,09:15,,09:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-06-27,09:15,10:00,09:55,LATER,23951.7,23915,GOOD_GREEN_BODY,True,82.5,0.227273,17.272727,False,True,second independently eligible candle (first eligible 09:55),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-27,10:40,11:05,10:55,LATER,23889.5,23889.75,GOOD_GREEN_BODY,True,66.007905,17.786561,16.205534,False,True,second independently eligible candle (first eligible 10:55),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-27,11:00,,11:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-06-28,09:15,09:25,09:20,LATER,24136.6,24118.8,GOOD_GREEN_BODY,True,91.90372,0,8.09628,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-28,12:15,13:45,13:40,LATER,24081.8,24080.05,GOOD_GREEN_BODY,False,4.597701,63.218391,32.183908,False,True,second independently eligible candle (first eligible 13:40),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-28,13:50,14:00,13:55,LATER,24102.9,24089.55,GOOD_GREEN_BODY,False,53.373016,25.793651,20.833333,False,True,second independently eligible candle (first eligible 13:55),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-28,14:30,14:50,14:45,LATER,24096.5,24097.15,GOOD_GREEN_BODY,False,0.497512,57.711443,41.791045,False,True,second independently eligible candle (first eligible 14:45),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-02,09:25,11:05,11:00,LATER,24168.95,24164.05,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,51.082251,24.675325,24.242424,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-02,11:05,,11:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-07-02,11:35,,12:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-07-03,09:15,09:30,09:20,LATER,24266.2,24262.75,GOOD_GREEN_BODY,True,89.615385,5.512821,4.871795,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-03,09:25,,09:30,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-07-04,14:55,15:10,15:00,LATER,24301.35,24305.9,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,56.399132,30.151844,13.449024,False,True,second independently eligible candle (first eligible 15:00),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-04,15:05,,15:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-07-04,15:15,15:25,15:20,LATER,24304.65,24309.5,LOWER_PRICE_REJECTION,False,45.930233,2.325581,51.744186,False,True,second independently eligible candle (first eligible 15:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-09,09:15,09:35,09:30,LATER,24375.4,24366.05,GOOD_GREEN_BODY,True,57.26257,14.804469,27.932961,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-15,09:15,11:05,10:45,LATER,24589.85,24589.75,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,81,4.666667,14.333333,False,True,second independently eligible candle (first eligible 10:45),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-15,10:50,,11:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-07-15,11:10,11:40,11:35,LATER,24596.65,24587.7,GOOD_GREEN_BODY,True,80.932203,18.220339,0.847458,False,True,second independently eligible candle (first eligible 11:35),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-15,11:55,12:10,12:05,LATER,24598.65,24592.35,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,55.803571,27.232143,16.964286,False,True,second independently eligible candle (first eligible 12:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-15,12:20,12:40,12:30,LATER,24588.15,24590.75,GOOD_GREEN_BODY,True,9.60452,2.824859,87.570621,False,True,second independently eligible candle (first eligible 12:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-15,12:35,,12:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-07-15,12:45,13:05,13:00,LATER,24603.9,24596.95,GOOD_GREEN_BODY,False,71.559633,11.46789,16.972477,False,True,second independently eligible candle (first eligible 13:00),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-15,14:50,15:00,14:55,LATER,24593.55,24588.95,GOOD_GREEN_BODY,False,43.283582,18.656716,38.059701,False,True,second independently eligible candle (first eligible 14:55),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-15,15:00,,15:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-07-15,15:10,15:25,15:15,LATER,24588.35,24586.2,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,59.868421,3.289474,36.842105,False,True,second independently eligible candle (first eligible 15:15),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-15,15:20,,15:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-07-26,09:15,09:30,09:20,LATER,24491.45,24477.05,GOOD_GREEN_BODY,True,43.809524,6.507937,49.68254,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-29,12:15,12:35,12:25,LATER,24883.85,24869,GOOD_GREEN_BODY,True,82.943925,9.462617,7.593458,False,True,second independently eligible candle (first eligible 12:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-29,12:30,,12:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-07-29,13:10,13:30,13:20,LATER,24873.3,24860.4,GOOD_GREEN_BODY,False,70.743405,6.235012,23.021583,False,True,second independently eligible candle (first eligible 13:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-29,13:50,14:50,14:45,LATER,24857.9,24856,GOOD_GREEN_BODY,False,13.022113,39.066339,47.911548,False,True,second independently eligible candle (first eligible 14:45),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-29,14:50,,14:55,REMOVED_BY_VARIANT,,,LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-08-01,12:25,12:40,12:30,LATER,24983.4,24982.1,GOOD_GREEN_BODY,True,77.461707,17.286652,5.251641,False,True,second independently eligible candle (first eligible 12:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-08-01,12:35,,12:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-08-01,14:15,14:40,14:25,LATER,25005.8,24973.9,LOWER_PRICE_REJECTION,False,98.509174,0,1.490826,False,True,second independently eligible candle (first eligible 14:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-08-01,14:30,,14:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-08-09,09:15,09:25,09:20,LATER,24389.3,24360.45,GOOD_GREEN_BODY,True,56.794055,32.696391,10.509554,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-08-09,10:25,10:40,10:30,LATER,24330,24331.45,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,22.992701,37.591241,39.416058,False,True,second independently eligible candle (first eligible 10:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-08-19,10:25,10:45,10:40,LATER,24557.9,24565.05,GOOD_GREEN_BODY,True,28.973843,22.132797,48.89336,False,True,second independently eligible candle (first eligible 10:40),MECHANICAL_RESEARCH_CONVENTION
+B,2024-08-19,10:45,,11:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-08-19,12:30,12:45,12:35,LATER,24575.1,24575.95,GOOD_GREEN_BODY,True,43.103448,35.775862,21.12069,False,True,second independently eligible candle (first eligible 12:35),MECHANICAL_RESEARCH_CONVENTION
+B,2024-08-19,13:40,13:50,13:45,LATER,24571.65,24560.1,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,False,73.501577,0,26.498423,False,True,second independently eligible candle (first eligible 13:45),MECHANICAL_RESEARCH_CONVENTION
+B,2024-08-19,13:50,,14:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-08-20,09:15,09:35,09:30,LATER,24655.75,24636.25,GOOD_GREEN_BODY,True,71.65493,11.971831,16.373239,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-02,12:50,13:05,13:00,LATER,25261.8,25256.5,GOOD_GREEN_BODY,False,45.833333,42.083333,12.083333,False,True,second independently eligible candle (first eligible 13:00),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-02,13:05,,13:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-09-02,13:20,,13:25,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-09-02,13:30,,13:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-09-02,13:55,14:05,14:00,LATER,25283.15,25277.7,GOOD_GREEN_BODY,False,42.692308,3.846154,53.461538,False,True,second independently eligible candle (first eligible 14:00),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-05,09:25,09:35,09:30,LATER,25217.4,25217.05,GOOD_GREEN_BODY,True,9.84456,34.455959,55.699482,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-05,09:35,,09:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-09-10,09:45,10:35,10:30,LATER,24950.75,24946.2,GOOD_GREEN_BODY,True,29.757785,22.83737,47.404844,False,True,second independently eligible candle (first eligible 10:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-10,10:35,,10:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-09-10,10:45,10:55,10:50,LATER,24969.3,24960.95,GOOD_GREEN_BODY,True,55.333333,19.666667,25,False,True,second independently eligible candle (first eligible 10:50),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-27,09:15,09:40,09:30,LATER,26240.55,26234.6,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,58.075601,30.927835,10.996564,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-27,09:35,,09:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-09-27,11:05,12:10,11:10,LATER,26236.75,26241.3,GOOD_GREEN_BODY,True,56.744186,3.72093,39.534884,False,True,second independently eligible candle (first eligible 11:10),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-27,11:15,,12:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-10-09,10:00,10:20,10:05,LATER,25139.4,25178.25,GOOD_GREEN_BODY,True,7.41483,65.130261,27.45491,False,True,second independently eligible candle (first eligible 10:05),MECHANICAL_RESEARCH_CONVENTION
+B,2024-10-09,14:25,14:35,14:30,LATER,25070.8,25065.05,GOOD_GREEN_BODY,False,26.218097,58.932715,14.849188,False,True,second independently eligible candle (first eligible 14:30),MECHANICAL_RESEARCH_CONVENTION
+B,2024-10-09,14:40,,14:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-10-14,09:15,09:30,09:25,LATER,25053.2,25040.95,LOWER_PRICE_REJECTION,True,71.681416,27.433628,0.884956,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-11-06,09:20,09:35,09:25,LATER,24336.75,24343.85,GOOD_GREEN_BODY,True,19.832109,12.696747,67.471144,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-12-03,09:20,09:30,09:25,LATER,24307.2,24300.05,LOWER_PRICE_REJECTION,True,24.699828,8.576329,66.723842,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-12-03,09:30,,09:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-12-04,09:15,09:25,09:20,LATER,24516.3,24500.25,GOOD_GREEN_BODY,True,52.920354,1.59292,45.486726,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2024-12-04,11:55,12:30,12:25,LATER,24487.1,24495.1,GOOD_GREEN_BODY,True,34.505495,7.692308,57.802198,False,True,second independently eligible candle (first eligible 12:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-12-04,12:30,,12:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2024-12-04,13:00,,13:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2024-12-04,13:20,13:30,13:25,LATER,24513.45,24483.05,GOOD_GREEN_BODY,False,57.485605,32.245681,10.268714,False,True,second independently eligible candle (first eligible 13:25),MECHANICAL_RESEARCH_CONVENTION
+B,2024-12-04,14:15,15:20,15:15,LATER,24479.3,24476.7,GOOD_GREEN_BODY,False,12.554113,26.839827,60.606061,False,True,second independently eligible candle (first eligible 15:15),MECHANICAL_RESEARCH_CONVENTION
+B,2025-01-16,10:50,11:35,11:00,LATER,23294.95,23294.4,GOOD_GREEN_BODY,True,74.747475,17.676768,7.575758,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+B,2025-01-16,11:05,,11:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-01-16,12:20,12:30,12:25,LATER,23313.9,23299.45,GOOD_GREEN_BODY,True,83.646113,0,16.353887,False,True,second independently eligible candle (first eligible 12:25),MECHANICAL_RESEARCH_CONVENTION
+B,2025-01-16,14:35,14:45,14:40,LATER,23303.25,23303.55,GOOD_GREEN_BODY,False,10.989011,48.351648,40.659341,False,True,second independently eligible candle (first eligible 14:40),MECHANICAL_RESEARCH_CONVENTION
+B,2025-01-20,09:15,11:05,10:55,LATER,23271.95,23270.8,GOOD_GREEN_BODY,True,21.779141,68.09816,10.122699,False,True,second independently eligible candle (first eligible 10:55),MECHANICAL_RESEARCH_CONVENTION
+B,2025-01-20,11:00,,11:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-01-20,11:10,11:25,11:15,LATER,23330.95,23322.45,GOOD_GREEN_BODY,True,86.376812,2.028986,11.594203,False,True,second independently eligible candle (first eligible 11:15),MECHANICAL_RESEARCH_CONVENTION
+B,2025-01-21,09:25,11:55,11:50,LATER,23382.1,23381.1,GOOD_GREEN_BODY,True,1.291712,34.553283,64.155005,False,True,second independently eligible candle (first eligible 11:50),MECHANICAL_RESEARCH_CONVENTION
+B,2025-02-01,09:15,09:40,09:30,LATER,23558.85,23562.65,GOOD_GREEN_BODY,True,35.222672,35.62753,29.149798,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2025-02-01,09:55,10:15,10:00,LATER,23572.15,23561.8,GOOD_GREEN_BODY,True,72.307692,27.692308,0,False,True,second independently eligible candle (first eligible 10:00),MECHANICAL_RESEARCH_CONVENTION
+B,2025-02-01,11:00,11:15,11:10,LATER,23596.45,23575.65,GOOD_GREEN_BODY,True,65.591398,11.520737,22.887865,False,True,second independently eligible candle (first eligible 11:10),MECHANICAL_RESEARCH_CONVENTION
+B,2025-02-01,11:45,14:20,12:20,LATER,23543.55,23548.55,GOOD_GREEN_BODY,False,76.781609,19.54023,3.678161,False,True,second independently eligible candle (first eligible 12:20),MECHANICAL_RESEARCH_CONVENTION
+B,2025-02-01,12:25,,14:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-02-05,09:20,09:40,09:35,LATER,23797.55,23788.7,GOOD_GREEN_BODY,True,75.918367,19.591837,4.489796,False,True,second independently eligible candle (first eligible 09:35),MECHANICAL_RESEARCH_CONVENTION
+B,2025-02-05,09:55,10:40,10:25,LATER,23769.4,23774.35,GOOD_GREEN_BODY,True,13.719512,39.634146,46.646341,False,True,second independently eligible candle (first eligible 10:25),MECHANICAL_RESEARCH_CONVENTION
+B,2025-02-05,10:55,13:15,11:00,LATER,23758.4,23763.15,GOOD_GREEN_BODY,False,20.32967,22.527473,57.142857,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+B,2025-02-05,11:05,,13:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2025-02-05,13:20,,13:55,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-03-06,09:20,11:10,11:05,LATER,22436.25,22413.1,GOOD_GREEN_BODY,True,90.160643,9.839357,0,False,True,second independently eligible candle (first eligible 11:05),MECHANICAL_RESEARCH_CONVENTION
+B,2025-03-06,11:20,11:50,11:45,LATER,22405.65,22389.75,GOOD_GREEN_BODY,True,56.545455,40.363636,3.090909,False,True,second independently eligible candle (first eligible 11:45),MECHANICAL_RESEARCH_CONVENTION
+B,2025-03-19,09:15,09:45,09:40,LATER,22872.85,22857.55,GOOD_GREEN_BODY,True,60.557769,19.123506,20.318725,False,True,second independently eligible candle (first eligible 09:40),MECHANICAL_RESEARCH_CONVENTION
+B,2025-03-19,09:45,,10:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-03-19,10:05,10:15,10:10,LATER,22899.35,22863.75,GOOD_GREEN_BODY,True,96.707819,3.155007,0.137174,False,True,second independently eligible candle (first eligible 10:10),MECHANICAL_RESEARCH_CONVENTION
+B,2025-03-25,09:20,09:30,09:25,LATER,23760,23723.5,GOOD_GREEN_BODY,True,91.966427,6.235012,1.798561,False,True,second independently eligible candle (first eligible 09:25),MECHANICAL_RESEARCH_CONVENTION
+B,2025-03-25,10:55,11:10,11:00,LATER,23701.1,23698.95,LOWER_PRICE_REJECTION,True,57.068063,31.064572,11.867365,False,True,second independently eligible candle (first eligible 11:00),MECHANICAL_RESEARCH_CONVENTION
+B,2025-03-25,11:05,,11:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-03-25,11:15,12:05,11:55,LATER,23726.95,23710.05,GOOD_GREEN_BODY,True,63.552833,9.341501,27.105666,False,True,second independently eligible candle (first eligible 11:55),MECHANICAL_RESEARCH_CONVENTION
+B,2025-03-25,12:05,,12:45,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2025-03-25,12:50,,13:35,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-04-22,09:15,10:10,10:05,LATER,24195.7,24193.95,GOOD_GREEN_BODY,True,0.287356,39.367816,60.344828,False,True,second independently eligible candle (first eligible 10:05),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-22,10:10,,10:15,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-04-22,10:20,10:35,10:30,LATER,24217.4,24207.8,GOOD_GREEN_BODY,True,61.87291,14.715719,23.411371,False,True,second independently eligible candle (first eligible 10:30),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-22,11:30,11:40,11:35,LATER,24209.7,24199.15,GOOD_GREEN_BODY,True,54.025974,27.272727,18.701299,False,True,second independently eligible candle (first eligible 11:35),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-22,12:10,12:25,12:20,LATER,24192.65,24195.7,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,True,21.969697,19.69697,58.333333,False,True,second independently eligible candle (first eligible 12:20),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-22,12:25,,12:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2025-04-22,12:45,,13:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-04-23,10:05,11:45,11:40,LATER,24247.25,24239.2,GOOD_GREEN_BODY,True,43.53562,24.010554,32.453826,False,True,second independently eligible candle (first eligible 11:40),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-23,11:45,,12:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-04-23,13:10,13:20,13:15,LATER,24253.55,24240.55,LOWER_PRICE_REJECTION,False,95.517241,4.137931,0.344828,False,True,second independently eligible candle (first eligible 13:15),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-29,09:40,11:05,09:55,LATER,24367.1,24390.25,GOOD_GREEN_BODY,True,78.272981,15.320334,6.406685,False,True,second independently eligible candle (first eligible 09:55),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-29,10:05,,11:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-04-29,11:10,12:50,11:40,LATER,24357.9,24354.4,GOOD_GREEN_BODY,True,85.616438,2.054795,12.328767,False,True,second independently eligible candle (first eligible 11:40),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-29,11:45,,12:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-04-29,13:00,13:20,13:05,LATER,24361.35,24360.1,LOWER_PRICE_REJECTION,False,43.674699,10.843373,45.481928,False,True,second independently eligible candle (first eligible 13:05),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-29,13:15,,13:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2025-04-29,13:40,13:55,13:45,LATER,24358.5,24363.45,GOOD_GREEN_BODY,False,11.746032,31.111111,57.142857,False,True,second independently eligible candle (first eligible 13:45),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-29,13:55,,14:00,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-04-29,14:25,14:45,14:40,LATER,24352.95,24357.1,GOOD_GREEN_BODY,False,34.653465,14.851485,50.49505,False,True,second independently eligible candle (first eligible 14:40),MECHANICAL_RESEARCH_CONVENTION
+B,2025-06-03,09:15,,10:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-06-05,09:15,09:25,09:20,LATER,24715.5,24666.8,GOOD_GREEN_BODY,True,93.15738,2.8348,4.00782,False,True,second independently eligible candle (first eligible 09:20),MECHANICAL_RESEARCH_CONVENTION
+B,2025-06-24,13:35,13:55,13:50,LATER,25083.75,25082,GOOD_GREEN_BODY,False,5.139501,5.286344,89.574156,False,True,second independently eligible candle (first eligible 13:50),MECHANICAL_RESEARCH_CONVENTION
+B,2025-06-24,14:00,14:35,14:30,LATER,25070.55,25054.6,GOOD_GREEN_BODY,False,71.689498,7.990868,20.319635,False,True,second independently eligible candle (first eligible 14:30),MECHANICAL_RESEARCH_CONVENTION
+B,2025-06-24,14:45,15:20,15:15,LATER,25069.4,25055,GOOD_GREEN_BODY,False,73.200993,9.181141,17.617866,False,True,second independently eligible candle (first eligible 15:15),MECHANICAL_RESEARCH_CONVENTION
+B,2025-06-27,09:15,09:50,09:30,LATER,25568.35,25563.8,GOOD_GREEN_BODY,True,79.25072,4.178674,16.570605,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2025-06-27,09:35,,09:50,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-06-27,09:55,10:15,10:10,LATER,25573.75,25567.65,GOOD_GREEN_BODY,True,51.131222,41.176471,7.692308,False,True,second independently eligible candle (first eligible 10:10),MECHANICAL_RESEARCH_CONVENTION
+B,2025-06-27,10:20,10:40,10:30,LATER,25570.55,25566.9,GOOD_GREEN_BODY,True,65.838509,4.037267,30.124224,False,True,second independently eligible candle (first eligible 10:30),MECHANICAL_RESEARCH_CONVENTION
+B,2025-06-27,10:35,,10:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-07-22,09:40,10:10,09:45,LATER,25111.05,25117.9,GOOD_GREEN_BODY,True,95.549738,2.356021,2.094241,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+B,2025-07-22,09:55,,10:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-07-22,10:25,12:35,12:30,LATER,25106.55,25110.8,GOOD_GREEN_BODY,True,30.5,9.5,60,False,True,second independently eligible candle (first eligible 12:30),MECHANICAL_RESEARCH_CONVENTION
+B,2025-07-22,12:35,,12:40,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2025-07-22,13:05,,14:05,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-07-30,09:15,09:35,09:30,LATER,24868.4,24867.45,GOOD_GREEN_BODY,True,5.869074,52.14447,41.986456,False,True,second independently eligible candle (first eligible 09:30),MECHANICAL_RESEARCH_CONVENTION
+B,2025-07-30,09:45,10:15,10:10,LATER,24854.7,24843.05,GOOD_GREEN_BODY,True,51.843318,18.663594,29.493088,False,True,second independently eligible candle (first eligible 10:10),MECHANICAL_RESEARCH_CONVENTION
+B,2025-07-30,10:15,,11:10,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY,,,,,,,the variant produced no signal for this cycle,
+B,2025-07-30,11:40,11:55,11:50,LATER,24876.3,24874.3,GOOD_GREEN_BODY,True,18.721461,72.146119,9.13242,False,True,second independently eligible candle (first eligible 11:50),MECHANICAL_RESEARCH_CONVENTION
+B,2025-07-30,13:10,13:35,13:30,LATER,24859.65,24854.75,GOOD_GREEN_BODY,False,42.342342,20.720721,36.936937,False,True,second independently eligible candle (first eligible 13:30),MECHANICAL_RESEARCH_CONVENTION
+B,2025-08-21,09:15,09:50,09:45,LATER,25095.05,25092.65,GOOD_GREEN_BODY,True,21.6,26.8,51.6,False,True,second independently eligible candle (first eligible 09:45),MECHANICAL_RESEARCH_CONVENTION
+B,2025-08-21,13:40,13:50,13:45,LATER,25112.15,25110.05,GOOD_GREEN_BODY,False,7.423581,60.69869,31.877729,False,True,second independently eligible candle (first eligible 13:45),MECHANICAL_RESEARCH_CONVENTION
+B,2025-08-21,15:15,,15:20,REMOVED_BY_VARIANT,,,GOOD_GREEN_BODY+LOWER_PRICE_REJECTION,,,,,,,the variant produced no signal for this cycle,
+B,2022-12-09,09:45,10:00,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),18634.6,,,,100,0,0,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-17,14:45,14:55,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),17090.55,,,,58.103976,26.75841,15.137615,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-03-22,11:15,11:25,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),17145.9,,,,99.120235,0,0.879765,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-05-11,10:20,10:35,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),18344.05,,,,51.481481,22.592593,25.925926,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-05-11,13:55,14:15,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),18339.2,,,,79.864253,18.325792,1.809955,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-05-11,14:25,14:35,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),18324.4,,,,22.661871,23.021583,54.316547,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-04,10:35,11:00,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),19467.8,,,,83.098592,0,16.901408,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-14,11:15,11:30,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),20098.55,,,,33.333333,7.051282,59.615385,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-09-14,12:15,13:30,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),20096.45,,,,67.083333,0,32.916667,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-30,09:45,13:45,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),20112.8,,,,35.845588,26.470588,37.683824,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-11-30,13:50,14:40,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),20125.4,,,,71.052632,12.969925,15.977444,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2023-12-08,14:50,15:00,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),20960.25,,,,62.936047,22.093023,14.97093,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-01,11:30,11:40,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),21749.5,,,,2.882483,25.94235,71.175166,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-15,11:40,11:50,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),21869.1,,,,19.098712,27.682403,53.218884,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-15,12:15,12:45,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),21863.2,,,,48.288288,2.522523,49.189189,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-02-23,13:40,14:35,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),22245.95,,,,79.882813,1.5625,18.554688,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-03-07,10:30,11:10,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),22498.65,,,,20.942408,50.26178,28.795812,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-06-19,09:45,14:20,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),23592.65,,,,68.363136,20.632737,11.004127,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-07-02,11:10,11:25,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24181,,,,21.333333,35,43.666667,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-08-19,10:50,11:20,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24573.9,,,,11.699164,78.830084,9.470752,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-02,13:10,13:20,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),25256.2,,,,26.171875,26.5625,47.265625,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-02,13:25,13:50,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),25259.9,,,,16.455696,62.658228,20.886076,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-09-05,09:40,09:55,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),25210.7,,,,0.433839,53.796095,45.770065,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-12-03,09:35,09:45,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24329.65,,,,39.358108,0,60.641892,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2024-12-04,12:35,13:10,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24481.2,,,,69.213483,30.786517,0,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2025-03-25,12:10,13:35,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),23713.75,,,,82.719187,10.419314,6.861499,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-22,12:30,13:20,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24191.05,,,,46.078431,42.48366,11.437908,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2025-04-23,11:50,12:55,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24248.55,,,,46.853147,13.286713,39.86014,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2025-07-22,12:40,14:05,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),25105.35,,,,70.935961,12.315271,16.748768,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION
+B,2025-07-30,10:20,11:15,,NEW_SIGNAL (baseline had no confirmed signal for this cycle),24878.55,,,,100,0,0,False,True,baseline cycle never confirmed (or no baseline cycle),MECHANICAL_RESEARCH_CONVENTION

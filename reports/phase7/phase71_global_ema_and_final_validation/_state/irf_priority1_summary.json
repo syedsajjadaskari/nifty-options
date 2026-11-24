@@ -1,0 +1,42 @@
+{
+ "A": {
+  "sessions": 246,
+  "m2_rally_breakout": 175,
+  "first_red_marked": 175,
+  "first_red_closed_below_A": 56,
+  "level_A_lost_before_m2_entry": 109,
+  "M2A_signals": 113,
+  "M2B_signals": 53,
+  "M2B_REARM_signals": 111,
+  "M2B_effects": {
+   "UNCHANGED": 186,
+   "REMOVED": 60
+  },
+  "M2B_REARM_effects": {
+   "UNCHANGED": 183,
+   "TIME_CHANGED": 39,
+   "REMOVED": 13,
+   "ADDED": 11
+  }
+ },
+ "B": {
+  "sessions": 736,
+  "m2_rally_breakout": 539,
+  "first_red_marked": 539,
+  "first_red_closed_below_A": 169,
+  "level_A_lost_before_m2_entry": 307,
+  "M2A_signals": 332,
+  "M2B_signals": 181,
+  "M2B_REARM_signals": 332,
+  "M2B_effects": {
+   "UNCHANGED": 585,
+   "REMOVED": 151
+  },
+  "M2B_REARM_effects": {
+   "UNCHANGED": 561,
+   "TIME_CHANGED": 101,
+   "ADDED": 37,
+   "REMOVED": 37
+  }
+ }
+}

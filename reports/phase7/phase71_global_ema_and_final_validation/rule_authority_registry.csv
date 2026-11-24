@@ -1,0 +1,16 @@
+rule_id,scope,rule,source,status,implemented_as
+EMA-U1,ALL,27-point EMA gap is common to all five strategies,author message (this brief),AUTHOR_STATEMENT_AMBIGUOUS,EMA-0..EMA-5 research configurations; none active
+EMA-U2,ALL,EMA is the 5-minute EMA(200),handwritten AC13 '200 EMA [5 min TF]'; ORB rulebook,SOURCE_SUPPORTED_FOR_IRF_AND_ORB; ASSUMED_FOR_PDR_PDS_RF,ema200_5m of the frozen contexts
+EMA-U3,ALL,measure / inequality / action / timing of the 27-point gap,none,UNRESOLVED,five readings kept diagnostic-only
+EMA-U4,IRF,IRF V3 has no EMA filter,IRF PDFs p2,STATED_IN_SOURCE_PDF (now conflicts with EMA-U1),no EMA in method1/method2
+EMA-U5,IRF,"28-point range clearance, all IRF methods",phone call C3 + owner approval of the number (Phase 5.3),NUMBER_APPROVED_MEASURE_PROVISIONAL,EMA-4 comparator
+EMA-U6,ORB,200 EMA direction filter; fresh cross allowed; 'near the EMA wait for a convincing close' (no number),ORB rulebook,STATED_WITH_TO_CONFIRM,ORB V2 unchanged
+M2-I1,IRF M2,Level A invalidation (close below A before the sequence completes),none in the PDFs,SOURCE_SILENT,M2-A persistent = headline; M2-B permanent and M2-B-REARM = research
+M2-I2,IRF M2,failure = any strict close below Level B,PDF p3/p5,STATED,rule as written; margin / bearish / extra-candle candidates are diagnostics
+M2-I3,IRF M2,Nov 3 failure candle,PDF p7 screenshot,"EXAMPLE_ONLY - reproduced on the 5paisa feed, one candle earlier on the secondary feed",no rule change
+PDR-1,PDR,confirmation closes strictly above the zone ceiling,Phase 3.6 owner-approved brief interpretation (PDR-B05a),OWNER_APPROVED_PREVIOUSLY,PDR-A baseline
+PDR-2,PDR,first green candle after the retest (no ceiling) / retest candle may confirm / second confirmation,author remarks NR6; guide s4.3 'a green candle',AUTHOR_CONFIRMATION_REQUIRED,"PDR-B1/B2/C/D research (G1, G2, G3, H)"
+PDS-1,PDS,Methods 1/2 first vs second confirmation; Method 3 mandatory support break,PDS guide,METHOD_SPECIFIC,I1 / I2 research
+CS-1,ALL,candle-body strength 60 / 70 / pattern-aware,none in the sources (PDS Method 1 'good body' undefined),NOT_A_SOURCE_RULE,J60 / J70 / JD research
+PORT-1,PORTFOLIO,"frozen controller, 6x65 units, T1 +27, T2 60/70, stops 30/35, post-T1 +6, cutoff 13:00, one position at a time, 2nd trade only PDR/PDS after a full stop",owner-approved portfolio rules (Phases 2.3-3.6),FROZEN,unchanged
+PORT-2,IRF,IRF V3 inside the portfolio uses stop 35 (frozen reference); the standalone SL35/SL40 ledgers of Phase 7.0 are not used,Phase 7.0 'SL not selected',REFERENCE_CONVENTION,SL40 portfolio alternative NOT run (see unresolved list)

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="550" viewBox="0 0 1180 550" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="550" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">Journal manual-only 2026-08-07: IRF @ 10:15 (BE)</text>
+<text x="10" y="38" fill="#8a8f98">2026-08-07</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">24,531.3</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">24,551.7</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">24,572.2</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">24,592.7</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">24,613.1</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">24,633.6</text>
+<line x1="194.5" x2="194.5" y1="54" y2="480" stroke="#eee"/><text x="194.5" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="439.4" x2="439.4" y1="54" y2="480" stroke="#eee"/><text x="439.4" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<line x1="684.3" x2="684.3" y1="54" y2="480" stroke="#eee"/><text x="684.3" y="494" text-anchor="middle" fill="#8a8f98">10:30</text>
+<line x1="929.2" x2="929.2" y1="54" y2="480" stroke="#eee"/><text x="929.2" y="494" text-anchor="middle" fill="#8a8f98">11:00</text>
+<polyline points="92.4,254.9 133.2,253.8 174.0,253.1 214.9,252.5 255.7,251.7 296.5,250.4 337.3,249.3 378.1,247.9 419.0,246.3 459.8,245.2 500.6,244.1 541.4,243.7 582.2,244.1 623.0,244.7 663.9,245.5 704.7,246.2 745.5,246.7 786.3,247.5 827.1,247.9 868.0,248.1 908.8,248.8 949.6,250.1" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="254.1" fill="#c9a400">EMA(200) 5m</text>
+<line x1="92.4" x2="92.4" y1="190.1" y2="464.2" stroke="#1f8a5b"/>
+<rect x="80.2" y="226.1" width="24.5" height="238.1" fill="#1f8a5b"/>
+<line x1="133.2" x2="133.2" y1="110.6" y2="257.3" stroke="#1f8a5b"/>
+<rect x="121.0" y="145.1" width="24.5" height="81.2" fill="#1f8a5b"/>
+<line x1="174.0" x2="174.0" y1="132.8" y2="191.8" stroke="#c0392b"/>
+<rect x="161.8" y="138.5" width="24.5" height="48.7" fill="#c0392b"/>
+<line x1="214.9" x2="214.9" y1="144.1" y2="221.9" stroke="#c0392b"/>
+<rect x="202.6" y="177.2" width="24.5" height="9.6" fill="#c0392b"/>
+<line x1="255.7" x2="255.7" y1="157.2" y2="200.5" stroke="#1f8a5b"/>
+<rect x="243.4" y="174.5" width="24.5" height="8.3" fill="#1f8a5b"/>
+<line x1="296.5" x2="296.5" y1="116.2" y2="200.9" stroke="#1f8a5b"/>
+<rect x="284.3" y="118.1" width="24.5" height="51.6" fill="#1f8a5b"/>
+<line x1="337.3" x2="337.3" y1="110.0" y2="190.5" stroke="#c0392b"/>
+<rect x="325.1" y="110.0" width="24.5" height="37.7" fill="#c0392b"/>
+<line x1="378.1" x2="378.1" y1="86.4" y2="148.3" stroke="#1f8a5b"/>
+<rect x="365.9" y="101.6" width="24.5" height="46.6" fill="#1f8a5b"/>
+<line x1="419.0" x2="419.0" y1="69.8" y2="119.1" stroke="#1f8a5b"/>
+<rect x="406.7" y="86.4" width="24.5" height="14.8" fill="#1f8a5b"/>
+<line x1="459.8" x2="459.8" y1="81.2" y2="162.6" stroke="#c0392b"/>
+<rect x="447.5" y="81.2" width="24.5" height="56.2" fill="#c0392b"/>
+<line x1="500.6" x2="500.6" y1="115.8" y2="153.5" stroke="#c0392b"/>
+<rect x="488.3" y="136.4" width="24.5" height="2.5" fill="#c0392b"/>
+<line x1="541.4" x2="541.4" y1="131.8" y2="218.8" stroke="#c0392b"/>
+<rect x="529.2" y="137.0" width="24.5" height="60.4" fill="#c0392b"/>
+<line x1="582.2" x2="582.2" y1="187.0" y2="315.4" stroke="#c0392b"/>
+<rect x="570.0" y="187.0" width="24.5" height="102.0" fill="#c0392b"/>
+<line x1="623.0" x2="623.0" y1="244.6" y2="315.0" stroke="#c0392b"/>
+<rect x="610.8" y="280.8" width="24.5" height="18.7" fill="#c0392b"/>
+<line x1="663.9" x2="663.9" y1="289.6" y2="348.1" stroke="#c0392b"/>
+<rect x="651.6" y="289.6" width="24.5" height="43.5" fill="#c0392b"/>
+<line x1="704.7" x2="704.7" y1="306.4" y2="354.9" stroke="#1f8a5b"/>
+<rect x="692.4" y="313.9" width="24.5" height="13.7" fill="#1f8a5b"/>
+<line x1="745.5" x2="745.5" y1="293.7" y2="332.5" stroke="#1f8a5b"/>
+<rect x="733.3" y="299.0" width="24.5" height="14.4" fill="#1f8a5b"/>
+<line x1="786.3" x2="786.3" y1="291.2" y2="343.9" stroke="#c0392b"/>
+<rect x="774.1" y="298.5" width="24.5" height="22.3" fill="#c0392b"/>
+<line x1="827.1" x2="827.1" y1="260.9" y2="321.2" stroke="#1f8a5b"/>
+<rect x="814.9" y="287.7" width="24.5" height="22.1" fill="#1f8a5b"/>
+<line x1="868.0" x2="868.0" y1="250.0" y2="308.1" stroke="#1f8a5b"/>
+<rect x="855.7" y="267.9" width="24.5" height="21.2" fill="#1f8a5b"/>
+<line x1="908.8" x2="908.8" y1="251.9" y2="320.8" stroke="#c0392b"/>
+<rect x="896.5" y="261.1" width="24.5" height="56.2" fill="#c0392b"/>
+<line x1="949.6" x2="949.6" y1="296.9" y2="392.6" stroke="#c0392b"/>
+<rect x="937.3" y="309.8" width="24.5" height="71.2" fill="#c0392b"/>
+<circle cx="521.0" cy="197.4" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="527.0" y="190.4" fill="#2b6cb0" font-weight="bold">IRF V3-M1 10:15</text>
+<circle cx="316.9" cy="147.6" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="322.9" y="140.6" fill="#2b6cb0" font-weight="bold">IRF V3-M2 09:50</text>
+<circle cx="480.2" cy="138.9" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="486.2" y="131.9" fill="#2b6cb0" font-weight="bold">IRF V3-M2 10:10</text>
+<circle cx="153.6" cy="187.2" r="4.5" fill="none" stroke="#c0392b" stroke-width="2"/><text x="159.6" y="180.2" fill="#c0392b" font-weight="bold">PDS Method 1 09:30</text>
+<circle cx="521.0" cy="197.4" r="4.5" fill="none" stroke="#c0392b" stroke-width="2"/><text x="527.0" y="190.4" fill="#c0392b" font-weight="bold">PDS Method 3 10:15</text>
+<text x="10" y="524" fill="#222">No automated IRF trade matched this row. Automated trades that day: PDS@09:30. Journal has no price / direction.</text>
+</svg>

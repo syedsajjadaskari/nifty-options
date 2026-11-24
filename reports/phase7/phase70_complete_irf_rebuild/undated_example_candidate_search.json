@@ -1,0 +1,42 @@
+{
+ "M1-E1": {
+  "level": 24391.8,
+  "tolerance": 1.0,
+  "candidates": {
+   "TV (2017-2026-11-04)": [
+    [
+     "2026-04-16",
+     24392.35
+    ]
+   ],
+   "5P window B": [],
+   "5P window A": []
+  },
+  "verdicts": [
+   [
+    "2026-04-16",
+    "NOT_SUPPORTED: the M1 engine finds no signal that day (NO_CLOSE_ABOVE_LEVEL)"
+   ]
+  ]
+ },
+ "M2-E1": {
+  "level": 25358.35,
+  "tolerance": 1.0,
+  "candidates": {
+   "TV (2017-2026-11-04)": [
+    [
+     "2026-01-29",
+     25359.35
+    ]
+   ],
+   "5P window B": [],
+   "5P window A": []
+  },
+  "verdicts": [
+   [
+    "2026-01-29",
+    "NOT_SUPPORTED: level 25430.05, failure close 25419.40 vs stated entry 25376.25"
+   ]
+  ]
+ }
+}

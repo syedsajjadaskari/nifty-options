@@ -1,0 +1,10 @@
+strategy,method,signals,zero_range,mean_body_pct,median_body_pct,share_below_60_pct,share_below_70_pct,colour_matches_direction_pct
+IRF,Method 1,267,0,64.4,68.2,37.5,53.2,100
+IRF,Method 2A,271,0,60,63.9,45.4,57.2,95.9
+IRF,Method 2B,248,0,53.7,57.7,53.2,68.1,100
+ORB,ORB-V2,39,0,71.5,83.8,25.6,25.6,100
+PDR,PDR,147,0,58.5,57.7,51,62.6,98
+PDS,Method 1,73,0,66.4,66.9,42.5,56.2,100
+PDS,Method 2,19,0,24.7,28.1,100,100,100
+PDS,Method 3,19,0,66.5,69.4,31.6,63.2,100
+RF,RF,12,0,59.1,59.3,58.3,75,100

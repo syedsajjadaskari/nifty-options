@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="550" viewBox="0 0 1180 550" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="550" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">Journal manual-only 2026-02-03: IRF @ 09:35 (SL)</text>
+<text x="10" y="38" fill="#8a8f98">2026-02-03</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">25,007.8</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">25,274.1</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">25,540.5</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">25,806.8</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">26,073.2</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">26,339.5</text>
+<line x1="316.9" x2="316.9" y1="54" y2="480" stroke="#eee"/><text x="316.9" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="806.7" x2="806.7" y1="54" y2="480" stroke="#eee"/><text x="806.7" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<polyline points="112.8,464.2 194.5,461.8 276.1,459.5 357.7,457.3 439.4,455.1 521.0,453.1 602.6,450.9 684.3,448.9 765.9,447.0 847.5,445.1 929.2,443.3" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="447.3" fill="#c9a400">EMA(200) 5m</text>
+<line x1="112.8" x2="112.8" y1="69.8" y2="234.2" stroke="#c0392b"/>
+<rect x="88.3" y="77.9" width="49.0" height="146.0" fill="#c0392b"/>
+<line x1="194.5" x2="194.5" y1="204.5" y2="224.9" stroke="#1f8a5b"/>
+<rect x="170.0" y="220.6" width="49.0" height="4.4" fill="#1f8a5b"/>
+<line x1="276.1" x2="276.1" y1="216.9" y2="237.3" stroke="#c0392b"/>
+<rect x="251.6" y="219.7" width="49.0" height="11.3" fill="#c0392b"/>
+<line x1="357.7" x2="357.7" y1="228.1" y2="241.0" stroke="#c0392b"/>
+<rect x="333.2" y="231.3" width="49.0" height="9.6" fill="#c0392b"/>
+<line x1="439.4" x2="439.4" y1="232.3" y2="243.6" stroke="#1f8a5b"/>
+<rect x="414.9" y="235.3" width="49.0" height="5.2" fill="#1f8a5b"/>
+<line x1="521.0" x2="521.0" y1="233.8" y2="252.0" stroke="#c0392b"/>
+<rect x="496.5" y="235.6" width="49.0" height="14.2" fill="#c0392b"/>
+<line x1="602.6" x2="602.6" y1="233.8" y2="266.0" stroke="#1f8a5b"/>
+<rect x="578.1" y="234.1" width="49.0" height="16.0" fill="#1f8a5b"/>
+<line x1="684.3" x2="684.3" y1="228.8" y2="247.9" stroke="#c0392b"/>
+<rect x="659.8" y="234.3" width="49.0" height="13.0" fill="#c0392b"/>
+<line x1="765.9" x2="765.9" y1="243.2" y2="259.6" stroke="#c0392b"/>
+<rect x="741.4" y="247.6" width="49.0" height="10.2" fill="#c0392b"/>
+<line x1="847.5" x2="847.5" y1="249.2" y2="258.2" stroke="#c0392b"/>
+<rect x="823.1" y="257.4" width="49.0" height="1.0" fill="#c0392b"/>
+<line x1="929.2" x2="929.2" y1="257.7" y2="277.0" stroke="#c0392b"/>
+<rect x="904.7" y="258.1" width="49.0" height="5.2" fill="#c0392b"/>
+<text x="10" y="524" fill="#222">No automated IRF trade matched this row. Automated trades that day: nan. Journal has no price / direction.</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="582" viewBox="0 0 1180 582" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="582" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">D ADDED trade (executed in D): 2025-11-14 PDS (Method 1)</text>
+<text x="10" y="38" fill="#8a8f98">signal 09:55, entry 09:55 @ 25792.25</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">25,716.0</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">25,749.8</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">25,783.7</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">25,817.5</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">25,851.4</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">25,885.2</text>
+<line x1="230.5" x2="230.5" y1="54" y2="480" stroke="#eee"/><text x="230.5" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="547.4" x2="547.4" y1="54" y2="480" stroke="#eee"/><text x="547.4" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<line x1="864.4" x2="864.4" y1="54" y2="480" stroke="#eee"/><text x="864.4" y="494" text-anchor="middle" fill="#8a8f98">10:30</text>
+<rect x="494.6" y="199.9" width="116.2" height="88.1" fill="#c0392b" fill-opacity="0.11" stroke="#c0392b" stroke-opacity="0.4"/>
+<rect x="494.6" y="288.0" width="116.2" height="176.2" fill="#1f8a5b" fill-opacity="0.11" stroke="#1f8a5b" stroke-opacity="0.4"/>
+<polyline points="98.4,161.1 151.2,162.5 204.1,162.9 256.9,162.1 309.7,162.1 362.5,161.8 415.4,161.5 468.2,162.7 521.0,163.5 573.8,165.2 626.6,166.5 679.5,168.0 732.3,169.0 785.1,170.3 837.9,171.7 890.8,173.4 943.6,175.1" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="179.1" fill="#c9a400">EMA(200) 5m</text>
+<line x1="72" x2="970" y1="288.0" y2="288.0" stroke="#222" stroke-width="1.1"/><text x="974" y="286.0" fill="#222">entry 25792.25</text>
+<line x1="72" x2="970" y1="199.9" y2="199.9" stroke="#c0392b" stroke-width="1.1"/><text x="974" y="197.9" fill="#c0392b">initial stop 25827.25</text>
+<line x1="72" x2="970" y1="356.0" y2="356.0" stroke="#1f8a5b" stroke-width="1.1" stroke-dasharray="6,4"/><text x="974" y="354.0" fill="#1f8a5b">T1 25765.25</text>
+<line x1="72" x2="970" y1="464.2" y2="464.2" stroke="#1f8a5b" stroke-width="1.1"/><text x="974" y="462.2" fill="#1f8a5b">T2 25722.25</text>
+<line x1="72" x2="970" y1="272.9" y2="272.9" stroke="#d9822b" stroke-width="1.1" stroke-dasharray="6,4"/><text x="974" y="270.9" fill="#d9822b">post-T1 stop 25798.25</text>
+<line x1="98.4" x2="98.4" y1="201.9" y2="350.8" stroke="#1f8a5b"/>
+<rect x="82.6" y="241.6" width="31.7" height="85.2" fill="#1f8a5b"/>
+<line x1="151.2" x2="151.2" y1="240.6" y2="309.9" stroke="#c0392b"/>
+<rect x="135.4" y="240.6" width="31.7" height="56.4" fill="#c0392b"/>
+<line x1="204.1" x2="204.1" y1="210.1" y2="307.3" stroke="#1f8a5b"/>
+<rect x="188.2" y="210.1" width="31.7" height="87.2" fill="#1f8a5b"/>
+<line x1="256.9" x2="256.9" y1="74.1" y2="220.7" stroke="#1f8a5b"/>
+<rect x="241.0" y="74.4" width="31.7" height="133.7" fill="#1f8a5b"/>
+<line x1="309.7" x2="309.7" y1="69.8" y2="178.0" stroke="#c0392b"/>
+<rect x="293.9" y="74.2" width="31.7" height="92.6" fill="#c0392b"/>
+<line x1="362.5" x2="362.5" y1="115.1" y2="174.2" stroke="#1f8a5b"/>
+<rect x="346.7" y="127.0" width="31.7" height="40.9" fill="#1f8a5b"/>
+<line x1="415.4" x2="415.4" y1="100.5" y2="136.7" stroke="#c0392b"/>
+<rect x="399.5" y="128.8" width="31.7" height="2.0" fill="#c0392b"/>
+<line x1="468.2" x2="468.2" y1="130.8" y2="289.0" stroke="#c0392b"/>
+<rect x="452.3" y="130.8" width="31.7" height="156.9" fill="#c0392b"/>
+<line x1="521.0" x2="521.0" y1="223.2" y2="293.2" stroke="#1f8a5b"/>
+<rect x="505.2" y="241.6" width="31.7" height="46.4" fill="#1f8a5b"/>
+<line x1="573.8" x2="573.8" y1="231.1" y2="356.6" stroke="#c0392b"/>
+<rect x="558.0" y="242.5" width="31.7" height="89.9" fill="#c0392b"/>
+<line x1="626.6" x2="626.6" y1="258.1" y2="335.5" stroke="#1f8a5b"/>
+<rect x="610.8" y="294.7" width="31.7" height="37.6" fill="#1f8a5b"/>
+<line x1="679.5" x2="679.5" y1="291.3" y2="334.3" stroke="#c0392b"/>
+<rect x="663.6" y="294.1" width="31.7" height="24.7" fill="#c0392b"/>
+<line x1="732.3" x2="732.3" y1="264.9" y2="331.7" stroke="#1f8a5b"/>
+<rect x="716.4" y="271.9" width="31.7" height="47.7" fill="#1f8a5b"/>
+<line x1="785.1" x2="785.1" y1="256.4" y2="303.8" stroke="#c0392b"/>
+<rect x="769.3" y="275.1" width="31.7" height="27.8" fill="#c0392b"/>
+<line x1="837.9" x2="837.9" y1="287.8" y2="313.3" stroke="#c0392b"/>
+<rect x="822.1" y="301.2" width="31.7" height="9.2" fill="#c0392b"/>
+<line x1="890.8" x2="890.8" y1="289.2" y2="340.3" stroke="#c0392b"/>
+<rect x="874.9" y="309.2" width="31.7" height="25.7" fill="#c0392b"/>
+<line x1="943.6" x2="943.6" y1="324.9" y2="354.9" stroke="#c0392b"/>
+<rect x="927.7" y="335.7" width="31.7" height="11.2" fill="#c0392b"/>
+<circle cx="494.6" cy="288.0" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="500.6" y="281.0" fill="#2b6cb0" font-weight="bold">signal 09:55</text>
+<circle cx="494.6" cy="288.0" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="500.6" y="281.0" fill="#222" font-weight="bold">entry</text>
+<circle cx="589.7" cy="356.0" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="595.7" y="349.0" fill="#222" font-weight="bold">leg1 exit 25765.25</text>
+<circle cx="610.8" cy="272.9" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="616.8" y="265.9" fill="#222" font-weight="bold">leg2 exit 25798.25</text>
+<text x="10" y="524" fill="#222">PDS Method 1 SHORT; outcome T1_THEN_BUFFER_STOP; gross +10.50 weighted index points = Rs +4,095 (synthetic, 390 units); journal: n/a</text>
+<text x="10" y="540" fill="#222">EMA(200) at the confirmation candle 25842.03: |close-EMA| 49.68, signed -49.68, candle-range clearance 0.00 (EMA inside the candle the candle)</text>
+<text x="10" y="556" fill="#222">Not a B trade; D - B + universal EMA-1: minimum 27-point |close - EMA| (all five strategies)</text>
+</svg>

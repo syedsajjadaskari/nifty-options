@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="566" viewBox="0 0 1180 566" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="566" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">B executed: 2026-04-09 IRF (V3-M1)</text>
+<text x="10" y="38" fill="#8a8f98">signal 09:35, entry 09:35 @ 23891.80</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">23,413.1</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">23,532.9</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">23,652.6</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">23,772.4</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">23,892.2</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">24,011.9</text>
+<line x1="316.9" x2="316.9" y1="54" y2="480" stroke="#eee"/><text x="316.9" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="806.7" x2="806.7" y1="54" y2="480" stroke="#eee"/><text x="806.7" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<rect x="398.5" y="114.6" width="16.3" height="24.9" fill="#c0392b" fill-opacity="0.11" stroke="#c0392b" stroke-opacity="0.4"/>
+<rect x="398.5" y="139.5" width="16.3" height="42.7" fill="#1f8a5b" fill-opacity="0.11" stroke="#1f8a5b" stroke-opacity="0.4"/>
+<polyline points="112.8,464.2 194.5,460.4 276.1,456.6 357.7,453.4 439.4,450.3 521.0,447.4 602.6,444.9 684.3,442.5 765.9,440.2 847.5,437.8 929.2,435.3" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="439.3" fill="#c9a400">EMA(200) 5m</text>
+<line x1="72" x2="970" y1="139.5" y2="139.5" stroke="#222" stroke-width="1.1"/><text x="974" y="137.5" fill="#222">entry 23891.80</text>
+<line x1="72" x2="970" y1="114.6" y2="114.6" stroke="#c0392b" stroke-width="1.1"/><text x="974" y="112.6" fill="#c0392b">initial stop 23926.80</text>
+<line x1="72" x2="970" y1="158.7" y2="158.7" stroke="#1f8a5b" stroke-width="1.1" stroke-dasharray="6,4"/><text x="974" y="156.7" fill="#1f8a5b">T1 23864.80</text>
+<line x1="72" x2="970" y1="182.1" y2="182.1" stroke="#1f8a5b" stroke-width="1.1"/><text x="974" y="180.1" fill="#1f8a5b">T2 23831.80</text>
+<line x1="112.8" x2="112.8" y1="108.3" y2="193.1" stroke="#1f8a5b"/>
+<rect x="88.3" y="108.3" width="49.0" height="19.2" fill="#1f8a5b"/>
+<line x1="194.5" x2="194.5" y1="80.7" y2="114.7" stroke="#1f8a5b"/>
+<rect x="170.0" y="84.3" width="49.0" height="26.6" fill="#1f8a5b"/>
+<line x1="276.1" x2="276.1" y1="69.8" y2="90.1" stroke="#1f8a5b"/>
+<rect x="251.6" y="73.7" width="49.0" height="11.2" fill="#1f8a5b"/>
+<line x1="357.7" x2="357.7" y1="72.4" y2="140.1" stroke="#c0392b"/>
+<rect x="333.2" y="74.2" width="49.0" height="65.9" fill="#c0392b"/>
+<line x1="439.4" x2="439.4" y1="112.7" y2="146.4" stroke="#c0392b"/>
+<rect x="414.9" y="139.5" width="49.0" height="1.0" fill="#c0392b"/>
+<line x1="521.0" x2="521.0" y1="134.1" y2="164.5" stroke="#c0392b"/>
+<rect x="496.5" y="139.8" width="49.0" height="21.4" fill="#c0392b"/>
+<line x1="602.6" x2="602.6" y1="145.7" y2="192.7" stroke="#c0392b"/>
+<rect x="578.1" y="159.3" width="49.0" height="33.2" fill="#c0392b"/>
+<line x1="684.3" x2="684.3" y1="186.3" y2="208.2" stroke="#c0392b"/>
+<rect x="659.8" y="193.4" width="49.0" height="7.8" fill="#c0392b"/>
+<line x1="765.9" x2="765.9" y1="200.1" y2="225.3" stroke="#c0392b"/>
+<rect x="741.4" y="200.5" width="49.0" height="14.0" fill="#c0392b"/>
+<line x1="847.5" x2="847.5" y1="185.9" y2="232.8" stroke="#1f8a5b"/>
+<rect x="823.1" y="192.7" width="49.0" height="22.5" fill="#1f8a5b"/>
+<line x1="929.2" x2="929.2" y1="182.5" y2="199.5" stroke="#1f8a5b"/>
+<rect x="904.7" y="187.7" width="49.0" height="4.7" fill="#1f8a5b"/>
+<circle cx="398.5" cy="139.5" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="404.5" y="132.5" fill="#2b6cb0" font-weight="bold">signal 09:35</text>
+<circle cx="398.5" cy="139.5" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="404.5" y="132.5" fill="#222" font-weight="bold">entry</text>
+<circle cx="414.9" cy="114.6" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="420.9" y="107.6" fill="#222" font-weight="bold">leg1 exit 23926.80</text>
+<circle cx="414.9" cy="114.6" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="420.9" y="107.6" fill="#222" font-weight="bold">leg2 exit 23926.80</text>
+<text x="10" y="524" fill="#222">IRF V3-M1 SHORT; outcome INITIAL_FULL_STOP; gross -35.00 weighted index points = Rs -13,650 (synthetic, 390 units); journal: AUTOMATED_ONLY</text>
+<text x="10" y="540" fill="#222">EMA(200) at the confirmation candle 23450.43: |close-EMA| 440.52, signed +440.52, candle-range clearance 440.52 (EMA below the candle)</text>
+</svg>

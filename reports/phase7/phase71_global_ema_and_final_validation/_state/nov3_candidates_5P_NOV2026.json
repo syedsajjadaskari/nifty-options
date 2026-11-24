@@ -1,0 +1,8 @@
+{
+ "strict close below B (rule as written)": "10:05-10:10 close 23613.00 (B 23621.70)",
+ "margin >=1pt": "10:05-10:10 close 23613.00 (B 23621.70)",
+ "margin >=2pt": "10:05-10:10 close 23613.00 (B 23621.70)",
+ "margin >=5pt": "10:05-10:10 close 23613.00 (B 23621.70)",
+ "failure candle must be red": "10:05-10:10 close 23613.00 (B 23621.70)",
+ "extra confirming candle": "no signal"
+}

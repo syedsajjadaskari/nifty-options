@@ -1,0 +1,14 @@
+date,weekday,rows_total,rows_in_session_0915_1529,rows_outside_session,missing_minutes,missing_first,duplicate_stamps,monotonic,ohlc_violations,flat_rows,complete_session,note
+2026-11-02,Mon,376,375,1,0,,0,True,0,14,True,
+2026-11-03,Tue,376,375,1,0,,0,True,0,13,True,
+2026-11-04,Wed,376,375,1,0,,0,True,0,14,True,
+2026-11-05,Thu,376,375,1,0,,0,True,0,14,True,
+2026-11-06,Fri,376,375,1,0,,0,True,0,14,True,
+2026-11-08,Sun,71,70,1,305,2026-11-08 09:15:00,0,True,0,14,False,weekend / special session (Muhurat-type partial)
+2026-11-09,Mon,376,375,1,0,,0,True,0,14,True,
+2026-11-11,Wed,376,375,1,0,,0,True,0,13,True,
+2026-11-12,Thu,376,375,1,0,,0,True,0,13,True,
+2026-11-13,Fri,376,375,1,0,,0,True,0,14,True,
+2026-11-16,Mon,376,375,1,0,,0,True,0,14,True,
+2026-11-17,Tue,376,375,1,0,,0,True,0,14,True,
+2026-11-18,Wed,405,375,30,0,,0,True,0,14,True,

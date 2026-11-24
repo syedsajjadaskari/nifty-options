@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800" font-family="Helvetica,Arial,sans-serif" font-size="11"><rect width="1500" height="800" fill="#fff"/>
+<text x="70" y="20" font-size="16" font-weight="bold">PDR delayed cycle 2026-04-06 (A)</text>
+<text x="70" y="38" fill="#333">2026-04-06 | zone 22717.65-22761.95 | category A</text>
+<text x="70" y="52" fill="#333">Shaded = previous-day resistance zone; markers = candidate confirmations (counterfactual variants are research only).</text>
+<line x1="70" y1="653.5" x2="860" y2="653.5" stroke="#eee"/><text x="64" y="657.5" text-anchor="end" fill="#888">22,600</text>
+<line x1="70" y1="521.0" x2="860" y2="521.0" stroke="#eee"/><text x="64" y="525.0" text-anchor="end" fill="#888">22,700</text>
+<line x1="70" y1="388.4" x2="860" y2="388.4" stroke="#eee"/><text x="64" y="392.4" text-anchor="end" fill="#888">22,800</text>
+<line x1="70" y1="255.9" x2="860" y2="255.9" stroke="#eee"/><text x="64" y="259.9" text-anchor="end" fill="#888">22,900</text>
+<line x1="70" y1="123.3" x2="860" y2="123.3" stroke="#eee"/><text x="64" y="127.3" text-anchor="end" fill="#888">23,000</text>
+<text x="296.5" y="774" text-anchor="middle" fill="#888">11:00</text>
+<text x="549.3" y="774" text-anchor="middle" fill="#888">13:00</text>
+<text x="802.1" y="774" text-anchor="middle" fill="#888">15:00</text>
+<rect x="70.0" y="95" width="10.5" height="665" fill="#ffd54f" opacity="0.35"/>
+<rect x="70" y="438.9" width="790" height="58.7" fill="#c0392b" opacity="0.18" stroke="#c0392b" stroke-width="0.8"/>
+<line x1="75.3" y1="407.2" x2="75.3" y2="663.7" stroke="#d9534f"/>
+<rect x="71.6" y="407.2" width="7.4" height="158.8" fill="#d9534f"/>
+<line x1="85.8" y1="502.0" x2="85.8" y2="591.6" stroke="#d9534f"/>
+<rect x="82.1" y="559.0" width="7.4" height="23.5" fill="#d9534f"/>
+<line x1="96.3" y1="571.4" x2="96.3" y2="650.6" stroke="#d9534f"/>
+<rect x="92.6" y="577.7" width="7.4" height="63.9" fill="#d9534f"/>
+<line x1="106.9" y1="541.1" x2="106.9" y2="658.2" stroke="#17a37a"/>
+<rect x="103.2" y="546.1" width="7.4" height="101.0" fill="#17a37a"/>
+<line x1="117.4" y1="458.8" x2="117.4" y2="549.9" stroke="#17a37a"/>
+<rect x="113.7" y="515.2" width="7.4" height="30.0" fill="#17a37a"/>
+<line x1="127.9" y1="502.0" x2="127.9" y2="650.6" stroke="#d9534f"/>
+<rect x="124.2" y="514.6" width="7.4" height="112.2" fill="#d9534f"/>
+<line x1="138.5" y1="605.4" x2="138.5" y2="666.9" stroke="#d9534f"/>
+<rect x="134.8" y="626.8" width="7.4" height="40.2" fill="#d9534f"/>
+<line x1="149.0" y1="649.2" x2="149.0" y2="694.6" stroke="#d9534f"/>
+<rect x="145.3" y="665.3" width="7.4" height="24.0" fill="#d9534f"/>
+<line x1="159.5" y1="671.4" x2="159.5" y2="695.4" stroke="#d9534f"/>
+<rect x="155.8" y="691.8" width="7.4" height="2.4" fill="#d9534f"/>
+<line x1="170.1" y1="664.7" x2="170.1" y2="702.8" stroke="#17a37a"/>
+<rect x="166.4" y="667.3" width="7.4" height="27.2" fill="#17a37a"/>
+<line x1="180.6" y1="611.1" x2="180.6" y2="672.1" stroke="#17a37a"/>
+<rect x="176.9" y="633.7" width="7.4" height="32.5" fill="#17a37a"/>
+<line x1="191.1" y1="578.2" x2="191.1" y2="657.2" stroke="#17a37a"/>
+<rect x="187.4" y="580.8" width="7.4" height="51.7" fill="#17a37a"/>
+<line x1="201.7" y1="547.9" x2="201.7" y2="635.9" stroke="#d9534f"/>
+<rect x="198.0" y="574.3" width="7.4" height="28.1" fill="#d9534f"/>
+<line x1="212.2" y1="570.3" x2="212.2" y2="604.5" stroke="#17a37a"/>
+<rect x="208.5" y="599.8" width="7.4" height="1.4" fill="#17a37a"/>
+<line x1="222.7" y1="593.9" x2="222.7" y2="665.1" stroke="#d9534f"/>
+<rect x="219.0" y="602.7" width="7.4" height="5.2" fill="#d9534f"/>
+<line x1="233.3" y1="600.0" x2="233.3" y2="655.1" stroke="#17a37a"/>
+<rect x="229.6" y="604.8" width="7.4" height="3.6" fill="#17a37a"/>
+<line x1="243.8" y1="571.6" x2="243.8" y2="607.9" stroke="#17a37a"/>
+<rect x="240.1" y="572.7" width="7.4" height="30.9" fill="#17a37a"/>
+<line x1="254.3" y1="570.5" x2="254.3" y2="617.4" stroke="#d9534f"/>
+<rect x="250.6" y="571.8" width="7.4" height="10.9" fill="#d9534f"/>
+<line x1="264.9" y1="569.7" x2="264.9" y2="599.0" stroke="#17a37a"/>
+<rect x="261.2" y="578.0" width="7.4" height="4.0" fill="#17a37a"/>
+<line x1="275.4" y1="561.8" x2="275.4" y2="640.0" stroke="#d9534f"/>
+<rect x="271.7" y="577.6" width="7.4" height="52.9" fill="#d9534f"/>
+<line x1="285.9" y1="585.5" x2="285.9" y2="640.8" stroke="#17a37a"/>
+<rect x="282.2" y="606.0" width="7.4" height="22.7" fill="#17a37a"/>
+<line x1="296.5" y1="606.1" x2="296.5" y2="669.6" stroke="#d9534f"/>
+<rect x="292.8" y="606.4" width="7.4" height="60.4" fill="#d9534f"/>
+<line x1="307.0" y1="649.2" x2="307.0" y2="683.5" stroke="#d9534f"/>
+<rect x="303.3" y="666.4" width="7.4" height="2.3" fill="#d9534f"/>
+<line x1="317.5" y1="670.2" x2="317.5" y2="728.6" stroke="#d9534f"/>
+<rect x="313.8" y="670.2" width="7.4" height="26.0" fill="#d9534f"/>
+<line x1="328.1" y1="637.7" x2="328.1" y2="708.4" stroke="#17a37a"/>
+<rect x="324.4" y="637.7" width="7.4" height="59.0" fill="#17a37a"/>
+<line x1="338.6" y1="606.3" x2="338.6" y2="657.4" stroke="#17a37a"/>
+<rect x="334.9" y="635.0" width="7.4" height="3.4" fill="#17a37a"/>
+<line x1="349.1" y1="614.4" x2="349.1" y2="657.8" stroke="#17a37a"/>
+<rect x="345.4" y="614.7" width="7.4" height="18.9" fill="#17a37a"/>
+<line x1="359.7" y1="609.7" x2="359.7" y2="659.0" stroke="#d9534f"/>
+<rect x="356.0" y="614.9" width="7.4" height="25.3" fill="#d9534f"/>
+<line x1="370.2" y1="590.0" x2="370.2" y2="645.3" stroke="#17a37a"/>
+<rect x="366.5" y="628.6" width="7.4" height="11.5" fill="#17a37a"/>
+<line x1="380.7" y1="586.5" x2="380.7" y2="647.0" stroke="#17a37a"/>
+<rect x="377.0" y="594.7" width="7.4" height="32.9" fill="#17a37a"/>
+<line x1="391.3" y1="569.6" x2="391.3" y2="607.7" stroke="#17a37a"/>
+<rect x="387.6" y="593.0" width="7.4" height="1.9" fill="#17a37a"/>
+<line x1="401.8" y1="553.8" x2="401.8" y2="594.2" stroke="#17a37a"/>
+<rect x="398.1" y="563.1" width="7.4" height="29.2" fill="#17a37a"/>
+<line x1="412.3" y1="510.6" x2="412.3" y2="566.5" stroke="#17a37a"/>
+<rect x="408.6" y="552.3" width="7.4" height="9.8" fill="#17a37a"/>
+<line x1="422.9" y1="541.1" x2="422.9" y2="569.0" stroke="#d9534f"/>
+<rect x="419.2" y="550.1" width="7.4" height="13.5" fill="#d9534f"/>
+<line x1="433.4" y1="531.7" x2="433.4" y2="567.7" stroke="#17a37a"/>
+<rect x="429.7" y="556.0" width="7.4" height="7.5" fill="#17a37a"/>
+<line x1="443.9" y1="546.5" x2="443.9" y2="574.8" stroke="#d9534f"/>
+<rect x="440.2" y="556.8" width="7.4" height="17.8" fill="#d9534f"/>
+<line x1="454.5" y1="557.5" x2="454.5" y2="583.2" stroke="#d9534f"/>
+<rect x="450.8" y="573.5" width="7.4" height="0.8" fill="#d9534f"/>
+<line x1="465.0" y1="479.8" x2="465.0" y2="575.0" stroke="#17a37a"/>
+<rect x="461.3" y="519.9" width="7.4" height="51.8" fill="#17a37a"/>
+<line x1="475.5" y1="483.9" x2="475.5" y2="522.0" stroke="#17a37a"/>
+<rect x="471.8" y="503.2" width="7.4" height="15.1" fill="#17a37a"/>
+<line x1="486.1" y1="501.2" x2="486.1" y2="589.5" stroke="#d9534f"/>
+<rect x="482.4" y="503.0" width="7.4" height="84.1" fill="#d9534f"/>
+<line x1="496.6" y1="544.0" x2="496.6" y2="594.6" stroke="#17a37a"/>
+<rect x="492.9" y="563.8" width="7.4" height="24.3" fill="#17a37a"/>
+<line x1="507.1" y1="541.1" x2="507.1" y2="583.8" stroke="#17a37a"/>
+<rect x="503.4" y="553.3" width="7.4" height="10.2" fill="#17a37a"/>
+<line x1="517.7" y1="445.4" x2="517.7" y2="553.5" stroke="#17a37a"/>
+<rect x="514.0" y="445.4" width="7.4" height="107.1" fill="#17a37a"/>
+<line x1="528.2" y1="407.9" x2="528.2" y2="459.3" stroke="#17a37a"/>
+<rect x="524.5" y="421.2" width="7.4" height="24.2" fill="#17a37a"/>
+<line x1="538.7" y1="383.5" x2="538.7" y2="422.5" stroke="#17a37a"/>
+<rect x="535.0" y="385.2" width="7.4" height="34.9" fill="#17a37a"/>
+<line x1="549.3" y1="369.5" x2="549.3" y2="443.5" stroke="#d9534f"/>
+<rect x="545.6" y="383.0" width="7.4" height="48.6" fill="#d9534f"/>
+<line x1="559.8" y1="379.2" x2="559.8" y2="430.3" stroke="#17a37a"/>
+<rect x="556.1" y="380.5" width="7.4" height="49.0" fill="#17a37a"/>
+<line x1="570.3" y1="302.5" x2="570.3" y2="380.2" stroke="#17a37a"/>
+<rect x="566.6" y="308.0" width="7.4" height="70.9" fill="#17a37a"/>
+<line x1="580.9" y1="288.3" x2="580.9" y2="329.0" stroke="#17a37a"/>
+<rect x="577.2" y="303.3" width="7.4" height="3.8" fill="#17a37a"/>
+<line x1="591.4" y1="257.7" x2="591.4" y2="304.7" stroke="#17a37a"/>
+<rect x="587.7" y="284.5" width="7.4" height="18.6" fill="#17a37a"/>
+<line x1="601.9" y1="280.9" x2="601.9" y2="330.3" stroke="#d9534f"/>
+<rect x="598.2" y="284.4" width="7.4" height="24.3" fill="#d9534f"/>
+<line x1="612.5" y1="264.4" x2="612.5" y2="305.0" stroke="#17a37a"/>
+<rect x="608.8" y="276.0" width="7.4" height="28.1" fill="#17a37a"/>
+<line x1="623.0" y1="255.1" x2="623.0" y2="304.4" stroke="#d9534f"/>
+<rect x="619.3" y="274.8" width="7.4" height="29.6" fill="#d9534f"/>
+<line x1="633.5" y1="285.4" x2="633.5" y2="330.8" stroke="#d9534f"/>
+<rect x="629.8" y="304.3" width="7.4" height="16.6" fill="#d9534f"/>
+<line x1="644.1" y1="289.9" x2="644.1" y2="330.4" stroke="#d9534f"/>
+<rect x="640.4" y="318.6" width="7.4" height="11.8" fill="#d9534f"/>
+<line x1="654.6" y1="273.4" x2="654.6" y2="330.9" stroke="#17a37a"/>
+<rect x="650.9" y="278.8" width="7.4" height="48.9" fill="#17a37a"/>
+<line x1="665.1" y1="272.6" x2="665.1" y2="309.4" stroke="#d9534f"/>
+<rect x="661.4" y="278.4" width="7.4" height="26.8" fill="#d9534f"/>
+<line x1="675.7" y1="257.6" x2="675.7" y2="306.6" stroke="#17a37a"/>
+<rect x="672.0" y="268.4" width="7.4" height="37.2" fill="#17a37a"/>
+<line x1="686.2" y1="257.7" x2="686.2" y2="301.0" stroke="#d9534f"/>
+<rect x="682.5" y="268.2" width="7.4" height="32.7" fill="#d9534f"/>
+<line x1="696.7" y1="238.2" x2="696.7" y2="301.0" stroke="#17a37a"/>
+<rect x="693.0" y="240.8" width="7.4" height="59.0" fill="#17a37a"/>
+<line x1="707.3" y1="217.8" x2="707.3" y2="259.0" stroke="#17a37a"/>
+<rect x="703.6" y="236.1" width="7.4" height="4.4" fill="#17a37a"/>
+<line x1="717.8" y1="218.1" x2="717.8" y2="246.3" stroke="#d9534f"/>
+<rect x="714.1" y="234.5" width="7.4" height="11.8" fill="#d9534f"/>
+<line x1="728.3" y1="238.2" x2="728.3" y2="280.5" stroke="#d9534f"/>
+<rect x="724.6" y="245.3" width="7.4" height="16.6" fill="#d9534f"/>
+<line x1="738.9" y1="221.6" x2="738.9" y2="261.3" stroke="#17a37a"/>
+<rect x="735.2" y="226.4" width="7.4" height="33.9" fill="#17a37a"/>
+<line x1="749.4" y1="202.9" x2="749.4" y2="252.4" stroke="#d9534f"/>
+<rect x="745.7" y="225.3" width="7.4" height="6.8" fill="#d9534f"/>
+<line x1="759.9" y1="218.1" x2="759.9" y2="250.4" stroke="#d9534f"/>
+<rect x="756.2" y="231.2" width="7.4" height="6.4" fill="#d9534f"/>
+<line x1="770.5" y1="217.9" x2="770.5" y2="240.6" stroke="#17a37a"/>
+<rect x="766.8" y="226.7" width="7.4" height="10.2" fill="#17a37a"/>
+<line x1="781.0" y1="217.1" x2="781.0" y2="248.8" stroke="#d9534f"/>
+<rect x="777.3" y="223.8" width="7.4" height="17.3" fill="#d9534f"/>
+<line x1="791.5" y1="215.7" x2="791.5" y2="274.0" stroke="#17a37a"/>
+<rect x="787.8" y="233.1" width="7.4" height="8.7" fill="#17a37a"/>
+<line x1="802.1" y1="165.4" x2="802.1" y2="239.4" stroke="#17a37a"/>
+<rect x="798.4" y="176.8" width="7.4" height="56.5" fill="#17a37a"/>
+<line x1="812.6" y1="153.4" x2="812.6" y2="176.7" stroke="#17a37a"/>
+<rect x="808.9" y="156.0" width="7.4" height="20.1" fill="#17a37a"/>
+<line x1="823.1" y1="126.4" x2="823.1" y2="169.2" stroke="#17a37a"/>
+<rect x="819.4" y="137.4" width="7.4" height="19.5" fill="#17a37a"/>
+<line x1="833.7" y1="135.0" x2="833.7" y2="167.0" stroke="#d9534f"/>
+<rect x="830.0" y="136.2" width="7.4" height="25.7" fill="#d9534f"/>
+<line x1="844.2" y1="159.2" x2="844.2" y2="179.1" stroke="#d9534f"/>
+<rect x="840.5" y="162.0" width="7.4" height="1.3" fill="#d9534f"/>
+<line x1="854.7" y1="160.2" x2="854.7" y2="184.0" stroke="#d9534f"/>
+<rect x="851.0" y="163.2" width="7.4" height="13.9" fill="#d9534f"/>
+<polyline points="75.3,679.8 85.8,678.8 96.3,678.4 106.9,677.1 117.4,675.5 127.9,675.0 138.5,674.9 149.0,675.1 159.5,675.3 170.1,675.2 180.6,674.8 191.1,673.9 201.7,673.1 212.2,672.4 222.7,671.8 233.3,671.1 243.8,670.1 254.3,669.3 264.9,668.3 275.4,668.0 285.9,667.4 296.5,667.3 307.0,667.4 317.5,667.6 328.1,667.3 338.6,667.0 349.1,666.5 359.7,666.2 370.2,665.9 380.7,665.2 391.3,664.4 401.8,663.4 412.3,662.3 422.9,661.3 433.4,660.3 443.9,659.4 454.5,658.6 465.0,657.2 475.5,655.7 486.1,655.0 496.6,654.1 507.1,653.1 517.7,651.0 528.2,648.7 538.7,646.1 549.3,644.0 559.8,641.4 570.3,638.0 580.9,634.7 591.4,631.2 601.9,628.0 612.5,624.5 623.0,621.3 633.5,618.3 644.1,615.5 654.6,612.1 665.1,609.1 675.7,605.7 686.2,602.6 696.7,599.0 707.3,595.4 717.8,592.0 728.3,588.7 738.9,585.1 749.4,581.6 759.9,578.1 770.5,574.6 781.0,571.3 791.5,568.0 802.1,564.1 812.6,560.0 823.1,555.8 833.7,551.9 844.2,548.0 854.7,544.3" fill="none" stroke="#2f80ed" stroke-width="1.6"/>
+<polygon points="75.3,558.0 69.3,571.0 81.3,571.0" fill="#777777" opacity="0.9"/>
+<polygon points="106.9,538.1 100.9,551.1 112.9,551.1" fill="#27ae60" opacity="0.9"/>
+<polygon points="528.2,413.2 522.2,426.2 534.2,426.2" fill="#c0392b" opacity="0.9"/>
+<polygon points="106.9,538.1 100.9,551.1 112.9,551.1" fill="#2f80ed" opacity="0.9"/>
+<polygon points="106.9,538.1 100.9,551.1 112.9,551.1" fill="#8e44ad" opacity="0.9"/>
+<polygon points="528.2,413.2 522.2,426.2 534.2,426.2" fill="#e67e22" opacity="0.9"/>
+<polygon points="538.7,377.2 532.7,390.2 544.7,390.2" fill="#6d4c41" opacity="0.9"/>
+<line x1="860.0" y1="385.2" x2="866.0" y2="385.2" stroke="#6d4c41" stroke-width="0.6"/><text x="868.0" y="388.2" fill="#6d4c41" font-size="10">PDR-D entry 12:55</text>
+<line x1="860.0" y1="421.2" x2="866.0" y2="421.2" stroke="#c0392b" stroke-width="0.6"/><text x="868.0" y="424.2" fill="#c0392b" font-size="10">ENGINE entry (PDR-A) 12:50</text>
+<line x1="860.0" y1="421.2" x2="866.0" y2="433.7" stroke="#e67e22" stroke-width="0.6"/><text x="868.0" y="436.7" fill="#e67e22" font-size="10">PDR-C entry 12:50</text>
+<line x1="860.0" y1="468.2" x2="866.0" y2="468.2" stroke="#c0392b" stroke-width="0.6"/><text x="868.0" y="471.2" fill="#c0392b" font-size="10">PDR zone</text>
+<line x1="860.0" y1="544.3" x2="866.0" y2="544.3" stroke="#2f80ed" stroke-width="0.6"/><text x="868.0" y="547.3" fill="#2f80ed" font-size="10">EMA(200) 22682.4</text>
+<line x1="860.0" y1="546.1" x2="866.0" y2="556.8" stroke="#27ae60" stroke-width="0.6"/><text x="868.0" y="559.8" fill="#27ae60" font-size="10">FIRST GREEN after retest 09:30 (close 22681.05, body 86%)</text>
+<line x1="860.0" y1="546.1" x2="866.0" y2="569.3" stroke="#2f80ed" stroke-width="0.6"/><text x="868.0" y="572.3" fill="#2f80ed" font-size="10">PDR-B1 entry 09:30</text>
+<line x1="860.0" y1="546.1" x2="866.0" y2="581.8" stroke="#8e44ad" stroke-width="0.6"/><text x="868.0" y="584.8" fill="#8e44ad" font-size="10">PDR-B2 entry 09:30</text>
+<line x1="860.0" y1="566.0" x2="866.0" y2="594.3" stroke="#777777" stroke-width="0.6"/><text x="868.0" y="597.3" fill="#777777" font-size="10">RETEST candle 09:15</text>
+<rect x="1162" y="95" width="328" height="665" fill="#fafafa" stroke="#ddd"/>
+<text x="1170" y="110" fill="#222" font-size="10">Category:</text>
+<text x="1170" y="122.5" fill="#222" font-size="10">A_EARLIER_GREEN_CLOSES_BELOW_OR_WITHIN_THE_ZONE</text>
+<text x="1170" y="138.0" fill="#222" font-size="10">Zone [22717.65, 22761.95]; session open 22785.85</text>
+<text x="1170" y="153.5" fill="#222" font-size="10">Retest 09:15 (green &amp; above ceiling: False); first</text>
+<text x="1170" y="166.0" fill="#222" font-size="10">green after retest 09:30 (closes above ceiling:</text>
+<text x="1170" y="178.5" fill="#222" font-size="10">False)</text>
+<text x="1170" y="194.0" fill="#222" font-size="10">Engine first accepted 12:50 after skipping 42</text>
+<text x="1170" y="206.5" fill="#222" font-size="10">candle(s)</text>
+<text x="1170" y="222.0" fill="#222" font-size="10">Skipped candles: 09:20 red / not eligible body 26% |</text>
+<text x="1170" y="234.5" fill="#222" font-size="10">09:25 red / not eligible body 81% | 09:30 green,</text>
+<text x="1170" y="247.0" fill="#222" font-size="10">close 22681.05 &lt;= ceiling 22761.95 (strict</text>
+<text x="1170" y="259.5" fill="#222" font-size="10">close-above rule) body 86% | 09:35 green, close</text>
+<text x="1170" y="272.0" fill="#222" font-size="10">22704.35 &lt;= ceiling 22761.95 (strict close-above</text>
+<text x="1170" y="284.5" fill="#222" font-size="10">rule) body 33% | 09:40 red / not eligible body 75% |</text>
+<text x="1170" y="297.0" fill="#222" font-size="10">09:45 red / not eligible body 65% | 09:50 red / not</text>
+<text x="1170" y="309.5" fill="#222" font-size="10">eligible body 53% | 09:55 red / not eligible body</text>
+<text x="1170" y="322.0" fill="#222" font-size="10">10% | 10:00 green, close 22589.60 &lt;= ceiling</text>
+<text x="1170" y="334.5" fill="#222" font-size="10">22761.95 (strict close-above rule) body 71% | 10:05</text>
+<text x="1170" y="347.0" fill="#222" font-size="10">green, close 22614.95 &lt;= ceiling 22761.95 (strict</text>
+<text x="1170" y="359.5" fill="#222" font-size="10">close-above rule) body 53% | 10:10 green, close</text>
+<text x="1170" y="372.0" fill="#222" font-size="10">22654.85 &lt;= ceiling 22761.95 (strict close-above</text>
+<text x="1170" y="384.5" fill="#222" font-size="10">rule) body 65% | 10:15 red / not eligible body 32% |</text>
+<text x="1170" y="397.0" fill="#222" font-size="10">10:20 green, close 22640.55 &lt;= ceiling 22761.95</text>
+<text x="1170" y="409.5" fill="#222" font-size="10">(strict close-above rule) body 4% | 10:25 red / not</text>
+<text x="1170" y="422.0" fill="#222" font-size="10">eligible body 7% | 10:30 green, close 22636.80 &lt;=</text>
+<text x="1170" y="434.5" fill="#222" font-size="10">ceiling 22761.95 (strict close-above rule) body 7% |</text>
+<text x="1170" y="447.0" fill="#222" font-size="10">10:35 green, close 22661.00 &lt;= ceiling 22761.95</text>
+<text x="1170" y="459.5" fill="#222" font-size="10">(strict close-above rule) body 85% | 10:40 red / not</text>
+<text x="1170" y="472.0" fill="#222" font-size="10">eligible body 23% | 10:45 green, close 22657.00 &lt;=</text>
+<text x="1170" y="484.5" fill="#222" font-size="10">ceiling 22761.95 (strict close-above rule) body 14%</text>
+<text x="1170" y="497.0" fill="#222" font-size="10">| 10:50 red / not eligible body 68% | 10:55 green,</text>
+<text x="1170" y="509.5" fill="#222" font-size="10">close 22635.85 &lt;= ceiling 22761.95 (strict</text>
+<text x="1170" y="522.0" fill="#222" font-size="10">close-above rule) body 41% | 11:00 red / not</text>
+<text x="1170" y="534.5" fill="#222" font-size="10">eligible body 95% | 11:05 red / not eligible body 7%</text>
+<text x="1170" y="547.0" fill="#222" font-size="10">| 11:10 red / not eligible body 45% | 11:15 green,</text>
+<text x="1170" y="559.5" fill="#222" font-size="10">close 22611.95 &lt;= ceiling 22761.95 (strict</text>
+<text x="1170" y="572.0" fill="#222" font-size="10">close-above rule) body 83% | 11:20 green, close</text>
+<text x="1170" y="584.5" fill="#222" font-size="10">22613.95 &lt;= ceiling 22761.95 (strict close-above</text>
+<text x="1170" y="597.0" fill="#222" font-size="10">rule) body 7% | 11:25 green, close 22629.30 &lt;=</text>
+<text x="1170" y="609.5" fill="#222" font-size="10">ceiling 22761.95 (strict close-above rule) body 43%</text>
+<text x="1170" y="622.0" fill="#222" font-size="10">| 11:30 red / not eligible body 51% | 11:35 green,</text>
+<text x="1170" y="634.5" fill="#222" font-size="10">close 22618.85 &lt;= ceiling 22761.95 (strict</text>
+<text x="1170" y="647.0" fill="#222" font-size="10">close-above rule) body 21% | 11:40 green, close</text>
+<text x="1170" y="659.5" fill="#222" font-size="10">22644.40 &lt;= ceiling 22761.95 (strict close-above</text>
+<text x="1170" y="672.0" fill="#222" font-size="10">rule) body 54% | 11:45 green, close 22645.70 &lt;=</text>
+<text x="1170" y="684.5" fill="#222" font-size="10">ceiling 22761.95 (strict close-above rule) body 5% |</text>
+<text x="1170" y="697.0" fill="#222" font-size="10">11:50 green, close 22668.20 &lt;= ceiling 22761.95</text>
+<text x="1170" y="709.5" fill="#222" font-size="10">(strict close-above rule) body 72% | 11:55 green,</text>
+<text x="1170" y="722.0" fill="#222" font-size="10">close 22676.40 &lt;= ceiling 22761.95 (strict</text>
+<text x="1170" y="734.5" fill="#222" font-size="10">close-above rule) body 18% | 12:00 red / not</text>
+<text x="1170" y="747.0" fill="#222" font-size="10">eligible body 48% | 12:05 green, close 22673.60 &lt;=</text>
+</svg>

@@ -1,0 +1,11 @@
+config,time_tolerant_additional,tolerant_IRF,tolerant_ORB,tolerant_PDR,tolerant_PDS,tolerant_RF
+BASE,15,11,0,1,0,3
+S60,9,8,0,1,0,0
+S70,8,7,0,1,0,0
+SD,15,11,0,1,0,3
+PDR_B1,14,11,0,1,0,2
+PDR_B2,13,11,0,0,0,2
+PDR_C,14,11,0,0,0,3
+PDR_D,19,11,0,5,0,3
+PDS_FROZEN,15,11,0,1,0,3
+PDS_SECOND,16,11,0,1,1,3

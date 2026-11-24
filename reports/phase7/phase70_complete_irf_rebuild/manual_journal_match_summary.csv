@@ -1,0 +1,7 @@
+engine,journal_IRF_rows,weekend_rows_unmatchable,strict,time_tolerant_extra,date_strategy_only,manual_only,automated_trades_or_first_signals,automated_only,unit
+M1,73,1,27,16,18,12,125,64,executed trades (SL40 scenario; entry times are scenario independent)
+M2,73,1,14,9,17,33,86,46,executed trades (SL40 scenario; entry times are scenario independent)
+COMBINED,73,1,34,19,14,6,139,72,executed trades (SL40 scenario; entry times are scenario independent)
+PHASE_3_6,73,1,34,18,15,6,152,85,first confirmed IRF signal per date within 13:00 (signal ledger)
+PHASE_5_3,73,1,27,13,19,14,132,73,first confirmed IRF signal per date within 13:00 (signal ledger)
+PHASE_6_1,73,1,27,13,19,14,132,73,first confirmed IRF signal per date within 13:00 (signal ledger)

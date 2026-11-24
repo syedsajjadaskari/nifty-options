@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="612" viewBox="0 0 1180 612" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="612" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">2026-02-10 M1 trade (SL40/T60)</text>
+<text x="10" y="38" font-size="11" fill="#8a8f98">window A; signal 09:55; SL35 scenario: STOP -35.0</text>
+
+<rect x="70" y="54" width="920" height="462" fill="#fafafa" stroke="#ddd"/>
+<line x1="70" x2="990" y1="516.0" y2="516.0" stroke="#eee"/><text x="64" y="520.0" text-anchor="end" fill="#8a8f98">25,867.2</text>
+<line x1="70" x2="990" y1="423.6" y2="423.6" stroke="#eee"/><text x="64" y="427.6" text-anchor="end" fill="#8a8f98">25,890.3</text>
+<line x1="70" x2="990" y1="331.2" y2="331.2" stroke="#eee"/><text x="64" y="335.2" text-anchor="end" fill="#8a8f98">25,913.4</text>
+<line x1="70" x2="990" y1="238.8" y2="238.8" stroke="#eee"/><text x="64" y="242.8" text-anchor="end" fill="#8a8f98">25,936.6</text>
+<line x1="70" x2="990" y1="146.4" y2="146.4" stroke="#eee"/><text x="64" y="150.4" text-anchor="end" fill="#8a8f98">25,959.7</text>
+<line x1="70" x2="990" y1="54.0" y2="54.0" stroke="#eee"/><text x="64" y="58.0" text-anchor="end" fill="#8a8f98">25,982.8</text>
+<line x1="195.5" x2="195.5" y1="54" y2="516" stroke="#eee"/><text x="195.5" y="530" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="446.4" x2="446.4" y1="54" y2="516" stroke="#eee"/><text x="446.4" y="530" text-anchor="middle" fill="#8a8f98">10:00</text>
+<line x1="697.3" x2="697.3" y1="54" y2="516" stroke="#eee"/><text x="697.3" y="530" text-anchor="middle" fill="#8a8f98">10:30</text>
+<line x1="948.2" x2="948.2" y1="54" y2="516" stroke="#eee"/><text x="948.2" y="530" text-anchor="middle" fill="#8a8f98">11:00</text>
+<rect x="404.5" y="96.5" width="317.8" height="159.8" fill="#c0392b" fill-opacity="0.13" stroke="#c0392b" stroke-opacity="0.4"/>
+<rect x="404.5" y="256.2" width="317.8" height="239.7" fill="#1f8a5b" fill-opacity="0.13" stroke="#1f8a5b" stroke-opacity="0.4"/>
+<line x1="70" x2="990" y1="247.3" y2="247.3" stroke="#6b46c1" stroke-width="1.2" stroke-dasharray="6,4"/><text x="994" y="251.3" fill="#6b46c1">Level A / marked level 25934.45</text>
+<line x1="70" x2="990" y1="256.2" y2="256.2" stroke="#222" stroke-width="1.2"/><text x="994" y="260.2" fill="#222">entry 25932.20</text>
+<line x1="70" x2="990" y1="96.5" y2="96.5" stroke="#c0392b" stroke-width="1.2"/><text x="994" y="100.5" fill="#c0392b">stop 25972.20</text>
+<line x1="70" x2="990" y1="495.9" y2="495.9" stroke="#1f8a5b" stroke-width="1.2"/><text x="994" y="499.9" fill="#1f8a5b">target 25872.20</text>
+<line x1="90.9" x2="90.9" y1="247.3" y2="498.9" stroke="#1f8a5b"/>
+<rect x="78.4" y="312.8" width="25.1" height="20.8" fill="#1f8a5b"/>
+<line x1="132.7" x2="132.7" y1="296.6" y2="408.2" stroke="#c0392b"/>
+<rect x="120.2" y="312.6" width="25.1" height="10.2" fill="#c0392b"/>
+<line x1="174.5" x2="174.5" y1="286.0" y2="354.1" stroke="#1f8a5b"/>
+<rect x="162.0" y="314.6" width="25.1" height="10.8" fill="#1f8a5b"/>
+<line x1="216.4" x2="216.4" y1="210.1" y2="346.3" stroke="#1f8a5b"/>
+<rect x="203.8" y="210.1" width="25.1" height="102.1" fill="#1f8a5b"/>
+<line x1="258.2" x2="258.2" y1="191.7" y2="238.3" stroke="#c0392b"/>
+<rect x="245.6" y="211.9" width="25.1" height="9.0" fill="#c0392b"/>
+<line x1="300.0" x2="300.0" y1="173.6" y2="225.9" stroke="#1f8a5b"/>
+<rect x="287.5" y="187.5" width="25.1" height="33.0" fill="#1f8a5b"/>
+<line x1="341.8" x2="341.8" y1="139.6" y2="196.9" stroke="#c0392b"/>
+<rect x="329.3" y="186.5" width="25.1" height="5.8" fill="#c0392b"/>
+<line x1="383.6" x2="383.6" y1="177.2" y2="265.2" stroke="#c0392b"/>
+<rect x="371.1" y="192.5" width="25.1" height="62.1" fill="#c0392b"/>
+<line x1="425.5" x2="425.5" y1="181.0" y2="269.8" stroke="#1f8a5b"/>
+<rect x="412.9" y="187.1" width="25.1" height="69.1" fill="#1f8a5b"/>
+<line x1="467.3" x2="467.3" y1="151.4" y2="209.3" stroke="#1f8a5b"/>
+<rect x="454.7" y="165.6" width="25.1" height="24.8" fill="#1f8a5b"/>
+<line x1="509.1" x2="509.1" y1="125.2" y2="192.3" stroke="#c0392b"/>
+<rect x="496.5" y="165.4" width="25.1" height="11.8" fill="#c0392b"/>
+<line x1="550.9" x2="550.9" y1="170.2" y2="224.1" stroke="#c0392b"/>
+<rect x="538.4" y="178.8" width="25.1" height="29.0" fill="#c0392b"/>
+<line x1="592.7" x2="592.7" y1="99.1" y2="217.1" stroke="#1f8a5b"/>
+<rect x="580.2" y="121.2" width="25.1" height="86.3" fill="#1f8a5b"/>
+<line x1="634.5" x2="634.5" y1="120.6" y2="150.2" stroke="#c0392b"/>
+<rect x="622.0" y="122.4" width="25.1" height="5.8" fill="#c0392b"/>
+<line x1="676.4" x2="676.4" y1="110.3" y2="138.6" stroke="#c0392b"/>
+<rect x="663.8" y="129.4" width="25.1" height="2.2" fill="#c0392b"/>
+<line x1="718.2" x2="718.2" y1="71.1" y2="137.0" stroke="#1f8a5b"/>
+<rect x="705.6" y="78.3" width="25.1" height="52.9" fill="#1f8a5b"/>
+<line x1="760.0" x2="760.0" y1="72.7" y2="111.7" stroke="#c0392b"/>
+<rect x="747.5" y="80.5" width="25.1" height="28.2" fill="#c0392b"/>
+<line x1="801.8" x2="801.8" y1="101.5" y2="179.8" stroke="#c0392b"/>
+<rect x="789.3" y="106.5" width="25.1" height="35.9" fill="#c0392b"/>
+<line x1="843.6" x2="843.6" y1="98.5" y2="167.8" stroke="#c0392b"/>
+<rect x="831.1" y="144.6" width="25.1" height="3.0" fill="#c0392b"/>
+<line x1="885.5" x2="885.5" y1="107.3" y2="166.0" stroke="#c0392b"/>
+<rect x="872.9" y="145.2" width="25.1" height="8.6" fill="#c0392b"/>
+<line x1="927.3" x2="927.3" y1="128.0" y2="164.0" stroke="#1f8a5b"/>
+<rect x="914.7" y="146.0" width="25.1" height="6.0" fill="#1f8a5b"/>
+<line x1="969.1" x2="969.1" y1="108.1" y2="164.8" stroke="#1f8a5b"/>
+<rect x="956.5" y="126.8" width="25.1" height="20.0" fill="#1f8a5b"/>
+<circle cx="70.0" cy="247.3" r="4.5" fill="none" stroke="#6b46c1" stroke-width="2"/><text x="76.0" y="240.3" fill="#6b46c1" font-weight="bold">first candle</text>
+<circle cx="195.5" cy="210.1" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="201.5" y="203.1" fill="#2b6cb0" font-weight="bold">M1 breakout</text>
+<circle cx="362.7" cy="265.2" r="4.5" fill="none" stroke="#c0392b" stroke-width="2"/><text x="368.7" y="258.2" fill="#c0392b" font-weight="bold">M1 failure -&gt; signal 09:55</text>
+<circle cx="722.4" cy="96.5" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="728.4" y="89.5" fill="#222" font-weight="bold">exit STOP -40.00</text>
+<text x="10" y="564" fill="#222">M1: 13:30 [after first signal, not traded] close 25938.10 &gt; level: breakout recorded, no entry -&gt; 14:20 [after first signal, not traded] close 25943.00 &gt; level: breakout recorded, no</text>
+<text x="10" y="580" fill="#222">entry -&gt; 14:55 [after first signal, not traded] close 25935.35 &gt; level: breakout recorded, no entry</text>
+</svg>

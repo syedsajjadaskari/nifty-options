@@ -1,0 +1,99 @@
+window,variant,strategy,method,gate_applies,kept,signals
+A,B,IRF,Method 1,True,False,100
+A,B,IRF,Method 1,True,True,167
+A,B,IRF,Method 2A,False,True,11
+A,B,IRF,Method 2A,True,False,113
+A,B,IRF,Method 2A,True,True,147
+A,B,IRF,Method 2B,True,False,132
+A,B,IRF,Method 2B,True,True,116
+A,B,ORB,ORB-V2,False,True,23
+A,B,ORB,ORB-V2,True,True,16
+A,B,PDR,PDR,False,True,15
+A,B,PDR,PDR,True,False,60
+A,B,PDR,PDR,True,True,72
+A,B,PDS,Method 1,True,False,31
+A,B,PDS,Method 1,True,True,42
+A,B,PDS,Method 2,False,True,19
+A,B,PDS,Method 3,False,True,19
+A,B,RF,RF,True,False,7
+A,B,RF,RF,True,True,5
+A,C,IRF,Method 1,True,False,142
+A,C,IRF,Method 1,True,True,125
+A,C,IRF,Method 2A,False,True,11
+A,C,IRF,Method 2A,True,False,145
+A,C,IRF,Method 2A,True,True,115
+A,C,IRF,Method 2B,True,False,169
+A,C,IRF,Method 2B,True,True,79
+A,C,ORB,ORB-V2,False,True,23
+A,C,ORB,ORB-V2,True,True,16
+A,C,PDR,PDR,False,True,15
+A,C,PDR,PDR,True,False,77
+A,C,PDR,PDR,True,True,55
+A,C,PDS,Method 1,True,False,41
+A,C,PDS,Method 1,True,True,32
+A,C,PDS,Method 2,False,True,19
+A,C,PDS,Method 3,False,True,19
+A,C,RF,RF,True,False,9
+A,C,RF,RF,True,True,3
+A,D,IRF,Method 1,False,True,267
+A,D,IRF,Method 2A,False,True,271
+A,D,IRF,Method 2B,False,True,248
+A,D,ORB,ORB-V2,False,True,23
+A,D,ORB,ORB-V2,True,True,16
+A,D,PDR,PDR,False,True,147
+A,D,PDS,Method 1,True,False,31
+A,D,PDS,Method 1,True,True,42
+A,D,PDS,Method 2,False,True,19
+A,D,PDS,Method 3,False,True,19
+A,D,RF,RF,False,True,12
+B,B,IRF,Method 1,False,True,1
+B,B,IRF,Method 1,True,False,264
+B,B,IRF,Method 1,True,True,445
+B,B,IRF,Method 2A,False,True,29
+B,B,IRF,Method 2A,True,False,332
+B,B,IRF,Method 2A,True,True,336
+B,B,IRF,Method 2B,True,False,453
+B,B,IRF,Method 2B,True,True,322
+B,B,ORB,ORB-V2,False,True,43
+B,B,ORB,ORB-V2,True,True,50
+B,B,PDR,PDR,False,True,93
+B,B,PDR,PDR,True,False,137
+B,B,PDR,PDR,True,True,223
+B,B,PDS,Method 1,True,False,51
+B,B,PDS,Method 1,True,True,89
+B,B,PDS,Method 2,False,True,74
+B,B,PDS,Method 3,False,True,43
+B,B,RF,RF,False,True,2
+B,B,RF,RF,True,False,26
+B,B,RF,RF,True,True,52
+B,C,IRF,Method 1,False,True,1
+B,C,IRF,Method 1,True,False,379
+B,C,IRF,Method 1,True,True,330
+B,C,IRF,Method 2A,False,True,29
+B,C,IRF,Method 2A,True,False,433
+B,C,IRF,Method 2A,True,True,235
+B,C,IRF,Method 2B,True,False,556
+B,C,IRF,Method 2B,True,True,219
+B,C,ORB,ORB-V2,False,True,43
+B,C,ORB,ORB-V2,True,True,50
+B,C,PDR,PDR,False,True,93
+B,C,PDR,PDR,True,False,194
+B,C,PDR,PDR,True,True,166
+B,C,PDS,Method 1,True,False,74
+B,C,PDS,Method 1,True,True,66
+B,C,PDS,Method 2,False,True,74
+B,C,PDS,Method 3,False,True,43
+B,C,RF,RF,False,True,2
+B,C,RF,RF,True,False,48
+B,C,RF,RF,True,True,30
+B,D,IRF,Method 1,False,True,710
+B,D,IRF,Method 2A,False,True,697
+B,D,IRF,Method 2B,False,True,775
+B,D,ORB,ORB-V2,False,True,43
+B,D,ORB,ORB-V2,True,True,50
+B,D,PDR,PDR,False,True,453
+B,D,PDS,Method 1,True,False,51
+B,D,PDS,Method 1,True,True,89
+B,D,PDS,Method 2,False,True,74
+B,D,PDS,Method 3,False,True,43
+B,D,RF,RF,False,True,80

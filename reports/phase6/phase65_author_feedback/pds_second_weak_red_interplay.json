@@ -1,0 +1,97 @@
+{
+ "A": {
+  "second_signals_as_implemented": 29,
+  "second_signals_if_a_weak_red_between_were_ignored": 39,
+  "additional": 10,
+  "examples": [
+   {
+    "date": "2025-11-14",
+    "signal_candle": "11:35",
+    "method": "Method 1"
+   },
+   {
+    "date": "2025-11-14",
+    "signal_candle": "12:35",
+    "method": "Method 2"
+   },
+   {
+    "date": "2025-11-14",
+    "signal_candle": "12:55",
+    "method": "Method 2"
+   },
+   {
+    "date": "2026-04-13",
+    "signal_candle": "15:00",
+    "method": "Method 1"
+   },
+   {
+    "date": "2026-05-18",
+    "signal_candle": "14:20",
+    "method": "Method 1"
+   },
+   {
+    "date": "2026-06-11",
+    "signal_candle": "10:45",
+    "method": "Method 1"
+   },
+   {
+    "date": "2026-06-11",
+    "signal_candle": "11:10",
+    "method": "Method 1"
+   },
+   {
+    "date": "2026-07-13",
+    "signal_candle": "11:50",
+    "method": "Method 2"
+   }
+  ]
+ },
+ "B": {
+  "second_signals_as_implemented": 75,
+  "second_signals_if_a_weak_red_between_were_ignored": 90,
+  "additional": 15,
+  "examples": [
+   {
+    "date": "2023-02-17",
+    "signal_candle": "10:55",
+    "method": "Method 1"
+   },
+   {
+    "date": "2023-05-24",
+    "signal_candle": "13:00",
+    "method": "Method 1"
+   },
+   {
+    "date": "2023-05-24",
+    "signal_candle": "14:35",
+    "method": "Method 1"
+   },
+   {
+    "date": "2023-08-14",
+    "signal_candle": "14:35",
+    "method": "Method 2"
+   },
+   {
+    "date": "2023-08-14",
+    "signal_candle": "15:25",
+    "method": "Method 2"
+   },
+   {
+    "date": "2023-11-10",
+    "signal_candle": "12:20",
+    "method": "Method 1"
+   },
+   {
+    "date": "2024-04-25",
+    "signal_candle": "12:20",
+    "method": "Method 1"
+   },
+   {
+    "date": "2024-04-25",
+    "signal_candle": "12:40",
+    "method": "Method 1"
+   }
+  ]
+ },
+ "note": "Measured on the independent re-derivation (it reproduces the engine's second-confirmation signals exactly in the as-implemented mode). Method 3 candle starts are taken from the engine (declared shared input). No ledger was re-simulated for the alternative reading."
+}

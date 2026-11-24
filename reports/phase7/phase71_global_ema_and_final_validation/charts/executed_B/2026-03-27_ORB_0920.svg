@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="566" viewBox="0 0 1180 566" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="566" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">B executed: 2026-03-27 ORB (ORB-V2)</text>
+<text x="10" y="38" fill="#8a8f98">signal 09:20, entry 09:20 @ 23039.95</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">22,972.4</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">23,013.3</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">23,054.1</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">23,095.0</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">23,135.9</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">23,176.8</text>
+<line x1="408.8" x2="408.8" y1="54" y2="480" stroke="#eee"/><text x="408.8" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<rect x="184.2" y="276.6" width="22.4" height="62.5" fill="#c0392b" fill-opacity="0.11" stroke="#c0392b" stroke-opacity="0.4"/>
+<rect x="184.2" y="339.2" width="22.4" height="125.1" fill="#1f8a5b" fill-opacity="0.11" stroke="#1f8a5b" stroke-opacity="0.4"/>
+<polyline points="128.1,137.1 240.4,138.4 352.6,140.1 464.9,142.5 577.1,144.8 689.4,146.4 801.6,148.4 913.9,150.8" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="154.8" fill="#c9a400">EMA(200) 5m</text>
+<line x1="72" x2="970" y1="339.2" y2="339.2" stroke="#222" stroke-width="1.1"/><text x="974" y="337.2" fill="#222">entry 23039.95</text>
+<line x1="72" x2="970" y1="276.6" y2="276.6" stroke="#c0392b" stroke-width="1.1"/><text x="974" y="274.6" fill="#c0392b">initial stop 23069.95</text>
+<line x1="72" x2="970" y1="395.4" y2="395.4" stroke="#1f8a5b" stroke-width="1.1" stroke-dasharray="6,4"/><text x="974" y="393.4" fill="#1f8a5b">T1 23012.95</text>
+<line x1="72" x2="970" y1="464.2" y2="464.2" stroke="#1f8a5b" stroke-width="1.1"/><text x="974" y="462.2" fill="#1f8a5b">T2 22979.95</text>
+<line x1="128.1" x2="128.1" y1="69.8" y2="360.2" stroke="#c0392b"/>
+<rect x="94.5" y="69.8" width="67.3" height="265.5" fill="#c0392b"/>
+<line x1="240.4" x2="240.4" y1="211.6" y2="367.5" stroke="#1f8a5b"/>
+<rect x="206.7" y="265.9" width="67.3" height="73.3" fill="#1f8a5b"/>
+<line x1="352.6" x2="352.6" y1="239.1" y2="308.7" stroke="#c0392b"/>
+<rect x="318.9" y="270.9" width="67.3" height="33.1" fill="#c0392b"/>
+<line x1="464.9" x2="464.9" y1="289.4" y2="385.0" stroke="#c0392b"/>
+<rect x="431.2" y="304.6" width="67.3" height="79.6" fill="#c0392b"/>
+<line x1="577.1" x2="577.1" y1="372.1" y2="419.1" stroke="#1f8a5b"/>
+<rect x="543.5" y="372.1" width="67.3" height="12.6" fill="#1f8a5b"/>
+<line x1="689.4" x2="689.4" y1="306.2" y2="375.8" stroke="#1f8a5b"/>
+<rect x="655.7" y="310.8" width="67.3" height="61.0" fill="#1f8a5b"/>
+<line x1="801.6" x2="801.6" y1="308.6" y2="370.6" stroke="#c0392b"/>
+<rect x="768.0" y="311.8" width="67.3" height="28.9" fill="#c0392b"/>
+<line x1="913.9" x2="913.9" y1="338.9" y2="392.6" stroke="#c0392b"/>
+<rect x="880.2" y="341.9" width="67.3" height="48.6" fill="#c0392b"/>
+<circle cx="184.2" cy="339.2" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="190.2" y="332.2" fill="#2b6cb0" font-weight="bold">signal 09:20</text>
+<circle cx="184.2" cy="339.2" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="190.2" y="332.2" fill="#222" font-weight="bold">entry</text>
+<circle cx="206.7" cy="276.6" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="212.7" y="269.6" fill="#222" font-weight="bold">leg1 exit 23069.95</text>
+<circle cx="206.7" cy="276.6" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="212.7" y="269.6" fill="#222" font-weight="bold">leg2 exit 23069.95</text>
+<text x="10" y="524" fill="#222">ORB ORB-V2 SHORT; outcome INITIAL_FULL_STOP; gross -30.00 weighted index points = Rs -11,700 (synthetic, 390 units); journal: STRICT</text>
+<text x="10" y="540" fill="#222">EMA(200) at the confirmation candle 23136.88: |close-EMA| 95.08, signed -95.08, candle-range clearance 0.00 (EMA inside the candle the candle)</text>
+</svg>

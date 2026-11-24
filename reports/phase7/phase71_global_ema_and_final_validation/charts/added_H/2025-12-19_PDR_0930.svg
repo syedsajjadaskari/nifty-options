@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="582" viewBox="0 0 1180 582" font-family="Helvetica,Arial,sans-serif" font-size="11">
+<rect width="1180" height="582" fill="white"/>
+<text x="10" y="20" font-size="15" font-weight="bold" fill="#222">H ADDED trade (executed in H): 2025-12-19 PDR (PDR)</text>
+<text x="10" y="38" fill="#8a8f98">signal 09:30, entry 09:30 @ 25951.25</text>
+<rect x="72" y="54" width="898" height="426" fill="#fafafa" stroke="#ddd"/>
+<line x1="72" x2="970" y1="480.0" y2="480.0" stroke="#eee"/><text x="66" y="484.0" text-anchor="end" fill="#8a8f98">25,844.3</text>
+<line x1="72" x2="970" y1="394.8" y2="394.8" stroke="#eee"/><text x="66" y="398.8" text-anchor="end" fill="#8a8f98">25,881.1</text>
+<line x1="72" x2="970" y1="309.6" y2="309.6" stroke="#eee"/><text x="66" y="313.6" text-anchor="end" fill="#8a8f98">25,917.8</text>
+<line x1="72" x2="970" y1="224.4" y2="224.4" stroke="#eee"/><text x="66" y="228.4" text-anchor="end" fill="#8a8f98">25,954.6</text>
+<line x1="72" x2="970" y1="139.2" y2="139.2" stroke="#eee"/><text x="66" y="143.2" text-anchor="end" fill="#8a8f98">25,991.3</text>
+<line x1="72" x2="970" y1="54.0" y2="54.0" stroke="#eee"/><text x="66" y="58.0" text-anchor="end" fill="#8a8f98">26,028.1</text>
+<line x1="164.9" x2="164.9" y1="54" y2="480" stroke="#eee"/><text x="164.9" y="494" text-anchor="middle" fill="#8a8f98">09:30</text>
+<line x1="350.7" x2="350.7" y1="54" y2="480" stroke="#eee"/><text x="350.7" y="494" text-anchor="middle" fill="#8a8f98">10:00</text>
+<line x1="536.5" x2="536.5" y1="54" y2="480" stroke="#eee"/><text x="536.5" y="494" text-anchor="middle" fill="#8a8f98">10:30</text>
+<line x1="722.3" x2="722.3" y1="54" y2="480" stroke="#eee"/><text x="722.3" y="494" text-anchor="middle" fill="#8a8f98">11:00</text>
+<line x1="908.1" x2="908.1" y1="54" y2="480" stroke="#eee"/><text x="908.1" y="494" text-anchor="middle" fill="#8a8f98">11:30</text>
+<rect x="164.9" y="232.1" width="600.7" height="81.2" fill="#c0392b" fill-opacity="0.11" stroke="#c0392b" stroke-opacity="0.4"/>
+<rect x="164.9" y="69.8" width="600.7" height="162.3" fill="#1f8a5b" fill-opacity="0.11" stroke="#1f8a5b" stroke-opacity="0.4"/>
+<polyline points="87.5,464.2 118.4,462.1 149.4,459.8 180.4,457.3 211.3,454.7 242.3,452.3 273.3,450.3 304.2,448.1 335.2,445.8 366.2,443.5 397.1,441.4 428.1,439.7 459.1,437.7 490.0,435.7 521.0,433.5 552.0,431.4 582.9,429.1 613.9,426.6 644.9,424.3 675.8,421.9 706.8,419.8 737.8,417.9 768.7,416.2 799.7,414.2 830.7,412.4 861.6,410.7 892.6,409.4 923.6,408.1 954.5,406.8" fill="none" stroke="#c9a400" stroke-width="1.6"/><text x="974" y="410.8" fill="#c9a400">EMA(200) 5m</text>
+<line x1="72" x2="970" y1="232.1" y2="232.1" stroke="#222" stroke-width="1.1"/><text x="974" y="230.1" fill="#222">entry 25951.25</text>
+<line x1="72" x2="970" y1="313.2" y2="313.2" stroke="#c0392b" stroke-width="1.1"/><text x="974" y="311.2" fill="#c0392b">initial stop 25916.25</text>
+<line x1="72" x2="970" y1="169.5" y2="169.5" stroke="#1f8a5b" stroke-width="1.1" stroke-dasharray="6,4"/><text x="974" y="167.5" fill="#1f8a5b">T1 25978.25</text>
+<line x1="72" x2="970" y1="69.8" y2="69.8" stroke="#1f8a5b" stroke-width="1.1"/><text x="974" y="67.8" fill="#1f8a5b">T2 26021.25</text>
+<line x1="72" x2="970" y1="246.0" y2="246.0" stroke="#d9822b" stroke-width="1.1" stroke-dasharray="6,4"/><text x="974" y="244.0" fill="#d9822b">post-T1 stop 25945.25</text>
+<line x1="87.5" x2="87.5" y1="262.2" y2="387.3" stroke="#1f8a5b"/>
+<rect x="78.2" y="292.7" width="18.6" height="31.5" fill="#1f8a5b"/>
+<line x1="118.4" x2="118.4" y1="244.5" y2="298.9" stroke="#1f8a5b"/>
+<rect x="109.2" y="248.2" width="18.6" height="46.8" fill="#1f8a5b"/>
+<line x1="149.4" x2="149.4" y1="233.7" y2="273.6" stroke="#1f8a5b"/>
+<rect x="140.1" y="234.3" width="18.6" height="12.5" fill="#1f8a5b"/>
+<line x1="180.4" x2="180.4" y1="192.1" y2="232.3" stroke="#1f8a5b"/>
+<rect x="171.1" y="203.7" width="18.6" height="28.4" fill="#1f8a5b"/>
+<line x1="211.3" x2="211.3" y1="192.8" y2="224.3" stroke="#1f8a5b"/>
+<rect x="202.1" y="196.1" width="18.6" height="6.1" fill="#1f8a5b"/>
+<line x1="242.3" x2="242.3" y1="194.2" y2="221.5" stroke="#c0392b"/>
+<rect x="233.0" y="195.3" width="18.6" height="24.8" fill="#c0392b"/>
+<line x1="273.3" x2="273.3" y1="188.0" y2="255.2" stroke="#c0392b"/>
+<rect x="264.0" y="220.0" width="18.6" height="29.2" fill="#c0392b"/>
+<line x1="304.2" x2="304.2" y1="223.6" y2="258.3" stroke="#1f8a5b"/>
+<rect x="295.0" y="226.8" width="18.6" height="25.2" fill="#1f8a5b"/>
+<line x1="335.2" x2="335.2" y1="210.4" y2="241.9" stroke="#1f8a5b"/>
+<rect x="325.9" y="214.5" width="18.6" height="8.7" fill="#1f8a5b"/>
+<line x1="366.2" x2="366.2" y1="196.6" y2="222.0" stroke="#1f8a5b"/>
+<rect x="356.9" y="217.1" width="18.6" height="1.0" fill="#1f8a5b"/>
+<line x1="397.1" x2="397.1" y1="216.8" y2="283.6" stroke="#c0392b"/>
+<rect x="387.8" y="217.4" width="18.6" height="14.0" fill="#c0392b"/>
+<line x1="428.1" x2="428.1" y1="227.5" y2="276.8" stroke="#c0392b"/>
+<rect x="418.8" y="232.4" width="18.6" height="35.9" fill="#c0392b"/>
+<line x1="459.1" x2="459.1" y1="238.5" y2="278.2" stroke="#1f8a5b"/>
+<rect x="449.8" y="242.6" width="18.6" height="26.1" fill="#1f8a5b"/>
+<line x1="490.0" x2="490.0" y1="232.8" y2="256.2" stroke="#1f8a5b"/>
+<rect x="480.7" y="235.9" width="18.6" height="7.0" fill="#1f8a5b"/>
+<line x1="521.0" x2="521.0" y1="198.9" y2="243.8" stroke="#1f8a5b"/>
+<rect x="511.7" y="212.0" width="18.6" height="25.9" fill="#1f8a5b"/>
+<line x1="552.0" x2="552.0" y1="206.1" y2="227.6" stroke="#c0392b"/>
+<rect x="542.7" y="212.3" width="18.6" height="10.4" fill="#c0392b"/>
+<line x1="582.9" x2="582.9" y1="204.1" y2="224.9" stroke="#1f8a5b"/>
+<rect x="573.6" y="205.4" width="18.6" height="13.9" fill="#1f8a5b"/>
+<line x1="613.9" x2="613.9" y1="172.6" y2="214.7" stroke="#1f8a5b"/>
+<rect x="604.6" y="177.4" width="18.6" height="29.2" fill="#1f8a5b"/>
+<line x1="644.9" x2="644.9" y1="170.3" y2="202.5" stroke="#c0392b"/>
+<rect x="635.6" y="177.4" width="18.6" height="18.1" fill="#c0392b"/>
+<line x1="675.8" x2="675.8" y1="168.4" y2="198.8" stroke="#1f8a5b"/>
+<rect x="666.5" y="183.7" width="18.6" height="14.3" fill="#1f8a5b"/>
+<line x1="706.8" x2="706.8" y1="176.2" y2="210.4" stroke="#c0392b"/>
+<rect x="697.5" y="185.5" width="18.6" height="20.8" fill="#c0392b"/>
+<line x1="737.8" x2="737.8" y1="192.0" y2="237.8" stroke="#c0392b"/>
+<rect x="728.5" y="207.5" width="18.6" height="25.0" fill="#c0392b"/>
+<line x1="768.7" x2="768.7" y1="227.0" y2="258.5" stroke="#c0392b"/>
+<rect x="759.4" y="233.4" width="18.6" height="9.2" fill="#c0392b"/>
+<line x1="799.7" x2="799.7" y1="224.0" y2="242.1" stroke="#1f8a5b"/>
+<rect x="790.4" y="224.0" width="18.6" height="15.8" fill="#1f8a5b"/>
+<line x1="830.7" x2="830.7" y1="213.9" y2="239.6" stroke="#c0392b"/>
+<rect x="821.4" y="226.9" width="18.6" height="1.6" fill="#c0392b"/>
+<line x1="861.6" x2="861.6" y1="210.9" y2="242.9" stroke="#c0392b"/>
+<rect x="852.3" y="229.1" width="18.6" height="13.6" fill="#c0392b"/>
+<line x1="892.6" x2="892.6" y1="235.7" y2="280.7" stroke="#c0392b"/>
+<rect x="883.3" y="241.0" width="18.6" height="36.8" fill="#c0392b"/>
+<line x1="923.6" x2="923.6" y1="271.5" y2="289.9" stroke="#c0392b"/>
+<rect x="914.3" y="276.5" width="18.6" height="5.4" fill="#c0392b"/>
+<line x1="954.5" x2="954.5" y1="260.8" y2="289.5" stroke="#1f8a5b"/>
+<rect x="945.2" y="271.2" width="18.6" height="10.7" fill="#1f8a5b"/>
+<circle cx="164.9" cy="232.1" r="4.5" fill="none" stroke="#2b6cb0" stroke-width="2"/><text x="170.9" y="225.1" fill="#2b6cb0" font-weight="bold">signal 09:30</text>
+<circle cx="164.9" cy="232.1" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="170.9" y="225.1" fill="#222" font-weight="bold">entry</text>
+<circle cx="678.9" cy="169.5" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="684.9" y="162.5" fill="#222" font-weight="bold">leg1 exit 25978.25</text>
+<circle cx="765.6" cy="246.0" r="4.5" fill="none" stroke="#222" stroke-width="2"/><text x="771.6" y="239.0" fill="#222" font-weight="bold">leg2 exit 25945.25</text>
+<text x="10" y="524" fill="#222">PDR PDR LONG; outcome T1_THEN_BUFFER_STOP; gross +10.50 weighted index points = Rs +4,095 (synthetic, 390 units); journal: n/a</text>
+<text x="10" y="540" fill="#222">EMA(200) at the confirmation candle 25853.04: |close-EMA| 97.26, signed +97.26, candle-range clearance 80.31 (EMA below the candle)</text>
+<text x="10" y="556" fill="#222">Not a B trade; H - B with PDR-D (second eligible confirmation)</text>
+</svg>

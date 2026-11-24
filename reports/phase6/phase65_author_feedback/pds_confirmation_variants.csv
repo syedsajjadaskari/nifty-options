@@ -1,0 +1,180 @@
+window,date,pds_method,baseline_signal_candle,first_eligible_confirmation,second_eligible_confirmation,zone_low,zone_high,first_body_pct,second_body_pct,second_upper_wick_pct,second_lower_wick_pct,second_close_location_pct,time_difference_minutes,entry_reference_difference_points,mandatory_support_break_bypassed,approval_status,executed_in_portfolio
+A,2025-09-22,Method 1,13:20,13:20,13:30,25286.55,25294.45,70,53.72093,16.27907,30,30,10,-2.6,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2025-11-03,Method 2,09:15,10:05,10:10,25711.4,25715.65,51.376147,6.09319,81.72043,12.18638,12.18638,5,-0.45,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2025-11-07,Method 2,12:50,12:50,13:00,25491.75,25509.8,28.07971,2.293578,76.146789,21.559633,21.559633,10,12.8,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2025-11-14,Method 1,09:20,09:50,10:00,25809,25846.45,99.204455,71.614845,9.027081,19.358074,19.358074,10,-17.7,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+A,2025-11-14,Method 2,11:00,11:15,11:20,25809,25846.45,68.120457,23.131673,45.19573,31.672598,31.672598,5,-3.55,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+A,2025-12-02,Method 1,09:25,09:25,09:30,26124.8,26144.25,64.62585,78.985507,9.661836,11.352657,11.352657,5,-15.3,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+A,2025-12-09,Method 1,12:15,12:15,12:25,25892.4,25925,56.896552,80.504587,0.229358,19.266055,19.266055,10,17.4,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2025-12-09,Method 1,12:15,12:30,12:35,25892.4,25925,45.405405,73.039216,17.320261,9.640523,9.640523,5,-23.2,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2025-12-09,Method 1,12:15,13:40,14:00,25892.4,25925,58.90411,80.761905,14.095238,5.142857,5.142857,20,-11.25,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2025-12-18,Method 1,09:25,09:25,09:35,25770.8,25793.25,66.872428,67.261905,10.416667,22.321429,22.321429,10,-5.5,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+A,2026-01-06,Method 2,10:45,10:35,10:45,26210.35,26224.2,78.04428,21.455939,64.750958,13.793103,13.793103,10,-0.8,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-01-06,Method 1,09:35,10:55,11:10,26210.35,26224.2,77.35369,88.405797,5.072464,6.521739,6.521739,15,-6.9,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-01-21,Method 2,12:40,12:25,12:40,25173.8,25227.3,75.110132,8.545455,61.090909,30.363636,30.363636,15,93.5,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-01-21,Method 1,12:25,13:10,13:15,25173.8,25227.3,54.221636,69.461078,14.371257,16.167665,16.167665,5,-23.05,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-01-21,Method 1,12:25,14:20,15:05,25173.8,25227.3,51.257862,49.610895,15.758755,34.63035,34.63035,45,13.5,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-04-13,Method 1,14:00,14:00,14:05,23867.2,23965.7,37.07483,90.027701,2.354571,7.617729,7.617729,5,-32.25,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-05-18,Method 1,13:05,13:25,13:35,23610.8,23626.05,37.47412,68.018018,28.153153,3.828829,3.828829,10,-11.9,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-05-20,Method 1,13:25,13:20,13:25,23587.25,23606.2,10.243902,45.365169,39.88764,14.747191,14.747191,5,-16.1,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-05-27,Method 1,09:30,14:25,14:30,23885.45,23895.9,81.47139,86.445013,0,13.554987,13.554987,5,-17,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-06-02,Method 1,10:30,10:30,11:25,23358.15,23391.5,71.911573,60.662824,4.322767,35.014409,35.014409,55,-3.05,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-06-23,Method 1,09:40,10:20,10:25,24073.8,24122.15,54.761905,56.293706,0.34965,43.356643,43.356643,5,-7.8,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+A,2026-06-23,Method 1,09:40,10:50,10:55,24073.8,24122.15,19.915254,57.303371,9.550562,33.146067,33.146067,5,-4.7,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-07-13,Method 1,10:00,10:00,10:35,24124.7,24162.8,46.695096,89.800443,9.312639,0.886918,0.886918,35,24.4,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+A,2026-07-13,Method 1,10:00,10:45,10:50,24124.7,24162.8,51.643192,53.309481,28.980322,17.710197,17.710197,5,-14.15,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-07-13,Method 1,10:00,11:15,11:25,24124.7,24162.8,62.987013,45.288754,18.844985,35.866261,35.866261,10,1.35,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-07-23,Method 2,10:15,10:10,10:15,23961.6,23983.25,75.510204,9.495549,64.094955,26.409496,26.409496,5,-1.6,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+A,2026-07-23,Method 1,10:10,10:30,10:50,23961.6,23983.25,50,75.900277,19.390582,4.709141,4.709141,20,4.2,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-07-23,Method 1,10:10,12:00,12:10,23961.6,23983.25,40.816327,87.673611,9.201389,3.125,3.125,10,-11.4,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+A,2026-08-07,Method 2,,10:00,10:05,24605.95,24620.9,69.053708,6.629834,54.696133,38.674033,38.674033,5,-0.35,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+A,2025-09-22,Method 2,13:50,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2025-11-03,Method 1,10:05,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2025-11-03,Method 1,12:25,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-04-13,Method 2,14:35,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-04-30,Method 1,14:45,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-05-20,Method 2,11:30,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-05-20,Method 2,13:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-06-11,Method 2,10:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-06-23,Method 2,10:10,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-06-23,Method 2,10:50,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-07-24,Method 1,14:05,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-08-07,Method 1,09:25,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-08-18,Method 1,09:30,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-08-18,Method 1,09:40,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,2026-08-18,Method 2,15:00,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+A,ALL,Method 3,19 signals,,(not applicable to Method 3),,,,,,,,,,,"Method 3 trigger rule unchanged (the mandatory small-support break is never bypassed). Signals: baseline 19, variant 18; 1 baseline-only and 0 variant-only: a baseline-only Method 3 signal is one whose day / cycle was consumed by the second-confirmation path (a displacement, not a bypass)",
+B,2022-09-07,Method 2,09:25,09:25,10:10,17587.95,17608.3,39.482759,35.555556,52.063492,12.380952,12.380952,45,9.05,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2022-09-22,Method 2,13:40,13:35,13:40,17663.7,17683.3,55.334988,20.289855,72.463768,7.246377,7.246377,5,-3.6,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-09-22,Method 2,13:40,14:50,15:00,17663.7,17683.3,81.927711,11.057692,68.509615,20.432692,20.432692,10,-2.7,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-09-28,Method 1,10:05,10:20,10:25,16943.3,16951.25,56.743421,81.021898,6.021898,12.956204,12.956204,5,-23.9,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2022-09-28,Method 1,10:05,10:35,11:05,16943.3,16951.25,80.555556,54.090909,45.909091,0,0,30,22.65,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-09-28,Method 2,09:55,14:05,14:10,16943.3,16951.25,24.761905,4.08805,65.408805,30.503145,30.503145,5,-0.8,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-10-07,Method 1,09:20,09:20,10:00,17316.3,17326.7,60.771277,62.851406,37.148594,0,0,40,19.15,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-10-07,Method 1,09:20,14:55,15:00,17316.3,17326.7,73.487032,68.945869,25.071225,5.982906,5.982906,5,-12.1,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-10-10,Method 1,12:20,13:10,13:15,17217.5,17230.35,56.058158,41.935484,31.612903,26.451613,26.451613,5,-5.1,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-10-10,Method 1,12:20,13:20,13:25,17217.5,17230.35,63.707572,70.462633,0,29.537367,29.537367,5,-8.95,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-10-10,Method 1,12:20,13:45,14:40,17217.5,17230.35,74.231332,69.031142,0.692042,30.276817,30.276817,55,-2.6,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-10-17,Method 1,09:25,09:15,09:25,17170.05,17201.05,7.154088,91.928721,1.781971,6.289308,6.289308,10,-21.15,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2022-10-20,Method 1,13:50,13:40,13:50,17472.9,17496.55,28.196721,99.130435,0.869565,0,0,10,-1.55,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-11-03,Method 2,09:35,15:10,15:20,18049.95,18054.1,90.530303,1.015228,53.299492,45.685279,45.685279,10,2.2,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-12-16,Method 1,09:35,09:35,09:40,18388.4,18413.6,94.043528,80.939227,19.060773,0,0,5,-15.25,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-12-16,Method 2,12:45,10:00,12:45,18388.4,18413.6,52.866242,34.769231,51.692308,13.538462,13.538462,165,28.85,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2023-02-17,Method 1,09:50,09:50,10:00,18001.05,18031.75,61.818182,51.37931,41.724138,6.896552,6.896552,10,13.65,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2023-02-17,Method 1,09:50,10:05,10:10,18001.05,18031.75,44.947735,84.984026,7.667732,7.348243,7.348243,5,-26.4,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2023-03-08,Method 2,10:05,09:40,10:05,17680.35,17728,47.718631,5.515588,80.57554,13.908873,13.908873,25,26.3,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2023-03-08,Method 2,10:05,10:15,10:25,17680.35,17728,50.37594,29.479769,70.520231,0,0,10,1.35,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2023-03-08,Method 1,09:40,10:35,10:40,17680.35,17728,53.888889,60.248447,16.770186,22.981366,22.981366,5,-4.4,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2023-03-08,Method 1,09:40,11:15,11:35,17680.35,17728,43.003413,55.537459,15.472313,28.990228,28.990228,20,-2.75,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2023-03-23,Method 1,09:50,14:20,14:25,17108.8,17122.35,44.569288,89.572193,0,10.427807,10.427807,5,-17.1,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2023-05-03,Method 1,10:50,10:50,11:00,18106.2,18135.15,57.777778,78.90411,4.109589,16.986301,16.986301,10,-10.75,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2023-09-27,Method 2,11:55,11:50,11:55,19637.85,19644.45,65.668203,16.27907,42.790698,40.930233,40.930233,5,-1.4,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2023-11-10,Method 2,14:45,14:40,14:45,19381.4,19394.55,75.117371,27.745665,72.254335,0,0,5,-1.75,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2023-12-21,Method 2,09:45,09:45,10:10,21088.55,21127.95,22.354949,3.75,59.583333,36.666667,36.666667,25,71.55,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2023-12-21,Method 1,10:25,10:25,10:30,21088.55,21127.95,97.525473,56.321839,1.880878,41.797283,41.797283,5,-27.7,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-01-24,Method 1,09:15,12:30,12:35,21193,21242.45,82.319661,68.898488,31.101512,0,0,5,-13,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-03-22,Method 1,09:20,09:20,09:25,21941.95,21986.1,72.704715,79.86374,8.099924,12.036336,12.036336,5,-52.75,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-04-25,Method 2,09:45,09:45,10:05,22384.8,22412.55,28.900256,19.121447,60.206718,20.671835,20.671835,20,19.1,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-04-25,Method 1,10:45,10:45,10:50,22384.8,22412.55,66.286645,82.011992,7.861426,10.126582,10.126582,5,-60.7,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-04-25,Method 2,09:45,11:20,11:30,22384.8,22412.55,68.613139,30.651341,54.40613,14.942529,14.942529,10,10.2,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-04-25,Method 2,09:45,11:40,11:45,22384.8,22412.55,0.796813,34.594595,39.459459,25.945946,25.945946,5,-3.8,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-06-24,Method 1,09:25,09:25,09:30,23399.5,23445.25,40.343915,50.3125,0,49.6875,49.6875,5,-15.6,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-07-05,Method 2,11:50,11:50,12:00,24281.2,24304.95,40.591398,16.080402,48.743719,35.175879,35.175879,10,10.05,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-07-05,Method 1,12:25,12:05,12:25,24281.2,24304.95,19.075145,40.909091,35.353535,23.737374,23.737374,20,8.8,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-07-18,Method 1,10:55,10:50,10:55,24588.3,24610.95,9.294872,51.271186,42.79661,5.932203,5.932203,5,-18.55,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-07-18,Method 1,10:55,11:00,11:10,24588.3,24610.95,10.182768,73.769386,14.227916,12.002697,12.002697,10,-47.85,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-07-22,Method 1,14:45,14:30,14:45,24508.15,24530.4,32.931727,72.972973,4.365904,22.661123,22.661123,15,-6.75,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-07-22,Method 1,14:45,15:00,15:10,24508.15,24530.4,3.696498,51.655629,8.609272,39.735099,39.735099,10,10.85,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-09-06,Method 1,09:35,09:15,09:35,25128.25,25159.75,35.714286,59.673548,2.736438,37.590014,37.590014,20,-2.65,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-10-04,Method 2,09:15,12:40,12:45,25232.4,25250.1,79.694727,42.321689,49.89083,7.787482,7.787482,5,-58.3,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-10-16,Method 1,10:40,10:35,10:40,25008.85,25033.1,29.787234,66.666667,11.574074,21.759259,21.759259,5,-7,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-10-16,Method 1,10:40,10:50,11:00,25008.85,25033.1,28.251121,43.501326,36.074271,20.424403,20.424403,10,6.4,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-10-23,Method 1,09:20,09:30,09:35,24446.55,24486.05,48.815166,85.480268,10.349963,4.169769,4.169769,5,-58.75,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-10-23,Method 1,09:20,14:10,14:15,24446.55,24486.05,85.904255,59.694989,6.971678,33.333333,33.333333,5,-12.05,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-10-23,Method 2,14:30,14:20,14:30,24446.55,24486.05,74.168798,7.799443,60.724234,31.476323,31.476323,10,9.3,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-10-23,Method 2,14:30,14:35,14:50,24446.55,24486.05,43.933589,18.208092,55.202312,26.589595,26.589595,15,8.65,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-11-13,Method 2,09:30,09:25,09:30,23839.6,23869.15,88.239816,23.632681,75.286968,1.080351,1.080351,5,-16.15,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-12-17,Method 2,09:30,09:25,09:30,24602,24635,75,8.863198,60.115607,31.021195,31.021195,5,-2.75,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-12-18,Method 1,10:45,09:50,09:55,24303.7,24331.3,74.019985,94.712492,1.387971,3.899537,3.899537,5,-72.05,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2024-12-30,Method 2,10:35,09:20,10:35,23801.9,23817.4,88.368336,43.165468,49.640288,7.194245,7.194245,75,14.6,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-12-30,Method 1,09:20,10:55,11:00,23801.9,23817.4,65.869219,79.744817,9.569378,10.685805,10.685805,5,-24.8,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2024-12-31,Method 2,11:25,11:15,11:25,23600.2,23646.2,74.107143,2.077922,49.350649,48.571429,48.571429,10,7.75,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2025-02-03,Method 1,09:15,09:15,09:30,23323.1,23373.4,65.421082,62.756052,35.94041,1.303538,1.303538,15,54.35,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2025-02-03,Method 1,09:15,11:05,11:20,23323.1,23373.4,74.180328,79.738562,10.457516,9.803922,9.803922,15,1.95,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-02-03,Method 2,13:20,13:15,13:20,23323.1,23373.4,52.057613,35.964912,44.444444,19.590643,19.590643,5,-4.75,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-02-03,Method 2,13:20,13:25,13:30,23323.1,23373.4,62.407862,24.012158,41.641337,34.346505,34.346505,5,-2.8,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-02-03,Method 1,09:15,13:45,13:50,23323.1,23373.4,11.621622,63.265306,0.453515,36.281179,36.281179,5,-27.7,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-02-03,Method 1,09:15,15:10,15:15,23323.1,23373.4,42.857143,61.111111,15.204678,23.684211,23.684211,5,-10.15,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-04-01,Method 2,10:05,10:00,10:05,23451.6,23476.75,59.860384,42.671855,45.654994,11.673152,11.673152,5,-16.95,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-05-07,Method 1,09:45,09:45,09:50,24332.75,24368.4,66.113915,73.036342,12.895662,14.067995,14.067995,5,-30.2,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-05-09,Method 2,09:20,09:20,09:25,24151.45,24213.75,23.653749,10.666667,77.706667,11.626667,11.626667,5,-9.2,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2025-06-02,Method 1,12:40,12:40,12:55,24717.85,24738.35,61.818182,93.465347,3.267327,3.267327,3.267327,15,-38.9,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,True
+B,2025-06-02,Method 1,12:40,13:25,13:45,24717.85,24738.35,71.474359,74.320242,25.679758,0,0,20,9.1,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-06-02,Method 1,12:40,15:05,15:10,24717.85,24738.35,20.552147,54.58613,45.41387,0,0,5,-10.9,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-06-02,Method 1,12:40,15:15,15:20,24717.85,24738.35,47.949527,83.744856,16.049383,0.205761,0.205761,5,-20.15,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-06-18,Method 2,13:35,13:35,15:00,24814,24827.9,12.1673,31.554524,67.053364,1.392111,1.392111,85,6.25,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-07-28,Method 1,09:35,09:35,09:40,24807.55,24856.3,59.348199,96.67063,3.32937,0,0,5,-40.95,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-07-28,Method 2,09:50,09:50,09:55,24807.55,24856.3,7.728337,31.605351,41.471572,26.923077,26.923077,5,-9.25,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-07-28,Method 2,09:50,10:35,10:40,24807.55,24856.3,92.972973,30.398323,48.84696,20.754717,20.754717,5,-8.6,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-07-28,Method 2,09:50,10:45,11:00,24807.55,24856.3,83.222222,41.033435,54.103343,4.863222,4.863222,15,30.4,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-07-31,Method 2,11:05,11:05,11:25,24773.05,24804.35,8.244681,22.912621,67.572816,9.514563,9.514563,20,23.15,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2025-07-31,Method 1,12:05,15:00,15:05,24773.05,24804.35,94.15834,85.325265,4.689864,9.984871,9.984871,5,-30.1,False,MECHANICAL_RESEARCH_CONVENTION / AUTHOR_CONFIRMATION_REQUIRED,False
+B,2022-09-07,Method 1,12:45,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-09-07,Method 1,14:30,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-09-22,Method 1,09:40,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-09-22,Method 1,13:35,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-09-22,Method 1,13:55,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-09-22,Method 1,14:25,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-09-22,Method 1,14:50,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-10-17,Method 2,09:15,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-10-20,Method 2,13:40,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-11-03,Method 1,11:35,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-11-03,Method 1,13:45,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-11-03,Method 1,15:10,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-12-12,Method 1,09:15,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-12-12,Method 1,14:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2022-12-15,Method 1,09:25,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2023-05-24,Method 1,12:40,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2023-05-24,Method 1,14:35,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2023-08-14,Method 1,14:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2023-08-18,Method 1,09:30,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2023-09-27,Method 1,11:50,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2023-11-10,Method 1,10:50,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2023-11-10,Method 1,14:40,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-01-24,Method 2,12:10,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-03-22,Method 2,09:40,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-04-19,Method 1,12:25,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-05-30,Method 2,09:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-07-18,Method 2,10:50,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-07-18,Method 2,11:00,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-07-22,Method 2,14:30,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-07-22,Method 2,15:00,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-09-06,Method 2,09:15,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-10-04,Method 1,10:35,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-10-04,Method 1,12:40,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-10-16,Method 2,09:25,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-10-16,Method 2,10:35,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-10-16,Method 2,10:50,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-10-18,Method 1,10:35,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-10-18,Method 1,10:50,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-11-13,Method 1,09:25,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-12-13,Method 2,12:00,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-12-17,Method 1,09:25,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-12-18,Method 2,09:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2024-12-31,Method 1,11:15,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-01-17,Method 1,09:15,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-03-04,Method 1,09:25,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-03-27,Method 2,09:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-04-01,Method 1,10:00,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-04-01,Method 1,10:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-05-07,Method 2,09:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-06-02,Method 2,13:50,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-06-02,Method 2,15:05,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-06-18,Method 1,11:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-06-18,Method 1,15:10,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-07-29,Method 1,09:20,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-07-29,Method 1,10:15,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-07-29,Method 1,11:40,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-08-07,Method 2,09:30,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,2025-08-26,Method 1,09:15,,,,,,,,,,,,,NO SECOND CONFIRMATION in the variant (first eligible candle had no independently eligible follower before the zone was lost or the session ended),
+B,ALL,Method 3,43 signals,,(not applicable to Method 3),,,,,,,,,,,"Method 3 trigger rule unchanged (the mandatory small-support break is never bypassed). Signals: baseline 43, variant 41; 2 baseline-only and 0 variant-only: a baseline-only Method 3 signal is one whose day / cycle was consumed by the second-confirmation path (a displacement, not a bypass)",
